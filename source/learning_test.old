@@ -1,0 +1,5 @@
+
+.. currentmodule:: dlkit_doc.learning
+.. autoclass:: LearningManager
+   :members:
+   :inherited-members:
