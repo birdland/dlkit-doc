@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.queries
-.. automodule:: dlkit.abstract_osid.calendaring.queries
+.. currentmodule:: dlkit.calendaring.queries
+.. automodule:: dlkit.calendaring.queries
 
 Queries
 =======

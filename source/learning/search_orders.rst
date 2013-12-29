@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.learning.search_orders
-.. automodule:: dlkit.abstract_osid.learning.search_orders
+.. currentmodule:: dlkit.learning.search_orders
+.. automodule:: dlkit.learning.search_orders
 
 Search_Orders
 =============

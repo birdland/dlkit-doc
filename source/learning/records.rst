@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.learning.records
-.. automodule:: dlkit.abstract_osid.learning.records
+.. currentmodule:: dlkit.learning.records
+.. automodule:: dlkit.learning.records
 
 Records
 =======

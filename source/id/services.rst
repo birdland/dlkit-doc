@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.id
-.. automodule:: dlkit_doc.id
+.. currentmodule:: dlkit.services.id
+.. automodule:: dlkit.services.id
 
 Services
 ========

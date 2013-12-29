@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.relationship.receivers
-.. automodule:: dlkit.abstract_osid.relationship.receivers
+.. currentmodule:: dlkit.relationship.receivers
+.. automodule:: dlkit.relationship.receivers
 
 Receivers
 =========

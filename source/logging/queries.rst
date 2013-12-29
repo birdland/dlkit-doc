@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.logging.queries
-.. automodule:: dlkit.abstract_osid.logging.queries
+.. currentmodule:: dlkit.logging.queries
+.. automodule:: dlkit.logging.queries
 
 Queries
 =======

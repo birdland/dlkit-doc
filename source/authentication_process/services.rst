@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.authentication.process
-.. automodule:: dlkit_doc.authentication.process
+.. currentmodule:: dlkit.services.authentication.process
+.. automodule:: dlkit.services.authentication.process
 
 Services
 ========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.relationship
-.. automodule:: dlkit_doc.relationship
+.. currentmodule:: dlkit.services.relationship
+.. automodule:: dlkit.services.relationship
 
 Services
 ========

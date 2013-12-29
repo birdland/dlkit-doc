@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.osid.managers
-.. automodule:: dlkit.abstract_osid.osid.managers
+.. currentmodule:: dlkit.osid.managers
+.. automodule:: dlkit.osid.managers
 
 Managers
 ========

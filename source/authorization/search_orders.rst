@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authorization.search_orders
-.. automodule:: dlkit.abstract_osid.authorization.search_orders
+.. currentmodule:: dlkit.authorization.search_orders
+.. automodule:: dlkit.authorization.search_orders
 
 Search_Orders
 =============

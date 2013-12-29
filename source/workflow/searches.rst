@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.searches
-.. automodule:: dlkit.abstract_osid.workflow.searches
+.. currentmodule:: dlkit.workflow.searches
+.. automodule:: dlkit.workflow.searches
 
 Searches
 ========

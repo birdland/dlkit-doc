@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.grading
-.. automodule:: dlkit_doc.grading
+.. currentmodule:: dlkit.services.grading
+.. automodule:: dlkit.services.grading
 
 Services
 ========

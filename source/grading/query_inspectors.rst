@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.grading.query_inspectors
-.. automodule:: dlkit.abstract_osid.grading.query_inspectors
+.. currentmodule:: dlkit.grading.query_inspectors
+.. automodule:: dlkit.grading.query_inspectors
 
 Query_Inspectors
 ================

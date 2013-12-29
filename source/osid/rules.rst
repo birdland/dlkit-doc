@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.osid.rules
-.. automodule:: dlkit.abstract_osid.osid.rules
+.. currentmodule:: dlkit.osid.rules
+.. automodule:: dlkit.osid.rules
 
 Rules
 =====

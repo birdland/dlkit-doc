@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.proxy.rules
-.. automodule:: dlkit.abstract_osid.proxy.rules
+.. currentmodule:: dlkit.proxy.rules
+.. automodule:: dlkit.proxy.rules
 
 Rules
 =====

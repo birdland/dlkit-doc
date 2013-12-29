@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.query_inspectors
-.. automodule:: dlkit.abstract_osid.ontology.query_inspectors
+.. currentmodule:: dlkit.ontology.query_inspectors
+.. automodule:: dlkit.ontology.query_inspectors
 
 Query_Inspectors
 ================

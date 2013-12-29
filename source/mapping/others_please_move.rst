@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.others_please_move
-.. automodule:: dlkit.abstract_osid.mapping.others_please_move
+.. currentmodule:: dlkit.mapping.others_please_move
+.. automodule:: dlkit.mapping.others_please_move
 
 Others_Please_Move
 ==================

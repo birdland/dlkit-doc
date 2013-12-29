@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.receivers
-.. automodule:: dlkit.abstract_osid.workflow.receivers
+.. currentmodule:: dlkit.workflow.receivers
+.. automodule:: dlkit.workflow.receivers
 
 Receivers
 =========

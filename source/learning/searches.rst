@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.learning.searches
-.. automodule:: dlkit.abstract_osid.learning.searches
+.. currentmodule:: dlkit.learning.searches
+.. automodule:: dlkit.learning.searches
 
 Searches
 ========

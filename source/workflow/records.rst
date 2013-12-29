@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.records
-.. automodule:: dlkit.abstract_osid.workflow.records
+.. currentmodule:: dlkit.workflow.records
+.. automodule:: dlkit.workflow.records
 
 Records
 =======

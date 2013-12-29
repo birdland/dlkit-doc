@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.records
-.. automodule:: dlkit.abstract_osid.mapping.records
+.. currentmodule:: dlkit.mapping.records
+.. automodule:: dlkit.mapping.records
 
 Records
 =======

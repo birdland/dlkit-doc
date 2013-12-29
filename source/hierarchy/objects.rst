@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.objects
-.. automodule:: dlkit.abstract_osid.hierarchy.objects
+.. currentmodule:: dlkit.hierarchy.objects
+.. automodule:: dlkit.hierarchy.objects
 
 Objects
 =======

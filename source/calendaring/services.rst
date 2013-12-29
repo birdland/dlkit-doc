@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.calendaring
-.. automodule:: dlkit_doc.calendaring
+.. currentmodule:: dlkit.services.calendaring
+.. automodule:: dlkit.services.calendaring
 
 Services
 ========

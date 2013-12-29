@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.logging.search_orders
-.. automodule:: dlkit.abstract_osid.logging.search_orders
+.. currentmodule:: dlkit.logging.search_orders
+.. automodule:: dlkit.logging.search_orders
 
 Search_Orders
 =============

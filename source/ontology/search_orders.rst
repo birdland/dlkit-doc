@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.search_orders
-.. automodule:: dlkit.abstract_osid.ontology.search_orders
+.. currentmodule:: dlkit.ontology.search_orders
+.. automodule:: dlkit.ontology.search_orders
 
 Search_Orders
 =============

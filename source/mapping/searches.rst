@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.searches
-.. automodule:: dlkit.abstract_osid.mapping.searches
+.. currentmodule:: dlkit.mapping.searches
+.. automodule:: dlkit.mapping.searches
 
 Searches
 ========

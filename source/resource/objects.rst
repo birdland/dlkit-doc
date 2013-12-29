@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.resource.objects
-.. automodule:: dlkit.abstract_osid.resource.objects
+.. currentmodule:: dlkit.resource.objects
+.. automodule:: dlkit.resource.objects
 
 Objects
 =======

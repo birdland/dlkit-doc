@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.receivers
-.. automodule:: dlkit.abstract_osid.hierarchy.receivers
+.. currentmodule:: dlkit.hierarchy.receivers
+.. automodule:: dlkit.hierarchy.receivers
 
 Receivers
 =========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.queries
-.. automodule:: dlkit.abstract_osid.ontology.queries
+.. currentmodule:: dlkit.ontology.queries
+.. automodule:: dlkit.ontology.queries
 
 Queries
 =======

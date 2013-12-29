@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.objects
-.. automodule:: dlkit.abstract_osid.calendaring.objects
+.. currentmodule:: dlkit.calendaring.objects
+.. automodule:: dlkit.calendaring.objects
 
 Objects
 =======

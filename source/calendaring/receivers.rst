@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.receivers
-.. automodule:: dlkit.abstract_osid.calendaring.receivers
+.. currentmodule:: dlkit.calendaring.receivers
+.. automodule:: dlkit.calendaring.receivers
 
 Receivers
 =========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.osid.properties
-.. automodule:: dlkit.abstract_osid.osid.properties
+.. currentmodule:: dlkit.osid.properties
+.. automodule:: dlkit.osid.properties
 
 Properties
 ==========

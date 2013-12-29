@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.proxy.records
-.. automodule:: dlkit.abstract_osid.proxy.records
+.. currentmodule:: dlkit.proxy.records
+.. automodule:: dlkit.proxy.records
 
 Records
 =======

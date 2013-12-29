@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.records
-.. automodule:: dlkit.abstract_osid.hierarchy.records
+.. currentmodule:: dlkit.hierarchy.records
+.. automodule:: dlkit.hierarchy.records
 
 Records
 =======

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.osid.metadata
-.. automodule:: dlkit.abstract_osid.osid.metadata
+.. currentmodule:: dlkit.osid.metadata
+.. automodule:: dlkit.osid.metadata
 
 Metadata
 ========

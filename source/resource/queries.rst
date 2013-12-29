@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.resource.queries
-.. automodule:: dlkit.abstract_osid.resource.queries
+.. currentmodule:: dlkit.resource.queries
+.. automodule:: dlkit.resource.queries
 
 Queries
 =======

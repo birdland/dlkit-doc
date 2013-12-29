@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.ontology
-.. automodule:: dlkit_doc.ontology
+.. currentmodule:: dlkit.services.ontology
+.. automodule:: dlkit.services.ontology
 
 Ontology
 ========

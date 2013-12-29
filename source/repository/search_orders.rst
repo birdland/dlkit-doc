@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.repository.search_orders
-.. automodule:: dlkit.abstract_osid.repository.search_orders
+.. currentmodule:: dlkit.repository.search_orders
+.. automodule:: dlkit.repository.search_orders
 
 Search_Orders
 =============

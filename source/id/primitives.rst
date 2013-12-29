@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.id.primitives
-.. automodule:: dlkit.abstract_osid.id.primitives
+.. currentmodule:: dlkit.id.primitives
+.. automodule:: dlkit.id.primitives
 
 Primitives
 ==========

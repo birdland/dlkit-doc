@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.locale.primitives
-.. automodule:: dlkit.abstract_osid.locale.primitives
+.. currentmodule:: dlkit.locale.primitives
+.. automodule:: dlkit.locale.primitives
 
 Primitives
 ==========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.logging.objects
-.. automodule:: dlkit.abstract_osid.logging.objects
+.. currentmodule:: dlkit.logging.objects
+.. automodule:: dlkit.logging.objects
 
 Objects
 =======

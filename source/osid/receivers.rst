@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.osid.receivers
-.. automodule:: dlkit.abstract_osid.osid.receivers
+.. currentmodule:: dlkit.osid.receivers
+.. automodule:: dlkit.osid.receivers
 
 Receivers
 =========

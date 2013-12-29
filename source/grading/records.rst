@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.grading.records
-.. automodule:: dlkit.abstract_osid.grading.records
+.. currentmodule:: dlkit.grading.records
+.. automodule:: dlkit.grading.records
 
 Records
 =======

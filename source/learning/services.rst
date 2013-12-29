@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.learning
-.. automodule:: dlkit_doc.learning
+.. currentmodule:: dlkit.services.learning
+.. automodule:: dlkit.services.learning
 
 Services
 ========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.query_inspectors
-.. automodule:: dlkit.abstract_osid.calendaring.query_inspectors
+.. currentmodule:: dlkit.calendaring.query_inspectors
+.. automodule:: dlkit.calendaring.query_inspectors
 
 Query_Inspectors
 ================

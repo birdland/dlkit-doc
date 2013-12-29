@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.primitives
-.. automodule:: dlkit.abstract_osid.calendaring.primitives
+.. currentmodule:: dlkit.calendaring.primitives
+.. automodule:: dlkit.calendaring.primitives
 
 Primitives
 ==========

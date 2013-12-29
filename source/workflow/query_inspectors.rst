@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.query_inspectors
-.. automodule:: dlkit.abstract_osid.workflow.query_inspectors
+.. currentmodule:: dlkit.workflow.query_inspectors
+.. automodule:: dlkit.workflow.query_inspectors
 
 Query_Inspectors
 ================

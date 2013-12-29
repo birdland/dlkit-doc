@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.search_orders
-.. automodule:: dlkit.abstract_osid.workflow.search_orders
+.. currentmodule:: dlkit.workflow.search_orders
+.. automodule:: dlkit.workflow.search_orders
 
 Search_Orders
 =============

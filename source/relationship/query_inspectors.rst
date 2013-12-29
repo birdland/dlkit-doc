@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.relationship.query_inspectors
-.. automodule:: dlkit.abstract_osid.relationship.query_inspectors
+.. currentmodule:: dlkit.relationship.query_inspectors
+.. automodule:: dlkit.relationship.query_inspectors
 
 Query_Inspectors
 ================

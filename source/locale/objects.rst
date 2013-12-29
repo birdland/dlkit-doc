@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.locale.objects
-.. automodule:: dlkit.abstract_osid.locale.objects
+.. currentmodule:: dlkit.locale.objects
+.. automodule:: dlkit.locale.objects
 
 Objects
 =======

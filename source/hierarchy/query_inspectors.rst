@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.query_inspectors
-.. automodule:: dlkit.abstract_osid.hierarchy.query_inspectors
+.. currentmodule:: dlkit.hierarchy.query_inspectors
+.. automodule:: dlkit.hierarchy.query_inspectors
 
 Query_Inspectors
 ================

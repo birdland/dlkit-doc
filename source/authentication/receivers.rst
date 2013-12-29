@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authentication.receivers
-.. automodule:: dlkit.abstract_osid.authentication.receivers
+.. currentmodule:: dlkit.authentication.receivers
+.. automodule:: dlkit.authentication.receivers
 
 Receivers
 =========

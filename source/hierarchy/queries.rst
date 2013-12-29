@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.queries
-.. automodule:: dlkit.abstract_osid.hierarchy.queries
+.. currentmodule:: dlkit.hierarchy.queries
+.. automodule:: dlkit.hierarchy.queries
 
 Queries
 =======

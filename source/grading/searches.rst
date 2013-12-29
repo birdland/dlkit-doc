@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.grading.searches
-.. automodule:: dlkit.abstract_osid.grading.searches
+.. currentmodule:: dlkit.grading.searches
+.. automodule:: dlkit.grading.searches
 
 Searches
 ========

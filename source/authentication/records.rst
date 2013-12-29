@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authentication.records
-.. automodule:: dlkit.abstract_osid.authentication.records
+.. currentmodule:: dlkit.authentication.records
+.. automodule:: dlkit.authentication.records
 
 Records
 =======

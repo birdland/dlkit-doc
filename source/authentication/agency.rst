@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.authentication
-.. automodule:: dlkit_doc.authentication
+.. currentmodule:: dlkit.services.authentication
+.. automodule:: dlkit.services.authentication
 
 Agency
 ======

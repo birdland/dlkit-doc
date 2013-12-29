@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.objects
-.. automodule:: dlkit.abstract_osid.ontology.objects
+.. currentmodule:: dlkit.ontology.objects
+.. automodule:: dlkit.ontology.objects
 
 Objects
 =======

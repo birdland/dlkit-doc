@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authentication.process.rules
-.. automodule:: dlkit.abstract_osid.authentication.process.rules
+.. currentmodule:: dlkit.authentication.process.rules
+.. automodule:: dlkit.authentication.process.rules
 
 Rules
 =====

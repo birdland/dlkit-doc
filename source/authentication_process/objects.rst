@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authentication.process.objects
-.. automodule:: dlkit.abstract_osid.authentication.process.objects
+.. currentmodule:: dlkit.authentication.process.objects
+.. automodule:: dlkit.authentication.process.objects
 
 Objects
 =======

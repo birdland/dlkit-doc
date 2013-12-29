@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.repository
-.. automodule:: dlkit_doc.repository
+.. currentmodule:: dlkit.services.repository
+.. automodule:: dlkit.services.repository
 
 Services
 ========

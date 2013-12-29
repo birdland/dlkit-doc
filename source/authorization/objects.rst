@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authorization.objects
-.. automodule:: dlkit.abstract_osid.authorization.objects
+.. currentmodule:: dlkit.authorization.objects
+.. automodule:: dlkit.authorization.objects
 
 Objects
 =======

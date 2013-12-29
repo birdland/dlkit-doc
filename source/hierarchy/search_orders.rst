@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.search_orders
-.. automodule:: dlkit.abstract_osid.hierarchy.search_orders
+.. currentmodule:: dlkit.hierarchy.search_orders
+.. automodule:: dlkit.hierarchy.search_orders
 
 Search_Orders
 =============

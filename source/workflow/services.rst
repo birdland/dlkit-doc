@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.workflow
-.. automodule:: dlkit_doc.workflow
+.. currentmodule:: dlkit.services.workflow
+.. automodule:: dlkit.services.workflow
 
 Services
 ========

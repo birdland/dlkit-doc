@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.logging.query_inspectors
-.. automodule:: dlkit.abstract_osid.logging.query_inspectors
+.. currentmodule:: dlkit.logging.query_inspectors
+.. automodule:: dlkit.logging.query_inspectors
 
 Query_Inspectors
 ================

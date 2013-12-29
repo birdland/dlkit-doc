@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.receivers
-.. automodule:: dlkit.abstract_osid.ontology.receivers
+.. currentmodule:: dlkit.ontology.receivers
+.. automodule:: dlkit.ontology.receivers
 
 Receivers
 =========

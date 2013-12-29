@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.grading.objects
-.. automodule:: dlkit.abstract_osid.grading.objects
+.. currentmodule:: dlkit.grading.objects
+.. automodule:: dlkit.grading.objects
 
 Objects
 =======

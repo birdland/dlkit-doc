@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.osid
-.. automodule:: dlkit_doc.osid
+.. currentmodule:: dlkit.services.osid
+.. automodule:: dlkit.services.osid
 
 Services
 ========

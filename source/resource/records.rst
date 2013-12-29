@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.resource.records
-.. automodule:: dlkit.abstract_osid.resource.records
+.. currentmodule:: dlkit.resource.records
+.. automodule:: dlkit.resource.records
 
 Records
 =======

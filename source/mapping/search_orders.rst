@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.search_orders
-.. automodule:: dlkit.abstract_osid.mapping.search_orders
+.. currentmodule:: dlkit.mapping.search_orders
+.. automodule:: dlkit.mapping.search_orders
 
 Search_Orders
 =============

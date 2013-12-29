@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authorization.searches
-.. automodule:: dlkit.abstract_osid.authorization.searches
+.. currentmodule:: dlkit.authorization.searches
+.. automodule:: dlkit.authorization.searches
 
 Searches
 ========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.queries
-.. automodule:: dlkit.abstract_osid.mapping.queries
+.. currentmodule:: dlkit.mapping.queries
+.. automodule:: dlkit.mapping.queries
 
 Queries
 =======

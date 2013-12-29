@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.relationship.objects
-.. automodule:: dlkit.abstract_osid.relationship.objects
+.. currentmodule:: dlkit.relationship.objects
+.. automodule:: dlkit.relationship.objects
 
 Objects
 =======

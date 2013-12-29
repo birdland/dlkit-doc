@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.records
-.. automodule:: dlkit.abstract_osid.calendaring.records
+.. currentmodule:: dlkit.calendaring.records
+.. automodule:: dlkit.calendaring.records
 
 Records
 =======

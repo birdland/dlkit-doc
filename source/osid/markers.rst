@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.osid.markers
-.. automodule:: dlkit.abstract_osid.osid.markers
+.. currentmodule:: dlkit.osid.markers
+.. automodule:: dlkit.osid.markers
 
 Markers
 =======

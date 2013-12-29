@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.relationship.queries
-.. automodule:: dlkit.abstract_osid.relationship.queries
+.. currentmodule:: dlkit.relationship.queries
+.. automodule:: dlkit.relationship.queries
 
 Queries
 =======

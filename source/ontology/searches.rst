@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.searches
-.. automodule:: dlkit.abstract_osid.ontology.searches
+.. currentmodule:: dlkit.ontology.searches
+.. automodule:: dlkit.ontology.searches
 
 Searches
 ========

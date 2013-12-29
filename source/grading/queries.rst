@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.grading.queries
-.. automodule:: dlkit.abstract_osid.grading.queries
+.. currentmodule:: dlkit.grading.queries
+.. automodule:: dlkit.grading.queries
 
 Queries
 =======

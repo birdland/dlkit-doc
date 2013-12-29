@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authorization.queries
-.. automodule:: dlkit.abstract_osid.authorization.queries
+.. currentmodule:: dlkit.authorization.queries
+.. automodule:: dlkit.authorization.queries
 
 Queries
 =======

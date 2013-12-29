@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.relationship.records
-.. automodule:: dlkit.abstract_osid.relationship.records
+.. currentmodule:: dlkit.relationship.records
+.. automodule:: dlkit.relationship.records
 
 Records
 =======

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.relationship.searches
-.. automodule:: dlkit.abstract_osid.relationship.searches
+.. currentmodule:: dlkit.relationship.searches
+.. automodule:: dlkit.relationship.searches
 
 Searches
 ========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.calendaring.searches
-.. automodule:: dlkit.abstract_osid.calendaring.searches
+.. currentmodule:: dlkit.calendaring.searches
+.. automodule:: dlkit.calendaring.searches
 
 Searches
 ========

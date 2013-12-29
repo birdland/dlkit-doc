@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authorization.query_inspectors
-.. automodule:: dlkit.abstract_osid.authorization.query_inspectors
+.. currentmodule:: dlkit.authorization.query_inspectors
+.. automodule:: dlkit.authorization.query_inspectors
 
 Query_Inspectors
 ================

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.hierarchy
-.. automodule:: dlkit_doc.hierarchy
+.. currentmodule:: dlkit.services.hierarchy
+.. automodule:: dlkit.services.hierarchy
 
 Hierarchy
 =========

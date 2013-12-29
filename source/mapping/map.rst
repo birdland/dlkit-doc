@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.mapping
-.. automodule:: dlkit_doc.mapping
+.. currentmodule:: dlkit.services.mapping
+.. automodule:: dlkit.services.mapping
 
 Map
 ===

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.type
-.. automodule:: dlkit_doc.type
+.. currentmodule:: dlkit.services.type
+.. automodule:: dlkit.services.type
 
 Services
 ========

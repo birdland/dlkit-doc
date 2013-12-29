@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.logging
-.. automodule:: dlkit_doc.logging
+.. currentmodule:: dlkit.services.logging
+.. automodule:: dlkit.services.logging
 
 Services
 ========

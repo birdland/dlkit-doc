@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.learning.objects
-.. automodule:: dlkit.abstract_osid.learning.objects
+.. currentmodule:: dlkit.learning.objects
+.. automodule:: dlkit.learning.objects
 
 Objects
 =======

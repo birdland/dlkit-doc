@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.locale
-.. automodule:: dlkit_doc.locale
+.. currentmodule:: dlkit.services.locale
+.. automodule:: dlkit.services.locale
 
 Services
 ========

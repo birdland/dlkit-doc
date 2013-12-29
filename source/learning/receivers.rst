@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.learning.receivers
-.. automodule:: dlkit.abstract_osid.learning.receivers
+.. currentmodule:: dlkit.learning.receivers
+.. automodule:: dlkit.learning.receivers
 
 Receivers
 =========

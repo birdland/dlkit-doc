@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.grading.receivers
-.. automodule:: dlkit.abstract_osid.grading.receivers
+.. currentmodule:: dlkit.grading.receivers
+.. automodule:: dlkit.grading.receivers
 
 Receivers
 =========

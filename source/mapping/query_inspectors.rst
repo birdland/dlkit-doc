@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.query_inspectors
-.. automodule:: dlkit.abstract_osid.mapping.query_inspectors
+.. currentmodule:: dlkit.mapping.query_inspectors
+.. automodule:: dlkit.mapping.query_inspectors
 
 Query_Inspectors
 ================

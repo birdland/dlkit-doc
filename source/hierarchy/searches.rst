@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.hierarchy.searches
-.. automodule:: dlkit.abstract_osid.hierarchy.searches
+.. currentmodule:: dlkit.hierarchy.searches
+.. automodule:: dlkit.hierarchy.searches
 
 Searches
 ========

@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.authorization.rules
-.. automodule:: dlkit.abstract_osid.authorization.rules
+.. currentmodule:: dlkit.authorization.rules
+.. automodule:: dlkit.authorization.rules
 
 Rules
 =====

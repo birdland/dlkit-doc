@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.objects
-.. automodule:: dlkit.abstract_osid.workflow.objects
+.. currentmodule:: dlkit.workflow.objects
+.. automodule:: dlkit.workflow.objects
 
 Objects
 =======

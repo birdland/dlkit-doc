@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.ontology.records
-.. automodule:: dlkit.abstract_osid.ontology.records
+.. currentmodule:: dlkit.ontology.records
+.. automodule:: dlkit.ontology.records
 
 Records
 =======

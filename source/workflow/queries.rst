@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.workflow.queries
-.. automodule:: dlkit.abstract_osid.workflow.queries
+.. currentmodule:: dlkit.workflow.queries
+.. automodule:: dlkit.workflow.queries
 
 Queries
 =======

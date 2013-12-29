@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit.abstract_osid.mapping.objects
-.. automodule:: dlkit.abstract_osid.mapping.objects
+.. currentmodule:: dlkit.mapping.objects
+.. automodule:: dlkit.mapping.objects
 
 Objects
 =======

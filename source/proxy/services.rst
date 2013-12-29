@@ -1,5 +1,5 @@
-.. currentmodule:: dlkit_doc.proxy
-.. automodule:: dlkit_doc.proxy
+.. currentmodule:: dlkit.services.proxy
+.. automodule:: dlkit.services.proxy
 
 Services
 ========
