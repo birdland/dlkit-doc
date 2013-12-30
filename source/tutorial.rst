@@ -29,7 +29,7 @@ the other objects necessary for using the service. You should never try to insta
 other OSID object directly, even if you know where its class definition resides.
 
 The simplest thing you can do with a manager is to inspect its ``display_name`` and ``description`` 
-methods. Note that DLKit always returns user_readable strings  as ``DisplayText``
+methods. Note that DLKit always returns user-readable strings  as ``DisplayText``
 objects. The actual text is available via the ``get_text()`` method. 
 Other ``DisplayText`` methods return the ``LanguageType``, ``ScriptType`` and
 ``FormatType`` of the text to be displayed::
