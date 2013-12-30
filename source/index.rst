@@ -15,6 +15,12 @@ The DLKit codebase is largely auto-generated from the Open Service Interface Def
 a very large, complete and growing suite of interface contract specifications that describe the 
 integration points among the core services and components that make up modern educational systems.
 
+Note that this documentation is intended for API consumers. However, at the heart of DLKit is an
+integration layer even more closely aligned with the OSID specifications.  This allows third parties to 
+extend the library with alternative or additional implementations of any of the defined services for the 
+purposes of service integration, technology migration, service adaptation, etc. Documentation aimed at
+service implementers and integrators will be provided elsewhere.
+
 The complete OSID specification can be found at http://osid.org/specifications.
 
 If you are interested in learning more about the DLKit Python libraries documented here, 

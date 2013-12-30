@@ -43,12 +43,12 @@ Results in something that looks like this::
       OSID learning service implementation of the MIT Core Concept Catalog (MC3)
       (this description was written using the English language)
 
-(Note that the implementation name and description may be different for you. It will
-depend on which underlying service implementation your dlkit library is pointing at.
-More on this later)
+      # Note that the implementation name and description may be different for you. 
+      # It will depend on which underlying service implementation your dlkit library is
+      # configured to point to.  More on this later
 
 Alternatively, the Python OSID service interfaces also specify 
-property attributes for any "getter" methods that don't take arguments, so the above 
+property attributes for all basic "getter" methods, so the above 
 could also be written more Pythonically as::
 
     print "Learning Manager successfully instantiated:"
@@ -57,7 +57,7 @@ could also be written more Pythonically as::
     print ("  (this description was written using the " + 
         lm.description.language_type.display_label.text + " language)\n")
 
-for the remainder of this tutorial we will use the properties shortcuts
+for the remainder of this tutorial we will use the property attributes
 wherever available.
 
 Looking up Objective Banks
