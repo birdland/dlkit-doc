@@ -6,9 +6,10 @@
 Welcome to the DLKit documentation!
 ===================================
 
-This documentation for the Digital Learning Toolkit (DLKit) is still under development.
-It currently covers only a small handful of the 160 service packages and 9,000 educational 
-service APIs that have been defined to date.
+This documentation for the Digital Learning Toolkit (DLKit), like the toolkit itself,
+is still under development. It currently covers only a small handful of the 160 service packages 
+and 9,000 educational service APIs that have been defined by MIT's Office of Digital Learning and
+its collaborators to date.
 
 The DLKit codebase is largely auto-generated from the Open Service Interface Definitions (OSIDs), 
 a very large, complete and growing suite of interface contract specifications that describe the 
@@ -16,7 +17,8 @@ integration points among the core services and components that make up modern ed
 
 The complete OSID specification can be found at http://osid.org/specifications.
 
-If you are interested in the DLKit Python libraries documented here, please contact merriman@mit.edu 
+If you are interested in learning more about the DLKit Python libraries documented here, 
+please contact dlkit-info@mit.edu 
 
 Contents:
 ---------
