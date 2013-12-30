@@ -12,7 +12,7 @@ and 9,000 educational service APIs that have been defined by MIT's Office of Dig
 its collaborators to date.
 
 The DLKit codebase is largely auto-generated from the Open Service Interface Definitions (OSIDs), 
-a very large, complete and growing suite of interface contract specifications that describe the 
+an extensive and growing suite of interface contract specifications that describe the 
 integration points among the core services and components that make up modern educational systems.
 
 Note that this documentation is intended for API consumers. However, at the heart of DLKit is an
