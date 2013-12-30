@@ -16,10 +16,11 @@ an extensive and growing suite of interface contract specifications that describ
 integration points among the core services and components that make up modern educational systems.
 
 Note that this documentation is intended for API consumers. However, at the heart of DLKit is an
-integration layer even more closely aligned with the OSID specifications.  This allows third parties to 
-extend the library with alternative or additional implementations of any of the defined services for the 
-purposes of service integration, technology migration, service adaptation, etc. Documentation aimed at
-service implementers and integrators will be provided elsewhere.
+integration layer that is even more closely aligned with the OSID specifications.  This has been
+designed to allow third parties to extend the library with alternative or additional implementations 
+of any of the defined services for the purposes of service integration, technology migration, 
+service adaptation, etc. Documentation written for service implementers and system integrators,
+including implementation notes and compliance information, will be provided elsewhere.
 
 The complete OSID specification can be found at http://osid.org/specifications.
 

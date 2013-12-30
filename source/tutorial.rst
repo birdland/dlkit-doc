@@ -2,29 +2,34 @@ Tutorial: DLKit Learning Service Basics
 =======================================
 
 This tutorial is under development. It focuses on aspects of the ``Learning`` service. At the
-time of this writing, MIT's Office of Digital Learning
-has launched its Python-based OSID development by implementing the ``Learning`` package.  
-As a result, this tutorial uses examples primarily from this particular service, which 
-deals with managing learning objectives, learning paths and relationships between learning
-objectives and educational assets, assessments, etc.
+time of this writing, MIT's Office of Digital Learning has launched its Python-based OSID 
+development in support of the MIT Core Concept Catalog (MC3_) project starting with the OSID
+``Learning`` package definition.  As a result, this tutorial uses examples primarily from this 
+particular service, which deals with managing learning objectives, learning paths and 
+relationships between learning objectives and educational assets, assessments, etc.
 
-The complete DLKit Interface Specification, while rather large, builds on many of the 
-same patterns outlined here, beginning with loading a service manager.
+.. _MC3: http://mc3.mit.edu/
+
+All of the other DLKit Interface Specifications build on most of the 
+same patterns outlined in this tutorial, beginning with loading a service manager.
 
 Loading the Learning Manager
 ----------------------------
 
-All consumer applications should start by loading the ``LearningManager``
-for the learning service::
+All consumer applications wishing to use the DLKit Learning service should start by instantiating 
+the ``LearningManager``::
  
     import dlkit
     from dlkit.services.learning import LearningManager
     lm = LearningManager()
     
 Everything you need to do within the learning service can now be
-accessed through this manager. The next example illustrates inspecting
-the manager's ``display_name()`` and ``description()`` methods. Note 
-that user_readable strings are always returned as ``DisplayText``
+accessed through this manager. An OSID ``Manager`` is used like a factory, providing all
+the other objects necessary for using the service. You should never try to instantiate any 
+other OSID object directly, even if you know where its class definition resides.
+
+The simplest thing you can do with a manager is to inspect its ``display_name`` and ``description`` 
+methods. Note that DLKit always returns user_readable strings  as ``DisplayText``
 objects. The actual text is available via the ``get_text()`` method. 
 Other ``DisplayText`` methods return the ``LanguageType``, ``ScriptType`` and
 ``FormatType`` of the text to be displayed::
@@ -57,7 +62,7 @@ could also be written more Pythonically as::
     print ("  (this description was written using the " + 
         lm.description.language_type.display_label.text + " language)\n")
 
-for the remainder of this tutorial we will use the property attributes
+For the remainder of this tutorial we will use the property attributes
 wherever available.
 
 Looking up Objective Banks
@@ -85,7 +90,8 @@ attribute works here too::
     else:
         print "Objective bank lookup is not supported."
 
-This will print a list of the names of all the banks.  At the time of this writing
+This will print a list of the names of all the banks, which can be thought of as catalogs
+that contain learning objectives and other related information.  At the time of this writing
 the following resulted::
 
     Crosslinks
@@ -95,7 +101,7 @@ the following resulted::
     x.xxx
     
 Note that the OSIDs specify to first ask whether a functional area is supported 
-before trying to use it.  However, if you adhere to the Pythonic EAFP (easier 
+before trying to use it.  However, if you wish to adhere to the Pythonic EAFP (easier 
 to ask forgiveness than permission) programming style, managers will throw an 
 ``Unimplemented`` exception if support is not available::
 
@@ -118,8 +124,8 @@ list, like so::
     banks = list(obls.objective_banks)
 
 Which is useful if the consuming application needs to keep it around for a while.
-However, when we start dealing with ``OsidLists`` from service implementations 
-may return large result sets, or where the underlying data changes often, casting
+However, when we start dealing with ``OsidLists`` from service implementations which
+may return very large result sets, or where the underlying data changes often, casting
 as a ``list`` may not be wise.  Developers are encouraged to treat these as
 iterators to the extent possible, and refresh from the session as necessary.
 
@@ -141,8 +147,8 @@ OSID Ids
 
 To begin working with OSID *objects*, like ``ObjectiveBanks`` it is important to understand 
 how the OSIDs deal with identity.  When an OSID object is asked for its id
-an OSID ``Id`` object is returned, *not a ``string``*.  This is the unique identifier for the ``Object``.
-Any requests for getting a specific object by its unique identifier will be
+an OSID ``Id`` object is returned.  This is *not a ``string``*.  It is the unique identifier object
+for the OSID object.  Any requests for getting a specific object by its unique identifier will be
 accomplished through passing this ``Id`` object back through the service.
 
 ``Ids`` are obtained by calling an OSID object's ``get_id()`` method,
