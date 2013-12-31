@@ -314,9 +314,6 @@ a ``TypeManager`` be instantiated.  Again, like we did with the ``LearningManger
 its a good idea to store a reference to the module that contains the ``TypeManger``
 class in a settings file or some-such::
 
-    TYPE_MANAGER_MODULE = 'managers'
-    ...
-    ...
     from dlkit.services.type import TypeManager
     tm = TypeManager()
     ...
