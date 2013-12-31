@@ -185,7 +185,7 @@ class PostForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    text = property(fset=set_text, fdel=clear_text)
+    text = property(fget=set_text, fdel=clear_text)
 
     def get_post_form_record(self, post_record_type):
         """Gets the ``PostFormRecord`` corresponding to the given post record ``Type``.
@@ -469,7 +469,7 @@ class ReplyForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableForm, o
         """
         pass
 
-    text = property(fset=set_text, fdel=clear_text)
+    text = property(fget=set_text, fdel=clear_text)
 
     def get_reply_form_record(self, reply_record_type):
         """Gets the ``ReplyFormRecord`` corresponding to the given reply record ``Type``.

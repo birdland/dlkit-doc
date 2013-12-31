@@ -767,7 +767,7 @@ class OsidTemporalForm(OsidForm):
         """
         pass
 
-    start_date = property(fset=set_start_date, fdel=clear_start_date)
+    start_date = property(fget=set_start_date, fdel=clear_start_date)
 
     def get_end_date_metadata(self):
         """Gets the metadata for an end date.
@@ -800,7 +800,7 @@ class OsidTemporalForm(OsidForm):
         """
         pass
 
-    end_date = property(fset=set_end_date, fdel=clear_end_date)
+    end_date = property(fget=set_end_date, fdel=clear_end_date)
 
 
 class OsidSubjugateableForm(OsidForm):
@@ -883,7 +883,7 @@ class OsidSourceableForm(OsidForm):
         """
         pass
 
-    provider = property(fset=set_provider, fdel=clear_provider)
+    provider = property(fget=set_provider, fdel=clear_provider)
 
     def get_branding_metadata(self):
         """Gets the metadata for the asset branding.
@@ -916,7 +916,7 @@ class OsidSourceableForm(OsidForm):
         """
         pass
 
-    branding = property(fset=set_branding, fdel=clear_branding)
+    branding = property(fget=set_branding, fdel=clear_branding)
 
     def get_license_metadata(self):
         """Gets the metadata for the license.
@@ -949,7 +949,7 @@ class OsidSourceableForm(OsidForm):
         """
         pass
 
-    license = property(fset=set_license, fdel=clear_license)
+    license = property(fget=set_license, fdel=clear_license)
 
 
 class OsidFederateableForm(OsidForm):
@@ -989,7 +989,7 @@ class OsidOperableForm(OsidForm):
         """
         pass
 
-    enabled = property(fset=set_enabled, fdel=clear_enabled)
+    enabled = property(fget=set_enabled, fdel=clear_enabled)
 
     def get_disabled_metadata(self):
         """Gets the metadata for the disabled flag.
@@ -1021,7 +1021,7 @@ class OsidOperableForm(OsidForm):
         """
         pass
 
-    disabled = property(fset=set_disabled, fdel=clear_disabled)
+    disabled = property(fget=set_disabled, fdel=clear_disabled)
 
 
 class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm):
@@ -1098,7 +1098,7 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
         """
         pass
 
-    display_name = property(fset=set_display_name, fdel=clear_display_name)
+    display_name = property(fget=set_display_name, fdel=clear_display_name)
 
     def get_description_metadata(self):
         """Gets the metadata for a description.
@@ -1131,7 +1131,7 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
         """
         pass
 
-    description = property(fset=set_description, fdel=clear_description)
+    description = property(fget=set_description, fdel=clear_description)
 
     def get_genus_type_metadata(self):
         """Gets the metadata for a genus type.
@@ -1167,7 +1167,7 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
         """
         pass
 
-    genus_type = property(fset=set_genus_type, fdel=clear_genus_type)
+    genus_type = property(fget=set_genus_type, fdel=clear_genus_type)
 
 
 class OsidRelationshipForm(OsidObjectForm, OsidTemporalForm):
@@ -1213,7 +1213,7 @@ class OsidRuleForm(OsidObjectForm, OsidOperableForm):
         """
         pass
 
-    rule = property(fset=set_rule, fdel=clear_rule)
+    rule = property(fget=set_rule, fdel=clear_rule)
 
 
 class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
@@ -1249,7 +1249,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """
         pass
 
-    schedule = property(fset=set_schedule, fdel=clear_schedule)
+    schedule = property(fget=set_schedule, fdel=clear_schedule)
 
     def get_event_metadata(self):
         """Gets the metadata for an associated event.
@@ -1282,7 +1282,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """
         pass
 
-    event = property(fset=set_event, fdel=clear_event)
+    event = property(fget=set_event, fdel=clear_event)
 
     def get_cyclic_event_metadata(self):
         """Gets the metadata for the cyclic event.
@@ -1315,7 +1315,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """
         pass
 
-    cyclic_event = property(fset=set_cyclic_event, fdel=clear_cyclic_event)
+    cyclic_event = property(fget=set_cyclic_event, fdel=clear_cyclic_event)
 
     def get_demographic_metadata(self):
         """Gets the metadata for an associated demographic.
@@ -1348,7 +1348,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """
         pass
 
-    demographic = property(fset=set_demographic, fdel=clear_demographic)
+    demographic = property(fget=set_demographic, fdel=clear_demographic)
 
 
 class OsidConstrainerForm(OsidRuleForm):

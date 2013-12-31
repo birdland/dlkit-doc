@@ -128,7 +128,7 @@ class ProcessForm(osid_objects.OsidGovernatorForm):
         """
         pass
 
-    enabled = property(fset=set_enabled, fdel=clear_enabled)
+    enabled = property(fget=set_enabled, fdel=clear_enabled)
 
     def get_initial_step_metadata(self):
         """Gets the metadata for the initial step.
@@ -161,7 +161,7 @@ class ProcessForm(osid_objects.OsidGovernatorForm):
         """
         pass
 
-    initial_step = property(fset=set_initial_step, fdel=clear_initial_step)
+    initial_step = property(fget=set_initial_step, fdel=clear_initial_step)
 
     def get_initial_state_metadata(self):
         """Gets the metadata for the initial state.
@@ -194,7 +194,7 @@ class ProcessForm(osid_objects.OsidGovernatorForm):
         """
         pass
 
-    initial_state = property(fset=set_initial_state, fdel=clear_initial_state)
+    initial_state = property(fget=set_initial_state, fdel=clear_initial_state)
 
     def get_process_form_record(self, process_record_type):
         """Gets the ``ProcessFormRecord`` corresponding to the given process record ``Type``.
@@ -453,7 +453,7 @@ class StepForm(osid_objects.OsidGovernatorForm, osid_objects.OsidSubjugateableFo
         """
         pass
 
-    next_state = property(fset=set_next_state, fdel=clear_next_state)
+    next_state = property(fget=set_next_state, fdel=clear_next_state)
 
     def get_step_form_record(self, step_record_type):
         """Gets the ``StepFormRecord`` corresponding to the given step record ``Type``.

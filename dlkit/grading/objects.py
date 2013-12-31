@@ -403,7 +403,7 @@ class GradeSystemForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    numeric_score_increment = property(fset=set_numeric_score_increment, fdel=clear_numeric_score_increment)
+    numeric_score_increment = property(fget=set_numeric_score_increment, fdel=clear_numeric_score_increment)
 
     def get_highest_numeric_score_metadata(self):
         """Gets the metadata for the highest numeric score.
@@ -435,7 +435,7 @@ class GradeSystemForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    highest_numeric_score = property(fset=set_highest_numeric_score, fdel=clear_highest_numeric_score)
+    highest_numeric_score = property(fget=set_highest_numeric_score, fdel=clear_highest_numeric_score)
 
     def get_grade_system_form_record(self, grade_system_record_type):
         """Gets the ``GradeSystemFormRecord`` corresponding to the given grade system record ``Type``.
@@ -805,7 +805,7 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    grade = property(fset=set_grade, fdel=clear_grade)
+    grade = property(fget=set_grade, fdel=clear_grade)
 
     def get_score_metadata(self):
         """Gets the metadata for a score.
@@ -837,7 +837,7 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    score = property(fset=set_score, fdel=clear_score)
+    score = property(fget=set_score, fdel=clear_score)
 
     def get_grade_entry_form_record(self, grade_entry_record_type):
         """Gets the ``GradeEntryFormRecord`` corresponding to the given grade entry record ``Type``.
@@ -986,7 +986,7 @@ class GradebookColumnForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    grade_system = property(fset=set_grade_system, fdel=clear_grade_system)
+    grade_system = property(fget=set_grade_system, fdel=clear_grade_system)
 
     def get_gradebook_column_form_record(self, gradebook_column_record_type):
         """Gets the ``GradebookColumnFormRecord`` corresponding to the given gradebook column record ``Type``.

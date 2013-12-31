@@ -192,7 +192,7 @@ class AssessmentPartForm(osid_objects.OsidObjectForm, osid_objects.OsidContainab
         """
         pass
 
-    weight = property(fset=set_weight, fdel=clear_weight)
+    weight = property(fget=set_weight, fdel=clear_weight)
 
     def get_allocated_time_metadata(self):
         """Gets the metadata for the allocated time.
@@ -224,7 +224,7 @@ class AssessmentPartForm(osid_objects.OsidObjectForm, osid_objects.OsidContainab
         """
         pass
 
-    allocated_time = property(fset=set_allocated_time, fdel=clear_allocated_time)
+    allocated_time = property(fget=set_allocated_time, fdel=clear_allocated_time)
 
     def get_assessment_part_form_record(self, assessment_part_record_type):
         """Gets the ``AssessmentPartFormRecord`` corresponding to the given assessment record ``Type``.

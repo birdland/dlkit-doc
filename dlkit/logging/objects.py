@@ -133,7 +133,7 @@ class LogEntryForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    priority = property(fset=set_priority, fdel=clear_priority)
+    priority = property(fget=set_priority, fdel=clear_priority)
 
     def get_timestamp_metadata(self):
         """Gets the metadata for a timestamp.

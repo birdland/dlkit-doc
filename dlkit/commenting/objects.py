@@ -167,7 +167,7 @@ class CommentForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    text = property(fset=set_text, fdel=clear_text)
+    text = property(fget=set_text, fdel=clear_text)
 
     def get_rating_metadata(self):
         """Gets the metadata for a rating.
@@ -200,7 +200,7 @@ class CommentForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    rating = property(fset=set_rating, fdel=clear_rating)
+    rating = property(fget=set_rating, fdel=clear_rating)
 
     def get_comment_form_record(self, comment_record_type):
         """Gets the ``CommentFormRecord`` corresponding to the given comment record ``Type``.

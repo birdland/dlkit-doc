@@ -92,7 +92,7 @@ class TypeForm(osid_objects.OsidForm):
         """
         pass
 
-    description = property(fset=set_description, fdel=clear_description)
+    description = property(fget=set_description, fdel=clear_description)
 
     def get_domain_metadata(self):
         """Gets the metadata for the domain.
@@ -125,7 +125,7 @@ class TypeForm(osid_objects.OsidForm):
         """
         pass
 
-    domain = property(fset=set_domain, fdel=clear_domain)
+    domain = property(fget=set_domain, fdel=clear_domain)
 
 
 class TypeList(osid_objects.OsidList):

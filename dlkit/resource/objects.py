@@ -137,7 +137,7 @@ class ResourceForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    group = property(fset=set_group, fdel=clear_group)
+    group = property(fget=set_group, fdel=clear_group)
 
     def get_avatar_metadata(self):
         """Gets the metadata for an asset.
@@ -169,7 +169,7 @@ class ResourceForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    avatar = property(fset=set_avatar, fdel=clear_avatar)
+    avatar = property(fget=set_avatar, fdel=clear_avatar)
 
     def get_resource_form_record(self, resource_record_type):
         """Gets the ``ResourceFormRecord`` corresponding to the given ``Resource`` record ``Type``.

@@ -91,7 +91,7 @@ attribute works here too::
         print "Objective bank lookup is not supported."
 
 This will print a list of the names of all the banks, which can be thought of as catalogs
-that contain learning objectives and other related information.  At the time of this writing
+for organizing learning objectives and other related information.  At the time of this writing
 the following resulted::
 
     Crosslinks
@@ -317,9 +317,8 @@ class in a settings file or some-such::
     TYPE_MANAGER_MODULE = 'managers'
     ...
     ...
-    import importlib
-    manager_module = importlib.import_module(TYPE_MANAGER_MODULE)
-    tm = manager_module.TypeManager()
+    from dlkit.services.type import TypeManager
+    tm = TypeManager()
     ...
     if tm.supports_type_lookup():
         tls = tm.get_type_lookup_session()
@@ -352,4 +351,4 @@ Also, we can pass the ``dict`` we created earlier to the session to get the actu
     
     # This should print the string 'Topic: Objective that represents a learning topic'
 
-MORE TO COME...
+(More to come)

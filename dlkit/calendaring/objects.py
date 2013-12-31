@@ -202,7 +202,7 @@ class EventForm(osid_objects.OsidObjectForm, osid_objects.OsidTemporalForm, osid
         """
         pass
 
-    location_description = property(fset=set_location_description, fdel=clear_location_description)
+    location_description = property(fget=set_location_description, fdel=clear_location_description)
 
     def get_location_metadata(self):
         """Gets the metadata for a location.
@@ -235,7 +235,7 @@ class EventForm(osid_objects.OsidObjectForm, osid_objects.OsidTemporalForm, osid
         """
         pass
 
-    location = property(fset=set_location, fdel=clear_location)
+    location = property(fget=set_location, fdel=clear_location)
 
     def get_sponsor_metadata(self):
         """Gets the metadata for a sponsor.
@@ -268,7 +268,7 @@ class EventForm(osid_objects.OsidObjectForm, osid_objects.OsidTemporalForm, osid
         """
         pass
 
-    sponsors = property(fset=set_sponsors, fdel=clear_sponsors)
+    sponsors = property(fget=set_sponsors, fdel=clear_sponsors)
 
     def get_event_form_record(self, event_record_type):
         """Gets the ``EventFormRecord`` corresponding to the given event record ``Type``.
@@ -523,7 +523,7 @@ class RecurringEventForm(osid_objects.OsidObjectForm, osid_objects.OsidContainab
         """
         pass
 
-    sponsors = property(fset=set_sponsors, fdel=clear_sponsors)
+    sponsors = property(fget=set_sponsors, fdel=clear_sponsors)
 
     def get_recurring_event_form_record(self, recurring_event_record_type):
         """Gets the ``RecurringEventFormRecord`` corresponding to the given recurring event record ``Type``.
@@ -750,7 +750,7 @@ class SupersedingEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    superseded_date = property(fset=set_superseded_date, fdel=clear_superseded_date)
+    superseded_date = property(fget=set_superseded_date, fdel=clear_superseded_date)
 
     def get_superseded_position_metadata(self):
         """Gets the metadata to superseding an event within a recurring series by date.
@@ -784,7 +784,7 @@ class SupersedingEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    superseded_position = property(fset=set_superseded_position, fdel=clear_superseded_position)
+    superseded_position = property(fget=set_superseded_position, fdel=clear_superseded_position)
 
     def get_superseding_event_form_record(self, superseding_event_record_type):
         """Gets the ``SupersedingEventFormRecord`` corresponding to the given superseding event record ``Type``.
@@ -1211,7 +1211,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    fixed_start_time = property(fset=set_fixed_start_time, fdel=clear_fixed_start_time)
+    fixed_start_time = property(fget=set_fixed_start_time, fdel=clear_fixed_start_time)
 
     def get_start_reference_event_metadata(self):
         """Gets the metadata for the starting reference event.
@@ -1244,7 +1244,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    start_reference_event = property(fset=set_start_reference_event, fdel=clear_start_reference_event)
+    start_reference_event = property(fget=set_start_reference_event, fdel=clear_start_reference_event)
 
     def get_fixed_start_offset_metadata(self):
         """Gets the metadata for the fixed start offset.
@@ -1277,7 +1277,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    fixed_start_offset = property(fset=set_fixed_start_offset, fdel=clear_fixed_start_offset)
+    fixed_start_offset = property(fget=set_fixed_start_offset, fdel=clear_fixed_start_offset)
 
     def get_relative_weekday_start_offset_metadata(self):
         """Gets the metadata for the relative weekday offset.
@@ -1309,7 +1309,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    relative_weekday_start_offset = property(fset=set_relative_weekday_start_offset, fdel=clear_relative_weekday_start_offset)
+    relative_weekday_start_offset = property(fget=set_relative_weekday_start_offset, fdel=clear_relative_weekday_start_offset)
 
     def get_relative_start_weekday_metadata(self):
         """Gets the metadata for the relative weekday.
@@ -1341,7 +1341,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    relative_start_weekday = property(fset=set_relative_start_weekday, fdel=clear_relative_start_weekday)
+    relative_start_weekday = property(fget=set_relative_start_weekday, fdel=clear_relative_start_weekday)
 
     def get_fixed_duration_metadata(self):
         """Gets the metadata for the fixed duration.
@@ -1374,7 +1374,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    fixed_duration = property(fset=set_fixed_duration, fdel=clear_fixed_duration)
+    fixed_duration = property(fget=set_fixed_duration, fdel=clear_fixed_duration)
 
     def get_end_reference_event_metadata(self):
         """Gets the metadata for the ending reference event.
@@ -1407,7 +1407,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    end_reference_event = property(fset=set_end_reference_event, fdel=clear_end_reference_event)
+    end_reference_event = property(fget=set_end_reference_event, fdel=clear_end_reference_event)
 
     def get_fixed_end_offset_metadata(self):
         """Gets the metadata for the fixed end offset.
@@ -1440,7 +1440,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    fixed_end_offset = property(fset=set_fixed_end_offset, fdel=clear_fixed_end_offset)
+    fixed_end_offset = property(fget=set_fixed_end_offset, fdel=clear_fixed_end_offset)
 
     def get_relative_weekday_end_offset_metadata(self):
         """Gets the metadata for the relative weekday offset.
@@ -1472,7 +1472,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    relative_weekday_end_offset = property(fset=set_relative_weekday_end_offset, fdel=clear_relative_weekday_end_offset)
+    relative_weekday_end_offset = property(fget=set_relative_weekday_end_offset, fdel=clear_relative_weekday_end_offset)
 
     def get_relative_end_weekday_metadata(self):
         """Gets the metadata for the relative weekday.
@@ -1504,7 +1504,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    relative_end_weekday = property(fset=set_relative_end_weekday, fdel=clear_relative_end_weekday)
+    relative_end_weekday = property(fget=set_relative_end_weekday, fdel=clear_relative_end_weekday)
 
     def get_location_description_metadata(self):
         """Gets the metadata for a location description.
@@ -1537,7 +1537,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    location_description = property(fset=set_location_description, fdel=clear_location_description)
+    location_description = property(fget=set_location_description, fdel=clear_location_description)
 
     def get_location_metadata(self):
         """Gets the metadata for a location.
@@ -1570,7 +1570,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    location = property(fset=set_location, fdel=clear_location)
+    location = property(fget=set_location, fdel=clear_location)
 
     def get_sponsor_metadata(self):
         """Gets the metadata for a sponsor.
@@ -1603,7 +1603,7 @@ class OffsetEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    sponsors = property(fset=set_sponsors, fdel=clear_sponsors)
+    sponsors = property(fget=set_sponsors, fdel=clear_sponsors)
 
     def get_offset_event_form_record(self, offset_event_record_type):
         """Gets the ``OffsetEventFormRecord`` corresponding to the given schedule record ``Type``.
@@ -1896,7 +1896,7 @@ class ScheduleForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    limit = property(fset=set_limit, fdel=clear_limit)
+    limit = property(fget=set_limit, fdel=clear_limit)
 
     def set_location_description(self, location):
         """Sets the location description.
@@ -1918,7 +1918,7 @@ class ScheduleForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    location_description = property(fset=set_location_description, fdel=clear_location_description)
+    location_description = property(fget=set_location_description, fdel=clear_location_description)
 
     def get_location_metadata(self):
         """Gets the metadata for a location.
@@ -1951,7 +1951,7 @@ class ScheduleForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    location = property(fset=set_location, fdel=clear_location)
+    location = property(fget=set_location, fdel=clear_location)
 
     def get_schedule_slot_form_record(self, schedule_record_type):
         """Gets the ``ScheduleFormRecord`` corresponding to the given schedule record ``Type``.
@@ -2320,7 +2320,7 @@ class ScheduleSlotForm(osid_objects.OsidObjectForm, osid_objects.OsidContainable
         """
         pass
 
-    fixed_interval = property(fset=set_fixed_interval, fdel=clear_fixed_interval)
+    fixed_interval = property(fget=set_fixed_interval, fdel=clear_fixed_interval)
 
     def ge_duration_metadata(self):
         """Gets the metadata for the duration of the slot.
@@ -2351,7 +2351,7 @@ class ScheduleSlotForm(osid_objects.OsidObjectForm, osid_objects.OsidContainable
         """
         pass
 
-    duration = property(fset=set_duration, fdel=clear_duration)
+    duration = property(fget=set_duration, fdel=clear_duration)
 
     def get_schedule_slot_form_record(self, schedule_slot_record_type):
         """Gets the ``ScheduleSlotFormRecord`` corresponding to the given schedule record ``Type``.
@@ -2524,7 +2524,7 @@ class TimePeriodForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    start = property(fset=set_start, fdel=clear_start)
+    start = property(fget=set_start, fdel=clear_start)
 
     def get_end_metadata(self):
         """Gets the metadata for an end time.
@@ -2557,7 +2557,7 @@ class TimePeriodForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    end = property(fset=set_end, fdel=clear_end)
+    end = property(fget=set_end, fdel=clear_end)
 
     def get_time_period_form_record(self, time_period_record_type):
         """Gets the ``TimePeriodFormRecord`` corresponding to the given time period record ``Type``.

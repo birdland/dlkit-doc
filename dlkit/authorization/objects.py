@@ -373,7 +373,7 @@ class FunctionForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    qualifier_hierarchy = property(fset=set_qualifier_hierarchy, fdel=clear_qualifier_hierarchy)
+    qualifier_hierarchy = property(fget=set_qualifier_hierarchy, fdel=clear_qualifier_hierarchy)
 
     def get_function_form_record(self, function_record_type):
         """Gets the ``FunctionFormRecord`` corresponding to the given function record ``Type``.

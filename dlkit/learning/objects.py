@@ -168,7 +168,7 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
         """
         pass
 
-    assessment = property(fset=set_assessment, fdel=clear_assessment)
+    assessment = property(fget=set_assessment, fdel=clear_assessment)
 
     def get_knowledge_category_metadata(self):
         """Gets the metadata for a knowledge category.
@@ -201,7 +201,7 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
         """
         pass
 
-    knowledge_category = property(fset=set_knowledge_category, fdel=clear_knowledge_category)
+    knowledge_category = property(fget=set_knowledge_category, fdel=clear_knowledge_category)
 
     def get_cognitive_process_metadata(self):
         """Gets the metadata for a cognitive process.
@@ -234,7 +234,7 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
         """
         pass
 
-    cognitive_process = property(fset=set_cognitive_process, fdel=clear_cognitive_process)
+    cognitive_process = property(fget=set_cognitive_process, fdel=clear_cognitive_process)
 
     def get_objective_form_record(self, objective_record_type):
         """Gets the ``ObjectiveFormRecord`` corresponding to the given objective record ``Type``.
@@ -579,7 +579,7 @@ class ActivityForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    assets = property(fset=set_assets, fdel=clear_assets)
+    assets = property(fget=set_assets, fdel=clear_assets)
 
     def get_courses_metadata(self):
         """Gets the metadata for the courses.
@@ -612,7 +612,7 @@ class ActivityForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    courses = property(fset=set_courses, fdel=clear_courses)
+    courses = property(fget=set_courses, fdel=clear_courses)
 
     def get_assessments_metadata(self):
         """Gets the metadata for the assessments.
@@ -645,7 +645,7 @@ class ActivityForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    assessments = property(fset=set_assessments, fdel=clear_assessments)
+    assessments = property(fget=set_assessments, fdel=clear_assessments)
 
     def get_activity_form_record(self, activity_record_type):
         """Gets the ``ActivityFormRecord`` corresponding to the given activity record ``Type``.
@@ -857,7 +857,7 @@ class ProficiencyForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    completion = property(fset=set_completion, fdel=clear_completion)
+    completion = property(fget=set_completion, fdel=clear_completion)
 
     def get_level_metadata(self):
         """Gets the metadata for a level.
@@ -890,7 +890,7 @@ class ProficiencyForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    level = property(fset=set_level, fdel=clear_level)
+    level = property(fget=set_level, fdel=clear_level)
 
     def get_proficiency_form_record(self, proficiency_record_type):
         """Gets the ``ProficiencyFormRecord`` corresponding to the given proficiency record ``Type``.

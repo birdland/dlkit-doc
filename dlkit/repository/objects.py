@@ -435,7 +435,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    title = property(fset=set_title, fdel=clear_title)
+    title = property(fget=set_title, fdel=clear_title)
 
     def get_public_domain_metadata(self):
         """Gets the metadata for the public domain flag.
@@ -466,7 +466,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    public_domain = property(fset=set_public_domain, fdel=clear_public_domain)
+    public_domain = property(fget=set_public_domain, fdel=clear_public_domain)
 
     def get_copyright_metadata(self):
         """Gets the metadata for the copyright.
@@ -499,7 +499,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    copyright = property(fset=set_copyright, fdel=clear_copyright)
+    copyright = property(fget=set_copyright, fdel=clear_copyright)
 
     def get_distribute_verbatim_metadata(self):
         """Gets the metadata for the distribute verbatim rights flag.
@@ -531,7 +531,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    distribute_verbatim = property(fset=set_distribute_verbatim, fdel=clear_distribute_verbatim)
+    distribute_verbatim = property(fget=set_distribute_verbatim, fdel=clear_distribute_verbatim)
 
     def get_distribute_alterations_metadata(self):
         """Gets the metadata for the distribute alterations rights flag.
@@ -565,7 +565,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    distribute_alterations = property(fset=set_distribute_alterations, fdel=clear_distribute_alterations)
+    distribute_alterations = property(fget=set_distribute_alterations, fdel=clear_distribute_alterations)
 
     def get_distribute_compositions_metadata(self):
         """Gets the metadata for the distribute compositions rights flag.
@@ -599,7 +599,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    distribute_compositions = property(fset=set_distribute_compositions, fdel=clear_distribute_compositions)
+    distribute_compositions = property(fget=set_distribute_compositions, fdel=clear_distribute_compositions)
 
     def get_source_metadata(self):
         """Gets the metadata for the source.
@@ -632,7 +632,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    source = property(fset=set_source, fdel=clear_source)
+    source = property(fget=set_source, fdel=clear_source)
 
     def get_provider_links_metadata(self):
         """Gets the metadata for the provider chain.
@@ -665,7 +665,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    provider_links = property(fset=set_provider_links, fdel=clear_provider_links)
+    provider_links = property(fget=set_provider_links, fdel=clear_provider_links)
 
     def get_created_date_metadata(self):
         """Gets the metadata for the asset creation date.
@@ -698,7 +698,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    created_date = property(fset=set_created_date, fdel=clear_created_date)
+    created_date = property(fget=set_created_date, fdel=clear_created_date)
 
     def get_published_metadata(self):
         """Gets the metadata for the published status.
@@ -729,7 +729,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    published = property(fset=set_published, fdel=clear_published)
+    published = property(fget=set_published, fdel=clear_published)
 
     def get_published_date_metadata(self):
         """Gets the metadata for the published date.
@@ -762,7 +762,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    published_date = property(fset=set_published_date, fdel=clear_published_date)
+    published_date = property(fget=set_published_date, fdel=clear_published_date)
 
     def get_principal_credit_string_metadata(self):
         """Gets the metadata for the principal credit string.
@@ -795,7 +795,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    principal_credit_string = property(fset=set_principal_credit_string, fdel=clear_principal_credit_string)
+    principal_credit_string = property(fget=set_principal_credit_string, fdel=clear_principal_credit_string)
 
     def get_composition_metadata(self):
         """Gets the metadata for linking this asset to a composition.
@@ -828,7 +828,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    composition = property(fset=set_composition, fdel=clear_composition)
+    composition = property(fget=set_composition, fdel=clear_composition)
 
     def get_asset_form_record(self, asset_record_type):
         """Gets the ``AssetFormRecord`` corresponding to the given ``Asset`` record ``Type``.
@@ -1093,7 +1093,7 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
         """
         pass
 
-    data = property(fset=set_data, fdel=clear_data)
+    data = property(fget=set_data, fdel=clear_data)
 
     def get_url_metadata(self):
         """Gets the metadata for the url.
@@ -1126,7 +1126,7 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
         """
         pass
 
-    url = property(fset=set_url, fdel=clear_url)
+    url = property(fget=set_url, fdel=clear_url)
 
     def get_asset_content_form_record(self, asset_content_record_type):
         """Gets the ``AssetContentFormRecord`` corresponding to the given asset content record ``Type``.

@@ -88,7 +88,7 @@ class LocationForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFor
         """
         pass
 
-    spatial_unit = property(fset=set_spatial_unit, fdel=clear_spatial_unit)
+    spatial_unit = property(fget=set_spatial_unit, fdel=clear_spatial_unit)
 
     def get_location_form_record(self, location_record_type):
         """Gets the ``LocationFormRecord`` corresponding to the given location record ``Type``.

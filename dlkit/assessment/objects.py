@@ -315,7 +315,7 @@ class ItemForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    learning_objectives = property(fset=set_learning_objectives, fdel=clear_learning_objectives)
+    learning_objectives = property(fget=set_learning_objectives, fdel=clear_learning_objectives)
 
     def get_item_form_record(self, item_record_type):
         """Gets the ``ItemnFormRecord`` corresponding to the given item record ``Type``.
@@ -502,7 +502,7 @@ class AssessmentForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    level = property(fset=set_level, fdel=clear_level)
+    level = property(fget=set_level, fdel=clear_level)
 
     def get_rubric_metadata(self):
         """Gets the metadata for a rubric assessment.
@@ -535,7 +535,7 @@ class AssessmentForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    rubric = property(fset=set_rubric, fdel=clear_rubric)
+    rubric = property(fget=set_rubric, fdel=clear_rubric)
 
     def get_assessment_form_record(self, assessment_record_type):
         """Gets the ``AssessmentFormRecord`` corresponding to the given assessment record ``Type``.
@@ -891,7 +891,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    level = property(fset=set_level, fdel=clear_level)
+    level = property(fget=set_level, fdel=clear_level)
 
     def get_items_sequential_metadata(self):
         """Gets the metadata for sequential operation.
@@ -923,7 +923,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    items_sequential = property(fset=set_items_sequential, fdel=clear_items_sequential)
+    items_sequential = property(fget=set_items_sequential, fdel=clear_items_sequential)
 
     def get_items_shuffled_metadata(self):
         """Gets the metadata for shuffling items.
@@ -958,7 +958,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    items_shuffled = property(fset=set_items_shuffled, fdel=clear_items_shuffled)
+    items_shuffled = property(fget=set_items_shuffled, fdel=clear_items_shuffled)
 
     def get_start_time_metadata(self):
         """Gets the metadata for the assessment start time.
@@ -990,7 +990,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    start_time = property(fset=set_start_time, fdel=clear_start_time)
+    start_time = property(fget=set_start_time, fdel=clear_start_time)
 
     def get_deadline_metadata(self):
         """Gets the metadata for the assessment deadline.
@@ -1022,7 +1022,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    deadline = property(fset=set_deadline, fdel=clear_deadline)
+    deadline = property(fget=set_deadline, fdel=clear_deadline)
 
     def get_duration_metadata(self):
         """Gets the metadata for the assessment duration.
@@ -1054,7 +1054,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    duration = property(fset=set_duration, fdel=clear_duration)
+    duration = property(fget=set_duration, fdel=clear_duration)
 
     def get_score_system_metadata(self):
         """Gets the metadata for a score system.
@@ -1086,7 +1086,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    score_system = property(fset=set_score_system, fdel=clear_score_system)
+    score_system = property(fget=set_score_system, fdel=clear_score_system)
 
     def get_grade_system_metadata(self):
         """Gets the metadata for a grading system.
@@ -1118,7 +1118,7 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """
         pass
 
-    grade_system = property(fset=set_grade_system, fdel=clear_grade_system)
+    grade_system = property(fget=set_grade_system, fdel=clear_grade_system)
 
     def get_assessment_offered_form_record(self, assessment_offered_record_type):
         """Gets the ``AssessmentOfferedFormRecord`` corresponding to the given assessment record ``Type``.
@@ -1497,7 +1497,7 @@ class AssessmentTakenForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    taker = property(fset=set_taker, fdel=clear_taker)
+    taker = property(fget=set_taker, fdel=clear_taker)
 
     def get_assessment_taken_form_record(self, assessment_taken_record_type):
         """Gets the ``AssessmentTakenFormRecord`` corresponding to the given assessment taken record ``Type``.
