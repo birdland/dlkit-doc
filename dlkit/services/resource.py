@@ -76,11 +76,13 @@ dynamically generated populations of ``Resources`` and a Resource Batch
 OSID for managing ``Resources`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class ResourceProfile(osid.OsidProfile):
+class ResourceProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -524,7 +526,7 @@ class ResourceProfile(osid.OsidProfile):
 
 
 
-class ResourceManager(osid.OsidManager, osid.OsidSession, ResourceProfile):
+class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, ResourceProfile):
 
     def get_resource_lookup_session(self):
         """Gets the ``OsidSession`` associated with the resource lookup service.
@@ -2148,7 +2150,7 @@ class ResourceManager(osid.OsidManager, osid.OsidSession, ResourceProfile):
 
 
 
-class ResourceProxyManager(osid.OsidProxyManager, ResourceProfile):
+class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
 
     def get_resource_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the resource lookup service.
@@ -2909,7 +2911,7 @@ class ResourceProxyManager(osid.OsidProxyManager, ResourceProfile):
 
 
 
-class Bin(osid.OsidCatalog, osid.OsidSession):
+class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_bin_record(self, bin_record_type):
         """Gets the bin record corresponding to the given ``Bin`` record ``Type``.
@@ -5287,7 +5289,7 @@ class Bin(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class BinList(osid.OsidList):
+class BinList(osid_objects.OsidList):
 
     def get_next_bin(self):
         """Gets the next ``Bin`` in this list.

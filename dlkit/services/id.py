@@ -29,11 +29,12 @@ Id Mapping Example:
 
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
 
 
-class IdProfile(osid.OsidProfile):
+class IdProfile(osid_managers.OsidProfile):
 
     def supports_id_lookup(self):
         """Tests if ``Id`` lookup is supported.
@@ -55,7 +56,7 @@ class IdProfile(osid.OsidProfile):
 
 
 
-class IdManager(osid.OsidManager, osid.OsidSession, IdProfile):
+class IdManager(osid_managers.OsidManager, osid_sessions.OsidSession, IdProfile):
 
     def get_id_lookup_session(self):
         """Gets the session associated with the id lookup service.
@@ -85,7 +86,7 @@ class IdManager(osid.OsidManager, osid.OsidSession, IdProfile):
 
 
 
-class IdProxyManager(osid.OsidProxyManager, IdProfile):
+class IdProxyManager(osid_managers.OsidProxyManager, IdProfile):
 
     def get_id_lookup_session(self, proxy):
         """Gets the session associated with the id lookup service.

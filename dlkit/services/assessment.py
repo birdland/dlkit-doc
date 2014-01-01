@@ -63,11 +63,13 @@ The Assessment OSID includes an Assessment Authoring OSID for more
 advanced authoring and sequencing options.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class AssessmentProfile(osid.OsidProfile):
+class AssessmentProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -752,7 +754,7 @@ class AssessmentProfile(osid.OsidProfile):
 
 
 
-class AssessmentManager(osid.OsidManager, osid.OsidSession, AssessmentProfile):
+class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, AssessmentProfile):
 
     def get_my_assessment_taken_session(self):
         """Gets a ``MyAssessmentTakenSession`` to retrieve assessments taken for the current agent.
@@ -2586,7 +2588,7 @@ class AssessmentManager(osid.OsidManager, osid.OsidSession, AssessmentProfile):
 
 
 
-class AssessmentProxyManager(osid.OsidProxyManager, AssessmentProfile):
+class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
     def get_my_assessment_taken_session(self, proxy):
         """Gets a ``MyAssessmentTakenSession`` to retrieve assessments taken for the current agent.
@@ -3580,7 +3582,7 @@ class AssessmentProxyManager(osid.OsidProxyManager, AssessmentProfile):
 
 
 
-class Bank(osid.OsidCatalog, osid.OsidSession):
+class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_bank_record(self, bank_record_type):
         """Gets the bank record corresponding to the given ``Bank`` record ``Type``.
@@ -8299,7 +8301,7 @@ class Bank(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class BankList(osid.OsidList):
+class BankList(osid_objects.OsidList):
 
     def get_next_bank(self):
         """Gets the next ``Bank`` in this list.

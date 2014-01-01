@@ -11,13 +11,13 @@ Osid Object
 .. autoclass:: OsidObject
    :show-inheritance:
 
-.. autoattribute:: OsidObject.display_name
+   .. autoattribute:: OsidObject.display_name
 
-.. autoattribute:: OsidObject.description
+   .. autoattribute:: OsidObject.description
 
-.. autoattribute:: OsidObject.genus_type
+   .. autoattribute:: OsidObject.genus_type
 
-.. automethod:: OsidObject.is_of_genus_type
+   .. automethod:: OsidObject.is_of_genus_type
 
 
 
@@ -27,11 +27,11 @@ Osid Relationship
 .. autoclass:: OsidRelationship
    :show-inheritance:
 
-.. automethod:: OsidRelationship.has_end_reason
+   .. automethod:: OsidRelationship.has_end_reason
 
-.. autoattribute:: OsidRelationship.end_reason_id
+   .. autoattribute:: OsidRelationship.end_reason_id
 
-.. autoattribute:: OsidRelationship.end_reason
+   .. autoattribute:: OsidRelationship.end_reason
 
 
 
@@ -51,11 +51,11 @@ Osid Rule
 .. autoclass:: OsidRule
    :show-inheritance:
 
-.. automethod:: OsidRule.has_rule
+   .. automethod:: OsidRule.has_rule
 
-.. autoattribute:: OsidRule.rule_id
+   .. autoattribute:: OsidRule.rule_id
 
-.. autoattribute:: OsidRule.rule
+   .. autoattribute:: OsidRule.rule
 
 
 
@@ -65,29 +65,29 @@ Osid Enabler
 .. autoclass:: OsidEnabler
    :show-inheritance:
 
-.. automethod:: OsidEnabler.is_effective_by_schedule
+   .. automethod:: OsidEnabler.is_effective_by_schedule
 
-.. autoattribute:: OsidEnabler.schedule_id
+   .. autoattribute:: OsidEnabler.schedule_id
 
-.. autoattribute:: OsidEnabler.schedule
+   .. autoattribute:: OsidEnabler.schedule
 
-.. automethod:: OsidEnabler.is_effective_by_event
+   .. automethod:: OsidEnabler.is_effective_by_event
 
-.. autoattribute:: OsidEnabler.event_id
+   .. autoattribute:: OsidEnabler.event_id
 
-.. autoattribute:: OsidEnabler.event
+   .. autoattribute:: OsidEnabler.event
 
-.. automethod:: OsidEnabler.is_effective_by_cyclic_event
+   .. automethod:: OsidEnabler.is_effective_by_cyclic_event
 
-.. autoattribute:: OsidEnabler.cyclic_event_id
+   .. autoattribute:: OsidEnabler.cyclic_event_id
 
-.. autoattribute:: OsidEnabler.cyclic_event
+   .. autoattribute:: OsidEnabler.cyclic_event
 
-.. automethod:: OsidEnabler.is_effective_for_demographic
+   .. automethod:: OsidEnabler.is_effective_for_demographic
 
-.. autoattribute:: OsidEnabler.demographic_id
+   .. autoattribute:: OsidEnabler.demographic_id
 
-.. autoattribute:: OsidEnabler.demographic
+   .. autoattribute:: OsidEnabler.demographic
 
 
 
@@ -137,23 +137,23 @@ Osid Form
 .. autoclass:: OsidForm
    :show-inheritance:
 
-.. automethod:: OsidForm.is_for_update
+   .. automethod:: OsidForm.is_for_update
 
-.. autoattribute:: OsidForm.default_locale
+   .. autoattribute:: OsidForm.default_locale
 
-.. autoattribute:: OsidForm.locales
+   .. autoattribute:: OsidForm.locales
 
-.. automethod:: OsidForm.set_locale
+   .. automethod:: OsidForm.set_locale
 
-.. autoattribute:: OsidForm.comment_metadata
+   .. autoattribute:: OsidForm.comment_metadata
 
-.. autoattribute:: OsidForm.comment
+   .. autoattribute:: OsidForm.comment
 
-.. automethod:: OsidForm.is_valid
+   .. automethod:: OsidForm.is_valid
 
-.. autoattribute:: OsidForm.validation_messages
+   .. autoattribute:: OsidForm.validation_messages
 
-.. autoattribute:: OsidForm.invalid_metadata
+   .. autoattribute:: OsidForm.invalid_metadata
 
 
 
@@ -173,7 +173,7 @@ Osid Extensible Form
 .. autoclass:: OsidExtensibleForm
    :show-inheritance:
 
-.. autoattribute:: OsidExtensibleForm.required_record_types
+   .. autoattribute:: OsidExtensibleForm.required_record_types
 
 
 
@@ -193,13 +193,13 @@ Osid Temporal Form
 .. autoclass:: OsidTemporalForm
    :show-inheritance:
 
-.. autoattribute:: OsidTemporalForm.start_date_metadata
+   .. autoattribute:: OsidTemporalForm.start_date_metadata
 
-.. autoattribute:: OsidTemporalForm.start_date
+   .. autoattribute:: OsidTemporalForm.start_date
 
-.. autoattribute:: OsidTemporalForm.end_date_metadata
+   .. autoattribute:: OsidTemporalForm.end_date_metadata
 
-.. autoattribute:: OsidTemporalForm.end_date
+   .. autoattribute:: OsidTemporalForm.end_date
 
 
 
@@ -229,11 +229,11 @@ Osid Containable Form
 .. autoclass:: OsidContainableForm
    :show-inheritance:
 
-.. autoattribute:: OsidContainableForm.sequestered_metadata
+   .. autoattribute:: OsidContainableForm.sequestered_metadata
 
-.. autoattribute:: OsidContainableForm.sequestered_date
+   .. autoattribute:: OsidContainableForm.sequestered_date
 
-.. autoattribute:: OsidContainableForm.sequestered
+   .. autoattribute:: OsidContainableForm.sequestered
 
 
 
@@ -243,17 +243,17 @@ Osid Sourceable Form
 .. autoclass:: OsidSourceableForm
    :show-inheritance:
 
-.. autoattribute:: OsidSourceableForm.provider_metadata
+   .. autoattribute:: OsidSourceableForm.provider_metadata
 
-.. autoattribute:: OsidSourceableForm.provider
+   .. autoattribute:: OsidSourceableForm.provider
 
-.. autoattribute:: OsidSourceableForm.branding_metadata
+   .. autoattribute:: OsidSourceableForm.branding_metadata
 
-.. autoattribute:: OsidSourceableForm.branding
+   .. autoattribute:: OsidSourceableForm.branding
 
-.. autoattribute:: OsidSourceableForm.license_metadata
+   .. autoattribute:: OsidSourceableForm.license_metadata
 
-.. autoattribute:: OsidSourceableForm.license
+   .. autoattribute:: OsidSourceableForm.license
 
 
 
@@ -273,13 +273,13 @@ Osid Operable Form
 .. autoclass:: OsidOperableForm
    :show-inheritance:
 
-.. autoattribute:: OsidOperableForm.enabled_metadata
+   .. autoattribute:: OsidOperableForm.enabled_metadata
 
-.. autoattribute:: OsidOperableForm.enabled
+   .. autoattribute:: OsidOperableForm.enabled
 
-.. autoattribute:: OsidOperableForm.disabled_metadata
+   .. autoattribute:: OsidOperableForm.disabled_metadata
 
-.. autoattribute:: OsidOperableForm.disabled
+   .. autoattribute:: OsidOperableForm.disabled
 
 
 
@@ -289,17 +289,17 @@ Osid Object Form
 .. autoclass:: OsidObjectForm
    :show-inheritance:
 
-.. autoattribute:: OsidObjectForm.display_name_metadata
+   .. autoattribute:: OsidObjectForm.display_name_metadata
 
-.. autoattribute:: OsidObjectForm.display_name
+   .. autoattribute:: OsidObjectForm.display_name
 
-.. autoattribute:: OsidObjectForm.description_metadata
+   .. autoattribute:: OsidObjectForm.description_metadata
 
-.. autoattribute:: OsidObjectForm.description
+   .. autoattribute:: OsidObjectForm.description
 
-.. autoattribute:: OsidObjectForm.genus_type_metadata
+   .. autoattribute:: OsidObjectForm.genus_type_metadata
 
-.. autoattribute:: OsidObjectForm.genus_type
+   .. autoattribute:: OsidObjectForm.genus_type
 
 
 
@@ -329,9 +329,9 @@ Osid Rule Form
 .. autoclass:: OsidRuleForm
    :show-inheritance:
 
-.. autoattribute:: OsidRuleForm.rule_metadata
+   .. autoattribute:: OsidRuleForm.rule_metadata
 
-.. autoattribute:: OsidRuleForm.rule
+   .. autoattribute:: OsidRuleForm.rule
 
 
 
@@ -341,21 +341,21 @@ Osid Enabler Form
 .. autoclass:: OsidEnablerForm
    :show-inheritance:
 
-.. autoattribute:: OsidEnablerForm.schedule_metadata
+   .. autoattribute:: OsidEnablerForm.schedule_metadata
 
-.. autoattribute:: OsidEnablerForm.schedule
+   .. autoattribute:: OsidEnablerForm.schedule
 
-.. autoattribute:: OsidEnablerForm.event_metadata
+   .. autoattribute:: OsidEnablerForm.event_metadata
 
-.. autoattribute:: OsidEnablerForm.event
+   .. autoattribute:: OsidEnablerForm.event
 
-.. autoattribute:: OsidEnablerForm.cyclic_event_metadata
+   .. autoattribute:: OsidEnablerForm.cyclic_event_metadata
 
-.. autoattribute:: OsidEnablerForm.cyclic_event
+   .. autoattribute:: OsidEnablerForm.cyclic_event
 
-.. autoattribute:: OsidEnablerForm.demographic_metadata
+   .. autoattribute:: OsidEnablerForm.demographic_metadata
 
-.. autoattribute:: OsidEnablerForm.demographic
+   .. autoattribute:: OsidEnablerForm.demographic
 
 
 
@@ -405,11 +405,11 @@ Osid List
 .. autoclass:: OsidList
    :show-inheritance:
 
-.. automethod:: OsidList.has_next
+   .. automethod:: OsidList.has_next
 
-.. automethod:: OsidList.available
+   .. automethod:: OsidList.available
 
-.. automethod:: OsidList.skip
+   .. automethod:: OsidList.skip
 
 
 
@@ -419,17 +419,17 @@ Osid Node
 .. autoclass:: OsidNode
    :show-inheritance:
 
-.. automethod:: OsidNode.is_root
+   .. automethod:: OsidNode.is_root
 
-.. automethod:: OsidNode.has_parents
+   .. automethod:: OsidNode.has_parents
 
-.. autoattribute:: OsidNode.parent_ids
+   .. autoattribute:: OsidNode.parent_ids
 
-.. automethod:: OsidNode.is_leaf
+   .. automethod:: OsidNode.is_leaf
 
-.. automethod:: OsidNode.has_children
+   .. automethod:: OsidNode.has_children
 
-.. autoattribute:: OsidNode.child_ids
+   .. autoattribute:: OsidNode.child_ids
 
 
 

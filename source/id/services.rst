@@ -18,9 +18,9 @@ Id Manager
 Id Profile Methods
 __________
 
-.. automethod:: IdManager.supports_id_lookup
+   .. automethod:: IdManager.supports_id_lookup
 
-.. automethod:: IdManager.supports_id_admin
+   .. automethod:: IdManager.supports_id_admin
 
 
 
@@ -30,9 +30,9 @@ Id Proxy Manager
 .. autoclass:: IdProxyManager
    :show-inheritance:
 
-.. automethod:: IdProxyManager.get_id_lookup_session
+   .. automethod:: IdProxyManager.get_id_lookup_session
 
-.. automethod:: IdProxyManager.get_id_admin_session
+   .. automethod:: IdProxyManager.get_id_admin_session
 
 
 

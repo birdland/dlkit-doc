@@ -24,11 +24,13 @@ Example
 
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class LoggingProfile(osid.OsidProfile):
+class LoggingProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if visible federation is supported.
@@ -323,7 +325,7 @@ class LoggingProfile(osid.OsidProfile):
 
 
 
-class LoggingManager(osid.OsidManager, osid.OsidSession, LoggingProfile):
+class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, LoggingProfile):
 
     def get_logging_session(self):
         """Gets the ``OsidSession`` associated with the logging service.
@@ -2617,7 +2619,7 @@ class LoggingManager(osid.OsidManager, osid.OsidSession, LoggingProfile):
 
 
 
-class LoggingProxyManager(osid.OsidProxyManager, LoggingProfile):
+class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def get_logging_session(self, proxy):
         """Gets the ``OsidSession`` associated with the logging service.
@@ -2969,7 +2971,7 @@ class LoggingProxyManager(osid.OsidProxyManager, LoggingProfile):
 
 
 
-class Log(osid.OsidCatalog, osid.OsidSession):
+class Log(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_log_record(self, log_record_type):
         """Gets the record corresponding to the given ``Log`` record ``Type``.
@@ -2992,7 +2994,7 @@ class Log(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class LogList(osid.OsidList):
+class LogList(osid_objects.OsidList):
 
     def get_next_log(self):
         """Gets the next ``Log`` in this list.

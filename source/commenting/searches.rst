@@ -11,11 +11,11 @@ Comment Search
 .. autoclass:: CommentSearch
    :show-inheritance:
 
-.. automethod:: CommentSearch.search_among_comments
+   .. automethod:: CommentSearch.search_among_comments
 
-.. automethod:: CommentSearch.order_comment_results
+   .. automethod:: CommentSearch.order_comment_results
 
-.. automethod:: CommentSearch.get_comment_search_record
+   .. automethod:: CommentSearch.get_comment_search_record
 
 
 
@@ -25,11 +25,11 @@ Comment Search Results
 .. autoclass:: CommentSearchResults
    :show-inheritance:
 
-.. autoattribute:: CommentSearchResults.comments
+   .. autoattribute:: CommentSearchResults.comments
 
-.. autoattribute:: CommentSearchResults.comment_query_inspector
+   .. autoattribute:: CommentSearchResults.comment_query_inspector
 
-.. automethod:: CommentSearchResults.get_comment_search_results_record
+   .. automethod:: CommentSearchResults.get_comment_search_results_record
 
 
 
@@ -39,11 +39,11 @@ Book Search
 .. autoclass:: BookSearch
    :show-inheritance:
 
-.. automethod:: BookSearch.search_among_books
+   .. automethod:: BookSearch.search_among_books
 
-.. automethod:: BookSearch.order_book_results
+   .. automethod:: BookSearch.order_book_results
 
-.. automethod:: BookSearch.get_book_search_record
+   .. automethod:: BookSearch.get_book_search_record
 
 
 
@@ -53,11 +53,11 @@ Book Search Results
 .. autoclass:: BookSearchResults
    :show-inheritance:
 
-.. autoattribute:: BookSearchResults.books
+   .. autoattribute:: BookSearchResults.books
 
-.. autoattribute:: BookSearchResults.book_query_inspector
+   .. autoattribute:: BookSearchResults.book_query_inspector
 
-.. automethod:: BookSearchResults.get_book_search_results_record
+   .. automethod:: BookSearchResults.get_book_search_results_record
 
 
 

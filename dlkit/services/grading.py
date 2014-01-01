@@ -56,11 +56,13 @@ Grading Batch OSID manages ``GradeSystems,``  ``GradeEntries,``
 ``Gradebooks,`` and ``GradebookColumns`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class GradingProfile(osid.OsidProfile):
+class GradingProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -588,7 +590,7 @@ class GradingProfile(osid.OsidProfile):
 
 
 
-class GradingManager(osid.OsidManager, osid.OsidSession, GradingProfile):
+class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, GradingProfile):
 
     def get_grade_system_lookup_session(self):
         """Gets the ``OsidSession`` associated with the grade system lookup service.
@@ -3013,7 +3015,7 @@ class GradingManager(osid.OsidManager, osid.OsidSession, GradingProfile):
 
 
 
-class GradingProxyManager(osid.OsidProxyManager, GradingProfile):
+class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
 
     def get_grade_system_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the grade system lookup service.
@@ -3723,7 +3725,7 @@ class GradingProxyManager(osid.OsidProxyManager, GradingProfile):
 
 
 
-class Gradebook(osid.OsidCatalog, osid.OsidSession):
+class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_gradebook_record(self, gradebook_record_type):
         """Gets the gradebook record corresponding to the given ``Gradebook`` record ``Type``.
@@ -5577,7 +5579,7 @@ class Gradebook(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class GradebookList(osid.OsidList):
+class GradebookList(osid_objects.OsidList):
 
     def get_next_gradebook(self):
         """Gets the next ``Gradebook`` in this list.

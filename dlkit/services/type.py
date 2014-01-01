@@ -96,11 +96,12 @@ than what is defined explicitly in the ``Type``. An OSID Provider must
 respect any ``Type`` constructed by an OSID Consumer.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
 
 
-class TypeProfile(osid.OsidProfile):
+class TypeProfile(osid_managers.OsidProfile):
 
     def supports_type_lookup(self):
         """Tests if ``Type`` lookup is supported.
@@ -122,7 +123,7 @@ class TypeProfile(osid.OsidProfile):
 
 
 
-class TypeManager(osid.OsidManager, osid.OsidSession, TypeProfile):
+class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProfile):
 
     def get_type_lookup_session(self):
         """Gets the ``OsidSession`` associated with the type lookup service.
@@ -772,7 +773,7 @@ class TypeManager(osid.OsidManager, osid.OsidSession, TypeProfile):
         """
         raise UNIMPLEMENTED()
 
-    description = property(fset=set_description, fdel=clear_description)
+    description = property(fget=set_description, fdel=clear_description)
 
     def get_domain_metadata(self):
         """Gets the metadata for the domain.
@@ -805,7 +806,7 @@ class TypeManager(osid.OsidManager, osid.OsidSession, TypeProfile):
         """
         raise UNIMPLEMENTED()
 
-    domain = property(fset=set_domain, fdel=clear_domain)
+    domain = property(fget=set_domain, fdel=clear_domain)
 
 
 ##
@@ -841,7 +842,7 @@ class TypeManager(osid.OsidManager, osid.OsidSession, TypeProfile):
 
 
 
-class TypeProxyManager(osid.OsidProxyManager, TypeProfile):
+class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     pass
 
 

@@ -84,11 +84,13 @@ periods. The Calendaring Batch OSID manages ``Events,``
 ``Commitments,`` and ``TimePeriods`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class CalendaringProfile(osid.OsidProfile):
+class CalendaringProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -1243,7 +1245,7 @@ class CalendaringProfile(osid.OsidProfile):
 
 
 
-class CalendaringManager(osid.OsidManager, osid.OsidSession, CalendaringProfile):
+class CalendaringManager(osid_managers.OsidManager, osid_sessions.OsidSession, CalendaringProfile):
 
     def get_event_lookup_session(self):
         """Gets the ``OsidSession`` associated with the event lookup service.
@@ -3772,7 +3774,7 @@ class CalendaringManager(osid.OsidManager, osid.OsidSession, CalendaringProfile)
 
 
 
-class CalendaringProxyManager(osid.OsidProxyManager, CalendaringProfile):
+class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile):
 
     def get_event_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the event lookup service.
@@ -5533,7 +5535,7 @@ class CalendaringProxyManager(osid.OsidProxyManager, CalendaringProfile):
 
 
 
-class Calendar(osid.OsidCatalog, osid.OsidSession):
+class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_calendar_record(self, calendar_record_type):
         """Gets the record corresponding to the given ``Calendar`` record ``Type``.
@@ -12745,7 +12747,7 @@ class Calendar(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class CalendarList(osid.OsidList):
+class CalendarList(osid_objects.OsidList):
 
     def get_next_calendar(self):
         """Gets the next ``Calendar`` in this list.

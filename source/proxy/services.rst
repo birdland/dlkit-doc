@@ -18,15 +18,15 @@ Proxy Manager
 Proxy Profile Methods
 _____________
 
-.. automethod:: ProxyManager.supports_proxy
+   .. automethod:: ProxyManager.supports_proxy
 
-.. autoattribute:: ProxyManager.proxy_record_types
+   .. autoattribute:: ProxyManager.proxy_record_types
 
-.. automethod:: ProxyManager.supports_proxy_record_type
+   .. automethod:: ProxyManager.supports_proxy_record_type
 
-.. autoattribute:: ProxyManager.proxy_condition_record_types
+   .. autoattribute:: ProxyManager.proxy_condition_record_types
 
-.. automethod:: ProxyManager.supports_proxy_condition_record_type
+   .. automethod:: ProxyManager.supports_proxy_condition_record_type
 
 
 
@@ -36,7 +36,7 @@ Proxy Proxy Manager
 .. autoclass:: ProxyProxyManager
    :show-inheritance:
 
-.. automethod:: ProxyProxyManager.get_proxy_session
+   .. automethod:: ProxyProxyManager.get_proxy_session
 
 
 

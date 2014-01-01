@@ -36,11 +36,13 @@ The Forum OSID contains a Forum Batch OSID for managing ``Posts`` and
 ``Replies`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class ForumProfile(osid.OsidProfile):
+class ForumProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if any post federation is exposed.
@@ -366,7 +368,7 @@ class ForumProfile(osid.OsidProfile):
 
 
 
-class ForumManager(osid.OsidManager, osid.OsidSession, ForumProfile):
+class ForumManager(osid_managers.OsidManager, osid_sessions.OsidSession, ForumProfile):
 
     def get_post_lookup_session(self):
         """Gets the ``OsidSession`` associated with the post lookup service.
@@ -1683,7 +1685,7 @@ class ForumManager(osid.OsidManager, osid.OsidSession, ForumProfile):
 
 
 
-class ForumProxyManager(osid.OsidProxyManager, ForumProfile):
+class ForumProxyManager(osid_managers.OsidProxyManager, ForumProfile):
 
     def get_post_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the post lookup service.
@@ -2101,7 +2103,7 @@ class ForumProxyManager(osid.OsidProxyManager, ForumProfile):
 
 
 
-class Forum(osid.OsidCatalog, osid.OsidSession):
+class Forum(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_forum_record(self, forum_record_type):
         """Gets the forum record corresponding to the given ``Forum`` record ``Type``.
@@ -3658,7 +3660,7 @@ class Forum(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class ForumList(osid.OsidList):
+class ForumList(osid_objects.OsidList):
 
     def get_next_forum(self):
         """Gets the next ``Forum`` in this list.

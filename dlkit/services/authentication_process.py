@@ -102,12 +102,13 @@ Server side authentication:
 
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
-from . import process
+from ..process import managers as process_managers
+from ..osid import sessions as osid_sessions
 
 
-class AuthenticationProcessProfile(osid.OsidProfile):
+class AuthenticationProcessProfile(osid_managers.OsidProfile):
 
     def supports_authentication_acquisition(self):
         """Tests if authentication acquisition is supported.
@@ -284,7 +285,7 @@ class AuthenticationProcessProfile(osid.OsidProfile):
 
 
 
-class AuthenticationProcessManager(osid.OsidManager, osid.OsidSession, process.AuthenticationProcessProfile):
+class AuthenticationProcessManager(osid_managers.OsidManager, osid_sessions.OsidSession, process_managers.AuthenticationProcessProfile):
 
     def get_authentication_acquisition_session(self):
         """Gets an ``AuthenticationAcquisitionSession`` which is responsible for acquiring authentication credentials on behalf of a service client.
@@ -370,7 +371,7 @@ class AuthenticationProcessManager(osid.OsidManager, osid.OsidSession, process.A
 
 
 
-class AuthenticationProcessProxyManager(osid.OsidProxyManager, process.AuthenticationProcessProfile):
+class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, process_managers.AuthenticationProcessProfile):
 
     def get_authentication_acquisition_session(self, proxy):
         """Gets the ``OsidSession`` associated with the ``AuthenticationAcquisitionSession`` using the supplied ``Authentication``.

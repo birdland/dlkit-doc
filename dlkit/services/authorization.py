@@ -104,11 +104,13 @@ The Authorization OSID includes an Authorization Rules OSID for managing
 the effectiveness of ``Authorizations``.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class AuthorizationProfile(osid.OsidProfile):
+class AuthorizationProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -668,7 +670,7 @@ class AuthorizationProfile(osid.OsidProfile):
 
 
 
-class AuthorizationManager(osid.OsidManager, osid.OsidSession, AuthorizationProfile):
+class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession, AuthorizationProfile):
 
     def get_authorization_session(self):
         """Gets an ``AuthorizationSession`` which is responsible for performing authorization checks.
@@ -2336,7 +2338,7 @@ class AuthorizationManager(osid.OsidManager, osid.OsidSession, AuthorizationProf
 
 
 
-class AuthorizationProxyManager(osid.OsidProxyManager, AuthorizationProfile):
+class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationProfile):
 
     def get_authorization_session(self, proxy):
         """Gets an ``AuthorizationSession`` which is responsible for performing authorization checks.
@@ -3145,7 +3147,7 @@ class AuthorizationProxyManager(osid.OsidProxyManager, AuthorizationProfile):
 
 
 
-class Vault(osid.OsidCatalog, osid.OsidSession):
+class Vault(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_vault_record(self, vault_record_type):
         """Gets the vault record corresponding to the given ``Vault`` record ``Type``.
@@ -6422,7 +6424,7 @@ class Vault(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class VaultList(osid.OsidList):
+class VaultList(osid_objects.OsidList):
 
     def get_next_vault(self):
         """Gets the next ``Vault`` in this list.

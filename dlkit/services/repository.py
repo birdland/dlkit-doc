@@ -112,11 +112,13 @@ The Repository OSID includes a rules subpackage for managing dynamic
 compositions.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class RepositoryProfile(osid.OsidProfile):
+class RepositoryProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -620,7 +622,7 @@ class RepositoryProfile(osid.OsidProfile):
 
 
 
-class RepositoryManager(osid.OsidManager, osid.OsidSession, RepositoryProfile):
+class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, RepositoryProfile):
 
     def get_asset_lookup_session(self):
         """Gets the ``OsidSession`` associated with the asset lookup service.
@@ -2194,7 +2196,7 @@ class RepositoryManager(osid.OsidManager, osid.OsidSession, RepositoryProfile):
 
 
 
-class RepositoryProxyManager(osid.OsidProxyManager, RepositoryProfile):
+class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
     def get_asset_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the asset lookup service.
@@ -2884,7 +2886,7 @@ class RepositoryProxyManager(osid.OsidProxyManager, RepositoryProfile):
 
 
 
-class Repository(osid.OsidCatalog, osid.OsidSession):
+class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_repository_record(self, repository_record_type):
         """Gets the record corresponding to the given ``Repository`` record ``Type``.
@@ -5348,7 +5350,7 @@ class Repository(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class RepositoryList(osid.OsidList):
+class RepositoryList(osid_objects.OsidList):
 
     def get_next_repository(self):
         """Gets the next ``Repository`` in this list.

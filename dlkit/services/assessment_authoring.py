@@ -53,11 +53,12 @@ appear in more than one ``Assessment``. Item banks may be used to
 catalog sets of Items and/or sets of ``Assessments``.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
 
 
-class AssessmentAuthoringProfile(osid.OsidProfile):
+class AssessmentAuthoringProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -460,7 +461,7 @@ class AssessmentAuthoringProfile(osid.OsidProfile):
 
 
 
-class AssessmentAuthoringManager(osid.OsidManager, osid.OsidSession, authoring.AssessmentAuthoringProfile):
+class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSession, authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile):
 
     def get_assessment_part_lookup_session(self):
         """Gets the ``OsidSession`` associated with the assessment part lookup service.
@@ -1072,7 +1073,7 @@ class AssessmentAuthoringManager(osid.OsidManager, osid.OsidSession, authoring.A
 
 
 
-class AssessmentAuthoringProxyManager(osid.OsidProxyManager, authoring.AssessmentAuthoringProfile):
+class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile):
 
     def get_assessment_part_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment part lookup service.

@@ -11,11 +11,11 @@ Response
 .. autoclass:: Response
    :show-inheritance:
 
-.. autoattribute:: Response.item_id
+   .. autoattribute:: Response.item_id
 
-.. autoattribute:: Response.item
+   .. autoattribute:: Response.item
 
-.. automethod:: Response.get_response_record
+   .. automethod:: Response.get_response_record
 
 
 

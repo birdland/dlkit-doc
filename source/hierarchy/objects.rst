@@ -11,7 +11,7 @@ Hierarchy Form
 .. autoclass:: HierarchyForm
    :show-inheritance:
 
-.. automethod:: HierarchyForm.get_hierarchy_form_record
+   .. automethod:: HierarchyForm.get_hierarchy_form_record
 
 
 
@@ -21,9 +21,9 @@ Hierarchy List
 .. autoclass:: HierarchyList
    :show-inheritance:
 
-.. autoattribute:: HierarchyList.next_hierarchy
+   .. autoattribute:: HierarchyList.next_hierarchy
 
-.. automethod:: HierarchyList.get_next_hierarchies
+   .. automethod:: HierarchyList.get_next_hierarchies
 
 
 
@@ -33,9 +33,9 @@ Node
 .. autoclass:: Node
    :show-inheritance:
 
-.. autoattribute:: Node.parents
+   .. autoattribute:: Node.parents
 
-.. autoattribute:: Node.children
+   .. autoattribute:: Node.children
 
 
 
@@ -45,9 +45,9 @@ Node List
 .. autoclass:: NodeList
    :show-inheritance:
 
-.. autoattribute:: NodeList.next_node
+   .. autoattribute:: NodeList.next_node
 
-.. automethod:: NodeList.get_next_nodes
+   .. automethod:: NodeList.get_next_nodes
 
 
 

@@ -72,11 +72,13 @@ The Learning OSID contains a Learning Batch OSID for bulk management of
 ``Objectives,``  ``Activities,`` and ``Proficiencies`` .
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class LearningProfile(osid.OsidProfile):
+class LearningProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -632,7 +634,7 @@ class LearningProfile(osid.OsidProfile):
 
 
 
-class LearningManager(osid.OsidManager, osid.OsidSession, LearningProfile):
+class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, LearningProfile):
 
     def get_objective_lookup_session(self):
         """Gets the ``OsidSession`` associated with the objective lookup service.
@@ -2436,7 +2438,7 @@ class LearningManager(osid.OsidManager, osid.OsidSession, LearningProfile):
 
 
 
-class LearningProxyManager(osid.OsidProxyManager, LearningProfile):
+class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
 
     def get_objective_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the objective lookup service.
@@ -3382,7 +3384,7 @@ class LearningProxyManager(osid.OsidProxyManager, LearningProfile):
 
 
 
-class ObjectiveBank(osid.OsidCatalog, osid.OsidSession):
+class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_objective_bank_record(self, objective_bank_record_type):
         """Gets the objective bank record corresponding to the given ``ObjectiveBank`` record ``Type``.
@@ -7052,7 +7054,7 @@ class ObjectiveBank(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class ObjectiveBankList(osid.OsidList):
+class ObjectiveBankList(osid_objects.OsidList):
 
     def get_next_objective_bank(self):
         """Gets the next ``ObjectiveBank`` in this list.

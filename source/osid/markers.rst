@@ -21,9 +21,9 @@ Identifiable
 .. autoclass:: Identifiable
    :show-inheritance:
 
-.. autoattribute:: Identifiable.ident
+   .. autoattribute:: Identifiable.ident
 
-.. automethod:: Identifiable.is_current
+   .. automethod:: Identifiable.is_current
 
 
 
@@ -33,9 +33,9 @@ Extensible
 .. autoclass:: Extensible
    :show-inheritance:
 
-.. autoattribute:: Extensible.record_types
+   .. autoattribute:: Extensible.record_types
 
-.. automethod:: Extensible.has_record_type
+   .. automethod:: Extensible.has_record_type
 
 
 
@@ -45,9 +45,9 @@ Browsable
 .. autoclass:: Browsable
    :show-inheritance:
 
-.. autoattribute:: Browsable.properties
+   .. autoattribute:: Browsable.properties
 
-.. automethod:: Browsable.get_properties_by_record_type
+   .. automethod:: Browsable.get_properties_by_record_type
 
 
 
@@ -67,11 +67,11 @@ Temporal
 .. autoclass:: Temporal
    :show-inheritance:
 
-.. automethod:: Temporal.is_effective
+   .. automethod:: Temporal.is_effective
 
-.. autoattribute:: Temporal.start_date
+   .. autoattribute:: Temporal.start_date
 
-.. autoattribute:: Temporal.end_date
+   .. autoattribute:: Temporal.end_date
 
 
 
@@ -101,7 +101,7 @@ Containable
 .. autoclass:: Containable
    :show-inheritance:
 
-.. automethod:: Containable.is_sequestered
+   .. automethod:: Containable.is_sequestered
 
 
 
@@ -111,13 +111,13 @@ Sourceable
 .. autoclass:: Sourceable
    :show-inheritance:
 
-.. autoattribute:: Sourceable.provider_id
+   .. autoattribute:: Sourceable.provider_id
 
-.. autoattribute:: Sourceable.provider
+   .. autoattribute:: Sourceable.provider
 
-.. autoattribute:: Sourceable.branding
+   .. autoattribute:: Sourceable.branding
 
-.. autoattribute:: Sourceable.license
+   .. autoattribute:: Sourceable.license
 
 
 
@@ -137,13 +137,13 @@ Operable
 .. autoclass:: Operable
    :show-inheritance:
 
-.. automethod:: Operable.is_active
+   .. automethod:: Operable.is_active
 
-.. automethod:: Operable.is_enabled
+   .. automethod:: Operable.is_enabled
 
-.. automethod:: Operable.is_disabled
+   .. automethod:: Operable.is_disabled
 
-.. automethod:: Operable.is_operational
+   .. automethod:: Operable.is_operational
 
 
 

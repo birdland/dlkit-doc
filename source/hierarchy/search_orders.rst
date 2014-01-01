@@ -11,7 +11,7 @@ Hierarchy Search Order
 .. autoclass:: HierarchySearchOrder
    :show-inheritance:
 
-.. automethod:: HierarchySearchOrder.get_hierarchy_search_order_record
+   .. automethod:: HierarchySearchOrder.get_hierarchy_search_order_record
 
 
 

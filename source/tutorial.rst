@@ -309,10 +309,8 @@ future programmatic reference might be to put it in a dict::
 The OSIDs also specify functions for looking up types that are defined
 and/or supported, and as one might imagine, there is ``TypeLookupSession`` specifically
 designed for this purpose.  This session, however, is not defined in the *learning*
-service package, it is found in the *type* learning package, which therefore requires
-a ``TypeManager`` be instantiated.  Again, like we did with the ``LearningManger``,
-its a good idea to store a reference to the module that contains the ``TypeManger``
-class in a settings file or some-such::
+service package, it is found in the *type* package, which therefore requires
+a ``TypeManager`` be instantiated::
 
     from dlkit.services.type import TypeManager
     tm = TypeManager()

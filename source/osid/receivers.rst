@@ -11,9 +11,9 @@ Osid Receiver
 .. autoclass:: OsidReceiver
    :show-inheritance:
 
-.. automethod:: OsidReceiver.up
+   .. automethod:: OsidReceiver.up
 
-.. automethod:: OsidReceiver.down
+   .. automethod:: OsidReceiver.down
 
 
 

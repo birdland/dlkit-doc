@@ -11,11 +11,11 @@ Id
 .. autoclass:: Id
    :show-inheritance:
 
-.. autoattribute:: Id.authority
+   .. autoattribute:: Id.authority
 
-.. autoattribute:: Id.namespace
+   .. autoattribute:: Id.namespace
 
-.. autoattribute:: Id.identifier
+   .. autoattribute:: Id.identifier
 
 
 

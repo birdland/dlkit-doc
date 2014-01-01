@@ -11,7 +11,7 @@ Authorization Condition
 .. autoclass:: AuthorizationCondition
    :show-inheritance:
 
-.. automethod:: AuthorizationCondition.get_authorization_condition_record
+   .. automethod:: AuthorizationCondition.get_authorization_condition_record
 
 
 

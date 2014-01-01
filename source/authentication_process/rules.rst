@@ -11,7 +11,7 @@ Authentication Input
 .. autoclass:: AuthenticationInput
    :show-inheritance:
 
-.. automethod:: AuthenticationInput.get_authentication_input_record
+   .. automethod:: AuthenticationInput.get_authentication_input_record
 
 
 

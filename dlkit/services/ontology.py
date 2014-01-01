@@ -34,11 +34,13 @@ enable subject relevancies and an Ontology Batch OSID for managing
 ``Subjects,``  ``Relevancies,`` and ``Ontologies`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class OntologyProfile(osid.OsidProfile):
+class OntologyProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -448,7 +450,7 @@ class OntologyProfile(osid.OsidProfile):
 
 
 
-class OntologyManager(osid.OsidManager, osid.OsidSession, OntologyProfile):
+class OntologyManager(osid_managers.OsidManager, osid_sessions.OsidSession, OntologyProfile):
 
     def get_subject_lookup_session(self):
         """Gets the ``OsidSession`` associated with the subject lookup service.
@@ -2034,7 +2036,7 @@ class OntologyManager(osid.OsidManager, osid.OsidSession, OntologyProfile):
 
 
 
-class OntologyProxyManager(osid.OsidProxyManager, OntologyProfile):
+class OntologyProxyManager(osid_managers.OsidProxyManager, OntologyProfile):
 
     def get_subject_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the subject lookup service.
@@ -2682,7 +2684,7 @@ class OntologyProxyManager(osid.OsidProxyManager, OntologyProfile):
 
 
 
-class Ontology(osid.OsidCatalog, osid.OsidSession):
+class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_ontology_record(self, ontology_record_type):
         """Gets the ontology record corresponding to the given ``Ontology`` record ``Type``.
@@ -5066,7 +5068,7 @@ class Ontology(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class OntologyList(osid.OsidList):
+class OntologyList(osid_objects.OsidList):
 
     def get_next_ontology(self):
         """Gets the next ``Ontology`` in this list.

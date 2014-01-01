@@ -40,11 +40,13 @@ The Relationship OSID includes a Relationship Rules OSID for controlling
 the enable status of ``Relationships``.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class RelationshipProfile(osid.OsidProfile):
+class RelationshipProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if any family federation is exposed.
@@ -308,7 +310,7 @@ class RelationshipProfile(osid.OsidProfile):
 
 
 
-class RelationshipManager(osid.OsidManager, osid.OsidSession, RelationshipProfile):
+class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, RelationshipProfile):
 
     def get_relationship_lookup_session(self):
         """Gets the ``OsidSession`` associated with the relationship lookup service.
@@ -1552,7 +1554,7 @@ class RelationshipManager(osid.OsidManager, osid.OsidSession, RelationshipProfil
 
 
 
-class RelationshipProxyManager(osid.OsidProxyManager, RelationshipProfile):
+class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile):
 
     def get_relationship_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the relationship lookup service.
@@ -1886,7 +1888,7 @@ class RelationshipProxyManager(osid.OsidProxyManager, RelationshipProfile):
 
 
 
-class Family(osid.OsidCatalog, osid.OsidSession):
+class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_family_record(self, family_record_type):
         """Gets the famly record corresponding to the given ``Family`` record ``Type``.
@@ -3081,7 +3083,7 @@ class Family(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class FamilyList(osid.OsidList):
+class FamilyList(osid_objects.OsidList):
 
     def get_next_family(self):
         """Gets the next ``Family`` in this list.

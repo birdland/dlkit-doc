@@ -49,11 +49,13 @@ physical ``Paths`` and a Mapping Batch OSID for managing locations in
 bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class MappingProfile(osid.OsidProfile):
+class MappingProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if any map federation is exposed.
@@ -497,7 +499,7 @@ class MappingProfile(osid.OsidProfile):
 
 
 
-class MappingManager(osid.OsidManager, osid.OsidSession, MappingProfile):
+class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, MappingProfile):
 
     def get_location_lookup_session(self):
         """Gets the ``OsidSession`` associated with the location lookup service.
@@ -2009,7 +2011,7 @@ class MappingManager(osid.OsidManager, osid.OsidSession, MappingProfile):
 
 
 
-class MappingProxyManager(osid.OsidProxyManager, MappingProfile):
+class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
 
     def get_location_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the location lookup service.
@@ -2643,7 +2645,7 @@ class MappingProxyManager(osid.OsidProxyManager, MappingProfile):
 
 
 
-class Map(osid.OsidCatalog, osid.OsidSession):
+class Map(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_map_record(self, map_record_type):
         """Gets the map record corresponding to the given ``Map`` record ``Type``.
@@ -4538,7 +4540,7 @@ class Map(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class MapList(osid.OsidList):
+class MapList(osid_objects.OsidList):
 
     def get_next_map(self):
         """Gets the next ``Map`` in this list.

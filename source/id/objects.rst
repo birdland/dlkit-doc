@@ -11,9 +11,9 @@ Id List
 .. autoclass:: IdList
    :show-inheritance:
 
-.. autoattribute:: IdList.next_id
+   .. autoattribute:: IdList.next_id
 
-.. automethod:: IdList.get_next_ids
+   .. automethod:: IdList.get_next_ids
 
 
 

@@ -70,11 +70,13 @@ includes an Authentication Batch OSID for managing ``Agents`` and
 ``Agencies`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class AuthenticationProfile(osid.OsidProfile):
+class AuthenticationProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -360,7 +362,7 @@ class AuthenticationProfile(osid.OsidProfile):
 
 
 
-class AuthenticationManager(osid.OsidManager, osid.OsidSession, AuthenticationProfile):
+class AuthenticationManager(osid_managers.OsidManager, osid_sessions.OsidSession, AuthenticationProfile):
 
     def get_agent_lookup_session(self):
         """Gets the ``OsidSession`` associated with the agent lookup service.
@@ -1600,7 +1602,7 @@ class AuthenticationManager(osid.OsidManager, osid.OsidSession, AuthenticationPr
 
 
 
-class AuthenticationProxyManager(osid.OsidProxyManager, AuthenticationProfile):
+class AuthenticationProxyManager(osid_managers.OsidProxyManager, AuthenticationProfile):
 
     def get_agent_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the agent lookup service.
@@ -1933,7 +1935,7 @@ class AuthenticationProxyManager(osid.OsidProxyManager, AuthenticationProfile):
 
 
 
-class Agency(osid.OsidCatalog, osid.OsidSession):
+class Agency(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_agency_record(self, agency_record_type):
         """Gets the agency record corresponding to the given ``Agency`` record ``Type``.
@@ -2813,7 +2815,7 @@ class Agency(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class AgencyList(osid.OsidList):
+class AgencyList(osid_objects.OsidList):
 
     def get_next_agency(self):
         """Gets the next ``Agency`` in this list.

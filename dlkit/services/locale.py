@@ -82,11 +82,12 @@ Locale is referenced in OsidSessions to convey the localization of the
 service.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
 
 
-class LocaleProfile(osid.OsidProfile):
+class LocaleProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if visible federation is supported.
@@ -683,7 +684,7 @@ class LocaleProfile(osid.OsidProfile):
 
 
 
-class LocaleManager(osid.OsidManager, osid.OsidSession, LocaleProfile):
+class LocaleManager(osid_managers.OsidManager, osid_sessions.OsidSession, LocaleProfile):
 
     def get_translation_session(self):
         """Gets an ``OsidSession`` associated with the language translation service.
@@ -1044,7 +1045,7 @@ class LocaleManager(osid.OsidManager, osid.OsidSession, LocaleProfile):
 
 
 
-class LocaleProxyManager(osid.OsidProxyManager, LocaleProfile):
+class LocaleProxyManager(osid_managers.OsidProxyManager, LocaleProfile):
 
     def get_translation_session(self, proxy):
         """Gets an ``OsidSession`` associated with the language translation service.

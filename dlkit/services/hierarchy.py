@@ -21,11 +21,13 @@ Hierarchies are federateable by combining nodes. There is no hierarchy
 service for the hierarchy catalog.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class HierarchyProfile(osid.OsidProfile):
+class HierarchyProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if federation is visible.
@@ -169,7 +171,7 @@ class HierarchyProfile(osid.OsidProfile):
 
 
 
-class HierarchyManager(osid.OsidManager, osid.OsidSession, HierarchyProfile):
+class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, HierarchyProfile):
 
     def get_hierarchy_traversal_session(self):
         """Gets the ``OsidSession`` associated with the hierarchy traversal service.
@@ -1310,7 +1312,7 @@ class HierarchyManager(osid.OsidManager, osid.OsidSession, HierarchyProfile):
 
 
 
-class HierarchyProxyManager(osid.OsidProxyManager, HierarchyProfile):
+class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 
     def get_hierarchy_traversal_session(self, proxy):
         """Gets the ``OsidSession`` associated with the hierarchy traversal service.
@@ -1514,7 +1516,7 @@ class HierarchyProxyManager(osid.OsidProxyManager, HierarchyProfile):
 
 
 
-class Hierarchy(osid.OsidCatalog, osid.OsidSession):
+class Hierarchy(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_hierarchy_record(self, hierarchy_record_type):
         """Gets the hierarchy record corresponding to the given ``Hierarchy`` record ``Type``.
@@ -1537,7 +1539,7 @@ class Hierarchy(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class HierarchyList(osid.OsidList):
+class HierarchyList(osid_objects.OsidList):
 
     def get_next_hierarchy(self):
         """Gets the next ``Hierarchy`` in this list.

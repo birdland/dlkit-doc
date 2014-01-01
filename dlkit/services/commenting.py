@@ -39,11 +39,13 @@ The Commenting OSID includes a Commenting Batch OSID for managing
 ``Comments`` and ``Books`` in bulk.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class CommentingProfile(osid.OsidProfile):
+class CommentingProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if any book federation is exposed.
@@ -305,7 +307,7 @@ class CommentingProfile(osid.OsidProfile):
 
 
 
-class CommentingManager(osid.OsidManager, osid.OsidSession, CommentingProfile):
+class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, CommentingProfile):
 
     def get_comment_lookup_session(self):
         """Gets the ``OsidSession`` associated with the comment lookup service.
@@ -1562,7 +1564,7 @@ class CommentingManager(osid.OsidManager, osid.OsidSession, CommentingProfile):
 
 
 
-class CommentingProxyManager(osid.OsidProxyManager, CommentingProfile):
+class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
     def get_comment_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the comment lookup service.
@@ -1914,7 +1916,7 @@ class CommentingProxyManager(osid.OsidProxyManager, CommentingProfile):
 
 
 
-class Book(osid.OsidCatalog, osid.OsidSession):
+class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_book_record(self, book_record_type):
         """Gets the book record corresponding to the given ``Book`` record ``Type``.
@@ -3176,7 +3178,7 @@ class Book(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class BookList(osid.OsidList):
+class BookList(osid_objects.OsidList):
 
     def get_next_book(self):
         """Gets the next ``Book`` in this list.

@@ -54,11 +54,13 @@ of ``Processes`` and ``Steps`` and impose additional input constraints
 on ``Steps``.
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
-class WorkflowProfile(osid.OsidProfile):
+class WorkflowProfile(osid_managers.OsidProfile):
 
     def supports_visible_federation(self):
         """Tests if any office federation is exposed.
@@ -633,7 +635,7 @@ class WorkflowProfile(osid.OsidProfile):
 
 
 
-class WorkflowManager(osid.OsidManager, osid.OsidSession, WorkflowProfile):
+class WorkflowManager(osid_managers.OsidManager, osid_sessions.OsidSession, WorkflowProfile):
 
     def get_process_lookup_session(self):
         """Gets the ``OsidSession`` associated with the process lookup service.
@@ -2416,7 +2418,7 @@ class WorkflowManager(osid.OsidManager, osid.OsidSession, WorkflowProfile):
 
 
 
-class WorkflowProxyManager(osid.OsidProxyManager, WorkflowProfile):
+class WorkflowProxyManager(osid_managers.OsidProxyManager, WorkflowProfile):
 
     def get_process_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the process lookup service.
@@ -3348,7 +3350,7 @@ class WorkflowProxyManager(osid.OsidProxyManager, WorkflowProfile):
 
 
 
-class Office(osid.OsidCatalog, osid.OsidSession):
+class Office(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_office_record(self, office_record_type):
         """Gets the office record corresponding to the given ``Office`` record ``Type``.
@@ -6904,7 +6906,7 @@ class Office(osid.OsidCatalog, osid.OsidSession):
 
 
 
-class OfficeList(osid.OsidList):
+class OfficeList(osid_objects.OsidList):
 
     def get_next_office(self):
         """Gets the next ``Office`` in this list.

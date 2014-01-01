@@ -39,11 +39,12 @@ An example using a specifier record for an http request:
 
 
 """
-from . import osid
+from ..osid import managers as osid_managers
 from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
 
 
-class ProxyProfile(osid.OsidProfile):
+class ProxyProfile(osid_managers.OsidProfile):
 
     def supports_proxy(self):
         """Tests if a proxy session is supported.
@@ -102,7 +103,7 @@ class ProxyProfile(osid.OsidProfile):
 
 
 
-class ProxyManager(osid.OsidManager, osid.OsidSession, ProxyProfile):
+class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyProfile):
 
     def get_proxy_session(self):
         """Gets a ``ProxySession`` which is responsible for acquiring authentication credentials on behalf of a service client.
@@ -119,7 +120,7 @@ class ProxyManager(osid.OsidManager, osid.OsidSession, ProxyProfile):
 
 
 
-class ProxyProxyManager(osid.OsidProxyManager, ProxyProfile):
+class ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile):
 
     def get_proxy_session(self, proxy):
         """Gets the ``OsidSession`` associated with the ``ProxySession`` using the supplied ``Proxy``.

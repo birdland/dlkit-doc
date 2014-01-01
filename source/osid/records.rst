@@ -11,7 +11,7 @@ Osid Record
 .. autoclass:: OsidRecord
    :show-inheritance:
 
-.. automethod:: OsidRecord.implements_record_type
+   .. automethod:: OsidRecord.implements_record_type
 
 
 
