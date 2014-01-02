@@ -318,10 +318,6 @@ a ``TypeManager`` be instantiated::
     if tm.supports_type_lookup():
         tls = tm.get_type_lookup_session()
 
-(Note that for the service implementations used in this tutorial, both the
-``LearningManger`` and ``TypeManager`` classes happen to be in the same module,
-but this will not always be the case)
-
 The ``TypeLookupSession`` provides a number of ways to get types, two of which are
 sufficient to get started:
 
