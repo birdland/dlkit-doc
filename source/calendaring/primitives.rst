@@ -73,6 +73,44 @@ Date Time
 
    .. autoattribute:: DateTime.day
 
+   .. autoattribute:: DateTime.time_type
+
+   .. autoattribute:: DateTime.hour
+
+   .. autoattribute:: DateTime.minute
+
+   .. autoattribute:: DateTime.second
+
+   .. autoattribute:: DateTime.milliseconds
+
+   .. autoattribute:: DateTime.microseconds
+
+   .. autoattribute:: DateTime.nanoseconds
+
+   .. autoattribute:: DateTime.picoseconds
+
+   .. autoattribute:: DateTime.femtoseconds
+
+   .. autoattribute:: DateTime.attoseconds
+
+   .. autoattribute:: DateTime.zeptoseconds
+
+   .. autoattribute:: DateTime.yoctoseconds
+
+   .. autoattribute:: DateTime.xoxxoseconds
+
+   .. autoattribute:: DateTime.weebleseconds
+
+   .. autoattribute:: DateTime.vatoseconds
+
+   .. autoattribute:: DateTime.undaseconds
+
+   .. autoattribute:: DateTime.planck_seconds
+
+   .. autoattribute:: DateTime.granularity
+
+   .. autoattribute:: DateTime.granularity_multiplier
+
    .. automethod:: DateTime.defines_uncertainty
 
    .. autoattribute:: DateTime.uncertainty_units
@@ -80,6 +118,10 @@ Date Time
    .. autoattribute:: DateTime.uncertainty_minus
 
    .. autoattribute:: DateTime.uncertainty_plus
+
+   .. automethod:: DateTime.is_uncertainty_date_inclusive
+
+   .. automethod:: DateTime.is_uncertainty_time_inclusive
 
 
 

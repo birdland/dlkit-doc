@@ -5534,6 +5534,974 @@ class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile
     calandaring_rules_proxy_manager = property(fget=get_calandaring_rules_proxy_manager)
 
 
+##
+# The following methods are from osid.calendaring.CalendarLookupSession
+
+    def can_lookup_calendars(self):
+        """Tests if this user can perform ``Calendar`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_calendar_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_calendar_view(self):
+        """A complete view of the ``Calendar`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar(self, calendar_id):
+        """Gets the ``Calendar`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Calendar`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Calendar`` and retained for
+        compatility.
+
+
+        :param calendar_id: ``Id`` of the ``Calendar``
+        :type calendar_id: ``osid.id.Id``
+        :return: the calendar
+        :rtype: ``osid.calendaring.Calendar``
+        :raise: ``NotFound`` -- ``calendar_id`` not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendars_by_ids(self, calendar_ids):
+        """Gets a ``CalendarList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the calendars
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Calendar`` objects may be omitted from the list
+        and may present the elements in any order including returning a
+        unique set.
+
+
+        :param calendar_ids: the list of ``Ids`` to retrieve
+        :type calendar_ids: ``osid.id.IdList``
+        :return: the returned ``Calendar`` list
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``calendar_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendars_by_genus_type(self, calendar_genus_type):
+        """Gets a ``CalendarList`` corresponding to the given calendar genus ``Type`` which does not include calendars of types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known calendars
+        or an error results. Otherwise, the returned list may contain
+        only those calendars that are accessible through this session.
+
+
+        :param calendar_genus_type: a calendar genus type
+        :type calendar_genus_type: ``osid.type.Type``
+        :return: the returned ``Calendar`` list
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NullArgument`` -- ``calendar_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendars_by_parent_genus_type(self, calendar_genus_type):
+        """Gets a ``CalendarList`` corresponding to the given calendar genus ``Type`` and include any additional calendars with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known calendars
+        or an error results. Otherwise, the returned list may contain
+        only those calendars that are accessible through this session.
+
+
+        :param calendar_genus_type: a calendar genus type
+        :type calendar_genus_type: ``osid.type.Type``
+        :return: the returned ``Calendar`` list
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NullArgument`` -- ``calendar_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendars_by_record_type(self, calendar_record_type):
+        """Gets a ``CalendarList`` containing the given calendar record ``Type``.
+        In plenary mode, the returned list contains all known calendars
+        or an error results. Otherwise, the returned list may contain
+        only those calendars that are accessible through this session.
+
+
+        :param calendar_record_type: a calendar record type
+        :type calendar_record_type: ``osid.type.Type``
+        :return: the returned ``Calendar`` list
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NullArgument`` -- ``calendar_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendars_by_provider(self, resource_id):
+        """Gets a ``CalendarList`` for the given provider.
+        In plenary mode, the returned list contains all known calendars
+        or an error results. Otherwise, the returned list may contain
+        only those calendars that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Calendar`` list
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendars(self):
+        """Gets all ``Calendars``.
+        In plenary mode, the returned list contains all known calendars
+        or an error results. Otherwise, the returned list may contain
+        only those calendars that are accessible through this session.
+
+
+        :return: a ``CalendarList``
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    calendars = property(fget=get_calendars)
+
+
+##
+# The following methods are from osid.calendaring.CalendarQuerySession
+
+    def can_search_calendars(self):
+        """Tests if this user can perform ``Calendar`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar_query(self):
+        """Gets a calendar query.
+
+        :return: a calendar query
+        :rtype: ``osid.calendaring.CalendarQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    calendar_query = property(fget=get_calendar_query)
+
+    def get_calendars_by_query(self, calendar_query):
+        """Gets a list of ``Calendar`` objects matching the given calendar query.
+
+        :param calendar_query: the calendar query
+        :type calendar_query: ``osid.calendaring.CalendarQuery``
+        :return: the returned ``CalendarList``
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NullArgument`` -- ``calendar_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``calendar_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.calendaring.CalendarSearchSession
+
+    def get_calendar_search(self):
+        """Gets a calendar search.
+
+        :return: a calendar search
+        :rtype: ``osid.calendaring.CalendarSearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    calendar_search = property(fget=get_calendar_search)
+
+    def get_calendar_search_order(self):
+        """Gets a calendar search order.
+        The ``CalendarSearchOrder`` is supplied to a ``CalendarSearch``
+        to specify the ordering of results.
+
+
+        :return: the calendar search order
+        :rtype: ``osid.calendaring.CalendarSearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    calendar_search_order = property(fget=get_calendar_search_order)
+
+    def get_calendars_by_search(self, calendar_query, calendar_search):
+        """Gets the search results matching the given search query using the given search.
+
+        :param calendar_query: the calendar query
+        :type calendar_query: ``osid.calendaring.CalendarQuery``
+        :param calendar_search: the calendar search
+        :type calendar_search: ``osid.calendaring.CalendarSearch``
+        :return: the calendar search results
+        :rtype: ``osid.calendaring.CalendarSearchResults``
+        :raise: ``NullArgument`` -- ``calendar_query`` or ``calendar_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``calendar_query`` or ``calendar_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar_query_from_inspector(self, calendar_query_inspector):
+        """Gets a calendar query from an inspector.
+        The inspector is available from an ``CalendarSearchResults``.
+
+
+        :param calendar_query_inspector: a calendar query inspector
+        :type calendar_query_inspector: ``osid.calendaring.CalendarQueryInspector``
+        :return: the calendar query
+        :rtype: ``osid.calendaring.CalendarQuery``
+        :raise: ``NullArgument`` -- ``calendar_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``calendar_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.calendaring.CalendarAdminSession
+
+    def can_create_calendars(self):
+        """Tests if this user can create ``Calendars``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a
+        ``Calendar`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        create operations to unauthorized users.
+
+
+        :return: ``false`` if ``Calendar`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_calendar_with_record_types(self, calendar_record_types):
+        """Tests if this user can create a single ``Calendar`` using the desired record types.
+        While ``CalendaringManager.getCalendarRecordTypes()`` can be
+        used to examine which records are supported, this method tests
+        which record(s) are required for creating a specific
+        ``Calendar``. Providing an empty array tests if a ``Calendar``
+        can be created with no records.
+
+
+        :param calendar_record_types: array of calendar record types
+        :type calendar_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Calendar`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``calendar_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar_form_for_create(self, calendar_record_types):
+        """Gets the calendar form for creating new calendars.
+        A new form should be requested for each create transaction.
+
+
+        :param calendar_record_types: array of calendar record types
+        :type calendar_record_types: ``osid.type.Type[]``
+        :return: the calendar form
+        :rtype: ``osid.calendaring.CalendarForm``
+        :raise: ``NullArgument`` -- ``calendar_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_calendar(self, calendar_form):
+        """Creates a new ``Calendar``.
+
+        :param calendar_form: the form for this ``Calendar``
+        :type calendar_form: ``osid.calendaring.CalendarForm``
+        :return: the new ``Calendar``
+        :rtype: ``osid.calendaring.CalendarForm``
+        :raise: ``IllegalState`` -- ``calendar_form`` already used for a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``calendar_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``calendar_form`` did not originate from ``get_calendar_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_calendars(self):
+        """Tests if this user can update ``Calendars``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a
+        ``Calendar`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        update operations to unauthorized users.
+
+
+        :return: ``false`` if ``Calendar`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar_form_for_update(self, calendar_id):
+        """Gets the calendar form for updating an existing calendar.
+        A new calendar form should be requested for each update
+        transaction.
+
+
+        :param calendar_id: the ``Id`` of the ``Calendar``
+        :type calendar_id: ``osid.id.Id``
+        :return: the calendar form
+        :rtype: ``osid.calendaring.CalendarForm``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_calendar(self, calendar_form):
+        """Updates an existing calendar.
+
+        :param calendar_form: the form containing the elements to be updated
+        :type calendar_form: ``osid.calendaring.CalendarForm``
+        :raise: ``IllegalState`` -- ``calendar_form`` already used for an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``calendar_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``calendar_form`` did not originate from ``get_calendar_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_calendars(self):
+        """Tests if this user can delete calendars.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a
+        ``Calendar`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        delete operations to unauthorized users.
+
+
+        :return: ``false`` if ``Calendar`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_calendar(self, calendar_id):
+        """Deletes a ``Calendar``.
+
+        :param calendar_id: the ``Id`` of the ``Calendar`` to remove
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``calendar_id`` not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_calendar_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Calendars``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Calendar`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_calendar(self, calendar_id, alias_id):
+        """Adds an ``Id`` to a ``Calendar`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``Calendar`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another calendar, it is
+        reassigned to the given calendar ``Id``.
+
+
+        :param calendar_id: the ``Id`` of a ``Calendar``
+        :type calendar_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``calendar_id`` not found
+        :raise: ``NullArgument`` -- ``calendar_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.calendaring.CalendarNotificationSession
+
+    def can_register_for_calendar_notifications(self):
+        """Tests if this user can register for ``Calendar`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_calendars(self):
+        """Register for notifications of new calendars.
+        ``CalendarReceiver.newCalendar()`` is invoked when a new
+        ``Calendar`` is created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_calendar_ancestors(self, calendar_id):
+        """Registers for notification if an ancestor is added to the specified calendar in the calendar hierarchy.
+        ``CalendarReceiver.newCalendarAncestor()`` is invoked when the
+        specified calendar experiences an addition in ancestry.
+
+
+        :param calendar_id: the ``Id`` of the calendar to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_calendar_descendants(self, calendar_id):
+        """Registers for notification if a descendant is added to the specified calendar in the calendar hierarchy.
+        ``CalendarReceiver.newCalendarDescendant()`` is invoked when the
+        specified calendar experiences an addition in descendants.
+
+
+        :param calendar_id: the ``Id`` of the calendar to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_calendars(self):
+        """Registers for notification of updated calendars.
+        ``CalendarReceiver.changedCalendar()`` is invoked when a
+        calendar is changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_calendar(self, calendar_id):
+        """Registers for notification of an updated calendar.
+        ``CalendarReceiver.changedCalendar()`` is invoked when the
+        specified calendar is changed.
+
+
+        :param calendar_id: the ``Id`` of the calendar to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_calendars(self):
+        """Registers for notification of deleted calendars.
+        ``CalendarReceiver.deletedCalendar()`` is invoked when a
+        calenedar is deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_calendar(self, calendar_id):
+        """Registers for notification of a deleted calendar.
+        ``CalendarReceiver.deletedCalendar()`` is invoked when the
+        specified calendar is deleted.
+
+
+        :param calendar_id: the ``Id`` of the calendar to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_calendar_ancestors(self, calendar_id):
+        """Registers for notification if an ancestor is removed from the specified calendar in the calendar hierarchy.
+        ``CalendarReceiver.deletedCalendarAncestor()`` is invoked when
+        the specified calendar experiences a removal of an ancestor.
+
+
+        :param calendar_id: the ``Id`` of the calendar to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_calendar_descendants(self, calendar_id):
+        """Registers for notification if a descendant is removed from fthe specified calendar in the calendar hierarchy.
+        ``CalendarReceiver.deletedCalendarDescednant()`` is invoked when
+        the specified calendar experiences a removal of one of its
+        descendants.
+
+
+        :param calendar_id: the ``Id`` of the calendar to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.calendaring.CalendarHierarchySession
+
+    def get_calendar_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    calendar_hierarchy_id = property(fget=get_calendar_hierarchy_id)
+
+    def get_calendar_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    calendar_hierarchy = property(fget=get_calendar_hierarchy)
+
+    def can_access_calendar_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an an application that may not offer traversal
+        functions to unauthorized users.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_calendar_ids(self):
+        """Gets the root calendar ``Ids`` in this hierarchy.
+
+        :return: the root calendar ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_calendar_ids = property(fget=get_root_calendar_ids)
+
+    def get_root_calendars(self):
+        """Gets the root calendars in this calendar hierarchy.
+
+        :return: the root calendars
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_calendars = property(fget=get_root_calendars)
+
+    def has_parent_calendars(self, calendar_id):
+        """Tests if the ``Calendar`` has any parents.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: ``true`` if the calendar has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_calendar(self, id_, calendar_id):
+        """Tests if an ``Id`` is a direct parent of a calendar.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``calendar_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_calendar_ids(self, calendar_id):
+        """Gets the parent ``Ids`` of the given calendar.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the calendar
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_calendars(self, calendar_id):
+        """Gets the parents of the given calendar.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: the parents of the calendar
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_calendar(self, id_, calendar_id):
+        """Tests if an ``Id`` is an ancestor of a calendar.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``calendar_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_calendars(self, calendar_id):
+        """Tests if a calendar has any children.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: ``true`` if the ``calendar_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_calendar(self, id_, calendar_id):
+        """Tests if a calendar is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``calendar_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_calendar_ids(self, calendar_id):
+        """Gets the child ``Ids`` of the given calendar.
+
+        :param calendar_id: the ``Id`` to query
+        :type calendar_id: ``osid.id.Id``
+        :return: the children of the calendar
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_calendars(self, calendar_id):
+        """Gets the children of the given calendar.
+
+        :param calendar_id: the ``Id`` to query
+        :type calendar_id: ``osid.id.Id``
+        :return: the children of the calendar
+        :rtype: ``osid.calendaring.CalendarList``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_calendar(self, id_, calendar_id):
+        """Tests if an ``Id`` is a descendant of a calendar.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``calendar_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``calendar_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar_node_ids(self, calendar_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given calendar.
+
+        :param calendar_id: the ``Id`` to query
+        :type calendar_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a catalog node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``calendar_id`` not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_calendar_nodes(self, calendar_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given calendar.
+
+        :param calendar_id: the ``Id`` to query
+        :type calendar_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a calendar node
+        :rtype: ``osid.calendaring.CalendarNode``
+        :raise: ``NotFound`` -- ``calendar_id`` not found
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.calendaring.CalendarHierarchyDesignSession
+
+    def can_modify_calendar_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_calendar(self, calendar_id):
+        """Adds a root calendar.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``calendar_id`` not a root
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_calendar(self, calendar_id):
+        """Removes a root calendar from this hierarchy.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``calendar_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``calendar_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_calendar(self, calendar_id, child_id):
+        """Adds a child to a calendar.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``calendar_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``calendar_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``calendar_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_calendar(self, calendar_id, child_id):
+        """Removes a child from a calendar.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``calendar_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``calendar_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_calendars(self, calendar_id):
+        """Removes all children from a calendar.
+
+        :param calendar_id: the ``Id`` of a calendar
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``calendar_id`` is in hierarchy
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
 
 class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
@@ -6578,6 +7546,14 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
+    def use_active_recurring_event_view(self):
+        """Only active recurring events are returned by methods in this session."""
+        raise UNIMPLEMENTED()
+
+    def use_any_status_recurring_event_view(self):
+        """All active and inactive recurring events are returned by methods in this session."""
+        raise UNIMPLEMENTED()
+
     def use_sequestered_recurring_event_view(self):
         """The returns from the lookup methods omit sequestered recurring events."""
         raise UNIMPLEMENTED()
@@ -6588,11 +7564,6 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_recurring_event(self, recurring_event_id):
         """Gets the ``RecurringEvent`` specified by its ``Id``.
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``RecurringEvent`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to an ``Event`` and retained for
-        compatibility.
 
         :param recurring_event_id: ``Id`` of the ``RecurringEvent``
         :type recurring_event_id: ``osid.id.Id``
@@ -6608,13 +7579,6 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_recurring_events_by_ids(self, recurring_event_ids):
         """Gets a ``RecurringEventList`` corresponding to the given ``IdList``.
-        In plenary mode, the returned list contains all of the recurring
-        events specified in the ``Id`` list, in the order of the list,
-        including duplicates, or an error results if an ``Id`` in the
-        supplied list is not found or inaccessible. Otherwise,
-        inaccessible ``RecurringEvents`` may be omitted from the list
-        and may present the elements in any order including returning a
-        unique set.
 
         :param recurring_event_ids: the list of ``Ids`` to retrieve
         :type recurring_event_ids: ``osid.id.IdList``
@@ -6630,10 +7594,6 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_recurring_events_by_genus_type(self, recurring_event_genus_type):
         """Gets a ``RecurringEventList`` corresponding to the given recurring event genus ``Type`` which does not include recurring events of genus types derived from the specified ``Type``.
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
 
         :param recurring_event_genus_type: a recurring event genus type
         :type recurring_event_genus_type: ``osid.type.Type``
@@ -6648,10 +7608,6 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_recurring_events_by_parent_genus_type(self, recurring_event_genus_type):
         """Gets a ``RecurringEventList`` corresponding to the given recurring event genus ``Type`` and include any additional recurring event with genus types derived from the specified ``Type``.
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
 
         :param recurring_event_genus_type: a recurring event genus type
         :type recurring_event_genus_type: ``osid.type.Type``
@@ -6666,10 +7622,6 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_recurring_events_by_record_type(self, recurring_event_record_type):
         """Gets a ``RecurringEventList`` containing the given recurring event record ``Type``.
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
 
         :param recurring_event_record_type: a recurring event record type
         :type recurring_event_record_type: ``osid.type.Type``
@@ -6683,9 +7635,7 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         raise UNIMPLEMENTED()
 
     def get_recurring_events_by_schedule_slot(self, schedule_slot_id):
-        """Gets the ``RecurringEvents`` containing the given schedule slotIn plenary mode, the returned list contains all matching recurring events or an error results.
-        Otherwise, the returned list may contain only those recurring
-        events that are accessible through this session.
+        """Gets the ``RecurringEvents`` containing the given schedule slot.
 
         :param schedule_slot_id: a schedule slot ``Id``
         :type schedule_slot_id: ``osid.id.Id``
@@ -6700,10 +7650,6 @@ class Calendar(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def get_recurring_events(self):
         """Gets all ``RecurringEvents``.
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
 
         :return: a ``RecurringEventList``
         :rtype: ``osid.calendaring.RecurringEventList``

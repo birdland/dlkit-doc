@@ -251,6 +251,18 @@ class Sourceable:
 
     provider = property(fget=get_provider)
 
+    def get_branding_ids(self):
+        """Gets the branding asset ``Ids``.
+
+        :return: a list of asset ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+        """
+        return # osid.id.IdList
+
+    branding_ids = property(fget=get_branding_ids)
+
     def get_branding(self):
         """Gets a branding, such as an image or logo, expressed using the ``Asset`` interface.
 

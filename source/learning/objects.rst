@@ -75,7 +75,7 @@ Objective Node
 
    .. autoattribute:: ObjectiveNode.objective
 
-   .. autoattribute:: ObjectiveNode.parent_objectives
+   .. autoattribute:: ObjectiveNode.parent_objective_nodes
 
    .. autoattribute:: ObjectiveNode.child_objective_nodes
 

@@ -1422,6 +1422,14 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
         """
         pass
 
+    def use_active_recurring_event_view(self):
+        """Only active recurring events are returned by methods in this session."""
+        pass
+
+    def use_any_status_recurring_event_view(self):
+        """All active and inactive recurring events are returned by methods in this session."""
+        pass
+
     def use_sequestered_recurring_event_view(self):
         """The returns from the lookup methods omit sequestered recurring events."""
         pass
@@ -1432,12 +1440,6 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
 
     def get_recurring_event(self, recurring_event_id):
         """Gets the ``RecurringEvent`` specified by its ``Id``.
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``RecurringEvent`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to an ``Event`` and retained for
-        compatibility.
 
         :param recurring_event_id: ``Id`` of the ``RecurringEvent``
         :type recurring_event_id: ``osid.id.Id``
@@ -1454,14 +1456,6 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
     def get_recurring_events_by_ids(self, recurring_event_ids):
         """Gets a ``RecurringEventList`` corresponding to the given ``IdList``.
 
-        In plenary mode, the returned list contains all of the recurring
-        events specified in the ``Id`` list, in the order of the list,
-        including duplicates, or an error results if an ``Id`` in the
-        supplied list is not found or inaccessible. Otherwise,
-        inaccessible ``RecurringEvents`` may be omitted from the list
-        and may present the elements in any order including returning a
-        unique set.
-
         :param recurring_event_ids: the list of ``Ids`` to retrieve
         :type recurring_event_ids: ``osid.id.IdList``
         :return: the returned ``RecurringEvent`` list
@@ -1477,11 +1471,6 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
     def get_recurring_events_by_genus_type(self, recurring_event_genus_type):
         """Gets a ``RecurringEventList`` corresponding to the given recurring event genus ``Type`` which does not include recurring events of genus types derived from the specified ``Type``.
 
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
-
         :param recurring_event_genus_type: a recurring event genus type
         :type recurring_event_genus_type: ``osid.type.Type``
         :return: the returned ``RecurringEvent`` list
@@ -1495,11 +1484,6 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
 
     def get_recurring_events_by_parent_genus_type(self, recurring_event_genus_type):
         """Gets a ``RecurringEventList`` corresponding to the given recurring event genus ``Type`` and include any additional recurring event with genus types derived from the specified ``Type``.
-
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
 
         :param recurring_event_genus_type: a recurring event genus type
         :type recurring_event_genus_type: ``osid.type.Type``
@@ -1515,11 +1499,6 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
     def get_recurring_events_by_record_type(self, recurring_event_record_type):
         """Gets a ``RecurringEventList`` containing the given recurring event record ``Type``.
 
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
-
         :param recurring_event_record_type: a recurring event record type
         :type recurring_event_record_type: ``osid.type.Type``
         :return: the returned ``RecurringEvent`` list
@@ -1532,10 +1511,7 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
         return # osid.calendaring.RecurringEventList
 
     def get_recurring_events_by_schedule_slot(self, schedule_slot_id):
-        """Gets the ``RecurringEvents`` containing the given schedule slotIn plenary mode, the returned list contains all matching recurring events or an error results.
-
-        Otherwise, the returned list may contain only those recurring
-        events that are accessible through this session.
+        """Gets the ``RecurringEvents`` containing the given schedule slot.
 
         :param schedule_slot_id: a schedule slot ``Id``
         :type schedule_slot_id: ``osid.id.Id``
@@ -1550,11 +1526,6 @@ class RecurringEventLookupSession(osid_sessions.OsidSession):
 
     def get_recurring_events(self):
         """Gets all ``RecurringEvents``.
-
-        In plenary mode, the returned list contains all known recurring
-        events or an error results. Otherwise, the returned list may
-        contain only those recurring events that are accessible through
-        this session.
 
         :return: a ``RecurringEventList``
         :rtype: ``osid.calendaring.RecurringEventList``

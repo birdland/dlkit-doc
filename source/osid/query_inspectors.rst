@@ -25,8 +25,6 @@ Osid Identifiable Query Inspector
 
    .. autoattribute:: OsidIdentifiableQueryInspector.id_terms
 
-   .. autoattribute:: OsidIdentifiableQueryInspector.material_terms
-
 
 
 Osid Extensible Query Inspector
@@ -270,6 +268,22 @@ Osid Governator Query Inspector
    :show-inheritance:
 
 
+
+
+
+Osid Compendium Query Inspector
+-------------------------------
+
+.. autoclass:: OsidCompendiumQueryInspector
+   :show-inheritance:
+
+   .. autoattribute:: OsidCompendiumQueryInspector.start_date_terms
+
+   .. autoattribute:: OsidCompendiumQueryInspector.end_date_terms
+
+   .. autoattribute:: OsidCompendiumQueryInspector.interpolated_terms
+
+   .. autoattribute:: OsidCompendiumQueryInspector.extrapolated_terms
 
 
 

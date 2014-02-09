@@ -15,13 +15,13 @@ Resource Query Inspector
 
    .. autoattribute:: ResourceQueryInspector.demographic_terms
 
-   .. autoattribute:: ResourceQueryInspector.conataining_group_id_terms
+   .. autoattribute:: ResourceQueryInspector.containing_group_id_terms
 
    .. autoattribute:: ResourceQueryInspector.containing_group_terms
 
-   .. autoattribute:: ResourceQueryInspector.asset_id_terms
+   .. autoattribute:: ResourceQueryInspector.avatar_id_terms
 
-   .. autoattribute:: ResourceQueryInspector.asset_terms
+   .. autoattribute:: ResourceQueryInspector.avatar_terms
 
    .. autoattribute:: ResourceQueryInspector.agent_id_terms
 

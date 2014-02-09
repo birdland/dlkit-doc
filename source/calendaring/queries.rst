@@ -21,14 +21,6 @@ Event Query
 
    .. autoattribute:: EventQuery.duration_terms
 
-   .. automethod:: EventQuery.match_time
-
-   .. automethod:: EventQuery.match_time_inclusive
-
-   .. automethod:: EventQuery.match_any_time
-
-   .. autoattribute:: EventQuery.time_terms
-
    .. automethod:: EventQuery.match_recurring_event_id
 
    .. autoattribute:: EventQuery.recurring_event_id_terms
@@ -121,7 +113,7 @@ Event Query
 
    .. autoattribute:: EventQuery.containing_event_query
 
-   .. automethod:: EventQuery.match_containing_any_event
+   .. automethod:: EventQuery.match_any_containing_event
 
    .. autoattribute:: EventQuery.containing_event_terms
 
@@ -189,11 +181,13 @@ Recurring Event Query
 
    .. automethod:: RecurringEventQuery.match_blackout
 
-   .. automethod:: RecurringEventQuery.match_blackout_inclusive
-
    .. automethod:: RecurringEventQuery.match_any_blackout
 
    .. autoattribute:: RecurringEventQuery.blackout_terms
+
+   .. automethod:: RecurringEventQuery.match_blackout_inclusive
+
+   .. autoattribute:: RecurringEventQuery.blackout_inclusive_terms
 
    .. automethod:: RecurringEventQuery.match_sponsor_id
 
@@ -204,8 +198,6 @@ Recurring Event Query
    .. autoattribute:: RecurringEventQuery.sponsor_query
 
    .. autoattribute:: RecurringEventQuery.sponsor_terms
-
-   .. automethod:: RecurringEventQuery.match_date
 
    .. automethod:: RecurringEventQuery.match_calendar_id
 
@@ -257,7 +249,7 @@ Superseding Event Query
 
    .. automethod:: SupersedingEventQuery.match_any_superseded_event_position
 
-   .. autoattribute:: SupersedingEventQuery.superseded_position_terms
+   .. autoattribute:: SupersedingEventQuery.superseded_event_position_terms
 
    .. automethod:: SupersedingEventQuery.match_calendar_id
 
@@ -309,11 +301,11 @@ Offset Event Query
 
    .. automethod:: OffsetEventQuery.match_relative_start_weekday
 
-   .. automethod:: OffsetEventQuery.match_any_relative_start_weekdays
+   .. automethod:: OffsetEventQuery.match_any_relative_start_weekday
 
    .. autoattribute:: OffsetEventQuery.relative_start_weekday_terms
 
-   .. automethod:: OffsetEventQuery.match_fixed_duration_offset
+   .. automethod:: OffsetEventQuery.match_fixed_duration
 
    .. autoattribute:: OffsetEventQuery.fixed_duration_terms
 
@@ -341,13 +333,37 @@ Offset Event Query
 
    .. automethod:: OffsetEventQuery.match_relative_end_weekday
 
-   .. automethod:: OffsetEventQuery.match_any_relative_end_weekdays
+   .. automethod:: OffsetEventQuery.match_any_relative_end_weekday
 
    .. autoattribute:: OffsetEventQuery.relative_end_weekday_terms
 
-   .. automethod:: OffsetEventQuery.supports_event_query
+   .. automethod:: OffsetEventQuery.match_location_description
 
-   .. autoattribute:: OffsetEventQuery.event_query
+   .. automethod:: OffsetEventQuery.match_any_location_description
+
+   .. autoattribute:: OffsetEventQuery.location_description_terms
+
+   .. automethod:: OffsetEventQuery.match_location_id
+
+   .. autoattribute:: OffsetEventQuery.location_id_terms
+
+   .. automethod:: OffsetEventQuery.supports_location_query
+
+   .. autoattribute:: OffsetEventQuery.location_query
+
+   .. automethod:: OffsetEventQuery.match_any_location
+
+   .. autoattribute:: OffsetEventQuery.location_terms
+
+   .. automethod:: OffsetEventQuery.match_sponsor_id
+
+   .. autoattribute:: OffsetEventQuery.sponsor_id_terms
+
+   .. automethod:: OffsetEventQuery.supports_sponsor_query
+
+   .. autoattribute:: OffsetEventQuery.sponsor_query
+
+   .. autoattribute:: OffsetEventQuery.sponsor_terms
 
    .. automethod:: OffsetEventQuery.match_calendar_id
 
@@ -405,11 +421,15 @@ Schedule Query
 
    .. autoattribute:: ScheduleQuery.schedule_end_terms
 
-   .. automethod:: ScheduleQuery.match_schedule_time_inclusive
+   .. automethod:: ScheduleQuery.match_schedule_time
 
    .. automethod:: ScheduleQuery.match_any_schedule_time
 
    .. autoattribute:: ScheduleQuery.schedule_time_terms
+
+   .. automethod:: ScheduleQuery.match_schedule_time_inclusive
+
+   .. autoattribute:: ScheduleQuery.schedule_time_inclusive_terms
 
    .. automethod:: ScheduleQuery.match_limit
 
@@ -541,11 +561,13 @@ Time Period Query
 
    .. automethod:: TimePeriodQuery.match_time
 
-   .. automethod:: TimePeriodQuery.match_time_inclusive
-
    .. automethod:: TimePeriodQuery.match_any_time
 
    .. autoattribute:: TimePeriodQuery.time_terms
+
+   .. automethod:: TimePeriodQuery.match_time_inclusive
+
+   .. autoattribute:: TimePeriodQuery.time_inclusive_terms
 
    .. automethod:: TimePeriodQuery.match_duration
 
@@ -655,9 +677,9 @@ Calendar Query
 
    .. autoattribute:: CalendarQuery.time_period_query
 
-   .. automethod:: CalendarQuery.match_any_term
+   .. automethod:: CalendarQuery.match_any_time_period
 
-   .. autoattribute:: CalendarQuery.term_terms
+   .. autoattribute:: CalendarQuery.time_period_terms
 
    .. automethod:: CalendarQuery.match_commitment_id
 

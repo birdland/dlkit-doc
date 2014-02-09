@@ -325,8 +325,13 @@ class EventList(osid_objects.OsidList):
         return # osid.calendaring.Event
 
 
-class RecurringEvent(osid_objects.OsidObject, osid_markers.Containable):
-    """A ``RecurringEvent`` an event that repeats over a set of ``Schedules``."""
+class RecurringEvent(osid_objects.OsidRule, osid_markers.Containable):
+    """A ``RecurringEvent`` an event that repeats over a set of ``Schedules,`` other events, or custom rule.
+
+    The active status of the rule informs the appearance of recurring
+    events as events.
+
+    """
     def get_schedule_ids(self):
         """Gets the ``Schedule Id`` of this composite event.
 
@@ -482,7 +487,7 @@ class RecurringEvent(osid_objects.OsidObject, osid_markers.Containable):
         return # osid.calendaring.records.RecurringEventRecord
 
 
-class RecurringEventForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableForm):
+class RecurringEventForm(osid_objects.OsidRuleForm, osid_objects.OsidContainableForm):
     """This is the form for creating and updating ``RecurringEvents``.
 
     Like all ``OsidForm`` objects, various data elements may be set here
@@ -752,7 +757,7 @@ class SupersedingEventForm(osid_objects.OsidRuleForm):
 
     superseded_date = property(fget=set_superseded_date, fdel=clear_superseded_date)
 
-    def get_superseded_position_metadata(self):
+    def get_superseded_event_position_metadata(self):
         """Gets the metadata to superseding an event within a recurring series by date.
 
         :return: metadata for a superseded date
@@ -761,9 +766,9 @@ class SupersedingEventForm(osid_objects.OsidRuleForm):
         """
         return # osid.Metadata
 
-    superseded_position_metadata = property(fget=get_superseded_position_metadata)
+    superseded_event_position_metadata = property(fget=get_superseded_event_position_metadata)
 
-    def set_superseded_position(self, position):
+    def set_superseded_event_position(self, position):
         """Sets the superseded position.
 
         A negative number counts from the end of the series.
@@ -776,7 +781,7 @@ class SupersedingEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    def clear_superseded_position(self):
+    def clear_superseded_event_position(self):
         """Clears the superseded position.
 
         :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
@@ -784,7 +789,7 @@ class SupersedingEventForm(osid_objects.OsidRuleForm):
         """
         pass
 
-    superseded_position = property(fget=set_superseded_position, fdel=clear_superseded_position)
+    superseded_event_position = property(fget=set_superseded_event_position, fdel=clear_superseded_event_position)
 
     def get_superseding_event_form_record(self, superseding_event_record_type):
         """Gets the ``SupersedingEventFormRecord`` corresponding to the given superseding event record ``Type``.
@@ -971,7 +976,7 @@ class OffsetEvent(osid_objects.OsidRule):
         """
         return # boolean
 
-    def get_duration(self, units):
+    def get_fixed_duration(self, units):
         """Gets the duration of the offset event.
 
         :param units: the units of the duration
@@ -1661,7 +1666,7 @@ class OffsetEventList(osid_objects.OsidList):
         return # osid.calendaring.OffsetEvent
 
 
-class Schedule(osid_objects.OsidObject):
+class Schedule(osid_objects.OsidObject, osid_markers.Subjugateable):
     """A ``Schedule`` is a scheduled time slot offered within a time interval at a location."""
     def get_schedule_slot_id(self):
         """Gets the ``Id`` of the schedule slot.
@@ -1855,7 +1860,7 @@ class Schedule(osid_objects.OsidObject):
         return # osid.calendaring.records.ScheduleRecord
 
 
-class ScheduleForm(osid_objects.OsidObjectForm):
+class ScheduleForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm):
     """This is the form for creating and updating ``Schedules``.
 
     Like all ``OsidForm`` objects, various data elements may be set here
@@ -2241,7 +2246,7 @@ class ScheduleSlotForm(osid_objects.OsidObjectForm, osid_objects.OsidContainable
 
     week_of_month_metadata = property(fget=get_week_of_month_metadata)
 
-    def set_week_of_the_month(self, week):
+    def set_week_of_month(self, week):
         """Sets the week of the month of a weekly schedule.
 
         :param week: the new week of the month
@@ -2252,7 +2257,7 @@ class ScheduleSlotForm(osid_objects.OsidObjectForm, osid_objects.OsidContainable
         """
         pass
 
-    week_of_the_month = property(fset=set_week_of_the_month)
+    week_of_month = property(fset=set_week_of_month)
 
     def get_weekday_time_metadata(self):
         """Gets the metadata for the weekday time of a weekly schedule.
@@ -2322,7 +2327,7 @@ class ScheduleSlotForm(osid_objects.OsidObjectForm, osid_objects.OsidContainable
 
     fixed_interval = property(fget=set_fixed_interval, fdel=clear_fixed_interval)
 
-    def ge_duration_metadata(self):
+    def get_duration_metadata(self):
         """Gets the metadata for the duration of the slot.
 
         :return: metadata for the duration
@@ -2330,6 +2335,8 @@ class ScheduleSlotForm(osid_objects.OsidObjectForm, osid_objects.OsidContainable
 
         """
         return # osid.Metadata
+
+    duration_metadata = property(fget=get_duration_metadata)
 
     def set_duration(self, duration):
         """Sets the duration.

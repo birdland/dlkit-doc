@@ -143,21 +143,6 @@ class OsidIdentifiableQuery(OsidQuery):
 
     id_terms = property(fdel=clear_id_terms)
 
-    def match_material(self, match):
-        """Matches identifiables that are marked as material.
-
-        :param match: ``true`` to match material objects, ``false`` to match immaterial objects
-        :type match: ``boolean``
-
-        """
-        pass
-
-    def clear_material_terms(self):
-        """Clears all match material terms."""
-        pass
-
-    material_terms = property(fdel=clear_material_terms)
-
 
 class OsidExtensibleQuery(OsidQuery, osid_markers.Extensible):
     """The ``OsidExtensibleQuery`` is used to assemble search queries for ``Extensible`` objects.
@@ -1568,6 +1553,104 @@ class OsidGovernatorQuery(OsidObjectQuery, OsidOperableQuery, OsidSourceableQuer
 
     """
 
+
+
+class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
+    """This is the query interface for searching reports.
+
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
+
+    """
+    def match_start_date(self, start, end, match):
+        """Matches reports whose start date falls in between the given dates inclusive.
+
+        :param start: start of date range
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end of date range
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``start`` is less than ``end``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
+
+        """
+        pass
+
+    def match_any_start_date(self, match):
+        """Matches reports with any start date set.
+
+        :param match: ``true`` to match any start date, ``false`` to match no start date
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_start_date_terms(self):
+        """Clears the start date query terms."""
+        pass
+
+    start_date_terms = property(fdel=clear_start_date_terms)
+
+    def match_end_date(self, start, end, match):
+        """Matches reports whose effective end date falls in between the given dates inclusive.
+
+        :param start: start of date range
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end of date range
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``start`` is less than ``end``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
+
+        """
+        pass
+
+    def match_any_end_date(self, match):
+        """Matches reports with any end date set.
+
+        :param match: ``true`` to match any end date, ``false`` to match no start date
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_end_date_terms(self):
+        """Clears the end date query terms."""
+        pass
+
+    end_date_terms = property(fdel=clear_end_date_terms)
+
+    def match_interpolated(self, match):
+        """Match reports that are interpolated.
+
+        :param match: ``true`` to match any interpolated reports, ``false`` to match non-interpolated reports
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_interpolated_terms(self):
+        """Clears the interpolated query terms."""
+        pass
+
+    interpolated_terms = property(fdel=clear_interpolated_terms)
+
+    def match_extrapolated(self, match):
+        """Match reports that are extrapolated.
+
+        :param match: ``true`` to match any extrapolated reports, ``false`` to match non-extrapolated reports
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_extrapolated_terms(self):
+        """Clears the extrapolated query terms."""
+        pass
+
+    extrapolated_terms = property(fdel=clear_extrapolated_terms)
 
 
 class OsidCapsuleQuery(OsidQuery):

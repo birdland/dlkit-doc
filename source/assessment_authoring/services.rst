@@ -108,91 +108,94 @@ Assessment Authoring Proxy Manager
 .. autoclass:: AssessmentAuthoringProxyManager
    :show-inheritance:
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_lookup_session
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_lookup_session_for_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_query_session
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_query_session_for_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_search_session
+Assessment Authoring Profile Methods
+____________________________
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_search_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_visible_federation
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_admin_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_lookup
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_admin_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_query
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_notification_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_search
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_notification_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_admin
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_bank_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_notification
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_bank_assignment_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_assessment_part_smart_bank_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_bank_assignment
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_lookup_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_smart_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_lookup_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_item
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_query_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_item_design
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_query_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_lookup
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_search_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_query
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_search_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_search
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_admin_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_admin
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_admin_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_notification
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_notification_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_notification_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_bank_assignment
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_bank_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_smart_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_bank_assignment_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_lookup
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_smart_bank_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_query
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_lookup_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_search
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_lookup_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_admin
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_query_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_notification
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_query_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_search_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_bank_assignment
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_search_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_smart_bank
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_admin_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_rule_lookup
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_admin_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_rule_application
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_notification_session
+   .. autoattribute:: AssessmentAuthoringProxyManager.assessment_part_record_types
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_notification_session_for_bank
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_record_type
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_bank_session
+   .. autoattribute:: AssessmentAuthoringProxyManager.assessment_part_search_record_types
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_bank_assignment_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_assessment_part_search_record_type
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_smart_bank_session
+   .. autoattribute:: AssessmentAuthoringProxyManager.sequence_rule_record_types
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_rule_lookup_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_record_type
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_rule_lookup_session_for_bank
+   .. autoattribute:: AssessmentAuthoringProxyManager.sequence_rule_search_record_types
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_rule_application_session
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_search_record_type
 
-   .. automethod:: AssessmentAuthoringProxyManager.get_sequence_rule_enabler_rule_application_session_for_bank
+   .. autoattribute:: AssessmentAuthoringProxyManager.sequence_rule_enabler_record_types
+
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_record_type
+
+   .. autoattribute:: AssessmentAuthoringProxyManager.sequence_rule_enabler_search_record_types
+
+   .. automethod:: AssessmentAuthoringProxyManager.supports_sequence_rule_enabler_search_record_type
 
 
 

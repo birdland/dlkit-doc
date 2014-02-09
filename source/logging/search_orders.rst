@@ -11,7 +11,7 @@ Log Entry Search Order
 .. autoclass:: LogEntrySearchOrder
    :show-inheritance:
 
-   .. automethod:: LogEntrySearchOrder.order_by_priority_type
+   .. automethod:: LogEntrySearchOrder.order_by_priority
 
    .. automethod:: LogEntrySearchOrder.order_by_timestamp
 

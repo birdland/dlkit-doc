@@ -403,7 +403,7 @@ class AssessmentAuthoringProfile(osid_managers.OsidProfile):
         return # boolean
 
 
-class AssessmentAuthoringManager(osid_managers.OsidManager, """authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile"""):
+class AssessmentAuthoringManager(osid_managers.OsidManager, AssessmentAuthoringProfile):
     """The assessment authoring manager provides access to assessment authoring sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
@@ -1078,7 +1078,7 @@ class AssessmentAuthoringManager(osid_managers.OsidManager, """authoring_UNKNOWN
         return # osid.assessment.authoring.SequenceRuleEnablerRuleApplicationSession
 
 
-class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, """authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile"""):
+class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, AssessmentAuthoringProfile):
     """The assessment authoring manager provides access to assessment authoring sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` object.

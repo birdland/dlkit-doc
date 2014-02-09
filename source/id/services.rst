@@ -11,7 +11,7 @@ Id Manager
 .. autoclass:: IdManager
    :show-inheritance:
 
-
+   .. autoattribute:: IdManager.id_batch_manager
 
 
 
@@ -20,7 +20,11 @@ __________
 
    .. automethod:: IdManager.supports_id_lookup
 
+   .. automethod:: IdManager.supports_id_issue
+
    .. automethod:: IdManager.supports_id_admin
+
+   .. automethod:: IdManager.supports_id_batch
 
 
 
@@ -30,9 +34,20 @@ Id Proxy Manager
 .. autoclass:: IdProxyManager
    :show-inheritance:
 
-   .. automethod:: IdProxyManager.get_id_lookup_session
+   .. autoattribute:: IdProxyManager.id_batch_proxy_manager
 
-   .. automethod:: IdProxyManager.get_id_admin_session
+
+
+Id Profile Methods
+__________
+
+   .. automethod:: IdProxyManager.supports_id_lookup
+
+   .. automethod:: IdProxyManager.supports_id_issue
+
+   .. automethod:: IdProxyManager.supports_id_admin
+
+   .. automethod:: IdProxyManager.supports_id_batch
 
 
 

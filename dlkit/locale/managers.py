@@ -111,6 +111,15 @@ class LocaleProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
+    def supports_format_conversion(self):
+        """Tests if format conversion is supported.
+
+        :return: ``true`` if format conversion is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
     def supports_calendar_info(self):
         """Tests if a calendar informational service is supported.
 
@@ -355,7 +364,7 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :param source_unit_type: the type of the source measure
         :type source_unit_type: ``osid.type.Type``
-        :return: the list of supported measure types
+        :return: the list of supported target measure types
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_unit_type`` is ``null``
 
@@ -365,7 +374,7 @@ class LocaleProfile(osid_managers.OsidProfile):
     def get_source_unit_types(self):
         """Gets all the source unit types supported.
 
-        :return: the list of supported unit types
+        :return: the list of supported source unit types
         :rtype: ``osid.type.TypeList``
 
         """
@@ -402,7 +411,7 @@ class LocaleProfile(osid_managers.OsidProfile):
     def get_source_currency_types(self):
         """Gets the list of source currency types.
 
-        :return: the list of supported currency types
+        :return: the list of supported source currency types
         :rtype: ``osid.type.TypeList``
 
         """
@@ -437,9 +446,9 @@ class LocaleProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     def get_source_calendar_types(self):
-        """Gets the list of target calendar types for a given source calendar type.
+        """Gets the list of source calendar types.
 
-        :return: the list of supported calendar types
+        :return: the list of supported source calendar types
         :rtype: ``osid.type.TypeList``
 
         """
@@ -474,9 +483,9 @@ class LocaleProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     def get_source_time_types(self):
-        """Gets the list of target time types for a given source time type.
+        """Gets the list of source time types.
 
-        :return: the list of supported time types
+        :return: the list of supported source time types
         :rtype: ``osid.type.TypeList``
 
         """
@@ -541,7 +550,7 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :param source_coordinate_type: the type of the source coordinate
         :type source_coordinate_type: ``osid.type.Type``
-        :return: the list of supported coordinate types
+        :return: the list of supported target coordinate types
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_coordinate_type`` is ``null``
 
@@ -549,9 +558,9 @@ class LocaleProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     def get_source_coordinate_types(self):
-        """Gets the list of target coordinate types for a given source coordinate type.
+        """Gets the list of source coordinate types.
 
-        :return: the list of supported coordinate types
+        :return: the list of supported source coordinate types
         :rtype: ``osid.type.TypeList``
 
         """
@@ -578,7 +587,7 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :param source_spatial_unit_record_type: the type of the source spatial unit record
         :type source_spatial_unit_record_type: ``osid.type.Type``
-        :return: the list of supported spatial unit record types
+        :return: the list of supported target spatial unit record types
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_spatial_unit_record_type`` is ``null``
 
@@ -586,15 +595,52 @@ class LocaleProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     def get_source_spatial_unit_record_types(self):
-        """Gets the list of target spatial unit record types for a given source spatial unit type.
+        """Gets the list of source spatial unit record types.
 
-        :return: the list of supported spatial unit recod types
+        :return: the list of supported source spatial unit record types
         :rtype: ``osid.type.TypeList``
 
         """
         return # osid.type.TypeList
 
     source_spatial_unit_record_types = property(fget=get_source_spatial_unit_record_types)
+
+    def supports_format_types_for_conversion(self, source_format_type, target_format_type):
+        """Tests if a given format conversion is supported.
+
+        :param source_format_type: the type of the source format
+        :type source_format_type: ``osid.type.Type``
+        :param target_format_type: the type of the target format
+        :type target_format_type: ``osid.type.Type``
+        :return: ``true`` if the given source and target conversion is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``source_format_type`` or ``target_format_type`` is ``null``
+
+        """
+        return # boolean
+
+    def get_format_types_for_source(self, source_format_type):
+        """Gets the list of target format types for a given source spatial unit type.
+
+        :param source_format_type: the type of the source format
+        :type source_format_type: ``osid.type.Type``
+        :return: the list of supported target format types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``source_format_type`` is ``null``
+
+        """
+        return # osid.type.TypeList
+
+    def get_source_format_types(self):
+        """Gets the list of source format types.
+
+        :return: the list of supported source format types
+        :rtype: ``osid.type.TypeList``
+
+        """
+        return # osid.type.TypeList
+
+    source_format_types = property(fget=get_source_format_types)
 
 
 class LocaleManager(osid_managers.OsidManager, LocaleProfile):
@@ -622,6 +668,7 @@ class LocaleManager(osid_managers.OsidManager, LocaleProfile):
         systems
       * ``SpatialUnitConversionSession:`` a session to convert spatial
         units
+      * ``FormatConversionSession:`` a session to convert text formats
       * ``CalendarInfoSession:`` a session for examining calendaring and
         time systems
 
@@ -938,7 +985,7 @@ class LocaleManager(osid_managers.OsidManager, LocaleProfile):
     spatial_unit_conversion_session = property(fget=get_spatial_unit_conversion_session)
 
     def get_spatial_unit_conversion_session_for_type(self, source_spatial_unit_record_type, target_spatial_unit_record_type):
-        """Gets an ``OsidSession`` associated with the spatial unit conversion service and the given coordinate record types.
+        """Gets an ``OsidSession`` associated with the spatial unit conversion service and the given spatial unit record types.
 
         :param source_spatial_unit_record_type: the type of the source spatial unit record
         :type source_spatial_unit_record_type: ``osid.type.Type``
@@ -953,6 +1000,36 @@ class LocaleManager(osid_managers.OsidManager, LocaleProfile):
 
         """
         return # osid.locale.SpatialUnitConversionSession
+
+    def get_format_conversion_session(self):
+        """Gets a text format conversion session.
+
+        :return: a ``FormatConversionSession``
+        :rtype: ``osid.locale.FormatConversionSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_format_conversion()`` is ``false``
+
+        """
+        return # osid.locale.FormatConversionSession
+
+    format_conversion_session = property(fget=get_format_conversion_session)
+
+    def get_format_conversion_session_for_type(self, source_format_type, target_format_type):
+        """Gets an ``OsidSession`` associated with the text format conversion service and the given format types.
+
+        :param source_format_type: the type of the text format
+        :type source_format_type: ``osid.type.Type``
+        :param target_format_type: the type of the text format
+        :type target_format_type: ``osid.type.Type``
+        :return: a ``FormatConversionSession``
+        :rtype: ``osid.locale.FormatConversionSession``
+        :raise: ``NullArgument`` -- ``source_format_type`` or ``target_format_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_format_conversion()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unsupported`` -- ``supports_format_types_for_conversion(source_format_type, target_format_record_type)`` is ``false``
+
+        """
+        return # osid.locale.FormatConversionSession
 
     def get_calendar_info_session(self):
         """Gets a calendar informational session session.
@@ -1012,6 +1089,7 @@ class LocaleProxyManager(osid_managers.OsidProxyManager, LocaleProfile):
         systems
       * ``SpatialUnitConversionSession:`` a session to convert spatial
         units
+      * ``FormatConversionSession:`` a session to convert text formats
       * ``CalendarInfoSession:`` a session for examining calendaring and
         time systems
 
@@ -1357,7 +1435,7 @@ class LocaleProxyManager(osid_managers.OsidProxyManager, LocaleProfile):
         return # osid.locale.SpatialUnitConversionSession
 
     def get_spatial_unit_conversion_session_for_type(self, source_spatial_unit_record_type, target_spatial_unit_record_type, proxy):
-        """Gets an ``OsidSession`` associated with the spatial unit conversion service and the given coordinate record types.
+        """Gets an ``OsidSession`` associated with the spatial unit conversion service and the given spatial unit record types.
 
         :param source_spatial_unit_record_type: the type of the source spatial unit record
         :type source_spatial_unit_record_type: ``osid.type.Type``
@@ -1374,6 +1452,39 @@ class LocaleProxyManager(osid_managers.OsidProxyManager, LocaleProfile):
 
         """
         return # osid.locale.SpatialUnitConversionSession
+
+    def get_format_conversion_session(self, proxy):
+        """Gets a text format conversion session.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FormatConversionSession``
+        :rtype: ``osid.locale.FormatConversionSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_format_conversion()`` is ``false``
+
+        """
+        return # osid.locale.FormatConversionSession
+
+    def get_format_conversion_session_for_type(self, source_format_type, target_format_type, proxy):
+        """Gets an ``OsidSession`` associated with the text format conversion service and the given format types.
+
+        :param source_format_type: the type of the text format
+        :type source_format_type: ``osid.type.Type``
+        :param target_format_type: the type of the text format
+        :type target_format_type: ``osid.type.Type``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FormatConversionSession``
+        :rtype: ``osid.locale.FormatConversionSession``
+        :raise: ``NullArgument`` -- ``source_format_type, target_format_type`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_format_conversion()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unsupported`` -- ``supports_format_types_for_conversion(source_format_type, target_format_record_type)`` is ``false``
+
+        """
+        return # osid.locale.FormatConversionSession
 
     def get_calendar_info_session(self, proxy):
         """Gets a calendar informational session session.

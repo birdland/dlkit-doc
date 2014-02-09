@@ -176,6 +176,109 @@ class TypeLookupSession(osid_sessions.OsidSession):
         """
         return # osid.type.TypeList
 
+    def get_relation_types(self):
+        """Gets all known relation ``Types``.
+
+        A relation Types relates two ``Types``.
+
+        :return: known relation types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
+    relation_types = property(fget=get_relation_types)
+
+    def get_source_types_by_relation_type(self, relation_type):
+        """Gets all source ``Types`` related by the given type.
+
+        :param relation_type: a relation type
+        :type relation_type: ``osid.type.Type``
+        :return: the source types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``relation_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
+    def get_destination_types_by_source(self, source_type):
+        """Gets all destination Types related to the given source ``Type``.
+
+        :param source_type: a source type
+        :type source_type: ``osid.type.Type``
+        :return: the related types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``source_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
+    def get_destination_types_by_source_and_relation_type(self, source_type, relation_type):
+        """Gets all destination Types related to the given source ``Type`` and relation ``Type``.
+
+        :param source_type: a source type
+        :type source_type: ``osid.type.Type``
+        :param relation_type: a relation type
+        :type relation_type: ``osid.type.Type``
+        :return: the related types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``source_type`` or ``relation_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
+    def get_destination_types_by_relation_type(self, relation_type):
+        """Gets all destination ``Types`` related by the given type.
+
+        :param relation_type: a relation type
+        :type relation_type: ``osid.type.Type``
+        :return: the destination types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``relation_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
+    def get_source_types_by_destination(self, destination_type):
+        """Gets all source Types related to the given destination ``Type``.
+
+        :param destination_type: a destination type
+        :type destination_type: ``osid.type.Type``
+        :return: the source types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``destination_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
+    def get_source_types_by_destination_and_relation_type(self, destination_type, relation_type):
+        """Gets all source Types related to the given destination ``Type`` and relation ``Type``.
+
+        :param destination_type: a destination type
+        :type destination_type: ``osid.type.Type``
+        :param relation_type: a relation type
+        :type relation_type: ``osid.type.Type``
+        :return: the related types
+        :rtype: ``osid.type.TypeList``
+        :raise: ``NullArgument`` -- ``destination_type`` or ``relation_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.type.TypeList
+
 
 class TypeAdminSession(osid_sessions.OsidSession):
     """This session is used to create, update and delete ``Types`` in the registry."""
@@ -222,7 +325,7 @@ class TypeAdminSession(osid_sessions.OsidSession):
         :type type_form: ``osid.type.TypeForm``
         :return: the created ``Type``
         :rtype: ``osid.type.Type``
-        :raise: ``IllegalState`` -- ``log_entry_form`` already used in a create transaction
+        :raise: ``IllegalState`` -- ``type_form`` already used in a create transaction
         :raise: ``InvalidArgument`` -- one or more of the arguments is invalid
         :raise: ``NullArgument`` -- one or more of the arguments is null
         :raise: ``OperationFailed`` -- unable to complete request
@@ -389,8 +492,44 @@ class TypeAdminSession(osid_sessions.OsidSession):
         :type type: ``osid.type.Type``
         :param base_type: a base type
         :type base_type: ``osid.type.Type``
-        :raise: ``NotFound`` -- ``type`` or ``base_type`` is not found
+        :raise: ``NotFound`` -- ``type`` or ``base_type`` is not found or ``base_type`` is not a base of ``type``
         :raise: ``NullArgument`` -- ``type`` or ``base_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def add_type_relation(self, source_type, destination_type, relation_type):
+        """Adds a relation between two types.
+
+        The relationship is a ``Type`` in itself.
+
+        :param source_type: the source type
+        :type source_type: ``osid.type.Type``
+        :param destination_type: the destination type
+        :type destination_type: ``osid.type.Type``
+        :param relation_type: the relation type
+        :type relation_type: ``osid.type.Type``
+        :raise: ``NotFound`` -- ``source_type, destination_type,`` or ``relation_type`` is not found
+        :raise: ``NullArgument`` -- ``source_type, destination_type,`` or ``relation_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def remove_type_relation(self, source_type, destination_type, relation_type):
+        """Renoves a relation between two types.
+
+        :param source_type: the source type
+        :type source_type: ``osid.type.Type``
+        :param destination_type: the destination type
+        :type destination_type: ``osid.type.Type``
+        :param relation_type: the relation type
+        :type relation_type: ``osid.type.Type``
+        :raise: ``NotFound`` -- ``source_type, destination_type,`` or ``relation_type`` is not found, or the relationship does not exist
+        :raise: ``NullArgument`` -- ``source_type, destination_type,`` or ``relation_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 

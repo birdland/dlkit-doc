@@ -1,8 +1,7 @@
-from ..osid import markers as osid_markers
 from ..osid import objects as osid_objects
 
 
-class Authentication(osid_markers.Extensible, osid_markers.Browsable):
+class Authentication(osid_objects.OsidObject):
     """``Authentication`` represents an authentication credential which contains set of ``bytes`` and a format Type.
 
     Once an ``Authentication`` is created from the
@@ -120,7 +119,7 @@ class Authentication(osid_markers.Extensible, osid_markers.Browsable):
         return # osid.authentication.process.records.AuthenticationRecord
 
 
-class Challenge(osid_markers.Extensible, osid_markers.Browsable):
+class Challenge(osid_objects.OsidObject):
     """The challenge data."""
     def get_challenge_record(self, challenge_record_type):
         """Gets the challenge record corresponding to the given challenge record ``Type``.

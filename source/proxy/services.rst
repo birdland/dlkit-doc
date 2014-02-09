@@ -36,7 +36,22 @@ Proxy Proxy Manager
 .. autoclass:: ProxyProxyManager
    :show-inheritance:
 
-   .. automethod:: ProxyProxyManager.get_proxy_session
+
+
+
+
+Proxy Profile Methods
+_____________
+
+   .. automethod:: ProxyProxyManager.supports_proxy
+
+   .. autoattribute:: ProxyProxyManager.proxy_record_types
+
+   .. automethod:: ProxyProxyManager.supports_proxy_record_type
+
+   .. autoattribute:: ProxyProxyManager.proxy_condition_record_types
+
+   .. automethod:: ProxyProxyManager.supports_proxy_condition_record_type
 
 
 

@@ -62,21 +62,6 @@ class IdLookupSession(osid_sessions.OsidSession):
         """
         return # osid.id.IdList
 
-    def get_id_aliases(self, id_):
-        """Gets a list of ``Id`` aliases of an ``Id``.
-
-        :param id: an ``Id``
-        :type id: ``osid.id.Id``
-        :return: a list of alias ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``id`` is not found
-        :raise: ``NullArgument`` -- ``id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.id.IdList
-
     def get_ids_by_authority(self, authority):
         """Gets ``Ids`` by the given authority.
 
@@ -85,6 +70,22 @@ class IdLookupSession(osid_sessions.OsidSession):
         :return: a list of ``Ids``
         :rtype: ``osid.id.IdList``
         :raise: ``NullArgument`` -- ``authority`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.id.IdList
+
+    def get_ids_by_authority_and_namespace(self, authority, namespace):
+        """Gets ``Ids`` by the given authority and namespace.
+
+        :param authority: an authority
+        :type authority: ``string``
+        :param namespace: a namespace
+        :type namespace: ``string``
+        :return: a list of ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``authority`` or ``namespace`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -123,9 +124,89 @@ class IdLookupSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def get_id_aliases(self, id_):
+        """Gets a list of ``Id`` aliases of an ``Id``.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :return: a list of alias ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.id.IdList
+
+    def get_id_aliases_by_authority(self, id_, authority):
+        """Gets a list of ``Id`` aliases in a authority for an ``Id``.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param authority: an authority
+        :type authority: ``string``
+        :return: a list of alias ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``id`` or ``authority`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.id.IdList
+
+    def get_id_aliases_by_authority_and_namespace(self, id_, authority, namespace):
+        """Gets a list of ``Id`` aliases in a namespace for an ``Id``.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param authority: an authority
+        :type authority: ``string``
+        :param namespace: a namespace
+        :type namespace: ``string``
+        :return: a list of alias ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``id, authority,`` or ``namespace`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.id.IdList
+
+
+class IdIssueSession(osid_sessions.OsidSession):
+    """This is a simple session used to create new ``Ids``."""
+    def can_issue_ids(self):
+        """Tests if this user can issue ``Ids``.
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known create methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        create operations.
+
+        :return: ``false`` if create methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def issue_id(self):
+        """Issues a new ``Id``.
+
+        This method creates a new Id for a predetermined authority and
+        namespace.
+
+        :return: the new ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.id.Id
+
 
 class IdAdminSession(osid_sessions.OsidSession):
-    """This session is used to create a new ``Id``."""
+    """This session is used to manually create new ``Ids``."""
     def can_create_ids(self):
         """Tests if this user can create ``Ids``.
 
@@ -141,13 +222,38 @@ class IdAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def create_id(self):
-        """Issues a new ``Id``.
+    def get_id_form_for_create(self):
+        """Gets the ``Id`` form for creating new Ids.
 
-        :return: the created ``Id``
-        :rtype: ``osid.id.Id``
+        A new form should be requested for each create transaction.
+
+        :return: the ``Id`` form
+        :rtype: ``osid.id.IdForm``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.id.IdForm
+
+    id_form_for_create = property(fget=get_id_form_for_create)
+
+    def create_id(self, id_form):
+        """Creates a new ``Id``.
+
+        A new ``IdForm`` should be requested for each create
+        transaction.
+
+        :param id_form: the ``Id`` form
+        :type id_form: ``osid.id.IdForm``
+        :return: the created ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- an ``Id`` for the authority, namespace, and identifier already exists
+        :raise: ``IllegalState`` -- ``id_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``id_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``id_form`` did not originate from ``get_id_form_for_create()``
 
         """
         return # osid.id.Id
@@ -170,18 +276,17 @@ class IdAdminSession(osid_sessions.OsidSession):
     def alias_id(self, primary_id, equivalent_id):
         """Makes two ``Ids`` equivalent.
 
-        The primary ``Id`` is known to this service and the equivalent
-        ``Id`` may be already known to this service or an external
-        ``Id``. If the external ``Id`` is already mapped to another
-        ``Id,`` it is changed to map to the given primary ``Id``. Calls
-        to ``IdLookupSession.getId(equivalentId)`` return the
-        ``primaryId``.
+        The primary and equivalent ``Ids`` are already known to this
+        service ````. If the external ``Id`` is already mapped to
+        another ``Id,`` it is changed to map to the given primary
+        ``Id``. Calls to ``IdLookupSession.getId(equivalentId)`` return
+        the ``primaryId``.
 
         :param primary_id: the primary ``Id``
         :type primary_id: ``osid.id.Id``
         :param equivalent_id: an ``Id`` to be made equivalent
         :type equivalent_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``primary_id`` is not found
+        :raise: ``NotFound`` -- ``primary_id`` or ``equivalent_id`` is not found
         :raise: ``NullArgument`` -- ``primary_id`` or ``equivalent_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -189,38 +294,19 @@ class IdAdminSession(osid_sessions.OsidSession):
         """
         pass
 
+    def remove_alias(self, primary_id, equivalent_id):
+        """Removes equivalence from two ``Ids``.
 
-class IdBatchAdminSession(IdAdminSession):
-    """This session is used to create a new ``Id``."""
-    def create_ids(self, quantity):
-        """Issues a set of new ``Ids``.
-
-        :param quantity: the number to create
-        :type quantity: ``cardinal``
-        :return: the created ``Ids``
-        :rtype: ``osid.id.IdList``
+        :param primary_id: the primary ``Id``
+        :type primary_id: ``osid.id.Id``
+        :param equivalent_id: the equivalent ``Id``
+        :type equivalent_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``primary_id`` or ``equivalent_id`` is not found or ``equivalent_id`` not mapped to ``primary_id``
+        :raise: ``NullArgument`` -- ``primary_id`` or ``equivalent_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        return # osid.id.IdList
-
-    def alias_ids(self, primary_ids):
-        """Makes a set of ``Ids`` known to this service equivalent such that for each primary and equivalent ``Id`` in the given array, calls to ``IdLookupSession.
-
-        getId(equivalentId)`` return the ``primaryId``.
-
-        :param primary_ids: the primary ``Ids``
-        :type primary_ids: ``osid.transaction.batch.AliasRequestList``
-        :return: the created ``Ids``
-        :rtype: ``osid.transaction.batch.AliasResponseList``
-        :raise: ``InvalidArgument`` -- ``primary_ids`` does not match ``equivalent_ids``
-        :raise: ``NotFound`` -- a ``primary_id`` or ``equivalent_id`` is not found
-        :raise: ``NullArgument`` -- ``primary_ids`` or ``equivalent_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.transaction.batch.AliasResponseList
+        pass
 
 

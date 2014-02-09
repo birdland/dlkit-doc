@@ -19,7 +19,9 @@ Grade Query Inspector
 
    .. autoattribute:: GradeQueryInspector.input_score_end_range_terms
 
-   .. autoattribute:: GradeQueryInspector.ouput_score_terms
+   .. autoattribute:: GradeQueryInspector.input_score_terms
+
+   .. autoattribute:: GradeQueryInspector.output_score_terms
 
    .. autoattribute:: GradeQueryInspector.grade_entry_id_terms
 
@@ -39,13 +41,11 @@ Grade System Query Inspector
 .. autoclass:: GradeSystemQueryInspector
    :show-inheritance:
 
-   .. autoattribute:: GradeSystemQueryInspector.grade_based_systems_terms
+   .. autoattribute:: GradeSystemQueryInspector.based_on_grades_terms
 
    .. autoattribute:: GradeSystemQueryInspector.grade_id_terms
 
    .. autoattribute:: GradeSystemQueryInspector.grade_terms
-
-   .. autoattribute:: GradeSystemQueryInspector.score_terms
 
    .. autoattribute:: GradeSystemQueryInspector.lowest_numeric_score_terms
 
@@ -85,7 +85,7 @@ Grade Entry Query Inspector
 
    .. autoattribute:: GradeEntryQueryInspector.overridden_grade_entry_terms
 
-   .. autoattribute:: GradeEntryQueryInspector.ignored_for_calculation_terms
+   .. autoattribute:: GradeEntryQueryInspector.ignored_for_calculations_terms
 
    .. autoattribute:: GradeEntryQueryInspector.grade_id_terms
 

@@ -15,8 +15,6 @@ Event Query Inspector
 
    .. autoattribute:: EventQueryInspector.duration_terms
 
-   .. autoattribute:: EventQueryInspector.time_terms
-
    .. autoattribute:: EventQueryInspector.recurring_event_id_terms
 
    .. autoattribute:: EventQueryInspector.recurring_event_terms
@@ -65,15 +63,13 @@ Recurring Event Query Inspector
 .. autoclass:: RecurringEventQueryInspector
    :show-inheritance:
 
-   .. automethod:: RecurringEventQueryInspector.ge_schedule_id_terms
+   .. autoattribute:: RecurringEventQueryInspector.schedule_id_terms
 
    .. autoattribute:: RecurringEventQueryInspector.schedule_terms
 
    .. autoattribute:: RecurringEventQueryInspector.superseding_event_id_terms
 
    .. autoattribute:: RecurringEventQueryInspector.superseding_event_terms
-
-   .. autoattribute:: RecurringEventQueryInspector.speific_date_terms
 
    .. autoattribute:: RecurringEventQueryInspector.event_id_terms
 
@@ -103,17 +99,13 @@ Superseding Event Query Inspector
 .. autoclass:: SupersedingEventQueryInspector
    :show-inheritance:
 
-   .. autoattribute:: SupersedingEventQueryInspector.event_id_terms
-
-   .. autoattribute:: SupersedingEventQueryInspector.event_terms
-
-   .. autoattribute:: SupersedingEventQueryInspector.recurring_event_id_terms
-
-   .. autoattribute:: SupersedingEventQueryInspector.recurring_event_terms
-
    .. autoattribute:: SupersedingEventQueryInspector.superseded_event_id_terms
 
    .. autoattribute:: SupersedingEventQueryInspector.superseded_event_terms
+
+   .. autoattribute:: SupersedingEventQueryInspector.superseding_event_id_terms
+
+   .. autoattribute:: SupersedingEventQueryInspector.superseding_event_terms
 
    .. autoattribute:: SupersedingEventQueryInspector.superseded_date_terms
 
@@ -157,7 +149,15 @@ Offset Event Query Inspector
 
    .. autoattribute:: OffsetEventQueryInspector.relative_end_weekday_terms
 
-   .. autoattribute:: OffsetEventQueryInspector.event_terms
+   .. autoattribute:: OffsetEventQueryInspector.location_description_terms
+
+   .. autoattribute:: OffsetEventQueryInspector.location_id_terms
+
+   .. autoattribute:: OffsetEventQueryInspector.location_terms
+
+   .. autoattribute:: OffsetEventQueryInspector.sponsor_id_terms
+
+   .. autoattribute:: OffsetEventQueryInspector.sponsor_terms
 
    .. autoattribute:: OffsetEventQueryInspector.calendar_id_terms
 
@@ -184,6 +184,8 @@ Schedule Query Inspector
    .. autoattribute:: ScheduleQueryInspector.schedule_start_terms
 
    .. autoattribute:: ScheduleQueryInspector.schedule_end_terms
+
+   .. autoattribute:: ScheduleQueryInspector.schedule_time_terms
 
    .. autoattribute:: ScheduleQueryInspector.schedule_time_inclusive_terms
 

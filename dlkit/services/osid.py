@@ -134,7 +134,7 @@ OSIDs.
 
 
 The most basic operations of an OSID center on retrieval, search, create
-& update, and notifications on changes to an OsidObject. The more
+& update, and notifications on changes to an ``OsidObject``. The more
 advanced OSIDs model a system behavior where a variety of implicit
 relationships, constraints and rules come into play.
 
@@ -143,6 +143,8 @@ relationships, constraints and rules come into play.
     governing related ``OsidObjects.`` The ``OsidGovernator`` represents
     an engine of sorts in an OSID Provider and may have its own provider
     identity.
+  * ``OsidCompendium`` : ``OsidObjects`` which are reports or summaries
+    based on transactional data managed elsewhere.
 
 
 Managing data governing rules occurs in a separate set of interfaces
@@ -590,6 +592,18 @@ class Sourceable:
 
     provider = property(fget=get_provider)
 
+    def get_branding_ids(self):
+        """Gets the branding asset ``Ids``.
+
+        :return: a list of asset ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+        """
+        raise UNIMPLEMENTED()
+
+    branding_ids = property(fget=get_branding_ids)
+
     def get_branding(self):
         """Gets a branding, such as an image or logo, expressed using the ``Asset`` interface.
 
@@ -1006,6 +1020,39 @@ class OsidSession:
         raise UNIMPLEMENTED()
 
     effective_agent = property(fget=get_effective_agent)
+
+    def get_date(self):
+        """Gets the service date which may be the current date or the effective date in which this session exists.
+
+        :return: the service date
+        :rtype: ``timestamp``
+
+        """
+        raise UNIMPLEMENTED()
+
+    date = property(fget=get_date)
+
+    def get_clock_rate(self):
+        """Gets the rate of the service clock.
+
+        :return: the clock rate
+        :rtype: ``decimal``
+
+        """
+        raise UNIMPLEMENTED()
+
+    clock_rate = property(fget=get_clock_rate)
+
+    def get_format_type(self):
+        """Gets the ``DisplayText`` format ``Type`` preference in effect for this session.
+
+        :return: the effective ``DisplayText`` format ``Type``
+        :rtype: ``osid.type.Type``
+
+        """
+        raise UNIMPLEMENTED()
+
+    format_type = property(fget=get_format_type)
 
     def supports_transactions(self):
         """Tests for the availability of transactions.

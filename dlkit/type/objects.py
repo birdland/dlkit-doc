@@ -22,9 +22,6 @@ class TypeForm(osid_objects.OsidForm):
     def set_display_name(self, display_name):
         """Sets a display name.
 
-        A display name is required and if not set will be set by the
-        provider.
-
         :param display_name: the new display name
         :type display_name: ``string``
         :raise: ``InvalidArgument`` -- ``display_name`` is invalid
@@ -34,7 +31,15 @@ class TypeForm(osid_objects.OsidForm):
         """
         pass
 
-    display_name = property(fset=set_display_name)
+    def clear_display_name(self):
+        """Clears the display name.
+
+        :raise: ``NoAccess`` -- ``display_name`` cannot be modified
+
+        """
+        pass
+
+    display_name = property(fget=set_display_name, fdel=clear_display_name)
 
     def get_display_label_metadata(self):
         """Gets the metadata for the display label.
@@ -59,7 +64,15 @@ class TypeForm(osid_objects.OsidForm):
         """
         pass
 
-    display_label = property(fset=set_display_label)
+    def clear_display_label(self):
+        """Clears the display label.
+
+        :raise: ``NoAccess`` -- ``display_label`` cannot be modified
+
+        """
+        pass
+
+    display_label = property(fget=set_display_label, fdel=clear_display_label)
 
     def get_description_metadata(self):
         """Gets the metadata for the description.

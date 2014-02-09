@@ -23,8 +23,6 @@ Osid Identifiable Search Order
 
    .. automethod:: OsidIdentifiableSearchOrder.order_by_id
 
-   .. automethod:: OsidIdentifiableSearchOrder.order_by_material
-
 
 
 Osid Extensible Search Order
@@ -252,6 +250,22 @@ Osid Governator Search Order
    :show-inheritance:
 
 
+
+
+
+Osid Compendium Search Order
+----------------------------
+
+.. autoclass:: OsidCompendiumSearchOrder
+   :show-inheritance:
+
+   .. automethod:: OsidCompendiumSearchOrder.order_by_start_date
+
+   .. automethod:: OsidCompendiumSearchOrder.order_by_end_date
+
+   .. automethod:: OsidCompendiumSearchOrder.order_by_interpolated
+
+   .. automethod:: OsidCompendiumSearchOrder.order_by_extrapolated
 
 
 

@@ -3349,6 +3349,978 @@ class WorkflowProxyManager(osid_managers.OsidProxyManager, WorkflowProfile):
     workflow_rules_proxy_manager = property(fget=get_workflow_rules_proxy_manager)
 
 
+##
+# The following methods are from osid.workflow.OfficeLookupSession
+
+    def can_lookup_offices(self):
+        """Tests if this user can perform ``Office`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_office_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_office_view(self):
+        """A complete view of the ``Office`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office(self, office_id):
+        """Gets the ``Office`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Office`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to an ``Office`` and retained for compatibility.
+
+
+        :param office_id: ``Id`` of the ``Office``
+        :type office_id: ``osid.id.Id``
+        :return: the office
+        :rtype: ``osid.workflow.Office``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_offices_by_ids(self, office_ids):
+        """Gets an ``OfficeList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the offices
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Offices`` may be omitted from the list and may
+        present the elements in any order including returning a unique
+        set.
+
+
+        :param office_ids: the list of ``Ids`` to retrieve
+        :type office_ids: ``osid.id.IdList``
+        :return: the returned ``Office`` list
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``office_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_offices_by_genus_type(self, office_genus_type):
+        """Gets an ``OfficeList`` corresponding to the given office genus ``Type`` which does not include offices of types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known offices or
+        an error results. Otherwise, the returned list may contain only
+        those offices that are accessible through this session.
+
+
+        :param office_genus_type: an office genus type
+        :type office_genus_type: ``osid.type.Type``
+        :return: the returned ``Office`` list
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NullArgument`` -- ``office_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_offices_by_parent_genus_type(self, office_genus_type):
+        """Gets an ``OfficeList`` corresponding to the given office genus ``Type`` and include any additional offices with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known offices or
+        an error results. Otherwise, the returned list may contain only
+        those offices that are accessible through this session.
+
+
+        :param office_genus_type: an office genus type
+        :type office_genus_type: ``osid.type.Type``
+        :return: the returned ``Office`` list
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NullArgument`` -- ``office_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_offices_by_record_type(self, office_record_type):
+        """Gets an ``OfficeList`` containing the given office record ``Type``.
+        In plenary mode, the returned list contains all known offices or
+        an error results. Otherwise, the returned list may contain only
+        those offices that are accessible through this session.
+
+
+        :param office_record_type: an office record type
+        :type office_record_type: ``osid.type.Type``
+        :return: the returned ``Office`` list
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NullArgument`` -- ``office_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_offices_by_provider(self, resource_id):
+        """Gets an ``OfficeList`` from the given provider.
+        In plenary mode, the returned list contains all known offices or
+        an error results. Otherwise, the returned list may contain only
+        those offices that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Office`` list
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_offices(self):
+        """Gets all ``Offices``.
+        In plenary mode, the returned list contains all known offices or
+        an error results. Otherwise, the returned list may contain only
+        those offices that are accessible through this session.
+
+
+        :return: a list of ``Offices``
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    offices = property(fget=get_offices)
+
+
+##
+# The following methods are from osid.workflow.OfficeQuerySession
+
+    def can_search_offices(self):
+        """Tests if this user can perform ``Office`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office_query(self):
+        """Gets an office query.
+
+        :return: the office query
+        :rtype: ``osid.workflow.OfficeQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    office_query = property(fget=get_office_query)
+
+    def get_offices_by_query(self, office_query):
+        """Gets a list of ``Offices`` matching the given office query.
+
+        :param office_query: the office query
+        :type office_query: ``osid.workflow.OfficeQuery``
+        :return: the returned ``OfficeList``
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NullArgument`` -- ``office_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``office_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.workflow.OfficeSearchSession
+
+    def get_office_search(self):
+        """Gets an office search.
+
+        :return: the office search
+        :rtype: ``osid.workflow.OfficeSearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    office_search = property(fget=get_office_search)
+
+    def get_office_search_order(self):
+        """Gets an office search order.
+        The ``OfficeSearchOrder`` is supplied to an ``OfficeSearch`` to
+        specify the ordering of results.
+
+
+        :return: the office search order
+        :rtype: ``osid.workflow.OfficeSearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    office_search_order = property(fget=get_office_search_order)
+
+    def get_offices_by_search(self, office_query, office_search):
+        """Gets the search results matching the given search query using the given search.
+
+        :param office_query: the office query
+        :type office_query: ``osid.workflow.OfficeQuery``
+        :param office_search: the office search
+        :type office_search: ``osid.workflow.OfficeSearch``
+        :return: the returned search results
+        :rtype: ``osid.workflow.OfficeSearchResults``
+        :raise: ``NullArgument`` -- ``office_query`` or ``office_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``office_query`` or ``office_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office_query_from_inspector(self, office_query_inspector):
+        """Gets an office query from an inspector.
+        The inspector is available from an ``OfficeSearchResults``.
+
+
+        :param office_query_inspector: an office query inspector
+        :type office_query_inspector: ``osid.workflow.OfficeQueryInspector``
+        :return: the office query
+        :rtype: ``osid.workflow.OfficeQuery``
+        :raise: ``NullArgument`` -- ``office_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``office_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.workflow.OfficeAdminSession
+
+    def can_create_offices(self):
+        """Tests if this user can create ``Offices``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating an
+        ``Office``. will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        create operations to unauthorized users.
+
+
+        :return: ``false`` if ``Office`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_office_with_record_types(self, office_record_types):
+        """Tests if this user can create a single ``Office`` using the desired record types.
+        While ``WorkflowManager.getOfficeRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Office``.
+        Providing an empty array tests if an ``Office`` can be created
+        with no records.
+
+
+        :param office_record_types: array of office record types
+        :type office_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Office`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``office_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office_form_for_create(self, office_record_types):
+        """Gets the office form for creating new offices.
+        A new form should be requested for each create transaction.
+
+
+        :param office_record_types: array of office record types
+        :type office_record_types: ``osid.type.Type[]``
+        :return: the office form
+        :rtype: ``osid.workflow.OfficeForm``
+        :raise: ``NullArgument`` -- ``office_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_office(self, office_form):
+        """Creates a new ``Office``.
+
+        :param office_form: the form for this ``Office``
+        :type office_form: ``osid.workflow.OfficeForm``
+        :return: the new ``Office``
+        :rtype: ``osid.workflow.Office``
+        :raise: ``IllegalState`` -- ``office_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``office_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``office_form`` did not originate from ``get_office_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_offices(self):
+        """Tests if this user can update ``Offices``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating an
+        ``Office`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        update operations to unauthorized users.
+
+
+        :return: ``false`` if ``Office`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office_form_for_update(self, office_id):
+        """Gets the office form for updating an existing office.
+        A new office form should be requested for each update
+        transaction.
+
+
+        :param office_id: the ``Id`` of the ``Office``
+        :type office_id: ``osid.id.Id``
+        :return: the office form
+        :rtype: ``osid.workflow.OfficeForm``
+        :raise: ``NotFound`` -- ``office_id`` is not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_office(self, office_form):
+        """Updates an existing office.
+
+        :param office_form: the form containing the elements to be updated
+        :type office_form: ``osid.workflow.OfficeForm``
+        :raise: ``IllegalState`` -- ``office_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``office_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``office_form`` did not originate from ``get_office_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_offices(self):
+        """Tests if this user can delete ``Offices``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting an
+        ``Office`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        delete operations to unauthorized users.
+
+
+        :return: ``false`` if ``Office`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_office(self, office_id):
+        """Deletes an ``Office``.
+
+        :param office_id: the ``Id`` of the ``Office`` to remove
+        :type office_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_office_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Offices``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Office`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_office(self, office_id, alias_id):
+        """Adds an ``Id`` to an ``Office`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``Office`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``.
+
+
+        :param office_id: the ``Id`` of an ``Office``
+        :type office_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.workflow.OfficeNotificationSession
+
+    def can_register_for_office_notifications(self):
+        """Tests if this user can register for ``Office`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_offices(self):
+        """Register for notifications of new offices.
+        ``OfficeReceiver.newOffice()`` is invoked when a new ``Office``
+        is created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_office_ancestors(self, office_id):
+        """Registers for notification if an ancestor is added to the specified office in the office hierarchy.
+        ``OfficeReceiver.newOfficeAncestor()`` is invoked when the
+        specified office experiences an addition in ancestry.
+
+
+        :param office_id: the ``Id`` of the office to monitor
+        :type office_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``office_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_office_descendants(self, office_id):
+        """Registers for notification if a descendant is added to the specified office in the office hierarchy.
+        ``OfficeReceiver.newOfficeDescendant()`` is invoked when the
+        specified office experiences an addition in descendants.
+
+
+        :param office_id: the ``Id`` of the office to monitor
+        :type office_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``office_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_offices(self):
+        """Registers for notification of updated offices.
+        ``OfficeReceiver.changedOffice()`` is invoked when an office is
+        changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_office(self, office_id):
+        """Registers for notification of an updated office.
+        ``OfficeReceiver.changedOffice()`` is invoked when the specified
+        office is changed.
+
+
+        :param office_id: the Id of the ``Office`` to monitor
+        :type office_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``office_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_offices(self):
+        """Registers for notification of deleted offices.
+        ``OfficeReceiver.deletedOffice()`` is invoked when an office is
+        deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_office(self, office_id):
+        """Registers for notification of a deleted office.
+        ``OfficeReceiver.deletedOffice()`` is invoked when the specified
+        office is deleted.
+
+
+        :param office_id: the ``Id`` of the ``Office`` to monitor
+        :type office_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``office_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_office_ancestors(self, office_id):
+        """Registers for notification if an ancestor is removed from the specified office in the office hierarchy.
+        ``OfficeReceiver.deletedOfficeAncestor()`` is invoked when the
+        specified office experiences a removal of an ancestor.
+
+
+        :param office_id: the ``Id`` of the office to monitor
+        :type office_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``office_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_office_descendants(self, office_id):
+        """Registers for notification if a descendant is removed from fthe specified office in the office hierarchy.
+        ``OfficeReceiver.deletedOfficeDescednant()`` is invoked when the
+        specified office experiences a removal of one of its
+        descdendents.
+
+
+        :param office_id: the ``Id`` of the office to monitor
+        :type office_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``office_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.workflow.OfficeHierarchySession
+
+    def get_office_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    office_hierarchy_id = property(fget=get_office_hierarchy_id)
+
+    def get_office_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    office_hierarchy = property(fget=get_office_hierarchy)
+
+    def can_access_office_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_office_ids(self):
+        """Gets the root office ``Ids`` in this hierarchy.
+
+        :return: the root office ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_office_ids = property(fget=get_root_office_ids)
+
+    def get_root_offices(self):
+        """Gets the root office in the office hierarchy.
+        A availability with no parents is an orphan. While all office
+        ``Ids`` are known to the hierarchy, an orphan does not appear in
+        the hierarchy unless explicitly added as a root availability or
+        child of another availability.
+
+
+        :return: the root offices
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_offices = property(fget=get_root_offices)
+
+    def has_parent_offices(self, office_id):
+        """Tests if the ``Office`` has any parents.
+
+        :param office_id: an office ``Id``
+        :type office_id: ``osid.id.Id``
+        :return: ``true`` if the office has parents, f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``office_id`` is not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_office(self, id_, office_id):
+        """Tests if an ``Id`` is a direct parent of office.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``office_id,`` f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``office_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_office_ids(self, office_id):
+        """Gets the parent ``Ids`` of the given office.
+
+        :param office_id: an office ``Id``
+        :type office_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the office
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``office_id`` is not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_offices(self, office_id):
+        """Gets the parents of the given office.
+
+        :param office_id: the ``Id`` to query
+        :type office_id: ``osid.id.Id``
+        :return: the parents of the office
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_office(self, id_, office_id):
+        """Tests if an ``Id`` is an ancestor of an office.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :return: ``tru`` e if this ``id`` is an ancestor of ``office_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` or ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_offices(self, office_id):
+        """Tests if an office has any children.
+
+        :param office_id: an office ``Id``
+        :type office_id: ``osid.id.Id``
+        :return: ``true`` if the ``office_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_office(self, id_, office_id):
+        """Tests if an office is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :return: ``true`` if the ``Id`` is a child of ``office_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``id`` or ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_office_ids(self, office_id):
+        """Gets the child ``Ids`` of the given office.
+
+        :param office_id: the ``Id`` to query
+        :type office_id: ``osid.id.Id``
+        :return: the children of the office
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_offices(self, office_id):
+        """Gets the children of the given office.
+
+        :param office_id: the ``Id`` to query
+        :type office_id: ``osid.id.Id``
+        :return: the children of the office
+        :rtype: ``osid.workflow.OfficeList``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_office(self, id_, office_id):
+        """Tests if an ``Id`` is a descendant of an office.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``office_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``id`` or ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office_node_ids(self, office_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given office.
+
+        :param office_id: the ``Id`` to query
+        :type office_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the availability.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the availability.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given availability, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an office node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_office_nodes(self, office_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given office.
+
+        :param office_id: the ``Id`` to query
+        :type office_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the availability.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the availability.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given availability, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an office node
+        :rtype: ``osid.workflow.OfficeNode``
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.workflow.OfficeHierarchyDesignSession
+
+    def can_modify_office_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_office(self, office_id):
+        """Adds a root office.
+
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``office_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``office_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_office(self, office_id):
+        """Removes a root office.
+
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``office_id`` is not a root
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_office(self, office_id, child_id):
+        """Adds a child to an office.
+
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``office_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``office_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``office_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_office(self, office_id, child_id):
+        """Removes a child from an office.
+
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``office_id`` is not parent of ``child_id``
+        :raise: ``NullArgument`` -- ``office_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_offices(self, office_id):
+        """Removes all children from an office.
+
+        :param office_id: the ``Id`` of an office
+        :type office_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``office_id`` is not found
+        :raise: ``NullArgument`` -- ``office_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
 
 class Office(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 

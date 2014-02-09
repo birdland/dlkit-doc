@@ -27,6 +27,10 @@ Proxy
 
    .. autoattribute:: Proxy.locale
 
+   .. automethod:: Proxy.has_format_type
+
+   .. autoattribute:: Proxy.format_type
+
    .. automethod:: Proxy.get_proxy_record
 
 
@@ -52,6 +56,8 @@ Proxy Condition
    .. autoattribute:: ProxyCondition.currency_type
 
    .. autoattribute:: ProxyCondition.unit_system_type
+
+   .. autoattribute:: ProxyCondition.format_type
 
    .. automethod:: ProxyCondition.get_proxy_condition_record
 

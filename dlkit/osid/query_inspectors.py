@@ -53,17 +53,6 @@ class OsidIdentifiableQueryInspector(OsidQueryInspector):
 
     id_terms = property(fget=get_id_terms)
 
-    def get_material_terms(self):
-        """Gets the material flag query terms.
-
-        :return: the material terms
-        :rtype: ``osid.search.terms.BooleanTerm``
-
-        """
-        return # osid.search.terms.BooleanTerm
-
-    material_terms = property(fget=get_material_terms)
-
 
 class OsidExtensibleQueryInspector(OsidQueryInspector, osid_markers.Extensible):
     """The query inspectors provide a means of accessing the match terms of a query.
@@ -755,6 +744,60 @@ class OsidGovernatorQueryInspector(OsidObjectQueryInspector, OsidOperableQueryIn
 
     """
 
+
+
+class OsidCompendiumQueryInspector(OsidObjectQueryInspector, OsidSubjugateableQueryInspector):
+    """The query inspectors provide a means of accessing the match terms of a query.
+
+    These interfaces are used to examine the actual query terms used in
+    a search or that may be used to create a smart catalog. Query
+    inspectors may be converted to an ``OsidQuery`` for reuse or
+    modification in the search sessions.
+
+    """
+    def get_start_date_terms(self):
+        """Gets the start date query terms.
+
+        :return: the query terms
+        :rtype: ``osid.search.terms.DateTimeRangeTerm``
+
+        """
+        return # osid.search.terms.DateTimeRangeTerm
+
+    start_date_terms = property(fget=get_start_date_terms)
+
+    def get_end_date_terms(self):
+        """Gets the end date query terms.
+
+        :return: the query terms
+        :rtype: ``osid.search.terms.DateTimeRangeTerm``
+
+        """
+        return # osid.search.terms.DateTimeRangeTerm
+
+    end_date_terms = property(fget=get_end_date_terms)
+
+    def get_interpolated_terms(self):
+        """Gets the interpolated query terms.
+
+        :return: the query terms
+        :rtype: ``osid.search.terms.BooleanTerm``
+
+        """
+        return # osid.search.terms.BooleanTerm
+
+    interpolated_terms = property(fget=get_interpolated_terms)
+
+    def get_extrapolated_terms(self):
+        """Gets the extrapolated query terms.
+
+        :return: the query terms
+        :rtype: ``osid.search.terms.BooleanTerm``
+
+        """
+        return # osid.search.terms.BooleanTerm
+
+    extrapolated_terms = property(fget=get_extrapolated_terms)
 
 
 class OsidCapsuleQueryInspector(OsidQueryInspector):

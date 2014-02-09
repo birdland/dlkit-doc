@@ -35,16 +35,6 @@ class OsidIdentifiableSearchOrder(OsidSearchOrder):
         """
         pass
 
-    def order_by_material(self, style):
-        """Specifies a preference for ordering the result set by the material flag.
-
-        :param style: the search order style
-        :type style: ``osid.SearchOrderStyle``
-        :raise: ``NullArgument`` -- ``style`` is ``null``
-
-        """
-        pass
-
 
 class OsidExtensibleSearchOrder(OsidSearchOrder, osid_markers.Extensible):
     """``OsidExtensibleSearchOrder`` specifies preferred ordering of search results.
@@ -524,6 +514,49 @@ class OsidProcessorSearchOrder(OsidRuleSearchOrder):
 class OsidGovernatorSearchOrder(OsidObjectSearchOrder, OsidOperableSearchOrder, OsidSourceableSearchOrder):
     """An interface for specifying the ordering of search results."""
 
+
+
+class OsidCompendiumSearchOrder(OsidObjectSearchOrder, OsidSubjugateableSearchOrder):
+    """An interface for specifying the ordering of search results."""
+    def order_by_start_date(self, style):
+        """Specifies a preference for ordering the result set by the start date.
+
+        :param style: the search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def order_by_end_date(self, style):
+        """Specifies a preference for ordering the result set by the end date.
+
+        :param style: the search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def order_by_interpolated(self, style):
+        """Specifies a preference for ordering the result set by interpolated results.
+
+        :param style: the search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def order_by_extrapolated(self, style):
+        """Specifies a preference for ordering the result set by extrapolated results.
+
+        :param style: the search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
 
 
 class OsidCapsuleSearchOrder(OsidSearchOrder):

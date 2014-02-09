@@ -63,9 +63,9 @@ Resource Node
 
    .. autoattribute:: ResourceNode.resource
 
-   .. autoattribute:: ResourceNode.parent_bin_nodes
+   .. autoattribute:: ResourceNode.parent_resource_nodes
 
-   .. autoattribute:: ResourceNode.child_bin_nodes
+   .. autoattribute:: ResourceNode.child_resource_nodes
 
 
 

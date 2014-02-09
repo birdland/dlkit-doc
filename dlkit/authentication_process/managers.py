@@ -1,5 +1,4 @@
 from ..osid import managers as osid_managers
-from ..process import managers as process_managers
 
 
 class AuthenticationProcessProfile(osid_managers.OsidProfile):
@@ -180,7 +179,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
         return # boolean
 
 
-class AuthenticationProcessManager(osid_managers.OsidManager, process_managers.AuthenticationProcessProfile):
+class AuthenticationProcessManager(osid_managers.OsidManager, AuthenticationProcessProfile):
     """The authentication process manager provides access to authentication sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
@@ -281,7 +280,7 @@ class AuthenticationProcessManager(osid_managers.OsidManager, process_managers.A
         return # osid.authentication.process.CircleOfTrustSession
 
 
-class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, process_managers.AuthenticationProcessProfile):
+class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, AuthenticationProcessProfile):
     """The authentication process proxy manager provides access to authentication sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` object.

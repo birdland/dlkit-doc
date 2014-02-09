@@ -1915,6 +1915,976 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
     commenting_batch_proxy_manager = property(fget=get_commenting_batch_proxy_manager)
 
 
+##
+# The following methods are from osid.commenting.BookLookupSession
+
+    def can_lookup_books(self):
+        """Tests if this user can perform ``Book`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_book_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_book_view(self):
+        """A complete view of the ``Book`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book(self, book_id):
+        """Gets the ``Book`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Book`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Book`` and retained for compatibility.
+
+
+        :param book_id: ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_books_by_ids(self, book_ids):
+        """Gets a ``BookList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the books
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Books`` may be omitted from the list and may
+        present the elements in any order including returning a unique
+        set.
+
+
+        :param book_ids: the list of ``Ids`` to retrieve
+        :type book_ids: ``osid.id.IdList``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``book_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_books_by_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_books_by_parent_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_books_by_record_type(self, book_record_type):
+        """Gets a ``BookList`` containing the given book record ``Type``.
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_record_type: a book record type
+        :type book_record_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_books_by_provider(self, resource_id):
+        """Gets a ``BookList`` from the given provider ````.
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_books(self):
+        """Gets all ``Books``.
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :return: a list of ``Books``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    books = property(fget=get_books)
+
+
+##
+# The following methods are from osid.commenting.BookQuerySession
+
+    def can_search_books(self):
+        """Tests if this user can perform ``Book`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book_query(self):
+        """Gets a book query.
+
+        :return: the book query
+        :rtype: ``osid.commenting.BookQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    book_query = property(fget=get_book_query)
+
+    def get_books_by_query(self, book_query):
+        """Gets a list of ``Books`` matching the given search.
+
+        :param book_query: the book query
+        :type book_query: ``osid.commenting.BookQuery``
+        :return: the returned ``BookList``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.commenting.BookSearchSession
+
+    def get_book_search(self):
+        """Gets a book search.
+
+        :return: the book search
+        :rtype: ``osid.commenting.BookSearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    book_search = property(fget=get_book_search)
+
+    def get_book_search_order(self):
+        """Gets a book search order.
+        The ``BookSearchOrder`` is supplied to a ``BookSearch`` to
+        specify the ordering of results.
+
+
+        :return: the book search order
+        :rtype: ``osid.commenting.BookSearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    book_search_order = property(fget=get_book_search_order)
+
+    def get_books_by_search(self, book_query, book_search):
+        """Gets the search results matching the given search.
+
+        :param book_query: the book query
+        :type book_query: ``osid.commenting.BookQuery``
+        :param book_search: the book search
+        :type book_search: ``osid.commenting.BookSearch``
+        :return: the search results
+        :rtype: ``osid.commenting.BookSearchResults``
+        :raise: ``NullArgument`` -- ``book_query`` or ``book_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_query`` or ``book_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book_query_from_inspector(self, book_query_inspector):
+        """Gets an entry query from an inspector.
+        The inspector is available from an ``BookSearchResults``.
+
+
+        :param book_query_inspector: a book query inspector
+        :type book_query_inspector: ``osid.commenting.BookQueryInspector``
+        :return: the book query
+        :rtype: ``osid.commenting.BookQuery``
+        :raise: ``NullArgument`` -- ``book_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``book_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.commenting.BookAdminSession
+
+    def can_create_books(self):
+        """Tests if this user can create ``Books``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer create
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_book_with_record_types(self, book_record_types):
+        """Tests if this user can create a single ``Book`` using the desired record types.
+        While ``CommentingManager.getBookRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Book``.
+        Providing an empty array tests if a ``Book`` can be created with
+        no records.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book_form_for_create(self, book_record_types):
+        """Gets the book form for creating new books.
+        A new form should be requested for each create transaction.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_book(self, book_form):
+        """Creates a new ``Book``.
+
+        :param book_form: the form for this ``Book``
+        :type book_form: ``osid.commenting.BookForm``
+        :return: the new ``Book``
+        :rtype: ``osid.commenting.Book``
+        :raise: ``IllegalState`` -- ``book_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_books(self):
+        """Tests if this user can update ``Books``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer update
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book_form_for_update(self, book_id):
+        """Gets the book form for updating an existing book.
+        A new book form should be requested for each update transaction.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_book(self, book_form):
+        """Updates an existing book.
+
+        :param book_form: the form containing the elements to be updated
+        :type book_form: ``osid.commenting.BookForm``
+        :raise: ``IllegalState`` -- ``book_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_books(self):
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
+        A return of false indicates that it is known deleting a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer delete
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_book(self, book_id):
+        """Deletes a ``Book``.
+
+        :param book_id: the ``Id`` of the ``Book`` to remove
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_book_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Books``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Book`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_book(self, book_id, alias_id):
+        """Adds an ``Id`` to a ``Book`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``Book`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another book, it is
+        reassigned to the given book ``Id``.
+
+
+        :param book_id: the ``Id`` of a ``Book``
+        :type book_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.commenting.BookNotificationSession
+
+    def can_register_for_book_notifications(self):
+        """Tests if this user can register for ``Book`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_books(self):
+        """Register for notifications of new books.
+        ``BookReceiver.newBook()`` is invoked when a new ``Book`` is
+        created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_book_ancestors(self, book_id):
+        """Registers for notification of an updated hierarchy structure that introduces a new ancestor of the specified book.
+        ``BookReceiver.newAncestorBook()`` is invoked when the specified
+        book node gets a new ancestor.
+
+
+        :param book_id: the ``Id`` of the ``Book`` node to monitor
+        :type book_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_book_descendants(self, book_id):
+        """Registers for notification of an updated hierarchy structure that introduces a new descendant of the specified book.
+        ``BookReceiver.newDescendantBook()`` is invoked when the
+        specified book node gets a new descendant.
+
+
+        :param book_id: the ``Id`` of the ``Book`` node to monitor
+        :type book_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_books(self):
+        """Registers for notification of updated books.
+        ``BookReceiver.changedBook()`` is invoked when a book is
+        changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_book(self, book_id):
+        """Registers for notification of an updated book.
+        ``BookReceiver.changedBook()`` is invoked when the specified
+        book is changed.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to monitor
+        :type book_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_books(self):
+        """Registers for notification of deleted books.
+        ``BookReceiver.deletedBook()`` is invoked when a book is
+        deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_book(self, book_id):
+        """Registers for notification of a deleted book.
+        ``BookReceiver.deletedBook()`` is invoked when the specified
+        book is deleted.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to monitor
+        :type book_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_book_ancestors(self, book_id):
+        """Registers for notification of an updated hierarchy structure that removes an ancestor of the specified book ``BookReceiver.
+        deletedAncestor()`` is invoked when the specified book node
+        loses an ancestor.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to monitor
+        :type book_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_book_descendants(self, book_id):
+        """Registers for notification of an updated hierarchy structure that removes a descendant of the specified book.
+        ``BookReceiver.deletedDescendant()`` is invoked when the
+        specified book node loses a descendant.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to monitor
+        :type book_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.commenting.BookHierarchySession
+
+    def get_book_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    book_hierarchy_id = property(fget=get_book_hierarchy_id)
+
+    def get_book_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    book_hierarchy = property(fget=get_book_hierarchy)
+
+    def can_access_book_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_book_ids(self):
+        """Gets the root book ``Ids`` in this hierarchy.
+
+        :return: the root book ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_book_ids = property(fget=get_root_book_ids)
+
+    def get_root_books(self):
+        """Gets the root books in the book hierarchy.
+        A node with no parents is an orphan. While all book ``Ids`` are
+        known to the hierarchy, an orphan does not appear in the
+        hierarchy unless explicitly added as a root node or child of
+        another node.
+
+
+        :return: the root books
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_books = property(fget=get_root_books)
+
+    def has_parent_books(self, book_id):
+        """Tests if the ``Book`` has any parents.
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the book has parents, f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a direct parent of book.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``book_id,`` f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_book_ids(self, book_id):
+        """Gets the parent ``Ids`` of the given book.
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_books(self, book_id):
+        """Gets the parent books of the given ``id``.
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the parent books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is an ancestor of a book.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``tru`` e if this ``id`` is an ancestor of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_books(self, book_id):
+        """Tests if a book has any children.
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``book_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_book(self, id_, book_id):
+        """Tests if a book is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_book_ids(self, book_id):
+        """Gets the child ``Ids`` of the given book.
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the children of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_books(self, book_id):
+        """Gets the child books of the given ``id``.
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the child books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a descendant of a book.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book_node_ids(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_book_nodes(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.commenting.BookNode``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.commenting.BookHierarchyDesignSession
+
+    def can_modify_book_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_book(self, book_id):
+        """Adds a root book.
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_book(self, book_id):
+        """Removes a root book.
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` is not a root
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_book(self, book_id, child_id):
+        """Adds a child to a book.
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``book_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_book(self, book_id, child_id):
+        """Removes a child from a book.
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_books(self, book_id):
+        """Removes all children from a book.
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
 
 class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 

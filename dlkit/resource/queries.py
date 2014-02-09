@@ -38,7 +38,7 @@ class ResourceQuery(osid_queries.OsidObjectQuery):
 
     demographic_terms = property(fdel=clear_demographic_terms)
 
-    def match_containg_group_id(self, resource_id, match):
+    def match_containing_group_id(self, resource_id, match):
         """Sets the group ``Id`` for this query to match resources within the given group.
 
         :param resource_id: a resource ``Id``
@@ -88,11 +88,11 @@ class ResourceQuery(osid_queries.OsidObjectQuery):
         """
         pass
 
-    def clear_containg_group_terms(self):
+    def clear_containing_group_terms(self):
         """Clears the containing group terms."""
         pass
 
-    containg_group_terms = property(fdel=clear_containg_group_terms)
+    containing_group_terms = property(fdel=clear_containing_group_terms)
 
     def match_avatar_id(self, asset_id, match):
         """Sets the asset ``Id`` for this query.
@@ -206,7 +206,7 @@ class ResourceQuery(osid_queries.OsidObjectQuery):
 
     agent_terms = property(fdel=clear_agent_terms)
 
-    def match_resource_relationshipt_id(self, resource_relationship_id, match):
+    def match_resource_relationship_id(self, resource_relationship_id, match):
         """Sets the resource relationship ``Id`` for this query.
 
         :param resource_relationship_id: the resource relationship ``Id``

@@ -33,7 +33,7 @@ Objective Query
 
    .. automethod:: ObjectiveQuery.match_any_knowledge_category
 
-   .. autoattribute:: ObjectiveQuery.knowlege_category_terms
+   .. autoattribute:: ObjectiveQuery.knowledge_category_terms
 
    .. automethod:: ObjectiveQuery.match_cognitive_process_id
 
@@ -59,7 +59,7 @@ Objective Query
 
    .. autoattribute:: ObjectiveQuery.activity_terms
 
-   .. automethod:: ObjectiveQuery.match_requisite_objective_ids
+   .. automethod:: ObjectiveQuery.match_requisite_objective_id
 
    .. autoattribute:: ObjectiveQuery.requisite_objective_id_terms
 
@@ -71,7 +71,7 @@ Objective Query
 
    .. autoattribute:: ObjectiveQuery.requisite_objective_terms
 
-   .. automethod:: ObjectiveQuery.match_dependent_objective_ids
+   .. automethod:: ObjectiveQuery.match_dependent_objective_id
 
    .. autoattribute:: ObjectiveQuery.dependent_objective_id_terms
 
@@ -83,7 +83,7 @@ Objective Query
 
    .. autoattribute:: ObjectiveQuery.dependent_objective_terms
 
-   .. automethod:: ObjectiveQuery.match_equivalent_objective_ids
+   .. automethod:: ObjectiveQuery.match_equivalent_objective_id
 
    .. autoattribute:: ObjectiveQuery.equivalent_objective_id_terms
 

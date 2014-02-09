@@ -472,51 +472,458 @@ Logging Proxy Manager
 .. autoclass:: LoggingProxyManager
    :show-inheritance:
 
-   .. automethod:: LoggingProxyManager.get_logging_session
-
-   .. automethod:: LoggingProxyManager.get_logging_session_for_log
-
-   .. automethod:: LoggingProxyManager.get_log_entry_lookup_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_lookup_session_for_log
-
-   .. automethod:: LoggingProxyManager.get_log_entry_query_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_query_session_for_log
-
-   .. automethod:: LoggingProxyManager.get_log_entry_search_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_search_session_for_log
-
-   .. automethod:: LoggingProxyManager.get_log_entry_admin_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_admin_session_for_log
-
-   .. automethod:: LoggingProxyManager.get_log_entry_notification_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_notification_session_for_log
-
-   .. automethod:: LoggingProxyManager.get_log_entry_log_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_log_assignment_session
-
-   .. automethod:: LoggingProxyManager.get_log_entry_smart_log_session
-
-   .. automethod:: LoggingProxyManager.get_log_lookup_session
-
-   .. automethod:: LoggingProxyManager.get_log_query_session
-
-   .. automethod:: LoggingProxyManager.get_log_search_session
-
-   .. automethod:: LoggingProxyManager.get_log_admin_session
-
-   .. automethod:: LoggingProxyManager.get_log_notification_session
-
-   .. automethod:: LoggingProxyManager.get_log_hierarchy_session
-
-   .. automethod:: LoggingProxyManager.get_log_hierarchy_design_session
-
    .. autoattribute:: LoggingProxyManager.logging_batch_proxy_manager
+
+
+
+Logging Profile Methods
+_______________
+
+   .. automethod:: LoggingProxyManager.supports_visible_federation
+
+   .. automethod:: LoggingProxyManager.supports_logging
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_lookup
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_query
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_search
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_notification
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_log
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_log_assignment
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_smart_log
+
+   .. automethod:: LoggingProxyManager.supports_log_lookup
+
+   .. automethod:: LoggingProxyManager.supports_log_query
+
+   .. automethod:: LoggingProxyManager.supports_log_search
+
+   .. automethod:: LoggingProxyManager.supports_log_admin
+
+   .. automethod:: LoggingProxyManager.supports_log_notification
+
+   .. automethod:: LoggingProxyManager.supports_log_hierarchy
+
+   .. automethod:: LoggingProxyManager.supports_log_hierarchy_design
+
+   .. automethod:: LoggingProxyManager.supports_logging_batch
+
+   .. autoattribute:: LoggingProxyManager.log_entry_record_types
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_record_type
+
+   .. autoattribute:: LoggingProxyManager.log_entry_search_record_types
+
+   .. automethod:: LoggingProxyManager.supports_log_entry_search_record_type
+
+   .. autoattribute:: LoggingProxyManager.log_record_types
+
+   .. automethod:: LoggingProxyManager.supports_log_record_type
+
+   .. autoattribute:: LoggingProxyManager.log_search_record_types
+
+   .. automethod:: LoggingProxyManager.supports_log_search_record_type
+
+   .. autoattribute:: LoggingProxyManager.priority_types
+
+   .. automethod:: LoggingProxyManager.supports_priority_type
+
+   .. autoattribute:: LoggingProxyManager.content_types
+
+   .. automethod:: LoggingProxyManager.supports_content_type
+
+
+
+Logging
+_______
+
+   .. autoattribute:: LoggingProxyManager.log_id
+
+   .. autoattribute:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.can_log
+
+   .. automethod:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.log_at_priority
+
+   .. autoattribute:: LoggingProxyManager.log_entry_form
+
+   .. automethod:: LoggingProxyManager.create_log_entry
+
+
+
+Log Entry Lookup
+________________
+
+   .. autoattribute:: LoggingProxyManager.log_id
+
+   .. autoattribute:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.can_read_log
+
+   .. automethod:: LoggingProxyManager.use_comparative_log_entry_view
+
+   .. automethod:: LoggingProxyManager.use_plenary_log_entry_view
+
+   .. automethod:: LoggingProxyManager.use_federated_log_view
+
+   .. automethod:: LoggingProxyManager.use_isolated_log_view
+
+   .. automethod:: LoggingProxyManager.get_log_entry
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_ids
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_genus_type
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_parent_genus_type
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_record_type
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_priority_type
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_date
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_priority_type_and_date
+
+   .. automethod:: LoggingProxyManager.get_log_entries_for_resource
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_date_for_resource
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_priority_type_and_date_for_resource
+
+   .. autoattribute:: LoggingProxyManager.log_entries
+
+
+
+Log Entry Query
+_______________
+
+   .. autoattribute:: LoggingProxyManager.log_id
+
+   .. autoattribute:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.can_search_log_entries
+
+   .. automethod:: LoggingProxyManager.use_federated_log_view
+
+   .. automethod:: LoggingProxyManager.use_isolated_log_view
+
+   .. autoattribute:: LoggingProxyManager.log_entry_query
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_query
+
+
+
+Log Entry Search
+________________
+
+   .. autoattribute:: LoggingProxyManager.log_entry_search
+
+   .. autoattribute:: LoggingProxyManager.log_entry_search_order
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_search
+
+   .. automethod:: LoggingProxyManager.get_log_entry_query_from_inspector
+
+
+
+Log Entry Admin
+_______________
+
+   .. autoattribute:: LoggingProxyManager.log_id
+
+   .. autoattribute:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.can_create_log_entries
+
+   .. automethod:: LoggingProxyManager.can_create_log_entry_with_record_types
+
+   .. automethod:: LoggingProxyManager.get_log_entry_form_for_create
+
+   .. automethod:: LoggingProxyManager.create_log_entry
+
+   .. automethod:: LoggingProxyManager.can_update_log_entries
+
+   .. automethod:: LoggingProxyManager.get_log_entry_form_for_update
+
+   .. automethod:: LoggingProxyManager.update_log_entry
+
+   .. automethod:: LoggingProxyManager.can_delete_log_entries
+
+   .. automethod:: LoggingProxyManager.delete_log_entry
+
+   .. automethod:: LoggingProxyManager.can_manage_log_entry_aliases
+
+   .. automethod:: LoggingProxyManager.alias_log_entry
+
+
+
+Log Entry Notification
+______________________
+
+   .. autoattribute:: LoggingProxyManager.log_id
+
+   .. autoattribute:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.can_register_for_log_entry_notifications
+
+   .. automethod:: LoggingProxyManager.use_federated_log_view
+
+   .. automethod:: LoggingProxyManager.use_isolated_log_view
+
+   .. automethod:: LoggingProxyManager.register_for_new_log_entries
+
+   .. automethod:: LoggingProxyManager.register_for_new_log_entries_at_priority
+
+   .. automethod:: LoggingProxyManager.register_for_new_log_entries_for_resource
+
+   .. automethod:: LoggingProxyManager.register_for_changed_log_entries
+
+   .. automethod:: LoggingProxyManager.register_for_new_changed_entries_at_priority
+
+   .. automethod:: LoggingProxyManager.register_for_new_changed_entries_for_resource
+
+   .. automethod:: LoggingProxyManager.register_for_changed_log_entry
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log_entries
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log_entries_at_priority
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log_entries_for_resource
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log_entry
+
+
+
+Log Entry Log
+_____________
+
+   .. automethod:: LoggingProxyManager.use_comparative_log_view
+
+   .. automethod:: LoggingProxyManager.use_plenary_log_view
+
+   .. automethod:: LoggingProxyManager.can_lookup_log_entry_log_mappings
+
+   .. automethod:: LoggingProxyManager.get_log_entry_ids_by_log
+
+   .. automethod:: LoggingProxyManager.get_log_entries_by_log
+
+   .. automethod:: LoggingProxyManager.get_log_entrie_by_log
+
+   .. automethod:: LoggingProxyManager.get_log_ids_by_log_entry
+
+   .. automethod:: LoggingProxyManager.get_log_by_log_entry
+
+
+
+Log Entry Log Assignment
+________________________
+
+   .. automethod:: LoggingProxyManager.can_assign_log_entries
+
+   .. automethod:: LoggingProxyManager.can_assign_log_entries_to_log
+
+   .. automethod:: LoggingProxyManager.get_assignable_log_ids
+
+   .. automethod:: LoggingProxyManager.get_assignable_log_ids_for_log_entry
+
+   .. automethod:: LoggingProxyManager.assign_log_entry_to_log
+
+   .. automethod:: LoggingProxyManager.unassign_log_entry_from_log
+
+
+
+Log Entry Smart Log
+___________________
+
+   .. autoattribute:: LoggingProxyManager.log_id
+
+   .. autoattribute:: LoggingProxyManager.log
+
+   .. automethod:: LoggingProxyManager.can_manage_smart_log
+
+   .. autoattribute:: LoggingProxyManager.log_entry_query
+
+   .. autoattribute:: LoggingProxyManager.log_entry_search_order
+
+   .. automethod:: LoggingProxyManager.apply_log_entry_query
+
+   .. automethod:: LoggingProxyManager.inspect_log_entry_query
+
+   .. automethod:: LoggingProxyManager.apply_log_entry_sequencing
+
+   .. automethod:: LoggingProxyManager.get_log_entry_query_from_inspector
+
+
+
+Log Lookup
+__________
+
+   .. automethod:: LoggingProxyManager.can_lookup_logs
+
+   .. automethod:: LoggingProxyManager.use_comparative_log_view
+
+   .. automethod:: LoggingProxyManager.use_plenary_log_view
+
+   .. automethod:: LoggingProxyManager.get_log
+
+   .. automethod:: LoggingProxyManager.get_logs_by_ids
+
+   .. automethod:: LoggingProxyManager.get_logs_by_genus_type
+
+   .. automethod:: LoggingProxyManager.get_logs_by_parent_genus_type
+
+   .. automethod:: LoggingProxyManager.get_logs_by_record_type
+
+   .. automethod:: LoggingProxyManager.get_logs_by_provider
+
+   .. autoattribute:: LoggingProxyManager.logs
+
+
+
+Log Query
+_________
+
+   .. automethod:: LoggingProxyManager.can_search_logs
+
+   .. autoattribute:: LoggingProxyManager.log_query
+
+   .. automethod:: LoggingProxyManager.get_logs_by_query
+
+
+
+Log Search
+__________
+
+   .. autoattribute:: LoggingProxyManager.log_search
+
+   .. autoattribute:: LoggingProxyManager.log_search_order
+
+   .. automethod:: LoggingProxyManager.get_logs_by_search
+
+   .. automethod:: LoggingProxyManager.get_log_query_from_inspector
+
+
+
+Log Admin
+_________
+
+   .. automethod:: LoggingProxyManager.can_create_logs
+
+   .. automethod:: LoggingProxyManager.can_create_log_with_record_types
+
+   .. automethod:: LoggingProxyManager.get_log_form_for_create
+
+   .. automethod:: LoggingProxyManager.create_log
+
+   .. automethod:: LoggingProxyManager.can_update_logs
+
+   .. automethod:: LoggingProxyManager.get_log_form_for_update
+
+   .. automethod:: LoggingProxyManager.update_log
+
+   .. automethod:: LoggingProxyManager.can_delete_logs
+
+   .. automethod:: LoggingProxyManager.delete_log
+
+   .. automethod:: LoggingProxyManager.can_manage_log_aliases
+
+   .. automethod:: LoggingProxyManager.alias_log
+
+
+
+Log Notification
+________________
+
+   .. automethod:: LoggingProxyManager.can_register_for_log_notifications
+
+   .. automethod:: LoggingProxyManager.register_for_new_logs
+
+   .. automethod:: LoggingProxyManager.register_for_new_log_ancestors
+
+   .. automethod:: LoggingProxyManager.register_for_new_log_descendants
+
+   .. automethod:: LoggingProxyManager.register_for_changed_logs
+
+   .. automethod:: LoggingProxyManager.register_for_changed_log
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_logs
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log_ancestors
+
+   .. automethod:: LoggingProxyManager.register_for_deleted_log_descendants
+
+
+
+Log Hierarchy
+_____________
+
+   .. autoattribute:: LoggingProxyManager.log_hierarchy_id
+
+   .. autoattribute:: LoggingProxyManager.log_hierarchy
+
+   .. automethod:: LoggingProxyManager.can_access_log_hierarchy
+
+   .. automethod:: LoggingProxyManager.use_comparative_log_view
+
+   .. automethod:: LoggingProxyManager.use_plenary_log_view
+
+   .. autoattribute:: LoggingProxyManager.root_log_ids
+
+   .. autoattribute:: LoggingProxyManager.root_logs
+
+   .. automethod:: LoggingProxyManager.has_parent_logs
+
+   .. automethod:: LoggingProxyManager.is_parent_of_log
+
+   .. automethod:: LoggingProxyManager.get_parent_log_ids
+
+   .. automethod:: LoggingProxyManager.get_parent_logs
+
+   .. automethod:: LoggingProxyManager.is_ancestor_of_log
+
+   .. automethod:: LoggingProxyManager.has_child_logs
+
+   .. automethod:: LoggingProxyManager.is_child_of_log
+
+   .. automethod:: LoggingProxyManager.get_child_log_ids
+
+   .. automethod:: LoggingProxyManager.get_child_logs
+
+   .. automethod:: LoggingProxyManager.is_descendant_of_log
+
+   .. automethod:: LoggingProxyManager.get_log_node_ids
+
+   .. automethod:: LoggingProxyManager.get_log_nodes
+
+
+
+Log Hierarchy Design
+____________________
+
+   .. autoattribute:: LoggingProxyManager.log_hierarchy_id
+
+   .. autoattribute:: LoggingProxyManager.log_hierarchy
+
+   .. automethod:: LoggingProxyManager.can_modify_log_hierarchy
+
+   .. automethod:: LoggingProxyManager.add_root_log
+
+   .. automethod:: LoggingProxyManager.remove_root_log
+
+   .. automethod:: LoggingProxyManager.add_child_log
+
+   .. automethod:: LoggingProxyManager.remove_child_log
+
+   .. automethod:: LoggingProxyManager.remove_child_logs
 
 
 

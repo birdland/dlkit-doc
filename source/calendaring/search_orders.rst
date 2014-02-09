@@ -115,9 +115,11 @@ Offset Event Search Order
 
    .. automethod:: OffsetEventSearchOrder.order_by_location_description
 
-   .. automethod:: OffsetEventSearchOrder.supports_event_search_order
+   .. automethod:: OffsetEventSearchOrder.order_by_location
 
-   .. autoattribute:: OffsetEventSearchOrder.event_search_order
+   .. automethod:: OffsetEventSearchOrder.supports_location_search_order
+
+   .. autoattribute:: OffsetEventSearchOrder.location_search_order
 
    .. automethod:: OffsetEventSearchOrder.get_offset_event_search_order_record
 
@@ -133,7 +135,7 @@ Schedule Search Order
 
    .. automethod:: ScheduleSearchOrder.supports_time_period_search_order
 
-   .. autoattribute:: ScheduleSearchOrder.time_period_period_search_order
+   .. autoattribute:: ScheduleSearchOrder.time_period_search_order
 
    .. automethod:: ScheduleSearchOrder.order_by_schedule_start
 
@@ -165,7 +167,7 @@ Schedule Slot Search Order
 
    .. automethod:: ScheduleSlotSearchOrder.order_by_weekly_interval
 
-   .. automethod:: ScheduleSlotSearchOrder.order_by_weekly_of_month
+   .. automethod:: ScheduleSlotSearchOrder.order_by_week_of_month
 
    .. automethod:: ScheduleSlotSearchOrder.order_by_weekday_time
 

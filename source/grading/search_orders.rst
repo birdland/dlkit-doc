@@ -63,7 +63,7 @@ Grade Entry Search Order
 
    .. autoattribute:: GradeEntrySearchOrder.key_resource_search_order
 
-   .. automethod:: GradeEntrySearchOrder.order_by_deribed
+   .. automethod:: GradeEntrySearchOrder.order_by_derived
 
    .. automethod:: GradeEntrySearchOrder.order_by_ignored_for_calculations
 
@@ -73,7 +73,7 @@ Grade Entry Search Order
 
    .. autoattribute:: GradeEntrySearchOrder.grade_search_order
 
-   .. automethod:: GradeEntrySearchOrder.order_by_time_gaded
+   .. automethod:: GradeEntrySearchOrder.order_by_time_graded
 
    .. automethod:: GradeEntrySearchOrder.order_by_grader
 

@@ -31,11 +31,17 @@ Grade Form
 .. autoclass:: GradeForm
    :show-inheritance:
 
-   .. autoattribute:: GradeForm.input_score_range_metadata
+   .. autoattribute:: GradeForm.input_score_start_range_metadata
 
-   .. automethod:: GradeForm.set_input_score_range
+   .. autoattribute:: GradeForm.input_score_start_range
 
-   .. autoattribute:: GradeForm.output_score_range_metadata
+   .. autoattribute:: GradeForm.input_start_score_range
+
+   .. autoattribute:: GradeForm.input_score_end_range_metadata
+
+   .. autoattribute:: GradeForm.input_score_end_range
+
+   .. autoattribute:: GradeForm.output_score_metadata
 
    .. autoattribute:: GradeForm.output_score
 
@@ -171,11 +177,9 @@ Grade Entry Form
 .. autoclass:: GradeEntryForm
    :show-inheritance:
 
-   .. autoattribute:: GradeEntryForm.ignore_for_calculations_metadata
+   .. autoattribute:: GradeEntryForm.ignored_for_calculations_metadata
 
-   .. autoattribute:: GradeEntryForm.ignoe_for_calculations
-
-   .. autoattribute:: GradeEntryForm.ignore_for_calculations
+   .. autoattribute:: GradeEntryForm.ignored_for_calculations
 
    .. autoattribute:: GradeEntryForm.grade_metadata
 

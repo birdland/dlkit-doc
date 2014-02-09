@@ -237,31 +237,223 @@ Hierarchy Proxy Manager
 .. autoclass:: HierarchyProxyManager
    :show-inheritance:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_traversal_session
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_traversal_session_for_hierarchy
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_design_session
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_design_session_for_hierarchy
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_sequencing_session
+Hierarchy Profile Methods
+_________________
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_sequencing_session_for_hierarchy
+   .. automethod:: HierarchyProxyManager.supports_visible_federation
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_structure_notification_session
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_traversal
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_structure_notification_session_for_hierarchy
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_design
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_lookup_session
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_sequencing
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_query_session
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_structure_notification
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_search_session
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_lookup
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_admin_session
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_query
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_notification_session
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_search
+
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_admin
+
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_notification
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_record_types
+
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_record_type
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_search_record_types
+
+   .. automethod:: HierarchyProxyManager.supports_hierarchy_search_record_type
+
+
+
+Hierarchy Traversal
+___________________
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_id
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_access_hierarchy
+
+   .. autoattribute:: HierarchyProxyManager.roots
+
+   .. automethod:: HierarchyProxyManager.has_parents
+
+   .. automethod:: HierarchyProxyManager.is_parent
+
+   .. automethod:: HierarchyProxyManager.get_parents
+
+   .. automethod:: HierarchyProxyManager.is_ancestor
+
+   .. automethod:: HierarchyProxyManager.has_children
+
+   .. automethod:: HierarchyProxyManager.is_child
+
+   .. automethod:: HierarchyProxyManager.get_children
+
+   .. automethod:: HierarchyProxyManager.is_descendant
+
+   .. automethod:: HierarchyProxyManager.get_nodes
+
+
+
+Hierarchy Design
+________________
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_id
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_modify_hierarchy
+
+   .. automethod:: HierarchyProxyManager.add_root
+
+   .. automethod:: HierarchyProxyManager.add_child
+
+   .. automethod:: HierarchyProxyManager.remove_root
+
+   .. automethod:: HierarchyProxyManager.remove_child
+
+   .. automethod:: HierarchyProxyManager.remove_children
+
+
+
+Hierarchy Sequencing
+____________________
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_id
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_sequence_hierarchy
+
+   .. automethod:: HierarchyProxyManager.move_node_ahead
+
+   .. automethod:: HierarchyProxyManager.move_node_behind
+
+   .. automethod:: HierarchyProxyManager.sequence_nodes
+
+
+
+Hierarchy Structure Notification
+________________________________
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_id
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_register_for_hierarchy_structure_notifications
+
+   .. automethod:: HierarchyProxyManager.register_for_new_hierarchy_nodes
+
+   .. automethod:: HierarchyProxyManager.register_for_changed_ancestor
+
+   .. automethod:: HierarchyProxyManager.register_for_changed_descendant
+
+   .. automethod:: HierarchyProxyManager.register_for_deleted_hierarchy_nodes
+
+   .. automethod:: HierarchyProxyManager.register_for_deleted_hierarchy_node
+
+
+
+Hierarchy Lookup
+________________
+
+   .. automethod:: HierarchyProxyManager.can_lookup_hierarchies
+
+   .. automethod:: HierarchyProxyManager.use_comparative_hierarchy_view
+
+   .. automethod:: HierarchyProxyManager.use_plenary_hierarchy_view
+
+   .. automethod:: HierarchyProxyManager.get_hierarchy
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_ids
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_genus_type
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_parent_genus_type
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_record_type
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_provider
+
+   .. autoattribute:: HierarchyProxyManager.hierarchies
+
+
+
+Hierarchy Query
+_______________
+
+   .. automethod:: HierarchyProxyManager.can_search_hierarchies
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_query
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_query
+
+
+
+Hierarchy Search
+________________
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_search
+
+   .. autoattribute:: HierarchyProxyManager.hierarchy_search_order
+
+   .. automethod:: HierarchyProxyManager.get_hierarchies_by_search
+
+   .. automethod:: HierarchyProxyManager.get_hierarchy_query_from_inspector
+
+
+
+Hierarchy Admin
+_______________
+
+   .. automethod:: HierarchyProxyManager.can_create_hierarchies
+
+   .. automethod:: HierarchyProxyManager.can_create_hierarchy_with_record_types
+
+   .. automethod:: HierarchyProxyManager.get_hierarchy_form_for_create
+
+   .. automethod:: HierarchyProxyManager.create_hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_update_hierarchies
+
+   .. automethod:: HierarchyProxyManager.get_hierarchy_form_for_update
+
+   .. automethod:: HierarchyProxyManager.update_hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_delete_hierarchies
+
+   .. automethod:: HierarchyProxyManager.delete_hierarchy
+
+   .. automethod:: HierarchyProxyManager.can_manage_hierarchy_aliases
+
+   .. automethod:: HierarchyProxyManager.alias_hierarchy
+
+
+
+Hierarchy Notification
+______________________
+
+   .. automethod:: HierarchyProxyManager.can_register_for_hierarchy_notifications
+
+   .. automethod:: HierarchyProxyManager.register_for_new_hierarchies
+
+   .. automethod:: HierarchyProxyManager.register_for_changed_hierarchies
+
+   .. automethod:: HierarchyProxyManager.register_for_changed_hierarchy
+
+   .. automethod:: HierarchyProxyManager.register_for_deleted_hierarchies
+
+   .. automethod:: HierarchyProxyManager.register_for_deleted_hierarchy
 
 
 

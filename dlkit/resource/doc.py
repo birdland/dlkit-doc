@@ -44,18 +44,17 @@ Group
 
 When a ``Resource`` is referenced in another OSID, it is a singular
 entity. To provide groupings of multiple people or things, a
-``Resource`` can also be defined as a group of other resources. Whether
-a resource is a single entity or a group is an attribute of the
-``Resource`` itself. If a ``Resource`` is a group, then its membership
-can be queried or managed in one of the group sessions. This overloading
-of the object definition serves to keep the nature of the resource
-separate from the other OSIDs such that a message to a "group", for
-example, is referenced as a single resource receipient. Other OSIDs are
-blind to whether or not a referenced ``Resource`` is a group or a
-singular entity.
+``Resource`` can also be defined as a hierarchucal group of other
+resources. Whether a resource is a single entity or a group is an
+attribute of the ``Resource`` itself. If a ``Resource`` is a group, then
+its membership can be queried or managed in one of the group sessions.
+This overloading of the object definition serves to keep the nature of
+the resource separate from the other OSIDs such that a message to a
+"group", for example, is referenced as a single resource receipient.
+Other OSIDs are blind to whether or not a referenced ``Resource`` is a
+group or a singular entity.
 
-Groups may be managed through mappings or viewed through a hierarchy
-pattern.
+
 
 Resource Relationships
 

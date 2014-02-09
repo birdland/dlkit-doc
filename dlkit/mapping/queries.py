@@ -9,7 +9,7 @@ class LocationQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateableQ
 
     """
     def match_coordinate(self, coordinate, match):
-        """Matches locations containing the specified ``Coordinate``.
+        """Matches locations at the specified ``Coordinate``.
 
         :param coordinate: a coordinate
         :type coordinate: ``osid.mapping.Coordinate``

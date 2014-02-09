@@ -42,6 +42,8 @@ ______________
 
    .. automethod:: LocaleManager.supports_spatial_unit_conversion
 
+   .. automethod:: LocaleManager.supports_format_conversion
+
    .. automethod:: LocaleManager.supports_calendar_info
 
    .. automethod:: LocaleManager.supports_language_types_for_translation
@@ -120,6 +122,12 @@ ______________
 
    .. autoattribute:: LocaleManager.source_spatial_unit_record_types
 
+   .. automethod:: LocaleManager.supports_format_types_for_conversion
+
+   .. automethod:: LocaleManager.get_format_types_for_source
+
+   .. autoattribute:: LocaleManager.source_format_types
+
 
 
 Locale Proxy Manager
@@ -128,51 +136,122 @@ Locale Proxy Manager
 .. autoclass:: LocaleProxyManager
    :show-inheritance:
 
-   .. automethod:: LocaleProxyManager.get_translation_session
 
-   .. automethod:: LocaleProxyManager.get_translation_session_for_type
 
-   .. automethod:: LocaleProxyManager.get_translation_admin_session
 
-   .. automethod:: LocaleProxyManager.get_translation_admin_session_for_type
 
-   .. automethod:: LocaleProxyManager.get_numeric_formatting_session
+Locale Profile Methods
+______________
 
-   .. automethod:: LocaleProxyManager.get_numeric_formatting_session_for_type
+   .. automethod:: LocaleProxyManager.supports_visible_federation
 
-   .. automethod:: LocaleProxyManager.get_calendar_formatting_session
+   .. automethod:: LocaleProxyManager.supports_translation
 
-   .. automethod:: LocaleProxyManager.get_calendar_formatting_session_for_type
+   .. automethod:: LocaleProxyManager.supports_translation_admin
 
-   .. automethod:: LocaleProxyManager.get_currency_formatting_session
+   .. automethod:: LocaleProxyManager.supports_numeric_formatting
 
-   .. automethod:: LocaleProxyManager.get_currency_formatting_session_for_type
+   .. automethod:: LocaleProxyManager.supports_calendar_formatting
 
-   .. automethod:: LocaleProxyManager.get_coordinate_formatting_session
+   .. automethod:: LocaleProxyManager.supports_currency_formatting
 
-   .. automethod:: LocaleProxyManager.get_coordinate_formatting_session_for_type
+   .. automethod:: LocaleProxyManager.supports_coordinate_formatting
 
-   .. automethod:: LocaleProxyManager.get_unit_conversion_session
+   .. automethod:: LocaleProxyManager.supports_unit_conversion
 
-   .. automethod:: LocaleProxyManager.get_currency_conversion_session
+   .. automethod:: LocaleProxyManager.supports_currency_conversion
 
-   .. automethod:: LocaleProxyManager.get_currency_conversion_session_for_type
+   .. automethod:: LocaleProxyManager.supports_calendar_conversion
 
-   .. automethod:: LocaleProxyManager.get_calendar_conversion_session
+   .. automethod:: LocaleProxyManager.supports_coordinate_conversion
 
-   .. automethod:: LocaleProxyManager.get_calendar_conversion_session_for_type
+   .. automethod:: LocaleProxyManager.supports_spatial_unit_conversion
 
-   .. automethod:: LocaleProxyManager.get_coordinate_conversion_session
+   .. automethod:: LocaleProxyManager.supports_format_conversion
 
-   .. automethod:: LocaleProxyManager.get_coordinate_conversion_session_for_type
+   .. automethod:: LocaleProxyManager.supports_calendar_info
 
-   .. automethod:: LocaleProxyManager.get_spatial_unit_conversion_session
+   .. automethod:: LocaleProxyManager.supports_language_types_for_translation
 
-   .. automethod:: LocaleProxyManager.get_spatial_unit_conversion_session_for_type
+   .. automethod:: LocaleProxyManager.get_language_types_for_source
 
-   .. automethod:: LocaleProxyManager.get_calendar_info_session
+   .. autoattribute:: LocaleProxyManager.source_language_types
 
-   .. automethod:: LocaleProxyManager.get_calendar_info_session_for_type
+   .. automethod:: LocaleProxyManager.get_script_types_for_language_type
+
+   .. automethod:: LocaleProxyManager.supports_numeric_format_types
+
+   .. autoattribute:: LocaleProxyManager.numeric_format_types
+
+   .. automethod:: LocaleProxyManager.supports_calendar_types_for_formatting
+
+   .. autoattribute:: LocaleProxyManager.calendar_types_for_formatting
+
+   .. automethod:: LocaleProxyManager.get_date_format_types_for_calendar_type
+
+   .. autoattribute:: LocaleProxyManager.time_types_for_formatting
+
+   .. automethod:: LocaleProxyManager.get_time_format_types_for_time_type
+
+   .. automethod:: LocaleProxyManager.supports_currency_types_for_formatting
+
+   .. autoattribute:: LocaleProxyManager.currency_types_for_formatting
+
+   .. automethod:: LocaleProxyManager.get_currency_format_types_for_currency_type
+
+   .. automethod:: LocaleProxyManager.supports_coordinate_types_for_formatting
+
+   .. autoattribute:: LocaleProxyManager.coordinate_types_for_formatting
+
+   .. automethod:: LocaleProxyManager.get_coordinate_format_types_for_coordinate_type
+
+   .. automethod:: LocaleProxyManager.supports_unit_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_unit_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_unit_types
+
+   .. automethod:: LocaleProxyManager.supports_currency_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_currency_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_currency_types
+
+   .. automethod:: LocaleProxyManager.supports_calendar_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_calendar_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_calendar_types
+
+   .. automethod:: LocaleProxyManager.supports_time_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_time_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_time_types
+
+   .. automethod:: LocaleProxyManager.get_time_types_for_calendar_type
+
+   .. automethod:: LocaleProxyManager.get_calendar_types_for_time_type
+
+   .. automethod:: LocaleProxyManager.supports_calendar_time_types
+
+   .. automethod:: LocaleProxyManager.supports_coordinate_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_coordinate_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_coordinate_types
+
+   .. automethod:: LocaleProxyManager.supports_spatial_unit_record_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_spatial_unit_record_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_spatial_unit_record_types
+
+   .. automethod:: LocaleProxyManager.supports_format_types_for_conversion
+
+   .. automethod:: LocaleProxyManager.get_format_types_for_source
+
+   .. autoattribute:: LocaleProxyManager.source_format_types
 
 
 

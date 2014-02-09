@@ -121,6 +121,22 @@ Osid Governator
 
 
 
+Osid Compendium
+---------------
+
+.. autoclass:: OsidCompendium
+   :show-inheritance:
+
+   .. autoattribute:: OsidCompendium.start_date
+
+   .. autoattribute:: OsidCompendium.end_date
+
+   .. automethod:: OsidCompendium.is_interpolated
+
+   .. automethod:: OsidCompendium.is_extrapolated
+
+
+
 Osid Capsule
 ------------
 
@@ -145,9 +161,9 @@ Osid Form
 
    .. automethod:: OsidForm.set_locale
 
-   .. autoattribute:: OsidForm.comment_metadata
+   .. autoattribute:: OsidForm.journal_comment_metadata
 
-   .. autoattribute:: OsidForm.comment
+   .. autoattribute:: OsidForm.journal_comment
 
    .. automethod:: OsidForm.is_valid
 
@@ -230,8 +246,6 @@ Osid Containable Form
    :show-inheritance:
 
    .. autoattribute:: OsidContainableForm.sequestered_metadata
-
-   .. autoattribute:: OsidContainableForm.sequestered_date
 
    .. autoattribute:: OsidContainableForm.sequestered
 
@@ -386,6 +400,30 @@ Osid Governator Form
    :show-inheritance:
 
 
+
+
+
+Osid Compendium Form
+--------------------
+
+.. autoclass:: OsidCompendiumForm
+   :show-inheritance:
+
+   .. autoattribute:: OsidCompendiumForm.start_date_metadata
+
+   .. autoattribute:: OsidCompendiumForm.start_date
+
+   .. autoattribute:: OsidCompendiumForm.end_date_metadata
+
+   .. autoattribute:: OsidCompendiumForm.end_date
+
+   .. autoattribute:: OsidCompendiumForm.interpolated_metadata
+
+   .. autoattribute:: OsidCompendiumForm.interpolated
+
+   .. autoattribute:: OsidCompendiumForm.extrapolated_metadata
+
+   .. autoattribute:: OsidCompendiumForm.extrapolated
 
 
 

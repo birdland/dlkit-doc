@@ -526,6 +526,104 @@ class OsidGovernator(OsidObject, osid_markers.Operable, osid_markers.Sourceable)
 
 
 
+class OsidCompendium(OsidObject, osid_markers.Subjugateable):
+    """``OsidCompendium`` is the top level interface for reports based on measurements, calculations, summaries, or views of transactional activity within periods of time.
+
+    This time dimension of this report may align with managed time
+    periods, specific dates, or both. Oh my.
+
+    Reports are often derived dynamically based on an examination of
+    data managed elsewhere in an OSID. Reports may also be directly
+    managed outside where it is desirable to capture summaries without
+    the detail of the implied evaluated data. The behavior of a direct
+    create or update of a report is not specified but is not limited to
+    an override or a cascading update of underlying data.
+    
+    The start and end date represents the date range used in the
+    evaluation of the transactional data on which this report is based.
+    The start and end date may be the same indicating that the
+    evaluation occurred at a point in time rather than across a date
+    range. The start and end date requested may differ from the start
+    and end date indicated in this report because of the inability to
+    interpolate or extrapolate the date. These dates should be examined
+    to understand what actually occurred and to what dates the
+    information in this report pertains.
+    
+    These dates differ from the dates the report itself was requested,
+    created, or modified. The dates refer to the context of the
+    evaluation. In a managed report, the dates are simply the dates to
+    which the report information pertains. The history of a single
+    report may be examined in the Journaling OSID.
+    
+    For example, the Location of a Resource at 12:11pm is reported to be
+    in Longwood and at 12:23pm is reported to be at Chestnut Hill. A
+    request of a ``ResourceLocation``. A data correction may update the
+    Longwood time to be 12:09pm. The update of the ``ResourceLocation``
+    from 12:11pm to 12:09pm may be examined in the Journaling OSID while
+    the 12:11pm time would not longer be visible in current versions of
+    this report.
+    
+    Reports may be indexed by a managed time period such as a ``Term``
+    or ``FiscalPeriod``. The evaluation dates may map to the opening and
+    closing dates of the time period. Evaluation dates that differ from
+    the time period may indicate that the transactional data is
+    incomplete for that time period or that the report was calculated
+    using a requested date range.
+    
+    ``OsidCompendiums`` are subjugates to other ``OsidObjects`` in that
+    what is reported is tied to an instance of a dimension such as a
+    person, account, or an ``OsidCatalog`` .
+
+    """
+    def get_start_date(self):
+        """Gets the start date used in the evaluation of the transactional data on which this report is based.
+
+        :return: the date
+        :rtype: ``osid.calendaring.DateTime``
+
+        """
+        return # osid.calendaring.DateTime
+
+    start_date = property(fget=get_start_date)
+
+    def get_end_date(self):
+        """Gets the end date used in the evaluation of the transactional data on which this report is based.
+
+        :return: the date
+        :rtype: ``osid.calendaring.DateTime``
+
+        """
+        return # osid.calendaring.DateTime
+
+    end_date = property(fget=get_end_date)
+
+    def is_interpolated(self):
+        """Tests if this report is interpolated within measured data or known transactions.
+
+        Interpolation may occur if the start or end date fall between
+        two known facts or managed time period.
+
+        :return: ``true`` if this report is interpolated, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def is_extrapolated(self):
+        """Tests if this report is extrapolated outside measured data or known transactions.
+
+        Extrapolation may occur if the start or end date fall outside
+        two known facts or managed time period. Extrapolation may occur
+        within a managed time period in progress where the results of
+        the entire time period are projected.
+
+        :return: ``true`` if this report is extrapolated, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+
 class OsidCapsule:
     """``OsidCapsule`` wraps other objects.
 
@@ -627,7 +725,7 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         """
         pass
 
-    def get_comment_metadata(self):
+    def get_journal_comment_metadata(self):
         """Gets the metadata for the comment corresponding to this form submission.
 
         The comment is used for describing the nature of the change to
@@ -640,9 +738,9 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         """
         return # osid.Metadata
 
-    comment_metadata = property(fget=get_comment_metadata)
+    journal_comment_metadata = property(fget=get_journal_comment_metadata)
 
-    def set_comment(self, comment):
+    def set_journal_comment(self, comment):
         """Sets a comment.
 
         :param comment: the new comment
@@ -654,7 +752,7 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         """
         pass
 
-    comment = property(fset=set_comment)
+    journal_comment = property(fset=set_journal_comment)
 
     def is_valid(self):
         """Tests if ths form is in a valid state for submission.
@@ -826,7 +924,7 @@ class OsidContainableForm(OsidAggregateableForm):
 
     sequestered_metadata = property(fget=get_sequestered_metadata)
 
-    def set_sequestered_date(self, sequestered):
+    def set_sequestered(self, sequestered):
         """Sets the sequestered flag.
 
         :param sequestered: the new sequestered flag
@@ -837,8 +935,6 @@ class OsidContainableForm(OsidAggregateableForm):
         """
         pass
 
-    sequestered_date = property(fset=set_sequestered_date)
-
     def clear_sequestered(self):
         """Clears the sequestered flag.
 
@@ -847,7 +943,7 @@ class OsidContainableForm(OsidAggregateableForm):
         """
         pass
 
-    sequestered = property(fdel=clear_sequestered)
+    sequestered = property(fget=set_sequestered, fdel=clear_sequestered)
 
 
 class OsidSourceableForm(OsidForm):
@@ -1364,6 +1460,139 @@ class OsidProcessorForm(OsidRuleForm):
 class OsidGovernatorForm(OsidObjectForm, OsidOperableForm, OsidSourceableForm):
     """This form is used to create and update governators."""
 
+
+
+class OsidCompendiumForm(OsidObjectForm, OsidSubjugateableForm):
+    """This form is used to create and update governators."""
+    def get_start_date_metadata(self):
+        """Gets the metadata for a start date.
+
+        :return: metadata for the date
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    start_date_metadata = property(fget=get_start_date_metadata)
+
+    def set_start_date(self, date):
+        """Sets the start date.
+
+        :param date: the new date
+        :type date: ``osid.calendaring.DateTime``
+        :raise: ``InvalidArgument`` -- ``date`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``date`` is ``null``
+
+        """
+        pass
+
+    def clear_start_date(self):
+        """Clears the start date.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    start_date = property(fget=set_start_date, fdel=clear_start_date)
+
+    def get_end_date_metadata(self):
+        """Gets the metadata for an end date.
+
+        :return: metadata for the date
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    end_date_metadata = property(fget=get_end_date_metadata)
+
+    def set_end_date(self, date):
+        """Sets the end date.
+
+        :param date: the new date
+        :type date: ``osid.calendaring.DateTime``
+        :raise: ``InvalidArgument`` -- ``date`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``date`` is ``null``
+
+        """
+        pass
+
+    def clear_end_date(self):
+        """Clears the end date.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    end_date = property(fget=set_end_date, fdel=clear_end_date)
+
+    def get_interpolated_metadata(self):
+        """Gets the metadata for the interpolated flag.
+
+        :return: metadata for the interpolated flag
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    interpolated_metadata = property(fget=get_interpolated_metadata)
+
+    def set_interpolated(self, interpolated):
+        """Sets the interpolated flag.
+
+        :param interpolated: the new interpolated flag
+        :type interpolated: ``boolean``
+        :raise: ``InvalidArgument`` -- ``interpolated`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    def clear_interpolated(self):
+        """Clears the interpolated flag.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    interpolated = property(fget=set_interpolated, fdel=clear_interpolated)
+
+    def get_extrapolated_metadata(self):
+        """Gets the metadata for the extrapolated flag.
+
+        :return: metadata for the extrapolated flag
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    extrapolated_metadata = property(fget=get_extrapolated_metadata)
+
+    def set_extrapolated(self, extrapolated):
+        """Sets the extrapolated flag.
+
+        :param extrapolated: the new extrapolated flag
+        :type extrapolated: ``boolean``
+        :raise: ``InvalidArgument`` -- ``extrapolated`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    def clear_extrapolated(self):
+        """Clears the extrapolated flag.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    extrapolated = property(fget=set_extrapolated, fdel=clear_extrapolated)
 
 
 class OsidCapsuleForm(OsidForm):

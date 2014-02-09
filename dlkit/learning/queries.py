@@ -98,7 +98,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
 
         :return: the grade query
         :rtype: ``osid.grading.GradeQuery``
-        :raise: ``Unimplemented`` -- ``supports_knowlege_category_query()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_knowledge_category_query()`` is ``false``
 
         """
         return # osid.grading.GradeQuery
@@ -114,11 +114,11 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """
         pass
 
-    def clear_knowlege_category_terms(self):
+    def clear_knowledge_category_terms(self):
         """Clears the knowledge category terms."""
         pass
 
-    knowlege_category_terms = property(fdel=clear_knowlege_category_terms)
+    knowledge_category_terms = property(fdel=clear_knowledge_category_terms)
 
     def match_cognitive_process_id(self, grade_id, match):
         """Sets the cognitive process ``Id`` for this query.
@@ -232,7 +232,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
 
     activity_terms = property(fdel=clear_activity_terms)
 
-    def match_requisite_objective_ids(self, requisite_objective_id, match):
+    def match_requisite_objective_id(self, requisite_objective_id, match):
         """Sets the requisite objective ``Id`` for this query.
 
         :param requisite_objective_id: a requisite objective ``Id``
@@ -288,7 +288,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
 
     requisite_objective_terms = property(fdel=clear_requisite_objective_terms)
 
-    def match_dependent_objective_ids(self, dependent_objective_id, match):
+    def match_dependent_objective_id(self, dependent_objective_id, match):
         """Sets the dependent objective ``Id`` to query objectives dependent on the given objective.
 
         :param dependent_objective_id: a dependent objective ``Id``
@@ -344,7 +344,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
 
     dependent_objective_terms = property(fdel=clear_dependent_objective_terms)
 
-    def match_equivalent_objective_ids(self, equivalent_objective_id, match):
+    def match_equivalent_objective_id(self, equivalent_objective_id, match):
         """Sets the equivalent objective ``Id`` to query equivalents.
 
         :param equivalent_objective_id: an equivalent objective ``Id``
@@ -576,7 +576,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         return # osid.learning.records.ObjectiveQueryRecord
 
 
-class ActivityQuery(osid_queries.OsidObjectQuery):
+class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery):
     """This is the query for searching activities.
 
     Each method match request produces an ``AND`` term while multiple
@@ -663,11 +663,11 @@ class ActivityQuery(osid_queries.OsidObjectQuery):
         Multiple retrievals produce a nested ``OR`` term.
 
         :return: the asset query
-        :rtype: ``osid.repository.Asset``
+        :rtype: ``osid.repository.AssetQuery``
         :raise: ``Unimplemented`` -- ``supports_asset_query()`` is ``false``
 
         """
-        return # osid.repository.Asset
+        return # osid.repository.AssetQuery
 
     asset_query = property(fget=get_asset_query)
 

@@ -320,7 +320,7 @@ class AssessmentPartQuerySession(osid_sessions.OsidSession):
         return # osid.assessment.authoring.AssessmentPartList
 
 
-class AssessmentPartSearchSession("""authoring_UNKNOWN_MODULE.AssessmentPartQuerySession"""):
+class AssessmentPartSearchSession(AssessmentPartQuerySession):
     """This session provides methods for searching among ``AssessmentPart`` objects.
 
     The search query is constructed using the ``AssessmentPartyQuery``.
@@ -1800,7 +1800,7 @@ class SequenceRuleQuerySession(osid_sessions.OsidSession):
         return # osid.assessment.authoring.SequenceRuleList
 
 
-class SequenceRuleSearchSession("""authoring_UNKNOWN_MODULE.SequenceRuleQuerySession"""):
+class SequenceRuleSearchSession(SequenceRuleQuerySession):
     """This session provides methods for searching among ``SequenceRule`` objects.
 
     The search query is constructed using the ``SequenceRuleyQuery``.
@@ -3096,7 +3096,7 @@ class SequenceRuleEnablerQuerySession(osid_sessions.OsidSession):
         return # osid.assessment.authoring.SequenceRuleEnablerList
 
 
-class SequenceRuleEnablerSearchSession("""authoring_UNKNOWN_MODULE.SequenceRuleEnablerQuerySession"""):
+class SequenceRuleEnablerSearchSession(SequenceRuleEnablerQuerySession):
     """This session provides methods for searching among ``SequenceRuleEnabler`` objects.
 
     The search query is constructed using the

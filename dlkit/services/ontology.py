@@ -2683,6 +2683,1037 @@ class OntologyProxyManager(osid_managers.OsidProxyManager, OntologyProfile):
     ontology_rules_proxy_manager = property(fget=get_ontology_rules_proxy_manager)
 
 
+##
+# The following methods are from osid.ontology.OntologyLookupSession
+
+    def can_lookup_ontologies(self):
+        """Tests if this user can perform ``Ontology`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_ontology_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_ontology_view(self):
+        """A complete view of the ``Ontology`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology(self, ontology_id):
+        """Gets the ``Ontology`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Ontology`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to an ``Ontology`` and retained
+        for compatility.
+
+
+        :param ontology_id: ``Id`` of the ``Ontology``
+        :type ontology_id: ``osid.id.Id``
+        :return: the ontology
+        :rtype: ``osid.ontology.Ontology``
+        :raise: ``NotFound`` -- ``ontology_id`` not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontologies_by_ids(self, ontology_ids):
+        """Gets an ``OntologyList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the
+        ontologies specified in the ``Id`` list, in the order of the
+        list, including duplicates, or an error results if an ``Id`` in
+        the supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Ontology`` objects may be omitted from the list
+        and may present the elements in any order including returning a
+        unique set.
+
+
+        :param ontology_ids: the list of ``Ids`` to retrieve
+        :type ontology_ids: ``osid.id.IdList``
+        :return: the returned ``Ontology`` list
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``ontology_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontologies_by_genus_type(self, ontology_genus_type):
+        """Gets an ``OntologyList`` corresponding to the given ontology genus ``Type`` which does not include ontologies of types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known ontologies
+        or an error results. Otherwise, the returned list may contain
+        only those ontologies that are accessible through this session.
+
+
+        :param ontology_genus_type: an ontology genus type
+        :type ontology_genus_type: ``osid.type.Type``
+        :return: the returned ``Ontology`` list
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NullArgument`` -- ``ontology_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontologies_by_parent_genus_type(self, ontology_genus_type):
+        """Gets an ``OntologyList`` corresponding to the given ontology genus ``Type`` and include any additional ontologies with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known ontologies
+        or an error results. Otherwise, the returned list may contain
+        only those ontologies that are accessible through this session.
+
+
+        :param ontology_genus_type: an ontology genus type
+        :type ontology_genus_type: ``osid.type.Type``
+        :return: the returned ``Ontology`` list
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NullArgument`` -- ``ontology_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontologies_by_record_type(self, ontology_record_type):
+        """Gets an ``OntologyList`` containing the given ontology record ``Type``.
+        In plenary mode, the returned list contains all known ontologies
+        or an error results. Otherwise, the returned list may contain
+        only those ontologies that are accessible through this session.
+
+
+        :param ontology_record_type: an ontology record type
+        :type ontology_record_type: ``osid.type.Type``
+        :return: the returned ``Ontology`` list
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NullArgument`` -- ``ontology_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontologies_by_provider(self, resource_id):
+        """Gets an ``OntologyList`` for the given provider.
+        In plenary mode, the returned list contains all known ontologies
+        or an error results. Otherwise, the returned list may contain
+        only those ontologies that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Ontology`` list
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontologies(self):
+        """Gets all ``Ontologies``.
+        In plenary mode, the returned list contains all known ontologies
+        or an error results. Otherwise, the returned list may contain
+        only those ontologies that are accessible through this session.
+
+
+        :return: an ``OntologyList``
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    ontologies = property(fget=get_ontologies)
+
+
+##
+# The following methods are from osid.ontology.OntologyQuerySession
+
+    def can_search_ontologies(self):
+        """Tests if this user can perform ``Ontology`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology_query(self):
+        """Gets an ontology query.
+
+        :return: an ontology query
+        :rtype: ``osid.ontology.OntologyQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    ontology_query = property(fget=get_ontology_query)
+
+    def get_ontologies_by_query(self, ontology_query):
+        """Gets a list of ``Ontology`` objects matching the given ontology query.
+
+        :param ontology_query: the ontology query
+        :type ontology_query: ``osid.ontology.OntologyQuery``
+        :return: the returned ``OntologyList``
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NullArgument`` -- ``ontology_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``ontology_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.ontology.OntologySearchSession
+
+    def get_ontology_search(self):
+        """Gets an ontology search.
+
+        :return: an ontology search
+        :rtype: ``osid.ontology.OntologySearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    ontology_search = property(fget=get_ontology_search)
+
+    def get_ontology_search_order(self):
+        """Gets an ontology search order.
+        The ``OntologySearchOrder`` is supplied to an ``OntologySearch``
+        to specify the ordering of results.
+
+
+        :return: the ontology search order
+        :rtype: ``osid.ontology.OntologySearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    ontology_search_order = property(fget=get_ontology_search_order)
+
+    def get_ontologies_by_search(self, ontology_query, ontology_search):
+        """Gets the search results matching the given search query using the given search.
+
+        :param ontology_query: the ontology query
+        :type ontology_query: ``osid.ontology.OntologyQuery``
+        :param ontology_search: the ontology search
+        :type ontology_search: ``osid.ontology.OntologySearch``
+        :return: the ontology search results
+        :rtype: ``osid.ontology.OntologySearchResults``
+        :raise: ``NullArgument`` -- ``ontology_query`` or ``ontology_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``ontology_query`` or ``ontology_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology_query_from_inspector(self, ontology_query_inspector):
+        """Gets an ontology query from an inspector.
+        The inspector is available from an ``OntologySearchResults``.
+
+
+        :param ontology_query_inspector: an ontology query inspector
+        :type ontology_query_inspector: ``osid.ontology.OntologyQueryInspector``
+        :return: the ontology query
+        :rtype: ``osid.ontology.OntologyQuery``
+        :raise: ``NullArgument`` -- ``ontology_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``ontology_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.ontology.OntologyAdminSession
+
+    def can_create_ontologies(self):
+        """Tests if this user can create ``Ontologies``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating an
+        ``Ontology`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        create operations to unauthorized users.
+
+
+        :return: ``false`` if ``Ontology`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_ontology_with_record_types(self, ontology_record_types):
+        """Tests if this user can create a single ``Ontology`` using the desired record types.
+        While ``OntologyManager.getOntologyRecordTypes()`` can be used
+        to examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Ontology``.
+        Providing an empty array tests if an ``Ontology`` can be created
+        with no records.
+
+
+        :param ontology_record_types: array of ontology record types
+        :type ontology_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Ontology`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``ontology_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology_form_for_create(self, ontology_record_types):
+        """Gets the ontology form for creating new ontologies.
+        A new form should be requested for each create transaction.
+
+
+        :param ontology_record_types: array of ontology record types
+        :type ontology_record_types: ``osid.type.Type[]``
+        :return: the ontology form
+        :rtype: ``osid.ontology.OntologyForm``
+        :raise: ``NullArgument`` -- ``ontology_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_ontology(self, ontology_form):
+        """Creates a new ``Ontology``.
+
+        :param ontology_form: the form for this ``Ontology``
+        :type ontology_form: ``osid.ontology.OntologyForm``
+        :return: the new ``Ontology``
+        :rtype: ``osid.ontology.OntologyForm``
+        :raise: ``IllegalState`` -- ``ontology_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``ontology_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``ontology_form`` did not originate from ``get_ontology_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_ontologies(self):
+        """Tests if this user can update ``Ontologies``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating an
+        ``Ontology`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        update operations to unauthorized users.
+
+
+        :return: ``false`` if ``Ontology`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology_form_for_update(self, ontology_id):
+        """Gets the ontology form for updating an existing ontology.
+        A new ontology form should be requested for each update
+        transaction.
+
+
+        :param ontology_id: the ``Id`` of the ``Ontology``
+        :type ontology_id: ``osid.id.Id``
+        :return: the ontology form
+        :rtype: ``osid.ontology.OntologyForm``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_ontology(self, ontology_form):
+        """Updates an existing ontology.
+
+        :param ontology_form: the form containing the elements to be updated
+        :type ontology_form: ``osid.ontology.OntologyForm``
+        :raise: ``IllegalState`` -- ``ontology_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``ontology_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``ontology_form`` did not originate from ``get_ontology_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_ontologies(self):
+        """Tests if this user can delete ontologies.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting an
+        ``Ontology`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        delete operations to unauthorized users.
+
+
+        :return: ``false`` if ``Ontology`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_ontology(self, ontology_id):
+        """Deletes an ``Ontology``.
+
+        :param ontology_id: the ``Id`` of the ``Ontology`` to remove
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``ontology_id`` not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_ontology_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ontologies.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Ontology`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_ontology(self, ontology_id, alias_id):
+        """Adds an ``Id`` to an ``Ontology`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``Ontology`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another ontology, it is
+        reassigned to the given ontology ``Id``.
+
+
+        :param ontology_id: the ``Id`` of an ``Ontology``
+        :type ontology_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``ontology_id`` not found
+        :raise: ``NullArgument`` -- ``ontology_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.ontology.OntologyNotificationSession
+
+    def can_register_for_ontology_notifications(self):
+        """Tests if this user can register for ``Ontology`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_ontologies(self):
+        """Register for notifications of new ontologies.
+        ``OntologyReceiver.newOntology()`` is invoked when a new
+        ``Ontology`` is created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_ontology_ancestors(self, ontology_id):
+        """Registers for notification if an ancestor is added to the specified ontology in the ontology hierarchy.
+        ``OntologyReceiver.newOntologyAncestor()`` is invoked when the
+        specified ontology experiences an addition in ancestry.
+
+
+        :param ontology_id: the ``Id`` of the ontology to monitor
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``ontology_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_ontology_descendants(self, ontology_id):
+        """Registers for notification if a descendant is added to the specified ontology in the ontology hierarchy.
+        ``OntologyReceiver.newOntologyDescendant()`` is invoked when the
+        specified ontology experiences an addition in descendants.
+
+
+        :param ontology_id: the ``Id`` of the ontology to monitor
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``ontology_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_ontologies(self):
+        """Registers for notification of updated ontologies.
+        ``OntologyReceiver.changedOntology()`` is invoked when an
+        ontology is changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_ontology(self, ontology_id):
+        """Registers for notification of an updated ontology.
+        ``OntologyReceiver.changedOntology()`` is invoked when the
+        specified ontology is changed.
+
+
+        :param ontology_id: the ``Id`` of the ontology to monitor
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``ontology_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_ontologies(self):
+        """Registers for notification of deleted ontologies.
+        ``OntologyReceiver.deletedOntology()`` is invoked when a
+        calenedar is deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_ontology(self, ontology_id):
+        """Registers for notification of a deleted ontology.
+        ``OntologyReceiver.deletedOntology()`` is invoked when the
+        specified ontology is deleted.
+
+
+        :param ontology_id: the ``Id`` of the ontology to monitor
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``ontology_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_ontology_ancestors(self, ontology_id):
+        """Registers for notification if an ancestor is removed from the specified ontology in the ontology hierarchy.
+        ``OntologyReceiver.deletedOntologyAncestor()`` is invoked when
+        the specified ontology experiences a removal of an ancestor.
+
+
+        :param ontology_id: the ``Id`` of the ontology to monitor
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``ontology_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_ontology_descendants(self, ontology_id):
+        """Registers for notification if a descendant is removed from fthe specified ontology in the calndar hierarchy.
+        ``OntologyReceiver.deletedOntologyDescednant()`` is invoked when
+        the specified ontology experiences a removal of one of its
+        descendants.
+
+
+        :param ontology_id: the ``Id`` of the ontology to monitor
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``ontology_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.ontology.OntologyHierarchySession
+
+    def get_ontology_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    ontology_hierarchy_id = property(fget=get_ontology_hierarchy_id)
+
+    def get_ontology_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    ontology_hierarchy = property(fget=get_ontology_hierarchy)
+
+    def can_access_ontology_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an an application that may wish not to offer
+        traversal operations to unauthorized users.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_ontology_ids(self):
+        """Gets the root ontology ``Ids`` in this hierarchy.
+
+        :return: the root ontology ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_ontology_ids = property(fget=get_root_ontology_ids)
+
+    def get_root_ontologies(self):
+        """Gets the root ontologies in this ontology hierarchy.
+
+        :return: the root ontologies
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_ontologies = property(fget=get_root_ontologies)
+
+    def has_parent_ontologies(self, ontology_id):
+        """Tests if the ``Ontology`` has any parents.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: ``true`` if the ontology has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_ontology(self, id_, ontology_id):
+        """Tests if an ``Id`` is a direct parent of an ontology.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``ontology_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_ontology_ids(self, ontology_id):
+        """Gets the parent ``Ids`` of the given ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the ontology
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_ontologies(self, ontology_id):
+        """Gets the parents of the given ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: the parents of the ontology
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_ontology(self, id_, ontology_id):
+        """Tests if an ``Id`` is an ancestor of an ontology.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``ontology_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_ontologies(self, ontology_id):
+        """Tests if an ontology has any children.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: ``true`` if the ``ontology_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_ontology(self, id_, ontology_id):
+        """Tests if an ontology is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``ontology_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_ontology_ids(self, ontology_id):
+        """Gets the child ``Ids`` of the given ontology.
+
+        :param ontology_id: the ``Id`` to query
+        :type ontology_id: ``osid.id.Id``
+        :return: the children of the ontology
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_ontologies(self, ontology_id):
+        """Gets the children of the given ontology.
+
+        :param ontology_id: the ``Id`` to query
+        :type ontology_id: ``osid.id.Id``
+        :return: the children of the ontology
+        :rtype: ``osid.ontology.OntologyList``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_ontology(self, id_, ontology_id):
+        """Tests if an ``Id`` is a descendant of an ontology.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``ontology_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology_node_ids(self, ontology_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given ontology.
+
+        :param ontology_id: the ``Id`` to query
+        :type ontology_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an ontology node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ontology_nodes(self, ontology_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given ontology.
+
+        :param ontology_id: the ``Id`` to query
+        :type ontology_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an ontology node
+        :rtype: ``osid.ontology.OntologyNode``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.ontology.OntologyHierarchyDesignSession
+
+    def can_modify_ontology_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_ontology(self, ontology_id):
+        """Adds a root ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``ontology_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``ontology_id`` not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_ontology(self, ontology_id):
+        """Removes a root ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``ontology_id`` is not a root
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_ontology(self, ontology_id, child_id):
+        """Adds a child to an ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``ontology_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``ontology_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``ontology_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_ontology(self, ontology_id, child_id):
+        """Removes a child from an ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``ontology_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``ontology_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_ontologies(self, ontology_id):
+        """Removes all children from an ontology.
+
+        :param ontology_id: the ``Id`` of an ontology
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``ontology_id`` not in hierarchy
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.ontology.OntologyAssignmentSession
+
+    def can_assign_ontologies(self):
+        """Tests if this user can manage of id/ontology mappings.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known assignment methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may wish not to offer
+        mapping functions to unauthorized users.
+
+
+        :return: ``false`` if managing mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def assign_ontology(self, id_, ontology_id):
+        """Assigns an ``Id`` to an ontology.
+
+        :param id: ``an _id``
+        :type id: ``osid.id.Id``
+        :param ontology_id: ``Id`` of the ``Ontology``
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``ontology_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def unassign_ontology(self, id_, ontology_id):
+        """Unassigns an ``Id`` from an ontology.
+
+        :param id: ``an _id``
+        :type id: ``osid.id.Id``
+        :param ontology_id: ``Id`` of the ``Ontology``
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``id`` not assigned to ``ontology_id``
+        :raise: ``NullArgument`` -- ``id`` or ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_ids(self, ontology_id):
+        """Gets a list of the ``Ids`` assigned to an ontology.
+
+        :param ontology_id: ``Id`` of the ``Ontology``
+        :type ontology_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``ontology_id`` not found
+        :raise: ``NullArgument`` -- ``ontology_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
 
 class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 

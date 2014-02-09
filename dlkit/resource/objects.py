@@ -246,7 +246,7 @@ class ResourceNode(osid_objects.OsidNode):
 
     resource = property(fget=get_resource)
 
-    def get_parent_bin_nodes(self):
+    def get_parent_resource_nodes(self):
         """Gets the parents of this resource.
 
         :return: the parents of the resource
@@ -255,9 +255,9 @@ class ResourceNode(osid_objects.OsidNode):
         """
         return # osid.resource.ResourceNodeList
 
-    parent_bin_nodes = property(fget=get_parent_bin_nodes)
+    parent_resource_nodes = property(fget=get_parent_resource_nodes)
 
-    def get_child_bin_nodes(self):
+    def get_child_resource_nodes(self):
         """Gets the children of this resource.
 
         :return: the children of this resource
@@ -266,7 +266,7 @@ class ResourceNode(osid_objects.OsidNode):
         """
         return # osid.resource.ResourceNodeList
 
-    child_bin_nodes = property(fget=get_child_bin_nodes)
+    child_resource_nodes = property(fget=get_child_resource_nodes)
 
 
 class ResourceNodeList(osid_objects.OsidList):

@@ -167,9 +167,9 @@ Superseding Event Form
 
    .. autoattribute:: SupersedingEventForm.superseded_date
 
-   .. autoattribute:: SupersedingEventForm.superseded_position_metadata
+   .. autoattribute:: SupersedingEventForm.superseded_event_position_metadata
 
-   .. autoattribute:: SupersedingEventForm.superseded_position
+   .. autoattribute:: SupersedingEventForm.superseded_event_position
 
    .. automethod:: SupersedingEventForm.get_superseding_event_form_record
 
@@ -213,7 +213,7 @@ Offset Event
 
    .. automethod:: OffsetEvent.has_fixed_duration
 
-   .. automethod:: OffsetEvent.get_duration
+   .. automethod:: OffsetEvent.get_fixed_duration
 
    .. autoattribute:: OffsetEvent.end_reference_event_id
 
@@ -439,7 +439,7 @@ Schedule Slot Form
 
    .. autoattribute:: ScheduleSlotForm.week_of_month_metadata
 
-   .. autoattribute:: ScheduleSlotForm.week_of_the_month
+   .. autoattribute:: ScheduleSlotForm.week_of_month
 
    .. autoattribute:: ScheduleSlotForm.weekday_time_metadata
 
@@ -451,7 +451,7 @@ Schedule Slot Form
 
    .. autoattribute:: ScheduleSlotForm.fixed_interval
 
-   .. automethod:: ScheduleSlotForm.ge_duration_metadata
+   .. autoattribute:: ScheduleSlotForm.duration_metadata
 
    .. autoattribute:: ScheduleSlotForm.duration
 

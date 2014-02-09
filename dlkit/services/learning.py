@@ -1820,7 +1820,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :param objective_bank_form: the form for this ``ObjectiveBank``
         :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
         :return: the new ``ObjectiveBank``
-        :rtype: ``osid.learning.ObjectiveBankForm``
+        :rtype: ``osid.learning.ObjectiveBank``
         :raise: ``IllegalState`` -- ``objective_bank_form`` already used in a create transaction
         :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
@@ -3383,6 +3383,986 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
     learning_batch_proxy_manager = property(fget=get_learning_batch_proxy_manager)
 
 
+##
+# The following methods are from osid.learning.ObjectiveBankLookupSession
+
+    def can_lookup_objective_banks(self):
+        """Tests if this user can perform ``ObjectiveBank`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_objective_bank_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_objective_bank_view(self):
+        """A complete view of the ``ObjectiveBank`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank(self, objective_bank_id):
+        """Gets the ``ObjectiveBank`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``ObjectiveBank`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``ObjectiveBank`` and
+        retained for compatility.
+
+
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the objective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_banks_by_ids(self, objective_bank_ids):
+        """Gets a ``ObjectiveBankList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the objective
+        banks specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``ObjectiveBank`` objects may be omitted from the
+        list and may present the elements in any order including
+        returning a unique set.
+
+
+        :param objective_bank_ids: the list of ``Ids`` to retrieve
+        :type objective_bank_ids: ``osid.id.IdList``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include objective banks of types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known objective
+        banks or an error results. Otherwise, the returned list may
+        contain only those objective banks that are accessible through
+        this session.
+
+
+        :param objective_bank_genus_type: an objective bank genus type
+        :type objective_bank_genus_type: ``osid.type.Type``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any additional objective banks with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known objective
+        banks or an error results. Otherwise, the returned list may
+        contain only those objective banks that are accessible through
+        this session.
+
+
+        :param objective_bank_genus_type: an objective bank genus type
+        :type objective_bank_genus_type: ``osid.type.Type``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_banks_by_record_type(self, objective_bank_record_type):
+        """Gets a ``ObjectiveBankList`` containing the given objective bank record ``Type``.
+        In plenary mode, the returned list contains all known objective
+        banks or an error results. Otherwise, the returned list may
+        contain only those objective banks that are accessible through
+        this session.
+
+
+        :param objective_bank_record_type: an objective bank record type
+        :type objective_bank_record_type: ``osid.type.Type``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_banks_by_provider(self, resource_id):
+        """Gets a ``ObjectiveBankList`` for the given provider.
+        In plenary mode, the returned list contains all known objective
+        banks or an error results. Otherwise, the returned list may
+        contain only those objective banks that are accessible through
+        this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_banks(self):
+        """Gets all ``ObjectiveBanks``.
+        In plenary mode, the returned list contains all known objective
+        banks or an error results. Otherwise, the returned list may
+        contain only those objective banks that are accessible through
+        this session.
+
+
+        :return: a ``ObjectiveBankList``
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    objective_banks = property(fget=get_objective_banks)
+
+
+##
+# The following methods are from osid.learning.ObjectiveBankQuerySession
+
+    def can_search_objective_banks(self):
+        """Tests if this user can perform ``ObjectiveBank`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank_query(self):
+        """Gets an objective bank query.
+
+        :return: an objective bank query
+        :rtype: ``osid.learning.ObjectiveBankQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    objective_bank_query = property(fget=get_objective_bank_query)
+
+    def get_objective_banks_by_query(self, objective_bank_query):
+        """Gets a list of ``ObjectiveBank`` objects matching the given objectiove bank query.
+
+        :param objective_bank_query: the objective bank query
+        :type objective_bank_query: ``osid.learning.ObjectiveBankQuery``
+        :return: the returned ``ObjectiveBankList``
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_bank_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.learning.ObjectiveBankSearchSession
+
+    def get_objective_bank_search(self):
+        """Gets an objective bank search.
+
+        :return: an objective bank search
+        :rtype: ``osid.learning.ObjectiveBankSearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    objective_bank_search = property(fget=get_objective_bank_search)
+
+    def get_objective_bank_search_order(self):
+        """Gets an objective bank search order.
+        The ``ObjectiveBankSearchOrder`` is supplied to a
+        ``ObjectiveBankSearch`` to specify the ordering of results.
+
+
+        :return: the objective bank search order
+        :rtype: ``osid.learning.ObjectiveBankSearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    objective_bank_search_order = property(fget=get_objective_bank_search_order)
+
+    def get_objective_banks_by_search(self, objective_bank_query, objective_bank_search):
+        """Gets the search results matching the given search query using the given search.
+
+        :param objective_bank_query: the objective bank query
+        :type objective_bank_query: ``osid.learning.ObjectiveBankQuery``
+        :param objective_bank_search: the objective bank search
+        :type objective_bank_search: ``osid.learning.ObjectiveBankSearch``
+        :return: the search results
+        :rtype: ``osid.learning.ObjectiveBankSearchResults``
+        :raise: ``NullArgument`` -- ``objective_bank_query`` or ``objective_bank_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_bank_query`` or ``objective_bank_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank_query_from_inspector(self, objective_bank_query_inspector):
+        """Gets an objective bank query from an inspector.
+        The inspector is available from an
+        ``ObjectiveBankSearchResults``.
+
+
+        :param objective_bank_query_inspector: an objective bank query inspector
+        :type objective_bank_query_inspector: ``osid.learning.ObjectiveBankQueryInspector``
+        :return: the objective bank query
+        :rtype: ``osid.learning.ObjectiveBankQuery``
+        :raise: ``NullArgument`` -- ``objective_bank_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``objective_bank_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.learning.ObjectiveBankAdminSession
+
+    def can_create_objective_banks(self):
+        """Tests if this user can create ``ObjectiveBanks``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating an
+        ``ObjectiveBank`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        create operations to unauthorized users.
+
+
+        :return: ``false`` if ``ObjectiveBank`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_objective_bank_with_record_types(self, objective_bank_record_types):
+        """Tests if this user can create a single ``ObjectiveBank`` using the desired record types.
+        While ``LearningManager.getObjectiveBankRecordTypes()`` can be
+        used to examine which records are supported, this method tests
+        which record(s) are required for creating a specific
+        ``ObjectiveBank``. Providing an empty array tests if an
+        ``ObjectiveBank`` can be created with no records.
+
+
+        :param objective_bank_record_types: array of objective bank record types
+        :type objective_bank_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank_form_for_create(self, objective_bank_record_types):
+        """Gets the objective bank form for creating new objective banks.
+        A new form should be requested for each create transaction.
+
+
+        :param objective_bank_record_types: array of objective bank record types
+        :type objective_bank_record_types: ``osid.type.Type[]``
+        :return: the objective bank form
+        :rtype: ``osid.learning.ObjectiveBankForm``
+        :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types.
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_objective_bank(self, objective_bank_form):
+        """Creates a new ``ObjectiveBank``.
+
+        :param objective_bank_form: the form for this ``ObjectiveBank``
+        :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
+        :return: the new ``ObjectiveBank``
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``IllegalState`` -- ``objective_bank_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_bank_form`` did not originate from ``get_objective_bank_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_objective_banks(self):
+        """Tests if this user can update ``ObjectiveBanks``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating an
+        ``ObjectiveBank`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        update operations to unauthorized users.
+
+
+        :return: ``false`` if ``ObjectiveBank`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank_form_for_update(self, objective_bank_id):
+        """Gets the objective bank form for updating an existing objective bank.
+        A new objective bank form should be requested for each update
+        transaction.
+
+
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the objective bank form
+        :rtype: ``osid.learning.ObjectiveBankForm``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_objective_bank(self, objective_bank_id, objective_bank_form):
+        """Updates an existing objective bank.
+
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :param objective_bank_form: the form containing the elements to be updated
+        :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
+        :raise: ``IllegalState`` -- ``objective_bank_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bankt_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_objective_banks(self):
+        """Tests if this user can delete objective banks.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting an
+        ``ObjectiveBank`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        delete operations to unauthorized users.
+
+
+        :return: ``false`` if ``ObjectiveBank`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_objective_bank(self, objective_bank_id):
+        """Deletes an ``ObjectiveBank``.
+
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank`` to remove
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_objective_bank_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``ObjectiveBanks``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``ObjectiveBank`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_objective_bank(self, objective_bank_id, alias_id):
+        """Adds an ``Id`` to an ``ObjectiveBank`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``ObjectiveBank`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another objective bank, it
+        is reassigned to the given objective bank ``Id``.
+
+
+        :param objective_bank_id: the ``Id`` of an ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.learning.ObjectiveBankNotificationSession
+
+    def can_register_for_objective_bank_notifications(self):
+        """Tests if this user can register for ``ObjectiveBank`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_objective_banks(self):
+        """Register for notifications of new objective banks.
+        ``ObjectiveBankReceiver.newObjectiveBank()`` is invoked when a
+        new ``ObjectiveBank`` is created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_objective_bank_ancestors(self, objective_bank_id):
+        """Registers for notification if an ancestor is added to the specified objective bank in the objective bank hierarchy.
+        ``ObjectiveBankReceiver.newObjectiveBankAncestor()`` is invoked
+        when the specified objective bank experiences an addition in
+        ancestry.
+
+
+        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_objective_bank_descendants(self, objective_bank_id):
+        """Registers for notification if a descendant is added to the specified objective bank in the objective bank hierarchy.
+        ``ObjectiveBankReceiver.newObjectiveBankDescendant()`` is
+        invoked when the specified objective bank experiences an
+        addition in descendants.
+
+
+        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_objective_banks(self):
+        """Registers for notification of updated objective banks.
+        ``ObjectiveBankReceiver.changedObjectiveBank()`` is invoked when
+        an objective bank is changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_objective_bank(self, objective_bank_id):
+        """Registers for notification of an updated objective bank.
+        ``ObjectiveBankReceiver.changedObjectiveBank()`` is invoked when
+        the specified objective bank is changed.
+
+
+        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_objective_banks(self):
+        """Registers for notification of deleted objective banks.
+        ``ObjectiveBankReceiver.deletedObjectiveBank()`` is invoked when
+        a calenedar is deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_objective_bank(self, objective_bank_id):
+        """Registers for notification of a deleted objective bank.
+        ``ObjectiveBankReceiver.deletedObjectiveBank()`` is invoked when
+        the specified objective bank is deleted.
+
+
+        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_objective_bank_ancestors(self, objective_bank_id):
+        """Registers for notification if an ancestor is removed from the specified objective bank in the objective bank hierarchy.
+        ``ObjectiveBankReceiver.deletedObjectiveBankAncestor()`` is
+        invoked when the specified objective bank experiences a removal
+        of an ancestor.
+
+
+        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_objective_bank_descendants(self, objective_bank_id):
+        """Registers for notification if a descendant is removed from fthe specified objective bank in the objective bank hierarchy.
+        ``ObjectiveBankReceiver.deletedObjectiveBankDescednant()`` is
+        invoked when the specified objective bank experiences a removal
+        of one of its descendants.
+
+
+        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.learning.ObjectiveBankHierarchySession
+
+    def get_objective_bank_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    objective_bank_hierarchy_id = property(fget=get_objective_bank_hierarchy_id)
+
+    def get_objective_bank_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    objective_bank_hierarchy = property(fget=get_objective_bank_hierarchy)
+
+    def can_access_objective_bank_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an an application that may not offer traversal
+        functions to unauthorized users.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_objective_bank_ids(self):
+        """Gets the root objective bank ``Ids`` in this hierarchy.
+
+        :return: the root objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_objective_bank_ids = property(fget=get_root_objective_bank_ids)
+
+    def get_root_objective_banks(self):
+        """Gets the root objective banks in this objective bank hierarchy.
+
+        :return: the root objective banks
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_objective_banks = property(fget=get_root_objective_banks)
+
+    def has_parent_objective_banks(self, objective_bank_id):
+        """Tests if the ``ObjectiveBank`` has any parents.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the objective bank has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_objective_bank(self, id_, objective_bank_id):
+        """Tests if an ``Id`` is a direct parent of an objective bank.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_objective_bank_ids(self, objective_bank_id):
+        """Gets the parent ``Ids`` of the given objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the objective bank
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_objective_banks(self, objective_bank_id):
+        """Gets the parents of the given objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the parents of the objective bank
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_objective_bank(self, id_, objective_bank_id):
+        """Tests if an ``Id`` is an ancestor of an objective bank.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_objective_banks(self, objective_bank_id):
+        """Tests if an objective bank has any children.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``objective_bank_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_objective_bank(self, id_, objective_bank_id):
+        """Tests if an objective bank is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_objective_bank_ids(self, objective_bank_id):
+        """Gets the child ``Ids`` of the given objective bank.
+
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the children of the objective bank
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_objective_banks(self, objective_bank_id):
+        """Gets the children of the given objective bank.
+
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the children of the objective bank
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_objective_bank(self, id_, objective_bank_id):
+        """Tests if an ``Id`` is a descendant of an objective bank.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given objective bank.
+
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a catalog node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given objective bank.
+
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an objective bank node
+        :rtype: ``osid.learning.ObjectiveBankNode``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.learning.ObjectiveBankHierarchyDesignSession
+
+    def can_modify_objective_bank_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_objective_bank(self, objective_bank_id):
+        """Adds a root objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_bank_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_objective_bank(self, objective_bank_id):
+        """Removes a root objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not a root
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_objective_bank(self, objective_bank_id, child_id):
+        """Adds a child to an objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_bank_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_objective_bank(self, objective_bank_id, child_id):
+        """Removes a child from an objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_objective_banks(self, objective_bank_id):
+        """Removes all children from an objective bank.
+
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not in hierarchy
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
 
 class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
@@ -4791,12 +5771,14 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def is_objective_required(self, objective_id, required_objective_id):
         """Tests if an objective is required before proceeding with an objective.
+        One objective may indirectly depend on another objective by way
+        of one or more other objectives.
 
         :param objective_id: ``Id`` of the dependent ``Objective``
         :type objective_id: ``osid.id.Id``
         :param required_objective_id: ``Id`` of the required ``Objective``
         :type required_objective_id: ``osid.id.Id``
-        :return: true if ``objective_id`` depends on ``required_objective_id,`` false otherwise
+        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` not found
         :raise: ``NullArgument`` -- ``objective_id`` is ``null``

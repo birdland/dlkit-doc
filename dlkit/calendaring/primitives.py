@@ -248,7 +248,7 @@ class Time(osid_markers.OsidPrimitive):
     granularity_multiplier = property(fget=get_granularity_multiplier)
 
 
-class DateTime(Time):
+class DateTime(osid_markers.OsidPrimitive):
     """The DateTime interface defines a date and/or time.
 
     This interface provides a very broad range of dates, describes more
@@ -397,6 +397,250 @@ class DateTime(Time):
 
     day = property(fget=get_day)
 
+    def get_time_type(self):
+        """Gets the time type.
+
+        :return: the time type
+        :rtype: ``osid.type.Type``
+
+        """
+        return # osid.type.Type
+
+    time_type = property(fget=get_time_type)
+
+    def get_hour(self):
+        """Gets the hour of the day 0-23.
+
+        :return: the hour of the day
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    hour = property(fget=get_hour)
+
+    def get_minute(self):
+        """Gets the minute of the hour 0-59.
+
+        :return: the minute of the hour
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    minute = property(fget=get_minute)
+
+    def get_second(self):
+        """Gets the second of the minute 0-59.
+
+        :return: the second of the minute
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    second = property(fget=get_second)
+
+    def get_milliseconds(self):
+        """Gets the number of milliseconds in this second 0-999.
+
+        A millisecond is one thousandth of a second.
+
+        :return: the milliseconds of the second
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    milliseconds = property(fget=get_milliseconds)
+
+    def get_microseconds(self):
+        """Gets the number of microseconds of the second 0-999.
+
+        A microsecond is one millionth of a second.
+
+        :return: the micrseconds of the millisecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    microseconds = property(fget=get_microseconds)
+
+    def get_nanoseconds(self):
+        """Gets the number of nanoseconds of the microsecond 0-999.
+
+        A nanosecond is one billionth of a second.
+
+        :return: the nanoseconds of the microsecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    nanoseconds = property(fget=get_nanoseconds)
+
+    def get_picoseconds(self):
+        """Gets the number of picoseconds of the nanosecond 0-999.
+
+        A picosecond is one trillionth of a second.
+
+        :return: the picoseconds of the nanosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    picoseconds = property(fget=get_picoseconds)
+
+    def get_femtoseconds(self):
+        """Gets the number of femtoseconds of the picosecond 0-999.
+
+        A femtosecond is one quadrillionth of a second.
+
+        :return: the femtoseconds of the picosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    femtoseconds = property(fget=get_femtoseconds)
+
+    def get_attoseconds(self):
+        """Gets the number of attoseconds of the femtoseconds 0-999.
+
+        An attosecond is one quintillionth of a second.
+
+        :return: the attoseconds of the femtosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    attoseconds = property(fget=get_attoseconds)
+
+    def get_zeptoseconds(self):
+        """Gets the number of zeptoseconds of the attosecond 0-999.
+
+        A zeptosecond is one sextillionth of a second.
+
+        :return: the zeptoseconds of the attosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    zeptoseconds = property(fget=get_zeptoseconds)
+
+    def get_yoctoseconds(self):
+        """Gets the number of yoctoseconds of the picosecond 0-999.
+
+        A yoctosecond is one septillionth of a second. This is getting
+        quite small.
+
+        :return: the yoctoseconds of the picosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    yoctoseconds = property(fget=get_yoctoseconds)
+
+    def get_xoxxoseconds(self):
+        """Gets the number of xoxxoseconds of the yoctosecond 0-999.
+
+        A xoxxosecond is one octillionth of a second. We're going with
+        Rudy Rucker here.
+
+        :return: the xoxxoseconds of the yoctosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    xoxxoseconds = property(fget=get_xoxxoseconds)
+
+    def get_weebleseconds(self):
+        """Gets the number of weebleseconds of the xoxxosecond 0-999.
+
+        A weeblesecond is one nonillionth of a second.
+
+        :return: the weebleseconds of the xoxxoseconds
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    weebleseconds = property(fget=get_weebleseconds)
+
+    def get_vatoseconds(self):
+        """Gets the number of vatoseconds of the xoxxosecond 0-999.
+
+        A vatosecond is one decillionth of a second.
+
+        :return: the vatoseconds of the weeblesecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    vatoseconds = property(fget=get_vatoseconds)
+
+    def get_undaseconds(self):
+        """Gets the number of undaseconds of the vatosecond 0-999.
+
+        An undasecond is one unadecillionth of a second.
+
+        :return: the undaseconds of the vatosecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    undaseconds = property(fget=get_undaseconds)
+
+    def get_planck_seconds(self):
+        """Gets the number of Plancks of the vatoseconds.
+
+        A Planck is 10 quattuordecillionths of a second.
+
+        :return: the plancks of the undasecond
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    planck_seconds = property(fget=get_planck_seconds)
+
+    def get_granularity(self):
+        """Gets the granularity of this time.
+
+        The granularity indicates the resolution of the clock. More
+        precision than what is specified in this method cannot be
+        inferred from the available data.
+
+        :return: granularity
+        :rtype: ``osid.calendaring.DateTimeResolution``
+
+        """
+        return # osid.calendaring.DateTimeResolution
+
+    granularity = property(fget=get_granularity)
+
+    def get_granularity_multiplier(self):
+        """If the granularity of the time equals ``get_granularity(),`` then the multiplier is 1.
+
+        This method may return a different number when the granularity
+        differs from one of the defined resolutions.
+
+        :return: granularity multiplier
+        :rtype: ``cardinal``
+
+        """
+        return # cardinal
+
+    granularity_multiplier = property(fget=get_granularity_multiplier)
+
     def defines_uncertainty(self):
         """Tests if uncertainty is defined for this time.
 
@@ -441,6 +685,36 @@ class DateTime(Time):
         return # cardinal
 
     uncertainty_plus = property(fget=get_uncertainty_plus)
+
+    def is_uncertainty_date_inclusive(self):
+        """Tests if the uncertainty is inclusive of all dates.
+
+        An inclusive uncertainty includes the entire range specified by
+        the uncertainty units e.g. +/- 1 year includes all of the months
+        and days within that interval. A non-inclusive uncertainty would
+        mean the year is uncertain but the month and day is certain.
+
+        :return: ``true`` if the uncertainty includes all dates, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- ``defines_uncertainty()`` is ``false``
+
+        """
+        return # boolean
+
+    def is_uncertainty_time_inclusive(self):
+        """Tests if the uncertainty is time inclusive.
+
+        An inclusive uncertainty includes the entire range specified by
+        the uncertainty units e.g. +/- 1 year includes all of the
+        seconds within that interval. A non-inclusive uncertainty would
+        mean the year is uncertain but the time is certain.
+
+        :return: ``true`` if the uncertainty includes all times, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- ``defines_uncertainty()`` is ``false``
+
+        """
+        return # boolean
 
 
 class Duration(osid_markers.OsidPrimitive):

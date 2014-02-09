@@ -54,7 +54,7 @@ class Type(osid_markers.OsidPrimitive):
         Where a display name of a ``Type`` might be ``"`` Critical
         Logging Priority Type", the display label could be "critical".
 
-        :return: the display label for this ``Type``. The display name is returned when there is no metadata availavle for this ``Type``.
+        :return: the display label for this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
         """
@@ -65,7 +65,7 @@ class Type(osid_markers.OsidPrimitive):
     def get_description(self):
         """Gets a description of this ``Type``.
 
-        :return: the description of this ``Type``. An empty string is returned when no description is available for this ``Type``.
+        :return: the description of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
         """

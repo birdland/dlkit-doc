@@ -19,7 +19,7 @@ Resource Query
 
    .. autoattribute:: ResourceQuery.demographic_terms
 
-   .. automethod:: ResourceQuery.match_containg_group_id
+   .. automethod:: ResourceQuery.match_containing_group_id
 
    .. autoattribute:: ResourceQuery.containing_group_id_terms
 
@@ -29,7 +29,7 @@ Resource Query
 
    .. automethod:: ResourceQuery.match_any_containing_group
 
-   .. autoattribute:: ResourceQuery.containg_group_terms
+   .. autoattribute:: ResourceQuery.containing_group_terms
 
    .. automethod:: ResourceQuery.match_avatar_id
 
@@ -55,7 +55,7 @@ Resource Query
 
    .. autoattribute:: ResourceQuery.agent_terms
 
-   .. automethod:: ResourceQuery.match_resource_relationshipt_id
+   .. automethod:: ResourceQuery.match_resource_relationship_id
 
    .. autoattribute:: ResourceQuery.resource_relationship_id_terms
 

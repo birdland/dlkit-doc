@@ -1921,11 +1921,14 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
     def is_objective_required(self, objective_id, required_objective_id):
         """Tests if an objective is required before proceeding with an objective.
 
+        One objective may indirectly depend on another objective by way
+        of one or more other objectives.
+
         :param objective_id: ``Id`` of the dependent ``Objective``
         :type objective_id: ``osid.id.Id``
         :param required_objective_id: ``Id`` of the required ``Objective``
         :type required_objective_id: ``osid.id.Id``
-        :return: true if ``objective_id`` depends on ``required_objective_id,`` false otherwise
+        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` not found
         :raise: ``NullArgument`` -- ``objective_id`` is ``null``
@@ -5658,7 +5661,7 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         :param objective_bank_form: the form for this ``ObjectiveBank``
         :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
         :return: the new ``ObjectiveBank``
-        :rtype: ``osid.learning.ObjectiveBankForm``
+        :rtype: ``osid.learning.ObjectiveBank``
         :raise: ``IllegalState`` -- ``objective_bank_form`` already used in a create transaction
         :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
@@ -5667,7 +5670,7 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_bank_form`` did not originate from ``get_objective_bank_form_for_create()``
 
         """
-        return # osid.learning.ObjectiveBankForm
+        return # osid.learning.ObjectiveBank
 
     def can_update_objective_banks(self):
         """Tests if this user can update ``ObjectiveBanks``.

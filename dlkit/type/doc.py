@@ -51,6 +51,15 @@ by using this service to manage the type hierarchy, to provide a place
 to perform mappings across different type definitions, and to provide
 displayable metadata to its consumers.
 
+Type Type Relations
+
+``Types`` may relate to other ``Types`` to describe constraints or
+compositions. The relationship is expressed as another Type. For
+example, a ``Position`` of type "researcher" may be appropriately
+associated with an ``Organization`` of type "laboratory" using a
+relation Type of "allowed." Or, a root ``Event`` type depends on a root
+``TimePeriod`` type using a relationship type of "depends on."
+
 Types for Constraints and Side Effects
 
 An OSID Provider may link a ``Type,`` such as a genus, to a set of

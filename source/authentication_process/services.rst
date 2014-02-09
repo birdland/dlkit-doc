@@ -58,17 +58,44 @@ Authentication Process Proxy Manager
 .. autoclass:: AuthenticationProcessProxyManager
    :show-inheritance:
 
-   .. automethod:: AuthenticationProcessProxyManager.get_authentication_acquisition_session
 
-   .. automethod:: AuthenticationProcessProxyManager.get_authentication_validation_session
 
-   .. automethod:: AuthenticationProcessProxyManager.get_trust_lookup_session
 
-   .. automethod:: AuthenticationProcessProxyManager.get_trust_lookup_session_for_agency
 
-   .. automethod:: AuthenticationProcessProxyManager.get_circle_of_trust_session
+Authentication Process Profile Methods
+______________________________
 
-   .. automethod:: AuthenticationProcessProxyManager.get_circle_of_trust_session_for_agency
+   .. automethod:: AuthenticationProcessProxyManager.supports_authentication_acquisition
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_authentication_validation
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_trust_lookup
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_circle_of_trust
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_challenge
+
+   .. autoattribute:: AuthenticationProcessProxyManager.authentication_record_types
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_authentication_record_type
+
+   .. autoattribute:: AuthenticationProcessProxyManager.authentication_input_record_types
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_authentication_input_record_type
+
+   .. autoattribute:: AuthenticationProcessProxyManager.challenge_record_types
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_challenge_record_type
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_credential_export
+
+   .. autoattribute:: AuthenticationProcessProxyManager.credential_types
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_credential_type
+
+   .. autoattribute:: AuthenticationProcessProxyManager.trust_types
+
+   .. automethod:: AuthenticationProcessProxyManager.supports_trust_type
 
 
 

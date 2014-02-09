@@ -115,6 +115,8 @@ Sourceable
 
    .. autoattribute:: Sourceable.provider
 
+   .. autoattribute:: Sourceable.branding_ids
+
    .. autoattribute:: Sourceable.branding
 
    .. autoattribute:: Sourceable.license

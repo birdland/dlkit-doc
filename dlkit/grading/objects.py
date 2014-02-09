@@ -1,7 +1,8 @@
 from ..osid import objects as osid_objects
+from ..osid import markers as osid_markers
 
 
-class Grade(osid_objects.OsidObject):
+class Grade(osid_objects.OsidObject, osid_markers.Subjugateable):
     """A ``Grade``.
 
     Grades represent qualified performance levels defined within some
@@ -84,7 +85,7 @@ class Grade(osid_objects.OsidObject):
         return # osid.grading.records.GradeRecord
 
 
-class GradeForm(osid_objects.OsidObjectForm):
+class GradeForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm):
     """This is the form for creating and updating ``Grades``.
 
     Like all ``OsidForm`` objects, various data elements may be set here
@@ -94,7 +95,7 @@ class GradeForm(osid_objects.OsidObjectForm):
     constraints.
 
     """
-    def get_input_score_range_metadata(self):
+    def get_input_score_start_range_metadata(self):
         """Gets the metadata for the input score start range.
 
         :return: metadata for the input score start range
@@ -103,22 +104,64 @@ class GradeForm(osid_objects.OsidObjectForm):
         """
         return # osid.Metadata
 
-    input_score_range_metadata = property(fget=get_input_score_range_metadata)
+    input_score_start_range_metadata = property(fget=get_input_score_start_range_metadata)
 
-    def set_input_score_range(self, start, end):
-        """Sets the input score range.
+    def set_input_score_start_range(self, score):
+        """Sets the input score start range.
 
-        :param start: the new start range
-        :type start: ``decimal``
-        :param end: the new end range
-        :type end: ``decimal``
-        :raise: ``InvalidArgument`` -- ``star`` t or end is invalid
+        :param score: the new start range
+        :type score: ``decimal``
+        :raise: ``InvalidArgument`` -- ``score`` is invalid
         :raise: ``NoAccess`` -- ``range`` cannot be modified
 
         """
         pass
 
-    def get_output_score_range_metadata(self):
+    input_score_start_range = property(fset=set_input_score_start_range)
+
+    def clear_input_start_score_range(self):
+        """Clears the input score start.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    input_start_score_range = property(fdel=clear_input_start_score_range)
+
+    def get_input_score_end_range_metadata(self):
+        """Gets the metadata for the input score start range.
+
+        :return: metadata for the input score start range
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    input_score_end_range_metadata = property(fget=get_input_score_end_range_metadata)
+
+    def set_input_score_end_range(self, score):
+        """Sets the input score start range.
+
+        :param score: the new start range
+        :type score: ``decimal``
+        :raise: ``InvalidArgument`` -- ``score`` is invalid
+        :raise: ``NoAccess`` -- ``range`` cannot be modified
+
+        """
+        pass
+
+    def clear_input_score_end_range(self):
+        """Clears the input score start.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    input_score_end_range = property(fget=set_input_score_end_range, fdel=clear_input_score_end_range)
+
+    def get_output_score_metadata(self):
         """Gets the metadata for the output score start range.
 
         :return: metadata for the output score start range
@@ -127,7 +170,7 @@ class GradeForm(osid_objects.OsidObjectForm):
         """
         return # osid.Metadata
 
-    output_score_range_metadata = property(fget=get_output_score_range_metadata)
+    output_score_metadata = property(fget=get_output_score_metadata)
 
     def set_output_score(self, score):
         """Sets the output score.
@@ -140,7 +183,15 @@ class GradeForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    output_score = property(fset=set_output_score)
+    def clear_output_score(self):
+        """Clears the output score.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    output_score = property(fget=set_output_score, fdel=clear_output_score)
 
     def get_grade_form_record(self, grade_record_type):
         """Gets the ``GradeFormRecord`` corresponding to the given grade record ``Type``.
@@ -197,7 +248,7 @@ class GradeList(osid_objects.OsidList):
         return # osid.grading.Grade
 
 
-class GradeSystem(osid_objects.OsidObject):
+class GradeSystem(osid_objects.OsidObject, osid_markers.Aggregateable):
     """A ``GradeSystem`` represents a grading system.
 
     The system can be based on assigned Grades or based on a numeric
@@ -295,7 +346,7 @@ class GradeSystem(osid_objects.OsidObject):
         return # osid.grading.records.GradeSystemRecord
 
 
-class GradeSystemForm(osid_objects.OsidObjectForm):
+class GradeSystemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm):
     """This is the form for creating and updating ``GradeSystems``.
 
     Like all ``OsidForm`` objects, various data elements may be set here
@@ -740,7 +791,7 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
     constraints.
 
     """
-    def get_ignore_for_calculations_metadata(self):
+    def get_ignored_for_calculations_metadata(self):
         """Gets the metadata for the ignore flag.
 
         :return: metadata for the ignore flag
@@ -749,9 +800,9 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
         """
         return # osid.Metadata
 
-    ignore_for_calculations_metadata = property(fget=get_ignore_for_calculations_metadata)
+    ignored_for_calculations_metadata = property(fget=get_ignored_for_calculations_metadata)
 
-    def set_ignoe_for_calculations(self, ignore):
+    def set_ignored_for_calculations(self, ignore):
         """Sets the ignore for calculations flag.
 
         :param ignore: the new ignore flag
@@ -762,9 +813,7 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    ignoe_for_calculations = property(fset=set_ignoe_for_calculations)
-
-    def clear_ignore_for_calculations(self):
+    def clear_ignored_for_calculations(self):
         """Clears the ignore for calculations flag.
 
         :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
@@ -772,7 +821,7 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
         """
         pass
 
-    ignore_for_calculations = property(fdel=clear_ignore_for_calculations)
+    ignored_for_calculations = property(fget=set_ignored_for_calculations, fdel=clear_ignored_for_calculations)
 
     def get_grade_metadata(self):
         """Gets the metadata for a grade.

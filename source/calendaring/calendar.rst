@@ -260,6 +260,10 @@ Recurring Event Lookup Methods
 
    .. automethod:: Calendar.use_isolated_calendar_view
 
+   .. automethod:: Calendar.use_active_recurring_event_view
+
+   .. automethod:: Calendar.use_any_status_recurring_event_view
+
    .. automethod:: Calendar.use_sequestered_recurring_event_view
 
    .. automethod:: Calendar.use_unsequestered_recurring_event_view

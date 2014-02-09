@@ -311,7 +311,7 @@ class ObjectiveNode(osid_objects.OsidNode):
 
     objective = property(fget=get_objective)
 
-    def get_parent_objectives(self):
+    def get_parent_objective_nodes(self):
         """Gets the parents of this objective.
 
         :return: the parents of the ``id``
@@ -320,7 +320,7 @@ class ObjectiveNode(osid_objects.OsidNode):
         """
         return # osid.learning.ObjectiveNodeList
 
-    parent_objectives = property(fget=get_parent_objectives)
+    parent_objective_nodes = property(fget=get_parent_objective_nodes)
 
     def get_child_objective_nodes(self):
         """Gets the children of this objective.
@@ -375,7 +375,7 @@ class ObjectiveNodeList(osid_objects.OsidList):
         return # osid.learning.ObjectiveNode
 
 
-class Activity(osid_objects.OsidObject):
+class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
     """An ``Activity`` represents learning material or other learning activities to meet an objective.
 
     An Activity has may relate to a set of ``Asssts`` for self learning,
@@ -538,7 +538,7 @@ class Activity(osid_objects.OsidObject):
         return # osid.learning.records.ActivityRecord
 
 
-class ActivityForm(osid_objects.OsidObjectForm):
+class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm):
     """This is the form for creating and updating ``Activities``.
 
     Like all ``OsidForm`` objects, various data elements may be set here

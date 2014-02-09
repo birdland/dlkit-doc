@@ -44,18 +44,17 @@ Group
 
 When a ``Resource`` is referenced in another OSID, it is a singular
 entity. To provide groupings of multiple people or things, a
-``Resource`` can also be defined as a group of other resources. Whether
-a resource is a single entity or a group is an attribute of the
-``Resource`` itself. If a ``Resource`` is a group, then its membership
-can be queried or managed in one of the group sessions. This overloading
-of the object definition serves to keep the nature of the resource
-separate from the other OSIDs such that a message to a "group", for
-example, is referenced as a single resource receipient. Other OSIDs are
-blind to whether or not a referenced ``Resource`` is a group or a
-singular entity.
+``Resource`` can also be defined as a hierarchucal group of other
+resources. Whether a resource is a single entity or a group is an
+attribute of the ``Resource`` itself. If a ``Resource`` is a group, then
+its membership can be queried or managed in one of the group sessions.
+This overloading of the object definition serves to keep the nature of
+the resource separate from the other OSIDs such that a message to a
+"group", for example, is referenced as a single resource receipient.
+Other OSIDs are blind to whether or not a referenced ``Resource`` is a
+group or a singular entity.
 
-Groups may be managed through mappings or viewed through a hierarchy
-pattern.
+
 
 Resource Relationships
 
@@ -2908,6 +2907,975 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         raise UNIMPLEMENTED()
 
     resource_demographic_proxy_manager = property(fget=get_resource_demographic_proxy_manager)
+
+
+##
+# The following methods are from osid.resource.BinLookupSession
+
+    def can_lookup_bins(self):
+        """Tests if this user can perform ``Bin`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_bin_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_bin_view(self):
+        """A complete view of the ``Bin`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin(self, bin_id):
+        """Gets the ``Bin`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Bin`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Bin`` and retained for compatibility.
+
+
+        :param bin_id: ``Id`` of the ``Bin``
+        :type bin_id: ``osid.id.Id``
+        :return: the bin
+        :rtype: ``osid.resource.Bin``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bins_by_ids(self, bin_ids):
+        """Gets a ``BinList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the bins
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Bins`` may be omitted from the list and may
+        present the elements in any order including returning a unique
+        set.
+
+
+        :param bin_ids: the list of ``Ids`` to retrieve
+        :type bin_ids: ``osid.id.IdList``
+        :return: the returned ``Bin list``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``bin_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bins_by_genus_type(self, bin_genus_type):
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include bins of types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known bins or an
+        error results. Otherwise, the returned list may contain only
+        those bins that are accessible through this session.
+
+
+        :param bin_genus_type: a bin genus type
+        :type bin_genus_type: ``osid.type.Type``
+        :return: the returned ``Bin list``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NullArgument`` -- ``bin_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bins_by_parent_genus_type(self, bin_genus_type):
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any additional bins with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known bins or an
+        error results. Otherwise, the returned list may contain only
+        those bins that are accessible through this session.
+
+
+        :param bin_genus_type: a bin genus type
+        :type bin_genus_type: ``osid.type.Type``
+        :return: the returned ``Bin list``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NullArgument`` -- ``bin_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bins_by_record_type(self, bin_record_type):
+        """Gets a ``BinList`` containing the given bin record ``Type``.
+        In plenary mode, the returned list contains all known bins or an
+        error results. Otherwise, the returned list may contain only
+        those bins that are accessible through this session.
+
+
+        :param bin_record_type: a bin record type
+        :type bin_record_type: ``osid.type.Type``
+        :return: the returned ``Bin list``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NullArgument`` -- ``bin_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bins_by_provider(self, resource_id):
+        """Gets a ``BinList`` from the given provider.
+        In plenary mode, the returned list contains all known bins or an
+        error results. Otherwise, the returned list may contain only
+        those bins that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Bin list``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bins(self):
+        """Gets all ``Bins``.
+        In plenary mode, the returned list contains all known bins or an
+        error results. Otherwise, the returned list may contain only
+        those bins that are accessible through this session.
+
+
+        :return: a list of ``Bins``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    bins = property(fget=get_bins)
+
+
+##
+# The following methods are from osid.resource.BinQuerySession
+
+    def can_search_bins(self):
+        """Tests if this user can perform ``Bin`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin_query(self):
+        """Gets a bin query.
+        The returned query will not have an extension query.
+
+
+        :return: the bin query
+        :rtype: ``osid.resource.BinQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bin_query = property(fget=get_bin_query)
+
+    def get_bins_by_query(self, bin_query):
+        """Gets a list of ``Bins`` matching the given bin query.
+
+        :param bin_query: the bin query
+        :type bin_query: ``osid.resource.BinQuery``
+        :return: the returned ``BinList``
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NullArgument`` -- ``bin_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- a ``bin_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.resource.BinSearchSession
+
+    def get_bin_search(self):
+        """Gets a bin search.
+
+        :return: the bin search
+        :rtype: ``osid.resource.BinSearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bin_search = property(fget=get_bin_search)
+
+    def get_bin_search_order(self):
+        """Gets a bin search order.
+        The ``BinSearchOrder`` is supplied to a ``BinSearch`` to specify
+        the ordering of results.
+
+
+        :return: the bin search order
+        :rtype: ``osid.resource.BinSearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bin_search_order = property(fget=get_bin_search_order)
+
+    def get_bins_by_search(self, bin_query, bin_search):
+        """Gets the search results matching the given search query using the given search.
+
+        :param bin_query: the bin query
+        :type bin_query: ``osid.resource.BinQuery``
+        :param bin_search: the bin search
+        :type bin_search: ``osid.resource.BinSearch``
+        :return: the bin search results
+        :rtype: ``osid.resource.BinSearchResults``
+        :raise: ``NullArgument`` -- ``bin_query`` or ``bin_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``bin_query`` or ``bin_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin_query_from_inspector(self, bin_query_inspector):
+        """Gets a bin query from an inspector.
+        The inspector is available from a ``BinSearchResults``.
+
+
+        :param bin_query_inspector: a bin query inspector
+        :type bin_query_inspector: ``osid.resource.BinQueryInspector``
+        :return: the bin query
+        :rtype: ``osid.resource.BinQuery``
+        :raise: ``NullArgument`` -- ``bin_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``bin_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.resource.BinAdminSession
+
+    def can_create_bins(self):
+        """Tests if this user can create ``Bins``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a ``Bin``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer create
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Bin`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_bin_with_record_types(self, bin_record_types):
+        """Tests if this user can create a single ``Bin`` using the desired record types.
+        While ``ResourceManager.getBinRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Bin``.
+        Providing an empty array tests if a ``Bin`` can be created with
+        no records.
+
+
+        :param bin_record_types: array of bin record types
+        :type bin_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``bin_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin_form_for_create(self, bin_record_types):
+        """Gets the bin form for creating new bins.
+
+        :param bin_record_types: array of bin record types
+        :type bin_record_types: ``osid.type.Type[]``
+        :return: the bin form
+        :rtype: ``osid.resource.BinForm``
+        :raise: ``NullArgument`` -- ``bin_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form with requested record types
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_bin(self, bin_form):
+        """Creates a new ``Bin``.
+
+        :param bin_form: the form for this ``Bin``
+        :type bin_form: ``osid.resource.BinForm``
+        :return: the new ``Bin``
+        :rtype: ``osid.resource.Bin``
+        :raise: ``IllegalState`` -- ``bin_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``bin_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``bin_form`` did not originate from ``get_bin_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_bins(self):
+        """Tests if this user can update ``Bins``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a ``Bin``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer update
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Bin`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin_form_for_update(self, bin_id):
+        """Gets the bin form for updating an existing bin.
+        A new bin form should be requested for each update transaction.
+
+
+        :param bin_id: the ``Id`` of the ``Bin``
+        :type bin_id: ``osid.id.Id``
+        :return: the bin form
+        :rtype: ``osid.resource.BinForm``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_bin(self, bin_form):
+        """Updates an existing bin.
+
+        :param bin_form: the form containing the elements to be updated
+        :type bin_form: ``osid.resource.BinForm``
+        :raise: ``IllegalState`` -- ``bin_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``bin_id`` or ``bin_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``bin_form`` did not originate from ``get_bin_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_bins(self):
+        """Tests if this user can delete ``Bins``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a ``Bin``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer delete
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Bin`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_bin(self, bin_id):
+        """Deletes a ``Bin``.
+
+        :param bin_id: the ``Id`` of the ``Bin`` to remove
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_bin_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Bins``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Bin`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_bin(self, bin_id, alias_id):
+        """Adds an ``Id`` to a ``Bin`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``Bin`` is determined by the provider.
+        The new ``Id`` performs as an alias to the primary ``Id``. If
+        the alias is a pointer to another bin, it is reassigned to the
+        given bin ``Id``.
+
+
+        :param bin_id: the ``Id`` of a ``Bin``
+        :type bin_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.resource.BinNotificationSession
+
+    def can_register_for_bin_notifications(self):
+        """Tests if this user can register for ``Bin`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_bins(self):
+        """Register for notifications of new bins.
+        ``BinReceiver.newBin()`` is invoked when a new ``Bin`` is
+        created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_bin_ancestors(self, bin_id):
+        """Registers for notification if an ancestor is added to the specified bin in the bin hierarchy.
+        ``BinReceiver.newBinAncestor()`` is invoked when the specified
+        bin experiences an addition in ancestry.
+
+
+        :param bin_id: the ``Id`` of the bin to monitor
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_bin_descendants(self, bin_id):
+        """Registers for notification if a descendant is added to the specified bin in the bin hierarchy.
+        ``BinReceiver.newBinDescendant()`` is invoked when the specified
+        bin experiences an addition in descendants.
+
+
+        :param bin_id: the ``Id`` of the bin to monitor
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_bins(self):
+        """Registers for notification of updated bins.
+        ``BinReceiver.changedBin()`` is invoked when a bin is changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_bin(self, bin_id):
+        """Registers for notification of an updated bin.
+        ``BinReceiver.changedBin()`` is invoked when the specified bin
+        is changed.
+
+
+        :param bin_id: the Id of the Bin to monitor
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bins(self):
+        """Registers for notification of deleted bins.
+        ``BinReceiver.deletedBin()`` is invoked when a bin is deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bin(self, bin_id):
+        """Registers for notification of a deleted bin.
+        ``BinReceiver.deletedBin()`` is invoked when the specified bin
+        is deleted.
+
+
+        :param bin_id: the ``Id`` of the ``Bin`` to monitor
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bin_ancestors(self, bin_id):
+        """Registers for notification if an ancestor is removed from the specified bin in the bin hierarchy.
+        ``BinReceiver.deletedBinAncestor()`` is invoked when the
+        specified bin experiences a removal of an ancestor.
+
+
+        :param bin_id: the ``Id`` of the bin to monitor
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bin_descendants(self, bin_id):
+        """Registers for notification if a descendant is removed from fthe specified bin in the bin hierarchy.
+        ``BinReceiver.deletedBinDescendnant()`` is invoked when the
+        specified bin experiences a removal of one of its descdendents.
+
+
+        :param bin_id: the ``Id`` of the bin to monitor
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.resource.BinHierarchySession
+
+    def get_bin_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bin_hierarchy_id = property(fget=get_bin_hierarchy_id)
+
+    def get_bin_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    bin_hierarchy = property(fget=get_bin_hierarchy)
+
+    def can_access_bin_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an an application that may not offer traversal
+        functions to unauthorized users.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_bin_ids(self):
+        """Gets the root bin ``Ids`` in this hierarchy.
+
+        :return: the root bin ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_bin_ids = property(fget=get_root_bin_ids)
+
+    def get_root_bins(self):
+        """Gets the root bins in the bin hierarchy.
+        A node with no parents is an orphan. While all bin ``Ids`` are
+        known to the hierarchy, an orphan does not appear in the
+        hierarchy unless explicitly added as a root node or child of
+        another node.
+
+
+        :return: the root bins
+        :rtype: ``osid.resource.BinList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_bins = property(fget=get_root_bins)
+
+    def has_parent_bins(self, bin_id):
+        """Tests if the ``Bin`` has any parents.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: ``true`` if the bin has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_bin(self, id_, bin_id):
+        """Tests if an ``Id`` is a direct parent of a bin.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``bin_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_bin_ids(self, bin_id):
+        """Gets the parent ``Ids`` of the given bin.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the bin
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_bins(self, bin_id):
+        """Gets the parents of the given bin.
+
+        :param bin_id: the ``Id`` to query
+        :type bin_id: ``osid.id.Id``
+        :return: the parents of the bin
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_bin(self, id_, bin_id):
+        """Tests if an ``Id`` is an ancestor of a bin.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``bin_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_bins(self, bin_id):
+        """Tests if a bin has any children.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: ``true`` if the ``bin_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_bin(self, id_, bin_id):
+        """Tests if a bin is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``bin_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_bin_ids(self, bin_id):
+        """Gets the child ``Ids`` of the given bin.
+
+        :param bin_id: the ``Id`` to query
+        :type bin_id: ``osid.id.Id``
+        :return: the children of the bin
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_bins(self, bin_id):
+        """Gets the children of the given bin.
+
+        :param bin_id: the ``Id`` to query
+        :type bin_id: ``osid.id.Id``
+        :return: the children of the bin
+        :rtype: ``osid.resource.BinList``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_bin(self, id_, bin_id):
+        """Tests if an ``Id`` is a descendant of a bin.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``bin_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bin_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin_node_ids(self, bin_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given bin.
+
+        :param bin_id: the ``Id`` to query
+        :type bin_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a bin node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bin_nodes(self, bin_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given bin.
+
+        :param bin_id: the ``Id`` to query
+        :type bin_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a bin node
+        :rtype: ``osid.resource.BinNode``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.resource.BinHierarchyDesignSession
+
+    def can_modify_bin_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_bin(self, bin_id):
+        """Adds a root bin.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``bin_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_bin(self, bin_id):
+        """Removes a root bin.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bin_id`` not a root
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_bin(self, bin_id, child_id):
+        """Adds a child to a bin.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``bin_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``bin_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_bin(self, bin_id, child_id):
+        """Removes a child from a bin.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bin_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``bin_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_bins(self, bin_id):
+        """Removes all children from a bin.
+
+        :param bin_id: the ``Id`` of a bin
+        :type bin_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bin_id`` not in hierarchy
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
 
 
 

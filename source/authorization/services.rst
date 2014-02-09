@@ -303,109 +303,289 @@ Authorization Proxy Manager
 .. autoclass:: AuthorizationProxyManager
    :show-inheritance:
 
-   .. automethod:: AuthorizationProxyManager.get_authorization_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_lookup_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_lookup_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_query_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_query_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_search_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_search_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_admin_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_admin_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_notification_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_notification_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_vault_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_vault_assignment_session
-
-   .. automethod:: AuthorizationProxyManager.get_authorization_smart_vault_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_lookup_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_lookup_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_function_query_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_query_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_function_search_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_search_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_function_admin_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_admin_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_function_notification_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_notification_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_function_vault_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_vault_assignment_session
-
-   .. automethod:: AuthorizationProxyManager.get_function_smart_vault_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_lookup_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_lookup_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_query_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_query_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_search_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_search_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_admin_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_admin_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_notification_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_notification_session_for_vault
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_hierarchy_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_hierarchy_design_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_vault_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_vault_assignment_session
-
-   .. automethod:: AuthorizationProxyManager.get_qualifier_smart_vault_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_lookup_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_query_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_search_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_admin_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_notification_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_hierarchy_session
-
-   .. automethod:: AuthorizationProxyManager.get_vault_hierarchy_design_session
-
    .. autoattribute:: AuthorizationProxyManager.authorization_batch_proxy_manager
 
    .. autoattribute:: AuthorizationProxyManager.authorization_rules_proxy_manager
+
+
+
+Authorization Profile Methods
+_____________________
+
+   .. automethod:: AuthorizationProxyManager.supports_visible_federation
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_lookup
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_query
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_search
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_admin
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_notification
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_vault
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_vault_assignment
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_smart_vault
+
+   .. automethod:: AuthorizationProxyManager.supports_function_lookup
+
+   .. automethod:: AuthorizationProxyManager.supports_function_query
+
+   .. automethod:: AuthorizationProxyManager.supports_function_search
+
+   .. automethod:: AuthorizationProxyManager.supports_function_admin
+
+   .. automethod:: AuthorizationProxyManager.supports_function_notification
+
+   .. automethod:: AuthorizationProxyManager.supports_function_vault
+
+   .. automethod:: AuthorizationProxyManager.supports_function_vault_assignment
+
+   .. automethod:: AuthorizationProxyManager.supports_function_smart_vault
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_lookup
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_query
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_search
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_admin
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_notification
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_hierarchy
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_hierarchy_design
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_vault
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_vault_assignment
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_smart_vault
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_lookup
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_query
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_search
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_admin
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_notification
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_hierarchy
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_hierarchy_design
+
+   .. automethod:: AuthorizationProxyManager.supports_authorizatin_batch
+
+   .. automethod:: AuthorizationProxyManager.supports_authorizatin_rules
+
+   .. autoattribute:: AuthorizationProxyManager.authorization_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.authorization_search_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_search_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.function_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_function_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.function_search_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_function_search_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.qualifier_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.qualifier_search_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_qualifier_search_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.vault_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.vault_search_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_vault_search_record_type
+
+   .. autoattribute:: AuthorizationProxyManager.authorization_condition_record_types
+
+   .. automethod:: AuthorizationProxyManager.supports_authorization_condition_record_type
+
+
+
+Vault Lookup
+____________
+
+   .. automethod:: AuthorizationProxyManager.can_lookup_vaults
+
+   .. automethod:: AuthorizationProxyManager.use_comparative_vault_view
+
+   .. automethod:: AuthorizationProxyManager.use_plenary_vault_view
+
+   .. automethod:: AuthorizationProxyManager.get_vault
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_ids
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_genus_type
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_parent_genus_type
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_record_type
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_provider
+
+   .. autoattribute:: AuthorizationProxyManager.vaults
+
+
+
+Vault Query
+___________
+
+   .. automethod:: AuthorizationProxyManager.can_search_vaults
+
+   .. autoattribute:: AuthorizationProxyManager.vault_query
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_query
+
+
+
+Vault Search
+____________
+
+   .. autoattribute:: AuthorizationProxyManager.vault_search
+
+   .. autoattribute:: AuthorizationProxyManager.vault_search_order
+
+   .. automethod:: AuthorizationProxyManager.get_vaults_by_search
+
+   .. automethod:: AuthorizationProxyManager.get_vault_query_from_inspector
+
+
+
+Vault Admin
+___________
+
+   .. automethod:: AuthorizationProxyManager.can_create_vaults
+
+   .. automethod:: AuthorizationProxyManager.can_create_vault_with_record_types
+
+   .. automethod:: AuthorizationProxyManager.get_vault_form_for_create
+
+   .. automethod:: AuthorizationProxyManager.create_vault
+
+   .. automethod:: AuthorizationProxyManager.can_update_vaults
+
+   .. automethod:: AuthorizationProxyManager.get_vault_form_for_update
+
+   .. automethod:: AuthorizationProxyManager.update_vault
+
+   .. automethod:: AuthorizationProxyManager.can_delete_vaults
+
+   .. automethod:: AuthorizationProxyManager.delete_vault
+
+   .. automethod:: AuthorizationProxyManager.can_manage_vault_aliases
+
+   .. automethod:: AuthorizationProxyManager.alias_vault
+
+
+
+Vault Notification
+__________________
+
+   .. automethod:: AuthorizationProxyManager.can_register_for_vault_notifications
+
+   .. automethod:: AuthorizationProxyManager.register_for_new_vaults
+
+   .. automethod:: AuthorizationProxyManager.register_for_new_vault_ancestors
+
+   .. automethod:: AuthorizationProxyManager.register_for_new_vault_descendants
+
+   .. automethod:: AuthorizationProxyManager.register_for_changed_vaults
+
+   .. automethod:: AuthorizationProxyManager.register_for_changed_vault
+
+   .. automethod:: AuthorizationProxyManager.register_for_deleted_vaults
+
+   .. automethod:: AuthorizationProxyManager.register_for_deleted_vault
+
+   .. automethod:: AuthorizationProxyManager.register_for_deleted_vault_ancestors
+
+   .. automethod:: AuthorizationProxyManager.register_for_deleted_vault_descendants
+
+
+
+Vault Hierarchy
+_______________
+
+   .. autoattribute:: AuthorizationProxyManager.vault_hierarchy_id
+
+   .. autoattribute:: AuthorizationProxyManager.vault_hierarchy
+
+   .. automethod:: AuthorizationProxyManager.can_access_vault_hierarchy
+
+   .. automethod:: AuthorizationProxyManager.use_comparative_vault_view
+
+   .. automethod:: AuthorizationProxyManager.use_plenary_vault_view
+
+   .. autoattribute:: AuthorizationProxyManager.root_vault_ids
+
+   .. autoattribute:: AuthorizationProxyManager.root_vaults
+
+   .. automethod:: AuthorizationProxyManager.has_parent_vaults
+
+   .. automethod:: AuthorizationProxyManager.is_parent_of_vault
+
+   .. automethod:: AuthorizationProxyManager.get_parent_vault_ids
+
+   .. automethod:: AuthorizationProxyManager.get_parent_vaults
+
+   .. automethod:: AuthorizationProxyManager.is_ancestor_of_vault
+
+   .. automethod:: AuthorizationProxyManager.has_child_vaults
+
+   .. automethod:: AuthorizationProxyManager.is_child_of_vault
+
+   .. automethod:: AuthorizationProxyManager.get_child_vault_ids
+
+   .. automethod:: AuthorizationProxyManager.get_child_vaults
+
+   .. automethod:: AuthorizationProxyManager.is_descendant_of_vault
+
+   .. automethod:: AuthorizationProxyManager.get_vault_node_ids
+
+   .. automethod:: AuthorizationProxyManager.get_vault_nodes
+
+
+
+Vault Hierarchy Design
+______________________
+
+   .. autoattribute:: AuthorizationProxyManager.vault_hierarchy_id
+
+   .. autoattribute:: AuthorizationProxyManager.vault_hierarchy
+
+   .. automethod:: AuthorizationProxyManager.can_modify_vault_hierarchy
+
+   .. automethod:: AuthorizationProxyManager.add_root_vault
+
+   .. automethod:: AuthorizationProxyManager.remove_root_vault
+
+   .. automethod:: AuthorizationProxyManager.add_child_vault
+
+   .. automethod:: AuthorizationProxyManager.remove_child_vault
+
+   .. automethod:: AuthorizationProxyManager.remove_child_vaults
 
 
 

@@ -461,7 +461,7 @@ class AssessmentAuthoringProfile(osid_managers.OsidProfile):
 
 
 
-class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSession, authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile):
+class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSession, AssessmentAuthoringProfile):
 
     def get_assessment_part_lookup_session(self):
         """Gets the ``OsidSession`` associated with the assessment part lookup service.
@@ -1073,7 +1073,7 @@ class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSe
 
 
 
-class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile):
+class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, AssessmentAuthoringProfile):
 
     def get_assessment_part_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment part lookup service.

@@ -245,49 +245,231 @@ Relationship Proxy Manager
 .. autoclass:: RelationshipProxyManager
    :show-inheritance:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_lookup_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_lookup_session_for_family
-
-   .. automethod:: RelationshipProxyManager.get_relationship_query_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_query_session_for_family
-
-   .. automethod:: RelationshipProxyManager.get_relationship_search_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_search_session_for_family
-
-   .. automethod:: RelationshipProxyManager.get_relationship_admin_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_admin_session_for_family
-
-   .. automethod:: RelationshipProxyManager.get_relationship_notification_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_notification_session_for_family
-
-   .. automethod:: RelationshipProxyManager.get_relationship_family_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_family_assignment_session
-
-   .. automethod:: RelationshipProxyManager.get_relationship_smart_family_session
-
-   .. automethod:: RelationshipProxyManager.get_family_lookup_session
-
-   .. automethod:: RelationshipProxyManager.get_family_query_session
-
-   .. automethod:: RelationshipProxyManager.get_family_search_session
-
-   .. automethod:: RelationshipProxyManager.get_family_admin_session
-
-   .. automethod:: RelationshipProxyManager.get_family_notification_session
-
-   .. automethod:: RelationshipProxyManager.get_family_hierarchy_session
-
-   .. automethod:: RelationshipProxyManager.get_family_hierarchy_design_session
-
    .. autoattribute:: RelationshipProxyManager.relationship_batch_proxy_manager
 
    .. autoattribute:: RelationshipProxyManager.relationship_rules_proxy_manager
+
+
+
+Relationship Profile Methods
+____________________
+
+   .. automethod:: RelationshipProxyManager.supports_visible_federation
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_lookup
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_query
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_search
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_admin
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_notification
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_family
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_family_assignment
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_smart_family
+
+   .. automethod:: RelationshipProxyManager.supports_family_lookup
+
+   .. automethod:: RelationshipProxyManager.supports_family_query
+
+   .. automethod:: RelationshipProxyManager.supports_family_search
+
+   .. automethod:: RelationshipProxyManager.supports_family_admin
+
+   .. automethod:: RelationshipProxyManager.supports_family_notification
+
+   .. automethod:: RelationshipProxyManager.supports_family_hierarchy
+
+   .. automethod:: RelationshipProxyManager.supports_family_hierarchy_design
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_batch
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_rules
+
+   .. autoattribute:: RelationshipProxyManager.relationship_record_types
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_record_type
+
+   .. autoattribute:: RelationshipProxyManager.relationship_search_record_types
+
+   .. automethod:: RelationshipProxyManager.supports_relationship_search_record_type
+
+   .. autoattribute:: RelationshipProxyManager.family_record_types
+
+   .. automethod:: RelationshipProxyManager.supports_family_record_type
+
+   .. autoattribute:: RelationshipProxyManager.family_search_record_types
+
+   .. automethod:: RelationshipProxyManager.supports_family_search_record_type
+
+
+
+Family Lookup
+_____________
+
+   .. automethod:: RelationshipProxyManager.can_lookup_families
+
+   .. automethod:: RelationshipProxyManager.use_comparative_family_view
+
+   .. automethod:: RelationshipProxyManager.use_plenary_family_view
+
+   .. automethod:: RelationshipProxyManager.get_family
+
+   .. automethod:: RelationshipProxyManager.get_families_by_ids
+
+   .. automethod:: RelationshipProxyManager.get_families_by_genus_type
+
+   .. automethod:: RelationshipProxyManager.get_families_by_parent_genus_type
+
+   .. automethod:: RelationshipProxyManager.get_families_by_record_type
+
+   .. automethod:: RelationshipProxyManager.get_families_by_provider
+
+   .. autoattribute:: RelationshipProxyManager.families
+
+
+
+Family Query
+____________
+
+   .. automethod:: RelationshipProxyManager.can_search_families
+
+   .. autoattribute:: RelationshipProxyManager.family_query
+
+   .. automethod:: RelationshipProxyManager.get_families_by_query
+
+
+
+Family Search
+_____________
+
+   .. autoattribute:: RelationshipProxyManager.family_search
+
+   .. autoattribute:: RelationshipProxyManager.family_search_order
+
+   .. automethod:: RelationshipProxyManager.get_families_by_search
+
+   .. automethod:: RelationshipProxyManager.get_family_query_from_inspector
+
+
+
+Family Admin
+____________
+
+   .. automethod:: RelationshipProxyManager.can_create_families
+
+   .. automethod:: RelationshipProxyManager.can_create_family_with_record_types
+
+   .. automethod:: RelationshipProxyManager.get_family_form_for_create
+
+   .. automethod:: RelationshipProxyManager.create_family
+
+   .. automethod:: RelationshipProxyManager.can_update_families
+
+   .. automethod:: RelationshipProxyManager.get_family_form_for_update
+
+   .. automethod:: RelationshipProxyManager.update_family
+
+   .. automethod:: RelationshipProxyManager.can_delete_families
+
+   .. automethod:: RelationshipProxyManager.delete_family
+
+   .. automethod:: RelationshipProxyManager.can_manage_family_aliases
+
+   .. automethod:: RelationshipProxyManager.alias_family
+
+
+
+Family Notification
+___________________
+
+   .. automethod:: RelationshipProxyManager.can_register_for_family_notifications
+
+   .. automethod:: RelationshipProxyManager.register_for_new_families
+
+   .. automethod:: RelationshipProxyManager.register_for_new_family_ancestors
+
+   .. automethod:: RelationshipProxyManager.register_for_new_family_descendants
+
+   .. automethod:: RelationshipProxyManager.register_for_changed_families
+
+   .. automethod:: RelationshipProxyManager.register_for_changed_family
+
+   .. automethod:: RelationshipProxyManager.register_for_deleted_families
+
+   .. automethod:: RelationshipProxyManager.register_for_deleted_family
+
+   .. automethod:: RelationshipProxyManager.register_for_deleted_family_ancestors
+
+   .. automethod:: RelationshipProxyManager.register_for_deleted_family_descendants
+
+
+
+Family Hierarchy
+________________
+
+   .. autoattribute:: RelationshipProxyManager.family_hierarchy_id
+
+   .. autoattribute:: RelationshipProxyManager.family_hierarchy
+
+   .. automethod:: RelationshipProxyManager.can_access_family_hierarchy
+
+   .. automethod:: RelationshipProxyManager.use_comparative_family_view
+
+   .. automethod:: RelationshipProxyManager.use_plenary_family_view
+
+   .. autoattribute:: RelationshipProxyManager.root_family_ids
+
+   .. autoattribute:: RelationshipProxyManager.root_families
+
+   .. automethod:: RelationshipProxyManager.has_parent_families
+
+   .. automethod:: RelationshipProxyManager.is_parent_of_family
+
+   .. automethod:: RelationshipProxyManager.get_parent_family_ids
+
+   .. automethod:: RelationshipProxyManager.get_parent_families
+
+   .. automethod:: RelationshipProxyManager.is_ancestor_of_family
+
+   .. automethod:: RelationshipProxyManager.has_child_families
+
+   .. automethod:: RelationshipProxyManager.is_child_of_family
+
+   .. automethod:: RelationshipProxyManager.get_child_family_ids
+
+   .. automethod:: RelationshipProxyManager.get_child_families
+
+   .. automethod:: RelationshipProxyManager.is_descendant_of_family
+
+   .. automethod:: RelationshipProxyManager.get_family_node_ids
+
+   .. automethod:: RelationshipProxyManager.get_family_nodes
+
+
+
+Family Hierarchy Design
+_______________________
+
+   .. autoattribute:: RelationshipProxyManager.family_hierarchy_id
+
+   .. autoattribute:: RelationshipProxyManager.family_hierarchy
+
+   .. automethod:: RelationshipProxyManager.can_modify_family_hierarchy
+
+   .. automethod:: RelationshipProxyManager.add_root_family
+
+   .. automethod:: RelationshipProxyManager.remove_root_family
+
+   .. automethod:: RelationshipProxyManager.add_child_family
+
+   .. automethod:: RelationshipProxyManager.remove_child_family
+
+   .. automethod:: RelationshipProxyManager.remove_child_families
 
 
 

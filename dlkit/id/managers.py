@@ -12,10 +12,28 @@ class IdProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
+    def supports_id_issue(self):
+        """Tests if an ``Id`` issue service is supported.
+
+        :return: ``true`` if ``Id`` issuing is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
     def supports_id_admin(self):
         """Tests if an ``Id`` administrative service is supported.
 
         :return: ``true`` if ``Id`` administration is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def supports_id_batch(self):
+        """Tests for the availability of an Id batch service.
+
+        :return: ``true`` if an Id batch service is available, ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -45,10 +63,23 @@ class IdManager(osid_managers.OsidManager, IdProfile):
 
     id_lookup_session = property(fget=get_id_lookup_session)
 
+    def get_id_issue_session(self):
+        """Gets the session associated with the id issue service.
+
+        :return: an ``IdIssueSession``
+        :rtype: ``osid.id.IdIssueSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_id_issue()`` is ``false``
+
+        """
+        return # osid.id.IdIssueSession
+
+    id_issue_session = property(fget=get_id_issue_session)
+
     def get_id_admin_session(self):
         """Gets the session associated with the id admin service.
 
-        :return: the new ``IdAdminSession``
+        :return: an ``IdAdminSession``
         :rtype: ``osid.id.IdAdminSession``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_id_admin()`` is ``false``
@@ -57,6 +88,19 @@ class IdManager(osid_managers.OsidManager, IdProfile):
         return # osid.id.IdAdminSession
 
     id_admin_session = property(fget=get_id_admin_session)
+
+    def get_id_batch_manager(self):
+        """Gets an ``IdBatchManager``.
+
+        :return: an ``IdBatchManager``
+        :rtype: ``osid.id.batch.IdBatchManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_id_batch()`` is ``false``
+
+        """
+        return # osid.id.batch.IdBatchManager
+
+    id_batch_manager = property(fget=get_id_batch_manager)
 
 
 class IdProxyManager(osid_managers.OsidProxyManager, IdProfile):
@@ -85,12 +129,26 @@ class IdProxyManager(osid_managers.OsidProxyManager, IdProfile):
         """
         return # osid.id.IdLookupSession
 
+    def get_id_issue_session(self, proxy):
+        """Gets the session associated with the id issue service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``IdIssueSession``
+        :rtype: ``osid.id.IdIssueSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- ``unable to complete request``
+        :raise: ``Unimplemented`` -- ``supports_id_issue()`` is ``false``
+
+        """
+        return # osid.id.IdIssueSession
+
     def get_id_admin_session(self, proxy):
         """Gets the session associated with the id administrative service.
 
         :param proxy: a proxy
         :type proxy: ``osid.proxy.Proxy``
-        :return: a ``IdAdminSession``
+        :return: an ``IdAdminSession``
         :rtype: ``osid.id.IdAdminSession``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
@@ -98,5 +156,18 @@ class IdProxyManager(osid_managers.OsidProxyManager, IdProfile):
 
         """
         return # osid.id.IdAdminSession
+
+    def get_id_batch_proxy_manager(self):
+        """Gets an ``IdnProxyManager``.
+
+        :return: an ``IdBatchProxyManager``
+        :rtype: ``osid.id.batch.IdBatchProxyManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_id_batch()`` is ``false``
+
+        """
+        return # osid.id.batch.IdBatchProxyManager
+
+    id_batch_proxy_manager = property(fget=get_id_batch_proxy_manager)
 
 

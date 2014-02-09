@@ -238,7 +238,7 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         return # osid.learning.records.ObjectiveQueryInspectorRecord
 
 
-class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
+class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
     """This is the query inspector for examining activity queries."""
     def get_objective_id_terms(self):
         """Gets the objective ``Id`` query terms.

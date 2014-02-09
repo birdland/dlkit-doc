@@ -3581,6 +3581,972 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
     assessment_batch_proxy_manager = property(fget=get_assessment_batch_proxy_manager)
 
 
+##
+# The following methods are from osid.assessment.BankLookupSession
+
+    def can_lookup_banks(self):
+        """Tests if this user can perform ``Bank`` lookups.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_comparative_bank_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def use_plenary_bank_view(self):
+        """A complete view of the ``Bank`` returns is desired.
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank(self, bank_id):
+        """Gets the ``Bank`` specified by its ``Id``.
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Bank`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Bank`` and retained for compatibility.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: the bank
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_banks_by_ids(self, bank_ids):
+        """Gets a ``BankList`` corresponding to the given ``IdList``.
+        In plenary mode, the returned list contains all of the banks
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Bank`` objects may be omitted from the list and
+        may present the elements in any order including returning a
+        unique set.
+
+
+        :param bank_ids: the list of ``Ids`` to retrieve
+        :type bank_ids: ``osid.id.IdList``
+        :return: the returned ``Bank`` list
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_banks_by_genus_type(self, bank_genus_type):
+        """Gets a ``BankList`` corresponding to the given bank genus ``Type`` which does not include banks of types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known banks or
+        an error results. Otherwise, the returned list may contain only
+        those banks that are accessible through this session.
+
+
+        :param bank_genus_type: a bank genus type
+        :type bank_genus_type: ``osid.type.Type``
+        :return: the returned ``Bank`` list
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NullArgument`` -- ``bank_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_banks_by_parent_genus_type(self, bank_genus_type):
+        """Gets a ``BankList`` corresponding to the given bank genus ``Type`` and include any additional banks with genus types derived from the specified ``Type``.
+        In plenary mode, the returned list contains all known banks or
+        an error results. Otherwise, the returned list may contain only
+        those banks that are accessible through this session.
+
+
+        :param bank_genus_type: a bank genus type
+        :type bank_genus_type: ``osid.type.Type``
+        :return: the returned ``Bank`` list
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NullArgument`` -- ``bank_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_banks_by_record_type(self, bank_record_type):
+        """Gets a ``BankList`` containing the given bank record ``Type``.
+        In plenary mode, the returned list contains all known banks or
+        an error results. Otherwise, the returned list may contain only
+        those banks that are accessible through this session.
+
+
+        :param bank_record_type: a bank record type
+        :type bank_record_type: ``osid.type.Type``
+        :return: the returned ``Bank`` list
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NullArgument`` -- ``bank_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_banks_by_provider(self, resource_id):
+        """Gets a ``BankList`` from the given provider ````.
+        In plenary mode, the returned list contains all known banks or
+        an error results. Otherwise, the returned list may contain only
+        those banks that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Bank`` list
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_banks(self):
+        """Gets all ``Banks``.
+        In plenary mode, the returned list contains all known banks or
+        an error results. Otherwise, the returned list may contain only
+        those banks that are accessible through this session.
+
+
+        :return: a ``BankList``
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    banks = property(fget=get_banks)
+
+
+##
+# The following methods are from osid.assessment.BankQuerySession
+
+    def can_search_banks(self):
+        """Tests if this user can perform ``Bank`` searches.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank_query(self):
+        """Gets a bank query.
+
+        :return: a bank query
+        :rtype: ``osid.assessment.BankQuery``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bank_query = property(fget=get_bank_query)
+
+    def get_banks_by_query(self, bank_query):
+        """Gets a list of ``Bank`` objects matching the given bank query.
+
+        :param bank_query: the bank query
+        :type bank_query: ``osid.assessment.BankQuery``
+        :return: the returned ``BankList``
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NullArgument`` -- ``bank_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``Unsupported`` -- ``bank_query`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.assessment.BankSearchSession
+
+    def get_bank_search(self):
+        """Gets a bank search.
+
+        :return: a bank search
+        :rtype: ``osid.assessment.BankSearch``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bank_search = property(fget=get_bank_search)
+
+    def get_bank_search_order(self):
+        """Gets a bank search order.
+        The ``BankSearchOrder`` is supplied to a ``BankSearch`` to
+        specify the ordering of results.
+
+
+        :return: the bank search order
+        :rtype: ``osid.assessment.BankSearchOrder``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bank_search_order = property(fget=get_bank_search_order)
+
+    def get_banks_by_search(self, bank_query, bank_search):
+        """Gets the search results matching the given search query using the given search.
+
+        :param bank_query: the bank query
+        :type bank_query: ``osid.assessment.BankQuery``
+        :param bank_search: the bank search
+        :type bank_search: ``osid.assessment.BankSearch``
+        :return: the bank search results
+        :rtype: ``osid.assessment.BankSearchResults``
+        :raise: ``NullArgument`` -- ``bank_query`` or ``bank_search`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``Unsupported`` -- ``bank_query`` or ``bank_search`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank_query_from_inspector(self, bank_query_inspector):
+        """Gets a bank query from an inspector.
+        The inspector is available from a ``BankSearchResults``.
+
+
+        :param bank_query_inspector: a bank query inspector
+        :type bank_query_inspector: ``osid.assessment.BankQueryInspector``
+        :return: the bank query
+        :rtype: ``osid.assessment.BankQuery``
+        :raise: ``NullArgument`` -- ``bank_query_inspector`` is ``null``
+        :raise: ``Unsupported`` -- ``bank_query_inspector`` is not of this service
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.assessment.BankAdminSession
+
+    def can_create_banks(self):
+        """Tests if this user can create ``Banks``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a ``Bank``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer create
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Bank`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_create_bank_with_record_types(self, bank_record_types):
+        """Tests if this user can create a single ``Bank`` using the desired record types.
+        While ``AssessmentManager.getBankRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Bank``.
+        Providing an empty array tests if a ``Bank`` can be created with
+        no records.
+
+
+        :param bank_record_types: array of bank record types
+        :type bank_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Bank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``bank_record_types`` is ``null``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank_form_for_create(self, bank_record_types):
+        """Gets the bank form for creating new banks.
+        A new form should be requested for each create transaction.
+
+
+        :param bank_record_types: array of bank record types to be included in the create operation or an empty list if none
+        :type bank_record_types: ``osid.type.Type[]``
+        :return: the bank form
+        :rtype: ``osid.assessment.BankForm``
+        :raise: ``NullArgument`` -- ``bank_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+        """
+        raise UNIMPLEMENTED()
+
+    def create_bank(self, bank_form):
+        """Creates a new ``Bank``.
+
+        :param bank_form: the form for this ``Bank``
+        :type bank_form: ``osid.assessment.BankForm``
+        :return: the new ``Bank``
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``IllegalState`` -- ``bank_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``bank_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_create()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_update_banks(self):
+        """Tests if this user can update ``Banks``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a ``Bank``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer update
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Bank`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank_form_for_update(self, bank_id):
+        """Gets the bank form for updating an existing bank.
+        A new bank form should be requested for each update transaction.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: the bank form
+        :rtype: ``osid.assessment.BankForm``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def update_bank(self, bank_form):
+        """Updates an existing bank.
+
+        :param bank_form: the form containing the elements to be updated
+        :type bank_form: ``osid.assessment.BankForm``
+        :raise: ``IllegalState`` -- ``bank_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``bank_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_update()``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_delete_banks(self):
+        """Tests if this user can delete banks.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a ``Bank``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer delete
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Bank`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def delete_bank(self, bank_id):
+        """Deletes a ``Bank``.
+
+        :param bank_id: the ``Id`` of the ``Bank`` to remove
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def can_manage_bank_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Banks``.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Bank`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def alias_bank(self, bank_id, alias_id):
+        """Adds an ``Id`` to a ``Bank`` for the purpose of creating compatibility.
+        The primary ``Id`` of the ``Bank`` is determined by the
+        provider. The new ``Id`` is an alias to the primary ``Id``. If
+        the alias is a pointer to another bank, it is reassigned to the
+        given bank ``Id``.
+
+
+        :param bank_id: the ``Id`` of a ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is in use as a primary ``Id``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.assessment.BankNotificationSession
+
+    def can_register_for_bank_notifications(self):
+        """Tests if this user can register for ``Bank`` notifications.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer
+        notification operations.
+
+
+        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_banks(self):
+        """Register for notifications of new banks.
+        ``BankReceiver.newBank()`` is invoked when a new Bank is
+        created.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_bank_ancestors(self, bank_id):
+        """Registers for notification if an ancestor is added to the specified bank in the bank hierarchy.
+        ``BankReceiver.newBankAncestor()`` is invoked when the specified
+        bank experiences an addition in ancestry.
+
+
+        :param bank_id: the Id of the bank to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_bank_descendants(self, bank_id):
+        """Registers for notification if a descendant is added to the specified bank in the bank hierarchy.
+        ``BankReceiver.newBankDescendant()`` is invoked when the
+        specified bank experiences an addition in descendants.
+
+
+        :param bank_id: the Id of the bank to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_banks(self):
+        """Registers for notification of updated banks.
+        ``BankReceiver.changedBank()`` is invoked when a bank is
+        changed.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_bank(self, bank_id):
+        """Registers for notification of an updated bank.
+        ``BankReceiver.changedBank()`` is invoked when the specified
+        bank is changed.
+
+
+        :param bank_id: the Id of the bank to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_banks(self):
+        """Registers for notification of deleted banks.
+        ``BankReceiver.deletedBank()`` is invoked when a bank is
+        deleted.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bank(self, bank_id):
+        """Registers for notification of a deleted bank.
+        ``BankReceiver.deletedBank()`` is invoked when the specified
+        bank is deleted.
+
+
+        :param bank_id: the Id of the bank to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bank_ancestors(self, bank_id):
+        """Registers for notification if an ancestor is removed from the specified bank in the bank hierarchy.
+        ``BankReceiver.deletedBankAncestor()`` is invoked when the
+        specified bank experiences a removal of an ancestor.
+
+
+        :param bank_id: the Id of the bank to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_bank_descendants(self, bank_id):
+        """Registers for notification if a descendant is removed from fthe specified bank in the bank hierarchy.
+        ``BankReceiver.deletedBankDescednant()`` is invoked when the
+        specified bank experiences a removal of one of its descendants.
+
+
+        :param bank_id: the Id of the bank to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.assessment.BankHierarchySession
+
+    def get_bank_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+        """
+        raise UNIMPLEMENTED()
+
+    bank_hierarchy_id = property(fget=get_bank_hierarchy_id)
+
+    def get_bank_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- assessment failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    bank_hierarchy = property(fget=get_bank_hierarchy)
+
+    def can_access_bank_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_root_bank_ids(self):
+        """Gets the root bank ``Ids`` in this hierarchy.
+
+        :return: the root bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_bank_ids = property(fget=get_root_bank_ids)
+
+    def get_root_banks(self):
+        """Gets the root banks in this bank hierarchy.
+
+        :return: the root banks
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    root_banks = property(fget=get_root_banks)
+
+    def has_parent_banks(self, bank_id):
+        """Tests if the ``Bank`` has any parents.
+
+        :param bank_id: a bank ``Id``
+        :type bank_id: ``osid.id.Id``
+        :return: ``true`` if the bank has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_parent_of_bank(self, id_, bank_id):
+        """Tests if an ``Id`` is a direct parent of a bank.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_bank_ids(self, bank_id):
+        """Gets the parent ``Ids`` of the given bank.
+
+        :param bank_id: a bank ``Id``
+        :type bank_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the bank
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_parent_banks(self, bank_id):
+        """Gets the parents of the given bank.
+
+        :param bank_id: a bank ``Id``
+        :type bank_id: ``osid.id.Id``
+        :return: the parents of the bank
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_ancestor_of_bank(self, id_, bank_id):
+        """Tests if an ``Id`` is an ancestor of a bank.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def has_child_banks(self, bank_id):
+        """Tests if a bank has any children.
+
+        :param bank_id: a ``bank_id``
+        :type bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``bank_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_child_of_bank(self, id_, bank_id):
+        """Tests if a bank is a direct child of another.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_bank_ids(self, bank_id):
+        """Gets the child ``Ids`` of the given bank.
+
+        :param bank_id: the ``Id`` to query
+        :type bank_id: ``osid.id.Id``
+        :return: the children of the bank
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_child_banks(self, bank_id):
+        """Gets the children of the given bank.
+
+        :param bank_id: the ``Id`` to query
+        :type bank_id: ``osid.id.Id``
+        :return: the children of the bank
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def is_descendant_of_bank(self, id_, bank_id):
+        """Tests if an ``Id`` is a descendant of a bank.
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank_node_ids(self, bank_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given bank.
+
+        :param bank_id: the ``Id`` to query
+        :type bank_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a bank node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_bank_nodes(self, bank_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given bank.
+
+        :param bank_id: the ``Id`` to query
+        :type bank_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a bank node
+        :rtype: ``osid.assessment.BankNode``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+
+##
+# The following methods are from osid.assessment.BankHierarchyDesignSession
+
+    def can_modify_bank_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_root_bank(self, bank_id):
+        """Adds a root bank.
+
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``bank_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_root_bank(self, bank_id):
+        """Removes a root bank from this hierarchy.
+
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bank_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def add_child_bank(self, bank_id, child_id):
+        """Adds a child to a bank.
+
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``bank_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``bank_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_bank(self, bank_id, child_id):
+        """Removes a child from a bank.
+
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bank_id`` not parent of ``child_id``
+        :raise: ``NullArgument`` -- ``bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+    def remove_child_banks(self, bank_id):
+        """Removes all children from a bank.
+
+        :param bank_id: the ``Id`` of a bank
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``bank_id`` is not in hierarchy
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        raise UNIMPLEMENTED()
+
+
 
 class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 

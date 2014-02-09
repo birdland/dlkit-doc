@@ -1,7 +1,7 @@
 from ..osid import queries as osid_queries
 
 
-class GradeQuery(osid_queries.OsidObjectQuery):
+class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery):
     """This is the query for searching gradings.
 
     Each method match request produces an ``AND`` term while multiple
@@ -95,7 +95,7 @@ class GradeQuery(osid_queries.OsidObjectQuery):
 
     input_score_end_range_terms = property(fdel=clear_input_score_end_range_terms)
 
-    def match_input_score_range(self, start, end, match):
+    def match_input_score(self, start, end, match):
         """Matches grades with the input score range contained within the given range inclusive.
 
         :param start: start of range
@@ -109,11 +109,11 @@ class GradeQuery(osid_queries.OsidObjectQuery):
         """
         pass
 
-    def clear_input_score_range_terms(self):
+    def clear_input_score_terms(self):
         """Clears the input score start range terms."""
         pass
 
-    input_score_range_terms = property(fdel=clear_input_score_range_terms)
+    input_score_terms = property(fdel=clear_input_score_terms)
 
     def match_output_score(self, start, end, match):
         """Matches grades with the output score contained within the given range inclusive.
@@ -255,14 +255,14 @@ class GradeQuery(osid_queries.OsidObjectQuery):
         return # osid.grading.records.GradeQueryRecord
 
 
-class GradeSystemQuery(osid_queries.OsidObjectQuery):
+class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery):
     """This is the query for searching grade systems.
 
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
 
     """
-    def match_grade_based_systems(self, match):
+    def match_based_on_grades(self, match):
         """Matches grade systems based on grades.
 
         :param match: ``true`` for a positive match, ``false`` for negative match
@@ -271,11 +271,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery):
         """
         pass
 
-    def clear_grade_based_terms(self):
+    def clear_based_on_grades_terms(self):
         """Clears the grade ``based`` terms."""
         pass
 
-    grade_based_terms = property(fdel=clear_grade_based_terms)
+    based_on_grades_terms = property(fdel=clear_based_on_grades_terms)
 
     def match_grade_id(self, grade_id, match):
         """Sets the grade ``Id`` for this query.
@@ -697,20 +697,20 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
     overridden_grade_entry_terms = property(fdel=clear_overridden_grade_entry_terms)
 
-    def match_ignored_for_calculation_entries(self, match):
+    def match_ignored_for_calculations(self, match):
         """Matches grade entries ignored for calculations.
 
-        :param match: ``true`` to match grade entriesignored for calculations, ``false`` to match entries used in calculations
+        :param match: ``true`` to match grade entries ignored for calculations, ``false`` to match entries used in calculations
         :type match: ``boolean``
 
         """
         pass
 
-    def clear_ignored_for_calculation_terms(self):
-        """Clears the ignored for calculation terms."""
+    def clear_ignored_for_calculations_terms(self):
+        """Clears the ignored for calculation entries terms."""
         pass
 
-    ignored_for_calculation_terms = property(fdel=clear_ignored_for_calculation_terms)
+    ignored_for_calculations_terms = property(fdel=clear_ignored_for_calculations_terms)
 
     def match_grade_id(self, grade_id, match):
         """Sets the grade ``Id`` for this query.
@@ -1602,7 +1602,7 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
     grade_system_query = property(fget=get_grade_system_query)
 
-    def match_any_grade_system_query(self, match):
+    def match_any_grade_system(self, match):
         """Matches gradebooks that have any grade system.
 
         :param match: ``true`` to match gradebooks with any grade system, ``false`` to match gradebooks with no grade system
@@ -1658,7 +1658,7 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
     grade_entry_query = property(fget=get_grade_entry_query)
 
-    def match_any_grade_entry_query(self, match):
+    def match_any_grade_entry(self, match):
         """Matches gradebooks that have any grade entry.
 
         :param match: ``true`` to match gradebooks with any grade entry, ``false`` to match gradebooks with no grade entry

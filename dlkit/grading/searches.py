@@ -25,7 +25,7 @@ class GradeSystemSearch(osid_searches.OsidSearch):
         pass
 
     def get_grade_system_search_record(self, grade_system_search_record_type):
-        """Gets the grade system search record corresponding to the given gade system search record ``Type``.
+        """Gets the grade system search record corresponding to the given grade system search record ``Type``.
 
         This method is used to retrieve an object implementing the
         requested record.

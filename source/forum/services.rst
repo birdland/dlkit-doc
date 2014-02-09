@@ -255,59 +255,241 @@ Forum Proxy Manager
 .. autoclass:: ForumProxyManager
    :show-inheritance:
 
-   .. automethod:: ForumProxyManager.get_post_lookup_session
-
-   .. automethod:: ForumProxyManager.get_post_lookup_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_post_query_session
-
-   .. automethod:: ForumProxyManager.get_post_query_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_post_search_session
-
-   .. automethod:: ForumProxyManager.get_post_search_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_post_admin_session
-
-   .. automethod:: ForumProxyManager.get_post_admin_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_post_notification_session
-
-   .. automethod:: ForumProxyManager.get_post_notification_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_post_forum_session
-
-   .. automethod:: ForumProxyManager.get_post_forum_assignment_session
-
-   .. automethod:: ForumProxyManager.get_post_smart_forum_session
-
-   .. automethod:: ForumProxyManager.get_reply_lookup_session
-
-   .. automethod:: ForumProxyManager.get_reply_lookup_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_reply_admin_session
-
-   .. automethod:: ForumProxyManager.get_reply_admin_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_reply_notification_session
-
-   .. automethod:: ForumProxyManager.get_reply_notification_session_for_forum
-
-   .. automethod:: ForumProxyManager.get_forum_lookup_session
-
-   .. automethod:: ForumProxyManager.get_forum_query_session
-
-   .. automethod:: ForumProxyManager.get_forum_search_session
-
-   .. automethod:: ForumProxyManager.get_forum_admin_session
-
-   .. automethod:: ForumProxyManager.get_forum_notification_session
-
-   .. automethod:: ForumProxyManager.get_forum_hierarchy_session
-
-   .. automethod:: ForumProxyManager.get_forum_hierarchy_design_session
-
    .. autoattribute:: ForumProxyManager.forum_batch_proxy_manager
+
+
+
+Forum Profile Methods
+_____________
+
+   .. automethod:: ForumProxyManager.supports_visible_federation
+
+   .. automethod:: ForumProxyManager.supports_post_lookup
+
+   .. automethod:: ForumProxyManager.supports_post_query
+
+   .. automethod:: ForumProxyManager.supports_post_search
+
+   .. automethod:: ForumProxyManager.supports_post_admin
+
+   .. automethod:: ForumProxyManager.supports_post_notification
+
+   .. automethod:: ForumProxyManager.supports_post_forum
+
+   .. automethod:: ForumProxyManager.supports_post_forum_assignment
+
+   .. automethod:: ForumProxyManager.supports_post_smart_forum
+
+   .. automethod:: ForumProxyManager.supports_reply_lookup
+
+   .. automethod:: ForumProxyManager.supports_reply_admin
+
+   .. automethod:: ForumProxyManager.supports_reply_notification
+
+   .. automethod:: ForumProxyManager.supports_forum_lookup
+
+   .. automethod:: ForumProxyManager.supports_forum_query
+
+   .. automethod:: ForumProxyManager.supports_forum_search
+
+   .. automethod:: ForumProxyManager.supports_forum_admin
+
+   .. automethod:: ForumProxyManager.supports_forum_notification
+
+   .. automethod:: ForumProxyManager.supports_forum_hierarchy
+
+   .. automethod:: ForumProxyManager.supports_forum_hierarchy_design
+
+   .. automethod:: ForumProxyManager.supports_forum_batch
+
+   .. autoattribute:: ForumProxyManager.post_record_types
+
+   .. automethod:: ForumProxyManager.supports_post_record_type
+
+   .. autoattribute:: ForumProxyManager.post_search_record_types
+
+   .. automethod:: ForumProxyManager.supports_post_search_record_type
+
+   .. autoattribute:: ForumProxyManager.reply_record_types
+
+   .. automethod:: ForumProxyManager.supports_reply_record_type
+
+   .. autoattribute:: ForumProxyManager.reply_search_record_types
+
+   .. automethod:: ForumProxyManager.supports_reply_search_record_type
+
+   .. autoattribute:: ForumProxyManager.forum_record_types
+
+   .. automethod:: ForumProxyManager.supports_forum_record_type
+
+   .. autoattribute:: ForumProxyManager.forum_search_record_types
+
+   .. automethod:: ForumProxyManager.supports_forum_search_record_type
+
+
+
+Forum Lookup
+____________
+
+   .. automethod:: ForumProxyManager.can_lookup_forums
+
+   .. automethod:: ForumProxyManager.use_comparative_forum_view
+
+   .. automethod:: ForumProxyManager.use_plenary_forum_view
+
+   .. automethod:: ForumProxyManager.get_forum
+
+   .. automethod:: ForumProxyManager.get_forums_by_ids
+
+   .. automethod:: ForumProxyManager.get_forums_by_genus_type
+
+   .. automethod:: ForumProxyManager.get_forums_by_parent_genus_type
+
+   .. automethod:: ForumProxyManager.get_forums_by_record_type
+
+   .. automethod:: ForumProxyManager.get_forums_by_provider
+
+   .. autoattribute:: ForumProxyManager.forums
+
+
+
+Forum Query
+___________
+
+   .. automethod:: ForumProxyManager.can_search_forums
+
+   .. autoattribute:: ForumProxyManager.forum_query
+
+   .. automethod:: ForumProxyManager.get_forums_by_query
+
+
+
+Forum Search
+____________
+
+   .. autoattribute:: ForumProxyManager.forum_search
+
+   .. autoattribute:: ForumProxyManager.forum_search_order
+
+   .. automethod:: ForumProxyManager.get_forums_by_search
+
+   .. automethod:: ForumProxyManager.get_forum_query_from_inspector
+
+
+
+Forum Admin
+___________
+
+   .. automethod:: ForumProxyManager.can_create_forums
+
+   .. automethod:: ForumProxyManager.can_create_forum_with_record_types
+
+   .. automethod:: ForumProxyManager.get_forum_form_for_create
+
+   .. automethod:: ForumProxyManager.create_forum
+
+   .. automethod:: ForumProxyManager.can_update_forums
+
+   .. automethod:: ForumProxyManager.get_forum_form_for_update
+
+   .. automethod:: ForumProxyManager.update_forum
+
+   .. automethod:: ForumProxyManager.can_delete_forums
+
+   .. automethod:: ForumProxyManager.delete_forum
+
+   .. automethod:: ForumProxyManager.can_manage_forum_aliases
+
+   .. automethod:: ForumProxyManager.alias_forum
+
+
+
+Forum Notification
+__________________
+
+   .. automethod:: ForumProxyManager.can_register_for_forum_notifications
+
+   .. automethod:: ForumProxyManager.register_for_new_forums
+
+   .. automethod:: ForumProxyManager.register_for_new_forum_ancestors
+
+   .. automethod:: ForumProxyManager.register_for_new_forum_descendants
+
+   .. automethod:: ForumProxyManager.register_for_changed_forums
+
+   .. automethod:: ForumProxyManager.register_for_changed_forum
+
+   .. automethod:: ForumProxyManager.register_for_deleted_forums
+
+   .. automethod:: ForumProxyManager.register_for_deleted_forum
+
+   .. automethod:: ForumProxyManager.register_for_deleted_forum_ancestors
+
+   .. automethod:: ForumProxyManager.register_for_deleted_forum_descendants
+
+
+
+Forum Hierarchy
+_______________
+
+   .. autoattribute:: ForumProxyManager.forum_hierarchy_id
+
+   .. autoattribute:: ForumProxyManager.forum_hierarchy
+
+   .. automethod:: ForumProxyManager.can_access_forum_hierarchy
+
+   .. automethod:: ForumProxyManager.use_comparative_forum_view
+
+   .. automethod:: ForumProxyManager.use_plenary_forum_view
+
+   .. autoattribute:: ForumProxyManager.root_forum_ids
+
+   .. autoattribute:: ForumProxyManager.root_forums
+
+   .. automethod:: ForumProxyManager.has_parent_forums
+
+   .. automethod:: ForumProxyManager.is_parent_of_forum
+
+   .. automethod:: ForumProxyManager.get_parent_forum_ids
+
+   .. automethod:: ForumProxyManager.get_parent_forums
+
+   .. automethod:: ForumProxyManager.is_ancestor_of_forum
+
+   .. automethod:: ForumProxyManager.has_child_forums
+
+   .. automethod:: ForumProxyManager.is_child_of_forum
+
+   .. automethod:: ForumProxyManager.get_child_forum_ids
+
+   .. automethod:: ForumProxyManager.get_child_forums
+
+   .. automethod:: ForumProxyManager.is_descendant_of_forum
+
+   .. automethod:: ForumProxyManager.get_forum_node_ids
+
+   .. automethod:: ForumProxyManager.get_forum_nodes
+
+
+
+Forum Hierarchy Design
+______________________
+
+   .. autoattribute:: ForumProxyManager.forum_hierarchy_id
+
+   .. autoattribute:: ForumProxyManager.forum_hierarchy
+
+   .. automethod:: ForumProxyManager.can_modify_forum_hierarchy
+
+   .. automethod:: ForumProxyManager.add_root_forum
+
+   .. automethod:: ForumProxyManager.remove_root_forum
+
+   .. automethod:: ForumProxyManager.add_child_forum
+
+   .. automethod:: ForumProxyManager.remove_child_forum
+
+   .. automethod:: ForumProxyManager.remove_child_forums
 
 
 

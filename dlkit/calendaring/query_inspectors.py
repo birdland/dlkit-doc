@@ -25,17 +25,6 @@ class EventQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
     duration_terms = property(fget=get_duration_terms)
 
-    def get_time_terms(self):
-        """Gets the time terms.
-
-        :return: the time terms
-        :rtype: ``osid.search.terms.DateTimeTerm``
-
-        """
-        return # osid.search.terms.DateTimeTerm
-
-    time_terms = property(fget=get_time_terms)
-
     def get_recurring_event_id_terms(self):
         """Gets the recurring event ``Id`` terms.
 
@@ -260,9 +249,9 @@ class EventQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         return # osid.calendaring.records.EventQueryInspectorRecord
 
 
-class RecurringEventQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidContainableQueryInspector):
+class RecurringEventQueryInspector(osid_query_inspectors.OsidRuleQueryInspector, osid_query_inspectors.OsidContainableQueryInspector):
     """This is the query inspector for examining recurring event queries."""
-    def ge_schedule_id_terms(self):
+    def get_schedule_id_terms(self):
         """Gets the schedule ``Id`` terms.
 
         :return: the schedule ``Id`` terms
@@ -270,6 +259,8 @@ class RecurringEventQueryInspector(osid_query_inspectors.OsidObjectQueryInspecto
 
         """
         return # osid.search.terms.IdTerm
+
+    schedule_id_terms = property(fget=get_schedule_id_terms)
 
     def get_schedule_terms(self):
         """Gets the schedule terms.
@@ -303,17 +294,6 @@ class RecurringEventQueryInspector(osid_query_inspectors.OsidObjectQueryInspecto
         return # osid.calendaring.SupersedingEventQueryInspector
 
     superseding_event_terms = property(fget=get_superseding_event_terms)
-
-    def get_speific_date_terms(self):
-        """Gets the specific date terms.
-
-        :return: the time range terms
-        :rtype: ``osid.search.terms.DateTimeRangeTerm``
-
-        """
-        return # osid.search.terms.DateTimeRangeTerm
-
-    speific_date_terms = property(fget=get_speific_date_terms)
 
     def get_event_id_terms(self):
         """Gets the event ``Id`` terms.
@@ -431,50 +411,6 @@ class RecurringEventQueryInspector(osid_query_inspectors.OsidObjectQueryInspecto
 
 class SupersedingEventQueryInspector(osid_query_inspectors.OsidRuleQueryInspector):
     """This is the query inspector for examining superseding event queries."""
-    def get_event_id_terms(self):
-        """Gets the event ``Id`` terms.
-
-        :return: the event ``Id`` terms
-        :rtype: ``osid.search.terms.IdTerm``
-
-        """
-        return # osid.search.terms.IdTerm
-
-    event_id_terms = property(fget=get_event_id_terms)
-
-    def get_event_terms(self):
-        """Gets the event terms.
-
-        :return: the event terms
-        :rtype: ``osid.calendaring.EventQueryInspector``
-
-        """
-        return # osid.calendaring.EventQueryInspector
-
-    event_terms = property(fget=get_event_terms)
-
-    def get_recurring_event_id_terms(self):
-        """Gets the recurring event ``Id`` terms.
-
-        :return: the recurring event ``Id`` terms
-        :rtype: ``osid.search.terms.IdTerm``
-
-        """
-        return # osid.search.terms.IdTerm
-
-    recurring_event_id_terms = property(fget=get_recurring_event_id_terms)
-
-    def get_recurring_event_terms(self):
-        """Gets the recurring event terms.
-
-        :return: the recurring event terms
-        :rtype: ``osid.calendaring.RecurringEventQueryInspector``
-
-        """
-        return # osid.calendaring.RecurringEventQueryInspector
-
-    recurring_event_terms = property(fget=get_recurring_event_terms)
-
     def get_superseded_event_id_terms(self):
         """Gets the superseded event ``Id`` terms.
 
@@ -496,6 +432,28 @@ class SupersedingEventQueryInspector(osid_query_inspectors.OsidRuleQueryInspecto
         return # osid.calendaring.EventQueryInspector
 
     superseded_event_terms = property(fget=get_superseded_event_terms)
+
+    def get_superseding_event_id_terms(self):
+        """Gets the superseding event ``Id`` terms.
+
+        :return: the superseding event ``Id`` terms
+        :rtype: ``osid.search.terms.IdTerm``
+
+        """
+        return # osid.search.terms.IdTerm
+
+    superseding_event_id_terms = property(fget=get_superseding_event_id_terms)
+
+    def get_superseding_event_terms(self):
+        """Gets the superseding event terms.
+
+        :return: the superseding event terms
+        :rtype: ``osid.calendaring.EventQueryInspector``
+
+        """
+        return # osid.calendaring.EventQueryInspector
+
+    superseding_event_terms = property(fget=get_superseding_event_terms)
 
     def get_superseded_date_terms(self):
         """Gets the superseded date range terms.
@@ -690,16 +648,60 @@ class OffsetEventQueryInspector(osid_query_inspectors.OsidRuleQueryInspector):
 
     relative_end_weekday_terms = property(fget=get_relative_end_weekday_terms)
 
-    def get_event_terms(self):
-        """Gets the resulting event terms.
+    def get_location_description_terms(self):
+        """Gets the location description terms.
 
-        :return: the event terms
-        :rtype: ``osid.calendaring.EventQueryInspector``
+        :return: the location description terms
+        :rtype: ``osid.search.terms.StringTerm``
 
         """
-        return # osid.calendaring.EventQueryInspector
+        return # osid.search.terms.StringTerm
 
-    event_terms = property(fget=get_event_terms)
+    location_description_terms = property(fget=get_location_description_terms)
+
+    def get_location_id_terms(self):
+        """Gets the location ``Id`` terms.
+
+        :return: the location ``Id`` terms
+        :rtype: ``osid.search.terms.IdTerm``
+
+        """
+        return # osid.search.terms.IdTerm
+
+    location_id_terms = property(fget=get_location_id_terms)
+
+    def get_location_terms(self):
+        """Gets the location terms.
+
+        :return: the location terms
+        :rtype: ``osid.mapping.LocationQueryInspector``
+
+        """
+        return # osid.mapping.LocationQueryInspector
+
+    location_terms = property(fget=get_location_terms)
+
+    def get_sponsor_id_terms(self):
+        """Gets the sponsor ``Id`` terms.
+
+        :return: the sponsor ``Id`` terms
+        :rtype: ``osid.search.terms.IdTerm``
+
+        """
+        return # osid.search.terms.IdTerm
+
+    sponsor_id_terms = property(fget=get_sponsor_id_terms)
+
+    def get_sponsor_terms(self):
+        """Gets the sponsor terms.
+
+        :return: the sponsor terms
+        :rtype: ``osid.resource.ResourceQueryInspector``
+
+        """
+        return # osid.resource.ResourceQueryInspector
+
+    sponsor_terms = property(fget=get_sponsor_terms)
 
     def get_calendar_id_terms(self):
         """Gets the calendar ``Id`` terms.
@@ -738,7 +740,7 @@ class OffsetEventQueryInspector(osid_query_inspectors.OsidRuleQueryInspector):
         return # osid.calendaring.records.OffsetEventQueryInspectorRecord
 
 
-class ScheduleQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
+class ScheduleQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
     """This is the query inspector for examining schedule queries."""
     def get_schedule_slot_id_terms(self):
         """Gets the schedule slot ``Id`` terms.
@@ -805,6 +807,17 @@ class ScheduleQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         return # osid.search.terms.DateTimeRangeTerm
 
     schedule_end_terms = property(fget=get_schedule_end_terms)
+
+    def get_schedule_time_terms(self):
+        """Gets the schedule time terms.
+
+        :return: the schedule time terms
+        :rtype: ``osid.search.terms.DateTimeTerm``
+
+        """
+        return # osid.search.terms.DateTimeTerm
+
+    schedule_time_terms = property(fget=get_schedule_time_terms)
 
     def get_schedule_time_inclusive_terms(self):
         """Gets the schedule inclusive time terms.

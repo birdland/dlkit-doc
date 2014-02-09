@@ -134,7 +134,7 @@ OSIDs.
 
 
 The most basic operations of an OSID center on retrieval, search, create
-& update, and notifications on changes to an OsidObject. The more
+& update, and notifications on changes to an ``OsidObject``. The more
 advanced OSIDs model a system behavior where a variety of implicit
 relationships, constraints and rules come into play.
 
@@ -143,6 +143,8 @@ relationships, constraints and rules come into play.
     governing related ``OsidObjects.`` The ``OsidGovernator`` represents
     an engine of sorts in an OSID Provider and may have its own provider
     identity.
+  * ``OsidCompendium`` : ``OsidObjects`` which are reports or summaries
+    based on transactional data managed elsewhere.
 
 
 Managing data governing rules occurs in a separate set of interfaces

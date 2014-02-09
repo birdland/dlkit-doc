@@ -104,6 +104,39 @@ class OsidSession:
 
     effective_agent = property(fget=get_effective_agent)
 
+    def get_date(self):
+        """Gets the service date which may be the current date or the effective date in which this session exists.
+
+        :return: the service date
+        :rtype: ``timestamp``
+
+        """
+        return # timestamp
+
+    date = property(fget=get_date)
+
+    def get_clock_rate(self):
+        """Gets the rate of the service clock.
+
+        :return: the clock rate
+        :rtype: ``decimal``
+
+        """
+        return # decimal
+
+    clock_rate = property(fget=get_clock_rate)
+
+    def get_format_type(self):
+        """Gets the ``DisplayText`` format ``Type`` preference in effect for this session.
+
+        :return: the effective ``DisplayText`` format ``Type``
+        :rtype: ``osid.type.Type``
+
+        """
+        return # osid.type.Type
+
+    format_type = property(fget=get_format_type)
+
     def supports_transactions(self):
         """Tests for the availability of transactions.
 

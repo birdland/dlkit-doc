@@ -89,6 +89,27 @@ class Proxy(osid_rules.OsidResult):
 
     locale = property(fget=get_locale)
 
+    def has_format_type(self):
+        """Tests if a ``DisplayText`` format ``Type`` is available.
+
+        :return: ``true`` if a format type is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def get_format_type(self):
+        """Gets the ``DisplayText`` format ``Type``.
+
+        :return: the format ``Type``
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- ``has_format_type()`` is ``false``
+
+        """
+        return # osid.type.Type
+
+    format_type = property(fget=get_format_type)
+
     def get_proxy_record(self, proxy_record_type):
         """Gets the proxy record corresponding to the given ``Proxy`` record ``Type``.
 
@@ -207,6 +228,18 @@ class ProxyCondition(osid_rules.OsidCondition):
         pass
 
     unit_system_type = property(fset=set_unit_system_type)
+
+    def set_format_type(self, format_type):
+        """Sets the ``DisplayText`` format type.
+
+        :param format_type: the format type
+        :type format_type: ``osid.type.Type``
+        :raise: ``NullArgument`` -- ``format_type`` is ``null``
+
+        """
+        pass
+
+    format_type = property(fset=set_format_type)
 
     def get_proxy_condition_record(self, proxy_condition_type):
         """Gets the proxy condition record corresponding to the given ``Proxy`` record ``Type``.

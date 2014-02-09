@@ -1,7 +1,7 @@
 from ..osid import query_inspectors as osid_query_inspectors
 
 
-class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
+class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
     """This is the query inspector for examining grade queries."""
     def get_grade_system_id_terms(self):
         """Gets the grade system ``Id`` terms.
@@ -47,7 +47,18 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
     input_score_end_range_terms = property(fget=get_input_score_end_range_terms)
 
-    def get_ouput_score_terms(self):
+    def get_input_score_terms(self):
+        """Gets the input score terms.
+
+        :return: the input score range terms
+        :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+        """
+        return # osid.search.terms.DecimalRangeTerm
+
+    input_score_terms = property(fget=get_input_score_terms)
+
+    def get_output_score_terms(self):
         """Gets the output score terms.
 
         :return: the output score terms
@@ -56,7 +67,7 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         """
         return # osid.search.terms.DecimalRangeTerm
 
-    ouput_score_terms = property(fget=get_ouput_score_terms)
+    output_score_terms = property(fget=get_output_score_terms)
 
     def get_grade_entry_id_terms(self):
         """Gets the grade entry ``Id`` terms.
@@ -117,9 +128,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         return # osid.grading.records.GradeQueryInspectorRecord
 
 
-class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
+class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidAggregateableQueryInspector):
     """This is the query inspector for examining grade system queries."""
-    def get_grade_based_systems_terms(self):
+    def get_based_on_grades_terms(self):
         """Gets the grade-based systems terms.
 
         :return: the grade-based systems terms
@@ -128,7 +139,7 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         """
         return # osid.search.terms.BooleanTerm
 
-    grade_based_systems_terms = property(fget=get_grade_based_systems_terms)
+    based_on_grades_terms = property(fget=get_based_on_grades_terms)
 
     def get_grade_id_terms(self):
         """Gets the grade ``Id`` terms.
@@ -151,17 +162,6 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         return # osid.grading.GradeQueryInspector
 
     grade_terms = property(fget=get_grade_terms)
-
-    def get_score_terms(self):
-        """Gets the score terms.
-
-        :return: the score terms
-        :rtype: ``osid.search.terms.DecimalRangeTerm``
-
-        """
-        return # osid.search.terms.DecimalRangeTerm
-
-    score_terms = property(fget=get_score_terms)
 
     def get_lowest_numeric_score_terms(self):
         """Gets the lowest numeric score terms.
@@ -334,8 +334,8 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
     overridden_grade_entry_terms = property(fget=get_overridden_grade_entry_terms)
 
-    def get_ignored_for_calculation_terms(self):
-        """Gets the ignored for caluclation terms.
+    def get_ignored_for_calculations_terms(self):
+        """Gets the ignored for caluclation entries terms.
 
         :return: the ignored for calculation terms
         :rtype: ``osid.search.terms.BooleanTerm``
@@ -343,7 +343,7 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         """
         return # osid.search.terms.BooleanTerm
 
-    ignored_for_calculation_terms = property(fget=get_ignored_for_calculation_terms)
+    ignored_for_calculations_terms = property(fget=get_ignored_for_calculations_terms)
 
     def get_grade_id_terms(self):
         """Gets the grade ``Id`` terms.

@@ -3,7 +3,7 @@ from ..osid import search_orders as osid_search_orders
 
 class LogEntrySearchOrder(osid_search_orders.OsidObjectSearchOrder):
     """An interface for specifying the ordering of search results."""
-    def order_by_priority_type(self, style):
+    def order_by_priority(self, style):
         """Specifies a preference for ordering log entris by priority type.
 
         :param style: search otrder style

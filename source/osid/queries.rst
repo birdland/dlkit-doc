@@ -35,10 +35,6 @@ Osid Identifiable Query
 
    .. autoattribute:: OsidIdentifiableQuery.id_terms
 
-   .. automethod:: OsidIdentifiableQuery.match_material
-
-   .. autoattribute:: OsidIdentifiableQuery.material_terms
-
 
 
 Osid Extensible Query
@@ -450,6 +446,34 @@ Osid Governator Query
    :show-inheritance:
 
 
+
+
+
+Osid Compendium Query
+---------------------
+
+.. autoclass:: OsidCompendiumQuery
+   :show-inheritance:
+
+   .. automethod:: OsidCompendiumQuery.match_start_date
+
+   .. automethod:: OsidCompendiumQuery.match_any_start_date
+
+   .. autoattribute:: OsidCompendiumQuery.start_date_terms
+
+   .. automethod:: OsidCompendiumQuery.match_end_date
+
+   .. automethod:: OsidCompendiumQuery.match_any_end_date
+
+   .. autoattribute:: OsidCompendiumQuery.end_date_terms
+
+   .. automethod:: OsidCompendiumQuery.match_interpolated
+
+   .. autoattribute:: OsidCompendiumQuery.interpolated_terms
+
+   .. automethod:: OsidCompendiumQuery.match_extrapolated
+
+   .. autoattribute:: OsidCompendiumQuery.extrapolated_terms
 
 
 

@@ -1079,6 +1079,76 @@ class SpatialUnitConversionSession(osid_sessions.OsidSession):
         return # osid.mapping.SpatialUnitList
 
 
+class FormatConversionSession(osid_sessions.OsidSession):
+    """This session defines methods to convert text formats."""
+    def get_source_format_type(self):
+        """Gets the source format type used in this session.
+
+        :return: the source text format type
+        :rtype: ``osid.type.Type``
+
+        """
+        return # osid.type.Type
+
+    source_format_type = property(fget=get_source_format_type)
+
+    def get_target_format_type(self):
+        """Gets the target format type used in this session.
+
+        :return: the target text formattype
+        :rtype: ``osid.type.Type``
+
+        """
+        return # osid.type.Type
+
+    target_format_type = property(fget=get_target_format_type)
+
+    def can_convert_formats(self):
+        """Tests if this user can perform text format.
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+        :return: ``false`` if conversion methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def convert_format(self, source_text):
+        """Converts a format.
+
+        :param source_text: the string to convert
+        :type source_text: ``string``
+        :return: the resulting string
+        :rtype: ``string``
+        :raise: ``InvalidArgument`` -- ``source_text`` not of source format
+        :raise: ``NullArgument`` -- ``source_text`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # string
+
+    def convert_formats(self, source_texts):
+        """Converts formats.
+
+        :param source_texts: the strings to convert
+        :type source_texts: ``string[]``
+        :return: the resulting strings
+        :rtype: ``string``
+        :raise: ``InvalidArgument`` -- a ``source_text not of source format``
+        :raise: ``NullArgument`` -- ``source_texts`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # string
+
+
 class CalendarInfoSession(osid_sessions.OsidSession):
     """This session defines methods to examine a calendar."""
     def get_calendar_type(self):

@@ -1,7 +1,7 @@
 from ..osid import search_orders as osid_search_orders
 
 
-class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder):
+class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidSubjugateableSearchOrder):
     """An interface for specifying the ordering of search results."""
     def order_by_grade_system(self, style):
         """Specified a preference for ordering results by the grade system.
@@ -81,7 +81,7 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         return # osid.grading.records.GradeSearchOrderRecord
 
 
-class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder):
+class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidAggregateableSearchOrder):
     """An interface for specifying the ordering of search results."""
     def order_by_based_on_grades(self, style):
         """Orders the results by systems based on grades.
@@ -204,7 +204,7 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
     key_resource_search_order = property(fget=get_key_resource_search_order)
 
-    def order_by_deribed(self, style):
+    def order_by_derived(self, style):
         """Specified a preference for ordering results by the derived entries.
 
         :param style: search order style
@@ -255,7 +255,7 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
     grade_search_order = property(fget=get_grade_search_order)
 
-    def order_by_time_gaded(self, style):
+    def order_by_time_graded(self, style):
         """Specified a preference for ordering results by the time graded.
 
         :param style: search order style

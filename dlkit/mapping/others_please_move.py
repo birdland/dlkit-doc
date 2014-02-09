@@ -1,7 +1,7 @@
-from ..osid import markers as osid_markers
+from ..osid import objects as osid_objects
 
 
-class ResourceLocation(osid_markers.Extensible, osid_markers.Browsable):
+class ResourceLocation(osid_objects.OsidCompendium):
     """This interface defines a resource at a location."""
     def get_resource_id(self):
         """Gets the ``Id`` of the resource on the route.

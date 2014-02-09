@@ -113,7 +113,7 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         return # osid.learning.records.ObjectiveSearchOrderRecord
 
 
-class ActivitySearchOrder(osid_search_orders.OsidObjectSearchOrder):
+class ActivitySearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidSubjugateableSearchOrder):
     """An interface for specifying the ordering of search results."""
     def order_by_objective(self, style):
         """Specifies a preference for ordering the result set by the objective.

@@ -25,7 +25,7 @@ class ResourceQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
     demographic_terms = property(fget=get_demographic_terms)
 
-    def get_conataining_group_id_terms(self):
+    def get_containing_group_id_terms(self):
         """Gets the containing group ``Id`` query terms.
 
         :return: the query terms
@@ -34,7 +34,7 @@ class ResourceQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         """
         return # osid.search.terms.IdTerm
 
-    conataining_group_id_terms = property(fget=get_conataining_group_id_terms)
+    containing_group_id_terms = property(fget=get_containing_group_id_terms)
 
     def get_containing_group_terms(self):
         """Gets the containing group query terms.
@@ -47,7 +47,7 @@ class ResourceQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
     containing_group_terms = property(fget=get_containing_group_terms)
 
-    def get_asset_id_terms(self):
+    def get_avatar_id_terms(self):
         """Gets the asset ``Id`` query terms.
 
         :return: the query terms
@@ -56,9 +56,9 @@ class ResourceQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         """
         return # osid.search.terms.IdTerm
 
-    asset_id_terms = property(fget=get_asset_id_terms)
+    avatar_id_terms = property(fget=get_avatar_id_terms)
 
-    def get_asset_terms(self):
+    def get_avatar_terms(self):
         """Gets the asset query terms.
 
         :return: the query terms
@@ -67,7 +67,7 @@ class ResourceQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         """
         return # osid.repository.AssetQueryInspector
 
-    asset_terms = property(fget=get_asset_terms)
+    avatar_terms = property(fget=get_avatar_terms)
 
     def get_agent_id_terms(self):
         """Gets the agent ``Id`` query terms.

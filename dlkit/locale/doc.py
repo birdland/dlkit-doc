@@ -69,6 +69,13 @@ The ``SpatialUnitConversionSession`` converts a spatial units from one
 spatial system to another where a means for transforming the spatial
 units exists.
 
+Text Format Conversion
+
+The ``FormatConversionSession`` converts text from one format to
+another.
+
+
+
 Informational Objects
 
 The Locale OSID includes a ``CalendarInfo`` and ``TimeInfo`` interfaces

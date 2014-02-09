@@ -29,9 +29,9 @@ Grade Query
 
    .. autoattribute:: GradeQuery.input_score_end_range_terms
 
-   .. automethod:: GradeQuery.match_input_score_range
+   .. automethod:: GradeQuery.match_input_score
 
-   .. autoattribute:: GradeQuery.input_score_range_terms
+   .. autoattribute:: GradeQuery.input_score_terms
 
    .. automethod:: GradeQuery.match_output_score
 
@@ -69,9 +69,9 @@ Grade System Query
 .. autoclass:: GradeSystemQuery
    :show-inheritance:
 
-   .. automethod:: GradeSystemQuery.match_grade_based_systems
+   .. automethod:: GradeSystemQuery.match_based_on_grades
 
-   .. autoattribute:: GradeSystemQuery.grade_based_terms
+   .. autoattribute:: GradeSystemQuery.based_on_grades_terms
 
    .. automethod:: GradeSystemQuery.match_grade_id
 
@@ -167,9 +167,9 @@ Grade Entry Query
 
    .. autoattribute:: GradeEntryQuery.overridden_grade_entry_terms
 
-   .. automethod:: GradeEntryQuery.match_ignored_for_calculation_entries
+   .. automethod:: GradeEntryQuery.match_ignored_for_calculations
 
-   .. autoattribute:: GradeEntryQuery.ignored_for_calculation_terms
+   .. autoattribute:: GradeEntryQuery.ignored_for_calculations_terms
 
    .. automethod:: GradeEntryQuery.match_grade_id
 
@@ -375,7 +375,7 @@ Gradebook Query
 
    .. autoattribute:: GradebookQuery.grade_system_query
 
-   .. automethod:: GradebookQuery.match_any_grade_system_query
+   .. automethod:: GradebookQuery.match_any_grade_system
 
    .. autoattribute:: GradebookQuery.grade_system_terms
 
@@ -387,7 +387,7 @@ Gradebook Query
 
    .. autoattribute:: GradebookQuery.grade_entry_query
 
-   .. automethod:: GradebookQuery.match_any_grade_entry_query
+   .. automethod:: GradebookQuery.match_any_grade_entry
 
    .. autoattribute:: GradebookQuery.grade_entry_terms
 

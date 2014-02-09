@@ -173,7 +173,7 @@ class EventSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         return # osid.calendaring.records.EventSearchOrderRecord
 
 
-class RecurringEventSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidContainableSearchOrder):
+class RecurringEventSearchOrder(osid_search_orders.OsidRuleSearchOrder, osid_search_orders.OsidContainableSearchOrder):
     """An interface for specifying the ordering of search results."""
     def get_recurring_event_search_order_record(self, recurring_event_record_type):
         """Gets the recurring event search order record corresponding to the given event record ``Type``.
@@ -447,26 +447,36 @@ class OffsetEventSearchOrder(osid_search_orders.OsidRuleSearchOrder):
         """
         pass
 
-    def supports_event_search_order(self):
-        """Tests if an ``EventSearchOrder`` is available to order by the resulting event.
+    def order_by_location(self, style):
+        """Specified a preference for ordering results by the location.
 
-        :return: ``true`` if an event search order is available, ``false`` otherwise
+        :param style: a search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def supports_location_search_order(self):
+        """Tests if a ``LocationSearchOrder`` is available.
+
+        :return: ``true`` if a location search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
         """
         return # boolean
 
-    def get_event_search_order(self):
-        """Gets the search order for the resulting event.
+    def get_location_search_order(self):
+        """Gets the search order for a location.
 
-        :return: the event search order
-        :rtype: ``osid.calendaring.EventSearchOrder``
-        :raise: ``Unimplemented`` -- ``supports_event_search_order()`` is ``false``
+        :return: the location search order
+        :rtype: ``osid.mapping.LocationSearchOrder``
+        :raise: ``Unimplemented`` -- ``supports_location_search_order()`` is ``false``
 
         """
-        return # osid.calendaring.EventSearchOrder
+        return # osid.mapping.LocationSearchOrder
 
-    event_search_order = property(fget=get_event_search_order)
+    location_search_order = property(fget=get_location_search_order)
 
     def get_offset_event_search_order_record(self, offset_event_record_type):
         """Gets the offset event search order record corresponding to the given offset event record ``Type``.
@@ -485,7 +495,7 @@ class OffsetEventSearchOrder(osid_search_orders.OsidRuleSearchOrder):
         return # osid.calendaring.records.OffsetEventSearchOrderRecord
 
 
-class ScheduleSearchOrder(osid_search_orders.OsidObjectSearchOrder):
+class ScheduleSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidSubjugateableSearchOrder):
     """An interface for specifying the ordering of search results."""
     def order_by_time_period(self, style):
         """Specified a preference for ordering results by the time period.
@@ -506,7 +516,7 @@ class ScheduleSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         """
         return # boolean
 
-    def get_time_period_period_search_order(self):
+    def get_time_period_search_order(self):
         """Gets the search order for the time period.
 
         :return: the time period search order
@@ -516,7 +526,7 @@ class ScheduleSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         """
         return # osid.calendaring.TimePeriodSearchOrder
 
-    time_period_period_search_order = property(fget=get_time_period_period_search_order)
+    time_period_search_order = property(fget=get_time_period_search_order)
 
     def order_by_schedule_start(self, style):
         """Specified a preference for ordering results by the schedule start.
@@ -638,7 +648,7 @@ class ScheduleSlotSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_sea
         """
         pass
 
-    def order_by_weekly_of_month(self, style):
+    def order_by_week_of_month(self, style):
         """Specified a preference for ordering results by the week of the month.
 
         :param style: a search order style

@@ -53,48 +53,6 @@ class EventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidTemporalQuery, o
 
     duration_terms = property(fdel=clear_duration_terms)
 
-    def match_time(self, time, match):
-        """Matches events that include the given time.
-
-        :param time: date
-        :type time: ``osid.calendaring.DateTime``
-        :param match: ``true`` for a positive match, ``false`` for a negative match
-        :type match: ``boolean``
-        :raise: ``NullArgument`` -- ``time`` is ``null``
-
-        """
-        pass
-
-    def match_time_inclusive(self, start, end, match):
-        """Matches events with start and end times between the given range inclusive.
-
-        :param start: start date
-        :type start: ``osid.calendaring.DateTime``
-        :param end: end date
-        :type end: ``osid.calendaring.DateTime``
-        :param match: ``true`` for a positive match, ``false`` for a negative match
-        :type match: ``boolean``
-        :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
-        :raise: ``NullArgument`` -- ``end`` or ``start`` is ``null``
-
-        """
-        pass
-
-    def match_any_time(self, match):
-        """Matches events that has any time assigned.
-
-        :param match: ``true`` to match events with any time, ``false`` to match events with no time
-        :type match: ``boolean``
-
-        """
-        pass
-
-    def clear_time_terms(self):
-        """Clears the time terms."""
-        pass
-
-    time_terms = property(fdel=clear_time_terms)
-
     def match_recurring_event_id(self, recurring_event_id, match):
         """Matches events that related to the recurring event.
 
@@ -526,7 +484,7 @@ class EventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidTemporalQuery, o
 
     containing_event_query = property(fget=get_containing_event_query)
 
-    def match_containing_any_event(self, match):
+    def match_any_containing_event(self, match):
         """Matches events with any ancestor event.
 
         :param match: ``true`` to match events with any ancestor event, ``false`` to match events with no ancestor events
@@ -605,7 +563,7 @@ class EventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidTemporalQuery, o
         return # osid.calendaring.records.EventQueryRecord
 
 
-class RecurringEventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainableQuery):
+class RecurringEventQuery(osid_queries.OsidRuleQuery, osid_queries.OsidContainableQuery):
     """This is the query for searching recurring events.
 
     Each method match request produces an ``AND`` term while multiple
@@ -822,6 +780,21 @@ class RecurringEventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContain
         """
         pass
 
+    def match_any_blackout(self, match):
+        """Matches a recurring event that has any blackout assigned.
+
+        :param match: ``true`` to match recurring events with any blackout, ``false`` to match recurring events with no blackout
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_blackout_terms(self):
+        """Clears the blackout terms."""
+        pass
+
+    blackout_terms = property(fdel=clear_blackout_terms)
+
     def match_blackout_inclusive(self, start, end, match):
         """Matches recurring events with blackouts between the given range inclusive.
 
@@ -837,20 +810,11 @@ class RecurringEventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContain
         """
         pass
 
-    def match_any_blackout(self, match):
-        """Matches a recurring event that has any blackout assigned.
-
-        :param match: ``true`` to match recurring events with any blackout, ``false`` to match recurring events with no blackout
-        :type match: ``boolean``
-
-        """
-        pass
-
-    def clear_blackout_terms(self):
+    def clear_blackout_inclusive_terms(self):
         """Clears the blackout terms."""
         pass
 
-    blackout_terms = property(fdel=clear_blackout_terms)
+    blackout_inclusive_terms = property(fdel=clear_blackout_inclusive_terms)
 
     def match_sponsor_id(self, sponsor_id, match):
         """Sets the sponsor ``Id`` for this query.
@@ -898,19 +862,6 @@ class RecurringEventQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContain
         pass
 
     sponsor_terms = property(fdel=clear_sponsor_terms)
-
-    def match_date(self, datetime, match):
-        """Matches a recurring events where any event overlaps with the given date.
-
-        :param datetime: a datetime
-        :type datetime: ``osid.calendaring.DateTime``
-        :param match: ``true`` for a positive match, ``false`` for a negative match
-        :type match: ``boolean``
-        :raise: ``InvalidArgument`` -- ``high`` is less than ``low``
-        :raise: ``NullArgument`` -- ``high`` or ``low`` is ``null``
-
-        """
-        pass
 
     def match_calendar_id(self, calendar_id, match):
         """Sets the calendar ``Id`` for this query.
@@ -1130,11 +1081,11 @@ class SupersedingEventQuery(osid_queries.OsidRuleQuery):
         """
         pass
 
-    def clear_superseded_position_terms(self):
+    def clear_superseded_event_position_terms(self):
         """Clears the superseded position terms."""
         pass
 
-    superseded_position_terms = property(fdel=clear_superseded_position_terms)
+    superseded_event_position_terms = property(fdel=clear_superseded_event_position_terms)
 
     def match_calendar_id(self, calendar_id, match):
         """Sets the calendar ``Id`` for this query.
@@ -1353,7 +1304,7 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
         """
         pass
 
-    def match_any_relative_start_weekdays(self, match):
+    def match_any_relative_start_weekday(self, match):
         """Matches relative weekday offset events.
 
         :param match: ``true`` for a positive match, ``false`` for a negative match
@@ -1368,7 +1319,7 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
 
     relative_start_weekday_terms = property(fdel=clear_relative_start_weekday_terms)
 
-    def match_fixed_duration_offset(self, low, high, match):
+    def match_fixed_duration(self, low, high, match):
         """Matches a fixed duration between the given range inclusive.
 
         :param low: the start of the range
@@ -1382,7 +1333,7 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
         pass
 
     def clear_fixed_duration_terms(self):
-        """Clears the fixed duration terms."""
+        """Clears the fixed duration offset terms."""
         pass
 
     fixed_duration_terms = property(fdel=clear_fixed_duration_terms)
@@ -1503,7 +1454,7 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
         """
         pass
 
-    def match_any_relative_end_weekdays(self, match):
+    def match_any_relative_end_weekday(self, match):
         """Matches relative weekday offset events.
 
         :param match: ``true`` for a positive match, ``false`` for a negative match
@@ -1518,28 +1469,139 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
 
     relative_end_weekday_terms = property(fdel=clear_relative_end_weekday_terms)
 
-    def supports_event_query(self):
-        """Tests if an ``EventQuery`` is available for querying the resulting event.
+    def match_location_description(self, location, string_match_type, match):
+        """Matches the location description string.
 
-        :return: ``true`` if an event query is available, ``false`` otherwise
+        :param location: location string
+        :type location: ``string``
+        :param string_match_type: string match type
+        :type string_match_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``location`` is not of ``string_match_type``
+        :raise: ``NullArgument`` -- ``location`` or ``string_match_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
+
+        """
+        pass
+
+    def match_any_location_description(self, match):
+        """Matches an event that has any location description assigned.
+
+        :param match: ``true`` to match events with any location description, ``false`` to match events with no location description
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_location_description_terms(self):
+        """Clears the location description terms."""
+        pass
+
+    location_description_terms = property(fdel=clear_location_description_terms)
+
+    def match_location_id(self, location_id, match):
+        """Sets the location ``Id`` for this query.
+
+        :param location_id: a location ``Id``
+        :type location_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``location_id`` is ``null``
+
+        """
+        pass
+
+    def clear_location_id_terms(self):
+        """Clears the location ``Id`` terms."""
+        pass
+
+    location_id_terms = property(fdel=clear_location_id_terms)
+
+    def supports_location_query(self):
+        """Tests if a ``LocationQuery`` is available for querying locations.
+
+        :return: ``true`` if a location query is available, ``false`` otherwise
         :rtype: ``boolean``
 
         """
         return # boolean
 
-    def get_event_query(self):
-        """Gets the query for the resulting event.
+    def get_location_query(self):
+        """Gets the query for a location.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        :return: the event query
-        :rtype: ``osid.calendaring.EventQuery``
-        :raise: ``Unimplemented`` -- ``supports_event_query()`` is ``false``
+        :return: the location query
+        :rtype: ``osid.mapping.LocationQuery``
+        :raise: ``Unimplemented`` -- ``supports_location_query()`` is ``false``
 
         """
-        return # osid.calendaring.EventQuery
+        return # osid.mapping.LocationQuery
 
-    event_query = property(fget=get_event_query)
+    location_query = property(fget=get_location_query)
+
+    def match_any_location(self, match):
+        """Matches an event that has any location assigned.
+
+        :param match: ``true`` to match events with any location, ``false`` to match events with no location
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_location_terms(self):
+        """Clears the location terms."""
+        pass
+
+    location_terms = property(fdel=clear_location_terms)
+
+    def match_sponsor_id(self, sponsor_id, match):
+        """Sets the sponsor ``Id`` for this query.
+
+        :param sponsor_id: a sponsor ``Id``
+        :type sponsor_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``sponsor_id`` is ``null``
+
+        """
+        pass
+
+    def clear_sponsor_id_terms(self):
+        """Clears the sponsor ``Id`` terms."""
+        pass
+
+    sponsor_id_terms = property(fdel=clear_sponsor_id_terms)
+
+    def supports_sponsor_query(self):
+        """Tests if a ``LocationQuery`` is available for querying sponsors.
+
+        :return: ``true`` if a sponsor query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def get_sponsor_query(self):
+        """Gets the query for a sponsor.
+
+        Multiple retrievals produce a nested ``OR`` term.
+
+        :return: the sponsor query
+        :rtype: ``osid.resource.ResourceQuery``
+        :raise: ``Unimplemented`` -- ``supports_sponsor_query()`` is ``false``
+
+        """
+        return # osid.resource.ResourceQuery
+
+    sponsor_query = property(fget=get_sponsor_query)
+
+    def clear_sponsor_terms(self):
+        """Clears the sponsor terms."""
+        pass
+
+    sponsor_terms = property(fdel=clear_sponsor_terms)
 
     def match_calendar_id(self, calendar_id, match):
         """Sets the calendar ``Id`` for this query.
@@ -1605,7 +1667,7 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
         return # osid.calendaring.records.OffsetEventQueryRecord
 
 
-class ScheduleQuery(osid_queries.OsidObjectQuery):
+class ScheduleQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery):
     """This is the query for searching schedules.
 
     Each method match request produces an ``AND`` term while multiple
@@ -1784,17 +1846,14 @@ class ScheduleQuery(osid_queries.OsidObjectQuery):
 
     schedule_end_terms = property(fdel=clear_schedule_end_terms)
 
-    def match_schedule_time_inclusive(self, start, end, match):
+    def match_schedule_time(self, date, match):
         """Matches schedules with start and end times between the given range inclusive.
 
-        :param start: start date
-        :type start: ``osid.calendaring.DateTime``
-        :param end: end date
-        :type end: ``osid.calendaring.DateTime``
+        :param date: a date
+        :type date: ``osid.calendaring.DateTime``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
-        :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
-        :raise: ``NullArgument`` -- ``end`` or ``start`` is ``null``
+        :raise: ``NullArgument`` -- ``date`` is ``null``
 
         """
         pass
@@ -1813,6 +1872,27 @@ class ScheduleQuery(osid_queries.OsidObjectQuery):
         pass
 
     schedule_time_terms = property(fdel=clear_schedule_time_terms)
+
+    def match_schedule_time_inclusive(self, start, end, match):
+        """Matches schedules with start and end times between the given range inclusive.
+
+        :param start: start date
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end date
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
+        :raise: ``NullArgument`` -- ``end`` or ``start`` is ``null``
+
+        """
+        pass
+
+    def clear_schedule_time_inclusive_terms(self):
+        """Clears the schedule time inclusive terms."""
+        pass
+
+    schedule_time_inclusive_terms = property(fdel=clear_schedule_time_inclusive_terms)
 
     def match_limit(self, from_, to, match):
         """Matches schedules that have the given limit in the given range inclusive.
@@ -2394,6 +2474,21 @@ class TimePeriodQuery(osid_queries.OsidObjectQuery):
         """
         pass
 
+    def match_any_time(self, match):
+        """Matches a time period that has any time assigned.
+
+        :param match: ``true`` to match time periods with any time, ``false`` to match time periods with no time
+        :type match: ``boolean``
+
+        """
+        pass
+
+    def clear_time_terms(self):
+        """Clears the time terms."""
+        pass
+
+    time_terms = property(fdel=clear_time_terms)
+
     def match_time_inclusive(self, start, end, match):
         """Matches time periods with start and end times between the given range inclusive.
 
@@ -2409,20 +2504,11 @@ class TimePeriodQuery(osid_queries.OsidObjectQuery):
         """
         pass
 
-    def match_any_time(self, match):
-        """Matches a time period that has any time assigned.
-
-        :param match: ``true`` to match time periods with any time, ``false`` to match time periods with no time
-        :type match: ``boolean``
-
-        """
+    def clear_time_inclusive_terms(self):
+        """Clears the time inclusive terms."""
         pass
 
-    def clear_time_terms(self):
-        """Clears the time terms."""
-        pass
-
-    time_terms = property(fdel=clear_time_terms)
+    time_inclusive_terms = property(fdel=clear_time_inclusive_terms)
 
     def match_duration(self, low, high, match):
         """Matches the time period duration between the given range inclusive.
@@ -2890,20 +2976,20 @@ class CalendarQuery(osid_queries.OsidCatalogQuery):
 
     time_period_query = property(fget=get_time_period_query)
 
-    def match_any_term(self, match):
-        """Matches a calendar that has any term assigned.
+    def match_any_time_period(self, match):
+        """Matches a calendar that has any time period assigned.
 
-        :param match: ``true`` to match calendars with any term, ``false`` to match calendars with no terms
+        :param match: ``true`` to match calendars with any time period, ``false`` to match calendars with no time periods
         :type match: ``boolean``
 
         """
         pass
 
-    def clear_term_terms(self):
-        """Clears the term terms."""
+    def clear_time_period_terms(self):
+        """Clears the time period terms."""
         pass
 
-    term_terms = property(fdel=clear_term_terms)
+    time_period_terms = property(fdel=clear_time_period_terms)
 
     def match_commitment_id(self, commitment_id, match):
         """Sets the commitment ``Id`` for this query.
