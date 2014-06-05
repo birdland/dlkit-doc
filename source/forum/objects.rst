@@ -35,9 +35,15 @@ Post Form
 .. autoclass:: PostForm
    :show-inheritance:
 
-   .. autoattribute:: PostForm.subject_line_metadata
+   .. autoattribute:: PostForm.timestamp_metadata
 
    .. autoattribute:: PostForm.timestamp
+
+   .. autoattribute:: PostForm.poster_metadata
+
+   .. autoattribute:: PostForm.poster
+
+   .. autoattribute:: PostForm.subject_line_metadata
 
    .. autoattribute:: PostForm.subject_line
 
@@ -99,9 +105,15 @@ Reply Form
 .. autoclass:: ReplyForm
    :show-inheritance:
 
-   .. autoattribute:: ReplyForm.subject_line_metadata
+   .. autoattribute:: ReplyForm.timestamp_metadata
 
    .. autoattribute:: ReplyForm.timestamp
+
+   .. autoattribute:: ReplyForm.poster_metadata
+
+   .. autoattribute:: ReplyForm.poster
+
+   .. autoattribute:: ReplyForm.subject_line_metadata
 
    .. autoattribute:: ReplyForm.subject_line
 

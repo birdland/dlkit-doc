@@ -356,7 +356,7 @@ Grade Entry Notification Methods
 
    .. automethod:: Gradebook.register_for_new_grade_entries
 
-   .. automethod:: Gradebook.register_for_new_grade_entries_in_column
+   .. automethod:: Gradebook.register_for_new_grade_entries_for_gradebook_column
 
    .. automethod:: Gradebook.register_for_new_grade_entries_for_resource
 
@@ -364,7 +364,7 @@ Grade Entry Notification Methods
 
    .. automethod:: Gradebook.register_for_changed_grade_entries
 
-   .. automethod:: Gradebook.register_for_changed_grade_entries_in_column
+   .. automethod:: Gradebook.register_for_changed_grade_entries_for_gradebook_column
 
    .. automethod:: Gradebook.register_for_changed_grade_entries_for_resource
 
@@ -374,7 +374,7 @@ Grade Entry Notification Methods
 
    .. automethod:: Gradebook.register_for_deleted_grade_entries
 
-   .. automethod:: Gradebook.register_for_deleted_grade_entries_in_column
+   .. automethod:: Gradebook.register_for_deleted_grade_entries_for_gradebook_column
 
    .. automethod:: Gradebook.register_for_deleted_grade_entries_for_resource
 

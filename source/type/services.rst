@@ -84,13 +84,11 @@ __________
 
    .. automethod:: TypeManager.can_create_types
 
-   .. autoattribute:: TypeManager.type_form_for_create
+   .. automethod:: TypeManager.get_type_form_for_create
 
    .. automethod:: TypeManager.create_type
 
    .. automethod:: TypeManager.can_update_types
-
-   .. automethod:: TypeManager.can_update_type
 
    .. automethod:: TypeManager.get_type_form_for_update
 
@@ -242,13 +240,11 @@ __________
 
    .. automethod:: TypeProxyManager.can_create_types
 
-   .. autoattribute:: TypeProxyManager.type_form_for_create
+   .. automethod:: TypeProxyManager.get_type_form_for_create
 
    .. automethod:: TypeProxyManager.create_type
 
    .. automethod:: TypeProxyManager.can_update_types
-
-   .. automethod:: TypeProxyManager.can_update_type
 
    .. automethod:: TypeProxyManager.get_type_form_for_update
 

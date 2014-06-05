@@ -297,37 +297,32 @@ class TypeAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_type_form_for_create(self):
+    def get_type_form_for_create(self, type_):
         """Gets the type form for creating new types.
 
         A new form should be requested for each create transaction.
 
+        :param type: the ``Type`` to be created
+        :type type: ``osid.type.Type``
         :return: the type form
         :rtype: ``osid.type.TypeForm``
+        :raise: ``NullArgument`` -- ``type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         return # osid.type.TypeForm
 
-    type_form_for_create = property(fget=get_type_form_for_create)
-
-    def create_type(self, authority, identifier_ns, identifier, type_form):
+    def create_type(self, type_form):
         """Creates a new ``Type``.
 
-        :param authority: the authority
-        :type authority: ``string``
-        :param identifier_ns: the namespace of the identifier
-        :type identifier_ns: ``string``
-        :param identifier: the identifier
-        :type identifier: ``string``
         :param type_form: the type form
         :type type_form: ``osid.type.TypeForm``
         :return: the created ``Type``
         :rtype: ``osid.type.Type``
         :raise: ``IllegalState`` -- ``type_form`` already used in a create transaction
         :raise: ``InvalidArgument`` -- one or more of the arguments is invalid
-        :raise: ``NullArgument`` -- one or more of the arguments is null
+        :raise: ``NullArgument`` -- ``type_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``type_form`` did not originate from ``get_type_form_for_create()``
@@ -350,24 +345,6 @@ class TypeAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def can_update_type(self, type_):
-        """Tests if this user can update the specified type.
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known updating the ``Type``
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may opt not to offer update
-        operations to an unauthorized user.
-
-        :param type: the ``Type`` to be updated
-        :type type: ``osid.type.Type``
-        :return: ``false`` if type modification is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``type`` is ``null``
-
-        """
-        return # boolean
-
     def get_type_form_for_update(self, type_):
         """Gets the type form for creating new types.
 
@@ -377,7 +354,6 @@ class TypeAdminSession(osid_sessions.OsidSession):
         :type type: ``osid.type.Type``
         :return: the type form
         :rtype: ``osid.type.TypeForm``
-        :raise: ``IllegalState`` -- ``type_form`` already used in an update transaction
         :raise: ``NotFound`` -- ``type`` not found
         :raise: ``NullArgument`` -- ``type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -386,16 +362,14 @@ class TypeAdminSession(osid_sessions.OsidSession):
         """
         return # osid.type.TypeForm
 
-    def update_type(self, type_, type_form):
+    def update_type(self, type_form):
         """Updates a type.
 
-        :param type: the ``Type`` to be updated
-        :type type: ``osid.type.Type``
         :param type_form: the type form
         :type type_form: ``osid.type.TypeForm``
+        :raise: ``IllegalState`` -- ``type_form`` already used in an update transaction
         :raise: ``InvalidArgument`` -- the form contains an invalid value
-        :raise: ``NotFound`` -- ``type`` is not found
-        :raise: ``NullArgument`` -- ``type`` or ``type_form`` is ``null``
+        :raise: ``NullArgument`` -- ``type_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``type_form`` did not originate from ``get_type_form_for_update()``

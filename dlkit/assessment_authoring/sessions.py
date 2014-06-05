@@ -1955,7 +1955,7 @@ class SequenceRuleAdminSession(osid_sessions.OsidSession):
     def get_sequence_rule_form_for_create(self, assessment_part_id, next_assessment_part_id, sequence_rule_record_types):
         """Gets the sequence rule form for creating new sequence rules between two assessment parts.
 
-        . A new form should be requested for each create transaction.
+        A new form should be requested for each create transaction.
 
         :param assessment_part_id: the source assessment part ``Id``
         :type assessment_part_id: ``osid.id.Id``

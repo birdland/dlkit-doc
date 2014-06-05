@@ -365,6 +365,22 @@ Schedule Form
 .. autoclass:: ScheduleForm
    :show-inheritance:
 
+   .. autoattribute:: ScheduleForm.schedule_slot_metadata
+
+   .. autoattribute:: ScheduleForm.schedule_slot
+
+   .. autoattribute:: ScheduleForm.time_period_metadata
+
+   .. autoattribute:: ScheduleForm.time_period
+
+   .. autoattribute:: ScheduleForm.schedule_start_metadata
+
+   .. autoattribute:: ScheduleForm.schedule_start
+
+   .. autoattribute:: ScheduleForm.schedule_end_metadata
+
+   .. autoattribute:: ScheduleForm.schedule_end
+
    .. autoattribute:: ScheduleForm.limit_metadata
 
    .. autoattribute:: ScheduleForm.limit

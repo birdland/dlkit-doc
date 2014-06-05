@@ -154,13 +154,17 @@ Relationship Notification Methods
 
    .. automethod:: Family.register_for_new_relationships
 
-   .. automethod:: Family.register_for_new_relationships_for_peer
+   .. automethod:: Family.register_for_new_relationships_for_source
+
+   .. automethod:: Family.register_for_new_relationships_for_destination
 
    .. automethod:: Family.register_for_new_relationships_by_genus_type
 
    .. automethod:: Family.register_for_changed_relationships
 
-   .. automethod:: Family.register_for_changed_relationships_for_peer
+   .. automethod:: Family.register_for_changed_relationships_for_source
+
+   .. automethod:: Family.register_for_changed_relationships_for_destination
 
    .. automethod:: Family.register_for_changed_relationships_by_genus_type
 
@@ -168,7 +172,9 @@ Relationship Notification Methods
 
    .. automethod:: Family.register_for_deleted_relationships
 
-   .. automethod:: Family.register_for_deleted_relationships_for_peer
+   .. automethod:: Family.register_for_deleted_relationships_for_source
+
+   .. automethod:: Family.register_for_deleted_relationships_for_destination
 
    .. automethod:: Family.register_for_deleted_relationships_by_genus_type
 

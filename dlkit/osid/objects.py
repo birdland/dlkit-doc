@@ -304,8 +304,7 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
     on/off status means and in particular, which methods are used to
     indicate the effect of an ``OsidEnabler``. Some axamples:
     
-    * ``Operables:``  ``OsidEnablers`` effect the operational status.
-    
+      * ``Operables:``  ``OsidEnablers`` effect the operational status.
       * ``Temporals:``  ``OsidEnablers`` may be used to extend or
         shorten the effectiveness of a ``Temporal`` such as an
         ``OsidRelationship.``
@@ -325,8 +324,8 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
     An ``OsidEnabler`` itself is both a ``Temporal`` and an ``OsidRule``
     whose activity status of the object may be controlled
     administratively, using a span of effective dates, through an
-    external rule, or all three. The ``OsidEnabler`` defines a set
-    ofcanned rules based on dates, events, and cyclic events.
+    external rule, or all three. The ``OsidEnabler`` defines a set of
+    canned rules based on dates, events, and cyclic events.
 
     """
     def is_effective_by_schedule(self):

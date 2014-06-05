@@ -5110,6 +5110,25 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
+    def get_relevancies_by_genus_type_on_date(self, relevancy_genus_type, from_, to):
+        """Gets a ``RelevancyList`` of the given genus type and effective during the entire given date range inclusive but not confined to the date range.
+
+        :param relevancy_genus_type: relevancy genus type
+        :type relevancy_genus_type: ``osid.type.Type``
+        :param from: a starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: an ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: list of relevancies
+        :rtype: ``osid.ontology.RelevancyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``relevancy_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
     def get_relevancies_for_subject(self, subject_id):
         """Gets the ``Relevancy`` mapped to a subject ``Id``.
 
@@ -5136,7 +5155,7 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: list of relevancies
         :rtype: ``osid.ontology.RelevancyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``subject_id, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``subject_id, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5185,7 +5204,7 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: list of relevancies
         :rtype: ``osid.ontology.RelevancyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``subject_id, relevancy_genus_type, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``subject_id, relevancy_genus_type, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5232,7 +5251,7 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: list of relevancies
         :rtype: ``osid.ontology.RelevancyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``id, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``id, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5269,7 +5288,7 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: list of relevancies
         :rtype: ``osid.ontology.RelevancyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``id, relevancy_genus_type, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``id, relevancy_genus_type, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5320,7 +5339,7 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: list of relevancies
         :rtype: ``osid.ontology.RelevancyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``subject_id, id, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``subject_id, id, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5361,7 +5380,7 @@ class Ontology(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: list of relevancies
         :rtype: ``osid.ontology.RelevancyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``subject_id, id, relevancy_genus_t_ype, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``subject_id, id, relevancy_genus_t_ype, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 

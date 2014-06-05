@@ -1667,7 +1667,7 @@ class OffsetEventQuery(osid_queries.OsidRuleQuery):
         return # osid.calendaring.records.OffsetEventQueryRecord
 
 
-class ScheduleQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery):
+class ScheduleQuery(osid_queries.OsidObjectQuery):
     """This is the query for searching schedules.
 
     Each method match request produces an ``AND`` term while multiple

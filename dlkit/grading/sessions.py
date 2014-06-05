@@ -2268,7 +2268,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_new_grade_entries_in_column(self, gradebook_column_id):
+    def register_for_new_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a new grade entry for the specified gradebook column.
 
         ``GradeEntryReceiver.newGradeEntry()`` is invoked when a new
@@ -2325,7 +2325,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_changed_grade_entries_in_column(self, gradebook_column_id):
+    def register_for_changed_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of an updated grade entry for the specified gradebook column.
 
         ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
@@ -2397,7 +2397,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_grade_entries_in_column(self, gradebook_column_id):
+    def register_for_deleted_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a deleted grade entry for the specified gradebook column.
 
         ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an

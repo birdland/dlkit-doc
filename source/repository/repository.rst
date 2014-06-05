@@ -486,17 +486,7 @@ Composition Notification Methods
 
    .. automethod:: Repository.use_isolated_repository_view
 
-   .. automethod:: Repository.use_federated_composition_view
-
-   .. automethod:: Repository.use_isolated_composition_view
-
    .. automethod:: Repository.register_for_new_compositions
-
-   .. automethod:: Repository.register_for_assigned_assets_in_composition
-
-   .. automethod:: Repository.register_for_new_composition_ancestor
-
-   .. automethod:: Repository.register_for_new_composition_descendants
 
    .. automethod:: Repository.register_for_changed_compositions
 
@@ -505,12 +495,6 @@ Composition Notification Methods
    .. automethod:: Repository.register_for_deleted_compositions
 
    .. automethod:: Repository.register_for_deleted_composition
-
-   .. automethod:: Repository.register_for_unassigned_assets_in_composition
-
-   .. automethod:: Repository.register_for_deleted_composition_ancestors
-
-   .. automethod:: Repository.register_for_deleted_composition_descendants
 
 
 

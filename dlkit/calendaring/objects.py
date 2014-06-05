@@ -1666,8 +1666,13 @@ class OffsetEventList(osid_objects.OsidList):
         return # osid.calendaring.OffsetEvent
 
 
-class Schedule(osid_objects.OsidObject, osid_markers.Subjugateable):
-    """A ``Schedule`` is a scheduled time slot offered within a time interval at a location."""
+class Schedule(osid_objects.OsidObject):
+    """A ``Schedule`` is a scheduled time slot offered within a time interval at a location.
+
+    The time interval may be inferred from an associated ``TimePeriod``
+    or managed explicitly without a ``TimePeriod``.
+
+    """
     def get_schedule_slot_id(self):
         """Gets the ``Id`` of the schedule slot.
 
@@ -1860,7 +1865,7 @@ class Schedule(osid_objects.OsidObject, osid_markers.Subjugateable):
         return # osid.calendaring.records.ScheduleRecord
 
 
-class ScheduleForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm):
+class ScheduleForm(osid_objects.OsidObjectForm):
     """This is the form for creating and updating ``Schedules``.
 
     Like all ``OsidForm`` objects, various data elements may be set here
@@ -1870,6 +1875,144 @@ class ScheduleForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
     constraints.
 
     """
+    def get_schedule_slot_metadata(self):
+        """Gets the metadata for the schedule slot.
+
+        :return: metadata for the schedule slot
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    schedule_slot_metadata = property(fget=get_schedule_slot_metadata)
+
+    def set_schedule_slot(self, schedule_slot_id):
+        """Sets the schedule slot.
+
+        :param schedule_slot_id: the new schedule slot ``Id``
+        :type schedule_slot_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``schedule_slot_id`` is invalid
+        :raise: ``NoAccess`` -- ``schedule_slot_id`` cannot be modified
+        :raise: ``NullArgument`` -- ``schedule_slot_id`` is ``null``
+
+        """
+        pass
+
+    def clear_schedule_slot(self):
+        """Clears the schedule slot.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    schedule_slot = property(fget=set_schedule_slot, fdel=clear_schedule_slot)
+
+    def get_time_period_metadata(self):
+        """Gets the metadata for the time period.
+
+        :return: metadata for the time period
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    time_period_metadata = property(fget=get_time_period_metadata)
+
+    def set_time_period(self, time_period_id):
+        """Sets the time period.
+
+        :param time_period_id: the new time period ``Id``
+        :type time_period_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``time_period_id`` is invalid
+        :raise: ``NoAccess`` -- ``time_period_id`` cannot be modified
+        :raise: ``NullArgument`` -- ``time_period_id`` is ``null``
+
+        """
+        pass
+
+    def clear_time_period(self):
+        """Clears the time period.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    time_period = property(fget=set_time_period, fdel=clear_time_period)
+
+    def get_schedule_start_metadata(self):
+        """Gets the metadata for the schedule start date.
+
+        :return: metadata for the schedule start
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    schedule_start_metadata = property(fget=get_schedule_start_metadata)
+
+    def set_schedule_start(self, start):
+        """Sets the schedule start date.
+
+        This may be set in lieu of a time period to set a specific date
+        range.
+
+        :param start: the new start date
+        :type start: ``osid.calendaring.DateTime``
+        :raise: ``InvalidArgument`` -- ``start`` is invalid
+        :raise: ``NoAccess`` -- ``start`` cannot be modified
+        :raise: ``NullArgument`` -- ``start`` is ``null``
+
+        """
+        pass
+
+    def clear_schedule_start(self):
+        """Clears the schedule start.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    schedule_start = property(fget=set_schedule_start, fdel=clear_schedule_start)
+
+    def get_schedule_end_metadata(self):
+        """Gets the metadata for the schedule end date.
+
+        :return: metadata for the schedule end
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    schedule_end_metadata = property(fget=get_schedule_end_metadata)
+
+    def set_schedule_end(self, start):
+        """Sets the schedule end date.
+
+        This may be set in lieu of a time period to set a specific date
+        range.
+
+        :param start: the new end date
+        :type start: ``osid.calendaring.DateTime``
+        :raise: ``InvalidArgument`` -- ``end`` is invalid
+        :raise: ``NoAccess`` -- ``end`` cannot be modified
+        :raise: ``NullArgument`` -- ``end`` is ``null``
+
+        """
+        pass
+
+    def clear_schedule_end(self):
+        """Clears the schedule end.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    schedule_end = property(fget=set_schedule_end, fdel=clear_schedule_end)
+
     def get_limit_metadata(self):
         """Gets the metadata for the weekdays of a weekly schedule.
 

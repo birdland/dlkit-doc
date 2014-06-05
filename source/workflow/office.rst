@@ -755,6 +755,10 @@ Workflow Event Notification Methods
 
    .. autoattribute:: Office.office
 
+   .. automethod:: Office.use_federated_office_view
+
+   .. automethod:: Office.use_isolated_office_view
+
    .. automethod:: Office.can_register_for_workflow_event_notifications
 
    .. automethod:: Office.register_for_new_workflow_events

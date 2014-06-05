@@ -893,7 +893,7 @@ class Duration(osid_markers.OsidPrimitive):
     def get_milliseconds(self):
         """Gets the number of milliseconds.
 
-        . A millisecond is one thousandth of a second.
+        A millisecond is one thousandth of a second.
 
         :return: the number of milliseconds
         :rtype: ``decimal``

@@ -17,7 +17,7 @@ organizational unit or an inventory item.
 ``Resources`` are referenced throughout the OSIDs to and the abstraction
 level of this service provides a consistent interface with which to
 access and manage object references not directly pertinent to the
-service in play.. For example, a Repository OSID may reference
+service in play. For example, a Repository OSID may reference
 ``Resources`` as authors or a Course OSID may reference ``Resources``
 for students and instructors. Each of these OSIDs may orchestrate a
 Resource OSID to provide management of the set of referenced resources.
@@ -44,7 +44,7 @@ Group
 
 When a ``Resource`` is referenced in another OSID, it is a singular
 entity. To provide groupings of multiple people or things, a
-``Resource`` can also be defined as a hierarchucal group of other
+``Resource`` can also be defined as a hierarchical group of other
 resources. Whether a resource is a single entity or a group is an
 attribute of the ``Resource`` itself. If a ``Resource`` is a group, then
 its membership can be queried or managed in one of the group sessions.
@@ -52,9 +52,7 @@ This overloading of the object definition serves to keep the nature of
 the resource separate from the other OSIDs such that a message to a
 "group", for example, is referenced as a single resource receipient.
 Other OSIDs are blind to whether or not a referenced ``Resource`` is a
-group or a singular entity.
-
-
+group or a singular entity..
 
 Resource Relationships
 
@@ -4731,8 +4729,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def can_query_membership(self):
         """Tests if this user can perform membership queries.
-        . A return of true does not guarantee successful authorization.
-        A return of false indicates that it is known lookup methods in
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
         this session will result in a ``PermissionDenied``. This is
         intended as a hint to an application that may opt not to offer
         lookup operations to unauthorized users.
@@ -4892,8 +4890,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def can_assign_resources_to_group(self, resource_id):
         """Tests if this user can assign members to the given group.
-        . A return of true does not guarantee successful authorization.
-        A return of false indicates that it is known mapping methods in
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
         this session will result in a ``PermissionDenied``. This is
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
@@ -5921,8 +5919,22 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_resource_relationships_for_resource(self, resource_id):
-        """Register for notifications of new relationships for the given resource.
+    def register_for_new_resource_relationships_for_source_resource(self, resource_id):
+        """Register for notifications of new relationships from the given resource.
+        ``ResourceRelationshipReceiver.newResourceRelationship()`` is
+        invoked when a new relationship is created.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_resource_relationships_for_destination_resource(self, resource_id):
+        """Register for notifications of new relationships to the given resource.
         ``ResourceRelationshipReceiver.newResourceRelationship()`` is
         invoked when a new relationship is created.
 
@@ -5960,8 +5972,22 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_changed_resource_relationships_for_resource(self, resource_id):
-        """Register for notifications of changed relationships for the given resource.
+    def register_for_changed_resource_relationships_for_source_resource(self, resource_id):
+        """Register for notifications of changed relationships from the given resource.
+        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        is invoked when a relationship is changed.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_resource_relationships_for_destination_resource(self, resource_id):
+        """Register for notifications of changed relationships to the given resource.
         ``ResourceRelationshipReceiver.changedResourceRelationship()``
         is invoked when a relationship is changed.
 
@@ -5999,7 +6025,7 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_resource_relationships_for_resource(self, resource_relationship_genus_type):
+    def register_for_deleted_resource_relationships_by_genus_type(self, resource_relationship_genus_type):
         """Register for notifications of deleted relationships of the given genus type.
         ``ResourceRelationshipReceiver.deletedResourceRelationship()``
         is invoked when a relationship is deleted.
@@ -6007,6 +6033,34 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :param resource_relationship_genus_type: the rsource relationship genus type
         :type resource_relationship_genus_type: ``osid.type.Type``
         :raise: ``NullArgument`` -- ``resource_relationship_genus_type is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_resource_relationships_for_source_resource(self, resource_id):
+        """Register for notifications of deleted relationships from the given resource.
+        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        is invoked when a relationship is deleted.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_relationship_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_resource_relationships_for_destination_resource(self, resource_id):
+        """Register for notifications of deleted relationships to the given resource.
+        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        is invoked when a relationship is deleted.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_relationship_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 

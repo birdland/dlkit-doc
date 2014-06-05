@@ -563,6 +563,8 @@ Proficiency Lookup Methods
 
    .. automethod:: ObjectiveBank.get_proficiencies_on_date
 
+   .. automethod:: ObjectiveBank.get_proficiencies_by_genus_type_on_date
+
    .. automethod:: ObjectiveBank.get_proficiencies_for_objective
 
    .. automethod:: ObjectiveBank.get_proficiencies_for_objective_on_date
@@ -685,9 +687,9 @@ Proficiency Notification Methods
 
    .. automethod:: ObjectiveBank.register_for_changed_proficiencies_by_genus_type
 
-   .. automethod:: ObjectiveBank.register_for_changed_proficiency_for_objective
+   .. automethod:: ObjectiveBank.register_for_changed_proficiencies_for_objective
 
-   .. automethod:: ObjectiveBank.register_for_changed_proficiency_for_resource
+   .. automethod:: ObjectiveBank.register_for_changed_proficiencies_for_resource
 
    .. automethod:: ObjectiveBank.register_for_changed_proficiency
 
@@ -695,9 +697,9 @@ Proficiency Notification Methods
 
    .. automethod:: ObjectiveBank.register_for_deleted_proficiencies_by_genus_type
 
-   .. automethod:: ObjectiveBank.register_for_deleted_proficiency_for_objective
+   .. automethod:: ObjectiveBank.register_for_deleted_proficiencies_for_objective
 
-   .. automethod:: ObjectiveBank.register_for_deleted_proficiency_for_resource
+   .. automethod:: ObjectiveBank.register_for_deleted_proficiencies_for_resource
 
    .. automethod:: ObjectiveBank.register_for_deleted_proficiency
 

@@ -119,6 +119,72 @@ class PostForm(osid_objects.OsidObjectForm):
     constraints.
 
     """
+    def get_timestamp_metadata(self):
+        """Gets the metadata for the timestamp.
+
+        :return: metadata for the timestamp
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    timestamp_metadata = property(fget=get_timestamp_metadata)
+
+    def set_timestamp(self, timestamp):
+        """Sets the timestamp.
+
+        :param timestamp: the new timestamp
+        :type timestamp: ``osid.calendaring.DateTime``
+        :raise: ``InvalidArgument`` -- ``timestamp`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``timestamp`` is ``null``
+
+        """
+        pass
+
+    def clear_timestamp(self):
+        """Clears the poster.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    timestamp = property(fget=set_timestamp, fdel=clear_timestamp)
+
+    def get_poster_metadata(self):
+        """Gets the metadata for the poster.
+
+        :return: metadata for the poster
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    poster_metadata = property(fget=get_poster_metadata)
+
+    def set_poster(self, resource_id):
+        """Sets the poster.
+
+        :param resource_id: the new poster
+        :type resource_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``resource_id`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+
+        """
+        pass
+
+    def clear_poster(self):
+        """Clears the poster.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    poster = property(fget=set_poster, fdel=clear_poster)
+
     def get_subject_line_metadata(self):
         """Gets the metadata for the subject line.
 
@@ -130,7 +196,7 @@ class PostForm(osid_objects.OsidObjectForm):
 
     subject_line_metadata = property(fget=get_subject_line_metadata)
 
-    def set_timestamp(self, subject_line):
+    def set_subject_line(self, subject_line):
         """Sets the subject line.
 
         :param subject_line: the new subject line
@@ -142,8 +208,6 @@ class PostForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    timestamp = property(fset=set_timestamp)
-
     def clear_subject_line(self):
         """Clears the subject line.
 
@@ -152,7 +216,7 @@ class PostForm(osid_objects.OsidObjectForm):
         """
         pass
 
-    subject_line = property(fdel=clear_subject_line)
+    subject_line = property(fget=set_subject_line, fdel=clear_subject_line)
 
     def get_text_metadata(self):
         """Gets the metadata for the text.
@@ -403,6 +467,72 @@ class ReplyForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableForm, o
     constraints.
 
     """
+    def get_timestamp_metadata(self):
+        """Gets the metadata for the timestamp.
+
+        :return: metadata for the timestamp
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    timestamp_metadata = property(fget=get_timestamp_metadata)
+
+    def set_timestamp(self, timestamp):
+        """Sets the timestamp.
+
+        :param timestamp: the new timestamp
+        :type timestamp: ``osid.calendaring.DateTime``
+        :raise: ``InvalidArgument`` -- ``timestamp`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``timestamp`` is ``null``
+
+        """
+        pass
+
+    def clear_timestamp(self):
+        """Clears the poster.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    timestamp = property(fget=set_timestamp, fdel=clear_timestamp)
+
+    def get_poster_metadata(self):
+        """Gets the metadata for the poster.
+
+        :return: metadata for the poster
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    poster_metadata = property(fget=get_poster_metadata)
+
+    def set_poster(self, resource_id):
+        """Sets the poster.
+
+        :param resource_id: the new poster
+        :type resource_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``resource_id`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+
+        """
+        pass
+
+    def clear_poster(self):
+        """Clears the poster.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    poster = property(fget=set_poster, fdel=clear_poster)
+
     def get_subject_line_metadata(self):
         """Gets the metadata for the subject line.
 
@@ -414,7 +544,7 @@ class ReplyForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableForm, o
 
     subject_line_metadata = property(fget=get_subject_line_metadata)
 
-    def set_timestamp(self, subject_line):
+    def set_subject_line(self, subject_line):
         """Sets the subject line.
 
         :param subject_line: the new subject line
@@ -426,8 +556,6 @@ class ReplyForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableForm, o
         """
         pass
 
-    timestamp = property(fset=set_timestamp)
-
     def clear_subject_line(self):
         """Clears the subject line.
 
@@ -436,7 +564,7 @@ class ReplyForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableForm, o
         """
         pass
 
-    subject_line = property(fdel=clear_subject_line)
+    subject_line = property(fget=set_subject_line, fdel=clear_subject_line)
 
     def get_text_metadata(self):
         """Gets the metadata for the text.

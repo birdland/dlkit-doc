@@ -1365,7 +1365,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_changed_entries_at_priority(self, priority_type):
+    def register_for_changed_entries_at_priority(self, priority_type):
         """Register for notifications of updated log entries at or above the given priority type.
         ``LogEntryReceiver.changedLogEntry()`` is invoked when a
         ``LogEntry`` in this log is changed.
@@ -1379,7 +1379,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_changed_entries_for_resource(self, resource_id):
+    def register_for_changed_entries_for_resource(self, resource_id):
         """Register for notifications of updated log entries logged by an agent associated with the given resource.
         ``LogEntryReceiver.changedLogEntry()`` is invoked when a
         ``LogEntry`` in this log is changed.
@@ -3725,7 +3725,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_changed_entries_at_priority(self, priority_type):
+    def register_for_changed_entries_at_priority(self, priority_type):
         """Register for notifications of updated log entries at or above the given priority type.
         ``LogEntryReceiver.changedLogEntry()`` is invoked when a
         ``LogEntry`` in this log is changed.
@@ -3740,7 +3740,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_changed_entries_for_resource(self, resource_id):
+    def register_for_changed_entries_for_resource(self, resource_id):
         """Register for notifications of updated log entries logged by an agent associated with the given resource.
         ``LogEntryReceiver.changedLogEntry()`` is invoked when a
         ``LogEntry`` in this log is changed.

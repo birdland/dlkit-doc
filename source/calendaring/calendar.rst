@@ -160,9 +160,9 @@ Event Notification Methods
 
    .. automethod:: Calendar.use_isolated_calendar_view
 
-   .. automethod:: Calendar.use_normalized_view
+   .. automethod:: Calendar.use_normalized_event_view
 
-   .. automethod:: Calendar.use_denormalized_view
+   .. automethod:: Calendar.use_denormalized_event_view
 
    .. automethod:: Calendar.register_for_new_events
 
@@ -897,7 +897,9 @@ Schedule Lookup Methods
 
    .. automethod:: Calendar.get_schedules_by_record_type
 
-   .. automethod:: Calendar.get_schedules_for_location
+   .. automethod:: Calendar.get_schedules_by_schedule_slot
+
+   .. automethod:: Calendar.get_schedules_by_location
 
    .. automethod:: Calendar.get_schedules_by_date
 
@@ -954,15 +956,11 @@ Schedule Admin Methods
 
    .. automethod:: Calendar.create_schedule
 
-   .. automethod:: Calendar.create_adhoc_schedule
-
    .. automethod:: Calendar.can_update_schedules
 
    .. automethod:: Calendar.get_schedule_form_for_update
 
    .. automethod:: Calendar.update_schedule
-
-   .. automethod:: Calendar.update_adhoc_schedule
 
    .. automethod:: Calendar.can_delete_schedules
 
@@ -1183,10 +1181,6 @@ Schedule Slot Notification Methods
 
    .. automethod:: Calendar.register_for_new_schedule_slots
 
-   .. automethod:: Calendar.register_for_new_schedule_slot_ancestors
-
-   .. automethod:: Calendar.register_for_new_schedule_slot_descendants
-
    .. automethod:: Calendar.register_for_changed_schedule_slots
 
    .. automethod:: Calendar.register_for_changed_schedule_slot
@@ -1194,10 +1188,6 @@ Schedule Slot Notification Methods
    .. automethod:: Calendar.register_for_deleted_schedule_slots
 
    .. automethod:: Calendar.register_for_deleted_schedule_slot
-
-   .. automethod:: Calendar.register_for_deleted_schedule_slot_ancestors
-
-   .. automethod:: Calendar.register_for_deleted_schedule_slot_descendants
 
 
 

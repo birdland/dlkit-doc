@@ -918,7 +918,7 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     def get_family_form_for_create(self, family_record_types):
         """Gets the family form for creating new families.
-        . A new form should be requested for each create transaction.
+        A new form should be requested for each create transaction.
 
         :param family_record_types: array of family record types
         :type family_record_types: ``osid.type.Type[]``
@@ -2205,7 +2205,7 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
 
     def get_family_form_for_create(self, family_record_types):
         """Gets the family form for creating new families.
-        . A new form should be requested for each create transaction.
+        A new form should be requested for each create transaction.
 
 
         :param family_record_types: array of family record types
@@ -3535,11 +3535,9 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def update_relationship(self, relationship_id, relationship_form):
+    def update_relationship(self, relationship_form):
         """Updates an existing relationship.
 
-        :param relationship_id: the ``Id`` of the ``Relationship``
-        :type relationship_id: ``osid.id.Id``
         :param relationship_form: the form containing the elements to be updated
         :type relationship_form: ``osid.relationship.RelationshipForm``
         :raise: ``IllegalState`` -- ``relationship_form`` already used in an update transaction
@@ -3642,14 +3640,28 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_relationships_for_peer(self, peer_id):
-        """Register for notifications of new relationships.
+    def register_for_new_relationships_for_source(self, source_id):
+        """Register for notifications of new relationships from the given source.
         ``RelationshipReceiver.newRelationship()`` is invoked when a new
         ``Relationship`` appears for the given peer.
 
-        :param peer_id: the ``Id`` of a peer to monitor
-        :type peer_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``peer_id`` is ``null``
+        :param source_id: the ``Id`` of the source to monitor
+        :type source_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``source_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_new_relationships_for_destination(self, destination_id):
+        """Register for notifications of new relationships to the given destination.
+        ``RelationshipReceiver.newRelationship()`` is invoked when a new
+        ``Relationship`` appears for the given peer.
+
+        :param destination_id: the ``Id`` of the destination node to monitor
+        :type destination_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``destination_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3681,14 +3693,28 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_changed_relationships_for_peer(self, peer_id):
-        """Register for notifications of updated relationships.
+    def register_for_changed_relationships_for_source(self, source_id):
+        """Register for notifications of updated relationships from the given source node.
         ``RelationshipReceiver.changedRelationship()`` is invoked when a
         ``Relationship`` if changed for the given peer.
 
-        :param peer_id: the ``Id`` of a peer to monitor
-        :type peer_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``peer_id`` is ``null``
+        :param source_id: the ``Id`` of the source node to monitor
+        :type source_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``source_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_relationships_for_destination(self, destination_id):
+        """Register for notifications of updated relationships to the given destination node.
+        ``RelationshipReceiver.changedRelationship()`` is invoked when a
+        ``Relationship`` if changed for the given peer.
+
+        :param destination_id: the ``Id`` of the destination node to monitor
+        :type destination_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``destination_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3734,14 +3760,28 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_relationships_for_peer(self, peer_id):
-        """Register for notifications of deleted relationships.
+    def register_for_deleted_relationships_for_source(self, source_id):
+        """Register for notifications of deleted relationships from the given source node.
         ``RelationshipReceiver.deletedRelationship()`` is invoked when a
         ``Relationship`` if removed for the given peer.
 
-        :param peer_id: the ``Id`` of a peer to monitor
-        :type peer_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``peer_id`` is ``null``
+        :param source_id: the ``Id`` of the source node to monitor
+        :type source_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``source_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_deleted_relationships_for_destination(self, destination_id):
+        """Register for notifications of deleted relationships to the given destination node.
+        ``RelationshipReceiver.deletedRelationship()`` is invoked when a
+        ``Relationship`` if removed for the given peer.
+
+        :param destination_id: the ``Id`` of the destination node to monitor
+        :type destination_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``destination_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 

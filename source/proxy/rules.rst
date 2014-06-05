@@ -19,6 +19,8 @@ Proxy
 
    .. autoattribute:: Proxy.effective_agent_id
 
+   .. autoattribute:: Proxy.effective_agent
+
    .. automethod:: Proxy.has_effective_date
 
    .. autoattribute:: Proxy.effective_date

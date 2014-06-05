@@ -6512,8 +6512,8 @@ class Office(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def can_manage_work_status(self):
         """Tests if this user can change ``Work`` status.
-        . A return of true does not guarantee successful authorization.
-        A return of false indicates that it is known deleting a ``Work``
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a ``Work``
         will result in a ``PermissionDenied``. This is intended as a
         hint to an application that may opt not to offer status
         operations to an unauthorized user.

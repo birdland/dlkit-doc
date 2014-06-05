@@ -45,6 +45,19 @@ class Proxy(osid_rules.OsidResult):
 
     effective_agent_id = property(fget=get_effective_agent_id)
 
+    def get_effective_agent(self):
+        """Gets the effective ``Agent`` for this proxy.
+
+        :return: the effective agent
+        :rtype: ``osid.authentication.Agent``
+        :raise: ``IllegalState`` -- ``has_effective_agent()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+        """
+        return # osid.authentication.Agent
+
+    effective_agent = property(fget=get_effective_agent)
+
     def has_effective_date(self):
         """Tests if an effective date is available.
 

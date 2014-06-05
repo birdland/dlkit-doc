@@ -7245,7 +7245,7 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_grade_entries_in_column(self, gradebook_column_id):
+    def register_for_new_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a new grade entry for the specified gradebook column.
         ``GradeEntryReceiver.newGradeEntry()`` is invoked when a new
         entry for the resource is created.
@@ -7298,7 +7298,7 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_changed_grade_entries_in_column(self, gradebook_column_id):
+    def register_for_changed_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of an updated grade entry for the specified gradebook column.
         ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
         entry for the column is updated.
@@ -7365,7 +7365,7 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_grade_entries_in_column(self, gradebook_column_id):
+    def register_for_deleted_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a deleted grade entry for the specified gradebook column.
         ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
         entry for the column is removed from this gradebook.

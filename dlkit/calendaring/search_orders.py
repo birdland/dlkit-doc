@@ -19,8 +19,6 @@ class EventSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_recurring_event(self, style):
         """Specified a preference for ordering results by the recurring event.
 
-        .
-
         :param style: a search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
@@ -52,8 +50,6 @@ class EventSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_superseding_event(self, style):
         """Specified a preference for ordering results by the superseding event.
 
-        .
-
         :param style: a search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
@@ -84,8 +80,6 @@ class EventSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
 
     def order_by_offset_event(self, style):
         """Specified a preference for ordering results by the offset event.
-
-        .
 
         :param style: a search order style
         :type style: ``osid.SearchOrderStyle``
@@ -495,8 +489,39 @@ class OffsetEventSearchOrder(osid_search_orders.OsidRuleSearchOrder):
         return # osid.calendaring.records.OffsetEventSearchOrderRecord
 
 
-class ScheduleSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidSubjugateableSearchOrder):
+class ScheduleSearchOrder(osid_search_orders.OsidObjectSearchOrder):
     """An interface for specifying the ordering of search results."""
+    def order_by_schedule_slot(self, style):
+        """Specified a preference for ordering results by the schedule slot.
+
+        :param style: a search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def supports_schedule_slot_search_order(self):
+        """Tests if a ``ScheduleSlotSearchOrder`` is available.
+
+        :return: ``true`` if a schedule slot search order is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+        """
+        return # boolean
+
+    def get_schedule_slot_search_order(self):
+        """Gets the search order for the schedule slot.
+
+        :return: the schdeule slot search order
+        :rtype: ``osid.calendaring.ScheduleSlotSearchOrder``
+        :raise: ``Unimplemented`` -- ``supports_schedule_slot_search_order()`` is ``false``
+
+        """
+        return # osid.calendaring.ScheduleSlotSearchOrder
+
+    schedule_slot_search_order = property(fget=get_schedule_slot_search_order)
+
     def order_by_time_period(self, style):
         """Specified a preference for ordering results by the time period.
 

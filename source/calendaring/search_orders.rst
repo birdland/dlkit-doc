@@ -131,6 +131,12 @@ Schedule Search Order
 .. autoclass:: ScheduleSearchOrder
    :show-inheritance:
 
+   .. automethod:: ScheduleSearchOrder.order_by_schedule_slot
+
+   .. automethod:: ScheduleSearchOrder.supports_schedule_slot_search_order
+
+   .. autoattribute:: ScheduleSearchOrder.schedule_slot_search_order
+
    .. automethod:: ScheduleSearchOrder.order_by_time_period
 
    .. automethod:: ScheduleSearchOrder.supports_time_period_search_order

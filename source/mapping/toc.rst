@@ -8,7 +8,6 @@ Mapping
    map
    query_inspectors
    primitives
-   others_please_move
    records
    objects
    search_orders

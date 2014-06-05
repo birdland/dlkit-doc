@@ -495,19 +495,27 @@ Resource Relationship Notification Methods
 
    .. automethod:: Bin.register_for_new_resource_relationships_by_genus_type
 
-   .. automethod:: Bin.register_for_new_resource_relationships_for_resource
+   .. automethod:: Bin.register_for_new_resource_relationships_for_source_resource
+
+   .. automethod:: Bin.register_for_new_resource_relationships_for_destination_resource
 
    .. automethod:: Bin.register_for_changed_resource_relationships
 
    .. automethod:: Bin.register_for_changed_resource_relationships_by_genus_type
 
-   .. automethod:: Bin.register_for_changed_resource_relationships_for_resource
+   .. automethod:: Bin.register_for_changed_resource_relationships_for_source_resource
+
+   .. automethod:: Bin.register_for_changed_resource_relationships_for_destination_resource
 
    .. automethod:: Bin.register_for_changed_resource_relationship
 
    .. automethod:: Bin.register_for_deleted_resource_relationships
 
-   .. automethod:: Bin.register_for_deleted_resource_relationships_for_resource
+   .. automethod:: Bin.register_for_deleted_resource_relationships_by_genus_type
+
+   .. automethod:: Bin.register_for_deleted_resource_relationships_for_source_resource
+
+   .. automethod:: Bin.register_for_deleted_resource_relationships_for_destination_resource
 
    .. automethod:: Bin.register_for_deleted_resource_relationship
 

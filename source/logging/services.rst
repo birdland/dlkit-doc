@@ -224,9 +224,9 @@ ______________________
 
    .. automethod:: LoggingManager.register_for_changed_log_entries
 
-   .. automethod:: LoggingManager.register_for_new_changed_entries_at_priority
+   .. automethod:: LoggingManager.register_for_changed_entries_at_priority
 
-   .. automethod:: LoggingManager.register_for_new_changed_entries_for_resource
+   .. automethod:: LoggingManager.register_for_changed_entries_for_resource
 
    .. automethod:: LoggingManager.register_for_changed_log_entry
 
@@ -685,9 +685,9 @@ ______________________
 
    .. automethod:: LoggingProxyManager.register_for_changed_log_entries
 
-   .. automethod:: LoggingProxyManager.register_for_new_changed_entries_at_priority
+   .. automethod:: LoggingProxyManager.register_for_changed_entries_at_priority
 
-   .. automethod:: LoggingProxyManager.register_for_new_changed_entries_for_resource
+   .. automethod:: LoggingProxyManager.register_for_changed_entries_for_resource
 
    .. automethod:: LoggingProxyManager.register_for_changed_log_entry
 

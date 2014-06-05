@@ -75,7 +75,7 @@ class PostSearchOrder(osid_search_orders.OsidObjectSearchOrder):
 
     posting_agent_search_order = property(fget=get_posting_agent_search_order)
 
-    def order_by_subject_line(self, style):
+    def order_by_subject(self, style):
         """Specifies a preference for ordering the result set by the subject.
 
         :param style: search order style

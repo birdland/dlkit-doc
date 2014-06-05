@@ -2310,8 +2310,8 @@ class ResourceLocationNotificationSession(osid_sessions.OsidSession):
     def register_for_exited_locations_for_resources_by_genus_type(self, resource_genus_type):
         """Register for notifications of exited locations for the given resource genus type.
 
-        . ``ResourceLocationReceiver.exitedLocation()`` is invoked when
-        a resource exits a location.
+        ``ResourceLocationReceiver.exitedLocation()`` is invoked when a
+        resource exits a location.
 
         :param resource_genus_type: the genus type of the ``Resource`` to monitor
         :type resource_genus_type: ``osid.type.Type``

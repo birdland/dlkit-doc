@@ -985,7 +985,7 @@ class LogEntryNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_new_changed_entries_at_priority(self, priority_type):
+    def register_for_changed_entries_at_priority(self, priority_type):
         """Register for notifications of updated log entries at or above the given priority type.
 
         ``LogEntryReceiver.changedLogEntry()`` is invoked when a
@@ -1000,7 +1000,7 @@ class LogEntryNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_new_changed_entries_for_resource(self, resource_id):
+    def register_for_changed_entries_for_resource(self, resource_id):
         """Register for notifications of updated log entries logged by an agent associated with the given resource.
 
         ``LogEntryReceiver.changedLogEntry()`` is invoked when a
@@ -1474,7 +1474,7 @@ class LogLookupSession(osid_sessions.OsidSession):
     
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
-    accessed.. For example, a browsing application may only need to
+    accessed. For example, a browsing application may only need to
     examine the ``Logs`` it can access, without breaking execution.
     However, an assessment may only be useful if all ``Logs`` referenced
     by it are available, and a test-taking applicationmay sacrifice some

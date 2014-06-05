@@ -119,6 +119,30 @@ Map Node List
 
 
 
+Resource Location
+-----------------
+
+.. autoclass:: ResourceLocation
+   :show-inheritance:
+
+   .. autoattribute:: ResourceLocation.resource_id
+
+   .. autoattribute:: ResourceLocation.resource
+
+   .. automethod:: ResourceLocation.has_location
+
+   .. autoattribute:: ResourceLocation.location_id
+
+   .. autoattribute:: ResourceLocation.location
+
+   .. automethod:: ResourceLocation.has_coordinate
+
+   .. autoattribute:: ResourceLocation.coordinate
+
+   .. automethod:: ResourceLocation.get_resource_location_record
+
+
+
 Resource Location List
 ----------------------
 

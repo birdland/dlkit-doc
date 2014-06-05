@@ -1209,8 +1209,8 @@ class MembershipSession(osid_sessions.OsidSession):
     def can_query_membership(self):
         """Tests if this user can perform membership queries.
 
-        . A return of true does not guarantee successful authorization.
-        A return of false indicates that it is known lookup methods in
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
         this session will result in a ``PermissionDenied``. This is
         intended as a hint to an application that may opt not to offer
         lookup operations to unauthorized users.
@@ -1507,8 +1507,8 @@ class GroupAssignmentSession(osid_sessions.OsidSession):
     def can_assign_resources_to_group(self, resource_id):
         """Tests if this user can assign members to the given group.
 
-        . A return of true does not guarantee successful authorization.
-        A return of false indicates that it is known mapping methods in
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
         this session will result in a ``PermissionDenied``. This is
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
@@ -3035,8 +3035,23 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_new_resource_relationships_for_resource(self, resource_id):
-        """Register for notifications of new relationships for the given resource.
+    def register_for_new_resource_relationships_for_source_resource(self, resource_id):
+        """Register for notifications of new relationships from the given resource.
+
+        ``ResourceRelationshipReceiver.newResourceRelationship()`` is
+        invoked when a new relationship is created.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_new_resource_relationships_for_destination_resource(self, resource_id):
+        """Register for notifications of new relationships to the given resource.
 
         ``ResourceRelationshipReceiver.newResourceRelationship()`` is
         invoked when a new relationship is created.
@@ -3077,8 +3092,23 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_changed_resource_relationships_for_resource(self, resource_id):
-        """Register for notifications of changed relationships for the given resource.
+    def register_for_changed_resource_relationships_for_source_resource(self, resource_id):
+        """Register for notifications of changed relationships from the given resource.
+
+        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        is invoked when a relationship is changed.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_resource_relationships_for_destination_resource(self, resource_id):
+        """Register for notifications of changed relationships to the given resource.
 
         ``ResourceRelationshipReceiver.changedResourceRelationship()``
         is invoked when a relationship is changed.
@@ -3119,7 +3149,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_resource_relationships_for_resource(self, resource_relationship_genus_type):
+    def register_for_deleted_resource_relationships_by_genus_type(self, resource_relationship_genus_type):
         """Register for notifications of deleted relationships of the given genus type.
 
         ``ResourceRelationshipReceiver.deletedResourceRelationship()``
@@ -3134,8 +3164,23 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_resource_relationships_for_resource(self, resource_id):
-        """Register for notifications of deleted relationships for the given resource.
+    def register_for_deleted_resource_relationships_for_source_resource(self, resource_id):
+        """Register for notifications of deleted relationships from the given resource.
+
+        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        is invoked when a relationship is deleted.
+
+        :param resource_id: the ``Id`` of the ``Resource`` to monitor
+        :type resource_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``resource_relationship_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_deleted_resource_relationships_for_destination_resource(self, resource_id):
+        """Register for notifications of deleted relationships to the given resource.
 
         ``ResourceRelationshipReceiver.deletedResourceRelationship()``
         is invoked when a relationship is deleted.

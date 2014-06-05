@@ -17,7 +17,7 @@ organizational unit or an inventory item.
 ``Resources`` are referenced throughout the OSIDs to and the abstraction
 level of this service provides a consistent interface with which to
 access and manage object references not directly pertinent to the
-service in play.. For example, a Repository OSID may reference
+service in play. For example, a Repository OSID may reference
 ``Resources`` as authors or a Course OSID may reference ``Resources``
 for students and instructors. Each of these OSIDs may orchestrate a
 Resource OSID to provide management of the set of referenced resources.
@@ -44,7 +44,7 @@ Group
 
 When a ``Resource`` is referenced in another OSID, it is a singular
 entity. To provide groupings of multiple people or things, a
-``Resource`` can also be defined as a hierarchucal group of other
+``Resource`` can also be defined as a hierarchical group of other
 resources. Whether a resource is a single entity or a group is an
 attribute of the ``Resource`` itself. If a ``Resource`` is a group, then
 its membership can be queried or managed in one of the group sessions.
@@ -52,9 +52,7 @@ This overloading of the object definition serves to keep the nature of
 the resource separate from the other OSIDs such that a message to a
 "group", for example, is referenced as a single resource receipient.
 Other OSIDs are blind to whether or not a referenced ``Resource`` is a
-group or a singular entity.
-
-
+group or a singular entity..
 
 Resource Relationships
 

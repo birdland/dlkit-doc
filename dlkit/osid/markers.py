@@ -256,7 +256,6 @@ class Sourceable:
 
         :return: a list of asset ``Ids``
         :rtype: ``osid.id.IdList``
-        :raise: ``OperationFailed`` -- unable to complete request
 
         """
         return # osid.id.IdList

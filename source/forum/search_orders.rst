@@ -25,7 +25,7 @@ Post Search Order
 
    .. autoattribute:: PostSearchOrder.posting_agent_search_order
 
-   .. automethod:: PostSearchOrder.order_by_subject_line
+   .. automethod:: PostSearchOrder.order_by_subject
 
    .. automethod:: PostSearchOrder.order_by_text
 

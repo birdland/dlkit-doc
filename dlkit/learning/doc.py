@@ -26,7 +26,7 @@ Activities
 An ``Activity`` describes actions that one can do to meet a learning
 objective. An ``Activity`` includes a list of ``Assets`` to read or
 watch, or a list of ``Courses`` to take, or a list of learning
-``Assessments`` to practice.. An ``Activity`` may also represent other
+``Assessments`` to practice. An ``Activity`` may also represent other
 learning activities such as taking a course or practicing an instrument.
 An ``Activity`` is specific to an ``Objective`` where the reusability is
 achieved based on what the ``Activity`` relates.

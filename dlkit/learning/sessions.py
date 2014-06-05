@@ -3577,6 +3577,25 @@ class ProficiencyLookupSession(osid_sessions.OsidSession):
         """
         return # osid.learning.ProficiencyList
 
+    def get_proficiencies_by_genus_type_on_date(self, proficiency_genus_type, from_, to):
+        """Gets a ``ProficiencyList`` of the given proficiency genus type effective during the entire given date range inclusive but not confined to the date range.
+
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``proficiency_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.learning.ProficiencyList
+
     def get_proficiencies_for_objective(self, objective_id):
         """Gets a ``ProficiencyList`` relating to the given objective.
 
@@ -3640,7 +3659,7 @@ class ProficiencyLookupSession(osid_sessions.OsidSession):
         :return: the returned ``Proficiency`` list
         :rtype: ``osid.learning.ProficiencyList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``objective_id, proficiency_genus_type, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``objective_id, proficiency_genus_type, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -4449,7 +4468,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_changed_proficiency_for_objective(self, objective_id):
+    def register_for_changed_proficiencies_for_objective(self, objective_id):
         """Registers for notification of an updated proficiency.
 
         ``ProficiencyReceiver.changedProficiency()`` is invoked when the
@@ -4465,7 +4484,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_changed_proficiency_for_resource(self, resource_id):
+    def register_for_changed_proficiencies_for_resource(self, resource_id):
         """Registers for notification of an updated proficiency.
 
         ``ProficiencyReceiver.changedProficiency()`` is invoked when the
@@ -4523,7 +4542,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_proficiency_for_objective(self, objective_id):
+    def register_for_deleted_proficiencies_for_objective(self, objective_id):
         """Registers for notification of a deleted proficiency.
 
         ``ProficiencyReceiver.deletedProficiency()`` is invoked when the
@@ -4539,7 +4558,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_proficiency_for_resource(self, resource_id):
+    def register_for_deleted_proficiencies_for_resource(self, resource_id):
         """Registers for notification of a deleted proficiency.
 
         ``ProficiencyReceiver.deletedProficiency()`` is invoked when the
@@ -5705,11 +5724,9 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         """
         return # osid.learning.ObjectiveBankForm
 
-    def update_objective_bank(self, objective_bank_id, objective_bank_form):
+    def update_objective_bank(self, objective_bank_form):
         """Updates an existing objective bank.
 
-        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
         :param objective_bank_form: the form containing the elements to be updated
         :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
         :raise: ``IllegalState`` -- ``objective_bank_form`` already used in an update transaction
@@ -5717,7 +5734,7 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bankt_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
 
         """
         pass

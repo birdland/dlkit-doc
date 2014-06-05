@@ -302,6 +302,8 @@ Relevancy Lookup Methods
 
    .. automethod:: Ontology.get_relevancies_on_date
 
+   .. automethod:: Ontology.get_relevancies_by_genus_type_on_date
+
    .. automethod:: Ontology.get_relevancies_for_subject
 
    .. automethod:: Ontology.get_relevancies_for_subject_on_date

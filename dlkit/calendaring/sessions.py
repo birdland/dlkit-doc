@@ -877,11 +877,11 @@ class EventNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def use_normalized_view(self):
+    def use_normalized_event_view(self):
         """A normalized view sends a single notification for recurring events."""
         pass
 
-    def use_denormalized_view(self):
+    def use_denormalized_event_view(self):
         """A denormalized view sends a separate notification for each non- recurring event within a recurring set."""
         pass
 
@@ -5446,7 +5446,25 @@ class ScheduleLookupSession(osid_sessions.OsidSession):
         """
         return # osid.calendaring.ScheduleList
 
-    def get_schedules_for_location(self, location_id):
+    def get_schedules_by_schedule_slot(self, schedule_slot_id):
+        """Gets a ``ScheduleList`` directly containing the given shedule slot.
+
+        In plenary mode, the returned list contains all known schedule
+        or an error results. Otherwise, the returned list may contain
+        only those schedule that are accessible through this session.
+
+        :param schedule_slot_id: a schedule slot ``Id``
+        :type schedule_slot_id: ``osid.id.Id``
+        :return: the returned ``Schedule`` list
+        :rtype: ``osid.calendaring.ScheduleList``
+        :raise: ``NullArgument`` -- ``schedule_slot_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.calendaring.ScheduleList
+
+    def get_schedules_by_location(self, location_id):
         """Gets a ``ScheduleList`` containing the given location.
 
         In plenary mode, the returned list contains all known schedule
@@ -5810,21 +5828,16 @@ class ScheduleAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_schedule_form_for_create(self, schedule_slot_id, time_period_id, schedule_record_types):
+    def get_schedule_form_for_create(self, schedule_record_types):
         """Gets the schedule form for creating new schedules.
 
         A new form should be requested for each create transaction.
 
-        :param schedule_slot_id: the ``Id`` of the ``ScheduleSlot``
-        :type schedule_slot_id: ``osid.id.Id``
-        :param time_period_id: the ``Id`` of the ``TimePeriod``
-        :type time_period_id: ``osid.id.Id``
         :param schedule_record_types: array of schedule record types
         :type schedule_record_types: ``osid.type.Type[]``
         :return: the schedule form
         :rtype: ``osid.calendaring.ScheduleForm``
-        :raise: ``NotFound`` -- ``schedule_slot_id`` or ``time_period_id`` is not found
-        :raise: ``NullArgument`` -- ``schedule_slot_id`` or ``time_period_id`` or ``schedule_record_types`` is ``null``
+        :raise: ``NullArgument`` -- ``schedule_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- unable to get form for requested record types
@@ -5845,30 +5858,6 @@ class ScheduleAdminSession(osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``schedule_form`` did not originate from ``get_schedule_form_for_create()``
-
-        """
-        return # osid.calendaring.Schedule
-
-    def create_adhoc_schedule(self, schedule_slot_id, start, end, schedule_form):
-        """Creates a new ``Schedule``.
-
-        :param schedule_slot_id: the ``Id`` of the ``ScheduleSlot``
-        :type schedule_slot_id: ``osid.id.Id``
-        :param start: the start date
-        :type start: ``osid.calendaring.DateTime``
-        :param end: the end date
-        :type end: ``osid.calendaring.DateTime``
-        :param schedule_form: the form for this ``Schedule``
-        :type schedule_form: ``osid.calendaring.ScheduleForm``
-        :return: the new ``Schedule``
-        :rtype: ``osid.calendaring.Schedule``
-        :raise: ``AlreadyExists`` -- attempt at duplicating a property the underlying system is enforcing to be unique
-        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
-        :raise: ``NotFound`` -- ``schedule_slot_id`` is not found
-        :raise: ``NullArgument`` -- ``schedule_slot_id, start, end`` or ``schedule_form`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``schedule_form`` is not of this service
 
         """
         return # osid.calendaring.Schedule
@@ -5917,27 +5906,6 @@ class ScheduleAdminSession(osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``schedule_form`` did not originate from ``get_schedule_form_for_update()``
-
-        """
-        pass
-
-    def update_adhoc_schedule(self, schedule_id, start, end, schedule_form):
-        """Updates an existing schedule.
-
-        :param schedule_id: the ``Id`` of the ``Schedule``
-        :type schedule_id: ``osid.id.Id``
-        :param start: the start date
-        :type start: ``osid.calendaring.DateTime``
-        :param end: the end date
-        :type end: ``osid.calendaring.DateTime``
-        :param schedule_form: the form containing the elements to be updated
-        :type schedule_form: ``osid.calendaring.ScheduleForm``
-        :raise: ``InvalidArgument`` -- the form contains an invalid value
-        :raise: ``NotFound`` -- ``schedule_id`` is not found
-        :raise: ``NullArgument`` -- ``schedule_id, start, end`` or ``schedule_form`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``schedule_form`` is not supported
 
         """
         pass
@@ -7264,38 +7232,6 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_new_schedule_slot_ancestors(self, schedule_slot_id):
-        """Registers for notification if an ancestor is added to the specified schedule slot in the scheduls slot composition.
-
-        ``SchedulesSlotReceiver.newScheduleSlotAncestor()`` is invoked
-        when the specified scheduls slot experiences an addition in
-        ancestors.
-
-        :param schedule_slot_id: the ``Id`` of the schedule slot to monitor
-        :type schedule_slot_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``schedule_slot_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_schedule_slot_descendants(self, schedule_slot_id):
-        """Registers for notification if a descendant is added to the specified schedule slot in the scheduls slot composition.
-
-        ``SchedulesSlotReceiver.newScheduleSlotDescendant()`` is invoked
-        when the specified scheduls slot experiences an addition in
-        descendants.
-
-        :param schedule_slot_id: the ``Id`` of the schedule slot to monitor
-        :type schedule_slot_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``schedule_slot_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
     def register_for_changed_schedule_slots(self):
         """Registers for notification of updated schedule schedule slots.
 
@@ -7344,38 +7280,6 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
         :param schedule_slot_id: the ``Id`` of the ``ScheduleSlot`` to monitor
         :type schedule_slot_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``schedule_slot_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_deleted_schedule_slot_ancestors(self, schedule_slot_id):
-        """Registers for notification if an ancestor removed from to the specified schedule slot in the schedule slot composition.
-
-        ``ScheduleSlotReceiver.deletedScheduleSlotAncestor()`` is
-        invoked when the specified scheduls slot experiences a removal
-        of an ancestor.
-
-        :param schedule_slot_id: the ``Id`` of the schedule slot to monitor
-        :type schedule_slot_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``schedule_slot_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_deleted_schedule_slot_descendants(self, schedule_slot_id):
-        """Registers for notification if a descendant removed from to the specified schedule slot in the schedule slot composition.
-
-        ``ScheduleSlotReceiver.deletedScheduleSlotDescendant()`` is
-        invoked when the specified scheduls slot experiences a removal
-        of a descendant.
-
-        :param schedule_slot_id: the ``Id`` of the schedule slot to monitor
-        :type schedule_slot_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``schedule_slot_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -8165,10 +8069,10 @@ class CommitmentLookupSession(osid_sessions.OsidSession):
         return # osid.calendaring.CommitmentList
 
     def get_commitments_by_genus_type_for_event_and_resource(self, event_id, resource_id, commitment_genus_type):
-        """Gets the commitmentsof the given genus type for the given event, resource, and commitment genus type including any genus types derived from the given genus type.
+        """Gets the commitments of the given genus type for the given event, resource, and commitment genus type including any genus types derived from the given genus type.
 
-        . If the event is a recurring event, the commitments are
-        returned for the recurring event only.
+        If the event is a recurring event, the commitments are returned
+        for the recurring event only.
 
         In plenary mode, the returned list contains all of the
         commitments mapped to the event ``Id`` or an error results if an

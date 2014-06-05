@@ -740,7 +740,7 @@ class OffsetEventQueryInspector(osid_query_inspectors.OsidRuleQueryInspector):
         return # osid.calendaring.records.OffsetEventQueryInspectorRecord
 
 
-class ScheduleQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
+class ScheduleQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
     """This is the query inspector for examining schedule queries."""
     def get_schedule_slot_id_terms(self):
         """Gets the schedule slot ``Id`` terms.

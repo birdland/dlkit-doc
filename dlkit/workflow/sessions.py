@@ -3130,8 +3130,8 @@ class WorkAdminSession(osid_sessions.OsidSession):
     def can_manage_work_status(self):
         """Tests if this user can change ``Work`` status.
 
-        . A return of true does not guarantee successful authorization.
-        A return of false indicates that it is known deleting a ``Work``
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a ``Work``
         will result in a ``PermissionDenied``. This is intended as a
         hint to an application that may opt not to offer status
         operations to an unauthorized user.
@@ -4771,6 +4771,27 @@ class WorkflowEventNotificationSession(osid_sessions.OsidSession):
         return # osid.workflow.Office
 
     office = property(fget=get_office)
+
+    def use_federated_office_view(self):
+        """Federates the view for methods in this session.
+
+        A federated view will include events in offices which are
+        children of this office in the office hierarchy.
+
+
+
+        """
+        pass
+
+    def use_isolated_office_view(self):
+        """Isolates the view for methods in this session.
+
+        An isolated view restricts notifications to this office only.
+
+
+
+        """
+        pass
 
     def can_register_for_workflow_event_notifications(self):
         """Tests if this user can register for ``WorkflowEvent`` notifications.

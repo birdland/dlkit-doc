@@ -1007,7 +1007,7 @@ class AuthorizationAdminSession(osid_sessions.OsidSession):
         :param resource_id: a resource ``Id``
         :type resource_id: ``osid.id.Id``
         :param trust_id: an ``Id`` for a circle of trust
-        :type trust_id: ``osid.type.Type``
+        :type trust_id: ``osid.id.Id``
         :param function_id: a function ``Id``
         :type function_id: ``osid.id.Id``
         :param qualifier_id: the qualifier ``Id``

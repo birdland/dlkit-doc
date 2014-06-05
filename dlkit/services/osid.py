@@ -597,7 +597,6 @@ class Sourceable:
 
         :return: a list of asset ``Ids``
         :rtype: ``osid.id.IdList``
-        :raise: ``OperationFailed`` -- unable to complete request
 
         """
         raise UNIMPLEMENTED()
@@ -914,6 +913,7 @@ class OsidProxyManager(OsidProfile):
         :rtype: ``osid.journaling.JournalEntry``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unimplemented`` -- ``supports_journal_rollback()`` is ``false``
 
         """

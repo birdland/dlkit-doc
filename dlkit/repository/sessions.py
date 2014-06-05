@@ -2253,7 +2253,7 @@ class CompositionLookupSession(osid_sessions.OsidSession):
     
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
-    accessed.. For example, a browsing application may only need to
+    accessed. For example, a browsing application may only need to
     examine the ``Composition`` it can access, without breaking
     execution. However, an administrative application may require a
     complete set of ``Composition`` objects to be returned.
@@ -3039,83 +3039,12 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def use_federated_composition_view(self):
-        """Federates the view for asset methods in this session.
-
-        A federated view will include assets in compositions of which
-        are children of the specified composition in the composition
-        hierarchy.
-
-
-
-        """
-        pass
-
-    def use_isolated_composition_view(self):
-        """Isolates the view for asset methods in this session.
-
-        An isolated view restricts notifications to the specified
-        composition only.
-
-
-
-        """
-        pass
-
     def register_for_new_compositions(self):
         """Register for notifications of new composition.
 
         ``CompositionReceiver.newComposition()`` is invoked when a new
         ``Composition`` appears in this repository.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_assigned_assets_in_composition(self, composition_id):
-        """Registers for notification if an asset is added to a specified composition.
-
-        ``CompositionReceiver.newCompositionAsset()`` is invoked when an
-        asset is added to the specified composition. In the federated
-        composition view, notifications include additions to child
-        compositions.
-
-        :param composition_id: the ``Id`` of the composition to monitor
-        :type composition_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_composition_ancestor(self, composition_id):
-        """Registers for notification if an ancestor is added to the specified composition in the composition composition.
-
-        ``CompositionReceiver.newCompositionAncestor()`` is invoked when
-        the specified composition experiences an addition in ancestors.
-
-        :param composition_id: the ``Id`` of the composition to monitor
-        :type composition_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_composition_descendants(self, composition_id):
-        """Registers for notification if a descendant is added to the specified composition in the composition composition.
-
-        ``CompositionReceiver.newCompositionDescendant()`` is invoked
-        when the specified composition experiences an addition in
-        descendants.
-
-        :param composition_id: the ``Id`` of the composition to monitor
-        :type composition_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3168,55 +3097,6 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
         specified composition is removed from this repository.
 
         :param composition_id: the ``Id`` of the ``Composition`` to monitor
-        :type composition_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_unassigned_assets_in_composition(self, composition_id):
-        """Registers for notification if an asset is removed from a specified composition.
-
-        ``CompositionReceiver.deletedCompositionAsset()`` is invoked
-        when an asset is removed from the specified composition. In the
-        federated composition view, notifications include removals from
-        child compositions.
-
-        :param composition_id: the ``Id`` of the composition to monitor
-        :type composition_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_deleted_composition_ancestors(self, composition_id):
-        """Registers for notification if an ancestor removed from to the specified composition in the composition composition.
-
-        ``CompositionReceiver.deletedCompositionAncestor()`` is invoked
-        when the specified composition experiences a removal of an
-        ancestor.
-
-        :param composition_id: the ``Id`` of the composition to monitor
-        :type composition_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_deleted_composition_descendants(self, composition_id):
-        """Registers for notification if a descendant removed from to the specified composition in the composition composition.
-
-        ``CompositionReceiver.deletedCompositionDescendant()`` is
-        invoked when the specified composition experiences a removal of
-        a descendant.
-
-        :param composition_id: the ``Id`` of the composition to monitor
         :type composition_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``composition_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
