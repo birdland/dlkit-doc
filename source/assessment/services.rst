@@ -239,11 +239,13 @@ _________________
 
    .. automethod:: AssessmentManager.can_register_for_bank_notifications
 
+   .. automethod:: AssessmentManager.reliable_bank_notifications
+
+   .. automethod:: AssessmentManager.unreliable_bank_notifications
+
+   .. automethod:: AssessmentManager.acknowledge_bank_notification
+
    .. automethod:: AssessmentManager.register_for_new_banks
-
-   .. automethod:: AssessmentManager.register_for_new_bank_ancestors
-
-   .. automethod:: AssessmentManager.register_for_new_bank_descendants
 
    .. automethod:: AssessmentManager.register_for_changed_banks
 
@@ -253,9 +255,11 @@ _________________
 
    .. automethod:: AssessmentManager.register_for_deleted_bank
 
-   .. automethod:: AssessmentManager.register_for_deleted_bank_ancestors
+   .. automethod:: AssessmentManager.register_for_changed_bank_hierarchy
 
-   .. automethod:: AssessmentManager.register_for_deleted_bank_descendants
+   .. automethod:: AssessmentManager.register_for_changed_bank_hierarchy_for_ancestors
+
+   .. automethod:: AssessmentManager.register_for_changed_bank_hierarchy_for_descendants
 
 
 
@@ -557,11 +561,13 @@ _________________
 
    .. automethod:: AssessmentProxyManager.can_register_for_bank_notifications
 
+   .. automethod:: AssessmentProxyManager.reliable_bank_notifications
+
+   .. automethod:: AssessmentProxyManager.unreliable_bank_notifications
+
+   .. automethod:: AssessmentProxyManager.acknowledge_bank_notification
+
    .. automethod:: AssessmentProxyManager.register_for_new_banks
-
-   .. automethod:: AssessmentProxyManager.register_for_new_bank_ancestors
-
-   .. automethod:: AssessmentProxyManager.register_for_new_bank_descendants
 
    .. automethod:: AssessmentProxyManager.register_for_changed_banks
 
@@ -571,9 +577,11 @@ _________________
 
    .. automethod:: AssessmentProxyManager.register_for_deleted_bank
 
-   .. automethod:: AssessmentProxyManager.register_for_deleted_bank_ancestors
+   .. automethod:: AssessmentProxyManager.register_for_changed_bank_hierarchy
 
-   .. automethod:: AssessmentProxyManager.register_for_deleted_bank_descendants
+   .. automethod:: AssessmentProxyManager.register_for_changed_bank_hierarchy_for_ancestors
+
+   .. automethod:: AssessmentProxyManager.register_for_changed_bank_hierarchy_for_descendants
 
 
 

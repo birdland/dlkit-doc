@@ -49,7 +49,7 @@ class AnswerQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         return # osid.assessment.records.AnswerQueryInspectorRecord
 
 
-class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
+class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidAggregateableQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
     These interfaces are used to examine the actual query terms used in

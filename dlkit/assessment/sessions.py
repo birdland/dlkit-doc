@@ -62,6 +62,7 @@ class MyAssessmentTakenSession(osid_sessions.OsidSession):
         :return: the started assessments
         :rtype: ``osid.assessment.AssessmentTakenList``
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
@@ -91,6 +92,7 @@ class MyAssessmentTakenSession(osid_sessions.OsidSession):
         :return: the in progress assessments
         :rtype: ``osid.assessment.AssessmentTakenList``
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
@@ -277,6 +279,8 @@ class AssessmentSession(osid_sessions.OsidSession):
     def get_first_assessment_section(self, assessment_taken_id):
         """Gets the first assessment section in this assesment.
 
+        All assessments have at least one ``AssessmentSection``.
+
         :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
         :type assessment_taken_id: ``osid.id.Id``
         :return: the first assessment section
@@ -298,7 +302,10 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: ``true`` if there is a next section, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false``
-        :raise: ``NullArgument`` -- ``section_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
@@ -311,9 +318,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the next section
         :rtype: ``osid.assessment.AssessmentSection``
         :raise: ``IllegalState`` -- ``has_next_assessment_section()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
@@ -327,7 +334,10 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: ``true`` if there is a previous assessment section, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false``
-        :raise: ``NullArgument`` -- ``section_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
@@ -340,9 +350,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the previous assessment section
         :rtype: ``osid.assessment.AssessmentSection``
         :raise: ``IllegalState`` -- ``has_next_assessment_section()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
@@ -356,9 +366,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the assessment section
         :rtype: ``osid.assessment.AssessmentSection``
         :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
@@ -396,19 +406,21 @@ class AssessmentSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_incomplete_assessment_sections(self):
+    def get_incomplete_assessment_sections(self, assessment_taken_id):
         """Gets the incomplete assessment sections of this assessment.
 
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
         :return: the list of incomplete assessment sections
         :rtype: ``osid.assessment.AssessmentSectionList``
         :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.AssessmentSectionList
-
-    incomplete_assessment_sections = property(fget=get_incomplete_assessment_sections)
 
     def has_assessment_section_begun(self, assessment_section_id):
         """Tests if this assessment section has started.
@@ -498,133 +510,159 @@ class AssessmentSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_first_question(self):
+    def get_first_question(self, assessment_section_id):
         """Gets the first question in this assesment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :return: the first question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    first_question = property(fget=get_first_question)
-
-    def has_next_question(self, item_id):
+    def has_next_question(self, assessment_section_id, item_id):
         """Tests if there is a next question following the given question ``Id``.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a next question, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
 
-    def get_next_question(self, item_id):
+    def get_next_question(self, assessment_section_id, item_id):
         """Gets the next question in this assesment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: the next question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` or ``has_next_question()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    def has_previous_question(self, item_id):
+    def has_previous_question(self, assessment_section_id, item_id):
         """Tests if there is a previous question preceeding the given question ``Id``.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a previous question, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
 
-    def get_previous_question(self, item_id):
+    def get_previous_question(self, assessment_section_id, item_id):
         """Gets the previous question in this assesment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: the previous question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_begun()`` or ``has_previous_question()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    def get_question(self, item_id):
+    def get_question(self, assessment_section_id, item_id):
         """Gets the ``Question`` specified by its ``Id``.
 
-        :param item_id: the ``Id`` of the ``Question`` to retrieve
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
+        :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: the returned ``Question``
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
-        :raise: ``NotFound`` -- no ``Question`` found with the given ``Id`` in this section
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    def get_questions(self):
+    def get_questions(self, assessment_section_id):
         """Gets the questions of this assessment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :return: the list of assessment questions
         :rtype: ``osid.assessment.QuestionList``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.QuestionList
 
-    questions = property(fget=get_questions)
-
-    def get_response_form(self, item_id):
+    def get_response_form(self, assessment_section_id, item_id):
         """Gets the response form for submitting an answer.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: an answer form
         :rtype: ``osid.assessment.AnswerForm``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.AnswerForm
 
-    def submit_response(self, item_id, answer):
+    def submit_response(self, assessment_section_id, item_id, answer_form):
         """Submits an answer to an item.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
-        :param answer: the response
-        :type answer: ``osid.assessment.AnswerForm``
+        :param answer_form: the response
+        :type answer_form: ``osid.assessment.AnswerForm``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
         :raise: ``InvalidArgument`` -- one or more of the elements in the form is invalid
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` or ``response`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id, item_id,`` or ``answer_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``answer_form`` is not of this service
@@ -632,217 +670,260 @@ class AssessmentSession(osid_sessions.OsidSession):
         """
         pass
 
-    def skip_item(self, item_id):
+    def skip_item(self, assessment_section_id, item_id):
         """Skips an item.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
-        :return: the response
-        :rtype: ``osid.assessment.Response``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        return # osid.assessment.Response
+        pass
 
-    def is_question_answered(self, item_id):
+    def is_question_answered(self, assessment_section_id, item_id):
         """Tests if the given item has a response.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: ``true`` if this item has a response, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         return # boolean
 
-    def get_unanswered_questions(self):
+    def get_unanswered_questions(self, assessment_section_id):
         """Gets the unanswered questions of this assessment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :return: the list of questions with no rsponses
         :rtype: ``osid.assessment.QuestionList``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.QuestionList
 
-    unanswered_questions = property(fget=get_unanswered_questions)
-
-    def has_unanswered_questions(self):
+    def has_unanswered_questions(self, assessment_section_id):
         """Tests if there are unanswered questions in this assessment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if there are unanswered questions, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
 
-    def get_first_unanswered_question(self):
+    def get_first_unanswered_question(self, assessment_section_id):
         """Gets the first unanswered question in this assesment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :return: the first unanswered question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` or ``has_unanswered_questions()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    first_unanswered_question = property(fget=get_first_unanswered_question)
-
-    def has_next_unanswered_question(self, item_id):
+    def has_next_unanswered_question(self, assessment_section_id, item_id):
         """Tests if there is a next unanswered question following the given question ``Id``.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a next unanswered question, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
 
-    def get_next_unanswered_question(self, item_id):
+    def get_next_unanswered_question(self, assessment_section_id, item_id):
         """Gets the next unanswered question in this assesment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: the next unanswered question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` or ``has_next_unanswered_question()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    def has_previous_unanswered_question(self, item_id):
+    def has_previous_unanswered_question(self, assessment_section_id, item_id):
         """Tests if there is a previous unanswered question preceeding the given question ``Id``.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a previous unanswered question, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # boolean
 
-    def get_previous_unanswered_question(self, item_id):
+    def get_previous_unanswered_question(self, assessment_section_id, item_id):
         """Gets the previous unanswered question in this assesment section.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: the previous unanswered question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_assessmnet_section_begun()`` or ``has_previous_unanswered_question()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         return # osid.assessment.Question
 
-    def get_response(self, item_id):
+    def get_response(self, assessment_section_id, item_id):
         """Gets the submitted response to the associated item.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: the response
         :rtype: ``osid.assessment.Response``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         return # osid.assessment.Response
 
-    def get_responses(self):
+    def get_responses(self, assessment_section_id):
         """Gets all submitted responses.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :return: the list of responses
         :rtype: ``osid.assessment.ResponseList``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         return # osid.assessment.ResponseList
 
-    responses = property(fget=get_responses)
-
-    def clear_response(self, item_id):
+    def clear_response(self, assessment_section_id, item_id):
         """Clears the response to an item The item appears as unanswered.
 
         If no response exists, the method simply returns.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def finish(self):
+    def finish(self, assessment_section_id):
         """Indicates the assessment section is complete.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def is_answer_available(self, item_id):
+    def is_answer_available(self, assessment_section_id, item_id):
         """Tests if an answer is available for the given item.
 
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
         :return: ``true`` if an answer are available, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-
-        """
-        return # boolean
-
-    def get_answers(self, item_id):
-        """Gets the acceptable answers to the associated item.
-
-        :param item_id: ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: the answers
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``IllegalState`` -- ``is_answer_available()`` is ``false``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        return # osid.assessment.AssessmentList
+        return # boolean
+
+    def get_answers(self, assessment_section_id, item_id):
+        """Gets the acceptable answers to the associated item.
+
+        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
+        :type assessment_section_id: ``osid.id.Id``
+        :param item_id: ``Id`` of the ``Item``
+        :type item_id: ``osid.id.Id``
+        :return: the answers
+        :rtype: ``osid.assessment.AnswerList``
+        :raise: ``IllegalState`` -- ``is_answer_available()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        return # osid.assessment.AnswerList
 
 
 class AssessmentResultsSession(osid_sessions.OsidSession):
@@ -1135,6 +1216,42 @@ class ItemLookupSession(osid_sessions.OsidSession):
         :return: the returned ``Item`` list
         :rtype: ``osid.assessment.ItemList``
         :raise: ``NullArgument`` -- ``item_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        return # osid.assessment.ItemList
+
+    def get_items_by_question(self, question_id):
+        """Gets an ``ItemList`` containing the given question.
+
+        In plenary mode, the returned list contains all known items or
+        an error results. Otherwise, the returned list may contain only
+        those assessment items that are accessible through this session.
+
+        :param question_id: a question ``Id``
+        :type question_id: ``osid.id.Id``
+        :return: the returned ``Item`` list
+        :rtype: ``osid.assessment.ItemList``
+        :raise: ``NullArgument`` -- ``question_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        return # osid.assessment.ItemList
+
+    def get_items_by_answer(self, answer_id):
+        """Gets an ``ItemList`` containing the given answer.
+
+        In plenary mode, the returned list contains all known items or
+        an error results. Otherwise, the returned list may contain only
+        those assessment items that are accessible through this session.
+
+        :param answer_id: an answer ``Id``
+        :type answer_id: ``osid.id.Id``
+        :return: the returned ``Item`` list
+        :rtype: ``osid.assessment.ItemList``
+        :raise: ``NullArgument`` -- ``answer_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
@@ -1995,10 +2112,43 @@ class ItemNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_item_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_item_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_item_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_item_notification(self, notification_id):
+        """Acknowledge an item notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_items(self):
         """Register for notifications of new assessment items.
 
-        ``ItemReceiver.newItem()`` is invoked when a new ``Item`` is
+        ``ItemReceiver.newItems()`` is invoked when a new ``Item`` is
         created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2010,7 +2160,7 @@ class ItemNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_items(self):
         """Registers for notification of updated assessment items.
 
-        ``ItemReceiver.changedItem()`` is invoked when an assessment
+        ``ItemReceiver.changedItems()`` is invoked when an assessment
         item is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2022,7 +2172,7 @@ class ItemNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_item(self, item_id):
         """Registers for notification of an updated assessment item.
 
-        ``ItemReceiver.changedItem()`` is invoked when the specified
+        ``ItemReceiver.changedItems()`` is invoked when the specified
         assessment item is changed.
 
         :param item_id: the ``Id`` of the ``Assessment`` to monitor
@@ -2038,7 +2188,7 @@ class ItemNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_items(self):
         """Registers for notification of deleted assessment items.
 
-        ``ItemReceiver.deletedItem()`` is invoked when an assessment
+        ``ItemReceiver.deletedItems()`` is invoked when an assessment
         item is removed from the assessment bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2050,7 +2200,7 @@ class ItemNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_item(self, item_id):
         """Registers for notification of a deleted assessment item.
 
-        ``ItemReceiver.changedItem()`` is invoked when the specified
+        ``ItemReceiver.deletedItems()`` is invoked when the specified
         assessment item is removed from the assessment bank.
 
         :param item_id: the ``Id`` of the ``Item`` to monitor
@@ -2305,6 +2455,25 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        pass
+
+    def reassign_item_to_billing(self, item_id, from_bank_id, to_bank_id):
+        """Moves an ``Item`` from one ``Bank`` to another.
+
+        Mappings to other ``Banks`` are unaffected.
+
+        :param item_id: the ``Id`` of the ``Item``
+        :type item_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or ``item_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
@@ -3146,10 +3315,43 @@ class AssessmentNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_assessment_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_assessment_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_assessment_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_assessment_notification(self, notification_id):
+        """Acknowledge an assessment notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_assessments(self):
         """Register for notifications of new assessments.
 
-        ``AssessmentReceiver.newAssessment()`` is invoked when a new
+        ``AssessmentReceiver.newAssessments()`` is invoked when a new
         ``Assessment`` appears in this assessment bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3161,7 +3363,7 @@ class AssessmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments(self):
         """Registers for notification of updated assessments.
 
-        ``AssessmentReceiver.changedAssessment()`` is invoked when an
+        ``AssessmentReceiver.changedAssessments()`` is invoked when an
         assessment in this assessment bank is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3173,7 +3375,7 @@ class AssessmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessment(self, assessment_id):
         """Registers for notification of an updated assessment.
 
-        ``AssessmentReceiver.changedAssessment()`` is invoked when the
+        ``AssessmentReceiver.changedAssessments()`` is invoked when the
         specified assessment in this assessment bank is changed.
 
         :param assessment_id: the ``Id`` of the ``Assessment`` to monitor
@@ -3188,7 +3390,7 @@ class AssessmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments(self):
         """Registers for notification of deleted assessments.
 
-        ``AssessmentReceiver.deletedAssessment()`` is invoked when an
+        ``AssessmentReceiver.deletedAssessments()`` is invoked when an
         assessment is removed from this assessment bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3200,7 +3402,7 @@ class AssessmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessment(self, assessment_id):
         """Registers for notification of a deleted assessment.
 
-        ``AssessmentReceiver.deletedAssessment()`` is invoked when the
+        ``AssessmentReceiver.deletedAssessments()`` is invoked when the
         specified assessment is removed from this assessment bank.
 
         :param assessment_id: the ``Id`` of the ``Assessment`` to monitor
@@ -3459,6 +3661,25 @@ class AssessmentBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_assessment_to_billing(self, assessment_id, from_bank_id, to_bank_id):
+        """Moves an ``Assessment`` from one ``Bank`` to another.
+
+        Mappings to other ``Banks`` are unaffected.
+
+        :param assessment_id: the ``Id`` of the ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class AssessmentSmartBankSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -3618,8 +3839,8 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
 
     bank = property(fget=get_bank)
 
-    def can_author_assessment(self):
-        """Tests if this user can author this assessment.
+    def can_author_assessments(self):
+        """Tests if this user can author assessments.
 
         A return of true does not guarantee successful authorization. A
         return of false indicates that it is known mapping methods in
@@ -4273,7 +4494,7 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
         """Creates a new ``AssessmentOffered``.
 
         :param assessment_offered_form: the form for this ``AssessmentOffered``
-        :type assessment_offered_form: ``osid.assessment.AssessmentForm``
+        :type assessment_offered_form: ``osid.assessment.AssessmentOfferedForm``
         :return: the new ``AssessmentOffered``
         :rtype: ``osid.assessment.AssessmentOffered``
         :raise: ``IllegalState`` -- ``assessment_offrered_form`` already used in a create transaction
@@ -4472,10 +4693,43 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_assessment_offered_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_assessment_offered_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_assessment_offered_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_assessment_offered_notification(self, notification_id):
+        """Acknowledge an assessment offered notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_assessments_offered(self):
         """Register for notifications of new assessments offered.
 
-        ``AssessmentOfferedReceiver.newAssessmentOffered()`` is invoked
+        ``AssessmentOfferedReceiver.newAssessmentsOffered()`` is invoked
         when a new ``AssessmentOffered`` appears in this assessmen
         tbank.
 
@@ -4488,7 +4742,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_new_assessments_offered_for_assessment(self, assessment_id):
         """Register for notifications of new assessments offered by assessment.
 
-        ``AssessmentOfferedReceiver.newAssessmentOffered()`` is invoked
+        ``AssessmentOfferedReceiver.newAssessmentsOffered()`` is invoked
         when a new ``AssessmentOffered`` appears in this assessment
         bank.
 
@@ -4504,7 +4758,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments_offered(self):
         """Registers for notification of updated assessments offered.
 
-        ``AssessmentOfferedReceiver.changedAssessmentOffered()`` is
+        ``AssessmentOfferedReceiver.changedAssessmentsOffered()`` is
         invoked when an assessment offered in this assessment bank is
         changed.
 
@@ -4517,7 +4771,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments_offered_for_assessment(self, assessment_id):
         """Register for notifications of updated assessments offered by assessment.
 
-        ``AssessmentOfferedReceiver.changedAssessmentOffered()`` is
+        ``AssessmentOfferedReceiver.changedAssessmentsOffered()`` is
         invoked when an ``AssessmentOffered`` in this assessment bank is
         changed.
 
@@ -4533,7 +4787,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessment_offered(self, assessment_offered_id):
         """Registers for notification of an updated assessment offered.
 
-        ``AssessmentOfferedReceiver.changedAssessmentOffered()`` is
+        ``AssessmentOfferedReceiver.changedAssessmentsOffered()`` is
         invoked when the specified assessment offered in this assessment
         bank is changed.
 
@@ -4549,7 +4803,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments_offered(self):
         """Registers for notification of deleted assessments offered.
 
-        ``AssessmentOfferedReceiver.deletedAssessmentOffered()`` is
+        ``AssessmentOfferedReceiver.deletedAssessmentsOffered()`` is
         invoked when an assessment offered is removed from the
         assessment bank.
 
@@ -4562,7 +4816,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments_offered_for_assessment(self, assessment_id):
         """Register for notifications of deleted assessments offered by assessment.
 
-        ``AssessmentOfferedReceiver.deletedAssessmentOffered()`` is
+        ``AssessmentOfferedReceiver.deletedAssessmenstOffered()`` is
         invoked when an ``AssessmentOffered`` is removed form the
         assessment bank.
 
@@ -4578,7 +4832,7 @@ class AssessmentOfferedNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessment_offered(self, assessment_offered_id):
         """Registers for notification of a deleted assessment offered.
 
-        ``AssessmentOfferedReceiver.deletedAssessmentOffered()`` is
+        ``AssessmentOfferedReceiver.deletedAssessmentsOffered()`` is
         invoked when the specified assessment offered is removed from
         the assessment bank.
 
@@ -4834,6 +5088,25 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        pass
+
+    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
+        """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
+
+        Mappings to other ``Banks`` are unaffected.
+
+        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_offered_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
@@ -5930,11 +6203,44 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_assessment_taken_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_assessment_taken_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_assessment_taken_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_assessment_taken_notification(self, notification_id):
+        """Acknowledge an assessment taken notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_assessments_taken(self):
         """Register for notifications of new assessments taken in this assessment bank.
 
-        ``AssessmentTakenReceiver.newAssessmentTaken()`` is invoked when
-        a new ``AssessmentTaken`` appears in this assessment bank.
+        ``AssessmentTakenReceiver.newAssessmentsTaken()`` is invoked
+        when a new ``AssessmentTaken`` appears in this assessment bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -5945,8 +6251,8 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_new_assessments_taken_for_taker(self, resource_id):
         """Register for notifications of new assessments taken for a resource.
 
-        ``AssessmentTakenReceiver.newAssessmentTaken()`` is invoked when
-        a new ``AssessmentTaken`` appears in this assessment bank.
+        ``AssessmentTakenReceiver.newAssessmenstTaken()`` is invoked
+        when a new ``AssessmentTaken`` appears in this assessment bank.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
         :type resource_id: ``osid.id.Id``
@@ -5960,8 +6266,8 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_new_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Register for notifications of new assessments taken for an assessment offered.
 
-        ``AssessmentTakenReceiver.newAssessmentTaken()`` is invoked when
-        a new ``AssessmentTaken`` appears in this assessment bank.
+        ``AssessmentTakenReceiver.newAssessmentsTaken()`` is invoked
+        when a new ``AssessmentTaken`` appears in this assessment bank.
 
         :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered`` to monitor
         :type assessment_offered_id: ``osid.id.Id``
@@ -5975,8 +6281,8 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_new_assessments_taken_for_assessment(self, assessment_id):
         """Register for notifications of new assessments taken for an assessment.
 
-        ``AssessmentTakenReceiver.newAssessmentTaken()`` is invoked when
-        a new ``AssessmentTaken`` appears in this assessment bank.
+        ``AssessmentTakenReceiver.newAssessmentsTaken()`` is invoked
+        when a new ``AssessmentTaken`` appears in this assessment bank.
 
         :param assessment_id: the ``Id`` of the ``Assessment`` to monitor
         :type assessment_id: ``osid.id.Id``
@@ -5990,7 +6296,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments_taken(self):
         """Registers for notification of updated assessments taken.
 
-        ``AssessmentTakenReceiver.changedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.changedAssessmentsTaken()`` is invoked
         when an assessment taken in this assessment bank is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6002,7 +6308,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments_taken_for_taker(self, resource_id):
         """Register for notifications of changed assessments taken for a resource.
 
-        ``AssessmentTakenReceiver.changedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.changedAssessmentsTaken()`` is invoked
         when an ``AssessmentTaken`` is changed in this assessment bank.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -6017,7 +6323,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Register for notifications of changed assessments taken for an assessment offered.
 
-        ``AssessmentTakenReceiver.changedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.changedAssessmentsTaken()`` is invoked
         when an ``AssessmentTaken`` is changed in this assessment bank.
 
         :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered`` to monitor
@@ -6032,7 +6338,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessments_taken_for_assessment(self, assessment_id):
         """Register for notifications of changed assessments taken for an assessment.
 
-        ``AssessmentTakenReceiver.changedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.changedAssessmentsTaken()`` is invoked
         when an ``AssessmentTaken`` is changed in this assessment bank.
 
         :param assessment_id: the ``Id`` of the ``Assessment`` to monitor
@@ -6047,7 +6353,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assessment_taken(self, assessment_taken_id):
         """Registers for notification of an updated assessment taken.
 
-        ``AssessmentTakenReceiver.changedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.changedAssessmentsTaken()`` is invoked
         when the specified assessment taken in this assessment bank is
         changed.
 
@@ -6063,7 +6369,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments_taken(self):
         """Registers for notification of deleted assessments taken.
 
-        ``AssessmentTakenReceiver.deletedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.deletedAssessmentsTaken()`` is invoked
         when an assessment taken is removed from this assessment bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6075,7 +6381,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments_taken_for_taker(self, resource_id):
         """Register for notifications of deleted assessments taken for a resource.
 
-        ``AssessmentTakenReceiver.deletedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.deletedAssessmentsTaken()`` is invoked
         when an ``AssessmentTaken`` is removed from this assessment
         bank.
 
@@ -6091,7 +6397,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Register for notifications of deleted assessments taken for an assessment offered.
 
-        ``AssessmentTakenReceiver.deletedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.deletedAssessmentsTaken()`` is invoked
         when an ``AssessmentTaken`` is removed from this assessment
         bank.
 
@@ -6107,7 +6413,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessments_taken_for_assessment(self, assessment_id):
         """Register for notifications of deleted assessments taken for an assessment.
 
-        ``AssessmentTakenReceiver.deletedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.deletedAssessmentsTaken()`` is invoked
         when an ``AssessmentTaken`` is removed from this assessment
         bank.
 
@@ -6123,7 +6429,7 @@ class AssessmentTakenNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assessment_taken(self, assessment_taken_id):
         """Registers for notification of a deleted assessment taken.
 
-        ``AssessmentTakenReceiver.deletedAssessmentTaken()`` is invoked
+        ``AssessmentTakenReceiver.deletedAssessmentsTaken()`` is invoked
         when the specified assessment taken is removed from this
         assessment bank.
 
@@ -6379,6 +6685,25 @@ class AssessmentTakenBankAssignmentSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        """
+        pass
+
+    def reassign_assessment_taken_to_billing(self, assessment_taken_id, from_bank_id, to_bank_id):
+        """Moves an ``AssessmentTaken`` from one ``Bank`` to another.
+
+        Mappings to other ``Banks`` are unaffected.
+
+        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_taken_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
@@ -7067,42 +7392,45 @@ class BankNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_bank_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_bank_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_bank_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_bank_notification(self, notification_id):
+        """Acknowledge a bank notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_banks(self):
         """Register for notifications of new banks.
 
-        ``BankReceiver.newBank()`` is invoked when a new Bank is
+        ``BankReceiver.newBanks()`` is invoked when a new Bank is
         created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-        """
-        pass
-
-    def register_for_new_bank_ancestors(self, bank_id):
-        """Registers for notification if an ancestor is added to the specified bank in the bank hierarchy.
-
-        ``BankReceiver.newBankAncestor()`` is invoked when the specified
-        bank experiences an addition in ancestry.
-
-        :param bank_id: the Id of the bank to monitor
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``bank_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-        """
-        pass
-
-    def register_for_new_bank_descendants(self, bank_id):
-        """Registers for notification if a descendant is added to the specified bank in the bank hierarchy.
-
-        ``BankReceiver.newBankDescendant()`` is invoked when the
-        specified bank experiences an addition in descendants.
-
-        :param bank_id: the Id of the bank to monitor
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``bank_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
@@ -7112,7 +7440,7 @@ class BankNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_banks(self):
         """Registers for notification of updated banks.
 
-        ``BankReceiver.changedBank()`` is invoked when a bank is
+        ``BankReceiver.changedBanks()`` is invoked when a bank is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -7124,7 +7452,7 @@ class BankNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_bank(self, bank_id):
         """Registers for notification of an updated bank.
 
-        ``BankReceiver.changedBank()`` is invoked when the specified
+        ``BankReceiver.changedBanks()`` is invoked when the specified
         bank is changed.
 
         :param bank_id: the Id of the bank to monitor
@@ -7139,7 +7467,7 @@ class BankNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_banks(self):
         """Registers for notification of deleted banks.
 
-        ``BankReceiver.deletedBank()`` is invoked when a bank is
+        ``BankReceiver.deletedBanks()`` is invoked when a bank is
         deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -7151,7 +7479,7 @@ class BankNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_bank(self, bank_id):
         """Registers for notification of a deleted bank.
 
-        ``BankReceiver.deletedBank()`` is invoked when the specified
+        ``BankReceiver.deletedBanks()`` is invoked when the specified
         bank is deleted.
 
         :param bank_id: the Id of the bank to monitor
@@ -7163,32 +7491,46 @@ class BankNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_bank_ancestors(self, bank_id):
-        """Registers for notification if an ancestor is removed from the specified bank in the bank hierarchy.
+    def register_for_changed_bank_hierarchy(self):
+        """Registers for notification of an updated bank hierarchy structure.
 
-        ``BankReceiver.deletedBankAncestor()`` is invoked when the
-        specified bank experiences a removal of an ancestor.
+        ``BankReceiver.changedChildOfBanks()`` is invoked when a node
+        experiences a change in its children.
 
-        :param bank_id: the Id of the bank to monitor
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``bank_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_bank_descendants(self, bank_id):
-        """Registers for notification if a descendant is removed from fthe specified bank in the bank hierarchy.
+    def register_for_changed_bank_hierarchy_for_ancestors(self, bank_id):
+        """Registers for notification of an updated bank hierarchy structure.
 
-        ``BankReceiver.deletedBankDescednant()`` is invoked when the
-        specified bank experiences a removal of one of its descendants.
+        ``BankReceiver.changedChildOfBanks()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
 
-        :param bank_id: the Id of the bank to monitor
+        :param bank_id: the ``Id`` of the ``Bank`` node to monitor
         :type bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``bank_id is null``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_bank_hierarchy_for_descendants(self, bank_id):
+        """Registers for notification of an updated bank hierarchy structure.
+
+        ``BankReceiver.changedChildOfBanks()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
+
+        :param bank_id: the ``Id`` of the ``Bank`` node to monitor
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass

@@ -361,6 +361,10 @@ Assessment Section
 .. autoclass:: AssessmentSection
    :show-inheritance:
 
+   .. autoattribute:: AssessmentSection.assessment_taken_id
+
+   .. autoattribute:: AssessmentSection.assessment_taken
+
    .. automethod:: AssessmentSection.has_allocated_time
 
    .. autoattribute:: AssessmentSection.allocated_time

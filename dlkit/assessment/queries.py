@@ -49,7 +49,7 @@ class AnswerQuery(osid_queries.OsidObjectQuery):
         return # osid.assessment.records.AnswerQueryRecord
 
 
-class ItemQuery(osid_queries.OsidObjectQuery):
+class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery):
     """This is the query for searching items.
 
     Each method match request produces an ``AND`` term while multiple

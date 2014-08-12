@@ -174,7 +174,7 @@ class AnswerList(osid_objects.OsidList):
         return # osid.assessment.Answer
 
 
-class Item(osid_objects.OsidObject):
+class Item(osid_objects.OsidObject, osid_markers.Aggregateable):
     """An ``Item`` represents an individual assessment item such as a question.
 
     Like all OSID objects, a ``Item`` is identified by its ``Id`` and
@@ -275,7 +275,7 @@ class Item(osid_objects.OsidObject):
         return # osid.assessment.records.ItemRecord
 
 
-class ItemForm(osid_objects.OsidObjectForm):
+class ItemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm):
     """This is the form for creating and updating ``Items``.
 
     Like all ``OsidForm`` objects, various data elements may be set here
@@ -1563,6 +1563,29 @@ class AssessmentSection(osid_objects.OsidObject):
     aspect of an assessment part.
 
     """
+    def get_assessment_taken_id(self):
+        """Gets the ``Id`` of the ``AssessmentTaken``.
+
+        :return: the assessment taken ``Id``
+        :rtype: ``osid.id.Id``
+
+        """
+        return # osid.id.Id
+
+    assessment_taken_id = property(fget=get_assessment_taken_id)
+
+    def get_assessment_taken(self):
+        """Gets the ``AssessmentTakeb``.
+
+        :return: the assessment taken
+        :rtype: ``osid.assessment.AssessmentTaken``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+        """
+        return # osid.assessment.AssessmentTaken
+
+    assessment_taken = property(fget=get_assessment_taken)
+
     def has_allocated_time(self):
         """Tests if this section must be completed within an allocated time.
 

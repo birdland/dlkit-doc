@@ -3,29 +3,35 @@ from ..osid import receivers as osid_receivers
 
 class ItemReceiver(osid_receivers.OsidReceiver):
     """The item receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Items``."""
-    def new_item(self, item_id):
+    def new_items(self, notification_id, item_ids):
         """The callback for notifications of new items.
 
-        :param item_id: the Id of the new ``Item``
-        :type item_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param item_ids: the Id of the new ``Items``
+        :type item_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_item(self, item_id):
+    def changed_items(self, notification_id, item_ids):
         """The callback for notification of updated items.
 
-        :param item_id: the Id of the updated ``Item``
-        :type item_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param item_ids: the Id of the updated ``Items``
+        :type item_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_item(self, item_id):
+    def deleted_items(self, notification_id, item_ids):
         """The callback for notification of deleted items.
 
-        :param item_id: the Id of the deleted ``Item``
-        :type item_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param item_ids: the Id of the deleted ``Items``
+        :type item_ids: ``osid.id.IdList``
 
         """
         pass
@@ -33,29 +39,35 @@ class ItemReceiver(osid_receivers.OsidReceiver):
 
 class AssessmentReceiver(osid_receivers.OsidReceiver):
     """The assessment receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Assessment`` objects."""
-    def new_assessment(self, assessment_id):
+    def new_assessments(self, notification_id, assessment_ids):
         """The callback for notifications of new assessments.
 
-        :param assessment_id: the ``Id`` of the new ``Assessment``
-        :type assessment_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_ids: the ``Ids`` of the new ``Assessments``
+        :type assessment_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_assessment(self, assessment_id):
+    def changed_assessments(self, notification_id, assessment_ids):
         """The callback for notification of updated assessments.
 
-        :param assessment_id: the ``Id`` of the updated ``Assessment``
-        :type assessment_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_ids: the ``Ids`` of the updated ``Assessments``
+        :type assessment_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_assessment(self, assessment_id):
+    def deleted_assessments(self, notification_id, assessment_ids):
         """the callback for notification of deleted assessments.
 
-        :param assessment_id: the ``Id`` of the deleted ``Assessment``
-        :type assessment_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_ids: the ``Ids`` of the deleted ``Assessments``
+        :type assessment_ids: ``osid.id.IdList``
 
         """
         pass
@@ -63,29 +75,35 @@ class AssessmentReceiver(osid_receivers.OsidReceiver):
 
 class AssessmentOfferedReceiver(osid_receivers.OsidReceiver):
     """The assessment receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``AssessmentOffered`` objects."""
-    def new_assessment_offered(self, assessment_offered_id):
+    def new_assessments_offered(self, notification_id, assessment_offered_ids):
         """The callback for notifications of new offered assessments.
 
-        :param assessment_offered_id: the ``Id`` of the new ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param assessment_offered_ids: the ``Id`` of the new ``AssessmentsOffered``
+        :type assessment_offered_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_assessment_offered(self, assessment_offered_id):
+    def changed_assessments_offered(self, notification_id, assessment_offered_ids):
         """The callback for notification of updated offered assessments.
 
-        :param assessment_offered_id: the ``Id`` of the updated ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_offered_ids: the ``Id`` of the updated ``AssessmentsOffered``
+        :type assessment_offered_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_assessment_offered(self, assessment_offered_id):
+    def deleted_assessments_offered(self, notification_id, assessment_offered_ids):
         """the callback for notification of deleted offered assessments.
 
-        :param assessment_offered_id: the ``Id`` of the deleted ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param assessment_offered_ids: the ``Id`` of the deleted ``AssessmentsOffered``
+        :type assessment_offered_ids: ``osid.id.IdList``
 
         """
         pass
@@ -93,103 +111,82 @@ class AssessmentOfferedReceiver(osid_receivers.OsidReceiver):
 
 class AssessmentTakenReceiver(osid_receivers.OsidReceiver):
     """The assessment receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``AssessmentTaken`` objects."""
-    def new_assessment_taken(self, assessment_taken_id):
+    def new_assessments_taken(self, notification_id, assessment_taken_ids):
         """The callback for notifications of new taken assessments.
 
-        :param assessment_taken_id: the ``Id`` of the new ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_taken_ids: the ``Ids`` of the new ``AssessmentsTaken``
+        :type assessment_taken_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_assessment_taken(self, assessment_taken_id):
+    def changed_assessmenst_taken(self, notification_id, assessment_taken_ids):
         """The callback for notification of updated taken assessments.
 
-        :param assessment_taken_id: the ``Id`` of the updated ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_taken_ids: the ``Ids`` of the updated ``AssessmentsTaken``
+        :type assessment_taken_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_assessment_taken(self, assessment_taken_id):
+    def deleted_assessmenst_taken(self, notification_id, assessment_taken_ids):
         """the callback for notification of deleted taken assessments.
 
-        :param assessment_taken_id: the ``Id`` of the deleted ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param assessment_taken_ids: the ``Ids`` of the deleted ``AssessmentsTaken``
+        :type assessment_taken_ids: ``osid.id.IdList``
 
         """
         pass
 
 
 class BankReceiver(osid_receivers.OsidReceiver):
-    """The bank receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted Bank objects."""
-    def new_bank(self, bank_id):
+    """The bank receiver is the consumer supplied interface for receiving notifications pertaining to new, updated, or deleted Bank objects."""
+    def new_banks(self, notification_id, bank_ids):
         """The callback for notifications of new banks.
 
-        :param bank_id: the Id of the new ``Bank``
-        :type bank_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param bank_ids: the ``Ids`` of the ``Banks``
+        :type bank_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_bank(self, bank_id, ancestor_id):
-        """The callback for notifications of new bank ancestors.
-
-        :param bank_id: the Id of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param ancestor_id: ``has_record_type(bank_record_type) is false``
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_bank(self, bank_id, descendant_id):
-        """The callback for notifications of new bank descendants.
-
-        :param bank_id: the Id of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param descendant_id: the Id of the new ``Bank`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_bank(self, bank_id):
+    def changed_banks(self, notification_id, bank_ids):
         """The callback for notification of updated banks.
 
-        :param bank_id: the Id of the updated ``Bank``
-        :type bank_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param bank_ids: the ``Ids`` of the ``Banks``
+        :type bank_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_bank(self, bank_id):
+    def deleted_banks(self, notification_id, bank_ids):
         """The callback for notification of deleted banks.
 
-        :param bank_id: the Id of the deleted ``Bank``
-        :type bank_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param bank_ids: the ``Ids`` of the ``Banks``
+        :type bank_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_bank(self, bank_id, ancestor_id):
-        """The callback for notifications of deleted bank ancestors.
+    def changed_child_of_banks(self, notification_id, bank_ids):
+        """The callback for notifications of changes to children of bank hierarchy nodes.
 
-        :param bank_id: the Id of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param ancestor_id: the Id of the removed ``Bank`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_bank(self, bank_id, descendant_id):
-        """The callback for notifications of deleted bank descendants.
-
-        :param bank_id: the Id of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param descendant_id: the Id of the removed ``Bank`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param bank_ids: the ``Ids`` of the ``Banks`` whose children have changed
+        :type bank_ids: ``osid.id.IdList``
 
         """
         pass

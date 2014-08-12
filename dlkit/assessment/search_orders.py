@@ -39,7 +39,7 @@ class AnswerSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         return # osid.assessment.records.AnswerSearchOrderRecord
 
 
-class ItemSearchOrder(osid_search_orders.OsidObjectSearchOrder):
+class ItemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidAggregateableSearchOrder):
     """An interface for specifying the ordering of search results."""
     def order_by_question(self, style):
         """Specifies a preference for ordering the result set by the question.

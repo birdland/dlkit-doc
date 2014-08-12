@@ -35,14 +35,18 @@ Contents:
    
    tutorial
    authentication/toc
+   authentication_process/toc
    authorization/toc
    assessment/toc
+   assessment_authoring/toc
    calendaring/toc
    commenting/toc
+   filing/toc
    forum/toc
    grading/toc
    hierarchy/toc
    id/toc
+   journaling/toc
    learning/toc
    locale/toc
    logging/toc
@@ -52,6 +56,8 @@ Contents:
    relationship/toc
    repository/toc
    resource/toc
+   rules/toc
+   transport/toc
    type/toc
    workflow/toc
 

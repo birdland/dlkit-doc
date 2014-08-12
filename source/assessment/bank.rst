@@ -69,7 +69,7 @@ Assessment Methods
 
    .. automethod:: Bank.is_assessment_section_complete
 
-   .. autoattribute:: Bank.incomplete_assessment_sections
+   .. automethod:: Bank.get_incomplete_assessment_sections
 
    .. automethod:: Bank.has_assessment_section_begun
 
@@ -79,7 +79,7 @@ Assessment Methods
 
    .. automethod:: Bank.requires_synchronous_responses
 
-   .. autoattribute:: Bank.first_question
+   .. automethod:: Bank.get_first_question
 
    .. automethod:: Bank.has_next_question
 
@@ -91,7 +91,7 @@ Assessment Methods
 
    .. automethod:: Bank.get_question
 
-   .. autoattribute:: Bank.questions
+   .. automethod:: Bank.get_questions
 
    .. automethod:: Bank.get_response_form
 
@@ -101,11 +101,11 @@ Assessment Methods
 
    .. automethod:: Bank.is_question_answered
 
-   .. autoattribute:: Bank.unanswered_questions
+   .. automethod:: Bank.get_unanswered_questions
 
    .. automethod:: Bank.has_unanswered_questions
 
-   .. autoattribute:: Bank.first_unanswered_question
+   .. automethod:: Bank.get_first_unanswered_question
 
    .. automethod:: Bank.has_next_unanswered_question
 
@@ -117,7 +117,7 @@ Assessment Methods
 
    .. automethod:: Bank.get_response
 
-   .. autoattribute:: Bank.responses
+   .. automethod:: Bank.get_responses
 
    .. automethod:: Bank.clear_response
 
@@ -174,6 +174,10 @@ Item Lookup Methods
    .. automethod:: Bank.get_items_by_parent_genus_type
 
    .. automethod:: Bank.get_items_by_record_type
+
+   .. automethod:: Bank.get_items_by_question
+
+   .. automethod:: Bank.get_items_by_answer
 
    .. automethod:: Bank.get_items_by_learning_objective
 
@@ -295,6 +299,12 @@ Item Notification Methods
 
    .. automethod:: Bank.use_isolated_bank_view
 
+   .. automethod:: Bank.reliable_item_notifications
+
+   .. automethod:: Bank.unreliable_item_notifications
+
+   .. automethod:: Bank.acknowledge_item_notification
+
    .. automethod:: Bank.register_for_new_items
 
    .. automethod:: Bank.register_for_changed_items
@@ -344,6 +354,8 @@ Item Bank Assignment Methods
    .. automethod:: Bank.assign_item_to_bank
 
    .. automethod:: Bank.unassign_item_from_bank
+
+   .. automethod:: Bank.reassign_item_to_billing
 
 
 
@@ -477,6 +489,12 @@ Assessment Notification Methods
 
    .. automethod:: Bank.use_isolated_bank_view
 
+   .. automethod:: Bank.reliable_assessment_notifications
+
+   .. automethod:: Bank.unreliable_assessment_notifications
+
+   .. automethod:: Bank.acknowledge_assessment_notification
+
    .. automethod:: Bank.register_for_new_assessments
 
    .. automethod:: Bank.register_for_changed_assessments
@@ -527,6 +545,8 @@ Assessment Bank Assignment Methods
 
    .. automethod:: Bank.unassign_assessment_from_bank
 
+   .. automethod:: Bank.reassign_assessment_to_billing
+
 
 
 Assessment Smart Bank Methods
@@ -559,7 +579,7 @@ Assessment Basic Authoring Methods
 
    .. autoattribute:: Bank.bank
 
-   .. automethod:: Bank.can_author_assessment
+   .. automethod:: Bank.can_author_assessments
 
    .. automethod:: Bank.get_items
 
@@ -684,6 +704,12 @@ Assessment Offered Notification Methods
 
    .. automethod:: Bank.use_isolated_bank_view
 
+   .. automethod:: Bank.reliable_assessment_offered_notifications
+
+   .. automethod:: Bank.unreliable_assessment_offered_notifications
+
+   .. automethod:: Bank.acknowledge_assessment_offered_notification
+
    .. automethod:: Bank.register_for_new_assessments_offered
 
    .. automethod:: Bank.register_for_new_assessments_offered_for_assessment
@@ -739,6 +765,8 @@ Assessment Offered Bank Assignment Methods
    .. automethod:: Bank.assign_assessment_offered_to_bank
 
    .. automethod:: Bank.unassign_assessment_offered_from_bank
+
+   .. automethod:: Bank.reassign_assessment_offered_to_billing
 
 
 
@@ -894,6 +922,12 @@ Assessment Taken Notification Methods
 
    .. automethod:: Bank.use_isolated_bank_view
 
+   .. automethod:: Bank.reliable_assessment_taken_notifications
+
+   .. automethod:: Bank.unreliable_assessment_taken_notifications
+
+   .. automethod:: Bank.acknowledge_assessment_taken_notification
+
    .. automethod:: Bank.register_for_new_assessments_taken
 
    .. automethod:: Bank.register_for_new_assessments_taken_for_taker
@@ -961,6 +995,8 @@ Assessment Taken Bank Assignment Methods
    .. automethod:: Bank.assign_assessment_taken_to_bank
 
    .. automethod:: Bank.unassign_assessment_taken_from_bank
+
+   .. automethod:: Bank.reassign_assessment_taken_to_billing
 
 
 
