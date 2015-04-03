@@ -1,70 +1,30 @@
 Tutorial: DLKit Learning Service Basics
 =======================================
 
-This tutorial is under development. It currently focuses on aspects of the ``Learning`` service. At the
-time of this writing, MIT's Office of Digital Learning is supporting a production learning objective management
-service called the MIT Core Concept Catalog (MC3_). DLKit includes an underlying implementation that uses MC3 for 
-persistence.  As a result, this tutorial uses examples primarily from this particular service, which deals with 
-managing learning objectives, learning paths and relationships between learning objectives and educational 
-assets, assessments, etc, since there is data available for testing.
+This tutorial is under development. It focuses on aspects of the ``Learning`` service. At the
+time of this writing, MIT's Office of Digital Learning has launched its Python-based OSID 
+development in support of the MIT Core Concept Catalog (MC3_) project starting with the OSID
+``Learning`` package definition.  As a result, this tutorial uses examples primarily from this 
+particular service, which deals with managing learning objectives, learning paths and 
+relationships between learning objectives and educational assets, assessments, etc.
 
 .. _MC3: http://mc3.mit.edu/
 
 All of the other DLKit Interface Specifications build on most of the 
-same patterns outlined in this tutorial, beginning with loading managers.
-
-The Runtime Manager and Proxy Authentication
-------------------------------
-
-Service managers are instantiated through a Runtime Manger, which are designed to work with certain runtime environments,
-like Django or edX/XBlock runtimes.  [include information on how to get the DLKit runtime for Django/edX].  Install the
-runtime environment you want to use and make sure that your Django project's settings.py includes [the installed app]
-
-Now you can get the ``RuntimeManager`` root instance (note that there is only one, and it gets instantiated at environment run-time):
-
-    from dlkit_django import runtime
-
-This ``runtime`` object is your gateway to access  all the underlying service managers and their respective service sessions and functionality
-
-The django runtime knows about Django's own services for users.  You will have access to an HTTPRequest object that includes an user authentication (the
-request variable in the examples below).  This needs to be encapsulated in a Proxy object:
-
-    from dlkit_django import proxy_session
-    condition = proxy_session.get_proxy_condition()
-    condition.set_http_request(request)
-    proxy = proxy_session.get_proxy(condition)
-
-Or, if you are standing up dlkit in edX, get an XBlockUser() object from the xblock runtime. 
-That object is assumed to be stored the 'xblock_user' variable below::
-
-    from dlkit_xblock import proxy_session
-    condition = proxy_session.get_proxy_condition()
-    condition.set_xblock_user(xblock_user)
-    proxy = proxy_session.get_proxy(condition)
-
-Now you have a Proxy object that holds the user data and eventually other stuff, like locale information, etc, 
-that can be used to instantiate new service Managers, which you can also insert into your HttpRequest.session::
-
-    from dlkit_django import runtime
-    request.session.lm = runtime.get_service_manager('LEARNING', proxy)
-
-For the duration of the session you can use this for all the other things.
-that you normally do.
-
-There is a lot more you can do with the ``RuntimeManager``, but getting service managers will be the most common task.  One of the other
-important tasks of this manager, is configuration the underlying service stack based on the ``configs.py`` file and associated helpers.  We
-will cover this later.
+same patterns outlined in this tutorial, beginning with loading a service manager.
 
 Loading the Learning Manager
 ----------------------------
 
 All consumer applications wishing to use the DLKit Learning service should start by instantiating 
-a ``LearningManager`` (don't worry about the proxy for now)::
+the ``LearningManager``::
  
-    lm = runtime.get_service_manager('LEARNING')
+    import dlkit
+    from dlkit.services.learning import LearningManager
+    lm = LearningManager()
     
 Everything you need to do within the learning service can now be
-accessed through this manager. An OSID service ``Manager`` is used like a factory, providing all
+accessed through this manager. An OSID ``Manager`` is used like a factory, providing all
 the other objects necessary for using the service. You should never try to instantiate any 
 other OSID object directly, even if you know where its class definition resides.
 
