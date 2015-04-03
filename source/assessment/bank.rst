@@ -49,8 +49,6 @@ Assessment Methods
 
    .. automethod:: Bank.is_assessment_over
 
-   .. automethod:: Bank.finished_assessment
-
    .. automethod:: Bank.requires_synchronous_sections
 
    .. automethod:: Bank.get_first_assessment_section
@@ -74,8 +72,6 @@ Assessment Methods
    .. automethod:: Bank.has_assessment_section_begun
 
    .. automethod:: Bank.is_assessment_section_over
-
-   .. automethod:: Bank.finished_assessment_section
 
    .. automethod:: Bank.requires_synchronous_responses
 
@@ -121,11 +117,13 @@ Assessment Methods
 
    .. automethod:: Bank.clear_response
 
-   .. automethod:: Bank.finish
+   .. automethod:: Bank.finish_assessment_section
 
    .. automethod:: Bank.is_answer_available
 
    .. automethod:: Bank.get_answers
+
+   .. automethod:: Bank.finish_assessment
 
 
 

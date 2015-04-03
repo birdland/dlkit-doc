@@ -2562,7 +2562,7 @@ class HierarchyList(osid_objects.OsidList):
 
 
 
-class Hierarchys(HierarchyManager):
+class Hierarchies(HierarchyManager):
     pass
 
 

@@ -1531,6 +1531,34 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
         """
         return # osid.assessment.AssessmentTakenSearchSession
 
+    def get_assessment_taken_admin_session(self):
+        """Gets the ``OsidSession`` associated with the assessment taken administration service.
+
+        :return: an ``AssessmentTakenAdminSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenAdminSession
+
+    assessment_taken_admin_session = property(fget=get_assessment_taken_admin_session)
+
+    def get_assessment_taken_admin_session_for_bank(self, bank_id):
+        """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :return: an ``AssessmentTakenSearchSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- ``unable to complete request``
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenAdminSession
+
     def get_assessment_taken_notification_session(self, assessment_taken_receiver):
         """Gets the notification session for notifications pertaining to taken assessment changes.
 
@@ -1561,6 +1589,47 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
 
         """
         return # osid.assessment.AssessmentTakenNotificationSession
+
+    def get_assessment_taken_bank_session(self):
+        """Gets the session for retrieving taken assessments to bank mappings.
+
+        :return: an ``AssessmentTakenBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenBankSession
+
+    assessment_taken_bank_session = property(fget=get_assessment_taken_bank_session)
+
+    def get_assessment_taken_bank_assignment_session(self):
+        """Gets the session for assigning taken assessments to bank mappings.
+
+        :return: an ``AssessmentTakenBankAssignmentSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankAssignmentSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank_assignment()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenBankAssignmentSession
+
+    assessment_taken_bank_assignment_session = property(fget=get_assessment_taken_bank_assignment_session)
+
+    def get_assessment_taken_smart_bank_session(self, bank_id):
+        """Gets the ``OsidSession`` associated with the assessment taken smart banking service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :return: an ``AssessmentTakenSmartBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenSmartBankSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_smart_bank()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenSmartBankSession
 
     def get_bank_lookup_session(self):
         """Gets the OsidSession associated with the bank lookup service.
@@ -2602,6 +2671,37 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         """
         return # osid.assessment.AssessmentTakenSearchSession
 
+    def get_assessment_taken_admin_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the assessment taken administration service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenAdminSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenAdminSession
+
+    def get_assessment_taken_admin_session_for_bank(self, bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenSearchSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- ``unable to complete request``
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenAdminSession
+
     def get_assessment_taken_notification_session(self, assessment_taken_receiver, proxy):
         """Gets the notification session for notifications pertaining to taken assessment changes.
 
@@ -2636,6 +2736,51 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
         """
         return # osid.assessment.AssessmentTakenNotificationSession
+
+    def get_assessment_taken_bank_session(self, proxy):
+        """Gets the session for retrieving taken assessments to bank mappings.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenBankSession
+
+    def get_assessment_taken_bank_assignment_session(self, proxy):
+        """Gets the session for assigning taken assessments to bank mappings.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenBankAssignmentSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankAssignmentSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank_assignment()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenBankAssignmentSession
+
+    def get_assessment_taken_smart_bank_session(self, bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the assessment taken smart banking service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenSmartBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenSmartBankSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_smart_bank()`` is ``false``
+
+        """
+        return # osid.assessment.AssessmentTakenSmartBankSession
 
     def get_bank_lookup_session(self, proxy):
         """Gets the OsidSession associated with the bank lookup service.

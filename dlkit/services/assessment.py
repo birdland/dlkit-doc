@@ -1504,6 +1504,34 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         """
         raise UNIMPLEMENTED()
 
+    def get_assessment_taken_admin_session(self):
+        """Gets the ``OsidSession`` associated with the assessment taken administration service.
+
+        :return: an ``AssessmentTakenAdminSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    assessment_taken_admin_session = property(fget=get_assessment_taken_admin_session)
+
+    def get_assessment_taken_admin_session_for_bank(self, bank_id):
+        """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :return: an ``AssessmentTakenSearchSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- ``unable to complete request``
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
     def get_assessment_taken_notification_session(self, assessment_taken_receiver):
         """Gets the notification session for notifications pertaining to taken assessment changes.
 
@@ -1531,6 +1559,47 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``NullArgument`` -- ``assessment_taken_receiver`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_notification()`` or ``supports_visible_federation()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_assessment_taken_bank_session(self):
+        """Gets the session for retrieving taken assessments to bank mappings.
+
+        :return: an ``AssessmentTakenBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    assessment_taken_bank_session = property(fget=get_assessment_taken_bank_session)
+
+    def get_assessment_taken_bank_assignment_session(self):
+        """Gets the session for assigning taken assessments to bank mappings.
+
+        :return: an ``AssessmentTakenBankAssignmentSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankAssignmentSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank_assignment()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    assessment_taken_bank_assignment_session = property(fget=get_assessment_taken_bank_assignment_session)
+
+    def get_assessment_taken_smart_bank_session(self, bank_id):
+        """Gets the ``OsidSession`` associated with the assessment taken smart banking service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :return: an ``AssessmentTakenSmartBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenSmartBankSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_smart_bank()`` is ``false``
 
         """
         raise UNIMPLEMENTED()
@@ -3435,6 +3504,37 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         """
         raise UNIMPLEMENTED()
 
+    def get_assessment_taken_admin_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the assessment taken administration service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenAdminSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_assessment_taken_admin_session_for_bank(self, bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenSearchSession``
+        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- ``unable to complete request``
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
     def get_assessment_taken_notification_session(self, assessment_taken_receiver, proxy):
         """Gets the notification session for notifications pertaining to taken assessment changes.
 
@@ -3466,6 +3566,51 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``NullArgument`` -- ``assessment_taken_receiver, bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_notification()`` or ``supports_visible_federation()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_assessment_taken_bank_session(self, proxy):
+        """Gets the session for retrieving taken assessments to bank mappings.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_assessment_taken_bank_assignment_session(self, proxy):
+        """Gets the session for assigning taken assessments to bank mappings.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenBankAssignmentSession``
+        :rtype: ``osid.assessment.AssessmentTakenBankAssignmentSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank_assignment()`` is ``false``
+
+        """
+        raise UNIMPLEMENTED()
+
+    def get_assessment_taken_smart_bank_session(self, bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the assessment taken smart banking service for the given bank.
+
+        :param bank_id: the ``Id`` of the bank
+        :type bank_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: an ``AssessmentTakenSmartBankSession``
+        :rtype: ``osid.assessment.AssessmentTakenSmartBankSession``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_assessment_taken_smart_bank()`` is ``false``
 
         """
         raise UNIMPLEMENTED()
@@ -4771,21 +4916,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def finished_assessment(self, assessment_taken_id):
-        """Indicates the entire assessment is complete.
-
-        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_begun()`` is ``false or is_over()`` is ``true``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        raise UNIMPLEMENTED()
-
-    def requires_synchronous_sections(self):
+    def requires_synchronous_sections(self, assessment_taken_id):
         """Tests if synchronous sections are required.
         This method should be checked to determine if all sections are
         available when requested, or the next sections becomes available
@@ -4805,8 +4936,14 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         section is complete. ``AssessmentSectionList.hasNext()`` is
         always true until the end of the assessment is reached.
 
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
         :return: ``true`` if this synchronous sections are required, ``false`` otherwise
         :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
         raise UNIMPLEMENTED()
@@ -4925,7 +5062,10 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         raise UNIMPLEMENTED()
 
     def is_assessment_section_complete(self, assessment_section_id):
-        """Tests if the given assessment section is complete.
+        """Tests if the all responses have been submitted to this assessment section.
+        If ``is_assessment_section_complete()`` is false, then
+        ``get_unanswered_questions()`` may return a list of questions
+        that can be submitted.
 
         :param assessment_section_id: ``Id`` of the ``AssessmentSection``
         :type assessment_section_id: ``osid.id.Id``
@@ -4978,29 +5118,14 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     def is_assessment_section_over(self, assessment_section_id):
         """Tests if this assessment section is over.
-        An assessment section is over if
-        ``finished_assessment_section()`` is invoked or the designated
-        finish time has expired.
+        An assessment section is over if new or updated responses can
+        not be submitted such as the designated finish time has expired.
 
         :param assessment_section_id: ``Id`` of the ``AssessmentSection``
         :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if this assessment is over, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``has_assessmen_sectiont_begun()`` is ``false or is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``assessment_section_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        raise UNIMPLEMENTED()
-
-    def finished_assessment_section(self, assessment_section_id):
-        """Indicates an assessment section is complete.
-
-        :param assessment_section_id: ``Id`` of the ``AssessmentSection``
-        :type assessment_section_id: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5048,7 +5173,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the first question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5066,7 +5191,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a next question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5084,7 +5209,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the next question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` or ``has_next_question()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_next_question()`` is ``false``
         :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5102,7 +5227,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a previous question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5120,7 +5245,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the previous question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_begun()`` or ``has_previous_question()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_previous_question()`` is ``false``
         :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5138,7 +5263,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the returned ``Question``
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5154,7 +5279,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the list of assessment questions
         :rtype: ``osid.assessment.QuestionList``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5242,7 +5367,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the list of questions with no rsponses
         :rtype: ``osid.assessment.QuestionList``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5258,7 +5383,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if there are unanswered questions, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5274,7 +5399,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the first unanswered question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` or ``has_unanswered_questions()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_unanswered_questions()`` is ``false``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5292,7 +5417,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a next unanswered question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5310,7 +5435,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the next unanswered question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` or ``has_next_unanswered_question()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_next_unanswered_question()`` is ``false``
         :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5328,7 +5453,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a previous unanswered question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5346,7 +5471,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the previous unanswered question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessmnet_section_begun()`` or ``has_previous_unanswered_question()`` is ``false``
+        :raise: ``IllegalState`` -- ``has_previous_unanswered_question()`` is ``false``
         :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5406,12 +5531,13 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         raise UNIMPLEMENTED()
 
-    def finish(self, assessment_section_id):
-        """Indicates the assessment section is complete.
+    def finish_assessment_section(self, assessment_section_id):
+        """Indicates an assessment section is complete.
+        Finished sections may or may not allow new or updated responses.
 
         :param assessment_section_id: ``Id`` of the ``AssessmentSection``
         :type assessment_section_id: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5449,6 +5575,20 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``IllegalState`` -- ``is_answer_available()`` is ``false``
         :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def finish_assessment(self, assessment_taken_id):
+        """Indicates the entire assessment is complete.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :raise: ``IllegalState`` -- ``has_begun()`` is ``false or is_over()`` is ``true``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -9001,7 +9141,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """Creates a new ``AssessmentTaken``.
 
         :param assessment_taken_form: the form for this ``AssessmentTaken``
-        :type assessment_taken_form: ``osid.assessment.AssessmentForm``
+        :type assessment_taken_form: ``osid.assessment.AssessmentTakenForm``
         :return: the new ``AssessmentTaken``
         :rtype: ``osid.assessment.AssessmentTaken``
         :raise: ``IllegalState`` -- ``assessment_taken_form`` already used in a create transaction

@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Workflow Open Service Interface Definitions
-workflow version 3.0.0
+"""Logging Open Service Interface Definitions
+logging version 3.0.0
 
-Copyright (c) 2004 Massachusetts Institute of Technology.
+Copyright (c) 2002-2004, 2006-2008 Massachusetts Institute of
+Technology.
 
 Copyright (c) 2011 Ingenescus. All Rights Reserved.
 
@@ -16,7 +17,7 @@ for any purpose, without fee or royalty is hereby granted, provided that
 you include the above copyright notices and the terms of this license on
 ALL copies of the Work or portions thereof.
 
-You may modify or create Derivatives of this Work only for your internal
+You may nodify or create Derivatives of this Work only for your internal
 purposes. You shall not distribute or transfer any such Derivative of
 this Work to any location or to any third party. For the purposes of
 this license, "Derivative" shall mean any derivative of the Work as
