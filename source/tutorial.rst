@@ -27,7 +27,7 @@ Now you can get the ``RuntimeManager`` root instance (note that there is only on
 This ``runtime`` object is your gateway to access  all the underlying service managers and their respective service sessions and functionality
 
 The django runtime knows about Django's own services for users.  You will have access to an HTTPRequest object that includes an user authentication (the
-request variable in the examples below).  This needs to be encapsulated in a Proxy object:
+request variable in the examples below).  This needs to be encapsulated in a Proxy object::
 
     from dlkit_django import proxy_session
     condition = proxy_session.get_proxy_condition()

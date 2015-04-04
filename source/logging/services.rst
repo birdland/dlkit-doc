@@ -216,6 +216,12 @@ ______________________
 
    .. automethod:: LoggingManager.use_isolated_log_view
 
+   .. automethod:: LoggingManager.reliable_log_entry_notifications
+
+   .. automethod:: LoggingManager.unreliable_log_entry_notifications
+
+   .. automethod:: LoggingManager.acknowledge_log_entry_notification
+
    .. automethod:: LoggingManager.register_for_new_log_entries
 
    .. automethod:: LoggingManager.register_for_new_log_entries_at_priority
@@ -275,6 +281,8 @@ ________________________
    .. automethod:: LoggingManager.assign_log_entry_to_log
 
    .. automethod:: LoggingManager.unassign_log_entry_from_log
+
+   .. automethod:: LoggingManager.reassign_log_entry_to_log
 
 
 
@@ -382,11 +390,13 @@ ________________
 
    .. automethod:: LoggingManager.can_register_for_log_notifications
 
+   .. automethod:: LoggingManager.reliable_log_notifications
+
+   .. automethod:: LoggingManager.unreliable_log_notifications
+
+   .. automethod:: LoggingManager.acknowledge_log_notification
+
    .. automethod:: LoggingManager.register_for_new_logs
-
-   .. automethod:: LoggingManager.register_for_new_log_ancestors
-
-   .. automethod:: LoggingManager.register_for_new_log_descendants
 
    .. automethod:: LoggingManager.register_for_changed_logs
 
@@ -396,9 +406,11 @@ ________________
 
    .. automethod:: LoggingManager.register_for_deleted_log
 
-   .. automethod:: LoggingManager.register_for_deleted_log_ancestors
+   .. automethod:: LoggingManager.register_for_changed_log_hierarchy
 
-   .. automethod:: LoggingManager.register_for_deleted_log_descendants
+   .. automethod:: LoggingManager.register_for_changed_log_hierarchy_for_ancestors
+
+   .. automethod:: LoggingManager.register_for_changed_log_hierarchy_for_descendants
 
 
 
@@ -677,6 +689,12 @@ ______________________
 
    .. automethod:: LoggingProxyManager.use_isolated_log_view
 
+   .. automethod:: LoggingProxyManager.reliable_log_entry_notifications
+
+   .. automethod:: LoggingProxyManager.unreliable_log_entry_notifications
+
+   .. automethod:: LoggingProxyManager.acknowledge_log_entry_notification
+
    .. automethod:: LoggingProxyManager.register_for_new_log_entries
 
    .. automethod:: LoggingProxyManager.register_for_new_log_entries_at_priority
@@ -736,6 +754,8 @@ ________________________
    .. automethod:: LoggingProxyManager.assign_log_entry_to_log
 
    .. automethod:: LoggingProxyManager.unassign_log_entry_from_log
+
+   .. automethod:: LoggingProxyManager.reassign_log_entry_to_log
 
 
 
@@ -843,11 +863,13 @@ ________________
 
    .. automethod:: LoggingProxyManager.can_register_for_log_notifications
 
+   .. automethod:: LoggingProxyManager.reliable_log_notifications
+
+   .. automethod:: LoggingProxyManager.unreliable_log_notifications
+
+   .. automethod:: LoggingProxyManager.acknowledge_log_notification
+
    .. automethod:: LoggingProxyManager.register_for_new_logs
-
-   .. automethod:: LoggingProxyManager.register_for_new_log_ancestors
-
-   .. automethod:: LoggingProxyManager.register_for_new_log_descendants
 
    .. automethod:: LoggingProxyManager.register_for_changed_logs
 
@@ -857,9 +879,11 @@ ________________
 
    .. automethod:: LoggingProxyManager.register_for_deleted_log
 
-   .. automethod:: LoggingProxyManager.register_for_deleted_log_ancestors
+   .. automethod:: LoggingProxyManager.register_for_changed_log_hierarchy
 
-   .. automethod:: LoggingProxyManager.register_for_deleted_log_descendants
+   .. automethod:: LoggingProxyManager.register_for_changed_log_hierarchy_for_ancestors
+
+   .. automethod:: LoggingProxyManager.register_for_changed_log_hierarchy_for_descendants
 
 
 
