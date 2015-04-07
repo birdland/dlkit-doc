@@ -6,7 +6,7 @@ class LoggingProfile(osid_managers.OsidProfile):
     def supports_visible_federation(self):
         """Tests if visible federation is supported.
 
-        :return: ``true`` if visible federation is supproted, ``false`` otherwise
+        :return: ``true`` if visible federation is supported, ``false`` otherwise
         :rtype: ``boolean``
 
         """

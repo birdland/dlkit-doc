@@ -3,29 +3,35 @@ from ..osid import receivers as osid_receivers
 
 class LogEntryReceiver(osid_receivers.OsidReceiver):
     """The log entry receiver is the consumer supplied interface for receiving notifications pertaining to new log entries."""
-    def new_log_entry(self, entry_id):
+    def new_log_entries(self, notification_id, entry_ids):
         """The callback for notifications of new log entries.
 
-        :param entry_id: the ``Id`` of the new entry
-        :type entry_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param entry_ids: the ``Ids`` of the new entries
+        :type entry_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_log_entry(self, entry_id):
+    def changed_log_entries(self, notification_id, entry_ids):
         """The callback for notifications of changed log entries.
 
-        :param entry_id: the ``Id`` of the changed entry
-        :type entry_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param entry_ids: the ``Ids`` of the changed entries
+        :type entry_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_log_entry(self, entry_id):
+    def deleted_log_entries(self, notification_id, entry_ids):
         """the callback for notification of deleted log entries.
 
-        :param entry_id: the ``Id`` of the deleted entry
-        :type entry_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param entry_ids: the ``Ids`` of the deleted entries
+        :type entry_ids: ``osid.id.IdList``
 
         """
         pass
@@ -33,73 +39,46 @@ class LogEntryReceiver(osid_receivers.OsidReceiver):
 
 class LogReceiver(osid_receivers.OsidReceiver):
     """The log receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Log`` objects."""
-    def new_log(self, log_id):
+    def new_logs(self, notification_id, log_ids):
         """The callback for notifications of new logs.
 
-        :param log_id: the ``Id`` of the new ``Log``
-        :type log_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param log_ids: the ``Ids`` of the new ``Logs``
+        :type log_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_log(self, log_id, ancestor_id):
-        """The callback for notifications of new ancestors of a log.
-
-        :param log_id: the ``Id`` of the registered ``Log``
-        :type log_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ancestor log
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_log(self, log_id, descendant_id):
-        """The callback for notifications of new descendant of a log.
-
-        :param log_id: the ``Id`` of the registered ``Log``
-        :type log_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new descendant log
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_log(self, log_id):
+    def changed_logs(self, notification_id, log_ids):
         """The callback for notification of updated logs.
 
-        :param log_id: the ``Id`` of the updated ``Log``
-        :type log_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param log_ids: the ``Ids`` of the updated ``Logs``
+        :type log_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_log(self, log_id):
+    def deleted_logs(self, notification_id, log_ids):
         """the callback for notification of deleted logs.
 
-        :param log_id: the ``Id`` of the registered ``Log``
-        :type log_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param log_ids: the ``Ids`` of the registered ``Logs``
+        :type log_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_log(self, log_id, ancestor_id):
-        """The callback for notifications of deleted ancestors of a log.
+    def changed_child_of_logs(self, notification_id, log_ids):
+        """The callback for notifications of changes to children of log hierarchy nodes.
 
-        :param log_id: the ``Id`` of the registered ``Log``
-        :type log_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ancestor log
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_log(self, log_id, descendant_id):
-        """The callback for notifications of deleted descendants of a log.
-
-        :param log_id: the ``Id`` of the registered ``Log``
-        :type log_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the deleted descendant log
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param log_ids: the ``Ids`` of the ``Logs`` whose children have changed
+        :type log_ids: ``osid.id.IdList``
 
         """
         pass

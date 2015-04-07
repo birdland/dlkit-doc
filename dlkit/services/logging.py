@@ -35,7 +35,7 @@ class LoggingProfile(osid_managers.OsidProfile):
     def supports_visible_federation(self):
         """Tests if visible federation is supported.
 
-        :return: ``true`` if visible federation is supproted, ``false`` otherwise
+        :return: ``true`` if visible federation is supported, ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -1181,7 +1181,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         :param log_entry_record_types: array of log entry record types
         :type log_entry_record_types: ``osid.type.Type[]``
         :return: the log entry form
-        :rtype: ``osid.logging.LogForm``
+        :rtype: ``osid.logging.LogEntryForm``
         :raise: ``NullArgument`` -- ``log_entry_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1315,9 +1315,40 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
+    def reliable_log_entry_notifications(self):
+        """Reliable notifications are desired.
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_log_entry_notification()`` .
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def unreliable_log_entry_notifications(self):
+        """Unreliable notifications are desired.
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def acknowledge_log_entry_notification(self, notification_id):
+        """Acknowledge a log entry notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
     def register_for_new_log_entries(self):
         """Register for notifications of new log entries.
-        ``LogEntryReceiver.newLogEntry()`` is invoked when a new
+        ``LogEntryReceiver.newLogEntries()`` is invoked when a new
         ``LogEntry`` is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1328,7 +1359,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_new_log_entries_at_priority(self, priority_type):
         """Register for notifications of new log entries at or above the given priority type.
-        ``LogEntryReceiver.newLogEntry()`` is invoked when a new
+        ``LogEntryReceiver.newLogEntries()`` is invoked when a new
         ``LogEntry`` is created.
 
         :param priority_type: a priority type
@@ -1342,7 +1373,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_new_log_entries_for_resource(self, resource_id):
         """Register for notifications of new log entries logged by an agent associated with the given resource.
-        ``LogEntryReceiver.newLogEntry()`` is invoked when a new
+        ``LogEntryReceiver.newLogEntries()`` is invoked when a new
         ``LogEntry`` is created.
 
         :param resource_id: a resource ``Id``
@@ -1356,7 +1387,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_changed_log_entries(self):
         """Register for notifications of updated log entries.
-        ``LogEntryReceiver.changedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.changedLogEntries()`` is invoked when a
         ``LogEntry`` iin this log is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1367,7 +1398,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_changed_entries_at_priority(self, priority_type):
         """Register for notifications of updated log entries at or above the given priority type.
-        ``LogEntryReceiver.changedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.changedLogEntries()`` is invoked when a
         ``LogEntry`` in this log is changed.
 
         :param priority_type: a priority type
@@ -1395,7 +1426,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_changed_log_entry(self, log_entry_id):
         """Registers for notification of an updated log entry.
-        ``LogEntryReceiver.changedLogENtry()`` is invoked when the
+        ``LogEntryReceiver.changedLogEntries()`` is invoked when the
         specified log entry is changed.
 
         :param log_entry_id: the ``Id`` of the ``LogEntry`` to monitor
@@ -1409,7 +1440,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_deleted_log_entries(self):
         """Registers for notification of deleted log entries.
-        ``LogEntryReceiver.deletedLogEntry()`` is invoked when a log
+        ``LogEntryReceiver.deletedLogEntries()`` is invoked when a log
         entry is deleted or removed from this log.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1420,7 +1451,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_deleted_log_entries_at_priority(self, priority_type):
         """Register for notifications of deleted log entries at or above the given priority type.
-        ``LogEntryReceiver.deletedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.deletedLogEntries()`` is invoked when a
         ``LogEntry`` is deleted or removed from this log.
 
         :param priority_type: a priority type
@@ -1434,7 +1465,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_deleted_log_entries_for_resource(self, resource_id):
         """Register for notifications of deleted log entries logged by an agent associated with the given resource.
-        ``LogEntryReceiver.deletedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.deletedLogEntries()`` is invoked when a
         ``LogEntry`` is deleted or removed from this log.
 
         :param resource_id: a resource ``Id``
@@ -1448,7 +1479,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_deleted_log_entry(self, log_entry_id):
         """Registers for notification of a deleted log entry.
-        ``LogEntryReceiver.deleteddLogENtry()`` is invoked when the
+        ``LogEntryReceiver.deleteddLogEntries()`` is invoked when the
         specified log entry is deleted or removed from this log.
 
         :param log_entry_id: the ``Id`` of the ``LogEntry`` to monitor
@@ -1661,6 +1692,24 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         :type log_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``log_entry_id`` or ``log_id`` not found or ``log_entry_id`` not assigned to ``log_id``
         :raise: ``NullArgument`` -- ``log_entry_id`` or ``log_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def reassign_log_entry_to_log(self, log_entry_id, from_log_id, to_log_id):
+        """Moves a ``LogEntry`` from one ``Log`` to another.
+        Mappings to other ``Logs`` are unaffected.
+
+        :param log_entry_id: the ``Id`` of the ``LogEntry``
+        :type log_entry_id: ``osid.id.Id``
+        :param from_log_id: the ``Id`` of the current ``Log``
+        :type from_log_id: ``osid.id.Id``
+        :param to_log_id: the ``Id`` of the destination ``Log``
+        :type to_log_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``log_entry_id, from_log_id,`` or ``to_log_id`` not found or ``log_entry_id`` not mapped to ``from_log_id``
+        :raise: ``NullArgument`` -- ``log_entry_id, from_log_id,`` or ``to_log_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2141,9 +2190,40 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
+    def reliable_log_notifications(self):
+        """Reliable notifications are desired.
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_log_notification()`` .
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def unreliable_log_notifications(self):
+        """Unreliable notifications are desired.
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def acknowledge_log_notification(self, notification_id):
+        """Acknowledge a log notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
     def register_for_new_logs(self):
         """Register for notifications of new logs.
-        ``LogReceiver.newLog()`` is invoked when a new ``Log`` is
+        ``LogReceiver.newLogs()`` is invoked when a new ``Log`` is
         created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2152,37 +2232,9 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_log_ancestors(self, log_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new ancestor of the specified log.
-        ``LogReceiver.newAncestorLog()`` is invoked when the specified
-        log node gets a new ancestor.
-
-        :param log_id: the ``Id`` of the ``Log`` node to monitor
-        :type log_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``log_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        raise UNIMPLEMENTED()
-
-    def register_for_new_log_descendants(self, log_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new descendant of the specified log.
-        ``LogReceiver.newDescendantLog()`` is invoked when the specified
-        log node gets a new descendant.
-
-        :param log_id: the ``Id`` of the ``Log`` node to monitor
-        :type log_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``log_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        raise UNIMPLEMENTED()
-
     def register_for_changed_logs(self):
         """Registers for notification of updated logs.
-        ``LogReceiver.changedLog()`` is invoked when a log is changed.
+        ``LogReceiver.changedLogs()`` is invoked when a log is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2192,7 +2244,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_changed_log(self, log_id):
         """Registers for notification of an updated log.
-        ``LogReceiver.changedLog()`` is invoked when the specified log
+        ``LogReceiver.changedLogs()`` is invoked when the specified log
         is changed.
 
         :param log_id: the ``Id`` of the ``Log`` to monitor
@@ -2206,7 +2258,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_deleted_logs(self):
         """Registers for notification of deleted logs.
-        ``LogReceiver.deletedLog()`` is invoked when a log is deleted.
+        ``LogReceiver.deletedLogs()`` is invoked when a log is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2216,7 +2268,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
 
     def register_for_deleted_log(self, log_id):
         """Registers for notification of a deleted log.
-        ``LogReceiver.deletedLog()`` is invoked when the specified log
+        ``LogReceiver.deletedLogs()`` is invoked when the specified log
         is deleted.
 
         :param log_id: the ``Id`` of the ``Log`` to monitor
@@ -2228,10 +2280,21 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_log_ancestors(self, log_id):
-        """Registers for notification of an updated hierarchy structure that removes an ancestor of the specified log.
-        ``LogReceiver.deletedAncestor()`` is invoked when the specified
-        log node loses an ancestor.
+    def register_for_changed_log_hierarchy(self):
+        """Registers for notification of an updated log hierarchy structure.
+        ``LogReceiver.changedChildOfLogs()`` is invoked when a node
+        experiences a change in its children.
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_log_hierarchy_for_ancestors(self, log_id):
+        """Log ``Receiver.
+        changedChildOfLogs()`` is invoked when the specified node or any
+        of its ancestors experiences a change in its children.
 
         :param log_id: the ``Id`` of the ``Log`` node to monitor
         :type log_id: ``osid.id.Id``
@@ -2242,10 +2305,11 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Loggi
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_log_descendants(self, log_id):
-        """Registers for notification of an updated hierarchy structure that removes a descendant of the specified log.
-        ``LogReceiver.deletedDescendant()`` is invoked when the
-        specified log node loses a descendant.
+    def register_for_changed_log_hierarchy_for_descendants(self, log_id):
+        """Registers for notification of an updated log hierarchy structure.
+        ``LogReceiver.changedChildOfLogs()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
 
         :param log_id: the ``Id`` of the ``Log`` node to monitor
         :type log_id: ``osid.id.Id``
@@ -3531,7 +3595,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         :param log_entry_record_types: array of log entry record types
         :type log_entry_record_types: ``osid.type.Type[]``
         :return: the log entry form
-        :rtype: ``osid.logging.LogForm``
+        :rtype: ``osid.logging.LogEntryForm``
         :raise: ``NullArgument`` -- ``log_entry_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3671,9 +3735,42 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
+    def reliable_log_entry_notifications(self):
+        """Reliable notifications are desired.
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_log_entry_notification()`` .
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def unreliable_log_entry_notifications(self):
+        """Unreliable notifications are desired.
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def acknowledge_log_entry_notification(self, notification_id):
+        """Acknowledge a log entry notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
     def register_for_new_log_entries(self):
         """Register for notifications of new log entries.
-        ``LogEntryReceiver.newLogEntry()`` is invoked when a new
+        ``LogEntryReceiver.newLogEntries()`` is invoked when a new
         ``LogEntry`` is created.
 
 
@@ -3685,7 +3782,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_new_log_entries_at_priority(self, priority_type):
         """Register for notifications of new log entries at or above the given priority type.
-        ``LogEntryReceiver.newLogEntry()`` is invoked when a new
+        ``LogEntryReceiver.newLogEntries()`` is invoked when a new
         ``LogEntry`` is created.
 
 
@@ -3700,7 +3797,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_new_log_entries_for_resource(self, resource_id):
         """Register for notifications of new log entries logged by an agent associated with the given resource.
-        ``LogEntryReceiver.newLogEntry()`` is invoked when a new
+        ``LogEntryReceiver.newLogEntries()`` is invoked when a new
         ``LogEntry`` is created.
 
 
@@ -3715,7 +3812,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_changed_log_entries(self):
         """Register for notifications of updated log entries.
-        ``LogEntryReceiver.changedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.changedLogEntries()`` is invoked when a
         ``LogEntry`` iin this log is changed.
 
 
@@ -3727,7 +3824,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_changed_entries_at_priority(self, priority_type):
         """Register for notifications of updated log entries at or above the given priority type.
-        ``LogEntryReceiver.changedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.changedLogEntries()`` is invoked when a
         ``LogEntry`` in this log is changed.
 
 
@@ -3757,7 +3854,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_changed_log_entry(self, log_entry_id):
         """Registers for notification of an updated log entry.
-        ``LogEntryReceiver.changedLogENtry()`` is invoked when the
+        ``LogEntryReceiver.changedLogEntries()`` is invoked when the
         specified log entry is changed.
 
 
@@ -3772,7 +3869,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_deleted_log_entries(self):
         """Registers for notification of deleted log entries.
-        ``LogEntryReceiver.deletedLogEntry()`` is invoked when a log
+        ``LogEntryReceiver.deletedLogEntries()`` is invoked when a log
         entry is deleted or removed from this log.
 
 
@@ -3784,7 +3881,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_deleted_log_entries_at_priority(self, priority_type):
         """Register for notifications of deleted log entries at or above the given priority type.
-        ``LogEntryReceiver.deletedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.deletedLogEntries()`` is invoked when a
         ``LogEntry`` is deleted or removed from this log.
 
 
@@ -3799,7 +3896,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_deleted_log_entries_for_resource(self, resource_id):
         """Register for notifications of deleted log entries logged by an agent associated with the given resource.
-        ``LogEntryReceiver.deletedLogEntry()`` is invoked when a
+        ``LogEntryReceiver.deletedLogEntries()`` is invoked when a
         ``LogEntry`` is deleted or removed from this log.
 
 
@@ -3814,7 +3911,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_deleted_log_entry(self, log_entry_id):
         """Registers for notification of a deleted log entry.
-        ``LogEntryReceiver.deleteddLogENtry()`` is invoked when the
+        ``LogEntryReceiver.deleteddLogEntries()`` is invoked when the
         specified log entry is deleted or removed from this log.
 
 
@@ -4033,6 +4130,25 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         :type log_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``log_entry_id`` or ``log_id`` not found or ``log_entry_id`` not assigned to ``log_id``
         :raise: ``NullArgument`` -- ``log_entry_id`` or ``log_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def reassign_log_entry_to_log(self, log_entry_id, from_log_id, to_log_id):
+        """Moves a ``LogEntry`` from one ``Log`` to another.
+        Mappings to other ``Logs`` are unaffected.
+
+
+        :param log_entry_id: the ``Id`` of the ``LogEntry``
+        :type log_entry_id: ``osid.id.Id``
+        :param from_log_id: the ``Id`` of the current ``Log``
+        :type from_log_id: ``osid.id.Id``
+        :param to_log_id: the ``Id`` of the destination ``Log``
+        :type to_log_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``log_entry_id, from_log_id,`` or ``to_log_id`` not found or ``log_entry_id`` not mapped to ``from_log_id``
+        :raise: ``NullArgument`` -- ``log_entry_id, from_log_id,`` or ``to_log_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -4533,9 +4649,42 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
+    def reliable_log_notifications(self):
+        """Reliable notifications are desired.
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_log_notification()`` .
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def unreliable_log_notifications(self):
+        """Unreliable notifications are desired.
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+
+        """
+        raise UNIMPLEMENTED()
+
+    def acknowledge_log_notification(self, notification_id):
+        """Acknowledge a log notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
     def register_for_new_logs(self):
         """Register for notifications of new logs.
-        ``LogReceiver.newLog()`` is invoked when a new ``Log`` is
+        ``LogReceiver.newLogs()`` is invoked when a new ``Log`` is
         created.
 
 
@@ -4545,39 +4694,9 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_new_log_ancestors(self, log_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new ancestor of the specified log.
-        ``LogReceiver.newAncestorLog()`` is invoked when the specified
-        log node gets a new ancestor.
-
-
-        :param log_id: the ``Id`` of the ``Log`` node to monitor
-        :type log_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``log_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        raise UNIMPLEMENTED()
-
-    def register_for_new_log_descendants(self, log_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new descendant of the specified log.
-        ``LogReceiver.newDescendantLog()`` is invoked when the specified
-        log node gets a new descendant.
-
-
-        :param log_id: the ``Id`` of the ``Log`` node to monitor
-        :type log_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``log_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        raise UNIMPLEMENTED()
-
     def register_for_changed_logs(self):
         """Registers for notification of updated logs.
-        ``LogReceiver.changedLog()`` is invoked when a log is changed.
+        ``LogReceiver.changedLogs()`` is invoked when a log is changed.
 
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4588,7 +4707,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_changed_log(self, log_id):
         """Registers for notification of an updated log.
-        ``LogReceiver.changedLog()`` is invoked when the specified log
+        ``LogReceiver.changedLogs()`` is invoked when the specified log
         is changed.
 
 
@@ -4603,7 +4722,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_deleted_logs(self):
         """Registers for notification of deleted logs.
-        ``LogReceiver.deletedLog()`` is invoked when a log is deleted.
+        ``LogReceiver.deletedLogs()`` is invoked when a log is deleted.
 
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4614,7 +4733,7 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
 
     def register_for_deleted_log(self, log_id):
         """Registers for notification of a deleted log.
-        ``LogReceiver.deletedLog()`` is invoked when the specified log
+        ``LogReceiver.deletedLogs()`` is invoked when the specified log
         is deleted.
 
 
@@ -4627,10 +4746,22 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_log_ancestors(self, log_id):
-        """Registers for notification of an updated hierarchy structure that removes an ancestor of the specified log.
-        ``LogReceiver.deletedAncestor()`` is invoked when the specified
-        log node loses an ancestor.
+    def register_for_changed_log_hierarchy(self):
+        """Registers for notification of an updated log hierarchy structure.
+        ``LogReceiver.changedChildOfLogs()`` is invoked when a node
+        experiences a change in its children.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        raise UNIMPLEMENTED()
+
+    def register_for_changed_log_hierarchy_for_ancestors(self, log_id):
+        """Log ``Receiver.
+        changedChildOfLogs()`` is invoked when the specified node or any
+        of its ancestors experiences a change in its children.
 
 
         :param log_id: the ``Id`` of the ``Log`` node to monitor
@@ -4642,10 +4773,11 @@ class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
         """
         raise UNIMPLEMENTED()
 
-    def register_for_deleted_log_descendants(self, log_id):
-        """Registers for notification of an updated hierarchy structure that removes a descendant of the specified log.
-        ``LogReceiver.deletedDescendant()`` is invoked when the
-        specified log node loses a descendant.
+    def register_for_changed_log_hierarchy_for_descendants(self, log_id):
+        """Registers for notification of an updated log hierarchy structure.
+        ``LogReceiver.changedChildOfLogs()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
 
 
         :param log_id: the ``Id`` of the ``Log`` node to monitor

@@ -18,9 +18,11 @@ The Runtime Manager and Proxy Authentication
 
 Service managers are instantiated through a Runtime Manger, which are designed to work with certain runtime environments,
 like Django or edX/XBlock runtimes.  [include information on how to get the DLKit runtime for Django/edX].  Install the
-runtime environment you want to use and make sure that your Django project's settings.py includes [the installed app]
+runtime environment you want to use and make sure that your Django project's settings.py includes ``dlkit_django`` or 
+``dlkit_xblock`` as appropriate.
 
-Now you can get the ``RuntimeManager`` root instance (note that there is only one, and it gets instantiated at environment run-time)::
+Now you can get the ``RuntimeManager`` root instance for your runtime environment. Note that there is only one, and 
+it gets instantiated at environment launch time, it is thread-safe and used by all consumer application sessions::
 
     from dlkit_django import runtime
 

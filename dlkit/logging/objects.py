@@ -175,7 +175,7 @@ class LogEntryForm(osid_objects.OsidObjectForm):
         """Sets the agent.
 
         :param agent_id: the new agent
-        :type agent_id: ``osid.calendaring.DateTime``
+        :type agent_id: ``osid.id.Id``
         :raise: ``InvalidArgument`` -- ``agent_id`` is invalid
         :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
         :raise: ``NullArgument`` -- ``agent_id`` is ``null``

@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Workflow Open Service Interface Definitions
-workflow version 3.0.0
+"""Dictionary Open Service Interface Definitions
+dictionary version 3.0.0
 
-Copyright (c) 2004 Massachusetts Institute of Technology.
+Copyright (c) 2002-2004, 2006-2008 Massachusetts Institute of
+Technology.
 
-Copyright (c) 2011 Ingenescus. All Rights Reserved.
+Copyright (c) 2010 Ingenescus. All Rights Reserved.
 
 This Work is being provided by the copyright holder(s) subject to the
 following license. By obtaining, using and/or copying this Work, you
