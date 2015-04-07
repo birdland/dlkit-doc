@@ -216,8 +216,16 @@ So we can try this out::
         # should return True
 
 If a consumer wishes to persist the identifier then it should serialize the
-returned ``Id`` object, using pickle or something similar, so as to
-be able to get the object back at a later date.
+returned ``Id`` object, and all Ids can provide a string representation for this purpose:
+
+    id_str_to_perist = str(crosslinks_bank_id)
+
+A consumer application can also stand up an Id from a persisted string.  There is an implementation
+of the Id primitive object available through the runtime environment for this purpose. For instance, from
+the dlkit_django package::
+
+    from dlkit_django.primordium import Id
+    crosslinks_bank_id = Id(id_str_to_persist)
 
 Once an application has its hands on an ``Id`` object it can go ahead and
 retrieve the corresponding Osid Object through a Lookup Session::
@@ -354,8 +362,7 @@ designed for this purpose.  This session, however, is not defined in the *learni
 service package, it is found in the *type* package, which therefore requires
 a ``TypeManager`` be instantiated::
 
-    from dlkit.services.type import TypeManager
-    tm = TypeManager()
+    tm = runtime.get_service_manager('LEARNING', <proxy>)
     ...
     if tm.supports_type_lookup():
         tls = tm.get_type_lookup_session()
