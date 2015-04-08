@@ -14,10 +14,10 @@ All of the other DLKit Interface Specifications build on most of the
 same patterns outlined in this tutorial, beginning with loading managers.
 
 The Runtime Manager and Proxy Authentication
-------------------------------
+--------------------------------------------
 
 Service managers are instantiated through a Runtime Manger, which are designed to work with certain runtime environments,
-like Django or edX/XBlock runtimes.  [include information on how to get the DLKit runtime for Django/edX].  Install the
+like Django or edX/XBlock runtimes.  To get access to these runtime environments please contact dlkit-info@mit.edu.  Install the
 runtime environment you want to use and make sure that your Django project's settings.py includes ``dlkit_django`` or 
 ``dlkit_xblock`` as appropriate.
 

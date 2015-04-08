@@ -11,12 +11,12 @@ is still under development. It currently covers only a small handful of the 160 
 and 9,000 educational service APIs that have been defined by MIT's Office of Digital Learning and
 its collaborators to date.
 
-The DLKit codebase is largely auto-generated from the Open Service Interface Definitions (OSIDs), 
+The DLKit codebase is generated from the Open Service Interface Definitions (OSIDs), 
 an extensive and growing suite of interface contract specifications that describe the 
 integration points among the core services and components that make up modern educational systems.
 
 Note that this documentation is intended for API consumers. However, at the heart of DLKit is an
-integration layer that is even more closely aligned with the OSID specifications.  This has been
+integration stack that is even more closely aligned with the OSID specifications.  This has been
 designed to allow third parties to extend the library with alternative or additional implementations 
 of any of the defined services for the purposes of service integration, technology migration, 
 service adaptation, etc. Documentation written for service implementers and system integrators,
@@ -34,6 +34,7 @@ Contents:
    :maxdepth: 2
    
    tutorial
+   acknowledgement/toc
    authentication/toc
    authentication_process/toc
    authorization/toc
