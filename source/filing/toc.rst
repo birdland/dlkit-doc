@@ -4,10 +4,9 @@ Filing
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    directory
    query_inspectors
-   service_managers
    records
    objects
    search_orders

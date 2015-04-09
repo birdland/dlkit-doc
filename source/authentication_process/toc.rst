@@ -4,9 +4,8 @@ Authentication.Process
 .. toctree::
    :maxdepth: 2
 
-   services
-   agency
    service_managers
+   agency
    records
    objects
    rules

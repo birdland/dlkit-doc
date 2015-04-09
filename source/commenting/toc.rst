@@ -4,10 +4,9 @@ Commenting
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    book
    query_inspectors
-   service_managers
    records
    objects
    search_orders

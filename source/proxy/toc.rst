@@ -4,8 +4,7 @@ Proxy
 .. toctree::
    :maxdepth: 2
 
-   services
-   no_catalog
    service_managers
+   no_catalog
    records
    rules

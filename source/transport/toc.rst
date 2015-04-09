@@ -4,9 +4,8 @@ Transport
 .. toctree::
    :maxdepth: 2
 
-   services
-   endpoint
    service_managers
+   endpoint
    records
    objects
    receivers

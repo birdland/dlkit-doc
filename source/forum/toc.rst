@@ -4,10 +4,9 @@ Forum
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    forum
    query_inspectors
-   service_managers
    records
    objects
    search_orders

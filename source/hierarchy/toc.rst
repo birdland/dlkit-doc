@@ -4,10 +4,9 @@ Hierarchy
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    hierarchy
    query_inspectors
-   service_managers
    records
    objects
    search_orders

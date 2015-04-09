@@ -4,11 +4,10 @@ Calendaring
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    calendar
    query_inspectors
    primitives
-   service_managers
    records
    objects
    search_orders

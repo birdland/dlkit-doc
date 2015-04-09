@@ -4,10 +4,9 @@ Repository
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    repository
    query_inspectors
-   service_managers
    records
    objects
    search_orders

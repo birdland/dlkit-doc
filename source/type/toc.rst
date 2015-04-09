@@ -4,8 +4,7 @@ Type
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    no_catalog
    primitives
-   service_managers
    objects

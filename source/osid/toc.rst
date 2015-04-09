@@ -4,11 +4,10 @@ Osid
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    no_catalog
    query_inspectors
    managers
-   service_managers
    records
    objects
    search_orders

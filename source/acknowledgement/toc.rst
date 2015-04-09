@@ -4,10 +4,9 @@ Acknowledgement
 .. toctree::
    :maxdepth: 2
 
-   services
+   service_managers
    billing
    query_inspectors
-   service_managers
    records
    objects
    search_orders
