@@ -7,6 +7,7 @@ Grading
    services
    gradebook
    query_inspectors
+   service_managers
    records
    objects
    search_orders

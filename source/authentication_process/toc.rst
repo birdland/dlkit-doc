@@ -6,6 +6,7 @@ Authentication.Process
 
    services
    agency
-   rules
+   service_managers
    records
    objects
+   rules

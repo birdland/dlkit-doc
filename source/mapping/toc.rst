@@ -8,6 +8,7 @@ Mapping
    map
    query_inspectors
    primitives
+   service_managers
    records
    objects
    search_orders

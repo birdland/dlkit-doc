@@ -7,6 +7,7 @@ Commenting
    services
    book
    query_inspectors
+   service_managers
    records
    objects
    search_orders

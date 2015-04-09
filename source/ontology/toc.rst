@@ -7,6 +7,7 @@ Ontology
    services
    ontology
    query_inspectors
+   service_managers
    records
    objects
    search_orders

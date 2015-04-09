@@ -7,6 +7,7 @@ Filing
    services
    directory
    query_inspectors
+   service_managers
    records
    objects
    search_orders

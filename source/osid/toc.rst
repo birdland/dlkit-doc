@@ -8,7 +8,7 @@ Osid
    no_catalog
    query_inspectors
    managers
-   rules
+   service_managers
    records
    objects
    search_orders
@@ -16,5 +16,6 @@ Osid
    searches
    receivers
    markers
+   rules
    queries
    metadata

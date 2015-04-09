@@ -7,6 +7,7 @@ Resource
    services
    bin
    query_inspectors
+   service_managers
    records
    objects
    search_orders

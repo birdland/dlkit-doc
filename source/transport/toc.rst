@@ -6,6 +6,7 @@ Transport
 
    services
    endpoint
+   service_managers
    records
    objects
    receivers

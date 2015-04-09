@@ -7,6 +7,7 @@ Learning
    services
    objective_bank
    query_inspectors
+   service_managers
    records
    objects
    search_orders

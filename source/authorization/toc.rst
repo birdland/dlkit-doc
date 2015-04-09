@@ -7,10 +7,11 @@ Authorization
    services
    vault
    query_inspectors
-   rules
+   service_managers
    records
    objects
    search_orders
    searches
    receivers
+   rules
    queries

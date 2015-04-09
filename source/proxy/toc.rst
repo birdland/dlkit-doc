@@ -6,5 +6,6 @@ Proxy
 
    services
    no_catalog
-   rules
+   service_managers
    records
+   rules

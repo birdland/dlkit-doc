@@ -7,6 +7,7 @@ Journaling
    services
    journal
    query_inspectors
+   service_managers
    records
    objects
    search_orders

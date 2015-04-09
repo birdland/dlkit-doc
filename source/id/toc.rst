@@ -7,4 +7,5 @@ Id
    services
    no_catalog
    primitives
+   service_managers
    objects
