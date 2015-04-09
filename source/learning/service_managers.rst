@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.learning
 .. automodule:: dlkit.services.learning
 
-Service_Managers
+Service Managers
 ================
 
 

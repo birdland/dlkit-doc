@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.transport
 .. automodule:: dlkit.services.transport
 
-Service_Managers
+Service Managers
 ================
 
 

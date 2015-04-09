@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.commenting.search_orders
 .. automodule:: dlkit.commenting.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

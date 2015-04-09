@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.hierarchy.search_orders
 .. automodule:: dlkit.hierarchy.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

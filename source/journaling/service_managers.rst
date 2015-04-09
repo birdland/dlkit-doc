@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.journaling
 .. automodule:: dlkit.services.journaling
 
-Service_Managers
+Service Managers
 ================
 
 

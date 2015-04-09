@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.mapping.query_inspectors
 .. automodule:: dlkit.mapping.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

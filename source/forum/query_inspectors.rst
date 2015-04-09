@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.forum.query_inspectors
 .. automodule:: dlkit.forum.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

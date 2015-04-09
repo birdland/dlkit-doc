@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.grading.query_inspectors
 .. automodule:: dlkit.grading.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

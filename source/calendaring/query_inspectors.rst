@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.calendaring.query_inspectors
 .. automodule:: dlkit.calendaring.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

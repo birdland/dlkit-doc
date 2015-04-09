@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.ontology.search_orders
 .. automodule:: dlkit.ontology.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.workflow.search_orders
 .. automodule:: dlkit.workflow.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

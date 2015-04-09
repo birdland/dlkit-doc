@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.ontology
 .. automodule:: dlkit.services.ontology
 
-Service_Managers
+Service Managers
 ================
 
 

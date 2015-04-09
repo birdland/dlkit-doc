@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.acknowledgement
 .. automodule:: dlkit.services.acknowledgement
 
-Service_Managers
+Service Managers
 ================
 
 

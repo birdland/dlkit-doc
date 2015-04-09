@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.locale
 .. automodule:: dlkit.services.locale
 
-Service_Managers
+Service Managers
 ================
 
 

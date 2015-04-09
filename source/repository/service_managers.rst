@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.repository
 .. automodule:: dlkit.services.repository
 
-Service_Managers
+Service Managers
 ================
 
 

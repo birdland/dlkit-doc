@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.workflow.query_inspectors
 .. automodule:: dlkit.workflow.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.osid.query_inspectors
 .. automodule:: dlkit.osid.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

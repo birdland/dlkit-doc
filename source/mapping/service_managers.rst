@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.mapping
 .. automodule:: dlkit.services.mapping
 
-Service_Managers
+Service Managers
 ================
 
 

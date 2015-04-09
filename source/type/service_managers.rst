@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.type
 .. automodule:: dlkit.services.type
 
-Service_Managers
+Service Managers
 ================
 
 

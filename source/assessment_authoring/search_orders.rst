@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.assessment.authoring.search_orders
 .. automodule:: dlkit.assessment.authoring.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

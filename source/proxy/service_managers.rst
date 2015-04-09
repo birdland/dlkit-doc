@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.proxy
 .. automodule:: dlkit.services.proxy
 
-Service_Managers
+Service Managers
 ================
 
 

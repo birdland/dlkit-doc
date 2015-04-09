@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.workflow
 .. automodule:: dlkit.services.workflow
 
-Service_Managers
+Service Managers
 ================
 
 

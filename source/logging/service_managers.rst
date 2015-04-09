@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.logging
 .. automodule:: dlkit.services.logging
 
-Service_Managers
+Service Managers
 ================
 
 

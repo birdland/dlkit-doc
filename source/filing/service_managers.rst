@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.filing
 .. automodule:: dlkit.services.filing
 
-Service_Managers
+Service Managers
 ================
 
 

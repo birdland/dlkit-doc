@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.calendaring
 .. automodule:: dlkit.services.calendaring
 
-Service_Managers
+Service Managers
 ================
 
 

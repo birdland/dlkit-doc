@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.learning.search_orders
 .. automodule:: dlkit.learning.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

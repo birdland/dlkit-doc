@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.assessment.authoring.query_inspectors
 .. automodule:: dlkit.assessment.authoring.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

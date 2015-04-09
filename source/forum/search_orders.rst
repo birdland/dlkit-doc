@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.forum.search_orders
 .. automodule:: dlkit.forum.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.commenting
 .. automodule:: dlkit.services.commenting
 
-Service_Managers
+Service Managers
 ================
 
 

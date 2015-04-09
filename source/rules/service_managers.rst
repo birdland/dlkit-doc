@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.rules
 .. automodule:: dlkit.services.rules
 
-Service_Managers
+Service Managers
 ================
 
 

@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.relationship.search_orders
 .. automodule:: dlkit.relationship.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

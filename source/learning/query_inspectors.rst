@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.learning.query_inspectors
 .. automodule:: dlkit.learning.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

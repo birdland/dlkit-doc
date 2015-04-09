@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.relationship.query_inspectors
 .. automodule:: dlkit.relationship.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

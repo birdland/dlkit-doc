@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.acknowledgement.search_orders
 .. automodule:: dlkit.acknowledgement.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

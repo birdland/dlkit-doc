@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.osid
 .. automodule:: dlkit.services.osid
 
-Service_Managers
+Service Managers
 ================
 
 

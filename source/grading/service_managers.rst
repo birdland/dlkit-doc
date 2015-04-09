@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.grading
 .. automodule:: dlkit.services.grading
 
-Service_Managers
+Service Managers
 ================
 
 

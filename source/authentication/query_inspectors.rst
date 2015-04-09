@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.authentication.query_inspectors
 .. automodule:: dlkit.authentication.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

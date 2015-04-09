@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.dictionary.query_inspectors
 .. automodule:: dlkit.dictionary.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

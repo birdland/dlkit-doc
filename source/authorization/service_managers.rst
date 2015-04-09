@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.authorization
 .. automodule:: dlkit.services.authorization
 
-Service_Managers
+Service Managers
 ================
 
 

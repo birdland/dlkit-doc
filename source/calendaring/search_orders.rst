@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.calendaring.search_orders
 .. automodule:: dlkit.calendaring.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

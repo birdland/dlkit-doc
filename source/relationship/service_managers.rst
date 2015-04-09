@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.relationship
 .. automodule:: dlkit.services.relationship
 
-Service_Managers
+Service Managers
 ================
 
 

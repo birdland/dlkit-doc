@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.services.learning
 
 
-Objective_Bank
+Objective Bank
 ==============
 
 

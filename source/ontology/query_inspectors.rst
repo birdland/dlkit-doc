@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.ontology.query_inspectors
 .. automodule:: dlkit.ontology.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

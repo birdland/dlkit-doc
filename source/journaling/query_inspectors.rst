@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.journaling.query_inspectors
 .. automodule:: dlkit.journaling.query_inspectors
 
-Query_Inspectors
+Query Inspectors
 ================
 
 

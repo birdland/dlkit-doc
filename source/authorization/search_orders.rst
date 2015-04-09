@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.authorization.search_orders
 .. automodule:: dlkit.authorization.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

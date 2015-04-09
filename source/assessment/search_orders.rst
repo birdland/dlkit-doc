@@ -1,7 +1,7 @@
 .. currentmodule:: dlkit.assessment.search_orders
 .. automodule:: dlkit.assessment.search_orders
 
-Search_Orders
+Search Orders
 =============
 
 

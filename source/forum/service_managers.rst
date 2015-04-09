@@ -3,7 +3,7 @@ Summary
 .. currentmodule:: dlkit.services.forum
 .. automodule:: dlkit.services.forum
 
-Service_Managers
+Service Managers
 ================
 
 
