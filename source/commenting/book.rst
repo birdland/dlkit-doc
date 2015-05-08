@@ -1,5 +1,5 @@
 .. currentmodule:: dlkit.services.commenting
-
+.. automodule:: dlkit.services.commenting
 
 Book
 ====
