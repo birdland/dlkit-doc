@@ -154,7 +154,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_type(self, namespace, identifier, authority):
         """Gets a ``Type`` by its string representation which is a combination of the authority and identifier.
@@ -175,7 +175,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     def has_type(self, type_):
         """Tests if the given ``Type`` is known.
@@ -189,7 +189,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_types_by_domain(self, domain):
         """Gets all the known Types by domain.
@@ -203,7 +203,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_types_by_authority(self, authority):
         """Gets all the known Types by authority.
@@ -217,7 +217,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- respect my authoritay
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_types_by_domain_and_authority(self, domain, authority):
         """Gets all the known Types by domain and authority.
@@ -233,7 +233,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_types(self):
         """Gets all the known Types.
@@ -244,7 +244,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     types = property(fget=get_types)
 
@@ -262,7 +262,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def implies_support(self, type_, base_type):
         """Tests if the given type is implies support of a base type.
@@ -278,7 +278,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_base_type(self, type_):
         """Tests if the given type is derived from a base type.
@@ -292,7 +292,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_base_types(self, type_):
         """Gets the immediate base types of this type.
@@ -306,7 +306,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_relation_types(self):
         """Gets all known relation ``Types``.
@@ -318,7 +318,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     relation_types = property(fget=get_relation_types)
 
@@ -334,7 +334,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_destination_types_by_source(self, source_type):
         """Gets all destination Types related to the given source ``Type``.
@@ -348,7 +348,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_destination_types_by_source_and_relation_type(self, source_type, relation_type):
         """Gets all destination Types related to the given source ``Type`` and relation ``Type``.
@@ -364,7 +364,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_destination_types_by_relation_type(self, relation_type):
         """Gets all destination ``Types`` related by the given type.
@@ -378,7 +378,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_types_by_destination(self, destination_type):
         """Gets all source Types related to the given destination ``Type``.
@@ -392,7 +392,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_types_by_destination_and_relation_type(self, destination_type, relation_type):
         """Gets all source Types related to the given destination ``Type`` and relation ``Type``.
@@ -408,7 +408,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
 
 ##
@@ -426,7 +426,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_type_form_for_create(self, type_):
         """Gets the type form for creating new types.
@@ -441,7 +441,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeForm
 
     def create_type(self, type_form):
         """Creates a new ``Type``.
@@ -458,7 +458,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``Unsupported`` -- ``type_form`` did not originate from ``get_type_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     def can_update_types(self):
         """Tests if this user can update types.
@@ -472,7 +472,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_type_form_for_update(self, type_):
         """Gets the type form for creating new types.
@@ -488,7 +488,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeForm
 
     def update_type(self, type_form):
         """Updates a type.
@@ -503,7 +503,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``Unsupported`` -- ``type_form`` did not originate from ``get_type_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_types(self):
         """Tests if this user can delete ``Types`` from this ``ItemBank``.
@@ -517,7 +517,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_delete_type(self, type_):
         """Tests if this user can delete the specified type.
@@ -534,7 +534,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NullArgument`` -- ``type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_type(self, type_):
         """Removes a ``Type``.
@@ -547,7 +547,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def make_equivalent(self, primary_type, equivalent_type):
         """Makes two ``Types`` equivalent.
@@ -564,7 +564,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_base_type(self, type_, base_type):
         """Adds a base type to a type.
@@ -581,7 +581,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_base_type(self, type_, base_type):
         """Removes a base type from a type.
@@ -596,7 +596,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_type_relation(self, source_type, destination_type, relation_type):
         """Adds a relation between two types.
@@ -614,7 +614,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_type_relation(self, source_type, destination_type, relation_type):
         """Renoves a relation between two types.
@@ -631,7 +631,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -644,7 +644,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     display_name = property(fget=get_display_name)
 
@@ -657,7 +657,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     display_label = property(fget=get_display_label)
 
@@ -668,7 +668,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     description = property(fget=get_description)
 
@@ -681,7 +681,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     domain = property(fget=get_domain)
 
@@ -697,7 +697,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``string``
 
         """
-        raise UNIMPLEMENTED()
+        return # string
 
     authority = property(fget=get_authority)
 
@@ -709,7 +709,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``string``
 
         """
-        raise UNIMPLEMENTED()
+        return # string
 
     identifier_namespace = property(fget=get_identifier_namespace)
 
@@ -723,7 +723,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``string``
 
         """
-        raise UNIMPLEMENTED()
+        return # string
 
     identifier = property(fget=get_identifier)
 
@@ -738,7 +738,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     display_name_metadata = property(fget=get_display_name_metadata)
 
@@ -752,7 +752,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NullArgument`` -- ``display_name`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_display_name(self):
         """Clears the display name.
@@ -760,7 +760,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     display_name = property(fget=set_display_name, fdel=clear_display_name)
 
@@ -771,7 +771,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     display_label_metadata = property(fget=get_display_label_metadata)
 
@@ -785,7 +785,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NullArgument`` -- ``display_label`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_display_label(self):
         """Clears the display label.
@@ -793,7 +793,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     display_label = property(fget=set_display_label, fdel=clear_display_label)
 
@@ -804,7 +804,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     description_metadata = property(fget=get_description_metadata)
 
@@ -818,7 +818,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NullArgument`` -- ``description`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_description(self):
         """Clears the description.
@@ -826,7 +826,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NoAccess`` -- ``description`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     description = property(fget=set_description, fdel=clear_description)
 
@@ -837,7 +837,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     domain_metadata = property(fget=get_domain_metadata)
 
@@ -851,7 +851,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NullArgument`` -- ``domain`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_domain(self):
         """Clears the domain.
@@ -859,7 +859,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     domain = property(fget=set_domain, fdel=clear_domain)
 
@@ -876,7 +876,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     next_type = property(fget=get_next_type)
 
@@ -893,7 +893,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
 
 
@@ -936,7 +936,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_type(self, namespace, identifier, authority):
         """Gets a ``Type`` by its string representation which is a combination of the authority and identifier.
@@ -958,7 +958,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     def has_type(self, type_):
         """Tests if the given ``Type`` is known.
@@ -972,7 +972,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_types_by_domain(self, domain):
         """Gets all the known Types by domain.
@@ -986,7 +986,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_types_by_authority(self, authority):
         """Gets all the known Types by authority.
@@ -1000,7 +1000,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- respect my authoritay
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_types_by_domain_and_authority(self, domain, authority):
         """Gets all the known Types by domain and authority.
@@ -1016,7 +1016,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_types(self):
         """Gets all the known Types.
@@ -1027,7 +1027,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     types = property(fget=get_types)
 
@@ -1045,7 +1045,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def implies_support(self, type_, base_type):
         """Tests if the given type is implies support of a base type.
@@ -1061,7 +1061,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_base_type(self, type_):
         """Tests if the given type is derived from a base type.
@@ -1075,7 +1075,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_base_types(self, type_):
         """Gets the immediate base types of this type.
@@ -1089,7 +1089,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_relation_types(self):
         """Gets all known relation ``Types``.
@@ -1102,7 +1102,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     relation_types = property(fget=get_relation_types)
 
@@ -1118,7 +1118,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_destination_types_by_source(self, source_type):
         """Gets all destination Types related to the given source ``Type``.
@@ -1132,7 +1132,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_destination_types_by_source_and_relation_type(self, source_type, relation_type):
         """Gets all destination Types related to the given source ``Type`` and relation ``Type``.
@@ -1148,7 +1148,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_destination_types_by_relation_type(self, relation_type):
         """Gets all destination ``Types`` related by the given type.
@@ -1162,7 +1162,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_types_by_destination(self, destination_type):
         """Gets all source Types related to the given destination ``Type``.
@@ -1176,7 +1176,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_types_by_destination_and_relation_type(self, destination_type, relation_type):
         """Gets all source Types related to the given destination ``Type`` and relation ``Type``.
@@ -1192,7 +1192,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
 
 ##
@@ -1211,7 +1211,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_type_form_for_create(self, type_):
         """Gets the type form for creating new types.
@@ -1227,7 +1227,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeForm
 
     def create_type(self, type_form):
         """Creates a new ``Type``.
@@ -1244,7 +1244,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``Unsupported`` -- ``type_form`` did not originate from ``get_type_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     def can_update_types(self):
         """Tests if this user can update types.
@@ -1259,7 +1259,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_type_form_for_update(self, type_):
         """Gets the type form for creating new types.
@@ -1276,7 +1276,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeForm
 
     def update_type(self, type_form):
         """Updates a type.
@@ -1291,7 +1291,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``Unsupported`` -- ``type_form`` did not originate from ``get_type_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_types(self):
         """Tests if this user can delete ``Types`` from this ``ItemBank``.
@@ -1306,7 +1306,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_delete_type(self, type_):
         """Tests if this user can delete the specified type.
@@ -1324,7 +1324,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NullArgument`` -- ``type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_type(self, type_):
         """Removes a ``Type``.
@@ -1337,7 +1337,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def make_equivalent(self, primary_type, equivalent_type):
         """Makes two ``Types`` equivalent.
@@ -1355,7 +1355,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_base_type(self, type_, base_type):
         """Adds a base type to a type.
@@ -1373,7 +1373,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_base_type(self, type_, base_type):
         """Removes a base type from a type.
@@ -1388,7 +1388,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_type_relation(self, source_type, destination_type, relation_type):
         """Adds a relation between two types.
@@ -1407,7 +1407,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_type_relation(self, source_type, destination_type, relation_type):
         """Renoves a relation between two types.
@@ -1424,7 +1424,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1437,7 +1437,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     display_name = property(fget=get_display_name)
 
@@ -1451,7 +1451,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     display_label = property(fget=get_display_label)
 
@@ -1462,7 +1462,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     description = property(fget=get_description)
 
@@ -1476,7 +1476,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     domain = property(fget=get_domain)
 
@@ -1493,7 +1493,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``string``
 
         """
-        raise UNIMPLEMENTED()
+        return # string
 
     authority = property(fget=get_authority)
 
@@ -1506,7 +1506,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``string``
 
         """
-        raise UNIMPLEMENTED()
+        return # string
 
     identifier_namespace = property(fget=get_identifier_namespace)
 
@@ -1521,7 +1521,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``string``
 
         """
-        raise UNIMPLEMENTED()
+        return # string
 
     identifier = property(fget=get_identifier)
 
@@ -1536,7 +1536,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     display_name_metadata = property(fget=get_display_name_metadata)
 
@@ -1550,7 +1550,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NullArgument`` -- ``display_name`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_display_name(self):
         """Clears the display name.
@@ -1558,7 +1558,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     display_name = property(fget=set_display_name, fdel=clear_display_name)
 
@@ -1569,7 +1569,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     display_label_metadata = property(fget=get_display_label_metadata)
 
@@ -1583,7 +1583,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NullArgument`` -- ``display_label`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_display_label(self):
         """Clears the display label.
@@ -1591,7 +1591,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     display_label = property(fget=set_display_label, fdel=clear_display_label)
 
@@ -1602,7 +1602,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     description_metadata = property(fget=get_description_metadata)
 
@@ -1616,7 +1616,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NullArgument`` -- ``description`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_description(self):
         """Clears the description.
@@ -1624,7 +1624,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NoAccess`` -- ``description`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     description = property(fget=set_description, fdel=clear_description)
 
@@ -1635,7 +1635,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :rtype: ``osid.Metadata``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.Metadata
 
     domain_metadata = property(fget=get_domain_metadata)
 
@@ -1649,7 +1649,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NullArgument`` -- ``domain`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def clear_domain(self):
         """Clears the domain.
@@ -1657,7 +1657,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     domain = property(fget=set_domain, fdel=clear_domain)
 
@@ -1674,7 +1674,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     next_type = property(fget=get_next_type)
 
@@ -1692,7 +1692,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
 
 

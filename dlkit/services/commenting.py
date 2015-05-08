@@ -54,7 +54,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_comment_query(self):
         """Tests if querying comments is available.
@@ -63,7 +63,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_comment_admin(self):
         """Tests if managing comments is available.
@@ -72,7 +72,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_book_lookup(self):
         """Tests for the availability of an book lookup service.
@@ -81,7 +81,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_book_admin(self):
         """Tests for the availability of a book administrative service for creating and deleting books.
@@ -90,7 +90,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_book_hierarchy(self):
         """Tests for the availability of a book hierarchy traversal service.
@@ -99,7 +99,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_book_hierarchy_design(self):
         """Tests for the availability of a book hierarchy design service.
@@ -108,7 +108,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_comment_record_types(self):
         """Gets the supported ``Comment`` record types.
@@ -117,7 +117,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     comment_record_types = property(fget=get_comment_record_types)
 
@@ -128,7 +128,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     comment_search_record_types = property(fget=get_comment_search_record_types)
 
@@ -139,7 +139,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     book_record_types = property(fget=get_book_record_types)
 
@@ -150,7 +150,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     book_search_record_types = property(fget=get_book_search_record_types)
 
@@ -167,7 +167,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentLookupSession
 
     comment_lookup_session = property(fget=get_comment_lookup_session)
 
@@ -184,7 +184,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentLookupSession
 
     def get_comment_query_session(self):
         """Gets the ``OsidSession`` associated with the comment query service.
@@ -195,7 +195,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_comment_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQuerySession
 
     comment_query_session = property(fget=get_comment_query_session)
 
@@ -212,7 +212,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQuerySession
 
     def get_comment_admin_session(self):
         """Gets the ``OsidSession`` associated with the comment administration service.
@@ -223,7 +223,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_comment_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentAdminSession
 
     comment_admin_session = property(fget=get_comment_admin_session)
 
@@ -240,7 +240,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentAdminSession
 
     def get_book_lookup_session(self):
         """Gets the ``OsidSession`` associated with the book lookup service.
@@ -251,7 +251,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_book_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookLookupSession
 
     book_lookup_session = property(fget=get_book_lookup_session)
 
@@ -264,7 +264,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_book_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookAdminSession
 
     book_admin_session = property(fget=get_book_admin_session)
 
@@ -277,7 +277,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_book_hierarchy()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookHierarchySession
 
     book_hierarchy_session = property(fget=get_book_hierarchy_session)
 
@@ -290,7 +290,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_book_hierarchy_design()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookHierarchyDesignSession
 
     book_hierarchy_design_session = property(fget=get_book_hierarchy_design_session)
 
@@ -303,7 +303,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unimplemented`` -- ``supports_commenting_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.batch.CommentingBatchManager
 
     commenting_batch_manager = property(fget=get_commenting_batch_manager)
 
@@ -323,7 +323,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_book_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -333,7 +333,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_book_view(self):
         """A complete view of the ``Book`` returns is desired.
@@ -344,7 +344,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_book(self, book_id):
         """Gets the ``Book`` specified by its ``Id``.
@@ -363,7 +363,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
     def get_books_by_ids(self, book_ids):
         """Gets a ``BookList`` corresponding to the given ``IdList``.
@@ -385,7 +385,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_genus_type(self, book_genus_type):
         """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus types derived from the specified ``Type``.
@@ -402,7 +402,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_parent_genus_type(self, book_genus_type):
         """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with genus types derived from the specified ``Type``.
@@ -419,7 +419,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_record_type(self, book_record_type):
         """Gets a ``BookList`` containing the given book record ``Type``.
@@ -436,7 +436,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_provider(self, resource_id):
         """Gets a ``BookList`` from the given provider ````.
@@ -453,7 +453,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books(self):
         """Gets all ``Books``.
@@ -467,7 +467,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     books = property(fget=get_books)
 
@@ -487,7 +487,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_query(self):
         """Gets a book query.
@@ -496,7 +496,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``osid.commenting.BookQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookQuery
 
     book_query = property(fget=get_book_query)
 
@@ -513,7 +513,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unsupported`` -- ``book_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
 
 ##
@@ -526,7 +526,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``osid.commenting.BookSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookSearch
 
     book_search = property(fget=get_book_search)
 
@@ -539,7 +539,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``osid.commenting.BookSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookSearchOrder
 
     book_search_order = property(fget=get_book_search_order)
 
@@ -558,7 +558,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unsupported`` -- ``book_query`` or ``book_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookSearchResults
 
     def get_book_query_from_inspector(self, book_query_inspector):
         """Gets an entry query from an inspector.
@@ -572,7 +572,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unsupported`` -- ``book_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookQuery
 
 
 ##
@@ -590,7 +590,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_book_with_record_types(self, book_record_types):
         """Tests if this user can create a single ``Book`` using the desired record types.
@@ -607,7 +607,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_form_for_create(self, book_record_types):
         """Gets the book form for creating new books.
@@ -623,7 +623,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookForm
 
     def create_book(self, book_form):
         """Creates a new ``Book``.
@@ -640,7 +640,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
     def can_update_books(self):
         """Tests if this user can update ``Books``.
@@ -654,7 +654,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_form_for_update(self, book_id):
         """Gets the book form for updating an existing book.
@@ -670,7 +670,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookForm
 
     def update_book(self, book_form):
         """Updates an existing book.
@@ -685,7 +685,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_books(self):
         """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
@@ -698,7 +698,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_book(self, book_id):
         """Deletes a ``Book``.
@@ -711,7 +711,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_book_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Books``.
@@ -725,7 +725,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_book(self, book_id, alias_id):
         """Adds an ``Id`` to a ``Book`` for the purpose of creating compatibility.
@@ -745,7 +745,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -763,7 +763,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_book_notifications(self):
         """Reliable notifications are desired.
@@ -773,7 +773,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_book_notifications(self):
         """Unreliable notifications are desired.
@@ -783,7 +783,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_book_notification(self, notification_id):
         """Acknowledge a book notification.
@@ -794,7 +794,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_books(self):
         """Register for notifications of new books.
@@ -805,7 +805,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_books(self):
         """Registers for notification of updated books.
@@ -816,7 +816,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book(self, book_id):
         """Registers for notification of an updated book.
@@ -830,7 +830,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_books(self):
         """Registers for notification of deleted books.
@@ -841,7 +841,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_book(self, book_id):
         """Registers for notification of a deleted book.
@@ -855,7 +855,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book_hierarchy(self):
         """Registers for notification of an updated book hierarchy structure.
@@ -866,7 +866,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book_hierarchy_for_ancestors(self, book_id):
         """Registers for notification of an updated book hierarchy structure.
@@ -881,7 +881,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book_hierarchy_for_descendants(self, book_id):
         """Registers for notification of an updated book hierarchy structure.
@@ -896,7 +896,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -909,7 +909,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     book_hierarchy_id = property(fget=get_book_hierarchy_id)
 
@@ -922,7 +922,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     book_hierarchy = property(fget=get_book_hierarchy)
 
@@ -938,7 +938,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_book_ids(self):
         """Gets the root book ``Ids`` in this hierarchy.
@@ -949,7 +949,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_book_ids = property(fget=get_root_book_ids)
 
@@ -966,7 +966,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     root_books = property(fget=get_root_books)
 
@@ -983,7 +983,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_book(self, id_, book_id):
         """Tests if an ``Id`` is a direct parent of book.
@@ -1000,7 +1000,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_book_ids(self, book_id):
         """Gets the parent ``Ids`` of the given book.
@@ -1015,7 +1015,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_books(self, book_id):
         """Gets the parent books of the given ``id``.
@@ -1030,7 +1030,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def is_ancestor_of_book(self, id_, book_id):
         """Tests if an ``Id`` is an ancestor of a book.
@@ -1047,7 +1047,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_books(self, book_id):
         """Tests if a book has any children.
@@ -1062,7 +1062,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_book(self, id_, book_id):
         """Tests if a book is a direct child of another.
@@ -1079,7 +1079,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_book_ids(self, book_id):
         """Gets the child ``Ids`` of the given book.
@@ -1094,7 +1094,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_books(self, book_id):
         """Gets the child books of the given ``id``.
@@ -1109,7 +1109,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def is_descendant_of_book(self, id_, book_id):
         """Tests if an ``Id`` is a descendant of a book.
@@ -1126,7 +1126,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_node_ids(self, book_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given book.
@@ -1147,7 +1147,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_book_nodes(self, book_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given book.
@@ -1168,7 +1168,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookNode
 
 
 ##
@@ -1186,7 +1186,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_book(self, book_id):
         """Adds a root book.
@@ -1200,7 +1200,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_book(self, book_id):
         """Removes a root book.
@@ -1213,7 +1213,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_book(self, book_id, child_id):
         """Adds a child to a book.
@@ -1229,7 +1229,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_book(self, book_id, child_id):
         """Removes a child from a book.
@@ -1244,7 +1244,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_books(self, book_id):
         """Removes all children from a book.
@@ -1257,7 +1257,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1275,7 +1275,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentLookupSession
 
     def get_comment_lookup_session_for_book(self, book_id, proxy):
         """Gets the ``OsidSession`` associated with the comment lookup service for the given book.
@@ -1292,7 +1292,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentLookupSession
 
     def get_comment_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the comment query service.
@@ -1306,7 +1306,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_comment_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQuerySession
 
     def get_comment_query_session_for_book(self, book_id, proxy):
         """Gets the ``OsidSession`` associated with the comment query service for the given book.
@@ -1323,7 +1323,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQuerySession
 
     def get_comment_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the comment administration service.
@@ -1337,7 +1337,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_comment_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentAdminSession
 
     def get_comment_admin_session_for_book(self, book_id, proxy):
         """Gets the ``OsidSession`` associated with the comment administration service for the given book.
@@ -1354,7 +1354,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentAdminSession
 
     def get_book_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book lookup service.
@@ -1368,7 +1368,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_book_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookLookupSession
 
     def get_book_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book administrative service.
@@ -1382,7 +1382,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_book_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookAdminSession
 
     def get_book_hierarchy_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book hierarchy service.
@@ -1396,7 +1396,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_book_hierarchy()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookHierarchySession
 
     def get_book_hierarchy_design_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book hierarchy design service.
@@ -1410,7 +1410,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_book_hierarchy_design()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookHierarchyDesignSession
 
     def get_commenting_batch_proxy_manager(self):
         """Gets a ``CommentingBatchProxyManager``.
@@ -1421,7 +1421,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unimplemented`` -- ``supports_commenting_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.batch.CommentingBatchProxyManager
 
     commenting_batch_proxy_manager = property(fget=get_commenting_batch_proxy_manager)
 
@@ -1442,7 +1442,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_book_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -1453,7 +1453,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_book_view(self):
         """A complete view of the ``Book`` returns is desired.
@@ -1465,7 +1465,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_book(self, book_id):
         """Gets the ``Book`` specified by its ``Id``.
@@ -1485,7 +1485,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
     def get_books_by_ids(self, book_ids):
         """Gets a ``BookList`` corresponding to the given ``IdList``.
@@ -1508,7 +1508,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_genus_type(self, book_genus_type):
         """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus types derived from the specified ``Type``.
@@ -1526,7 +1526,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_parent_genus_type(self, book_genus_type):
         """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with genus types derived from the specified ``Type``.
@@ -1544,7 +1544,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_record_type(self, book_record_type):
         """Gets a ``BookList`` containing the given book record ``Type``.
@@ -1562,7 +1562,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books_by_provider(self, resource_id):
         """Gets a ``BookList`` from the given provider ````.
@@ -1580,7 +1580,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def get_books(self):
         """Gets all ``Books``.
@@ -1595,7 +1595,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     books = property(fget=get_books)
 
@@ -1616,7 +1616,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_query(self):
         """Gets a book query.
@@ -1625,7 +1625,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``osid.commenting.BookQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookQuery
 
     book_query = property(fget=get_book_query)
 
@@ -1642,7 +1642,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unsupported`` -- ``book_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
 
 ##
@@ -1655,7 +1655,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``osid.commenting.BookSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookSearch
 
     book_search = property(fget=get_book_search)
 
@@ -1669,7 +1669,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``osid.commenting.BookSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookSearchOrder
 
     book_search_order = property(fget=get_book_search_order)
 
@@ -1688,7 +1688,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unsupported`` -- ``book_query`` or ``book_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookSearchResults
 
     def get_book_query_from_inspector(self, book_query_inspector):
         """Gets an entry query from an inspector.
@@ -1703,7 +1703,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unsupported`` -- ``book_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookQuery
 
 
 ##
@@ -1722,7 +1722,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_book_with_record_types(self, book_record_types):
         """Tests if this user can create a single ``Book`` using the desired record types.
@@ -1740,7 +1740,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_form_for_create(self, book_record_types):
         """Gets the book form for creating new books.
@@ -1757,7 +1757,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookForm
 
     def create_book(self, book_form):
         """Creates a new ``Book``.
@@ -1774,7 +1774,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
     def can_update_books(self):
         """Tests if this user can update ``Books``.
@@ -1789,7 +1789,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_form_for_update(self, book_id):
         """Gets the book form for updating an existing book.
@@ -1806,7 +1806,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookForm
 
     def update_book(self, book_form):
         """Updates an existing book.
@@ -1821,7 +1821,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_books(self):
         """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
@@ -1835,7 +1835,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_book(self, book_id):
         """Deletes a ``Book``.
@@ -1848,7 +1848,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_book_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Books``.
@@ -1863,7 +1863,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_book(self, book_id, alias_id):
         """Adds an ``Id`` to a ``Book`` for the purpose of creating compatibility.
@@ -1884,7 +1884,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1903,7 +1903,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_book_notifications(self):
         """Reliable notifications are desired.
@@ -1914,7 +1914,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_book_notifications(self):
         """Unreliable notifications are desired.
@@ -1925,7 +1925,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_book_notification(self, notification_id):
         """Acknowledge a book notification.
@@ -1936,7 +1936,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_books(self):
         """Register for notifications of new books.
@@ -1948,7 +1948,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_books(self):
         """Registers for notification of updated books.
@@ -1960,7 +1960,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book(self, book_id):
         """Registers for notification of an updated book.
@@ -1975,7 +1975,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_books(self):
         """Registers for notification of deleted books.
@@ -1987,7 +1987,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_book(self, book_id):
         """Registers for notification of a deleted book.
@@ -2002,7 +2002,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book_hierarchy(self):
         """Registers for notification of an updated book hierarchy structure.
@@ -2014,7 +2014,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book_hierarchy_for_ancestors(self, book_id):
         """Registers for notification of an updated book hierarchy structure.
@@ -2030,7 +2030,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_book_hierarchy_for_descendants(self, book_id):
         """Registers for notification of an updated book hierarchy structure.
@@ -2046,7 +2046,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -2059,7 +2059,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     book_hierarchy_id = property(fget=get_book_hierarchy_id)
 
@@ -2072,7 +2072,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     book_hierarchy = property(fget=get_book_hierarchy)
 
@@ -2089,7 +2089,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_book_ids(self):
         """Gets the root book ``Ids`` in this hierarchy.
@@ -2100,7 +2100,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_book_ids = property(fget=get_root_book_ids)
 
@@ -2118,7 +2118,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     root_books = property(fget=get_root_books)
 
@@ -2135,7 +2135,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_book(self, id_, book_id):
         """Tests if an ``Id`` is a direct parent of book.
@@ -2152,7 +2152,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_book_ids(self, book_id):
         """Gets the parent ``Ids`` of the given book.
@@ -2167,7 +2167,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_books(self, book_id):
         """Gets the parent books of the given ``id``.
@@ -2182,7 +2182,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def is_ancestor_of_book(self, id_, book_id):
         """Tests if an ``Id`` is an ancestor of a book.
@@ -2199,7 +2199,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_books(self, book_id):
         """Tests if a book has any children.
@@ -2214,7 +2214,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_book(self, id_, book_id):
         """Tests if a book is a direct child of another.
@@ -2231,7 +2231,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_book_ids(self, book_id):
         """Gets the child ``Ids`` of the given book.
@@ -2246,7 +2246,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_books(self, book_id):
         """Gets the child books of the given ``id``.
@@ -2261,7 +2261,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
     def is_descendant_of_book(self, id_, book_id):
         """Tests if an ``Id`` is a descendant of a book.
@@ -2278,7 +2278,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_book_node_ids(self, book_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given book.
@@ -2299,7 +2299,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_book_nodes(self, book_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given book.
@@ -2320,7 +2320,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookNode
 
 
 ##
@@ -2339,7 +2339,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_book(self, book_id):
         """Adds a root book.
@@ -2353,7 +2353,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_book(self, book_id):
         """Removes a root book.
@@ -2366,7 +2366,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_book(self, book_id, child_id):
         """Adds a child to a book.
@@ -2382,7 +2382,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_book(self, book_id, child_id):
         """Removes a child from a book.
@@ -2397,7 +2397,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_books(self, book_id):
         """Removes all children from a book.
@@ -2410,7 +2410,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -2433,7 +2433,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.records.BookRecord
 
 
 ##
@@ -2446,7 +2446,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     book_id = property(fget=get_book_id)
 
@@ -2459,7 +2459,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
     book = property(fget=get_book)
 
@@ -2475,7 +2475,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_comment_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -2485,7 +2485,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_comment_view(self):
         """A complete view of the ``Comment`` returns is desired.
@@ -2496,7 +2496,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_federated_book_view(self):
         """Federates the view for methods in this session.
@@ -2506,7 +2506,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_isolated_book_view(self):
         """Isolates the view for methods in this session.
@@ -2515,15 +2515,15 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_effective_comment_view(self):
         """Only comments whose effective dates are current are returned by methods in this session."""
-        raise UNIMPLEMENTED()
+        pass
 
     def use_any_effective_comment_view(self):
         """All comments of any effective dates are returned by all methods in this session."""
-        raise UNIMPLEMENTED()
+        pass
 
     def get_comment(self, comment_id):
         """Gets the ``Comment`` specified by its ``Id``.
@@ -2538,7 +2538,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Comment
 
     def get_comments_by_ids(self, comment_ids):
         """Gets a ``CommentList`` corresponding to the given ``IdList``.
@@ -2553,7 +2553,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type(self, comment_genus_type):
         """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` which does not include comments of genus types derived from the specified ``Type``.
@@ -2567,7 +2567,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_parent_genus_type(self, comment_genus_type):
         """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` and include any additional comments with genus types derived from the specified ``Type``.
@@ -2581,7 +2581,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_record_type(self, comment_record_type):
         """Gets a ``CommentList`` containing the given comment record ``Type``.
@@ -2595,7 +2595,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_on_date(self, from_, to):
         """Gets a ``CommentList`` effective during the entire given date range inclusive but not confined to the date range.
@@ -2612,7 +2612,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_on_date(self, comment_genus_type, from_, to):
         """Gets a ``CommentList`` of a given genus type and effective during the entire given date range inclusive but not confined to the date range.
@@ -2631,7 +2631,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_for_commentor(self, resource_id):
         """Gets a list of comments corresponding to a resource ``Id``.
@@ -2645,7 +2645,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_for_commentor_on_date(self, resource_id, from_, to):
         """Gets a list of all comments corresponding to a resource ``Id`` and effective during the entire given date range inclusive but not confined to the date range.
@@ -2664,7 +2664,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_for_commentor(self, resource_id, comment_genus_type):
         """Gets a list of comments of the given genus type corresponding to a resource ``Id``.
@@ -2680,7 +2680,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_for_commentor_on_date(self, resource_id, comment_genus_type, from_, to):
         """Gets a list of all comments of the given genus type corresponding to a resource ``Id`` and effective during the entire given date range inclusive but not confined to the date range.
@@ -2701,7 +2701,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_for_reference(self, reference_id):
         """Gets a list of comments corresponding to a reference ``Id``.
@@ -2715,7 +2715,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_for_reference_on_date(self, reference_id, from_, to):
         """Gets a list of all comments corresponding to a reference ``Id`` and effective during the entire given date range inclusive but not confined to the date range.
@@ -2734,7 +2734,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_for_reference(self, reference_id, comment_genus_type):
         """Gets a list of comments of the given genus type corresponding to a reference ``Id``.
@@ -2750,7 +2750,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_for_reference_on_date(self, reference_id, comment_genus_type, from_, to):
         """Gets a list of all comments of the given genus type corresponding to a reference ``Id`` and effective during the entire given date range inclusive but not confined to the date range.
@@ -2771,7 +2771,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_for_commentor_and_reference(self, resource_id, reference_id):
         """Gets a list of comments corresponding to a resource and reference ``Id``.
@@ -2787,7 +2787,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_for_commentor_and_reference_on_date(self, resource_id, reference_id, from_, to):
         """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire given date range inclusive but not confined to the date range.
@@ -2808,7 +2808,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_for_commentor_and_reference(self, resource_id, reference_id, comment_genus_type):
         """Gets a list of comments of the given genus type corresponding to a resource and reference ``Id``.
@@ -2826,7 +2826,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, resource_id, reference_id, comment_genus_type, from_, to):
         """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire given date range inclusive but not confined to the date range.
@@ -2849,7 +2849,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comments(self):
         """Gets all comments.
@@ -2860,7 +2860,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     comments = property(fget=get_comments)
 
@@ -2880,7 +2880,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_cumulative_rating(self):
         """Gets the cumulative rating for all the references in this book.
@@ -2891,7 +2891,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.grading.Grade
 
     cumulative_rating = property(fget=get_cumulative_rating)
 
@@ -2908,7 +2908,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.grading.Grade
 
     def get_cumulative_rating_for_commentor(self, resource_id):
         """Gets the cumulative rating for a commentor.
@@ -2923,7 +2923,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.grading.Grade
 
     def get_top_references(self, max_):
         """Gets the top rated references in this book.
@@ -2936,7 +2936,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_references(self, grade_id):
         """Gets the references with ratings equal to or higher than the given grade.
@@ -2951,7 +2951,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.grading.Grade
 
 
 ##
@@ -2969,7 +2969,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_comment_query(self):
         """Gets a comment query.
@@ -2978,7 +2978,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.commenting.CommentQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQuery
 
     comment_query = property(fget=get_comment_query)
 
@@ -2995,7 +2995,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
 
 ##
@@ -3008,7 +3008,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.commenting.CommentSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentSearch
 
     comment_search = property(fget=get_comment_search)
 
@@ -3021,7 +3021,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.commenting.CommentSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentSearchOrder
 
     comment_search_order = property(fget=get_comment_search_order)
 
@@ -3040,7 +3040,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_query`` or ``comment_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentSearchResults
 
     def get_comment_query_from_inspector(self, comment_query_inspector):
         """Gets an entry query from an inspector.
@@ -3054,7 +3054,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQuery
 
 
 ##
@@ -3072,7 +3072,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_comment_with_record_types(self, comment_record_types):
         """Tests if this user can create a single ``Comment`` using the desired record types.
@@ -3089,7 +3089,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``comment_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_comment_form_for_create(self, reference_id, comment_record_types):
         """Gets the comment form for creating new comments.
@@ -3107,7 +3107,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentForm
 
     def create_comment(self, comment_form):
         """Creates a new ``Comment``.
@@ -3124,7 +3124,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Comment
 
     def can_update_comments(self):
         """Tests if this user can update comments.
@@ -3138,7 +3138,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_comment_form_for_update(self, comment_id):
         """Gets the comment form for updating an existing comment.
@@ -3155,7 +3155,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentForm
 
     def update_comment(self, comment_form):
         """Updates an existing comment.
@@ -3170,7 +3170,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_comments(self):
         """Tests if this user can delete comments.
@@ -3184,7 +3184,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_comment(self, comment_id):
         """Deletes a ``Comment``.
@@ -3197,7 +3197,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_comment_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Comnents``.
@@ -3211,7 +3211,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_comment(self, comment_id, alias_id):
         """Adds an ``Id`` to a ``Comment`` for the purpose of creating compatibility.
@@ -3231,7 +3231,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3249,7 +3249,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_comment_notifications(self):
         """Reliable notifications are desired.
@@ -3259,7 +3259,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_comment_notifications(self):
         """Unreliable notifications are desired.
@@ -3269,7 +3269,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_comment_notification(self, notification_id):
         """Acknowledge a comment notification.
@@ -3280,7 +3280,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_comments(self):
         """Register for notifications of new comments.
@@ -3291,7 +3291,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_comments_for_commentor(self, resource_id):
         """Register for notifications of new comments by the given resource ``Id``.
@@ -3305,7 +3305,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_comments_for_reference(self, reference_id):
         """Register for notifications of new comments for the given reference ``Id``.
@@ -3319,7 +3319,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_comments(self):
         """Registers for notification of updated comments.
@@ -3330,7 +3330,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_comments_for_commentor(self, resource_id):
         """Register for notifications of changed comments by the given resource ``Id``.
@@ -3344,7 +3344,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_comments_for_reference(self, reference_id):
         """Register for notifications of changed comments for the given reference ``Id``.
@@ -3358,7 +3358,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_comment(self, comment_id):
         """Registers for notification of an updated comment.
@@ -3373,7 +3373,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_comments(self):
         """Registers for notification of deleted comments.
@@ -3384,7 +3384,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_comments_for_commentor(self, resource_id):
         """Register for notifications of deleted comments by the given resource ``Id``.
@@ -3398,7 +3398,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_comments_for_reference(self, reference_id):
         """Register for notifications of deleted comments for the given reference ``Id``.
@@ -3412,7 +3412,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_comment(self, comment_id):
         """Registers for notification of a deleted comment.
@@ -3427,7 +3427,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3445,7 +3445,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_book_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -3455,7 +3455,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_book_view(self):
         """A complete view of the ``Comment`` and ``Book`` returns is desired.
@@ -3466,7 +3466,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_comment_ids_by_book(self, book_id):
         """Gets the list of Comment Ids associated with a ``Book``.
@@ -3481,7 +3481,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_comments_by_book(self, book_id):
         """Gets the list of ``Comments`` associated with a ``Book``.
@@ -3496,7 +3496,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_comment_ids_by_books(self, book_ids):
         """Gets the list of ``Comment Ids`` corresponding to a list of ``Book`` objects.
@@ -3510,7 +3510,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_comments_by_books(self, book_ids):
         """Gets the list of ``Comments`` corresponding to a list of ``Books``.
@@ -3524,7 +3524,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentList
 
     def get_book_ids_by_comment(self, comment_id):
         """Gets the list of ``Book``  ``Ids`` mapped to a ``Comment``.
@@ -3539,7 +3539,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_books_by_comment(self, comment_id):
         """Gets the list of ``Book`` objects mapped to a ``Comment``.
@@ -3554,7 +3554,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.BookList
 
 
 ##
@@ -3572,7 +3572,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_comments_to_book(self, book_id):
         """Tests if this user can alter comment/book mappings.
@@ -3589,7 +3589,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_book_ids(self, book_id):
         """Gets a list of books including and under the given book node in which any comment can be assigned.
@@ -3602,7 +3602,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assignable_book_ids_for_comment(self, book_id, comment_id):
         """Gets a list of books including and under the given book node in which a specific comment can be assigned.
@@ -3617,7 +3617,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_comment_to_book(self, comment_id, book_id):
         """Adds an existing ``Comment`` to a ``Book``.
@@ -3633,7 +3633,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_comment_from_book(self, comment_id, book_id):
         """Removes a ``Comment`` from a ``Book``.
@@ -3648,7 +3648,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_comment_to_book(self, comment_id, from_book_id, to_book_id):
         """Moves a ``Credit`` from one ``Book`` to another.
@@ -3666,7 +3666,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3684,7 +3684,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def apply_comment_query(self, comment_query):
         """Applies a comment query to this book.
@@ -3697,7 +3697,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_comment_query(self):
         """Gets a comment query inspector for this book.
@@ -3708,7 +3708,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.CommentQueryInspector
 
     def apply_comment_sequencing(self, comment_search_order):
         """Applies a comment search order to this book.
@@ -3721,7 +3721,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``comment_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -3736,7 +3736,7 @@ class BookList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
     next_book = property(fget=get_next_book)
 
@@ -3753,7 +3753,7 @@ class BookList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.commenting.Book
 
 
 

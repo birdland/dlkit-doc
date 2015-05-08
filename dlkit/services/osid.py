@@ -398,7 +398,7 @@ class Identifiable:
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     id_ = property(fget=get_id)
 
@@ -418,7 +418,7 @@ class Identifiable:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -437,7 +437,7 @@ class Extensible:
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     record_types = property(fget=get_record_types)
 
@@ -453,7 +453,7 @@ class Extensible:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -473,7 +473,7 @@ class Browsable:
         :raise: ``PermissionDenied`` -- an authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.PropertyList
 
     properties = property(fget=get_properties)
 
@@ -497,7 +497,7 @@ class Browsable:
         :raise: ``Unsupported`` -- ``has_record_type(record_type)`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.PropertyList
 
 
 
@@ -516,7 +516,7 @@ class Temporal:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_start_date(self):
         """Gets the start date.
@@ -525,7 +525,7 @@ class Temporal:
         :rtype: ``osid.calendaring.DateTime``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.calendaring.DateTime
 
     start_date = property(fget=get_start_date)
 
@@ -536,7 +536,7 @@ class Temporal:
         :rtype: ``osid.calendaring.DateTime``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.calendaring.DateTime
 
     end_date = property(fget=get_end_date)
 
@@ -563,7 +563,7 @@ class Containable:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -576,7 +576,7 @@ class Sourceable:
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     provider_id = property(fget=get_provider_id)
 
@@ -588,7 +588,7 @@ class Sourceable:
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.resource.Resource
 
     provider = property(fget=get_provider)
 
@@ -599,7 +599,7 @@ class Sourceable:
         :rtype: ``osid.id.IdList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     branding_ids = property(fget=get_branding_ids)
 
@@ -611,7 +611,7 @@ class Sourceable:
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     branding = property(fget=get_branding)
 
@@ -623,7 +623,7 @@ class Sourceable:
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     license_ = property(fget=get_license)
 
@@ -647,7 +647,7 @@ class Operable:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_enabled(self):
         """Tests if this operable is administravely enabled.
@@ -659,7 +659,7 @@ class Operable:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_disabled(self):
         """Tests if this operable is administravely disabled.
@@ -671,7 +671,7 @@ class Operable:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_operational(self):
         """Tests if this ``Operable`` is operational.
@@ -682,7 +682,7 @@ class Operable:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -699,7 +699,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     id_ = property(fget=get_id)
 
@@ -712,7 +712,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     display_name = property(fget=get_display_name)
 
@@ -723,7 +723,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     description = property(fget=get_description)
 
@@ -734,7 +734,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.installation.Version``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.installation.Version
 
     version = property(fget=get_version)
 
@@ -745,7 +745,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.calendaring.DateTime``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.calendaring.DateTime
 
     release_date = property(fget=get_release_date)
 
@@ -758,7 +758,7 @@ class OsidProfile(Sourceable):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_locales(self):
         """Gets the locales supported in this service.
@@ -767,7 +767,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.locale.LocaleList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.LocaleList
 
     locales = property(fget=get_locales)
 
@@ -778,7 +778,7 @@ class OsidProfile(Sourceable):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_journal_branching(self):
         """Test for support of a journal branching service.
@@ -787,7 +787,7 @@ class OsidProfile(Sourceable):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_branch_id(self):
         """Gets the ``Branch Id`` representing this service branch.
@@ -797,7 +797,7 @@ class OsidProfile(Sourceable):
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     branch_id = property(fget=get_branch_id)
 
@@ -810,7 +810,7 @@ class OsidProfile(Sourceable):
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.journaling.Branch
 
     branch = property(fget=get_branch)
 
@@ -822,7 +822,7 @@ class OsidProfile(Sourceable):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     proxy_record_types = property(fget=get_proxy_record_types)
 
@@ -836,7 +836,7 @@ class OsidProfile(Sourceable):
         :raise: ``NullArgument`` -- ``proxy_record_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -854,7 +854,7 @@ class OsidManager(OsidProfile):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def rollback_service(self, rollback_time):
         """Rolls back this service to a point in time.
@@ -868,7 +868,7 @@ class OsidManager(OsidProfile):
         :raise: ``Unimplemented`` -- ``supports_journal_rollback()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.journaling.JournalEntry
 
     def change_branch(self, branch_id):
         """Changes the service branch.
@@ -882,7 +882,7 @@ class OsidManager(OsidProfile):
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -900,7 +900,7 @@ class OsidProxyManager(OsidProfile):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def rollback_service(self, rollback_time, proxy):
         """Rolls back this service to a point in time.
@@ -917,7 +917,7 @@ class OsidProxyManager(OsidProfile):
         :raise: ``Unimplemented`` -- ``supports_journal_rollback()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.journaling.JournalEntry
 
     def change_branch(self, branch_id, proxy):
         """Changes the service branch.
@@ -933,7 +933,7 @@ class OsidProxyManager(OsidProfile):
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -946,7 +946,7 @@ class OsidSession:
         :rtype: ``osid.locale.Locale``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.Locale
 
     locale = property(fget=get_locale)
 
@@ -957,7 +957,7 @@ class OsidSession:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_authenticated_agent_id(self):
         """Gets the ``Id`` of the agent authenticated to this session.
@@ -969,7 +969,7 @@ class OsidSession:
         :raise: ``IllegalState`` -- ``is_authenticated()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     authenticated_agent_id = property(fget=get_authenticated_agent_id)
 
@@ -984,7 +984,7 @@ class OsidSession:
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authentication.Agent
 
     authenticated_agent = property(fget=get_authenticated_agent)
 
@@ -1000,7 +1000,7 @@ class OsidSession:
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     effective_agent_id = property(fget=get_effective_agent_id)
 
@@ -1017,7 +1017,7 @@ class OsidSession:
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authentication.Agent
 
     effective_agent = property(fget=get_effective_agent)
 
@@ -1028,7 +1028,7 @@ class OsidSession:
         :rtype: ``timestamp``
 
         """
-        raise UNIMPLEMENTED()
+        return # timestamp
 
     date = property(fget=get_date)
 
@@ -1039,7 +1039,7 @@ class OsidSession:
         :rtype: ``decimal``
 
         """
-        raise UNIMPLEMENTED()
+        return # decimal
 
     clock_rate = property(fget=get_clock_rate)
 
@@ -1050,7 +1050,7 @@ class OsidSession:
         :rtype: ``osid.type.Type``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     format_type = property(fget=get_format_type)
 
@@ -1061,7 +1061,7 @@ class OsidSession:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def start_transaction(self):
         """Starts a new transaction for this sesson.
@@ -1079,7 +1079,7 @@ class OsidSession:
         :raise: ``Unsupported`` -- transactions not supported
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.transaction.Transaction
 
 
 
@@ -1092,7 +1092,7 @@ class OsidObject(Identifiable, Extensible, Browsable):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     display_name = property(fget=get_display_name)
 
@@ -1103,7 +1103,7 @@ class OsidObject(Identifiable, Extensible, Browsable):
         :rtype: ``osid.locale.DisplayText``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.locale.DisplayText
 
     description = property(fget=get_description)
 
@@ -1114,7 +1114,7 @@ class OsidObject(Identifiable, Extensible, Browsable):
         :rtype: ``osid.type.Type``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.Type
 
     genus_type = property(fget=get_genus_type)
 
@@ -1130,7 +1130,7 @@ class OsidObject(Identifiable, Extensible, Browsable):
         :raise: ``NullArgument`` -- ``genus_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -1149,7 +1149,7 @@ class OsidList:
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def available(self):
         """Gets the number of elements available for retrieval.
@@ -1168,7 +1168,7 @@ class OsidList:
         :rtype: ``cardinal``
 
         """
-        raise UNIMPLEMENTED()
+        return # cardinal
 
     def skip(self, n):
         """Skip the specified number of elements in the list.
@@ -1180,7 +1180,7 @@ class OsidList:
         :type n: ``cardinal``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1193,7 +1193,7 @@ class OsidRuntimeProfile(OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
 
 
@@ -1222,7 +1222,7 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         :raise: ``Unsupported`` -- ``impl_class_name`` does not support the requested OSID
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.OsidManager
 
     def get_proxy_manager(self, osid, implementation, version):
         """Finds, loads and instantiates providers of OSID managers.
@@ -1247,7 +1247,7 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         :raise: ``Unsupported`` -- ``implementation`` does not support the requested OSID
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.OsidProxyManager
 
     def get_configuration(self):
         """Gets the current configuration in the runtime environment.
@@ -1259,7 +1259,7 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         :raise: ``Unimplemented`` -- a configuration service is not supported
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.configuration.ValueLookupSession
 
     configuration = property(fget=get_configuration)
 

@@ -63,7 +63,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     location_record_types = property(fget=get_location_record_types)
 
@@ -74,7 +74,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     location_search_record_types = property(fget=get_location_search_record_types)
 
@@ -85,7 +85,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     map_record_types = property(fget=get_map_record_types)
 
@@ -96,7 +96,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     map_search_record_types = property(fget=get_map_search_record_types)
 
@@ -107,7 +107,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     resource_location_record_types = property(fget=get_resource_location_record_types)
 
@@ -118,7 +118,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     coordinate_types = property(fget=get_coordinate_types)
 
@@ -129,7 +129,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     heading_types = property(fget=get_heading_types)
 
@@ -140,7 +140,7 @@ class MappingProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     spatial_unit_record_types = property(fget=get_spatial_unit_record_types)
 
@@ -157,7 +157,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unimplemented`` -- ``supports_mapping_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.batch.MappingBatchManager
 
     mapping_batch_manager = property(fget=get_mapping_batch_manager)
 
@@ -170,7 +170,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unimplemented`` -- ``supports_mapping_path()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.path.MappingPathManager
 
     mapping_path_manager = property(fget=get_mapping_path_manager)
 
@@ -183,7 +183,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unimplemented`` -- ``supports_mapping_route()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.route.MappingRouteManager
 
     mapping_route_manager = property(fget=get_mapping_route_manager)
 
@@ -203,7 +203,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_map_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -213,7 +213,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_map_view(self):
         """A complete view of the ``Map`` returns is desired.
@@ -224,7 +224,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_map(self, map_id):
         """Gets the ``Map`` specified by its ``Id``.
@@ -243,7 +243,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.Map
 
     def get_maps_by_ids(self, map_ids):
         """Gets a ``MapList`` corresponding to the given ``IdList``.
@@ -265,7 +265,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_genus_type(self, map_genus_type):
         """Gets a ``MapList`` corresponding to the given map genus ``Type`` which does not include maps of types derived from the specified ``Type``.
@@ -282,7 +282,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_parent_genus_type(self, map_genus_type):
         """Gets a ``MapList`` corresponding to the given map genus ``Type`` and include any additional maps with genus types derived from the specified ``Type``.
@@ -299,7 +299,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_record_type(self, map_record_type):
         """Gets a ``MapList`` containing the given map record ``Type``.
@@ -316,7 +316,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_provider(self, resource_id):
         """Gets a ``MapList`` for the given provider.
@@ -333,7 +333,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps(self):
         """Gets all ``Maps``.
@@ -347,7 +347,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     maps = property(fget=get_maps)
 
@@ -367,7 +367,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_query(self):
         """Gets a map query.
@@ -376,7 +376,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``osid.mapping.MapQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapQuery
 
     map_query = property(fget=get_map_query)
 
@@ -393,7 +393,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unsupported`` -- ``map_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
 
 ##
@@ -406,7 +406,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``osid.mapping.MapSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapSearch
 
     map_search = property(fget=get_map_search)
 
@@ -419,7 +419,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``osid.mapping.MapSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapSearchOrder
 
     map_search_order = property(fget=get_map_search_order)
 
@@ -438,7 +438,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unsupported`` -- ``map_query`` or ``map_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapSearchResults
 
     def get_map_query_from_inspector(self, map_query_inspector):
         """Gets a map query from an inspector.
@@ -452,7 +452,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unsupported`` -- ``map_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapQuery
 
 
 ##
@@ -470,7 +470,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_map_with_record_types(self, map_record_types):
         """Tests if this user can create a single ``Map`` using the desired record types.
@@ -487,7 +487,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``NullArgument`` -- ``map_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_form_for_create(self, map_record_types):
         """Gets the map form for creating new maps.
@@ -503,7 +503,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unsupported`` -- unable to get a form with given record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapForm
 
     def create_map(self, map_form):
         """Creates a new ``Map``.
@@ -520,7 +520,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unsupported`` -- ``map_form`` did not originate from ``get_map_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.Map
 
     def can_update_maps(self):
         """Tests if this user can update ``Maps``.
@@ -534,7 +534,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_form_for_update(self, map_id):
         """Gets the map form for updating an existing map.
@@ -550,7 +550,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapForm
 
     def update_map(self, map_form):
         """Updates an existing map.
@@ -565,7 +565,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``Unsupported`` -- ``map_form`` did not originate from ``get_map_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_maps(self):
         """Tests if this user can delete ``Maps``.
@@ -579,7 +579,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_map(self, map_id):
         """Deletes a ``Map``.
@@ -592,7 +592,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_map_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Maps``.
@@ -606,7 +606,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_map(self, map_id, alias_id):
         """Adds an ``Id`` to a ``Map`` for the purpose of creating compatibility.
@@ -626,7 +626,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -644,7 +644,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_map_notifications(self):
         """Reliable notifications are desired.
@@ -654,7 +654,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_map_notifications(self):
         """Unreliable notifications are desired.
@@ -664,7 +664,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_map_notification(self, notification_id):
         """Acknowledge a map notification.
@@ -675,7 +675,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_maps(self):
         """Register for notifications of new maps.
@@ -686,7 +686,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_maps(self):
         """Registers for notification of updated maps.
@@ -696,7 +696,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map(self, map_id):
         """Registers for notification of an updated map.
@@ -710,7 +710,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_maps(self):
         """Registers for notification of deleted maps.
@@ -720,7 +720,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_map(self, map_id):
         """Registers for notification of a deleted map.
@@ -734,7 +734,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map_hierarchy(self):
         """Registers for notification of an updated map hierarchy structure.
@@ -745,7 +745,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map_hierarchy_for_ancestors(self, map_id):
         """Registers for notification of an updated map hierarchy structure.
@@ -760,7 +760,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map_hierarchy_for_descendants(self, map_id):
         """Registers for notification of an updated map hierarchy structure.
@@ -775,7 +775,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -788,7 +788,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     map_hierarchy_id = property(fget=get_map_hierarchy_id)
 
@@ -801,7 +801,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     map_hierarchy = property(fget=get_map_hierarchy)
 
@@ -817,7 +817,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_map_ids(self):
         """Gets the root map ``Ids`` in this hierarchy.
@@ -828,7 +828,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_map_ids = property(fget=get_root_map_ids)
 
@@ -845,7 +845,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     root_maps = property(fget=get_root_maps)
 
@@ -862,7 +862,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_map(self, id_, map_id):
         """Tests if an ``Id`` is a direct parent of map.
@@ -879,7 +879,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_map_ids(self, map_id):
         """Gets the parent ``Ids`` of the given map.
@@ -894,7 +894,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_maps(self, map_id):
         """Gets the parents of the given map.
@@ -909,7 +909,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def is_ancestor_of_map(self, id_, map_id):
         """Tests if an ``Id`` is an ancestor of a map.
@@ -926,7 +926,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_maps(self, map_id):
         """Tests if a map has any children.
@@ -941,7 +941,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_map(self, id_, map_id):
         """Tests if a map is a direct child of another.
@@ -958,7 +958,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_map_ids(self, map_id):
         """Gets the child ``Ids`` of the given map.
@@ -973,7 +973,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_maps(self, map_id):
         """Gets the children of the given map.
@@ -988,7 +988,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def is_descendant_of_map(self, id_, map_id):
         """Tests if an ``Id`` is a descendant of a map.
@@ -1005,7 +1005,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_node_ids(self, map_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given map.
@@ -1026,7 +1026,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_map_nodes(self, map_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given map.
@@ -1047,7 +1047,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapNode
 
 
 ##
@@ -1065,7 +1065,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_map(self, map_id):
         """Adds a root map.
@@ -1079,7 +1079,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_map(self, map_id):
         """Removes a root map.
@@ -1092,7 +1092,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_map(self, map_id, child_id):
         """Adds a child to a map.
@@ -1108,7 +1108,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_map(self, map_id, child_id):
         """Removes a child from a map.
@@ -1123,7 +1123,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_maps(self, map_id):
         """Removes all children from a map.
@@ -1136,7 +1136,7 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1151,7 +1151,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unimplemented`` -- ``supports_mapping_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.batch.MappingBatchProxyManager
 
     mapping_batch_proxy_manager = property(fget=get_mapping_batch_proxy_manager)
 
@@ -1164,7 +1164,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unimplemented`` -- ``supports_mapping_path()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.path.MappingPathProxyManager
 
     mapping_path_proxy_manager = property(fget=get_mapping_path_proxy_manager)
 
@@ -1177,7 +1177,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unimplemented`` -- ``supports_mapping_route()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.route.MappingRouteProxyManager
 
     mapping_route_proxy_manager = property(fget=get_mapping_route_proxy_manager)
 
@@ -1198,7 +1198,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_map_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -1209,7 +1209,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_map_view(self):
         """A complete view of the ``Map`` returns is desired.
@@ -1221,7 +1221,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_map(self, map_id):
         """Gets the ``Map`` specified by its ``Id``.
@@ -1241,7 +1241,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.Map
 
     def get_maps_by_ids(self, map_ids):
         """Gets a ``MapList`` corresponding to the given ``IdList``.
@@ -1264,7 +1264,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_genus_type(self, map_genus_type):
         """Gets a ``MapList`` corresponding to the given map genus ``Type`` which does not include maps of types derived from the specified ``Type``.
@@ -1282,7 +1282,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_parent_genus_type(self, map_genus_type):
         """Gets a ``MapList`` corresponding to the given map genus ``Type`` and include any additional maps with genus types derived from the specified ``Type``.
@@ -1300,7 +1300,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_record_type(self, map_record_type):
         """Gets a ``MapList`` containing the given map record ``Type``.
@@ -1318,7 +1318,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps_by_provider(self, resource_id):
         """Gets a ``MapList`` for the given provider.
@@ -1336,7 +1336,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def get_maps(self):
         """Gets all ``Maps``.
@@ -1351,7 +1351,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     maps = property(fget=get_maps)
 
@@ -1372,7 +1372,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_query(self):
         """Gets a map query.
@@ -1381,7 +1381,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``osid.mapping.MapQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapQuery
 
     map_query = property(fget=get_map_query)
 
@@ -1398,7 +1398,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unsupported`` -- ``map_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
 
 ##
@@ -1411,7 +1411,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``osid.mapping.MapSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapSearch
 
     map_search = property(fget=get_map_search)
 
@@ -1425,7 +1425,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``osid.mapping.MapSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapSearchOrder
 
     map_search_order = property(fget=get_map_search_order)
 
@@ -1444,7 +1444,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unsupported`` -- ``map_query`` or ``map_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapSearchResults
 
     def get_map_query_from_inspector(self, map_query_inspector):
         """Gets a map query from an inspector.
@@ -1459,7 +1459,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unsupported`` -- ``map_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapQuery
 
 
 ##
@@ -1478,7 +1478,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_map_with_record_types(self, map_record_types):
         """Tests if this user can create a single ``Map`` using the desired record types.
@@ -1496,7 +1496,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``NullArgument`` -- ``map_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_form_for_create(self, map_record_types):
         """Gets the map form for creating new maps.
@@ -1513,7 +1513,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unsupported`` -- unable to get a form with given record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapForm
 
     def create_map(self, map_form):
         """Creates a new ``Map``.
@@ -1530,7 +1530,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unsupported`` -- ``map_form`` did not originate from ``get_map_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.Map
 
     def can_update_maps(self):
         """Tests if this user can update ``Maps``.
@@ -1545,7 +1545,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_form_for_update(self, map_id):
         """Gets the map form for updating an existing map.
@@ -1562,7 +1562,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapForm
 
     def update_map(self, map_form):
         """Updates an existing map.
@@ -1577,7 +1577,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``Unsupported`` -- ``map_form`` did not originate from ``get_map_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_maps(self):
         """Tests if this user can delete ``Maps``.
@@ -1592,7 +1592,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_map(self, map_id):
         """Deletes a ``Map``.
@@ -1605,7 +1605,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_map_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Maps``.
@@ -1620,7 +1620,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_map(self, map_id, alias_id):
         """Adds an ``Id`` to a ``Map`` for the purpose of creating compatibility.
@@ -1641,7 +1641,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1660,7 +1660,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_map_notifications(self):
         """Reliable notifications are desired.
@@ -1671,7 +1671,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_map_notifications(self):
         """Unreliable notifications are desired.
@@ -1682,7 +1682,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_map_notification(self, notification_id):
         """Acknowledge a map notification.
@@ -1693,7 +1693,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_maps(self):
         """Register for notifications of new maps.
@@ -1705,7 +1705,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_maps(self):
         """Registers for notification of updated maps.
@@ -1716,7 +1716,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map(self, map_id):
         """Registers for notification of an updated map.
@@ -1731,7 +1731,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_maps(self):
         """Registers for notification of deleted maps.
@@ -1742,7 +1742,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_map(self, map_id):
         """Registers for notification of a deleted map.
@@ -1757,7 +1757,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map_hierarchy(self):
         """Registers for notification of an updated map hierarchy structure.
@@ -1769,7 +1769,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map_hierarchy_for_ancestors(self, map_id):
         """Registers for notification of an updated map hierarchy structure.
@@ -1785,7 +1785,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_map_hierarchy_for_descendants(self, map_id):
         """Registers for notification of an updated map hierarchy structure.
@@ -1801,7 +1801,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1814,7 +1814,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     map_hierarchy_id = property(fget=get_map_hierarchy_id)
 
@@ -1827,7 +1827,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     map_hierarchy = property(fget=get_map_hierarchy)
 
@@ -1844,7 +1844,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_map_ids(self):
         """Gets the root map ``Ids`` in this hierarchy.
@@ -1855,7 +1855,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_map_ids = property(fget=get_root_map_ids)
 
@@ -1873,7 +1873,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     root_maps = property(fget=get_root_maps)
 
@@ -1890,7 +1890,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_map(self, id_, map_id):
         """Tests if an ``Id`` is a direct parent of map.
@@ -1907,7 +1907,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_map_ids(self, map_id):
         """Gets the parent ``Ids`` of the given map.
@@ -1922,7 +1922,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_maps(self, map_id):
         """Gets the parents of the given map.
@@ -1937,7 +1937,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def is_ancestor_of_map(self, id_, map_id):
         """Tests if an ``Id`` is an ancestor of a map.
@@ -1954,7 +1954,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_maps(self, map_id):
         """Tests if a map has any children.
@@ -1969,7 +1969,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_map(self, id_, map_id):
         """Tests if a map is a direct child of another.
@@ -1986,7 +1986,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_map_ids(self, map_id):
         """Gets the child ``Ids`` of the given map.
@@ -2001,7 +2001,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_maps(self, map_id):
         """Gets the children of the given map.
@@ -2016,7 +2016,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapList
 
     def is_descendant_of_map(self, id_, map_id):
         """Tests if an ``Id`` is a descendant of a map.
@@ -2033,7 +2033,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_map_node_ids(self, map_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given map.
@@ -2054,7 +2054,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_map_nodes(self, map_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given map.
@@ -2075,7 +2075,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.MapNode
 
 
 ##
@@ -2094,7 +2094,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_map(self, map_id):
         """Adds a root map.
@@ -2108,7 +2108,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_map(self, map_id):
         """Removes a root map.
@@ -2121,7 +2121,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_map(self, map_id, child_id):
         """Adds a child to a map.
@@ -2137,7 +2137,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_map(self, map_id, child_id):
         """Removes a child from a map.
@@ -2152,7 +2152,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_maps(self, map_id):
         """Removes all children from a map.
@@ -2165,7 +2165,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 

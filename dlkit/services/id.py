@@ -54,7 +54,7 @@ class IdManager(osid_managers.OsidManager, osid_sessions.OsidSession, IdProfile)
         :raise: ``Unimplemented`` -- ``supports_id_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.batch.IdBatchManager
 
     id_batch_manager = property(fget=get_id_batch_manager)
 
@@ -71,7 +71,7 @@ class IdProxyManager(osid_managers.OsidProxyManager, IdProfile):
         :raise: ``Unimplemented`` -- ``supports_id_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.batch.IdBatchProxyManager
 
     id_batch_proxy_manager = property(fget=get_id_batch_proxy_manager)
 

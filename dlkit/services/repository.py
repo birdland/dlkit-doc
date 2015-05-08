@@ -127,7 +127,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_asset_query(self):
         """Tests if asset query is supported.
@@ -136,7 +136,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_asset_admin(self):
         """Tests if asset administration is supported.
@@ -145,7 +145,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_repository_lookup(self):
         """Tests if repository lookup is supported.
@@ -154,7 +154,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_repository_admin(self):
         """Tests if repository administration is supported.
@@ -163,7 +163,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_record_types(self):
         """Gets all the asset record types supported.
@@ -172,7 +172,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     asset_record_types = property(fget=get_asset_record_types)
 
@@ -183,7 +183,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     asset_search_record_types = property(fget=get_asset_search_record_types)
 
@@ -194,7 +194,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     asset_content_record_types = property(fget=get_asset_content_record_types)
 
@@ -205,7 +205,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     composition_record_types = property(fget=get_composition_record_types)
 
@@ -216,7 +216,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     composition_search_record_types = property(fget=get_composition_search_record_types)
 
@@ -227,7 +227,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     repository_record_types = property(fget=get_repository_record_types)
 
@@ -238,7 +238,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     repository_search_record_types = property(fget=get_repository_search_record_types)
 
@@ -249,7 +249,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     spatial_unit_record_types = property(fget=get_spatial_unit_record_types)
 
@@ -260,7 +260,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     coordinate_types = property(fget=get_coordinate_types)
 
@@ -277,7 +277,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetLookupSession
 
     asset_lookup_session = property(fget=get_asset_lookup_session)
 
@@ -294,7 +294,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetLookupSession
 
     def get_asset_query_session(self):
         """Gets an asset query session.
@@ -305,7 +305,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_asset_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQuerySession
 
     asset_query_session = property(fget=get_asset_query_session)
 
@@ -322,7 +322,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQuerySession
 
     def get_asset_admin_session(self):
         """Gets an asset administration session for creating, updating and deleting assets.
@@ -333,7 +333,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_asset_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetAdminSession
 
     asset_admin_session = property(fget=get_asset_admin_session)
 
@@ -350,7 +350,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetAdminSession
 
     def get_repository_lookup_session(self):
         """Gets the repository lookup session.
@@ -361,7 +361,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_repository_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryLookupSession
 
     repository_lookup_session = property(fget=get_repository_lookup_session)
 
@@ -374,7 +374,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_repository_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryAdminSession
 
     repository_admin_session = property(fget=get_repository_admin_session)
 
@@ -387,7 +387,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_repository_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.batch.RepositoryBatchManager
 
     repository_batch_manager = property(fget=get_repository_batch_manager)
 
@@ -400,7 +400,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unimplemented`` -- ``supports_repository_rules()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.rules.RepositoryRulesManager
 
     repository_rules_manager = property(fget=get_repository_rules_manager)
 
@@ -420,7 +420,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_repository_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -430,7 +430,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_repository_view(self):
         """A complete view of the ``Repository`` returns is desired.
@@ -441,7 +441,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_repository(self, repository_id):
         """Gets the ``Repository`` specified by its ``Id``.
@@ -461,7 +461,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
@@ -483,7 +483,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_genus_type(self, repository_genus_type):
         """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does not include repositories of types derived from the specified ``Type``.
@@ -501,7 +501,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_parent_genus_type(self, repository_genus_type):
         """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and include any additional repositories with genus types derived from the specified ``Type``.
@@ -519,7 +519,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_record_type(self, repository_record_type):
         """Gets a ``RepositoryList`` containing the given repository record ``Type``.
@@ -537,7 +537,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_provider(self, resource_id):
         """Gets a ``RepositoryList`` from the given provider ````.
@@ -555,7 +555,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories(self):
         """Gets all ``Repositories``.
@@ -570,7 +570,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     repositories = property(fget=get_repositories)
 
@@ -590,7 +590,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_query(self):
         """Gets a repository query.
@@ -599,7 +599,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``osid.repository.RepositoryQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryQuery
 
     repository_query = property(fget=get_repository_query)
 
@@ -616,7 +616,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unsupported`` -- ``repository_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
 
 ##
@@ -629,7 +629,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``osid.repository.RepositorySearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositorySearch
 
     repository_search = property(fget=get_repository_search)
 
@@ -642,7 +642,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``osid.repository.RepositorySearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositorySearchOrder
 
     repository_search_order = property(fget=get_repository_search_order)
 
@@ -661,7 +661,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unsupported`` -- ``repository_query`` or ``repository_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositorySearchResults
 
     def get_repository_query_from_inspector(self, repository_query_inspector):
         """Gets a repository query from an inspector.
@@ -675,7 +675,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unsupported`` -- ``repository_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryQuery
 
 
 ##
@@ -693,7 +693,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_repository_with_record_types(self, repository_record_types):
         """Tests if this user can create a single ``Repository`` using the desired record types.
@@ -710,7 +710,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NullArgument`` -- ``repository_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_form_for_create(self, repository_record_types):
         """Gets the repository form for creating new repositories.
@@ -726,7 +726,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryForm
 
     def create_repository(self, repository_form):
         """Creates a new ``Repository``.
@@ -743,7 +743,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
     def can_update_repositories(self):
         """Tests if this user can update ``Repositories``.
@@ -757,7 +757,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_form_for_update(self, repository_id):
         """Gets the repository form for updating an existing repository.
@@ -774,7 +774,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryForm
 
     def update_repository(self, repository_form):
         """Updates an existing repository.
@@ -789,7 +789,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_repositories(self):
         """Tests if this user can delete ``Repositories``.
@@ -803,7 +803,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_repository(self, repository_id):
         """Deletes a ``Repository``.
@@ -816,7 +816,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_repository_aliases(self):
         """Tests if this user can manage ``Id`` aliases for repositories.
@@ -830,7 +830,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_repository(self, repository_id, alias_id):
         """Adds an ``Id`` to a ``Repository`` for the purpose of creating compatibility.
@@ -850,7 +850,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -868,7 +868,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def register_for_new_repositories(self):
         """Register for notifications of new repositories.
@@ -879,7 +879,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_repository_ancestors(self, repository_id):
         """Registers for notification if an ancestor is added to the specified repository in the repository hierarchy.
@@ -893,7 +893,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_repository_descendants(self, repository_id):
         """Registers for notification if a descendant is added to the specified repository in the repository hierarchy.
@@ -907,7 +907,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_repositories(self):
         """Registers for notification of updated repositories.
@@ -918,7 +918,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_repository(self, repository_id):
         """Registers for notification of an updated repository.
@@ -932,7 +932,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repositories(self):
         """Registers for notification of deleted repositories.
@@ -943,7 +943,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repository(self, repository_id):
         """Registers for notification of a deleted repository.
@@ -957,7 +957,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repository_ancestors(self, repository_id):
         """Registers for notification if an ancestor is removed from the specified repository in the repository hierarchy.
@@ -972,7 +972,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repository_descendants(self, repository_id):
         """Registers for notification if a descendant is removed from fthe specified repository in the repository hierarchy.
@@ -987,7 +987,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1000,7 +1000,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     repository_hierarchy_id = property(fget=get_repository_hierarchy_id)
 
@@ -1013,7 +1013,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     repository_hierarchy = property(fget=get_repository_hierarchy)
 
@@ -1029,7 +1029,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_repository_ids(self):
         """Gets the root repository ``Ids`` in this hierarchy.
@@ -1040,7 +1040,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_repository_ids = property(fget=get_root_repository_ids)
 
@@ -1057,7 +1057,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     root_repositories = property(fget=get_root_repositories)
 
@@ -1074,7 +1074,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_repository(self, id_, repository_id):
         """Tests if an ``Id`` is a direct parent of a repository.
@@ -1091,7 +1091,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_repository_ids(self, repository_id):
         """Gets the parent ``Ids`` of the given repository.
@@ -1106,7 +1106,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_repositories(self, repository_id):
         """Gets the parents of the given repository.
@@ -1121,7 +1121,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def is_ancestor_of_repository(self, id_, repository_id):
         """Tests if an ``Id`` is an ancestor of a repository.
@@ -1138,7 +1138,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_repositories(self, repository_id):
         """Tests if a repository has any children.
@@ -1153,7 +1153,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_repository(self, id_, repository_id):
         """Tests if a node is a direct child of another.
@@ -1170,7 +1170,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_repository_ids(self, repository_id):
         """Gets the ``Ids`` of the children of the given repository.
@@ -1185,7 +1185,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_repositories(self, repository_id):
         """Gets the children of the given repository.
@@ -1200,7 +1200,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def is_descendant_of_repository(self, id_, repository_id):
         """Tests if an ``Id`` is a descendant of a repository.
@@ -1217,7 +1217,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
@@ -1238,7 +1238,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
@@ -1259,7 +1259,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryNode
 
 
 ##
@@ -1277,7 +1277,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_repository(self, repository_id):
         """Adds a root repository.
@@ -1291,7 +1291,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_repository(self, repository_id):
         """Removes a root repository.
@@ -1304,7 +1304,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_repository(self, repository_id, child_id):
         """Adds a child to a repository.
@@ -1320,7 +1320,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_repository(self, repository_id, child_id):
         """Removes a child from a repository.
@@ -1335,7 +1335,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_repositories(self, repository_id):
         """Removes all children from a repository.
@@ -1348,7 +1348,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1366,7 +1366,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetLookupSession
 
     def get_asset_lookup_session_for_repository(self, repository_id, proxy):
         """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
@@ -1383,7 +1383,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetLookupSession
 
     def get_asset_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the asset query service.
@@ -1397,7 +1397,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_asset_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQuerySession
 
     def get_asset_query_session_for_repository(self, repository_id, proxy):
         """Gets the ``OsidSession`` associated with the asset query service for the given repository.
@@ -1414,7 +1414,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQuerySession
 
     def get_asset_admin_session(self, proxy):
         """Gets an asset administration session for creating, updating and deleting assets.
@@ -1428,7 +1428,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_asset_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetAdminSession
 
     def get_asset_admin_session_for_repository(self, repository_id, proxy):
         """Gets an asset administration session for the given repository.
@@ -1445,7 +1445,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetAdminSession
 
     def get_repository_lookup_session(self, proxy):
         """Gets the repository lookup session.
@@ -1459,7 +1459,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_repository_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryLookupSession
 
     def get_repository_admin_session(self, proxy):
         """Gets the repository administrative session for creating, updating and deleteing repositories.
@@ -1473,7 +1473,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_repository_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryAdminSession
 
     def get_repository_batch_proxy_manager(self):
         """Gets a ``RepositoryBatchProxyManager``.
@@ -1484,7 +1484,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_repository_batch()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.batch.RepositoryBatchProxyManager
 
     repository_batch_proxy_manager = property(fget=get_repository_batch_proxy_manager)
 
@@ -1497,7 +1497,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unimplemented`` -- ``supports_repository_rules()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.rules.RepositoryRulesProxyManager
 
     repository_rules_proxy_manager = property(fget=get_repository_rules_proxy_manager)
 
@@ -1518,7 +1518,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_repository_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -1529,7 +1529,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_repository_view(self):
         """A complete view of the ``Repository`` returns is desired.
@@ -1541,7 +1541,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_repository(self, repository_id):
         """Gets the ``Repository`` specified by its ``Id``.
@@ -1562,7 +1562,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
@@ -1585,7 +1585,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_genus_type(self, repository_genus_type):
         """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does not include repositories of types derived from the specified ``Type``.
@@ -1604,7 +1604,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_parent_genus_type(self, repository_genus_type):
         """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and include any additional repositories with genus types derived from the specified ``Type``.
@@ -1623,7 +1623,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_record_type(self, repository_record_type):
         """Gets a ``RepositoryList`` containing the given repository record ``Type``.
@@ -1642,7 +1642,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories_by_provider(self, resource_id):
         """Gets a ``RepositoryList`` from the given provider ````.
@@ -1661,7 +1661,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def get_repositories(self):
         """Gets all ``Repositories``.
@@ -1677,7 +1677,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     repositories = property(fget=get_repositories)
 
@@ -1698,7 +1698,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_query(self):
         """Gets a repository query.
@@ -1707,7 +1707,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``osid.repository.RepositoryQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryQuery
 
     repository_query = property(fget=get_repository_query)
 
@@ -1724,7 +1724,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unsupported`` -- ``repository_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
 
 ##
@@ -1737,7 +1737,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``osid.repository.RepositorySearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositorySearch
 
     repository_search = property(fget=get_repository_search)
 
@@ -1751,7 +1751,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``osid.repository.RepositorySearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositorySearchOrder
 
     repository_search_order = property(fget=get_repository_search_order)
 
@@ -1770,7 +1770,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unsupported`` -- ``repository_query`` or ``repository_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositorySearchResults
 
     def get_repository_query_from_inspector(self, repository_query_inspector):
         """Gets a repository query from an inspector.
@@ -1785,7 +1785,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unsupported`` -- ``repository_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryQuery
 
 
 ##
@@ -1804,7 +1804,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_repository_with_record_types(self, repository_record_types):
         """Tests if this user can create a single ``Repository`` using the desired record types.
@@ -1822,7 +1822,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NullArgument`` -- ``repository_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_form_for_create(self, repository_record_types):
         """Gets the repository form for creating new repositories.
@@ -1839,7 +1839,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryForm
 
     def create_repository(self, repository_form):
         """Creates a new ``Repository``.
@@ -1856,7 +1856,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
     def can_update_repositories(self):
         """Tests if this user can update ``Repositories``.
@@ -1871,7 +1871,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_form_for_update(self, repository_id):
         """Gets the repository form for updating an existing repository.
@@ -1889,7 +1889,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryForm
 
     def update_repository(self, repository_form):
         """Updates an existing repository.
@@ -1904,7 +1904,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_repositories(self):
         """Tests if this user can delete ``Repositories``.
@@ -1919,7 +1919,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_repository(self, repository_id):
         """Deletes a ``Repository``.
@@ -1932,7 +1932,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_repository_aliases(self):
         """Tests if this user can manage ``Id`` aliases for repositories.
@@ -1947,7 +1947,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_repository(self, repository_id, alias_id):
         """Adds an ``Id`` to a ``Repository`` for the purpose of creating compatibility.
@@ -1968,7 +1968,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1987,7 +1987,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def register_for_new_repositories(self):
         """Register for notifications of new repositories.
@@ -1999,7 +1999,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_repository_ancestors(self, repository_id):
         """Registers for notification if an ancestor is added to the specified repository in the repository hierarchy.
@@ -2014,7 +2014,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_repository_descendants(self, repository_id):
         """Registers for notification if a descendant is added to the specified repository in the repository hierarchy.
@@ -2029,7 +2029,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_repositories(self):
         """Registers for notification of updated repositories.
@@ -2041,7 +2041,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_repository(self, repository_id):
         """Registers for notification of an updated repository.
@@ -2056,7 +2056,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repositories(self):
         """Registers for notification of deleted repositories.
@@ -2068,7 +2068,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repository(self, repository_id):
         """Registers for notification of a deleted repository.
@@ -2083,7 +2083,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repository_ancestors(self, repository_id):
         """Registers for notification if an ancestor is removed from the specified repository in the repository hierarchy.
@@ -2099,7 +2099,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_repository_descendants(self, repository_id):
         """Registers for notification if a descendant is removed from fthe specified repository in the repository hierarchy.
@@ -2115,7 +2115,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -2128,7 +2128,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     repository_hierarchy_id = property(fget=get_repository_hierarchy_id)
 
@@ -2141,7 +2141,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     repository_hierarchy = property(fget=get_repository_hierarchy)
 
@@ -2158,7 +2158,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_repository_ids(self):
         """Gets the root repository ``Ids`` in this hierarchy.
@@ -2169,7 +2169,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_repository_ids = property(fget=get_root_repository_ids)
 
@@ -2187,7 +2187,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     root_repositories = property(fget=get_root_repositories)
 
@@ -2204,7 +2204,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_repository(self, id_, repository_id):
         """Tests if an ``Id`` is a direct parent of a repository.
@@ -2221,7 +2221,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_repository_ids(self, repository_id):
         """Gets the parent ``Ids`` of the given repository.
@@ -2236,7 +2236,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_repositories(self, repository_id):
         """Gets the parents of the given repository.
@@ -2251,7 +2251,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def is_ancestor_of_repository(self, id_, repository_id):
         """Tests if an ``Id`` is an ancestor of a repository.
@@ -2268,7 +2268,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_repositories(self, repository_id):
         """Tests if a repository has any children.
@@ -2283,7 +2283,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_repository(self, id_, repository_id):
         """Tests if a node is a direct child of another.
@@ -2300,7 +2300,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_repository_ids(self, repository_id):
         """Gets the ``Ids`` of the children of the given repository.
@@ -2315,7 +2315,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_repositories(self, repository_id):
         """Gets the children of the given repository.
@@ -2330,7 +2330,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
     def is_descendant_of_repository(self, id_, repository_id):
         """Tests if an ``Id`` is a descendant of a repository.
@@ -2347,7 +2347,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
@@ -2368,7 +2368,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
@@ -2389,7 +2389,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryNode
 
 
 ##
@@ -2408,7 +2408,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_repository(self, repository_id):
         """Adds a root repository.
@@ -2422,7 +2422,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_repository(self, repository_id):
         """Removes a root repository.
@@ -2435,7 +2435,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_repository(self, repository_id, child_id):
         """Adds a child to a repository.
@@ -2451,7 +2451,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_repository(self, repository_id, child_id):
         """Removes a child from a repository.
@@ -2466,7 +2466,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_repositories(self, repository_id):
         """Removes all children from a repository.
@@ -2479,7 +2479,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -2502,7 +2502,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``has_record_type(repository_record_type)`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.records.RepositoryRecord
 
 
 ##
@@ -2515,7 +2515,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     repository_id = property(fget=get_repository_id)
 
@@ -2528,7 +2528,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
     repository = property(fget=get_repository)
 
@@ -2544,7 +2544,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_asset_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -2554,7 +2554,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_asset_view(self):
         """A complete view of the ``Asset`` returns is desired.
@@ -2565,7 +2565,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_federated_repository_view(self):
         """Federates the view for methods in this session.
@@ -2575,7 +2575,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_isolated_repository_view(self):
         """Isolates the view for methods in this session.
@@ -2584,7 +2584,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_asset(self, asset_id):
         """Gets the ``Asset`` specified by its ``Id``.
@@ -2603,7 +2603,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Asset
 
     def get_assets_by_ids(self, asset_ids):
         """Gets an ``AssetList`` corresponding to the given ``IdList``.
@@ -2625,7 +2625,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_assets_by_genus_type(self, asset_genus_type):
         """Gets an ``AssetList`` corresponding to the given asset genus ``Type`` which does not include assets of types derived from the specified ``Type``.
@@ -2642,7 +2642,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_assets_by_parent_genus_type(self, asset_genus_type):
         """Gets an ``AssetList`` corresponding to the given asset genus ``Type`` and include any additional assets with genus types derived from the specified ``Type``.
@@ -2659,7 +2659,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_assets_by_record_type(self, asset_record_type):
         """Gets an ``AssetList`` containing the given asset record ``Type``.
@@ -2676,7 +2676,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_assets_by_provider(self, resource_id):
         """Gets an ``AssetList`` from the given provider.
@@ -2693,7 +2693,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_assets(self):
         """Gets all ``Assets``.
@@ -2707,7 +2707,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     assets = property(fget=get_assets)
 
@@ -2727,7 +2727,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_query(self):
         """Gets an asset query.
@@ -2736,7 +2736,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.repository.AssetQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQuery
 
     asset_query = property(fget=get_asset_query)
 
@@ -2753,7 +2753,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- the ``asset_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
 
 ##
@@ -2766,7 +2766,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.repository.AssetSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetSearch
 
     asset_search = property(fget=get_asset_search)
 
@@ -2779,7 +2779,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.repository.AssetSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetSearchOrder
 
     asset_search_order = property(fget=get_asset_search_order)
 
@@ -2798,7 +2798,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_query`` or ``asset_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetSearchResults
 
     def get_asset_query_from_inspector(self, asset_query_inspector):
         """Gets an asset query from an inspector.
@@ -2812,7 +2812,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQuery
 
 
 ##
@@ -2830,7 +2830,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_asset_with_record_types(self, asset_record_types):
         """Tests if this user can create a single ``Asset`` using the desired record types.
@@ -2847,7 +2847,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``asset_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_form_for_create(self, asset_record_types):
         """Gets the asset form for creating new assets.
@@ -2863,7 +2863,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetForm
 
     def create_asset(self, asset_form):
         """Creates a new ``Asset``.
@@ -2880,7 +2880,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_form`` did not originate from ``get_asset_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Asset
 
     def can_update_assets(self):
         """Tests if this user can update ``Assets``.
@@ -2894,7 +2894,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_form_for_update(self, asset_id):
         """Gets the asset form for updating an existing asset.
@@ -2911,7 +2911,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetForm
 
     def update_asset(self, asset_form):
         """Updates an existing asset.
@@ -2926,7 +2926,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_form`` did not originate from ``get_asset_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_assets(self):
         """Tests if this user can delete ``Assets``.
@@ -2940,7 +2940,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_asset(self, asset_id):
         """Deletes an ``Asset``.
@@ -2953,7 +2953,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_asset_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Assets``.
@@ -2967,7 +2967,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_asset(self, asset_id, alias_id):
         """Adds an ``Id`` to an ``Asset`` for the purpose of creating compatibility.
@@ -2987,7 +2987,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_create_asset_content(self):
         """Tests if this user can create content for ``Assets``.
@@ -3001,7 +3001,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_asset_content_with_record_types(self, asset_content_record_types):
         """Tests if this user can create an ``AssetContent`` using the desired record types.
@@ -3018,7 +3018,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``asset_content_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_content_form_for_create(self, asset_id, asset_content_record_types):
         """Gets an asset content form for creating new assets.
@@ -3036,7 +3036,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetContentForm
 
     def create_asset_content(self, asset_content_form):
         """Creates new ``AssetContent`` for a given asset.
@@ -3053,7 +3053,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_content_form`` did not originate from ``get_asset_content_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetContent
 
     def can_update_asset_contents(self):
         """Tests if this user can update ``AssetContent``.
@@ -3067,7 +3067,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_content_form_for_update(self, asset_content_id):
         """Gets the asset content form for updating an existing asset content.
@@ -3083,7 +3083,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetContentForm
 
     def update_asset_content(self, asset_content_form):
         """Updates an existing asset content.
@@ -3098,7 +3098,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_content_form`` did not originate from ``get_asset_content_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_asset_contents(self):
         """Tests if this user can delete ``AssetsContents``.
@@ -3112,7 +3112,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_asset_content(self, asset_content_id):
         """Deletes content from an ``Asset``.
@@ -3125,7 +3125,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3143,7 +3143,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def register_for_new_assets(self):
         """Register for notifications of new assets.
@@ -3154,7 +3154,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assets_by_genus_type(self, asset_genus_type):
         """Registers for notification of new assets of the given asset genus type.
@@ -3168,7 +3168,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assets(self):
         """Registers for notification of updated assets.
@@ -3179,7 +3179,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assets_by_genus_type(self, asset_genus_type):
         """Registers for notification of updated assets of the given asset genus type.
@@ -3193,7 +3193,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_asset(self, asset_id):
         """Registers for notification of an updated asset.
@@ -3207,7 +3207,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assets(self):
         """Registers for notification of deleted assets.
@@ -3218,7 +3218,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assets_by_genus_type(self, asset_genus_type):
         """Registers for notification of deleted assets of the given asset genus type.
@@ -3232,7 +3232,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_asset(self, asset_id):
         """Registers for notification of a deleted asset.
@@ -3246,7 +3246,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3264,7 +3264,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_repository_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -3274,7 +3274,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_repository_view(self):
         """A complete view of the ``Asset`` and ``Repository`` returns is desired.
@@ -3285,7 +3285,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_asset_ids_by_repository(self, repository_id):
         """Gets the list of ``Asset``  ``Ids`` associated with a ``Repository``.
@@ -3300,7 +3300,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assets_by_repository(self, repository_id):
         """Gets the list of ``Assets`` associated with a ``Repository``.
@@ -3315,7 +3315,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_asset_ids_by_repositories(self, repository_ids):
         """Gets the list of ``Asset Ids`` corresponding to a list of ``Repository`` objects.
@@ -3329,7 +3329,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assets_by_repositories(self, repository_ids):
         """Gets the list of ``Assets`` corresponding to a list of ``Repository`` objects.
@@ -3343,7 +3343,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_repository_ids_by_asset(self, asset_id):
         """Gets the list of ``Repository``  ``Ids`` mapped to an ``Asset``.
@@ -3358,7 +3358,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_repositories_by_asset(self, asset_id):
         """Gets the list of ``Repository`` objects mapped to an ``Asset``.
@@ -3373,7 +3373,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
 
 ##
@@ -3391,7 +3391,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_assets_to_repository(self, repository_id):
         """Tests if this user can alter asset/repository mappings.
@@ -3408,7 +3408,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
         """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
@@ -3421,7 +3421,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
         """Gets a list of repositories including and under the given repository node in which a specific asset can be assigned.
@@ -3436,7 +3436,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_asset_to_repository(self, asset_id, repository_id):
         """Adds an existing ``Asset`` to a ``Repository``.
@@ -3452,7 +3452,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_asset_from_repository(self, asset_id, repository_id):
         """Removes an ``Asset`` from a ``Repository``.
@@ -3467,7 +3467,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3485,7 +3485,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def apply_asset_query(self, asset_query):
         """Applies an asset query to this repository.
@@ -3498,7 +3498,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_asset_query(self):
         """Gets an asset query inspector for this repository.
@@ -3509,7 +3509,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetQueryInspector
 
     def apply_asset_sequencing(self, asset_search_order):
         """Applies an asset search order to this repository.
@@ -3522,7 +3522,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``asset_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3540,7 +3540,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_temporal_coverage(self, asset_id):
         """Gets the temporal coverage related to the subject of this asset.
@@ -3560,7 +3560,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.calendaring.DateTimeIntervalList
 
     def get_asset_ids_by_temporal_coverage(self, from_, to):
         """Gets asset ``Ids`` with temporal coverege within the specified dates inclusive.
@@ -3577,7 +3577,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assets_by_temporal_coverage(self, from_, to):
         """Gets assets with temporal coverege within the specified dates inclusive.
@@ -3594,7 +3594,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
 
 ##
@@ -3612,7 +3612,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_temporal_coverage(self, asset_id, begin, end):
         """Adds a temporal coverage to this asset expressed as a range between two date/times.
@@ -3631,7 +3631,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_temporal_coverage(self, asset_id, begin, end):
         """Removes a temporal range from an asset.
@@ -3648,7 +3648,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3666,7 +3666,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_asset_location_ids(self, asset_id):
         """Gets the locations related to the subject of this asset.
@@ -3681,7 +3681,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_asset_locations(self, asset_id):
         """Gets the locations related to the subject of this asset.
@@ -3696,7 +3696,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.LocationList
 
     def get_asset_spatial_coverage(self, asset_id):
         """Gets the spacial coverage related to the subject of this asset.
@@ -3716,7 +3716,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.mapping.SpatialUnitList
 
     def get_asset_ids_by_location(self, location_id):
         """Gets a list of asset ``Ids`` included within the location.
@@ -3730,7 +3730,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assets_by_location(self, location_id):
         """Gets a list of assets included within the given spatial coverage.
@@ -3744,7 +3744,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_asset_ids_by_spatial_coverage(self, spatial_unit):
         """Gets a list of asset ``Ids`` included within the given spatial coverage.
@@ -3758,7 +3758,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assets_by_spatial_coverage(self, spatial_unit):
         """Gets a list of assets included within the given spatial coverage.
@@ -3772,7 +3772,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
 
 ##
@@ -3790,7 +3790,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_asset_location(self, asset_id, location_id):
         """Adds a location to an asset.
@@ -3806,7 +3806,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_asset_spatial_coverage(self, asset_id, spatial_unit):
         """Adds a spatial coverage to an asset.
@@ -3823,7 +3823,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``spatial_unit`` not supported
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_asset_location(self, asset_id, location_id):
         """Removes a location from an asset.
@@ -3838,7 +3838,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_asset_spatial_coverage(self, asset_id, spatial_unit):
         """Removes a spatial coverage from an asset.
@@ -3853,7 +3853,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3871,7 +3871,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_asset_composition_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -3881,7 +3881,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_asset_composition_view(self):
         """A complete view of the returns is desired.
@@ -3892,7 +3892,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_composition_assets(self, composition_id):
         """Gets the list of assets mapped to the given ``Composition``.
@@ -3907,7 +3907,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.AssetList
 
     def get_compositions_by_asset(self, asset_id):
         """Gets a list of compositions including the given asset.
@@ -3922,7 +3922,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
 
 ##
@@ -3940,7 +3940,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_asset(self, asset_id, composition_id):
         """Appends an asset to a composition.
@@ -3956,7 +3956,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def move_asset_ahead(self, asset_id, composition_id, reference_id):
         """Reorders assets in a composition by moving the specified asset in front of a reference asset.
@@ -3973,7 +3973,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def move_asset_behind(self, asset_id, composition_id, reference_id):
         """Reorders assets in a composition by moving the specified asset behind of a reference asset.
@@ -3990,7 +3990,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def order_assets(self, asset_ids, composition_id):
         """Reorders a set of assets in a composition.
@@ -4005,7 +4005,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_asset(self, asset_id, composition_id):
         """Removes an ``Asset`` from a ``Composition``.
@@ -4020,7 +4020,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization fauilure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4038,7 +4038,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_composition_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -4048,7 +4048,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_composition_view(self):
         """A complete view of the ``Composition`` returns is desired.
@@ -4059,23 +4059,23 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_active_composition_view(self):
         """Only active compositions are returned by methods in this session."""
-        raise UNIMPLEMENTED()
+        pass
 
     def use_any_status_composition_view(self):
         """All active and inactive compositions are returned by methods in this session."""
-        raise UNIMPLEMENTED()
+        pass
 
     def use_sequestered_composition_view(self):
         """The methods in this session omit sequestered compositions."""
-        raise UNIMPLEMENTED()
+        pass
 
     def use_unsequestered_composition_view(self):
         """The methods in this session return all compositions, including sequestered compositions."""
-        raise UNIMPLEMENTED()
+        pass
 
     def get_composition(self, composition_id):
         """Gets the ``Composition`` specified by its ``Id``.
@@ -4090,7 +4090,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Composition
 
     def get_compositions_by_ids(self, composition_ids):
         """Gets a ``CompositionList`` corresponding to the given ``IdList``.
@@ -4105,7 +4105,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_compositions_by_genus_type(self, composition_genus_type):
         """Gets a ``CompositionList`` corresponding to the given composition genus ``Type`` which does not include compositions of types derived from the specified ``Type``.
@@ -4119,7 +4119,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_compositions_by_parent_genus_type(self, composition_genus_type):
         """Gets a ``CompositionList`` corresponding to the given composition genus ``Type`` and include any additional compositions with genus types derived from the specified ``Type``.
@@ -4133,7 +4133,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_compositions_by_record_type(self, composition_record_type):
         """Gets a ``CompositionList`` containing the given composition record ``Type``.
@@ -4147,7 +4147,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_compositions_by_provider(self, resource_id):
         """Gets a ``CompositionList`` from the given provider ````.
@@ -4168,7 +4168,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_compositions(self):
         """Gets all ``Compositions``.
@@ -4179,7 +4179,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     compositions = property(fget=get_compositions)
 
@@ -4199,7 +4199,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_composition_query(self):
         """Gets a composition query.
@@ -4208,7 +4208,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.repository.CompositionQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionQuery
 
     composition_query = property(fget=get_composition_query)
 
@@ -4225,7 +4225,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
 
 ##
@@ -4238,7 +4238,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.repository.CompositionSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionSearch
 
     composition_search = property(fget=get_composition_search)
 
@@ -4251,7 +4251,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.repository.CompositionSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionSearchOrder
 
     composition_search_order = property(fget=get_composition_search_order)
 
@@ -4270,7 +4270,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_query`` or ``composition_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionSearchResults
 
     def get_composition_query_from_inspector(self, composition_query_inspector):
         """Gets a composition query from an inspector.
@@ -4284,7 +4284,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionQuery
 
 
 ##
@@ -4302,7 +4302,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_composition_with_record_types(self, composition_record_types):
         """Tests if this user can create a single ``Composition`` using the desired record types.
@@ -4319,7 +4319,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``composition_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_composition_form_for_create(self, composition_record_types):
         """Gets the composition form for creating new compositions.
@@ -4335,7 +4335,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionForm
 
     def create_composition(self, composiiton_form):
         """Creates a new ``Composition``.
@@ -4352,7 +4352,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_form`` did not originate from ``get_composition_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Composition
 
     def can_update_compositions(self):
         """Tests if this user can update ``Compositions``.
@@ -4366,7 +4366,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_composition_form_for_update(self, composition_id):
         """Gets the composition form for updating an existing composition.
@@ -4383,7 +4383,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionForm
 
     def update_composition(self, composiiton_form):
         """Updates an existing composition.
@@ -4398,7 +4398,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_form`` did not originate from ``get_composition_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_compositions(self):
         """Tests if this user can delete ``Compositions``.
@@ -4412,7 +4412,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_composition(self, composition_id):
         """Deletes a ``Composition``.
@@ -4425,7 +4425,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def delete_composition_node(self, composition_id):
         """Deletes a ``Composition`` and all contained children.
@@ -4438,7 +4438,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_composition_child(self, composition_id, child_composition_id):
         """Adds a composition to a parent composition.
@@ -4454,7 +4454,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_composition_child(self, composition_id, child_composition_id):
         """Removes a composition from a parent composition.
@@ -4469,7 +4469,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_composition_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Compositions``.
@@ -4483,7 +4483,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_composition(self, composition_id, alias_id):
         """Adds an ``Id`` to a ``Composition`` for the purpose of creating compatibility.
@@ -4503,7 +4503,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4521,7 +4521,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def register_for_new_compositions(self):
         """Register for notifications of new composition.
@@ -4532,7 +4532,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_compositions(self):
         """Register for notifications of new compositions.
@@ -4543,7 +4543,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_composition(self, composition_id):
         """Registers for notification of an updated composition.
@@ -4557,7 +4557,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_compositions(self):
         """Register for notifications of new compositions.
@@ -4568,7 +4568,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_composition(self, composition_id):
         """Registers for notification of a deleted composition.
@@ -4582,7 +4582,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4596,7 +4596,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_composition_repository_view(self):
         """A complete view of the ``Composition`` and ``Repository`` returns is desired.
@@ -4607,7 +4607,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_lookup_composition_repository_mappings(self):
         """Tests if this user can perform lookups of composition/repository mappings.
@@ -4621,7 +4621,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_composition_ids_by_repository(self, repository_id):
         """Gets the list of ``Composition``  ``Ids`` associated with a ``Repository``.
@@ -4636,7 +4636,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_compositions_by_repository(self, repository_id):
         """Gets the list of ``Compositions`` associated with a ``Repository``.
@@ -4651,7 +4651,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_composition_ids_by_repositories(self, repository_ids):
         """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
@@ -4665,7 +4665,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_compoitions_by_repositories(self, repository_ids):
         """Gets the list of ``Compositions`` corresponding to a list of ``Repository`` objects.
@@ -4679,7 +4679,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionList
 
     def get_repository_ids_by_composition(self, composition_id):
         """Gets the ``Repository``  ``Ids`` mapped to a ``Composition``.
@@ -4694,7 +4694,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_repositories_by_composition(self, composition_id):
         """Gets the ``Repository`` objects mapped to a ``Composition``.
@@ -4709,7 +4709,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.RepositoryList
 
 
 ##
@@ -4727,7 +4727,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_compositions_to_repository(self, repository_id):
         """Tests if this user can alter composition/repository mappings.
@@ -4744,7 +4744,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
         """Gets a list of repositories including and under the given repository node in which a specific composition can be assigned.
@@ -4759,7 +4759,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_composition_to_repository(self, composition_id, repository_id):
         """Adds an existing ``Composition`` to a ``Repository``.
@@ -4775,7 +4775,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_composition_from_repository(self, composition_id, repository_id):
         """Removes ``Composition`` from a ``Repository``.
@@ -4790,7 +4790,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4807,7 +4807,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_composition_query(self):
         """Gets a composition query inspector for this repository.
@@ -4818,7 +4818,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.CompositionQueryInspector
 
     def apply_composition_sequencing(self, composition_search_order):
         """Applies a composition search order to this repository.
@@ -4831,7 +4831,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``composition_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -4846,7 +4846,7 @@ class RepositoryList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
     next_repository = property(fget=get_next_repository)
 
@@ -4861,7 +4861,7 @@ class RepositoryList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.repository.Repository
 
 
 

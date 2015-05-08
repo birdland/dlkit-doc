@@ -118,7 +118,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     authorization_record_types = property(fget=get_authorization_record_types)
 
@@ -129,7 +129,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     authorization_search_record_types = property(fget=get_authorization_search_record_types)
 
@@ -140,7 +140,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     function_record_types = property(fget=get_function_record_types)
 
@@ -151,7 +151,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     function_search_record_types = property(fget=get_function_search_record_types)
 
@@ -162,7 +162,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     qualifier_record_types = property(fget=get_qualifier_record_types)
 
@@ -173,7 +173,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     qualifier_search_record_types = property(fget=get_qualifier_search_record_types)
 
@@ -184,7 +184,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     vault_record_types = property(fget=get_vault_record_types)
 
@@ -195,7 +195,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     vault_search_record_types = property(fget=get_vault_search_record_types)
 
@@ -206,7 +206,7 @@ class AuthorizationProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     authorization_condition_record_types = property(fget=get_authorization_condition_record_types)
 
@@ -223,7 +223,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unimplemented`` -- ``supports_authorization_batch() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.batch.AuthorizationBatchManager
 
     authorization_batch_manager = property(fget=get_authorization_batch_manager)
 
@@ -236,7 +236,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unimplemented`` -- ``supports_authorization_rules() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.rules.AuthorizationRulesManager
 
     authorization_rules_manager = property(fget=get_authorization_rules_manager)
 
@@ -256,7 +256,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_vault_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -266,7 +266,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_vault_view(self):
         """A complete view of the ``Vault`` returns is desired.
@@ -277,7 +277,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_vault(self, vault_id):
         """Gets the ``Vault`` specified by its ``Id``.
@@ -296,7 +296,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.Vault
 
     def get_vaults_by_ids(self, vault_ids):
         """Gets a ``VaultList`` corresponding to the given ``IdList``.
@@ -318,7 +318,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_genus_type(self, vault_genus_type):
         """Gets a ``VaultList`` corresponding to the given vault genus ``Type`` which does not include vaults of types derived from the specified ``Type``.
@@ -335,7 +335,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_parent_genus_type(self, vault_genus_type):
         """Gets a ``VaultList`` corresponding to the given vault genus ``Type`` and include any additional vaults with genus types derived from the specified ``Type``.
@@ -352,7 +352,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_record_type(self, vault_record_type):
         """Gets a ``VaultList`` containing the given vault record ``Type``.
@@ -369,7 +369,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_provider(self, resource_id):
         """Gets a ``VaultList`` from the given provider ````.
@@ -386,7 +386,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults(self):
         """Gets all ``Vaults``.
@@ -400,7 +400,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     vaults = property(fget=get_vaults)
 
@@ -420,7 +420,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_query(self):
         """Gets a vault query.
@@ -429,7 +429,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``osid.authorization.VaultQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultQuery
 
     vault_query = property(fget=get_vault_query)
 
@@ -446,7 +446,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unsupported`` -- ``vault_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
 
 ##
@@ -459,7 +459,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``osid.authorization.VaultSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultSearch
 
     vault_search = property(fget=get_vault_search)
 
@@ -472,7 +472,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``osid.authorization.VaultSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultSearchOrder
 
     vault_search_order = property(fget=get_vault_search_order)
 
@@ -491,7 +491,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unsupported`` -- ``vault_query`` or ``vault_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultSearchResults
 
     def get_vault_query_from_inspector(self, vault_query_inspector):
         """Gets a vault query from an inspector.
@@ -505,7 +505,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unsupported`` -- ``vault_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultQuery
 
 
 ##
@@ -523,7 +523,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_vault_with_record_types(self, vault_record_types):
         """Tests if this user can create a single ``Vault`` using the desired record types.
@@ -540,7 +540,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``NullArgument`` -- ``vault_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_form_for_create(self, vault_record_types):
         """Gets the vault form for creating new vaults.
@@ -556,7 +556,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unsupported`` -- unable to get form qith requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultForm
 
     def create_vault(self, vault_form):
         """Creates a new ``Vault``.
@@ -573,7 +573,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unsupported`` -- ``vault_form`` did not originate from ``get_vault_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.Vault
 
     def can_update_vaults(self):
         """Tests if this user can update ``Vaults``.
@@ -587,7 +587,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_form_for_update(self, vault_id):
         """Gets the vault form for updating an existing vault.
@@ -604,7 +604,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultForm
 
     def update_vault(self, vault_form):
         """Updates an existing vault.
@@ -619,7 +619,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``Unsupported`` -- ``vault_form`` did not originate from ``get_vault_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_vaults(self):
         """Tests if this user can delete vaults.
@@ -633,7 +633,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_vault(self, vault_id):
         """Deletes a ``Vault``.
@@ -646,7 +646,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_vault_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Vaults``.
@@ -660,7 +660,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_vault(self, vault_id, alias_id):
         """Adds an ``Id`` to a ``Vault`` for the purpose of creating compatibility.
@@ -680,7 +680,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -698,7 +698,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_vault_notifications(self):
         """Reliable notifications are desired.
@@ -708,7 +708,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_vault_notifications(self):
         """Unreliable notifications are desired.
@@ -718,7 +718,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_vault_notification(self, notification_id):
         """Acknowledge a vault notification.
@@ -729,7 +729,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_vaults(self):
         """Register for notifications of new vaults.
@@ -740,7 +740,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vaults(self):
         """Registers for notification of updated vaults.
@@ -751,7 +751,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault(self, vault_id):
         """Registers for notification of an updated vault.
@@ -765,7 +765,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_vaults(self):
         """Registers for notification of deleted vaults.
@@ -776,7 +776,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_vault(self, vault_id):
         """Registers for notification of a deleted vault.
@@ -790,7 +790,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault_hierarchy(self):
         """Registers for notification of an updated vault hierarchy structure.
@@ -801,7 +801,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault_hierarchy_for_ancestors(self, vault_id):
         """Registers for notification of an updated vault hierarchy structure.
@@ -816,7 +816,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault_hierarchy_for_descendants(self, vault_id):
         """Registers for notification of an updated vault hierarchy structure.
@@ -831,7 +831,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -844,7 +844,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     vault_hierarchy_id = property(fget=get_vault_hierarchy_id)
 
@@ -857,7 +857,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     vault_hierarchy = property(fget=get_vault_hierarchy)
 
@@ -873,7 +873,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_vault_ids(self):
         """Gets the root vault ``Ids`` in this hierarchy.
@@ -884,7 +884,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_vault_ids = property(fget=get_root_vault_ids)
 
@@ -897,7 +897,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     root_vaults = property(fget=get_root_vaults)
 
@@ -914,7 +914,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_vault(self, id_, vault_id):
         """Tests if an ``Id`` is a direct parent of a vault.
@@ -931,7 +931,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_vault_ids(self, vault_id):
         """Gets the parent ``Ids`` of the given vault.
@@ -946,7 +946,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_vaults(self, vault_id):
         """Gets the parents of the given vault.
@@ -961,7 +961,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def is_ancestor_of_vault(self, id_, vault_id):
         """Tests if an ``Id`` is an ancestor of a vault.
@@ -978,7 +978,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_vaults(self, vault_id):
         """Tests if a vault has any children.
@@ -993,7 +993,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_vault(self, id_, vault_id):
         """Tests if a vault is a direct child of another.
@@ -1010,7 +1010,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_vault_ids(self, vault_id):
         """Gets the child ``Ids`` of the given vault.
@@ -1025,7 +1025,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_vaults(self, vault_id):
         """Gets the children of the given vault.
@@ -1040,7 +1040,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def is_descendant_of_vault(self, id_, vault_id):
         """Tests if an ``Id`` is a descendant of a vault.
@@ -1057,7 +1057,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_node_ids(self, vault_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given vault.
@@ -1078,7 +1078,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_vault_nodes(self, vault_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given vault.
@@ -1099,7 +1099,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultNode
 
 
 ##
@@ -1117,7 +1117,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_vault(self, vault_id):
         """Adds a root vault.
@@ -1131,7 +1131,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_vault(self, vault_id):
         """Removes a root vault from this hierarchy.
@@ -1144,7 +1144,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_vault(self, vault_id, child_id):
         """Adds a child to a vault.
@@ -1160,7 +1160,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_vault(self, vault_id, child_id):
         """Removes a child from a vault.
@@ -1175,7 +1175,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_vaults(self, vault_id):
         """Removes all children from a vault.
@@ -1188,7 +1188,7 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1203,7 +1203,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unimplemented`` -- ``supports_authorization_batch() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.batch.AuthorizationBatchProxyManager
 
     authorization_batch_proxy_manager = property(fget=get_authorization_batch_proxy_manager)
 
@@ -1216,7 +1216,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unimplemented`` -- ``supports_authorization_rules() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.rules.AuthorizationRulesProxyManager
 
     authorization_rules_proxy_manager = property(fget=get_authorization_rules_proxy_manager)
 
@@ -1237,7 +1237,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_vault_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -1248,7 +1248,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_vault_view(self):
         """A complete view of the ``Vault`` returns is desired.
@@ -1260,7 +1260,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_vault(self, vault_id):
         """Gets the ``Vault`` specified by its ``Id``.
@@ -1280,7 +1280,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.Vault
 
     def get_vaults_by_ids(self, vault_ids):
         """Gets a ``VaultList`` corresponding to the given ``IdList``.
@@ -1303,7 +1303,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_genus_type(self, vault_genus_type):
         """Gets a ``VaultList`` corresponding to the given vault genus ``Type`` which does not include vaults of types derived from the specified ``Type``.
@@ -1321,7 +1321,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_parent_genus_type(self, vault_genus_type):
         """Gets a ``VaultList`` corresponding to the given vault genus ``Type`` and include any additional vaults with genus types derived from the specified ``Type``.
@@ -1339,7 +1339,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_record_type(self, vault_record_type):
         """Gets a ``VaultList`` containing the given vault record ``Type``.
@@ -1357,7 +1357,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults_by_provider(self, resource_id):
         """Gets a ``VaultList`` from the given provider ````.
@@ -1375,7 +1375,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def get_vaults(self):
         """Gets all ``Vaults``.
@@ -1390,7 +1390,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     vaults = property(fget=get_vaults)
 
@@ -1411,7 +1411,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_query(self):
         """Gets a vault query.
@@ -1420,7 +1420,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``osid.authorization.VaultQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultQuery
 
     vault_query = property(fget=get_vault_query)
 
@@ -1437,7 +1437,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unsupported`` -- ``vault_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
 
 ##
@@ -1450,7 +1450,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``osid.authorization.VaultSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultSearch
 
     vault_search = property(fget=get_vault_search)
 
@@ -1464,7 +1464,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``osid.authorization.VaultSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultSearchOrder
 
     vault_search_order = property(fget=get_vault_search_order)
 
@@ -1483,7 +1483,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unsupported`` -- ``vault_query`` or ``vault_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultSearchResults
 
     def get_vault_query_from_inspector(self, vault_query_inspector):
         """Gets a vault query from an inspector.
@@ -1498,7 +1498,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unsupported`` -- ``vault_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultQuery
 
 
 ##
@@ -1517,7 +1517,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_vault_with_record_types(self, vault_record_types):
         """Tests if this user can create a single ``Vault`` using the desired record types.
@@ -1535,7 +1535,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``NullArgument`` -- ``vault_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_form_for_create(self, vault_record_types):
         """Gets the vault form for creating new vaults.
@@ -1552,7 +1552,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unsupported`` -- unable to get form qith requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultForm
 
     def create_vault(self, vault_form):
         """Creates a new ``Vault``.
@@ -1569,7 +1569,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unsupported`` -- ``vault_form`` did not originate from ``get_vault_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.Vault
 
     def can_update_vaults(self):
         """Tests if this user can update ``Vaults``.
@@ -1584,7 +1584,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_form_for_update(self, vault_id):
         """Gets the vault form for updating an existing vault.
@@ -1602,7 +1602,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultForm
 
     def update_vault(self, vault_form):
         """Updates an existing vault.
@@ -1617,7 +1617,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``Unsupported`` -- ``vault_form`` did not originate from ``get_vault_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_vaults(self):
         """Tests if this user can delete vaults.
@@ -1632,7 +1632,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_vault(self, vault_id):
         """Deletes a ``Vault``.
@@ -1645,7 +1645,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_vault_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Vaults``.
@@ -1660,7 +1660,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_vault(self, vault_id, alias_id):
         """Adds an ``Id`` to a ``Vault`` for the purpose of creating compatibility.
@@ -1681,7 +1681,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1700,7 +1700,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_vault_notifications(self):
         """Reliable notifications are desired.
@@ -1711,7 +1711,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_vault_notifications(self):
         """Unreliable notifications are desired.
@@ -1722,7 +1722,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_vault_notification(self, notification_id):
         """Acknowledge a vault notification.
@@ -1733,7 +1733,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_vaults(self):
         """Register for notifications of new vaults.
@@ -1745,7 +1745,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vaults(self):
         """Registers for notification of updated vaults.
@@ -1757,7 +1757,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault(self, vault_id):
         """Registers for notification of an updated vault.
@@ -1772,7 +1772,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_vaults(self):
         """Registers for notification of deleted vaults.
@@ -1784,7 +1784,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_vault(self, vault_id):
         """Registers for notification of a deleted vault.
@@ -1799,7 +1799,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault_hierarchy(self):
         """Registers for notification of an updated vault hierarchy structure.
@@ -1811,7 +1811,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault_hierarchy_for_ancestors(self, vault_id):
         """Registers for notification of an updated vault hierarchy structure.
@@ -1827,7 +1827,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_vault_hierarchy_for_descendants(self, vault_id):
         """Registers for notification of an updated vault hierarchy structure.
@@ -1843,7 +1843,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1856,7 +1856,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     vault_hierarchy_id = property(fget=get_vault_hierarchy_id)
 
@@ -1869,7 +1869,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     vault_hierarchy = property(fget=get_vault_hierarchy)
 
@@ -1886,7 +1886,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_vault_ids(self):
         """Gets the root vault ``Ids`` in this hierarchy.
@@ -1897,7 +1897,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_vault_ids = property(fget=get_root_vault_ids)
 
@@ -1910,7 +1910,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     root_vaults = property(fget=get_root_vaults)
 
@@ -1927,7 +1927,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_vault(self, id_, vault_id):
         """Tests if an ``Id`` is a direct parent of a vault.
@@ -1944,7 +1944,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_vault_ids(self, vault_id):
         """Gets the parent ``Ids`` of the given vault.
@@ -1959,7 +1959,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_vaults(self, vault_id):
         """Gets the parents of the given vault.
@@ -1974,7 +1974,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def is_ancestor_of_vault(self, id_, vault_id):
         """Tests if an ``Id`` is an ancestor of a vault.
@@ -1991,7 +1991,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_vaults(self, vault_id):
         """Tests if a vault has any children.
@@ -2006,7 +2006,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_vault(self, id_, vault_id):
         """Tests if a vault is a direct child of another.
@@ -2023,7 +2023,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_vault_ids(self, vault_id):
         """Gets the child ``Ids`` of the given vault.
@@ -2038,7 +2038,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_vaults(self, vault_id):
         """Gets the children of the given vault.
@@ -2053,7 +2053,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultList
 
     def is_descendant_of_vault(self, id_, vault_id):
         """Tests if an ``Id`` is a descendant of a vault.
@@ -2070,7 +2070,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_vault_node_ids(self, vault_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given vault.
@@ -2091,7 +2091,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_vault_nodes(self, vault_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given vault.
@@ -2112,7 +2112,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.authorization.VaultNode
 
 
 ##
@@ -2131,7 +2131,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_vault(self, vault_id):
         """Adds a root vault.
@@ -2145,7 +2145,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_vault(self, vault_id):
         """Removes a root vault from this hierarchy.
@@ -2158,7 +2158,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_vault(self, vault_id, child_id):
         """Adds a child to a vault.
@@ -2174,7 +2174,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_vault(self, vault_id, child_id):
         """Removes a child from a vault.
@@ -2189,7 +2189,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_vaults(self, vault_id):
         """Removes all children from a vault.
@@ -2202,7 +2202,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 

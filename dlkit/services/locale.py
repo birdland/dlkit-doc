@@ -108,7 +108,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_language_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_language_types(self):
         """Gets all the source language types supported.
@@ -117,7 +117,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_language_types = property(fget=get_source_language_types)
 
@@ -131,7 +131,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``language_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_numeric_format_types(self):
         """Gets all the numeric format types supported.
@@ -140,7 +140,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     numeric_format_types = property(fget=get_numeric_format_types)
 
@@ -151,7 +151,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     calendar_types_for_formatting = property(fget=get_calendar_types_for_formatting)
 
@@ -165,7 +165,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``calendar_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_time_types_for_formatting(self):
         """Gets all the time types for which formatting is available.
@@ -174,7 +174,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     time_types_for_formatting = property(fget=get_time_types_for_formatting)
 
@@ -188,7 +188,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``time_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_currency_types_for_formatting(self):
         """Gets all the currency types for which formatting is available.
@@ -197,7 +197,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     currency_types_for_formatting = property(fget=get_currency_types_for_formatting)
 
@@ -211,7 +211,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``currency_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_coordinate_types_for_formatting(self):
         """Gets all the coordinate types for which formatting is available.
@@ -220,7 +220,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     coordinate_types_for_formatting = property(fget=get_coordinate_types_for_formatting)
 
@@ -234,7 +234,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``coordinater_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_unit_types_for_source(self, source_unit_type):
         """Gets the list of target measure types for a given source measure type.
@@ -246,7 +246,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_unit_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_unit_types(self):
         """Gets all the source unit types supported.
@@ -255,7 +255,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_unit_types = property(fget=get_source_unit_types)
 
@@ -269,7 +269,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_currency_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_currency_types(self):
         """Gets the list of source currency types.
@@ -278,7 +278,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_currency_types = property(fget=get_source_currency_types)
 
@@ -292,7 +292,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_calendar_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_calendar_types(self):
         """Gets the list of source calendar types.
@@ -301,7 +301,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_calendar_types = property(fget=get_source_calendar_types)
 
@@ -315,7 +315,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_time_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_time_types(self):
         """Gets the list of source time types.
@@ -324,7 +324,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_time_types = property(fget=get_source_time_types)
 
@@ -338,7 +338,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``calendar_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_calendar_types_for_time_type(self, time_type):
         """Gets the list of calendar types supported for a given time type where they are both used in a ``DateTime``.
@@ -350,7 +350,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``time_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_coordinate_types_for_source(self, source_coordinate_type):
         """Gets the list of target coordinate types for a given source coordinate type.
@@ -362,7 +362,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_coordinate_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_coordinate_types(self):
         """Gets the list of source coordinate types.
@@ -371,7 +371,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_coordinate_types = property(fget=get_source_coordinate_types)
 
@@ -385,7 +385,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_spatial_unit_record_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_spatial_unit_record_types(self):
         """Gets the list of source spatial unit record types.
@@ -394,7 +394,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_spatial_unit_record_types = property(fget=get_source_spatial_unit_record_types)
 
@@ -408,7 +408,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``source_format_type`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     def get_source_format_types(self):
         """Gets the list of source format types.
@@ -417,7 +417,7 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     source_format_types = property(fget=get_source_format_types)
 

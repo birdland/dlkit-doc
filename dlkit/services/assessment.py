@@ -78,7 +78,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_item_lookup(self):
         """Tests if an item lookup service is supported.
@@ -87,7 +87,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_item_query(self):
         """Tests if an item query service is supported.
@@ -96,7 +96,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_item_admin(self):
         """Tests if an item administrative service is supported.
@@ -105,7 +105,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_lookup(self):
         """Tests if an assessment lookup service is supported.
@@ -116,7 +116,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_query(self):
         """Tests if an assessment query service is supported.
@@ -125,7 +125,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_admin(self):
         """Tests if an assessment administrative service is supported.
@@ -134,7 +134,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_basic_authoring(self):
         """Tests if an assessment basic authoring session is available.
@@ -143,7 +143,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_offered_lookup(self):
         """Tests if an assessment offered lookup service is supported.
@@ -152,7 +152,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_offered_query(self):
         """Tests if an assessment offered query service is supported.
@@ -161,7 +161,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_offered_admin(self):
         """Tests if an assessment offered administrative service is supported.
@@ -170,7 +170,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_taken_lookup(self):
         """Tests if an assessment taken lookup service is supported.
@@ -179,7 +179,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_taken_query(self):
         """Tests if an assessment taken query service is supported.
@@ -188,7 +188,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_assessment_taken_admin(self):
         """Tests if an assessment taken administrative service is supported which is used to instantiate an assessment offered.
@@ -197,7 +197,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_bank_lookup(self):
         """Tests if a bank lookup service is supported.
@@ -208,7 +208,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_bank_admin(self):
         """Tests if a banlk administrative service is supported.
@@ -217,7 +217,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_bank_hierarchy(self):
         """Tests if a bank hierarchy traversal is supported.
@@ -226,7 +226,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_bank_hierarchy_design(self):
         """Tests if bank hierarchy design is supported.
@@ -235,7 +235,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_item_record_types(self):
         """Gets the supported ``Item`` record types.
@@ -244,7 +244,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     item_record_types = property(fget=get_item_record_types)
 
@@ -255,7 +255,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     item_search_record_types = property(fget=get_item_search_record_types)
 
@@ -266,7 +266,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_record_types = property(fget=get_assessment_record_types)
 
@@ -277,7 +277,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_search_record_types = property(fget=get_assessment_search_record_types)
 
@@ -288,7 +288,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_offered_record_types = property(fget=get_assessment_offered_record_types)
 
@@ -299,7 +299,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_offered_search_record_types = property(fget=get_assessment_offered_search_record_types)
 
@@ -310,7 +310,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_taken_record_types = property(fget=get_assessment_taken_record_types)
 
@@ -321,7 +321,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_taken_search_record_types = property(fget=get_assessment_taken_search_record_types)
 
@@ -332,7 +332,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     assessment_section_record_types = property(fget=get_assessment_section_record_types)
 
@@ -343,7 +343,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     bank_record_types = property(fget=get_bank_record_types)
 
@@ -354,7 +354,7 @@ class AssessmentProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     bank_search_record_types = property(fget=get_bank_search_record_types)
 
@@ -371,7 +371,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSession
 
     assessment_session = property(fget=get_assessment_session)
 
@@ -388,7 +388,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSession
 
     def get_item_lookup_session(self):
         """Gets the ``OsidSession`` associated with the item lookup service.
@@ -399,7 +399,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_item_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemLookupSession
 
     item_lookup_session = property(fget=get_item_lookup_session)
 
@@ -416,7 +416,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_item_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemLookupSession
 
     def get_item_query_session(self):
         """Gets the ``OsidSession`` associated with the item query service.
@@ -427,7 +427,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_item_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQuerySession
 
     item_query_session = property(fget=get_item_query_session)
 
@@ -444,7 +444,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_item_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQuerySession
 
     def get_item_admin_session(self):
         """Gets the ``OsidSession`` associated with the item administration service.
@@ -455,7 +455,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_item_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemAdminSession
 
     item_admin_session = property(fget=get_item_admin_session)
 
@@ -472,7 +472,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_item_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemAdminSession
 
     def get_assessment_lookup_session(self):
         """Gets the ``OsidSession`` associated with the assessment lookup service.
@@ -483,7 +483,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentLookupSession
 
     assessment_lookup_session = property(fget=get_assessment_lookup_session)
 
@@ -500,7 +500,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentLookupSession
 
     def get_assessment_query_session(self):
         """Gets the ``OsidSession`` associated with the assessment query service.
@@ -511,7 +511,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQuerySession
 
     assessment_query_session = property(fget=get_assessment_query_session)
 
@@ -528,7 +528,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQuerySession
 
     def get_assessment_admin_session(self):
         """Gets the ``OsidSession`` associated with the assessment administration service.
@@ -539,7 +539,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentAdminSession
 
     assessment_admin_session = property(fget=get_assessment_admin_session)
 
@@ -556,7 +556,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentAdminSession
 
     def get_assessment_basic_authoring_session(self):
         """Gets the ``OsidSession`` associated with the assessment authoring service.
@@ -567,7 +567,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentBasicAuthoringSession
 
     assessment_basic_authoring_session = property(fget=get_assessment_basic_authoring_session)
 
@@ -584,7 +584,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` or ``supports_visibe_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentBasicAuthoringSession
 
     def get_assessment_offered_lookup_session(self):
         """Gets the ``OsidSession`` associated with the assessment offered lookup service.
@@ -595,7 +595,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedLookupSession
 
     assessment_offered_lookup_session = property(fget=get_assessment_offered_lookup_session)
 
@@ -612,7 +612,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedLookupSession
 
     def get_assessment_offered_query_session(self):
         """Gets the ``OsidSession`` associated with the assessment offered query service.
@@ -623,7 +623,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQuerySession
 
     assessment_offered_query_session = property(fget=get_assessment_offered_query_session)
 
@@ -640,7 +640,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQuerySession
 
     def get_assessment_offered_admin_session(self):
         """Gets the ``OsidSession`` associated with the assessment offered administration service.
@@ -651,7 +651,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedAdminSession
 
     assessment_offered_admin_session = property(fget=get_assessment_offered_admin_session)
 
@@ -668,7 +668,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedAdminSession
 
     def get_assessment_taken_lookup_session(self):
         """Gets the ``OsidSession`` associated with the assessment taken lookup service.
@@ -679,7 +679,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenLookupSession
 
     assessment_taken_lookup_session = property(fget=get_assessment_taken_lookup_session)
 
@@ -696,7 +696,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenLookupSession
 
     def get_assessment_taken_query_session(self):
         """Gets the ``OsidSession`` associated with the assessment taken query service.
@@ -707,7 +707,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQuerySession
 
     assessment_taken_query_session = property(fget=get_assessment_taken_query_session)
 
@@ -724,7 +724,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQuerySession
 
     def get_assessment_taken_admin_session(self):
         """Gets the ``OsidSession`` associated with the assessment taken administration service.
@@ -735,7 +735,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenAdminSession
 
     assessment_taken_admin_session = property(fget=get_assessment_taken_admin_session)
 
@@ -752,7 +752,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenAdminSession
 
     def get_bank_lookup_session(self):
         """Gets the OsidSession associated with the bank lookup service.
@@ -763,7 +763,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_bank_lookup() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankLookupSession
 
     bank_lookup_session = property(fget=get_bank_lookup_session)
 
@@ -776,7 +776,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_bank_admin() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankAdminSession
 
     bank_admin_session = property(fget=get_bank_admin_session)
 
@@ -789,7 +789,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_bank_hierarchy() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankHierarchySession
 
     bank_hierarchy_session = property(fget=get_bank_hierarchy_session)
 
@@ -802,7 +802,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_bank_hierarchy_design() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankHierarchyDesignSession
 
     bank_hierarchy_design_session = property(fget=get_bank_hierarchy_design_session)
 
@@ -815,7 +815,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_authoring() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.authoring.AssessmentAuthoringManager
 
     assessment_authoring_manager = property(fget=get_assessment_authoring_manager)
 
@@ -828,7 +828,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unimplemented`` -- ``supports_assessment_batch() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.batch.AssessmentBatchManager
 
     assessment_batch_manager = property(fget=get_assessment_batch_manager)
 
@@ -848,7 +848,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -858,7 +858,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_bank_view(self):
         """A complete view of the ``Bank`` returns is desired.
@@ -869,7 +869,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_bank(self, bank_id):
         """Gets the ``Bank`` specified by its ``Id``.
@@ -888,7 +888,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.
@@ -910,7 +910,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_genus_type(self, bank_genus_type):
         """Gets a ``BankList`` corresponding to the given bank genus ``Type`` which does not include banks of types derived from the specified ``Type``.
@@ -927,7 +927,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_parent_genus_type(self, bank_genus_type):
         """Gets a ``BankList`` corresponding to the given bank genus ``Type`` and include any additional banks with genus types derived from the specified ``Type``.
@@ -944,7 +944,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_record_type(self, bank_record_type):
         """Gets a ``BankList`` containing the given bank record ``Type``.
@@ -961,7 +961,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_provider(self, resource_id):
         """Gets a ``BankList`` from the given provider ````.
@@ -978,7 +978,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks(self):
         """Gets all ``Banks``.
@@ -992,7 +992,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     banks = property(fget=get_banks)
 
@@ -1012,7 +1012,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_query(self):
         """Gets a bank query.
@@ -1021,7 +1021,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``osid.assessment.BankQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankQuery
 
     bank_query = property(fget=get_bank_query)
 
@@ -1038,7 +1038,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unsupported`` -- ``bank_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
 
 ##
@@ -1051,7 +1051,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``osid.assessment.BankSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankSearch
 
     bank_search = property(fget=get_bank_search)
 
@@ -1064,7 +1064,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``osid.assessment.BankSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankSearchOrder
 
     bank_search_order = property(fget=get_bank_search_order)
 
@@ -1083,7 +1083,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unsupported`` -- ``bank_query`` or ``bank_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankSearchResults
 
     def get_bank_query_from_inspector(self, bank_query_inspector):
         """Gets a bank query from an inspector.
@@ -1097,7 +1097,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unsupported`` -- ``bank_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankQuery
 
 
 ##
@@ -1115,7 +1115,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_bank_with_record_types(self, bank_record_types):
         """Tests if this user can create a single ``Bank`` using the desired record types.
@@ -1132,7 +1132,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``NullArgument`` -- ``bank_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_form_for_create(self, bank_record_types):
         """Gets the bank form for creating new banks.
@@ -1148,7 +1148,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankForm
 
     def create_bank(self, bank_form):
         """Creates a new ``Bank``.
@@ -1165,7 +1165,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
     def can_update_banks(self):
         """Tests if this user can update ``Banks``.
@@ -1179,7 +1179,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_form_for_update(self, bank_id):
         """Gets the bank form for updating an existing bank.
@@ -1195,7 +1195,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankForm
 
     def update_bank(self, bank_form):
         """Updates an existing bank.
@@ -1210,7 +1210,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_banks(self):
         """Tests if this user can delete banks.
@@ -1224,7 +1224,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_bank(self, bank_id):
         """Deletes a ``Bank``.
@@ -1237,7 +1237,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_bank_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Banks``.
@@ -1251,7 +1251,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_bank(self, bank_id, alias_id):
         """Adds an ``Id`` to a ``Bank`` for the purpose of creating compatibility.
@@ -1271,7 +1271,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1289,7 +1289,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_bank_notifications(self):
         """Reliable notifications are desired.
@@ -1299,7 +1299,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_bank_notifications(self):
         """Unreliable notifications are desired.
@@ -1309,7 +1309,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_bank_notification(self, notification_id):
         """Acknowledge a bank notification.
@@ -1320,7 +1320,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_banks(self):
         """Register for notifications of new banks.
@@ -1331,7 +1331,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_banks(self):
         """Registers for notification of updated banks.
@@ -1342,7 +1342,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank(self, bank_id):
         """Registers for notification of an updated bank.
@@ -1356,7 +1356,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_banks(self):
         """Registers for notification of deleted banks.
@@ -1367,7 +1367,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_bank(self, bank_id):
         """Registers for notification of a deleted bank.
@@ -1381,7 +1381,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank_hierarchy(self):
         """Registers for notification of an updated bank hierarchy structure.
@@ -1392,7 +1392,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank_hierarchy_for_ancestors(self, bank_id):
         """Registers for notification of an updated bank hierarchy structure.
@@ -1407,7 +1407,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank_hierarchy_for_descendants(self, bank_id):
         """Registers for notification of an updated bank hierarchy structure.
@@ -1422,7 +1422,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1435,7 +1435,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     bank_hierarchy_id = property(fget=get_bank_hierarchy_id)
 
@@ -1448,7 +1448,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     bank_hierarchy = property(fget=get_bank_hierarchy)
 
@@ -1464,7 +1464,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_bank_ids(self):
         """Gets the root bank ``Ids`` in this hierarchy.
@@ -1475,7 +1475,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_bank_ids = property(fget=get_root_bank_ids)
 
@@ -1488,7 +1488,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     root_banks = property(fget=get_root_banks)
 
@@ -1505,7 +1505,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_bank(self, id_, bank_id):
         """Tests if an ``Id`` is a direct parent of a bank.
@@ -1522,7 +1522,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_bank_ids(self, bank_id):
         """Gets the parent ``Ids`` of the given bank.
@@ -1537,7 +1537,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_banks(self, bank_id):
         """Gets the parents of the given bank.
@@ -1552,7 +1552,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def is_ancestor_of_bank(self, id_, bank_id):
         """Tests if an ``Id`` is an ancestor of a bank.
@@ -1569,7 +1569,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_banks(self, bank_id):
         """Tests if a bank has any children.
@@ -1584,7 +1584,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_bank(self, id_, bank_id):
         """Tests if a bank is a direct child of another.
@@ -1601,7 +1601,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_bank_ids(self, bank_id):
         """Gets the child ``Ids`` of the given bank.
@@ -1616,7 +1616,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_banks(self, bank_id):
         """Gets the children of the given bank.
@@ -1631,7 +1631,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def is_descendant_of_bank(self, id_, bank_id):
         """Tests if an ``Id`` is a descendant of a bank.
@@ -1648,7 +1648,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_node_ids(self, bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given bank.
@@ -1669,7 +1669,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_bank_nodes(self, bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given bank.
@@ -1690,7 +1690,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankNode
 
 
 ##
@@ -1708,7 +1708,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_bank(self, bank_id):
         """Adds a root bank.
@@ -1722,7 +1722,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_bank(self, bank_id):
         """Removes a root bank from this hierarchy.
@@ -1735,7 +1735,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_bank(self, bank_id, child_id):
         """Adds a child to a bank.
@@ -1751,7 +1751,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_bank(self, bank_id, child_id):
         """Removes a child from a bank.
@@ -1766,7 +1766,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_banks(self, bank_id):
         """Removes all children from a bank.
@@ -1779,7 +1779,7 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1797,7 +1797,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSession
 
     def get_assessment_session_for_bank(self, bank_id, proxy):
         """Gets an ``AssessmentSession`` which is responsible for performing assessments for the given bank ``Id``.
@@ -1814,7 +1814,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSession
 
     def get_item_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the item lookup service.
@@ -1828,7 +1828,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_item_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemLookupSession
 
     def get_item_lookup_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the item lookup service for the given bank.
@@ -1845,7 +1845,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_item_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemLookupSession
 
     def get_item_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the item query service.
@@ -1859,7 +1859,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_item_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQuerySession
 
     def get_item_query_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the item query service for the given bank.
@@ -1876,7 +1876,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_item_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQuerySession
 
     def get_item_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the item administration service.
@@ -1890,7 +1890,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_item_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemAdminSession
 
     def get_item_admin_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the item admin service for the given bank.
@@ -1907,7 +1907,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_item_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemAdminSession
 
     def get_assessment_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment lookup service.
@@ -1921,7 +1921,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentLookupSession
 
     def get_assessment_lookup_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment lookup service for the given bank.
@@ -1938,7 +1938,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentLookupSession
 
     def get_assessment_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment query service.
@@ -1952,7 +1952,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQuerySession
 
     def get_assessment_query_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment query service for the given bank.
@@ -1969,7 +1969,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQuerySession
 
     def get_assessment_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment administration service.
@@ -1983,7 +1983,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentAdminSession
 
     def get_assessment_admin_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment admin service for the given bank.
@@ -2000,7 +2000,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentAdminSession
 
     def get_assessment_basic_authoring_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment authoring service.
@@ -2014,7 +2014,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentBasicAuthoringSession
 
     def get_assessment_basic_authoring_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment authoring service for the given bank.
@@ -2031,7 +2031,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` or ``supports_visibe_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentBasicAuthoringSession
 
     def get_assessment_offered_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment offered lookup service.
@@ -2045,7 +2045,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedLookupSession
 
     def get_assessment_offered_lookup_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment offered lookup service for the given bank.
@@ -2062,7 +2062,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedLookupSession
 
     def get_assessment_offered_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment offered query service.
@@ -2076,7 +2076,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQuerySession
 
     def get_assessment_offered_query_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment offered query service for the given bank.
@@ -2093,7 +2093,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQuerySession
 
     def get_assessment_offered_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment offered administration service.
@@ -2107,7 +2107,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedAdminSession
 
     def get_assessment_offered_admin_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment offered admin service for the given bank.
@@ -2124,7 +2124,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedAdminSession
 
     def get_assessment_taken_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment taken lookup service.
@@ -2138,7 +2138,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenLookupSession
 
     def get_assessment_taken_lookup_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment taken lookup service for the given bank.
@@ -2155,7 +2155,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenLookupSession
 
     def get_assessment_taken_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment taken query service.
@@ -2169,7 +2169,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQuerySession
 
     def get_assessment_taken_query_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment taken query service for the given bank.
@@ -2186,7 +2186,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQuerySession
 
     def get_assessment_taken_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the assessment taken administration service.
@@ -2200,7 +2200,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenAdminSession
 
     def get_assessment_taken_admin_session_for_bank(self, bank_id, proxy):
         """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
@@ -2217,7 +2217,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenAdminSession
 
     def get_bank_lookup_session(self, proxy):
         """Gets the OsidSession associated with the bank lookup service.
@@ -2231,7 +2231,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_bank_lookup() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankLookupSession
 
     def get_bank_admin_session(self, proxy):
         """Gets the OsidSession associated with the bank administration service.
@@ -2245,7 +2245,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_bank_admin() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankAdminSession
 
     def get_bank_hierarchy_session(self, proxy):
         """Gets the session traversing bank hierarchies.
@@ -2259,7 +2259,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_bank_hierarchy() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankHierarchySession
 
     def get_bank_hierarchy_design_session(self, proxy):
         """Gets the session designing bank hierarchies.
@@ -2273,7 +2273,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_bank_hierarchy_design() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankHierarchyDesignSession
 
     def get_assessment_authoring_proxy_manager(self):
         """Gets an ``AssessmentAuthoringProxyManager``.
@@ -2284,7 +2284,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_authoring() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.authoring.AssessmentAuthoringProxyManager
 
     assessment_authoring_proxy_manager = property(fget=get_assessment_authoring_proxy_manager)
 
@@ -2297,7 +2297,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unimplemented`` -- ``supports_assessment_batch() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.batch.AssessmentBatchProxyManager
 
     assessment_batch_proxy_manager = property(fget=get_assessment_batch_proxy_manager)
 
@@ -2318,7 +2318,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -2329,7 +2329,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_bank_view(self):
         """A complete view of the ``Bank`` returns is desired.
@@ -2341,7 +2341,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_bank(self, bank_id):
         """Gets the ``Bank`` specified by its ``Id``.
@@ -2361,7 +2361,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.
@@ -2384,7 +2384,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_genus_type(self, bank_genus_type):
         """Gets a ``BankList`` corresponding to the given bank genus ``Type`` which does not include banks of types derived from the specified ``Type``.
@@ -2402,7 +2402,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_parent_genus_type(self, bank_genus_type):
         """Gets a ``BankList`` corresponding to the given bank genus ``Type`` and include any additional banks with genus types derived from the specified ``Type``.
@@ -2420,7 +2420,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_record_type(self, bank_record_type):
         """Gets a ``BankList`` containing the given bank record ``Type``.
@@ -2438,7 +2438,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks_by_provider(self, resource_id):
         """Gets a ``BankList`` from the given provider ````.
@@ -2456,7 +2456,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def get_banks(self):
         """Gets all ``Banks``.
@@ -2471,7 +2471,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     banks = property(fget=get_banks)
 
@@ -2492,7 +2492,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_query(self):
         """Gets a bank query.
@@ -2501,7 +2501,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``osid.assessment.BankQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankQuery
 
     bank_query = property(fget=get_bank_query)
 
@@ -2518,7 +2518,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unsupported`` -- ``bank_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
 
 ##
@@ -2531,7 +2531,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``osid.assessment.BankSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankSearch
 
     bank_search = property(fget=get_bank_search)
 
@@ -2545,7 +2545,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``osid.assessment.BankSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankSearchOrder
 
     bank_search_order = property(fget=get_bank_search_order)
 
@@ -2564,7 +2564,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unsupported`` -- ``bank_query`` or ``bank_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankSearchResults
 
     def get_bank_query_from_inspector(self, bank_query_inspector):
         """Gets a bank query from an inspector.
@@ -2579,7 +2579,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unsupported`` -- ``bank_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankQuery
 
 
 ##
@@ -2598,7 +2598,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_bank_with_record_types(self, bank_record_types):
         """Tests if this user can create a single ``Bank`` using the desired record types.
@@ -2616,7 +2616,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``NullArgument`` -- ``bank_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_form_for_create(self, bank_record_types):
         """Gets the bank form for creating new banks.
@@ -2633,7 +2633,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankForm
 
     def create_bank(self, bank_form):
         """Creates a new ``Bank``.
@@ -2650,7 +2650,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
     def can_update_banks(self):
         """Tests if this user can update ``Banks``.
@@ -2665,7 +2665,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_form_for_update(self, bank_id):
         """Gets the bank form for updating an existing bank.
@@ -2682,7 +2682,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankForm
 
     def update_bank(self, bank_form):
         """Updates an existing bank.
@@ -2697,7 +2697,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_banks(self):
         """Tests if this user can delete banks.
@@ -2712,7 +2712,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_bank(self, bank_id):
         """Deletes a ``Bank``.
@@ -2725,7 +2725,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_bank_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Banks``.
@@ -2740,7 +2740,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_bank(self, bank_id, alias_id):
         """Adds an ``Id`` to a ``Bank`` for the purpose of creating compatibility.
@@ -2761,7 +2761,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -2780,7 +2780,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_bank_notifications(self):
         """Reliable notifications are desired.
@@ -2791,7 +2791,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_bank_notifications(self):
         """Unreliable notifications are desired.
@@ -2802,7 +2802,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_bank_notification(self, notification_id):
         """Acknowledge a bank notification.
@@ -2813,7 +2813,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_banks(self):
         """Register for notifications of new banks.
@@ -2825,7 +2825,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_banks(self):
         """Registers for notification of updated banks.
@@ -2837,7 +2837,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank(self, bank_id):
         """Registers for notification of an updated bank.
@@ -2852,7 +2852,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_banks(self):
         """Registers for notification of deleted banks.
@@ -2864,7 +2864,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_bank(self, bank_id):
         """Registers for notification of a deleted bank.
@@ -2879,7 +2879,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank_hierarchy(self):
         """Registers for notification of an updated bank hierarchy structure.
@@ -2891,7 +2891,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank_hierarchy_for_ancestors(self, bank_id):
         """Registers for notification of an updated bank hierarchy structure.
@@ -2907,7 +2907,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_bank_hierarchy_for_descendants(self, bank_id):
         """Registers for notification of an updated bank hierarchy structure.
@@ -2923,7 +2923,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -2936,7 +2936,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     bank_hierarchy_id = property(fget=get_bank_hierarchy_id)
 
@@ -2949,7 +2949,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     bank_hierarchy = property(fget=get_bank_hierarchy)
 
@@ -2966,7 +2966,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_bank_ids(self):
         """Gets the root bank ``Ids`` in this hierarchy.
@@ -2977,7 +2977,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_bank_ids = property(fget=get_root_bank_ids)
 
@@ -2990,7 +2990,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     root_banks = property(fget=get_root_banks)
 
@@ -3007,7 +3007,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_bank(self, id_, bank_id):
         """Tests if an ``Id`` is a direct parent of a bank.
@@ -3024,7 +3024,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_bank_ids(self, bank_id):
         """Gets the parent ``Ids`` of the given bank.
@@ -3039,7 +3039,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_banks(self, bank_id):
         """Gets the parents of the given bank.
@@ -3054,7 +3054,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def is_ancestor_of_bank(self, id_, bank_id):
         """Tests if an ``Id`` is an ancestor of a bank.
@@ -3071,7 +3071,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_banks(self, bank_id):
         """Tests if a bank has any children.
@@ -3086,7 +3086,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_bank(self, id_, bank_id):
         """Tests if a bank is a direct child of another.
@@ -3103,7 +3103,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_bank_ids(self, bank_id):
         """Gets the child ``Ids`` of the given bank.
@@ -3118,7 +3118,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_banks(self, bank_id):
         """Gets the children of the given bank.
@@ -3133,7 +3133,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
     def is_descendant_of_bank(self, id_, bank_id):
         """Tests if an ``Id`` is a descendant of a bank.
@@ -3150,7 +3150,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_bank_node_ids(self, bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given bank.
@@ -3171,7 +3171,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_bank_nodes(self, bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given bank.
@@ -3192,7 +3192,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankNode
 
 
 ##
@@ -3211,7 +3211,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_bank(self, bank_id):
         """Adds a root bank.
@@ -3225,7 +3225,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_bank(self, bank_id):
         """Removes a root bank from this hierarchy.
@@ -3238,7 +3238,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_bank(self, bank_id, child_id):
         """Adds a child to a bank.
@@ -3254,7 +3254,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_bank(self, bank_id, child_id):
         """Removes a child from a bank.
@@ -3269,7 +3269,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_banks(self, bank_id):
         """Removes all children from a bank.
@@ -3282,7 +3282,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -3305,7 +3305,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``has_record_type(bank_record_type)`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.records.BankRecord
 
 
 ##
@@ -3318,7 +3318,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     bank_id = property(fget=get_bank_id)
 
@@ -3331,7 +3331,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
     bank = property(fget=get_bank)
 
@@ -3347,7 +3347,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessments_started_during(self, start, end):
         """Gets all the assessments started by this agent during the given period of time inclusive.
@@ -3364,7 +3364,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_started(self):
         """Gets all the assessments started by this agent.
@@ -3375,7 +3375,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     assessments_started = property(fget=get_assessments_started)
 
@@ -3394,7 +3394,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_in_progress(self):
         """Gets all the assessments started but not completed by this agent.
@@ -3405,7 +3405,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     assessments_in_progress = property(fget=get_assessments_in_progress)
 
@@ -3418,7 +3418,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     assessments_completed = property(fget=get_assessments_completed)
 
@@ -3438,7 +3438,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_assessment_begun(self, assessment_taken_id):
         """Tests if this assessment has started.
@@ -3457,7 +3457,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_assessment_over(self, assessment_taken_id):
         """Tests if this assessment is over.
@@ -3474,7 +3474,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def requires_synchronous_sections(self, assessment_taken_id):
         """Tests if synchronous sections are required.
@@ -3506,7 +3506,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_first_assessment_section(self, assessment_taken_id):
         """Gets the first assessment section in this assesment.
@@ -3523,7 +3523,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSection
 
     def has_next_assessment_section(self, assessment_section_id):
         """Tests if there is a next assessment section in the assessment following the given assessment section ``Id``.
@@ -3539,7 +3539,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_next_assessment_section(self, assessment_section_id):
         """Gets the next assessemnt section following the given assesment section.
@@ -3555,7 +3555,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSection
 
     def has_previous_assessment_section(self, assessment_section_id):
         """Tests if there is a previous assessment section in the assessment following the given assessment section ``Id``.
@@ -3571,7 +3571,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_previous_assessment_section(self, assessment_section_id):
         """Gets the next assessemnt section following the given assesment section.
@@ -3587,7 +3587,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSection
 
     def get_assessment_section(self, assessment_section_id):
         """Gets an assessemnts section by ``Id``.
@@ -3603,7 +3603,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSection
 
     def get_assessment_sections(self, assessment_taken_id):
         """Gets the assessment sections of this assessment.
@@ -3619,7 +3619,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSectionList
 
     def is_assessment_section_complete(self, assessment_section_id):
         """Tests if the all responses have been submitted to this assessment section.
@@ -3638,7 +3638,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_incomplete_assessment_sections(self, assessment_taken_id):
         """Gets the incomplete assessment sections of this assessment.
@@ -3654,7 +3654,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSectionList
 
     def has_assessment_section_begun(self, assessment_section_id):
         """Tests if this assessment section has started.
@@ -3674,7 +3674,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_assessment_section_over(self, assessment_section_id):
         """Tests if this assessment section is over.
@@ -3692,7 +3692,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def requires_synchronous_responses(self, assessment_section_id):
         """Tests if synchronous responses are required in this assessment section.
@@ -3724,7 +3724,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_first_question(self, assessment_section_id):
         """Gets the first question in this assesment section.
@@ -3740,7 +3740,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def has_next_question(self, assessment_section_id, item_id):
         """Tests if there is a next question following the given question ``Id``.
@@ -3758,7 +3758,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_next_question(self, assessment_section_id, item_id):
         """Gets the next question in this assesment section.
@@ -3776,7 +3776,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def has_previous_question(self, assessment_section_id, item_id):
         """Tests if there is a previous question preceeding the given question ``Id``.
@@ -3794,7 +3794,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_previous_question(self, assessment_section_id, item_id):
         """Gets the previous question in this assesment section.
@@ -3812,7 +3812,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def get_question(self, assessment_section_id, item_id):
         """Gets the ``Question`` specified by its ``Id``.
@@ -3830,7 +3830,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def get_questions(self, assessment_section_id):
         """Gets the questions of this assessment section.
@@ -3846,7 +3846,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.QuestionList
 
     def get_response_form(self, assessment_section_id, item_id):
         """Gets the response form for submitting an answer.
@@ -3864,7 +3864,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AnswerForm
 
     def submit_response(self, assessment_section_id, item_id, answer_form):
         """Submits an answer to an item.
@@ -3884,7 +3884,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``answer_form`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def skip_item(self, assessment_section_id, item_id):
         """Skips an item.
@@ -3900,7 +3900,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def is_question_answered(self, assessment_section_id, item_id):
         """Tests if the given item has a response.
@@ -3918,7 +3918,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_unanswered_questions(self, assessment_section_id):
         """Gets the unanswered questions of this assessment section.
@@ -3934,7 +3934,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.QuestionList
 
     def has_unanswered_questions(self, assessment_section_id):
         """Tests if there are unanswered questions in this assessment section.
@@ -3950,7 +3950,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_first_unanswered_question(self, assessment_section_id):
         """Gets the first unanswered question in this assesment section.
@@ -3966,7 +3966,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def has_next_unanswered_question(self, assessment_section_id, item_id):
         """Tests if there is a next unanswered question following the given question ``Id``.
@@ -3984,7 +3984,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_next_unanswered_question(self, assessment_section_id, item_id):
         """Gets the next unanswered question in this assesment section.
@@ -4002,7 +4002,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def has_previous_unanswered_question(self, assessment_section_id, item_id):
         """Tests if there is a previous unanswered question preceeding the given question ``Id``.
@@ -4020,7 +4020,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_previous_unanswered_question(self, assessment_section_id, item_id):
         """Gets the previous unanswered question in this assesment section.
@@ -4038,7 +4038,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def get_response(self, assessment_section_id, item_id):
         """Gets the submitted response to the associated item.
@@ -4056,7 +4056,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Response
 
     def get_responses(self, assessment_section_id):
         """Gets all submitted responses.
@@ -4072,7 +4072,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ResponseList
 
     def clear_response(self, assessment_section_id, item_id):
         """Clears the response to an item The item appears as unanswered.
@@ -4089,7 +4089,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def finish_assessment_section(self, assessment_section_id):
         """Indicates an assessment section is complete.
@@ -4104,7 +4104,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def is_answer_available(self, assessment_section_id, item_id):
         """Tests if an answer is available for the given item.
@@ -4121,7 +4121,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_answers(self, assessment_section_id, item_id):
         """Gets the acceptable answers to the associated item.
@@ -4139,7 +4139,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AnswerList
 
     def finish_assessment(self, assessment_taken_id):
         """Indicates the entire assessment is complete.
@@ -4153,7 +4153,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4171,7 +4171,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_items(self, assessment_taken_id):
         """Gets the items questioned in a assessment.
@@ -4186,7 +4186,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def are_results_available(self, assessment_taken_id):
         """Tests if the results are available for this assessment.
@@ -4201,7 +4201,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_grade_entries(self, assessment_taken_id):
         """Gets a list of grade entries for this assessment.
@@ -4219,7 +4219,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.grading.GradeEntryList
 
 
 ##
@@ -4237,7 +4237,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_item_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -4247,7 +4247,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_item_view(self):
         """A complete view of the ``Item`` returns is desired.
@@ -4258,7 +4258,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_federated_bank_view(self):
         """Federates the view for methods in this session.
@@ -4269,7 +4269,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_isolated_bank_view(self):
         """Isolates the view for methods in this session.
@@ -4278,7 +4278,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_item(self, item_id):
         """Gets the ``Item`` specified by its ``Id``.
@@ -4297,7 +4297,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Item
 
     def get_items_by_ids(self, item_ids):
         """Gets an ``ItemList`` corresponding to the given ``IdList``.
@@ -4319,7 +4319,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_genus_type(self, item_genus_type):
         """Gets an ``ItemList`` corresponding to the given assessment item genus ``Type`` which does not include assessment items of genus types derived from the specified ``Type``.
@@ -4337,7 +4337,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_parent_genus_type(self, item_genus_type):
         """Gets an ``ItemList`` corresponding to the given assessment item genus ``Type`` and include any additional assessment items with genus types derived from the specified ``Type``.
@@ -4355,7 +4355,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_record_type(self, item_record_type):
         """Gets an ``ItemList`` containing the given assessment item record ``Type``.
@@ -4372,7 +4372,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_question(self, question_id):
         """Gets an ``ItemList`` containing the given question.
@@ -4389,7 +4389,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_answer(self, answer_id):
         """Gets an ``ItemList`` containing the given answer.
@@ -4406,7 +4406,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_learning_objective(self, objective_id):
         """Gets an ``ItemList`` containing the given learning objective.
@@ -4423,7 +4423,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_items_by_learning_objectives(self, objective_ids):
         """Gets an ``ItemList`` containing the given learning objectives.
@@ -4440,7 +4440,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
 
 ##
@@ -4458,7 +4458,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_item_query(self):
         """Gets an assessment item query.
@@ -4467,7 +4467,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.ItemQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQuery
 
     item_query = property(fget=get_item_query)
 
@@ -4484,7 +4484,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
 
 ##
@@ -4497,7 +4497,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.ItemSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemSearch
 
     item_search = property(fget=get_item_search)
 
@@ -4510,7 +4510,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.ItemSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemSearchOrder
 
     item_search_order = property(fget=get_item_search_order)
 
@@ -4529,7 +4529,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_search`` or ``item_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemSearchResults
 
     def get_item_query_from_inspector(self, item_query_inspector):
         """Gets an item query from an inspector.
@@ -4543,7 +4543,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQuery
 
 
 ##
@@ -4561,7 +4561,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_item_with_record_types(self, item_record_types):
         """Tests if this user can create a single ``Item`` using the desired record types.
@@ -4578,7 +4578,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``item_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_item_form_for_create(self, item_record_types):
         """Gets the assessment item form for creating new assessment items.
@@ -4594,7 +4594,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemForm
 
     def create_item(self, item_form):
         """Creates a new ``Item``.
@@ -4611,7 +4611,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_form`` did not originate from ``get_item_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Item
 
     def can_update_items(self):
         """Tests if this user can update ``Items``.
@@ -4625,7 +4625,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_item_form_for_update(self, item_id):
         """Gets the assessment item form for updating an existing item.
@@ -4641,7 +4641,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemForm
 
     def update_item(self, item_form):
         """Updates an existing item.
@@ -4656,7 +4656,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_form`` did not originate from ``get_item_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_items(self):
         """Tests if this user can delete ``Items``.
@@ -4670,7 +4670,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_item(self, item_id):
         """Deletes the ``Item`` identified by the given ``Id``.
@@ -4683,7 +4683,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_item_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Items``.
@@ -4697,7 +4697,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_item(self, item_id, alias_id):
         """Adds an ``Id`` to an ``Item`` for the purpose of creating compatibility.
@@ -4717,7 +4717,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_create_questions(self):
         """Tests if this user can create ``Questions``.
@@ -4731,7 +4731,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_question_with_record_types(self, question_record_types):
         """Tests if this user can create a single ``Question`` using the desired record types.
@@ -4748,7 +4748,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``question_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_question_form_for_create(self, item_id, question_record_types):
         """Gets the question form for creating new questions.
@@ -4766,7 +4766,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.QuestionForm
 
     def create_question(self, question_form):
         """Creates a new ``Question``.
@@ -4784,7 +4784,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``question_form`` did not originate from ``get_question_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Question
 
     def can_update_questions(self):
         """Tests if this user can update ``Questions``.
@@ -4798,7 +4798,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_question_form_for_update(self, question_id):
         """Gets the question form for updating an existing question.
@@ -4815,7 +4815,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.QuestionForm
 
     def update_question(self, question_form):
         """Updates an existing question.
@@ -4830,7 +4830,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``question_form`` did not originate from ``get_question_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_questions(self):
         """Tests if this user can delete ``Questions``.
@@ -4844,7 +4844,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_question(self, question_id):
         """Deletes the ``Question`` identified by the given ``Id``.
@@ -4857,7 +4857,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_create_answers(self):
         """Tests if this user can create ``Answers``.
@@ -4871,7 +4871,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_answers_with_record_types(self, answer_record_types):
         """Tests if this user can create a single ``Answer`` using the desired record types.
@@ -4888,7 +4888,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``answern_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_answer_form_for_create(self, item_id, answer_record_types):
         """Gets the answer form for creating new answers.
@@ -4906,7 +4906,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AnswerForm
 
     def create_answer(self, answer_form):
         """Creates a new ``Answer``.
@@ -4923,7 +4923,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``answer_form`` did not originate from ``get_answer_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Answer
 
     def can_update_answers(self):
         """Tests if this user can update ``Answers``.
@@ -4937,7 +4937,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_answer_form_for_update(self, answer_id):
         """Gets the answer form for updating an existing answer.
@@ -4954,7 +4954,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AnswerForm
 
     def update_answer(self, answer_form):
         """Updates an existing answer.
@@ -4969,7 +4969,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``answer_form`` did not originate from ``get_answer_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_answers(self):
         """Tests if this user can delete ``Answers``.
@@ -4983,7 +4983,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_answer(self, answer_id):
         """Deletes the ``Answer`` identified by the given ``Id``.
@@ -4996,7 +4996,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5014,7 +5014,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_item_notifications(self):
         """Reliable notifications are desired.
@@ -5024,7 +5024,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_item_notifications(self):
         """Unreliable notifications are desired.
@@ -5034,7 +5034,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_item_notification(self, notification_id):
         """Acknowledge an item notification.
@@ -5045,7 +5045,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_items(self):
         """Register for notifications of new assessment items.
@@ -5056,7 +5056,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_items(self):
         """Registers for notification of updated assessment items.
@@ -5067,7 +5067,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_item(self, item_id):
         """Registers for notification of an updated assessment item.
@@ -5082,7 +5082,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_items(self):
         """Registers for notification of deleted assessment items.
@@ -5093,7 +5093,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_item(self, item_id):
         """Registers for notification of a deleted assessment item.
@@ -5108,7 +5108,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5126,7 +5126,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -5136,7 +5136,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_bank_view(self):
         """A complete view of the ``Item`` and ``Bank`` returns is desired.
@@ -5147,7 +5147,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_item_ids_by_bank(self, bank_id):
         """Gets the list of ``Item``  ``Ids`` associated with a ``Bank``.
@@ -5162,7 +5162,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_items_by_bank(self, bank_id):
         """Gets the list of ``Items`` associated with a ``Bank``.
@@ -5177,7 +5177,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_item_ids_by_banks(self, bank_ids):
         """Gets the list of ``Item Ids`` corresponding to a list of ``Banks``.
@@ -5191,7 +5191,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_items_by_banks(self, bank_ids):
         """Gets the list of ``Items`` corresponding to a list of ``Banks``.
@@ -5205,7 +5205,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemList
 
     def get_bank_ids_by_item(self, item_id):
         """Gets the list of ``Bank``  ``Ids`` mapped to an ``Item``.
@@ -5220,7 +5220,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_banks_by_item(self, item_id):
         """Gets the list of ``Banks`` mapped to an ``Item``.
@@ -5235,7 +5235,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
 
 ##
@@ -5253,7 +5253,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_items_to_bank(self, bank_id):
         """Tests if this user can alter item/bank mappings.
@@ -5270,7 +5270,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_bank_ids(self, bank_id):
         """Gets a list of banks including and under the given bank node in which any item can be assigned.
@@ -5283,7 +5283,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assignable_bank_ids_for_item(self, bank_id, item_id):
         """Gets a list of banks including and under the given bank node in which a specific item can be assigned.
@@ -5298,7 +5298,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_item_to_bank(self, item_id, bank_id):
         """Adds an existing ``Item`` to a ``Bank``.
@@ -5314,7 +5314,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_item_from_bank(self, item_id, bank_id):
         """Removes an ``Item`` from a ``Bank``.
@@ -5329,7 +5329,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_item_to_billing(self, item_id, from_bank_id, to_bank_id):
         """Moves an ``Item`` from one ``Bank`` to another.
@@ -5347,7 +5347,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5365,7 +5365,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def apply_item_query(self, item_query):
         """Applies an item query to this bank.
@@ -5378,7 +5378,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_item_query(self):
         """Gets an item query inspector for this bank.
@@ -5389,7 +5389,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.ItemQueryInspector
 
     def apply_item_sequencing(self, item_search_order):
         """Applies an item search order to this bank.
@@ -5402,7 +5402,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``item_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5420,7 +5420,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_assessment_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -5430,7 +5430,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_assessment_view(self):
         """A complete view of the ``Assessment`` returns is desired.
@@ -5441,7 +5441,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_assessment(self, assessment_id):
         """Gets the ``Assessment`` specified by its ``Id``.
@@ -5461,7 +5461,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Assessment
 
     def get_assessments_by_ids(self, assessment_ids):
         """Gets an ``AssessmentList`` corresponding to the given ``IdList``.
@@ -5483,7 +5483,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     def get_assessments_by_genus_type(self, assessment_genus_type):
         """Gets an ``AssessmentList`` corresponding to the given assessment genus ``Type`` which does not include assessments of types derived from the specified ``Type``.
@@ -5501,7 +5501,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     def get_assessments_by_parent_genus_type(self, assessment_genus_type):
         """Gets an ``AssessmentList`` corresponding to the given assessment genus ``Type`` and include any additional assessments with genus types derived from the specified ``Type``.
@@ -5519,7 +5519,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     def get_assessments_by_record_type(self, assessment_record_type):
         """Gets an ``AssessmentList`` corresponding to the given assessment record ``Type``.
@@ -5538,7 +5538,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     def get_assessments(self):
         """Gets all ``Assessments``.
@@ -5553,7 +5553,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     assessments = property(fget=get_assessments)
 
@@ -5573,7 +5573,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_query(self):
         """Gets an assessment query.
@@ -5582,7 +5582,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQuery
 
     assessment_query = property(fget=get_assessment_query)
 
@@ -5599,7 +5599,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
 
 ##
@@ -5612,7 +5612,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSearch
 
     assessment_search = property(fget=get_assessment_search)
 
@@ -5625,7 +5625,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSearchOrder
 
     assessment_search_order = property(fget=get_assessment_search_order)
 
@@ -5644,7 +5644,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_query`` or ``assessment_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentSearchResults
 
     def get_assessment_query_from_inspector(self, assessment_query_inspector):
         """Gets an assessment query from an inspector.
@@ -5658,7 +5658,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQuery
 
 
 ##
@@ -5676,7 +5676,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_assessment_with_record_types(self, assessment_record_types):
         """Tests if this user can create a single ``Assessment`` using the desired record interface types.
@@ -5693,7 +5693,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_form_for_create(self, assessment_record_types):
         """Gets the assessment form for creating new assessments.
@@ -5709,7 +5709,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentForm
 
     def create_assessment(self, assessment_form):
         """Creates a new ``Assessment``.
@@ -5726,7 +5726,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_form`` did not originate from ``get_assessment_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Assessment
 
     def can_update_assessments(self):
         """Tests if this user can update ``Assessments``.
@@ -5740,7 +5740,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_form_for_update(self, assessment_id):
         """Gets the assessment form for updating an existing assessment.
@@ -5757,7 +5757,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentForm
 
     def update_assessment(self, assessment_form):
         """Updates an existing assessment.
@@ -5772,7 +5772,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_form did not originate from get_assessment_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_assessments(self):
         """Tests if this user can delete ``Assessments``.
@@ -5786,7 +5786,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_assessment(self, assessment_id):
         """Deletes an ``Assessment``.
@@ -5799,7 +5799,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_assessment_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Assessments``.
@@ -5813,7 +5813,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_assessment(self, assessment_id, alias_id):
         """Adds an ``Id`` to an ``Assessment`` for the purpose of creating compatibility.
@@ -5833,7 +5833,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5851,7 +5851,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_assessment_notifications(self):
         """Reliable notifications are desired.
@@ -5861,7 +5861,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_assessment_notifications(self):
         """Unreliable notifications are desired.
@@ -5871,7 +5871,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_assessment_notification(self, notification_id):
         """Acknowledge an assessment notification.
@@ -5882,7 +5882,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments(self):
         """Register for notifications of new assessments.
@@ -5893,7 +5893,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments(self):
         """Registers for notification of updated assessments.
@@ -5904,7 +5904,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessment(self, assessment_id):
         """Registers for notification of an updated assessment.
@@ -5918,7 +5918,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments(self):
         """Registers for notification of deleted assessments.
@@ -5929,7 +5929,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessment(self, assessment_id):
         """Registers for notification of a deleted assessment.
@@ -5943,7 +5943,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5961,7 +5961,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_ids_by_bank(self, bank_id):
         """Gets the list of ``Assessment``  ``Ids`` associated with a ``Bank``.
@@ -5976,7 +5976,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assessments_by_bank(self, bank_id):
         """Gets the list of ``Assessments`` associated with a ``Bank``.
@@ -5991,7 +5991,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     def get_assessment_ids_by_banks(self, bank_ids):
         """Gets the list of ``Assessment Ids`` corresponding to a list of ``Banks``.
@@ -6005,7 +6005,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assessments_by_banks(self, bank_ids):
         """Gets the list of ``Assessments`` corresponding to a list of ``Banks``.
@@ -6019,7 +6019,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentList
 
     def get_bank_ids_by_assessment(self, assessment_id):
         """Gets the list of ``Bank``  ``Ids`` mapped to an ``Assessment``.
@@ -6034,7 +6034,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_banks_by_assessment(self, assessment_id):
         """Gets the list of ``Banks`` mapped to an ``Assessment``.
@@ -6049,7 +6049,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
 
 ##
@@ -6067,7 +6067,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_assessments_to_bank(self, bank_id):
         """Tests if this user can alter assessment/bank mappings.
@@ -6084,7 +6084,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_bank_ids_for_assessment(self, bank_id, assessment_id):
         """Gets a list of bank including and under the given bank node in which a specific assessment can be assigned.
@@ -6099,7 +6099,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_assessment_to_bank(self, assessment_id, bank_id):
         """Adds an existing ``Assessment`` to a ``Bank``.
@@ -6115,7 +6115,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_assessment_from_bank(self, assessment_id, bank_id):
         """Removes an ``Assessment`` from a ``Bank``.
@@ -6130,7 +6130,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_assessment_to_billing(self, assessment_id, from_bank_id, to_bank_id):
         """Moves an ``Assessment`` from one ``Bank`` to another.
@@ -6148,7 +6148,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6165,7 +6165,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_assessment_query(self):
         """Gets an assessment query inspector for this bank.
@@ -6176,7 +6176,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentQueryInspector
 
     def apply_assessment_sequencing(self, assessment_search_order):
         """Applies an assessment search order to this bank.
@@ -6189,7 +6189,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6207,7 +6207,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_item(self, assessment_id, item_id):
         """Adds an existing ``Item`` to an assessment.
@@ -6222,7 +6222,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_item(self, assessment_id, item_id):
         """Removes an ``Item`` from this assessment.
@@ -6237,7 +6237,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def move_item(self, assessment_id, item_id, preceeding_item_id):
         """Moves an existing item to follow another item in an assessment.
@@ -6254,7 +6254,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def order_items(self, item_ids, assessment_id):
         """Sequences existing items in an assessment.
@@ -6269,7 +6269,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6287,7 +6287,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_assessment_offered_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -6297,7 +6297,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_assessment_offered_view(self):
         """A complete view of the ``AssessmentOffered`` returns is desired.
@@ -6308,7 +6308,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_assessment_offered(self, assessment_offered_id):
         """Gets the ``AssessmentOffered`` specified by its ``Id``.
@@ -6328,7 +6328,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOffered
 
     def get_assessments_offered_by_ids(self, assessment_offered_ids):
         """Gets an ``AssessmentOfferedList`` corresponding to the given ``IdList``.
@@ -6350,7 +6350,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_genus_type(self, assessment_offered_genus_type):
         """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered genus ``Type`` which does not include assessments of types derived from the specified ``Type``.
@@ -6368,7 +6368,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_parent_genus_type(self, assessment_offered_genus_type):
         """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered genus ``Type`` and include any additional assessments with genus types derived from the specified ``Type``.
@@ -6386,7 +6386,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_record_type(self, assessment_record_type):
         """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered record ``Type``.
@@ -6405,7 +6405,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_date(self, start, end):
         """Gets an ``AssessmentOfferedList`` that have designated start times where the start times fall in the given range inclusive.
@@ -6425,7 +6425,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_for_assessment(self, assessment_id):
         """Gets an ``AssessmentOfferedList`` by the given assessment.
@@ -6443,7 +6443,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered(self):
         """Gets all ``AssessmentOffered`` elements.
@@ -6458,7 +6458,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     assessments_offered = property(fget=get_assessments_offered)
 
@@ -6478,7 +6478,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_offered_query(self):
         """Gets an assessment offered query.
@@ -6487,7 +6487,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentOfferedQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQuery
 
     assessment_offered_query = property(fget=get_assessment_offered_query)
 
@@ -6504,7 +6504,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
 
 ##
@@ -6517,7 +6517,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentOfferedSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedSearch
 
     assessment_offered_search = property(fget=get_assessment_offered_search)
 
@@ -6530,7 +6530,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentOfferedSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedSearchOrder
 
     assessment_offered_search_order = property(fget=get_assessment_offered_search_order)
 
@@ -6549,7 +6549,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_query`` or ``assessment_offered_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedSearchResults
 
     def get_assessment_offered_query_from_inspector(self, assessment_offered_query_inspector):
         """Gets an assessment offered query from an inspector.
@@ -6564,7 +6564,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQuery
 
 
 ##
@@ -6582,7 +6582,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_assessment_offered_with_record_types(self, assessment_offered_record_types):
         """Tests if this user can create a single ``AssessmentOffered`` using the desired record types.
@@ -6599,7 +6599,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_offered_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_offered_form_for_create(self, assessment_id, assessment_offered_record_types):
         """Gets the assessment offered form for creating new assessments offered.
@@ -6618,7 +6618,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedForm
 
     def create_assessment_offered(self, assessment_offered_form):
         """Creates a new ``AssessmentOffered``.
@@ -6635,7 +6635,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_form`` did not originate from ``get_assessment_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOffered
 
     def can_update_assessments_offered(self):
         """Tests if this user can update ``AssessmentOffered`` objects.
@@ -6649,7 +6649,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_offered_form_for_update(self, assessment_offered_id):
         """Gets the assessment offered form for updating an existing assessment offered.
@@ -6666,7 +6666,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedForm
 
     def update_assessment_offered(self, assessment_offered_form):
         """Updates an existing assessment offered.
@@ -6681,7 +6681,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_form`` did not originate from ``get_assessment_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_assessments_offered(self):
         """Tests if this user can delete ``AssessmentsOffered``.
@@ -6695,7 +6695,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_assessment_offered(self, assessment_offered_id):
         """Deletes an ``AssessmentOffered``.
@@ -6708,7 +6708,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_assessment_offered_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``AssessmentsOffered``.
@@ -6722,7 +6722,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_assessment_offered(self, assessment_offered_id, alias_id):
         """Adds an ``Id`` to an ``AssessmentOffered`` for the purpose of creating compatibility.
@@ -6742,7 +6742,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6760,7 +6760,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_assessment_offered_notifications(self):
         """Reliable notifications are desired.
@@ -6770,7 +6770,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_assessment_offered_notifications(self):
         """Unreliable notifications are desired.
@@ -6780,7 +6780,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_assessment_offered_notification(self, notification_id):
         """Acknowledge an assessment offered notification.
@@ -6791,7 +6791,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments_offered(self):
         """Register for notifications of new assessments offered.
@@ -6803,7 +6803,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments_offered_for_assessment(self, assessment_id):
         """Register for notifications of new assessments offered by assessment.
@@ -6818,7 +6818,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments_offered(self):
         """Registers for notification of updated assessments offered.
@@ -6830,7 +6830,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments_offered_for_assessment(self, assessment_id):
         """Register for notifications of updated assessments offered by assessment.
@@ -6845,7 +6845,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessment_offered(self, assessment_offered_id):
         """Registers for notification of an updated assessment offered.
@@ -6860,7 +6860,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments_offered(self):
         """Registers for notification of deleted assessments offered.
@@ -6872,7 +6872,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments_offered_for_assessment(self, assessment_id):
         """Register for notifications of deleted assessments offered by assessment.
@@ -6887,7 +6887,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessment_offered(self, assessment_offered_id):
         """Registers for notification of a deleted assessment offered.
@@ -6902,7 +6902,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6920,7 +6920,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_offered_ids_by_bank(self, bank_id):
         """Gets the list of ``AssessmentOffered``  ``Ids`` associated with a ``Bank``.
@@ -6935,7 +6935,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assessments_offered_by_bank(self, bank_id):
         """Gets the list of ``AssessmentOffereds`` associated with a ``Bank``.
@@ -6950,7 +6950,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_assessment_offered_ids_by_banks(self, bank_ids):
         """Gets the list of ``AssessmentOffered Ids`` corresponding to a list of ``Banks``.
@@ -6964,7 +6964,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assessments_offered_by_banks(self, bank_ids):
         """Gets the list of ``AssessmentOffered`` objects corresponding to a list of ``Banks``.
@@ -6978,7 +6978,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedList
 
     def get_bank_ids_by_assessment_offered(self, assessment_offered_id):
         """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentOffered``.
@@ -6993,7 +6993,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_banks_by_assessment_offered(self, assessment_offered_id):
         """Gets the list of ``Banks`` mapped to an ``AssessmentOffered``.
@@ -7008,7 +7008,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
 
 ##
@@ -7026,7 +7026,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_assessments_offered_to_bank(self, bank_id):
         """Tests if this user can alter assessment offered/bank mappings.
@@ -7043,7 +7043,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_bank_ids_for_assessment_offered(self, bank_id, assessment_offered_id):
         """Gets a list of bank including and under the given bank node in which a specific assessment offered can be assigned.
@@ -7058,7 +7058,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_assessment_offered_to_bank(self, assessment_offered_id, bank_id):
         """Adds an existing ``AssessmentOffered`` to a ``Bank``.
@@ -7074,7 +7074,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_assessment_offered_from_bank(self, assessment_offered_id, bank_id):
         """Removes an ``AssessmentOffered`` from a ``Bank``.
@@ -7089,7 +7089,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
         """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
@@ -7107,7 +7107,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -7124,7 +7124,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_assessment_offered_query(self):
         """Gets an assessment offered query inspector for this bank.
@@ -7135,7 +7135,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentOfferedQueryInspector
 
     def apply_assessment_offered_sequencing(self, assessment_offered_search_order):
         """Applies an assessment offered search order to this bank.
@@ -7148,7 +7148,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -7166,7 +7166,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_assessment_taken_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as assessment, and not result in an error.
@@ -7176,7 +7176,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_assessment_taken_view(self):
         """A complete view of the ``AssessmentTaken`` returns is desired.
@@ -7187,7 +7187,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_assessment_taken(self, assessment_taken_id):
         """Gets the ``AssessmentTaken`` specified by its ``Id``.
@@ -7207,7 +7207,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTaken
 
     def get_assessments_taken_by_ids(self, assessment_taken_ids):
         """Gets an ``AssessmentTakenList`` corresponding to the given ``IdList``.
@@ -7229,7 +7229,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- assessment failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_genus_type(self, assessment_taken_genus_type):
         """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken genus ``Type`` which does not include assessments of types derived from the specified ``Type``.
@@ -7247,7 +7247,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_parent_genus_type(self, assessment_taken_genus_type):
         """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken genus ``Type`` and include any additional assessments with genus types derived from the specified ``Type``.
@@ -7265,7 +7265,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_record_type(self, assessment_taken_record_type):
         """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken record ``Type``.
@@ -7285,7 +7285,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date(self, from_, to):
         """Gets an ``AssessmentTakenList`` started in the given date range inclusive.
@@ -7307,7 +7307,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_for_taker(self, resource_id):
         """Gets an ``AssessmentTakenList`` for the given resource.
@@ -7325,7 +7325,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_taker(self, resource_id, from_, to):
         """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given resource.
@@ -7348,7 +7348,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_for_assessment(self, assessment_id):
         """Gets an ``AssessmentTakenList`` for the given assessment.
@@ -7366,7 +7366,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_assessment(self, assessment_id, from_, to):
         """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given assessment.
@@ -7389,7 +7389,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_for_taker_and_assessment(self, resource_id, assessment_id):
         """Gets an ``AssessmentTakenList`` for the given resource and assessment.
@@ -7409,7 +7409,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_taker_and_assessment(self, resource_id, assessment_id, from_, to):
         """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given resource and assessment.
@@ -7434,7 +7434,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Gets an ``AssessmentTakenList`` by the given assessment offered.
@@ -7452,7 +7452,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_assessment_offered(self, assessment_offered_id, from_, to):
         """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given assessment offered.
@@ -7475,7 +7475,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_for_taker_and_assessment_offered(self, resource_id, assessment_offered_id):
         """Gets an ``AssessmentTakenList`` for the given resource and assessment offered.
@@ -7495,7 +7495,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_taker_and_assessment_offered(self, resource_id, assessment_offered_id, from_, to):
         """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given resource and assessment offered.
@@ -7520,7 +7520,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken(self):
         """Gets all ``AssessmentTaken`` elements.
@@ -7535,7 +7535,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     assessments_taken = property(fget=get_assessments_taken)
 
@@ -7555,7 +7555,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_taken_query(self):
         """Gets an assessment taken query.
@@ -7564,7 +7564,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentTakenQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQuery
 
     assessment_taken_query = property(fget=get_assessment_taken_query)
 
@@ -7581,7 +7581,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_taken_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
 
 ##
@@ -7594,7 +7594,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentTakenSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenSearch
 
     assessment_taken_search = property(fget=get_assessment_taken_search)
 
@@ -7607,7 +7607,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.assessment.AssessmentTakenSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenSearchOrder
 
     assessment_taken_search_order = property(fget=get_assessment_taken_search_order)
 
@@ -7626,7 +7626,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_taken_query`` or ``assessment_taken_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenSearchResults
 
     def get_assessment_taken_query_from_inspector(self, assessment_taken_query_inspector):
         """Gets an assessment taken query from an inspector.
@@ -7641,7 +7641,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_taken_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQuery
 
 
 ##
@@ -7659,7 +7659,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_assessment_taken_with_record_types(self, assessment_taken_record_types):
         """Tests if this user can create a single ``AssessmentTaken`` using the desired record types.
@@ -7676,7 +7676,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_taken_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_taken_form_for_create(self, assessment_offered_id, assessment_taken_record_types):
         """Gets the assessment taken form for creating new assessments taken.
@@ -7695,7 +7695,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenForm
 
     def create_assessment_taken(self, assessment_taken_form):
         """Creates a new ``AssessmentTaken``.
@@ -7712,7 +7712,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_form`` did not originate from ``get_assessment_taken_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTaken
 
     def can_update_assessments_taken(self):
         """Tests if this user can update ``AssessmentTaken`` objects.
@@ -7726,7 +7726,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_taken_form_for_update(self, assessment_taken_id):
         """Gets the assessment taken form for updating an existing assessment taken.
@@ -7743,7 +7743,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenForm
 
     def update_assessment_taken(self, assessment_taken_form):
         """Updates an existing assessment taken.
@@ -7758,7 +7758,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_offered_form`` did not originate from ``get_assessment_taken_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_assessments_taken(self):
         """Tests if this user can delete ``AssessmentsTaken``.
@@ -7772,7 +7772,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_assessment_taken(self, assessment_taken_id):
         """Deletes an ``AssessmentTaken``.
@@ -7785,7 +7785,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_assessment_taken_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``AssessmentsTaken``.
@@ -7799,7 +7799,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_assessment_taken(self, assessment_taken_id, alias_id):
         """Adds an ``Id`` to an ``AssessmentTaken`` for the purpose of creating compatibility.
@@ -7819,7 +7819,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -7837,7 +7837,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_assessment_taken_notifications(self):
         """Reliable notifications are desired.
@@ -7847,7 +7847,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_assessment_taken_notifications(self):
         """Unreliable notifications are desired.
@@ -7857,7 +7857,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_assessment_taken_notification(self, notification_id):
         """Acknowledge an assessment taken notification.
@@ -7868,7 +7868,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments_taken(self):
         """Register for notifications of new assessments taken in this assessment bank.
@@ -7879,7 +7879,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments_taken_for_taker(self, resource_id):
         """Register for notifications of new assessments taken for a resource.
@@ -7893,7 +7893,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Register for notifications of new assessments taken for an assessment offered.
@@ -7907,7 +7907,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_assessments_taken_for_assessment(self, assessment_id):
         """Register for notifications of new assessments taken for an assessment.
@@ -7921,7 +7921,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments_taken(self):
         """Registers for notification of updated assessments taken.
@@ -7932,7 +7932,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments_taken_for_taker(self, resource_id):
         """Register for notifications of changed assessments taken for a resource.
@@ -7946,7 +7946,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Register for notifications of changed assessments taken for an assessment offered.
@@ -7960,7 +7960,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessments_taken_for_assessment(self, assessment_id):
         """Register for notifications of changed assessments taken for an assessment.
@@ -7974,7 +7974,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_assessment_taken(self, assessment_taken_id):
         """Registers for notification of an updated assessment taken.
@@ -7989,7 +7989,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments_taken(self):
         """Registers for notification of deleted assessments taken.
@@ -8000,7 +8000,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments_taken_for_taker(self, resource_id):
         """Register for notifications of deleted assessments taken for a resource.
@@ -8015,7 +8015,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments_taken_for_assessment_offered(self, assessment_offered_id):
         """Register for notifications of deleted assessments taken for an assessment offered.
@@ -8030,7 +8030,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessments_taken_for_assessment(self, assessment_id):
         """Register for notifications of deleted assessments taken for an assessment.
@@ -8045,7 +8045,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_assessment_taken(self, assessment_taken_id):
         """Registers for notification of a deleted assessment taken.
@@ -8060,7 +8060,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -8078,7 +8078,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assessment_taken_ids_by_bank(self, bank_id):
         """Gets the list of ``AssessmentTaken``  ``Ids`` associated with a ``Bank``.
@@ -8093,7 +8093,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assessments_taken_by_bank(self, bank_id):
         """Gets the list of ``AssessmentTakens`` associated with a ``Bank``.
@@ -8108,7 +8108,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_assessment_taken_ids_by_banks(self, bank_ids):
         """Gets the list of ``AssessmentTaken Ids`` corresponding to a list of ``Banks``.
@@ -8122,7 +8122,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assessments_taken_by_banks(self, bank_ids):
         """Gets the list of ``AssessmentTaken`` objects corresponding to a list of ``Banks``.
@@ -8136,7 +8136,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenList
 
     def get_bank_ids_by_assessment_taken(self, assessment_taken_id):
         """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentTaken``.
@@ -8151,7 +8151,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_banks_by_assessment_taken(self, assessment_taken_id):
         """Gets the list of ``Banks`` mapped to an ``AssessmentTaken``.
@@ -8166,7 +8166,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.BankList
 
 
 ##
@@ -8184,7 +8184,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_assessments_taken_to_bank(self, bank_id):
         """Tests if this user can alter assessment taken/bank mappings.
@@ -8201,7 +8201,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_bank_ids_for_assessment_taken(self, bank_id, assessment_taken_id):
         """Gets a list of bank including and under the given bank node in which a specific assessment taken can be assigned.
@@ -8216,7 +8216,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_assessment_taken_to_bank(self, assessment_taken_id, bank_id):
         """Adds an existing ``AssessmentTaken`` to a ``Bank``.
@@ -8232,7 +8232,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_assessment_taken_from_bank(self, assessment_taken_id, bank_id):
         """Removes an ``AssessmentTaken`` from a ``Bank``.
@@ -8247,7 +8247,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_assessment_taken_to_billing(self, assessment_taken_id, from_bank_id, to_bank_id):
         """Moves an ``AssessmentTaken`` from one ``Bank`` to another.
@@ -8265,7 +8265,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -8282,7 +8282,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_taken_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_assessment_taken_query(self):
         """Gets an assessment taken query inspector for this bank.
@@ -8293,7 +8293,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.AssessmentTakenQueryInspector
 
     def apply_assessment_taken_sequencing(self, assessment_taken_search_order):
         """Applies an assessment taken search order to this bank.
@@ -8306,7 +8306,7 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``assessment_taken_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -8321,7 +8321,7 @@ class BankList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
     next_bank = property(fget=get_next_bank)
 
@@ -8336,7 +8336,7 @@ class BankList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.assessment.Bank
 
 
 

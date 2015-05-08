@@ -89,7 +89,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_admin(self):
         """Tests if an objective administrative service is supported.
@@ -98,7 +98,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_hierarchy(self):
         """Tests if an objective hierarchy traversal is supported.
@@ -107,7 +107,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_hierarchy_design(self):
         """Tests if an objective hierarchy design is supported.
@@ -116,7 +116,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_sequencing(self):
         """Tests if an objective sequencing design is supported.
@@ -125,7 +125,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_requisite(self):
         """Tests if an objective requisite service is supported.
@@ -134,7 +134,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_requisite_assignment(self):
         """Tests if an objective requisite assignment service is supported.
@@ -143,7 +143,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_activity_lookup(self):
         """Tests if an activity lookup service is supported.
@@ -152,7 +152,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_activity_admin(self):
         """Tests if an activity administrative service is supported.
@@ -161,7 +161,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_bank_lookup(self):
         """Tests if an objective bank lookup service is supported.
@@ -170,7 +170,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_bank_admin(self):
         """Tests if an objective bank administrative service is supported.
@@ -179,7 +179,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_bank_hierarchy(self):
         """Tests if an objective bank hierarchy traversal is supported.
@@ -188,7 +188,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def supports_objective_bank_hierarchy_design(self):
         """Tests if objective bank hierarchy design is supported.
@@ -197,7 +197,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_record_types(self):
         """Gets the supported ``Objective`` record types.
@@ -206,7 +206,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     objective_record_types = property(fget=get_objective_record_types)
 
@@ -217,7 +217,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     objective_search_record_types = property(fget=get_objective_search_record_types)
 
@@ -228,7 +228,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     activity_record_types = property(fget=get_activity_record_types)
 
@@ -239,7 +239,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     activity_search_record_types = property(fget=get_activity_search_record_types)
 
@@ -250,7 +250,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     proficiency_record_types = property(fget=get_proficiency_record_types)
 
@@ -261,7 +261,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     proficiency_search_record_types = property(fget=get_proficiency_search_record_types)
 
@@ -272,7 +272,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     objective_bank_record_types = property(fget=get_objective_bank_record_types)
 
@@ -283,7 +283,7 @@ class LearningProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     objective_bank_search_record_types = property(fget=get_objective_bank_search_record_types)
 
@@ -300,7 +300,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveLookupSession
 
     objective_lookup_session = property(fget=get_objective_lookup_session)
 
@@ -317,7 +317,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveLookupSession
 
     def get_objective_admin_session(self):
         """Gets the ``OsidSession`` associated with the objective administration service.
@@ -328,7 +328,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveAdminSession
 
     objective_admin_session = property(fget=get_objective_admin_session)
 
@@ -345,7 +345,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveAdminSession
 
     def get_objective_hierarchy_session(self):
         """Gets the session for traversing objective hierarchies.
@@ -356,7 +356,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchySession
 
     objective_hierarchy_session = property(fget=get_objective_hierarchy_session)
 
@@ -373,7 +373,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchySession
 
     def get_objective_hierarchy_design_session(self):
         """Gets the session for designing objective hierarchies.
@@ -384,7 +384,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchyDesignSession
 
     objective_hierarchy_design_session = property(fget=get_objective_hierarchy_design_session)
 
@@ -401,7 +401,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchyDesignSession
 
     def get_objective_sequencing_session(self):
         """Gets the session for sequencing objectives.
@@ -412,7 +412,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSequencingSession
 
     objective_sequencing_session = property(fget=get_objective_sequencing_session)
 
@@ -429,7 +429,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSequencingSession
 
     def get_objective_requisite_session(self):
         """Gets the session for examining objective requisites.
@@ -440,7 +440,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteSession
 
     objective_requisite_session = property(fget=get_objective_requisite_session)
 
@@ -457,7 +457,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteSession
 
     def get_objective_requisite_assignment_session(self):
         """Gets the session for managing objective requisites.
@@ -468,7 +468,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteAssignmentSession
 
     objective_requisite_assignment_session = property(fget=get_objective_requisite_assignment_session)
 
@@ -485,7 +485,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteAssignmentSession
 
     def get_activity_lookup_session(self):
         """Gets the ``OsidSession`` associated with the activity lookup service.
@@ -496,7 +496,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityLookupSession
 
     activity_lookup_session = property(fget=get_activity_lookup_session)
 
@@ -513,7 +513,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityLookupSession
 
     def get_activity_admin_session(self):
         """Gets the ``OsidSession`` associated with the activity administration service.
@@ -524,7 +524,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_activity_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityAdminSession
 
     activity_admin_session = property(fget=get_activity_admin_session)
 
@@ -541,7 +541,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityAdminSession
 
     def get_objective_bank_lookup_session(self):
         """Gets the OsidSession associated with the objective bank lookup service.
@@ -552,7 +552,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_bank_lookup() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankLookupSession
 
     objective_bank_lookup_session = property(fget=get_objective_bank_lookup_session)
 
@@ -565,7 +565,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_bank_admin() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankAdminSession
 
     objective_bank_admin_session = property(fget=get_objective_bank_admin_session)
 
@@ -578,7 +578,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_bank_hierarchy() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankHierarchySession
 
     objective_bank_hierarchy_session = property(fget=get_objective_bank_hierarchy_session)
 
@@ -591,7 +591,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_objective_bank_hierarchy_design() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankHierarchyDesignSession
 
     objective_bank_hierarchy_design_session = property(fget=get_objective_bank_hierarchy_design_session)
 
@@ -604,7 +604,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unimplemented`` -- ``supports_learning_batch() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.batch.LearningBatchManager
 
     learning_batch_manager = property(fget=get_learning_batch_manager)
 
@@ -624,7 +624,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -634,7 +634,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``ObjectiveBank`` returns is desired.
@@ -645,7 +645,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_objective_bank(self, objective_bank_id):
         """Gets the ``ObjectiveBank`` specified by its ``Id``.
@@ -665,7 +665,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
     def get_objective_banks_by_ids(self, objective_bank_ids):
         """Gets a ``ObjectiveBankList`` corresponding to the given ``IdList``.
@@ -687,7 +687,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
         """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include objective banks of types derived from the specified ``Type``.
@@ -705,7 +705,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
         """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any additional objective banks with genus types derived from the specified ``Type``.
@@ -723,7 +723,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_record_type(self, objective_bank_record_type):
         """Gets a ``ObjectiveBankList`` containing the given objective bank record ``Type``.
@@ -741,7 +741,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_provider(self, resource_id):
         """Gets a ``ObjectiveBankList`` for the given provider.
@@ -759,7 +759,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks(self):
         """Gets all ``ObjectiveBanks``.
@@ -774,7 +774,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     objective_banks = property(fget=get_objective_banks)
 
@@ -794,7 +794,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_query(self):
         """Gets an objective bank query.
@@ -803,7 +803,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``osid.learning.ObjectiveBankQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankQuery
 
     objective_bank_query = property(fget=get_objective_bank_query)
 
@@ -820,7 +820,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unsupported`` -- ``objective_bank_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
 
 ##
@@ -833,7 +833,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``osid.learning.ObjectiveBankSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankSearch
 
     objective_bank_search = property(fget=get_objective_bank_search)
 
@@ -846,7 +846,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``osid.learning.ObjectiveBankSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankSearchOrder
 
     objective_bank_search_order = property(fget=get_objective_bank_search_order)
 
@@ -865,7 +865,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unsupported`` -- ``objective_bank_query`` or ``objective_bank_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankSearchResults
 
     def get_objective_bank_query_from_inspector(self, objective_bank_query_inspector):
         """Gets an objective bank query from an inspector.
@@ -880,7 +880,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unsupported`` -- ``objective_bank_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankQuery
 
 
 ##
@@ -898,7 +898,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_objective_bank_with_record_types(self, objective_bank_record_types):
         """Tests if this user can create a single ``ObjectiveBank`` using the desired record types.
@@ -915,7 +915,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_form_for_create(self, objective_bank_record_types):
         """Gets the objective bank form for creating new objective banks.
@@ -931,7 +931,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unsupported`` -- unable to get form for requested record types.
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankForm
 
     def create_objective_bank(self, objective_bank_form):
         """Creates a new ``ObjectiveBank``.
@@ -948,7 +948,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unsupported`` -- ``objective_bank_form`` did not originate from ``get_objective_bank_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
     def can_update_objective_banks(self):
         """Tests if this user can update ``ObjectiveBanks``.
@@ -962,7 +962,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_form_for_update(self, objective_bank_id):
         """Gets the objective bank form for updating an existing objective bank.
@@ -979,7 +979,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankForm
 
     def update_objective_bank(self, objective_bank_form):
         """Updates an existing objective bank.
@@ -994,7 +994,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_objective_banks(self):
         """Tests if this user can delete objective banks.
@@ -1008,7 +1008,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_objective_bank(self, objective_bank_id):
         """Deletes an ``ObjectiveBank``.
@@ -1021,7 +1021,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_objective_bank_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``ObjectiveBanks``.
@@ -1035,7 +1035,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_objective_bank(self, objective_bank_id, alias_id):
         """Adds an ``Id`` to an ``ObjectiveBank`` for the purpose of creating compatibility.
@@ -1055,7 +1055,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1073,7 +1073,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_objective_bank_notifications(self):
         """Reliable notifications are desired.
@@ -1083,7 +1083,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_objective_bank_notifications(self):
         """Unreliable notifications are desired.
@@ -1093,7 +1093,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_objective_bank_notification(self, notification_id):
         """Acknowledge an objective bank notification.
@@ -1104,7 +1104,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_objective_banks(self):
         """Register for notifications of new objective banks.
@@ -1115,7 +1115,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_banks(self):
         """Registers for notification of updated objective banks.
@@ -1126,7 +1126,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank(self, objective_bank_id):
         """Registers for notification of an updated objective bank.
@@ -1140,7 +1140,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_objective_banks(self):
         """Registers for notification of deleted objective banks.
@@ -1151,7 +1151,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_objective_bank(self, objective_bank_id):
         """Registers for notification of a deleted objective bank.
@@ -1165,7 +1165,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank_hierarchy(self):
         """Registers for notification of an updated objective bank hierarchy structure.
@@ -1176,7 +1176,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank_hierarchy_for_ancestors(self, objective_bank_id):
         """Registers for notification of an updated objective bank hierarchy structure.
@@ -1191,7 +1191,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank_hierarchy_for_descendants(self, objective_bank_id):
         """Registers for notification of an updated objective bank hierarchy structure.
@@ -1206,7 +1206,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -1219,7 +1219,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     objective_bank_hierarchy_id = property(fget=get_objective_bank_hierarchy_id)
 
@@ -1232,7 +1232,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     objective_bank_hierarchy = property(fget=get_objective_bank_hierarchy)
 
@@ -1248,7 +1248,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_objective_bank_ids(self):
         """Gets the root objective bank ``Ids`` in this hierarchy.
@@ -1259,7 +1259,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_objective_bank_ids = property(fget=get_root_objective_bank_ids)
 
@@ -1272,7 +1272,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     root_objective_banks = property(fget=get_root_objective_banks)
 
@@ -1289,7 +1289,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is a direct parent of an objective bank.
@@ -1306,7 +1306,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_objective_bank_ids(self, objective_bank_id):
         """Gets the parent ``Ids`` of the given objective bank.
@@ -1321,7 +1321,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_objective_banks(self, objective_bank_id):
         """Gets the parents of the given objective bank.
@@ -1336,7 +1336,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def is_ancestor_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is an ancestor of an objective bank.
@@ -1353,7 +1353,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_objective_banks(self, objective_bank_id):
         """Tests if an objective bank has any children.
@@ -1368,7 +1368,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an objective bank is a direct child of another.
@@ -1385,7 +1385,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_objective_bank_ids(self, objective_bank_id):
         """Gets the child ``Ids`` of the given objective bank.
@@ -1400,7 +1400,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_objective_banks(self, objective_bank_id):
         """Gets the children of the given objective bank.
@@ -1415,7 +1415,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def is_descendant_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is a descendant of an objective bank.
@@ -1432,7 +1432,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
@@ -1453,7 +1453,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
@@ -1474,7 +1474,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankNode
 
 
 ##
@@ -1492,7 +1492,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_objective_bank(self, objective_bank_id):
         """Adds a root objective bank.
@@ -1506,7 +1506,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_objective_bank(self, objective_bank_id):
         """Removes a root objective bank.
@@ -1519,7 +1519,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_objective_bank(self, objective_bank_id, child_id):
         """Adds a child to an objective bank.
@@ -1535,7 +1535,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_objective_bank(self, objective_bank_id, child_id):
         """Removes a child from an objective bank.
@@ -1550,7 +1550,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_objective_banks(self, objective_bank_id):
         """Removes all children from an objective bank.
@@ -1563,7 +1563,7 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -1581,7 +1581,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveLookupSession
 
     def get_objective_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective lookup service for the given objective bank.
@@ -1598,7 +1598,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveLookupSession
 
     def get_objective_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the objective administration service.
@@ -1612,7 +1612,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveAdminSession
 
     def get_objective_admin_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective admin service for the given objective bank.
@@ -1629,7 +1629,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveAdminSession
 
     def get_objective_hierarchy_session(self, proxy):
         """Gets the session for traversing objective hierarchies.
@@ -1643,7 +1643,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchySession
 
     def get_objective_hierarchy_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for the given objective bank.
@@ -1660,7 +1660,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchySession
 
     def get_objective_hierarchy_design_session(self, proxy):
         """Gets the session for designing objective hierarchies.
@@ -1674,7 +1674,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchyDesignSession
 
     def get_objective_hierarchy_design_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective hierarchy design service for the given objective bank.
@@ -1691,7 +1691,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveHierarchyDesignSession
 
     def get_objective_sequencing_session(self, proxy):
         """Gets the session for sequencing objectives.
@@ -1705,7 +1705,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSequencingSession
 
     def get_objective_sequencing_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
@@ -1722,7 +1722,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSequencingSession
 
     def get_objective_requisite_session(self, proxy):
         """Gets the session for examining objective requisites.
@@ -1736,7 +1736,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteSession
 
     def get_objective_requisite_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
@@ -1753,7 +1753,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteSession
 
     def get_objective_requisite_assignment_session(self, proxy):
         """Gets the session for managing objective requisites.
@@ -1767,7 +1767,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteAssignmentSession
 
     def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
@@ -1784,7 +1784,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveRequisiteAssignmentSession
 
     def get_activity_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the activity lookup service.
@@ -1798,7 +1798,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityLookupSession
 
     def get_activity_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the activity lookup service for the given objective bank.
@@ -1815,7 +1815,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityLookupSession
 
     def get_activity_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the activity administration service.
@@ -1829,7 +1829,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_activity_admin()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityAdminSession
 
     def get_activity_admin_session_for_objective_bank(self, objective_bank_id, proxy):
         """Gets the ``OsidSession`` associated with the activity admin service for the given objective bank.
@@ -1846,7 +1846,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or ``supports_visible_federation()`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityAdminSession
 
     def get_objective_bank_lookup_session(self, proxy):
         """Gets the OsidSession associated with the objective bank lookup service.
@@ -1860,7 +1860,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_bank_lookup() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankLookupSession
 
     def get_objective_bank_admin_session(self, proxy):
         """Gets the OsidSession associated with the objective bank administration service.
@@ -1874,7 +1874,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_bank_admin() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankAdminSession
 
     def get_objective_bank_hierarchy_session(self, proxy):
         """Gets the session traversing objective bank hierarchies.
@@ -1888,7 +1888,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_bank_hierarchy() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankHierarchySession
 
     def get_objective_bank_hierarchy_design_session(self, proxy):
         """Gets the session designing objective bank hierarchies.
@@ -1902,7 +1902,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_objective_bank_hierarchy_design() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankHierarchyDesignSession
 
     def get_learning_batch_proxy_manager(self):
         """Gets a ``LearningBatchProxyManager``.
@@ -1913,7 +1913,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unimplemented`` -- ``supports_learning_batch() is false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.batch.LearningBatchProxyManager
 
     learning_batch_proxy_manager = property(fget=get_learning_batch_proxy_manager)
 
@@ -1934,7 +1934,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -1945,7 +1945,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``ObjectiveBank`` returns is desired.
@@ -1957,7 +1957,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_objective_bank(self, objective_bank_id):
         """Gets the ``ObjectiveBank`` specified by its ``Id``.
@@ -1978,7 +1978,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
     def get_objective_banks_by_ids(self, objective_bank_ids):
         """Gets a ``ObjectiveBankList`` corresponding to the given ``IdList``.
@@ -2001,7 +2001,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
         """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include objective banks of types derived from the specified ``Type``.
@@ -2020,7 +2020,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
         """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any additional objective banks with genus types derived from the specified ``Type``.
@@ -2039,7 +2039,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_record_type(self, objective_bank_record_type):
         """Gets a ``ObjectiveBankList`` containing the given objective bank record ``Type``.
@@ -2058,7 +2058,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_provider(self, resource_id):
         """Gets a ``ObjectiveBankList`` for the given provider.
@@ -2077,7 +2077,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def get_objective_banks(self):
         """Gets all ``ObjectiveBanks``.
@@ -2093,7 +2093,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     objective_banks = property(fget=get_objective_banks)
 
@@ -2114,7 +2114,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_query(self):
         """Gets an objective bank query.
@@ -2123,7 +2123,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``osid.learning.ObjectiveBankQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankQuery
 
     objective_bank_query = property(fget=get_objective_bank_query)
 
@@ -2140,7 +2140,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unsupported`` -- ``objective_bank_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
 
 ##
@@ -2153,7 +2153,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``osid.learning.ObjectiveBankSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankSearch
 
     objective_bank_search = property(fget=get_objective_bank_search)
 
@@ -2167,7 +2167,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``osid.learning.ObjectiveBankSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankSearchOrder
 
     objective_bank_search_order = property(fget=get_objective_bank_search_order)
 
@@ -2186,7 +2186,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unsupported`` -- ``objective_bank_query`` or ``objective_bank_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankSearchResults
 
     def get_objective_bank_query_from_inspector(self, objective_bank_query_inspector):
         """Gets an objective bank query from an inspector.
@@ -2202,7 +2202,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unsupported`` -- ``objective_bank_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankQuery
 
 
 ##
@@ -2221,7 +2221,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_objective_bank_with_record_types(self, objective_bank_record_types):
         """Tests if this user can create a single ``ObjectiveBank`` using the desired record types.
@@ -2239,7 +2239,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_form_for_create(self, objective_bank_record_types):
         """Gets the objective bank form for creating new objective banks.
@@ -2256,7 +2256,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unsupported`` -- unable to get form for requested record types.
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankForm
 
     def create_objective_bank(self, objective_bank_form):
         """Creates a new ``ObjectiveBank``.
@@ -2273,7 +2273,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unsupported`` -- ``objective_bank_form`` did not originate from ``get_objective_bank_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
     def can_update_objective_banks(self):
         """Tests if this user can update ``ObjectiveBanks``.
@@ -2288,7 +2288,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_form_for_update(self, objective_bank_id):
         """Gets the objective bank form for updating an existing objective bank.
@@ -2306,7 +2306,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankForm
 
     def update_objective_bank(self, objective_bank_form):
         """Updates an existing objective bank.
@@ -2321,7 +2321,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_objective_banks(self):
         """Tests if this user can delete objective banks.
@@ -2336,7 +2336,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_objective_bank(self, objective_bank_id):
         """Deletes an ``ObjectiveBank``.
@@ -2349,7 +2349,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_objective_bank_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``ObjectiveBanks``.
@@ -2364,7 +2364,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_objective_bank(self, objective_bank_id, alias_id):
         """Adds an ``Id`` to an ``ObjectiveBank`` for the purpose of creating compatibility.
@@ -2385,7 +2385,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -2404,7 +2404,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_objective_bank_notifications(self):
         """Reliable notifications are desired.
@@ -2415,7 +2415,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_objective_bank_notifications(self):
         """Unreliable notifications are desired.
@@ -2426,7 +2426,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_objective_bank_notification(self, notification_id):
         """Acknowledge an objective bank notification.
@@ -2437,7 +2437,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_objective_banks(self):
         """Register for notifications of new objective banks.
@@ -2449,7 +2449,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_banks(self):
         """Registers for notification of updated objective banks.
@@ -2461,7 +2461,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank(self, objective_bank_id):
         """Registers for notification of an updated objective bank.
@@ -2476,7 +2476,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_objective_banks(self):
         """Registers for notification of deleted objective banks.
@@ -2488,7 +2488,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_objective_bank(self, objective_bank_id):
         """Registers for notification of a deleted objective bank.
@@ -2503,7 +2503,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank_hierarchy(self):
         """Registers for notification of an updated objective bank hierarchy structure.
@@ -2515,7 +2515,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank_hierarchy_for_ancestors(self, objective_bank_id):
         """Registers for notification of an updated objective bank hierarchy structure.
@@ -2531,7 +2531,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_bank_hierarchy_for_descendants(self, objective_bank_id):
         """Registers for notification of an updated objective bank hierarchy structure.
@@ -2547,7 +2547,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -2560,7 +2560,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     objective_bank_hierarchy_id = property(fget=get_objective_bank_hierarchy_id)
 
@@ -2573,7 +2573,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     objective_bank_hierarchy = property(fget=get_objective_bank_hierarchy)
 
@@ -2590,7 +2590,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_objective_bank_ids(self):
         """Gets the root objective bank ``Ids`` in this hierarchy.
@@ -2601,7 +2601,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_objective_bank_ids = property(fget=get_root_objective_bank_ids)
 
@@ -2614,7 +2614,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     root_objective_banks = property(fget=get_root_objective_banks)
 
@@ -2631,7 +2631,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is a direct parent of an objective bank.
@@ -2648,7 +2648,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_objective_bank_ids(self, objective_bank_id):
         """Gets the parent ``Ids`` of the given objective bank.
@@ -2663,7 +2663,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_objective_banks(self, objective_bank_id):
         """Gets the parents of the given objective bank.
@@ -2678,7 +2678,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def is_ancestor_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is an ancestor of an objective bank.
@@ -2695,7 +2695,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_objective_banks(self, objective_bank_id):
         """Tests if an objective bank has any children.
@@ -2710,7 +2710,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an objective bank is a direct child of another.
@@ -2727,7 +2727,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_objective_bank_ids(self, objective_bank_id):
         """Gets the child ``Ids`` of the given objective bank.
@@ -2742,7 +2742,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_objective_banks(self, objective_bank_id):
         """Gets the children of the given objective bank.
@@ -2757,7 +2757,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
     def is_descendant_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is a descendant of an objective bank.
@@ -2774,7 +2774,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
@@ -2795,7 +2795,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
@@ -2816,7 +2816,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankNode
 
 
 ##
@@ -2835,7 +2835,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_objective_bank(self, objective_bank_id):
         """Adds a root objective bank.
@@ -2849,7 +2849,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_objective_bank(self, objective_bank_id):
         """Removes a root objective bank.
@@ -2862,7 +2862,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_objective_bank(self, objective_bank_id, child_id):
         """Adds a child to an objective bank.
@@ -2878,7 +2878,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_objective_bank(self, objective_bank_id, child_id):
         """Removes a child from an objective bank.
@@ -2893,7 +2893,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_objective_banks(self, objective_bank_id):
         """Removes all children from an objective bank.
@@ -2906,7 +2906,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 
@@ -2929,7 +2929,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``has_record_type(objective_bank_record_type)`` is ``false``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.records.ObjectiveBankRecord
 
 
 ##
@@ -2942,7 +2942,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
@@ -2955,7 +2955,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
 
@@ -2971,7 +2971,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_objective_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -2981,7 +2981,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_objective_view(self):
         """A complete view of the ``Objective`` returns is desired.
@@ -2992,7 +2992,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_federated_objective_bank_view(self):
         """Federates the view for methods in this session.
@@ -3003,7 +3003,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_isolated_objective_bank_view(self):
         """Isolates the view for methods in this session.
@@ -3012,7 +3012,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_objective(self, objective_id):
         """Gets the ``Objective`` specified by its ``Id``.
@@ -3032,7 +3032,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.Objective
 
     def get_objectives_by_ids(self, objective_ids):
         """Gets an ``ObjectiveList`` corresponding to the given ``IdList``.
@@ -3054,7 +3054,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objectives_by_genus_type(self, objective_genus_type):
         """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does not include objectives of genus types derived from the specified ``Type``.
@@ -3071,7 +3071,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objectives_by_parent_genus_type(self, objective_genus_type):
         """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include any additional objective with genus types derived from the specified ``Type``.
@@ -3088,7 +3088,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objectives_by_record_type(self, objective_record_type):
         """Gets an ``ObjectiveList`` containing the given objective record ``Type``.
@@ -3105,7 +3105,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objectives(self):
         """Gets all ``Objectives``.
@@ -3119,7 +3119,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     objectives = property(fget=get_objectives)
 
@@ -3139,7 +3139,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_query(self):
         """Gets an objective query.
@@ -3148,7 +3148,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ObjectiveQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveQuery
 
     objective_query = property(fget=get_objective_query)
 
@@ -3165,7 +3165,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
 
 ##
@@ -3178,7 +3178,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ObjectiveSearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSearch
 
     objective_search = property(fget=get_objective_search)
 
@@ -3191,7 +3191,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ObjectiveSearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSearchOrder
 
     objective_search_order = property(fget=get_objective_search_order)
 
@@ -3210,7 +3210,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_search`` or ``objective_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveSearchResults
 
     def get_objective_query_from_inspector(self, objective_query_inspector):
         """Gets an objective query from an inspector.
@@ -3224,7 +3224,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveQuery
 
 
 ##
@@ -3242,7 +3242,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_objective_with_record_types(self, objective_record_types):
         """Tests if this user can create a single ``Objective`` using the desired record types.
@@ -3259,7 +3259,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_form_for_create(self, objective_record_types):
         """Gets the objective form for creating new objectives.
@@ -3275,7 +3275,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveForm
 
     def create_objective(self, objective_form):
         """Creates a new ``Objective``.
@@ -3292,7 +3292,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.Objective
 
     def can_update_objectives(self):
         """Tests if this user can update ``Objectives``.
@@ -3306,7 +3306,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_form_for_update(self, objective_id):
         """Gets the objective form for updating an existing objective.
@@ -3323,7 +3323,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveForm
 
     def update_objective(self, objective_form):
         """Updates an existing objective.
@@ -3338,7 +3338,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_objectives(self):
         """Tests if this user can delete ``Objectives``.
@@ -3352,7 +3352,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_objective(self, objective_id):
         """Deletes the ``Objective`` identified by the given ``Id``.
@@ -3365,7 +3365,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_objective_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Objectives``.
@@ -3379,7 +3379,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_objective(self, objective_id, alias_id):
         """Adds an ``Id`` to an ``Objective`` for the purpose of creating compatibility.
@@ -3399,7 +3399,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3417,7 +3417,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_objective_notifications(self):
         """Reliable notifications are desired.
@@ -3427,7 +3427,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_objective_notifications(self):
         """Unreliable notifications are desired.
@@ -3437,7 +3437,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_objective_notification(self, notification_id):
         """Acknowledge an objective notification.
@@ -3448,7 +3448,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_objectives(self):
         """Register for notifications of new objectives.
@@ -3459,7 +3459,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objectives(self):
         """Registers for notification of updated objectives.
@@ -3470,7 +3470,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective(self, objective_id):
         """Registers for notification of an updated objective.
@@ -3484,7 +3484,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_objectives(self):
         """Registers for notification of deleted objectives.
@@ -3495,7 +3495,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_objective(self, objective_id):
         """Registers for notification of a deleted objective.
@@ -3509,7 +3509,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_hierarchy(self):
         """Registers for notification of an updated objective hierarchy structure.
@@ -3520,7 +3520,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_hierarchy_for_ancestors(self, objective_id):
         """Registers for notification of an updated objective hierarchy structure.
@@ -3535,7 +3535,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_objective_hierarchy_for_descendants(self, objective_id):
         """Registers for notification of an updated objective hierarchy structure.
@@ -3550,7 +3550,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3563,7 +3563,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.id.Id``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.Id
 
     objective_hierarchy_id = property(fget=get_objective_hierarchy_id)
 
@@ -3576,7 +3576,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Hierarchy
 
     objective_hierarchy = property(fget=get_objective_hierarchy)
 
@@ -3592,7 +3592,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_root_objective_ids(self):
         """Gets the root objective ``Ids`` in this hierarchy.
@@ -3603,7 +3603,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     root_objective_ids = property(fget=get_root_objective_ids)
 
@@ -3616,7 +3616,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     root_objectives = property(fget=get_root_objectives)
 
@@ -3633,7 +3633,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_parent_of_objective(self, id_, objective_id):
         """Tests if an ``Id`` is a direct parent of an objective.
@@ -3650,7 +3650,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_parent_objective_ids(self, objective_id):
         """Gets the parent ``Ids`` of the given objective.
@@ -3665,7 +3665,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_parent_objectives(self, objective_id):
         """Gets the parents of the given objective.
@@ -3680,7 +3680,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def is_ancestor_of_objective(self, id_, objective_id):
         """Tests if an ``Id`` is an ancestor of an objective.
@@ -3697,7 +3697,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def has_child_objectives(self, objective_id):
         """Tests if an objective has any children.
@@ -3712,7 +3712,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def is_child_of_objective(self, id_, objective_id):
         """Tests if an objective is a direct child of another.
@@ -3729,7 +3729,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_child_objective_ids(self, objective_id):
         """Gets the child ``Ids`` of the given objective.
@@ -3744,7 +3744,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_child_objectives(self, objective_id):
         """Gets the children of the given objective.
@@ -3759,7 +3759,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def is_descendant_of_objective(self, id_, objective_id):
         """Tests if an ``Id`` is a descendant of an objective.
@@ -3776,7 +3776,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective.
@@ -3797,7 +3797,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.hierarchy.Node
 
     def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective.
@@ -3818,7 +3818,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveNode
 
 
 ##
@@ -3836,7 +3836,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def add_root_objective(self, objective_id):
         """Adds a root objective.
@@ -3850,7 +3850,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_root_objective(self, objective_id):
         """Removes a root objective.
@@ -3863,7 +3863,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def add_child_objective(self, objective_id, child_id):
         """Adds a child to an objective.
@@ -3879,7 +3879,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_objective(self, objective_id, child_id):
         """Removes a child from an objective.
@@ -3894,7 +3894,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def remove_child_objectives(self, objective_id):
         """Removes all children from an objective.
@@ -3907,7 +3907,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3925,7 +3925,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def move_objective_ahead(self, parent_objective_id, reference_objective_id, objective_id):
         """Moves an objective ahead of a refrence objective under the given parent.
@@ -3942,7 +3942,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def move_objective_behind(self, parent_objective_id, reference_objective_id, objective_id):
         """Moves an objective behind a refrence objective under the given parent.
@@ -3959,7 +3959,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def sequence_objectives(self, parent_objective_id, objective_ids):
         """Sequences a set of objectives under a parent.
@@ -3974,7 +3974,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -3992,7 +3992,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -4002,7 +4002,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``Objective`` and ``ObjectiveBank`` returns is desired.
@@ -4013,7 +4013,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_objective_ids_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Objective``  ``Ids`` associated with an ``ObjectiveBank``.
@@ -4028,7 +4028,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_objectives_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Objectives`` associated with an ``ObjectiveBank``.
@@ -4043,7 +4043,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objective_ids_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Objective Ids`` corresponding to a list of ``ObjectiveBanks``.
@@ -4057,7 +4057,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_objectives_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Objectives`` corresponding to a list of ``ObjectiveBanks``.
@@ -4071,7 +4071,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objective_bank_ids_by_objective(self, objective_id):
         """Gets the list of ``ObjectiveBank``  ``Ids`` mapped to an ``Objective``.
@@ -4086,7 +4086,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_objective_banks_by_objective(self, objective_id):
         """Gets the list of ``ObjectiveBanks`` mapped to an ``Objective``.
@@ -4101,7 +4101,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
 
 ##
@@ -4119,7 +4119,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_objectives_to_objective_bank(self, objective_bank_id):
         """Tests if this user can alter objective/objective bank mappings.
@@ -4136,7 +4136,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
         """Gets a list of objective banks including and under the given objective bank node in which any objective can be assigned.
@@ -4149,7 +4149,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
         """Gets a list of objective banks including and under the given objective bank node in which a specific objective can be assigned.
@@ -4164,7 +4164,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_objective_to_objective_bank(self, objective_id, objective_bank_id):
         """Adds an existing ``Objective`` to an ``ObjectiveBank``.
@@ -4180,7 +4180,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_objective_from_objective_bank(self, objective_id, objective_bank_id):
         """Removes an ``Objective`` from an ``ObjectiveBank``.
@@ -4195,7 +4195,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
@@ -4213,7 +4213,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4231,7 +4231,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def apply_objective_query(self, objective_query):
         """Applies an objective query to this bank.
@@ -4244,7 +4244,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_objective_query(self):
         """Gets an objective query inspector for this objective bank.
@@ -4255,7 +4255,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveQueryInspector
 
     def apply_objective_sequencing(self, objective_search_order):
         """Applies an objective search order to this objective bank.
@@ -4268,7 +4268,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``objective_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4286,7 +4286,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_requisite_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that are the immediate requisites for the given ``Objective``.
@@ -4306,7 +4306,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_all_requisite_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that are the requisites for the given ``Objective`` including the requistes of the requisites, and so on.
@@ -4326,7 +4326,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_dependent_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that require the given ``Objective``.
@@ -4346,7 +4346,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def is_objective_required(self, objective_id, required_objective_id):
         """Tests if an objective is required before proceeding with an objective.
@@ -4365,7 +4365,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_equivalent_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the purpose of requisites.
@@ -4386,7 +4386,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
 
 ##
@@ -4404,7 +4404,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def assign_objective_requisite(self, objective_id, requisite_objective_id):
         """Creates a requirement dependency between two ``Objectives``.
@@ -4420,7 +4420,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_objective_requisite(self, objective_id, requisite_objective_id):
         """Removes an ``Objective`` requisite from an ``Objective``.
@@ -4435,7 +4435,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def assign_equivalent_objective(self, objective_id, equivalent_objective_id):
         """Makes an objective equivalent to another objective for the purposes of satisfying a requisite.
@@ -4451,7 +4451,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_equivalent_objective(self, objective_id, equivalent_objective_id):
         """Removes an ``Objective`` requisite from an ``Objective``.
@@ -4466,7 +4466,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4484,7 +4484,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_activity_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -4494,7 +4494,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_activity_view(self):
         """A complete view of the ``Activity`` returns is desired.
@@ -4505,7 +4505,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_activity(self, activity_id):
         """Gets the ``Activity`` specified by its ``Id``.
@@ -4525,7 +4525,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.Activity
 
     def get_activities_by_ids(self, activity_ids):
         """Gets an ``ActivityList`` corresponding to the given ``IdList``.
@@ -4547,7 +4547,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_by_genus_type(self, activity_genus_type):
         """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does not include activities of genus types derived from the specified ``Type``.
@@ -4564,7 +4564,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_by_parent_genus_type(self, activity_genus_type):
         """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include any additional activity with genus types derived from the specified ``Type``.
@@ -4581,7 +4581,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_by_record_type(self, activity_record_type):
         """Gets a ``ActivityList`` containing the given activity record ``Type``.
@@ -4598,7 +4598,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_for_objective(self, objective_id):
         """Gets the activities for the given objective.
@@ -4619,7 +4619,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_for_objectives(self, objective_ids):
         """Gets the activities for the given objectives.
@@ -4641,7 +4641,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_by_asset(self, asset_id):
         """Gets the activities for the given asset.
@@ -4662,7 +4662,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities_by_assets(self, asset_ids):
         """Gets the activities for the given asset.
@@ -4683,7 +4683,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activities(self):
         """Gets all ``Activities``.
@@ -4697,7 +4697,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     activities = property(fget=get_activities)
 
@@ -4717,7 +4717,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_activity_query(self):
         """Gets an activity query.
@@ -4726,7 +4726,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ActivityQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityQuery
 
     activity_query = property(fget=get_activity_query)
 
@@ -4743,7 +4743,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activity_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
 
 ##
@@ -4756,7 +4756,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ActivitySearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivitySearch
 
     activity_search = property(fget=get_activity_search)
 
@@ -4769,7 +4769,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ActivitySearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivitySearchOrder
 
     activity_search_order = property(fget=get_activity_search_order)
 
@@ -4788,7 +4788,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activitiesearch`` or ``activity_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivitySearchResults
 
     def get_activity_query_from_inspector(self, activity_query_inspector):
         """Gets an activity query from an inspector.
@@ -4802,7 +4802,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activity_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityQuery
 
 
 ##
@@ -4820,7 +4820,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_activity_with_record_types(self, activity_record_types):
         """Tests if this user can create a single ``Activity`` using the desired record types.
@@ -4837,7 +4837,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_activity_form_for_create(self, objective_id, activity_record_types):
         """Gets the activity form for creating new activities.
@@ -4856,7 +4856,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityForm
 
     def create_activity(self, activity_form):
         """Creates a new ``Activity``.
@@ -4873,7 +4873,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.Activity
 
     def can_update_activities(self):
         """Tests if this user can update ``Activities``.
@@ -4887,7 +4887,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_activity_form_for_update(self, activity_id):
         """Gets the activity form for updating an existing activity.
@@ -4904,7 +4904,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityForm
 
     def update_activity(self, activity_form):
         """Updates an existing activity,.
@@ -4919,7 +4919,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_activities(self):
         """Tests if this user can delete ``Activities``.
@@ -4933,7 +4933,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_activity(self, activity_id):
         """Deletes the ``Activity`` identified by the given ``Id``.
@@ -4946,7 +4946,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_activity_aliases(self):
         """Tests if this user can manage ``Id`` aliases for activities.
@@ -4960,7 +4960,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_activity(self, activity_id, alias_id):
         """Adds an ``Id`` to an ``Activity`` for the purpose of creating compatibility.
@@ -4980,7 +4980,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -4998,7 +4998,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_activity_notifications(self):
         """Reliable notifications are desired.
@@ -5008,7 +5008,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_activity_notifications(self):
         """Unreliable notifications are desired.
@@ -5018,7 +5018,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_activity_notification(self, notification_id):
         """Acknowledge an activity notification.
@@ -5029,7 +5029,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_activities(self):
         """Register for notifications of new activities.
@@ -5040,7 +5040,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_activities_for_objective(self, objective_id):
         """Register for notifications of new activities for the given objective.
@@ -5054,7 +5054,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_activities(self):
         """Registers for notification of updated activities.
@@ -5065,7 +5065,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_activities_for_objective(self, objective_id):
         """Registers for notification of updated activities.
@@ -5079,7 +5079,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_activity(self, activity_id):
         """Registers for notification of an updated activity.
@@ -5093,7 +5093,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_activities(self):
         """Registers for notification of deleted activities.
@@ -5104,7 +5104,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_activities_for_objective(self, objective_id):
         """Registers for notification of deleted activities.
@@ -5118,7 +5118,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_activity(self, activity_id):
         """Registers for notification of a deleted activity.
@@ -5132,7 +5132,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5150,7 +5150,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_activity_ids_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Activity``  ``Ids`` associated with an ``ObjectiveBank``.
@@ -5165,7 +5165,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_activities_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Activities`` associated with an ``ObjectiveBank``.
@@ -5180,7 +5180,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_activity_ids_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Activity Ids`` corresponding to a list of ``ObjectiveBanks``.
@@ -5194,7 +5194,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_activities_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Activities`` corresponding to a list of ``ObjectiveBanks``.
@@ -5208,7 +5208,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityList
 
     def get_objective_bank_ids_by_activity(self, activity_id):
         """Gets the list of ``ObjectiveBank Ids`` mapped to a ``Activity``.
@@ -5223,7 +5223,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_objective_banks_by_activity(self, activity_id):
         """Gets the list of ``ObjectiveBanks`` mapped to a ``Activity``.
@@ -5238,7 +5238,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
 
 ##
@@ -5256,7 +5256,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_activities_to_objective_bank(self, objective_bank_id):
         """Tests if this user can alter activity/objective bank mappings.
@@ -5273,7 +5273,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
         """Gets a list of objective banks including and under the given objective bank node in which a specific activity can be assigned.
@@ -5288,7 +5288,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_activity_to_objective_bank(self, activity_id, objective_bank_id):
         """Adds an existing ``Activity`` to a ``ObjectiveBank``.
@@ -5304,7 +5304,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_activity_from_objective_bank(self, activity_id, objective_bank_id):
         """Removes a ``Activity`` from a ``ObjectiveBank``.
@@ -5319,7 +5319,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
@@ -5337,7 +5337,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5354,7 +5354,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activity_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_activity_query(self):
         """Gets an activity query inspector for this objective bank.
@@ -5365,7 +5365,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ActivityQueryInspector
 
     def apply_activity_sequencing(self, activity_search_order):
         """Applies an activity search order to this objective bank.
@@ -5378,7 +5378,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``activity_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -5396,7 +5396,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_proficiency_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -5406,7 +5406,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_proficiency_view(self):
         """A complete view of the ``Proficiency`` returns is desired.
@@ -5417,15 +5417,15 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_effective_proficiency_view(self):
         """Only proficiencies whose effective dates are current are returned by methods in this session."""
-        raise UNIMPLEMENTED()
+        pass
 
     def use_any_effective_proficiency_view(self):
         """All proficienies of any effective dates are returned by methods in this session."""
-        raise UNIMPLEMENTED()
+        pass
 
     def get_proficiency(self, proficiency_id):
         """Gets the ``Proficiency`` specified by its ``Id``.
@@ -5440,7 +5440,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.Proficiency
 
     def get_proficiencies_by_ids(self, proficiency_ids):
         """Gets a ``ProficiencyList`` corresponding to the given ``IdList``.
@@ -5455,7 +5455,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Gets a ``ProficiencyList`` corresponding to the given proficiency genus ``Type`` which does not include proficiencies of types derived from the specified ``Type``.
@@ -5469,7 +5469,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_parent_genus_type(self, proficiency_genus_type):
         """Gets a ``ProficiencyList`` corresponding to the given proficiency genus ``Type`` and include any additional proficiencies with genus types derived from the specified ``Type``.
@@ -5483,7 +5483,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_record_type(self, proficiency_record_type):
         """Gets a ``ProficiencyList`` containing the given proficiency record ``Type``.
@@ -5497,7 +5497,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_on_date(self, from_, to):
         """Gets a ``ProficiencyList`` effecyive during the entire given date range inclusive but not confined to the date range.
@@ -5514,7 +5514,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_on_date(self, proficiency_genus_type, from_, to):
         """Gets a ``ProficiencyList`` of the given proficiency genus type effective during the entire given date range inclusive but not confined to the date range.
@@ -5533,7 +5533,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_objective(self, objective_id):
         """Gets a ``ProficiencyList`` relating to the given objective.
@@ -5547,7 +5547,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_objective_on_date(self, objective_id, from_, to):
         """Gets a ``ProficiencyList`` relating to the given objective effective during the entire given date range inclusive but not confined to the date range.
@@ -5566,7 +5566,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_for_objective(self, objective_id, proficiency_genus_type):
         """Gets a ``ProficiencyList`` relating to the given objective and proficiency genus ``Type``.
@@ -5582,7 +5582,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_for_objective_on_date(self, objective_id, proficiency_genus_type, from_, to):
         """Gets a ``ProficiencyList`` of the given proficiency genus type relating to the given objective effective during the entire given date range inclusive but not confined to the date range.
@@ -5603,7 +5603,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_objectives(self, objective_ids):
         """Gets a ``ProficiencyList`` relating to the given objectives.
@@ -5617,7 +5617,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_resource(self, resource_id):
         """Gets a ``ProficiencyList`` relating to the given resource.
@@ -5631,7 +5631,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_resource_on_date(self, resource_id, from_, to):
         """Gets a ``ProficiencyList`` relating to the given resource effective during the entire given date range inclusive but not confined to the date range.
@@ -5650,7 +5650,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_for_resource(self, resource_id, proficiency_genus_type):
         """Gets a ``ProficiencyList`` relating to the given resource and proficiency genus ``Type``.
@@ -5666,7 +5666,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_for_resource_on_date(self, resource_id, proficiency_genus_type, from_, to):
         """Gets a ``ProficiencyList`` of the given proficiency genus type relating to the given resource effective during the entire given date range inclusive but not confined to the date range.
@@ -5687,7 +5687,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_resources(self, resource_ids):
         """Gets a ``ProficiencyList`` relating to the given resources.
@@ -5701,7 +5701,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_objective_and_resource(self, objective_id, resource_id):
         """Gets a ``ProficiencyList`` relating to the given objective and resource ````.
@@ -5717,7 +5717,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_for_objective_and_resource_on_date(self, objective_id, resource_id, from_, to):
         """Gets a ``ProficiencyList`` relating to the given resource and objective effective during the entire given date range inclusive but not confined to the date range.
@@ -5738,7 +5738,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_for_objective_and_resource(self, objective_id, resource_id, proficiency_genus_type):
         """Gets a ``ProficiencyList`` of the given genus type relating to the given objective and resource ````.
@@ -5756,7 +5756,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies_by_genus_type_for_objective_and_resource_on_date(self, objective_id, resource_id, proficiency_genus_type, from_, to):
         """Gets a ``ProficiencyList`` of the given genus type relating to the given resource and objective effective during the entire given date range inclusive but not confined to the date range.
@@ -5779,7 +5779,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiencies(self):
         """Gets all ``Proficiencies``.
@@ -5790,7 +5790,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     proficiencies = property(fget=get_proficiencies)
 
@@ -5810,7 +5810,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_proficiency_query(self):
         """Gets a proficiency query.
@@ -5819,7 +5819,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ProficiencyQuery``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyQuery
 
     proficiency_query = property(fget=get_proficiency_query)
 
@@ -5836,7 +5836,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_query`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
 
 ##
@@ -5849,7 +5849,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ProficiencySearch``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencySearch
 
     proficiency_search = property(fget=get_proficiency_search)
 
@@ -5862,7 +5862,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``osid.learning.ProficiencySearchOrder``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencySearchOrder
 
     proficiency_search_order = property(fget=get_proficiency_search_order)
 
@@ -5881,7 +5881,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_query`` or ``proficiency_search`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencySearchResults
 
     def get_proficiency_query_from_inspector(self, proficiency_query_inspector):
         """Gets a proficiency query from an inspector.
@@ -5895,7 +5895,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_query_inspector`` is not of this service
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyQuery
 
 
 ##
@@ -5913,7 +5913,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_create_proficiency_with_record_types(self, proficiency_record_types):
         """Tests if this user can create a single ``Proficiency`` using the desired record types.
@@ -5930,7 +5930,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``proficiency_record_types`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_proficiency_form_for_create(self, objective_id, resource_id, proficiency_record_types):
         """Gets the proficiency form for creating new proficiencies.
@@ -5951,7 +5951,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- unable to get form for requested record types
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyForm
 
     def create_proficiency(self, proficiency_form):
         """Creates a new ``Proficiency``.
@@ -5969,7 +5969,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_form`` did not originate from ``get_proficiency_form_for_create()``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.Proficiency
 
     def can_update_proficiencies(self):
         """Tests if this user can update ``Proficiencies``.
@@ -5983,7 +5983,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_proficiency_form_for_update(self, proficiency_id):
         """Gets the proficiency form for updating an existing proficiency.
@@ -5998,7 +5998,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyForm
 
     def update_proficiency(self, proficiency_form):
         """Updates an existing proficiency.
@@ -6013,7 +6013,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_form`` did not originate from ``get_proficiency_form_for_update()``
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_delete_proficiencies(self):
         """Tests if this user can delete ``Proficiencies``.
@@ -6027,7 +6027,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def delete_proficiency(self, proficiency_id):
         """Deletes a ``Proficiency``.
@@ -6040,7 +6040,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def delete_proficiencies(self):
         """Deletes all proficiencies in this ``ObjectiveBank``.
@@ -6049,7 +6049,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def can_manage_proficiency_aliases(self):
         """Tests if this user can manage ``Id`` aliases for proficiency entries.
@@ -6063,7 +6063,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def alias_proficiency(self, proficiency_id, alias_id):
         """Adds an ``Id`` to a ``Proficiency`` for the purpose of creating compatibility.
@@ -6083,7 +6083,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6101,7 +6101,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def reliable_proficiency_notifications(self):
         """Reliable notifications are desired.
@@ -6111,7 +6111,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unreliable_proficiency_notifications(self):
         """Unreliable notifications are desired.
@@ -6121,7 +6121,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def acknowledge_proficiency_notification(self, notification_id):
         """Acknowledge a proficiency notification.
@@ -6132,7 +6132,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_proficiencies(self):
         """Register for notifications of new proficiencies.
@@ -6143,7 +6143,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Register for notifications of new proficiencies with the given genus type.
@@ -6158,7 +6158,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_proficiencies_for_objective(self, objective_id):
         """Register for notifications of new proficiencies.
@@ -6173,7 +6173,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_new_proficiencies_for_resource(self, resource_id):
         """Register for notifications of new proficiencies.
@@ -6188,7 +6188,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_proficiencies(self):
         """Registers for notification of updated proficiencies.
@@ -6199,7 +6199,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Registers for notification of updated proficiencies of the given genus type.
@@ -6213,7 +6213,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_proficiencies_for_objective(self, objective_id):
         """Registers for notification of an updated proficiency.
@@ -6228,7 +6228,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_proficiencies_for_resource(self, resource_id):
         """Registers for notification of an updated proficiency.
@@ -6243,7 +6243,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_changed_proficiency(self, proficiency_id):
         """Registers for notification of an updated proficiency.
@@ -6257,7 +6257,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_proficiencies(self):
         """Registers for notification of deleted proficiencies.
@@ -6268,7 +6268,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Registers for notification of deleted proficiencies of the given genus type.
@@ -6282,7 +6282,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_proficiencies_for_objective(self, objective_id):
         """Registers for notification of a deleted proficiency.
@@ -6297,7 +6297,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_proficiencies_for_resource(self, resource_id):
         """Registers for notification of a deleted proficiency.
@@ -6312,7 +6312,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def register_for_deleted_proficiency(self, proficiency_id):
         """Registers for notification of a deleted proficiency.
@@ -6327,7 +6327,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6345,7 +6345,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def use_comparative_proficiency_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
@@ -6355,7 +6355,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def use_plenary_proficiency_objective_bank_view(self):
         """A complete view of the ``Proficiency`` and ``ObjectiveBank`` returns is desired.
@@ -6366,7 +6366,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def get_proficiency_ids_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Proficiency Ids`` associated with a ``ObjectiveBank``.
@@ -6381,7 +6381,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_proficiencies_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Proficiencies`` associated with a ``ObjectiveBank``.
@@ -6396,7 +6396,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_proficiency_ids_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Proficiency Ids`` corresponding to a list of ``ObjectiveBanks``.
@@ -6410,7 +6410,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_proficiencies_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Proficiencies`` corresponding to a list of ``ObjectiveBanks``.
@@ -6424,7 +6424,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyList
 
     def get_objective_bank_ids_by_proficiency(self, proficiency_id):
         """Gets the ``ObjectiveBank``  ``Ids`` mapped to a ``Proficiency``.
@@ -6439,7 +6439,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def get_objective_banks_by_proficiency(self, proficiency_id):
         """Gets the ``ObjectiveBanks`` mapped to a ``Proficiency``.
@@ -6454,7 +6454,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBankList
 
 
 ##
@@ -6472,7 +6472,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def can_assign_proficiencies_to_objective_bank(self, objective_bank_id):
         """Tests if this user can alter proficiency/objective bank mappings.
@@ -6489,7 +6489,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def get_assignable_objective_bank_ids_for_proficiency(self, objective_bank_id, proficiency_id):
         """Gets a list of objective banks including and under the given objective bank proficiency in which a specific proficiency can be assigned.
@@ -6504,7 +6504,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.id.IdList
 
     def assign_proficiency_to_objective_bank(self, proficiency_id, objective_bank_id):
         """Adds an existing ``Proficiency`` to a ``ObjectiveBank``.
@@ -6520,7 +6520,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def unassign_proficiency_from_objective_bank(self, proficiency_id, objective_bank_id):
         """Removes a ``Proficiency`` from a ``ObjectiveBank``.
@@ -6535,7 +6535,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6552,7 +6552,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_query`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
     def inspect_proficiency_query(self):
         """Gets a proficiency query inspector for this objective bank.
@@ -6563,7 +6563,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ProficiencyQueryInspector
 
     def apply_proficiency_sequencing(self, proficiency_search_order):
         """Applies a proficiency search order to this objective bank.
@@ -6576,7 +6576,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``Unsupported`` -- ``proficiency_search_order`` not of this service
 
         """
-        raise UNIMPLEMENTED()
+        pass
 
 
 ##
@@ -6594,7 +6594,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :rtype: ``boolean``
 
         """
-        raise UNIMPLEMENTED()
+        return # boolean
 
     def find_path(self, objective_id):
         """Gets the shortest path to an objective.
@@ -6611,7 +6611,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def find_path_at_proficiency(self, objective_id, grade_id):
         """Gets the shortest path to an objective.
@@ -6630,7 +6630,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objectives_by_completion(self, objective_id, completion):
         """Gets the list of objectives for there is a minimum completion.
@@ -6647,7 +6647,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
 
 ##
@@ -6670,7 +6670,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def find_path_for_resource_at_proficiency(self, objective_id, resource_id, grade_id):
         """Gets the shortest path to an objective.
@@ -6691,7 +6691,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
     def get_objectives_for_resource_by_completion(self, objective_id, resource_id, completion):
         """Gets the list of objectives for a resource that have a minimum completion.
@@ -6710,7 +6710,7 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveList
 
 
 
@@ -6725,7 +6725,7 @@ class ObjectiveBankList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
     next_objective_bank = property(fget=get_next_objective_bank)
 
@@ -6740,7 +6740,7 @@ class ObjectiveBankList(osid_objects.OsidList):
         :raise: ``OperationFailed`` -- unable to complete request
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.learning.ObjectiveBank
 
 
 

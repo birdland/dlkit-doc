@@ -116,7 +116,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     authentication_record_types = property(fget=get_authentication_record_types)
 
@@ -127,7 +127,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     authentication_input_record_types = property(fget=get_authentication_input_record_types)
 
@@ -138,7 +138,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     challenge_record_types = property(fget=get_challenge_record_types)
 
@@ -149,7 +149,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     credential_types = property(fget=get_credential_types)
 
@@ -160,7 +160,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
 
         """
-        raise UNIMPLEMENTED()
+        return # osid.type.TypeList
 
     trust_types = property(fget=get_trust_types)
 
