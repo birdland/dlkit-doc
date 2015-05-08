@@ -3,18 +3,6 @@ from ..osid import managers as osid_managers
 
 class HierarchyProfile(osid_managers.OsidProfile):
     """The hierarchy profile describes the interoperability among hierarchy services."""
-    def supports_visible_federation(self):
-        """Tests if federation is visible.
-
-        Visible federation allows for selecting among multiple
-        hierarchies.
-
-        :return: ``true`` if visible federation is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def supports_hierarchy_traversal(self):
         """Tests if hierarchy traversal is supported.
 
@@ -33,24 +21,6 @@ class HierarchyProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_hierarchy_sequencing(self):
-        """Tests if hierarchy sequencing is supported.
-
-        :return: ``true`` if hierarchy sequencing is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_hierarchy_structure_notification(self):
-        """Tests if hierarchy structure notification is supported.
-
-        :return: ``true`` if hierarchy structure notification is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def supports_hierarchy_lookup(self):
         """Tests if a hierarchy lookup is supported.
 
@@ -60,40 +30,10 @@ class HierarchyProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_hierarchy_query(self):
-        """Tests if a hierarchy query is supported.
-
-        :return: ``true`` if hierarchy query is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_hierarchy_search(self):
-        """Tests if a hierarchy search is supported.
-
-        :return: ``true`` if hierarchy search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def supports_hierarchy_admin(self):
         """Tests if a hierarchy administration is supported.
 
         :return: ``true`` if hierarchy administration is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_hierarchy_notification(self):
-        """Tests if hierarchy notification is supported.
-
-        Messages may be sent when hierarchies are created, modified, or
-        deleted.
-
-        :return: ``true`` if hierarchy notification is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -110,18 +50,6 @@ class HierarchyProfile(osid_managers.OsidProfile):
 
     hierarchy_record_types = property(fget=get_hierarchy_record_types)
 
-    def supports_hierarchy_record_type(self, hierarchy_record_type):
-        """Tests if the given ``Hierarchy`` record type is supported.
-
-        :param hierarchy_record_type: a ``Type`` indicating a ``Hierarchy`` record type
-        :type hierarchy_record_type: ``osid.type.Type``
-        :return: ``true`` if the given record Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``hierarchy_record_type`` is ``null``
-
-        """
-        return # boolean
-
     def get_hierarchy_search_record_types(self):
         """Gets the supported ``Hierarchy`` search record types.
 
@@ -132,18 +60,6 @@ class HierarchyProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     hierarchy_search_record_types = property(fget=get_hierarchy_search_record_types)
-
-    def supports_hierarchy_search_record_type(self, hierarchy_search_record_type):
-        """Tests if the given ``Hierarchy`` search record type is supported.
-
-        :param hierarchy_search_record_type: a ``Type`` indicating a ``Hierarchy`` search record type
-        :type hierarchy_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``hierarchy_search_record_type`` is ``null``
-
-        """
-        return # boolean
 
 
 class HierarchyManager(osid_managers.OsidManager, HierarchyProfile):
@@ -225,65 +141,6 @@ class HierarchyManager(osid_managers.OsidManager, HierarchyProfile):
         """
         return # osid.hierarchy.HierarchyDesignSession
 
-    def get_hierarchy_sequencing_session(self):
-        """Gets the ``OsidSession`` associated with the hierarchy sequencing service.
-
-        :return: a ``HierarchySequencingSession``
-        :rtype: ``osid.hierarchy.HierarchySequencingSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchySequencingSession
-
-    hierarchy_sequencing_session = property(fget=get_hierarchy_sequencing_session)
-
-    def get_hierarchy_sequencing_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the sequencing design service using for the given hierarchy.
-
-        :param hierarchy_id: the ``Id`` of the graph
-        :type hierarchy_id: ``osid.id.Id``
-        :return: a ``HierarchySequencingSession``
-        :rtype: ``osid.hierarchy.HierarchySequencingSession``
-        :raise: ``NotFound`` -- ``hierarchy_id`` is not found
-        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchySequencingSession
-
-    def get_hierarchy_structure_notification_session(self, hierarchy_structure_receiver):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure.
-
-        :param hierarchy_structure_receiver: a receiver
-        :type hierarchy_structure_receiver: ``osid.hierarchy.HierarchyStructureReceiver``
-        :return: a ``HierarchyStructureNotificationSession``
-        :rtype: ``osid.hierarchy.HierarchyStructureNotificationSession``
-        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_structure_notification()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyStructureNotificationSession
-
-    def get_hierarchy_structure_notification_session_for_hierarchy(self, hierarchy_structure_receiver, hierarchy_id):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure for the given hierarchy.
-
-        :param hierarchy_structure_receiver: a receiver
-        :type hierarchy_structure_receiver: ``osid.hierarchy.HierarchyStructureReceiver``
-        :param hierarchy_id: the ``Id`` of the graph
-        :type hierarchy_id: ``osid.id.Id``
-        :return: a ``HierarchyStructureNotificationSession``
-        :rtype: ``osid.hierarchy.HierarchyStructureNotificationSession``
-        :raise: ``NotFound`` -- ``hierarchy_id`` is not found
-        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver`` or ``hierarchy_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_structure_notification()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyStructureNotificationSession
-
     def get_hierarchy_lookup_session(self):
         """Gets the ``OsidSession`` associated with the hierarchy lookup service.
 
@@ -297,32 +154,6 @@ class HierarchyManager(osid_managers.OsidManager, HierarchyProfile):
 
     hierarchy_lookup_session = property(fget=get_hierarchy_lookup_session)
 
-    def get_hierarchy_query_session(self):
-        """Gets the ``OsidSession`` associated with the hierarchy query service.
-
-        :return: a ``HierarchyQuerySession``
-        :rtype: ``osid.hierarchy.HierarchyQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_query()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyQuerySession
-
-    hierarchy_query_session = property(fget=get_hierarchy_query_session)
-
-    def get_hierarchy_search_session(self):
-        """Gets the ``OsidSession`` associated with the hierarchy search service.
-
-        :return: a ``HierarchySearchSession``
-        :rtype: ``osid.hierarchy.HierarchySearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_search()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchySearchSession
-
-    hierarchy_search_session = property(fget=get_hierarchy_search_session)
-
     def get_hierarchy_admin_session(self):
         """Gets the hierarchy administrative session.
 
@@ -335,20 +166,6 @@ class HierarchyManager(osid_managers.OsidManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyAdminSession
 
     hierarchy_admin_session = property(fget=get_hierarchy_admin_session)
-
-    def get_hierarchy_notification_session(self, hierarchy_receiver):
-        """Gets a hierarchy notification session.
-
-        :param hierarchy_receiver: notification callback
-        :type hierarchy_receiver: ``osid.hierarchy.HierarchyReceiver``
-        :return: a ``HierarchyNotificationSession``
-        :rtype: ``osid.hierarchy.HierarchyNotificationSession``
-        :raise: ``NullArgument`` -- ``hierarchy_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_notification()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyNotificationSession
 
 
 class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
@@ -437,72 +254,6 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         """
         return # osid.hierarchy.HierarchyDesignSession
 
-    def get_hierarchy_sequencing_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the hierarchy sequencing service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchySequencingSession``
-        :rtype: ``osid.hierarchy.HierarchySequencingSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchySequencingSession
-
-    def get_hierarchy_sequencing_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the sequencing design service using for the given hierarchy.
-
-        :param hierarchy_id: the ``Id`` of the graph
-        :type hierarchy_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchySequencingSession``
-        :rtype: ``osid.hierarchy.HierarchySequencingSession``
-        :raise: ``NotFound`` -- ``hierarchy_id`` is not found
-        :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchySequencingSession
-
-    def get_hierarchy_structure_notification_session(self, hierarchy_structure_receiver, proxy):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure.
-
-        :param hierarchy_structure_receiver: a receiver
-        :type hierarchy_structure_receiver: ``osid.hierarchy.HierarchyStructureReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchyStructureNotificationSession``
-        :rtype: ``osid.hierarchy.HierarchyStructureNotificationSession``
-        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_structure_notification()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyStructureNotificationSession
-
-    def get_hierarchy_structure_notification_session_for_hierarchy(self, hierarchy_structure_receiver, hierarchy_id, proxy):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure for the given hierarchy.
-
-        :param hierarchy_structure_receiver: a receiver
-        :type hierarchy_structure_receiver: ``osid.hierarchy.HierarchyStructureReceiver``
-        :param hierarchy_id: the ``Id`` of the hierarchy
-        :type hierarchy_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchyStructureNotificationSession``
-        :rtype: ``osid.hierarchy.HierarchyStructureNotificationSession``
-        :raise: ``NotFound`` -- ``hierarchy_id`` is not found
-        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver, hierarchy_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_structure_notification()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyStructureNotificationSession
-
     def get_hierarchy_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the hierarchy lookup service.
 
@@ -517,34 +268,6 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         """
         return # osid.hierarchy.HierarchyLookupSession
 
-    def get_hierarchy_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the hierarchy query service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchyQuerySession``
-        :rtype: ``osid.hierarchy.HierarchyQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_query()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyQuerySession
-
-    def get_hierarchy_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the hierarchy search service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchySearchSession``
-        :rtype: ``osid.hierarchy.HierarchySearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_search()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchySearchSession
-
     def get_hierarchy_admin_session(self, proxy):
         """Gets the hierarchy administrative session.
 
@@ -558,21 +281,5 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 
         """
         return # osid.hierarchy.HierarchyAdminSession
-
-    def get_hierarchy_notification_session(self, hierarchy_receiver, proxy):
-        """Gets the hierarchy notification session.
-
-        :param hierarchy_receiver: notification callback
-        :type hierarchy_receiver: ``osid.hierarchy.HierarchyReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``HierarchyNotificationSession``
-        :rtype: ``osid.hierarchy.HierarchyNotificationSession``
-        :raise: ``NullArgument`` -- ``hierarchy_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_notification()`` is ``false``
-
-        """
-        return # osid.hierarchy.HierarchyNotificationSession
 
 

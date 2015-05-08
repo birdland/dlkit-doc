@@ -23,18 +23,6 @@ class ProxyProfile(osid_managers.OsidProfile):
 
     proxy_record_types = property(fget=get_proxy_record_types)
 
-    def supports_proxy_record_type(self, proxy_record_type):
-        """Tests if the given ``Proxy`` record interface type is supported.
-
-        :param proxy_record_type: a ``Type`` indicating a ``Proxy`` record type
-        :type proxy_record_type: ``osid.type.Type``
-        :return: ``true`` if the given type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``proxy_record_type`` is ``null``
-
-        """
-        return # boolean
-
     def get_proxy_condition_record_types(self):
         """Gets the supported ``ProxyCondition`` record interface types.
 
@@ -45,18 +33,6 @@ class ProxyProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     proxy_condition_record_types = property(fget=get_proxy_condition_record_types)
-
-    def supports_proxy_condition_record_type(self, proxy_condition_record_type):
-        """Tests if the given ``ProxyCondition`` record interface type is supported.
-
-        :param proxy_condition_record_type: a ``Type`` indicating a ``ProxyCondition`` record type
-        :type proxy_condition_record_type: ``osid.type.Type``
-        :return: ``true`` if the given type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``proxy_condition_record_type`` is ``null``
-
-        """
-        return # boolean
 
 
 class ProxyManager(osid_managers.OsidManager, ProxyProfile):

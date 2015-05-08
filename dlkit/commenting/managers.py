@@ -3,33 +3,10 @@ from ..osid import managers as osid_managers
 
 class CommentingProfile(osid_managers.OsidProfile):
     """The commenting profile describes the interoperability among commenting services."""
-    def supports_visible_federation(self):
-        """Tests if any book federation is exposed.
-
-        Federation is exposed when a specific book may be identified,
-        selected and used to create a lookup or admin session.
-        Federation is not exposed when a set of books appears as a
-        single book.
-
-        :return: ``true`` if visible federation is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def supports_comment_lookup(self):
         """Tests for the availability of a comment lookup service.
 
         :return: ``true`` if comment lookup is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_rating_lookup(self):
-        """Tests for the availability of a rating lookup service.
-
-        :return: ``true`` if rating lookup is available, ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -44,55 +21,10 @@ class CommentingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_comment_search(self):
-        """Tests if searching for comments is available.
-
-        :return: ``true`` if comment search is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def supports_comment_admin(self):
         """Tests if managing comments is available.
 
         :return: ``true`` if comment admin is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_comment_notification(self):
-        """Tests if comment notification is available.
-
-        :return: ``true`` if comment notification is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_comment_book(self):
-        """Tests if a comment to book lookup session is available.
-
-        :return: ``true`` if comment book lookup session is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_comment_book_assignment(self):
-        """Tests if a comment to book assignment session is available.
-
-        :return: ``true`` if comment book assignment is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_comment_smart_book(self):
-        """Tests if a comment smart booking session is available.
-
-        :return: ``true`` if comment smart booking is supported, ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -107,37 +39,10 @@ class CommentingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_book_query(self):
-        """Tests if querying books is available.
-
-        :return: ``true`` if book query is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_book_search(self):
-        """Tests if searching for books is available.
-
-        :return: ``true`` if book search is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def supports_book_admin(self):
         """Tests for the availability of a book administrative service for creating and deleting books.
 
         :return: ``true`` if book administration is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def supports_book_notification(self):
-        """Tests for the availability of a book notification service.
-
-        :return: ``true`` if book notification is available, ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -161,15 +66,6 @@ class CommentingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_commenting_batch(self):
-        """Tests for the availability of a commenting batch service.
-
-        :return: ``true`` if commenting batch service is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
     def get_comment_record_types(self):
         """Gets the supported ``Comment`` record types.
 
@@ -180,18 +76,6 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     comment_record_types = property(fget=get_comment_record_types)
-
-    def supports_comment_record_type(self, comment_record_type):
-        """Tests if the given ``Comment`` record type is supported.
-
-        :param comment_record_type: a ``Type`` indicating a ``Comment`` record type
-        :type comment_record_type: ``osid.type.Type``
-        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``comment_record_type`` is ``null``
-
-        """
-        return # boolean
 
     def get_comment_search_record_types(self):
         """Gets the supported comment search record types.
@@ -204,18 +88,6 @@ class CommentingProfile(osid_managers.OsidProfile):
 
     comment_search_record_types = property(fget=get_comment_search_record_types)
 
-    def supports_comment_search_record_type(self, comment_search_record_type):
-        """Tests if the given comment search record type is supported.
-
-        :param comment_search_record_type: a ``Type`` indicating a comment record type
-        :type comment_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``comment_search_record_type`` is ``null``
-
-        """
-        return # boolean
-
     def get_book_record_types(self):
         """Gets the supported ``Book`` record types.
 
@@ -227,18 +99,6 @@ class CommentingProfile(osid_managers.OsidProfile):
 
     book_record_types = property(fget=get_book_record_types)
 
-    def supports_book_record_type(self, book_record_type):
-        """Tests if the given ``Book`` record type is supported.
-
-        :param book_record_type: a ``Type`` indicating a ``Book`` record type
-        :type book_record_type: ``osid.type.Type``
-        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
-
-        """
-        return # boolean
-
     def get_book_search_record_types(self):
         """Gets the supported book search record types.
 
@@ -249,18 +109,6 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     book_search_record_types = property(fget=get_book_search_record_types)
-
-    def supports_book_search_record_type(self, book_search_record_type):
-        """Tests if the given book search record type is supported.
-
-        :param book_search_record_type: a ``Type`` indicating a book record type
-        :type book_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``book_search_record_type`` is ``null``
-
-        """
-        return # boolean
 
 
 class CommentingManager(osid_managers.OsidManager, CommentingProfile):
@@ -326,34 +174,6 @@ class CommentingManager(osid_managers.OsidManager, CommentingProfile):
         """
         return # osid.commenting.CommentLookupSession
 
-    def get_rating_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the rating lookup service.
-
-        :return: a ``RatingLookupSession``
-        :rtype: ``osid.commenting.RatingLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` is ``false``
-
-        """
-        return # osid.commenting.RatingLookupSession
-
-    rating_lookup_session = property(fget=get_rating_lookup_session)
-
-    def get_rating_lookup_session_for_book(self, book_id):
-        """Gets the ``OsidSession`` associated with the rating lookup service for the given book.
-
-        :param book_id: the ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :return: a ``RatingLookupSession``
-        :rtype: ``osid.commenting.RatingLookupSession``
-        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
-        :raise: ``NullArgument`` -- ``book_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.commenting.RatingLookupSession
-
     def get_comment_query_session(self):
         """Gets the ``OsidSession`` associated with the comment query service.
 
@@ -381,34 +201,6 @@ class CommentingManager(osid_managers.OsidManager, CommentingProfile):
 
         """
         return # osid.commenting.CommentQuerySession
-
-    def get_comment_search_session(self):
-        """Gets the ``OsidSession`` associated with the comment search service.
-
-        :return: a ``CommentSearchSession``
-        :rtype: ``osid.commenting.CommentSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` is ``false``
-
-        """
-        return # osid.commenting.CommentSearchSession
-
-    comment_search_session = property(fget=get_comment_search_session)
-
-    def get_comment_search_session_for_book(self, book_id):
-        """Gets the ``OsidSession`` associated with the comment search service for the given book.
-
-        :param book_id: the ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :return: a ``CommentSearchSession``
-        :rtype: ``osid.commenting.CommentSearchSession``
-        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
-        :raise: ``NullArgument`` -- ``book_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.commenting.CommentSearchSession
 
     def get_comment_admin_session(self):
         """Gets the ``OsidSession`` associated with the comment administration service.
@@ -438,78 +230,6 @@ class CommentingManager(osid_managers.OsidManager, CommentingProfile):
         """
         return # osid.commenting.CommentAdminSession
 
-    def get_comment_notification_session(self, comment_receiver):
-        """Gets the ``OsidSession`` associated with the comment notification service.
-
-        :param comment_receiver: the receiver
-        :type comment_receiver: ``osid.commenting.CommentReceiver``
-        :return: a ``CommentNotificationSession``
-        :rtype: ``osid.commenting.CommentNotificationSession``
-        :raise: ``NullArgument`` -- ``comment_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` is ``false``
-
-        """
-        return # osid.commenting.CommentNotificationSession
-
-    def get_comment_notification_session_for_book(self, comment_receiver, book_id):
-        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
-
-        :param comment_receiver: the receiver
-        :type comment_receiver: ``osid.commenting.CommentReceiver``
-        :param book_id: the ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :return: a ``CommentNotificationSession``
-        :rtype: ``osid.commenting.CommentNotificationSession``
-        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
-        :raise: ``NullArgument`` -- ``comment_receiver`` or ``book_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.commenting.CommentNotificationSession
-
-    def get_comment_book_session(self):
-        """Gets the session for retrieving comment to book mappings.
-
-        :return: a ``CommentBookSession``
-        :rtype: ``osid.commenting.CommentBookSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_book()`` is ``false``
-
-        """
-        return # osid.commenting.CommentBookSession
-
-    comment_book_session = property(fget=get_comment_book_session)
-
-    def get_comment_book_assignment_session(self):
-        """Gets the session for assigning comment to book mappings.
-
-        :return: a ``CommentBookAssignmentSession``
-        :rtype: ``osid.commenting.CommentBookAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_book_assignment()`` is ``false``
-
-        """
-        return # osid.commenting.CommentBookAssignmentSession
-
-    comment_book_assignment_session = property(fget=get_comment_book_assignment_session)
-
-    def get_comment_smart_book_session(self, book_id):
-        """Gets the session associated with the comment smart book for the given book.
-
-        :param book_id: the ``Id`` of the book
-        :type book_id: ``osid.id.Id``
-        :return: a ``CommentSmartBookSession``
-        :rtype: ``osid.commenting.CommentSmartBookSession``
-        :raise: ``NotFound`` -- ``book_id`` not found
-        :raise: ``NullArgument`` -- ``book_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_smart_book()`` is ``false``
-
-        """
-        return # osid.commenting.CommentSmartBookSession
-
     def get_book_lookup_session(self):
         """Gets the ``OsidSession`` associated with the book lookup service.
 
@@ -523,32 +243,6 @@ class CommentingManager(osid_managers.OsidManager, CommentingProfile):
 
     book_lookup_session = property(fget=get_book_lookup_session)
 
-    def get_book_query_session(self):
-        """Gets the ``OsidSession`` associated with the book query service.
-
-        :return: a ``BookQuerySession``
-        :rtype: ``osid.commenting.BookQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_book_query()`` is ``false``
-
-        """
-        return # osid.commenting.BookQuerySession
-
-    book_query_session = property(fget=get_book_query_session)
-
-    def get_book_search_session(self):
-        """Gets the ``OsidSession`` associated with the book search service.
-
-        :return: a ``BookSearchSession``
-        :rtype: ``osid.commenting.BookSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_book_search()`` is ``false``
-
-        """
-        return # osid.commenting.BookSearchSession
-
-    book_search_session = property(fget=get_book_search_session)
-
     def get_book_admin_session(self):
         """Gets the ``OsidSession`` associated with the book administrative service.
 
@@ -561,20 +255,6 @@ class CommentingManager(osid_managers.OsidManager, CommentingProfile):
         return # osid.commenting.BookAdminSession
 
     book_admin_session = property(fget=get_book_admin_session)
-
-    def get_book_notification_session(self, book_receiver):
-        """Gets the ``OsidSession`` associated with the book notification service.
-
-        :param book_receiver: the receiver
-        :type book_receiver: ``osid.commenting.BookReceiver``
-        :return: a ``BookNotificationSession``
-        :rtype: ``osid.commenting.BookNotificationSession``
-        :raise: ``NullArgument`` -- ``book_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_book_notification()`` is ``false``
-
-        """
-        return # osid.commenting.BookNotificationSession
 
     def get_book_hierarchy_session(self):
         """Gets the ``OsidSession`` associated with the book hierarchy service.
@@ -684,37 +364,6 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         """
         return # osid.commenting.CommentLookupSession
 
-    def get_rating_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the rating lookup service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RatingLookupSession``
-        :rtype: ``osid.commenting.RatingLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` is ``false``
-
-        """
-        return # osid.commenting.RatingLookupSession
-
-    def get_rating_lookup_session_for_book(self, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the rating lookup service for the given book.
-
-        :param book_id: the ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RatingLookupSession``
-        :rtype: ``osid.commenting.RatingLookupSession``
-        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
-        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.commenting.RatingLookupSession
-
     def get_comment_query_session(self, proxy):
         """Gets the ``OsidSession`` associated with the comment query service.
 
@@ -745,37 +394,6 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
         """
         return # osid.commenting.CommentQuerySession
-
-    def get_comment_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the comment search service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CommentSearchSession``
-        :rtype: ``osid.commenting.CommentSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` is ``false``
-
-        """
-        return # osid.commenting.CommentSearchSession
-
-    def get_comment_search_session_for_book(self, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the comment search service for the given book.
-
-        :param book_id: the ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CommentSearchSession``
-        :rtype: ``osid.commenting.CommentSearchSession``
-        :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
-        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.commenting.CommentSearchSession
 
     def get_comment_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the comment administration service.
@@ -808,86 +426,6 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         """
         return # osid.commenting.CommentAdminSession
 
-    def get_comment_notification_session(self, comment_receiver, proxy):
-        """Gets the ``OsidSession`` associated with the comment notification service.
-
-        :param comment_receiver: the receiver
-        :type comment_receiver: ``osid.commenting.CommentReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CommentNotificationSession``
-        :rtype: ``osid.commenting.CommentNotificationSession``
-        :raise: ``NullArgument`` -- ``comment_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` is ``false``
-
-        """
-        return # osid.commenting.CommentNotificationSession
-
-    def get_comment_notification_session_for_book(self, comment_receiver, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
-
-        :param comment_receiver: the receiver
-        :type comment_receiver: ``osid.commenting.CommentReceiver``
-        :param book_id: the ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CommentNotificationSession``
-        :rtype: ``osid.commenting.CommentNotificationSession``
-        :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
-        :raise: ``NullArgument`` -- ``comment_receiver, book_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is ``false``
-
-        """
-        return # osid.commenting.CommentNotificationSession
-
-    def get_comment_book_session(self, proxy):
-        """Gets the session for retrieving comment to book mappings.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CommentBookSession``
-        :rtype: ``osid.commenting.CommentBookSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_book()`` is ``false``
-
-        """
-        return # osid.commenting.CommentBookSession
-
-    def get_comment_book_assignment_session(self, proxy):
-        """Gets the session for assigning comment to book mappings.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CommentBookAssignmentSession``
-        :rtype: ``osid.commenting.CommentBookAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_book_assignment()`` is ``false``
-
-        """
-        return # osid.commenting.CommentBookAssignmentSession
-
-    def get_comment_smart_book_session(self, book_id, proxy):
-        """Gets the session for managing dynamic comment books for the given book.
-
-        :param book_id: the ``Id`` of a book
-        :type book_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``book_id`` not found
-        :rtype: ``osid.commenting.CommentSmartBookSession``
-        :raise: ``NotFound`` -- ``book_id`` or ``proxy`` is ``null``
-        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_smart_book()`` is ``false``
-
-        """
-        return # osid.commenting.CommentSmartBookSession
-
     def get_book_lookup_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book lookup service.
 
@@ -902,34 +440,6 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         """
         return # osid.commenting.BookLookupSession
 
-    def get_book_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the book query service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BookQuerySession``
-        :rtype: ``osid.commenting.BookQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_book_queryh()`` is ``false``
-
-        """
-        return # osid.commenting.BookQuerySession
-
-    def get_book_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the book search service.
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BookSearchSession``
-        :rtype: ``osid.commenting.BookSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_book_search()`` is ``false``
-
-        """
-        return # osid.commenting.BookSearchSession
-
     def get_book_admin_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book administrative service.
 
@@ -943,22 +453,6 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
         """
         return # osid.commenting.BookAdminSession
-
-    def get_book_notification_session(self, book_receiver, proxy):
-        """Gets the ``OsidSession`` associated with the book notification service.
-
-        :param book_receiver: the receiver
-        :type book_receiver: ``osid.commenting.BookReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BookNotificationSession``
-        :rtype: ``osid.commenting.BookNotificationSession``
-        :raise: ``NullArgument`` -- ``book_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_book_notification()`` is ``false``
-
-        """
-        return # osid.commenting.BookNotificationSession
 
     def get_book_hierarchy_session(self, proxy):
         """Gets the ``OsidSession`` associated with the book hierarchy service.
