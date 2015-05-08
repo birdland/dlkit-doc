@@ -50,7 +50,6 @@ bulk.
 
 """
 from ..osid import managers as osid_managers
-from .osid_errors import Unimplemented, IllegalState, OperationFailed
 from ..osid import sessions as osid_sessions
 
 

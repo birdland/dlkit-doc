@@ -113,7 +113,6 @@ compositions.
 
 """
 from ..osid import managers as osid_managers
-from .osid_errors import Unimplemented, IllegalState, OperationFailed
 from ..osid import sessions as osid_sessions
 from ..osid import objects as osid_objects
 
