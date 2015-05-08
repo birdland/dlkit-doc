@@ -854,7 +854,7 @@ class LocaleList(osid_objects.OsidList):
       while (ll.hasNext()) {
            Locale[] locales = ll.getNextLocales(ll.available());
       }
-    
+
 
 
     """

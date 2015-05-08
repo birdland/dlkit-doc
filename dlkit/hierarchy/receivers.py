@@ -3,64 +3,35 @@ from ..osid import receivers as osid_receivers
 
 class HierarchyStructureReceiver(osid_receivers.OsidReceiver):
     """The hierarchy receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted hierarchy nodes."""
-    def new_node(self, node_id):
+    def new_nodes(self, notification_id, node_ids):
         """The callback for notifications of new hierarchy nodes.
 
-        :param node_id: the ``Id`` of the new node
-        :type node_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param node_ids: the ``Ids`` of the new nodes
+        :type node_ids: ``osid.id.Id``
 
         """
         pass
 
-    def new_ancestor(self, node_id, ancestor_id):
-        """The callback for notification of a change to the node's ancestry.
-
-        :param node_id: the ``Id`` of the registered node
-        :type node_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_ancestor(self, node_id, ancestor_id):
-        """The callback for notification of a change to the node's ancestry.
-
-        :param node_id: the ``Id`` of the registered node
-        :type node_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the deleted ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant(self, node_id, ancestor_id):
-        """The callback for notification of a change to the node's descendants.
-
-        :param node_id: the ``Id`` of the registered node
-        :type node_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new descednant
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant(self, node_id, ancestor_id):
-        """The callback for notification of a change to the node's descendants.
-
-        :param node_id: the ``Id`` of the registered node
-        :type node_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the deleted descednant
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_node(self, node_id):
+    def deleted_nodes(self, notification_id, node_ids):
         """the callback for notification of deleted hierarchy nodes.
 
-        :param node_id: the ``Id`` of the deleted node
-        :type node_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param node_ids: the ``Ids`` of the deleted nodes
+        :type node_ids: ``osid.id.IdList``
+
+        """
+        pass
+
+    def changed_child_of_nodes(self, notification_id, node_ids):
+        """The callback for notifications of changes to children of hierarchy nodes.
+
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param node_ids: the ``Ids`` of the nodes whose children have changed
+        :type node_ids: ``osid.id.IdList``
 
         """
         pass
@@ -68,29 +39,35 @@ class HierarchyStructureReceiver(osid_receivers.OsidReceiver):
 
 class HierarchyReceiver(osid_receivers.OsidReceiver):
     """The hierarchy receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Hierarchy`` objects."""
-    def new_hierarchy(self, hierarchy_id):
+    def new_hierarchies(self, notification_id, hierarchy_ids):
         """The callback for notifications of new hierarchies.
 
-        :param hierarchy_id: the ``Id`` of the new ``Hierarchy``
-        :type hierarchy_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param hierarchy_ids: the ``Ids`` of the new ``Hierarchies``
+        :type hierarchy_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_hierarchy(self, hierarchy_id):
+    def changed_hierarchies(self, notification_id, hierarchy_ids):
         """The callback for notification of updated hierarchies.
 
-        :param hierarchy_id: the ``Id`` of the updated ``Hierarchy``
-        :type hierarchy_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param hierarchy_ids: the ``Ids`` of the updated ``Hierarchies``
+        :type hierarchy_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_hierarchy(self, hierarchy_id):
+    def deleted_hierarchies(self, notification_id, hierarchy_ids):
         """the callback for notification of deleted hierarchies.
 
-        :param hierarchy_id: the ``Id`` of the deleted ``Hierarchy``
-        :type hierarchy_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param hierarchy_ids: the ``Ids`` of the deleted ``Hierarchies``
+        :type hierarchy_ids: ``osid.id.IdList``
 
         """
         pass

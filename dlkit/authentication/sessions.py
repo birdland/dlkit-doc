@@ -9,7 +9,7 @@ class AgentLookupSession(osid_sessions.OsidSession):
 
     This session defines two sets of views which offer differing
     behaviors when retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete and ordered result set or is
         an error condition
@@ -22,7 +22,7 @@ class AgentLookupSession(osid_sessions.OsidSession):
         agency and any other agents implicitly available in this agency
         through agency inheritence.
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there a particular element is
     inaccessible. For example, a hierarchy output can be plugged into a
@@ -31,7 +31,7 @@ class AgentLookupSession(osid_sessions.OsidSession):
     no longer exists. However, some administrative applications may need
     to know whether it had retrieved an entire set of objects and may
     sacrifice some interoperability for the sake of precision.
-    
+
     Agents may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Agent``.
@@ -243,13 +243,13 @@ class AgentQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated agency view: searches include agents in agencies of
         which this agency is a ancestor in the agency hierarchy
       * isolated agency view: searches are restricted to agents in this
         agency
 
-    
+
     Agents may have an agent query record indicated by their respective
     agent record types. The agent query record is accessed via the
     ``AgentQuery``.
@@ -356,16 +356,16 @@ class AgentSearchSession(AgentQuerySession):
     ``get_agents_by_search()`` returns an ``AgentSearchResults`` that
     can be used to access the resulting ``AgentList`` or be used to
     perform a search within the result set through ``AgentSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated agency view: searches include agents in agencies of
         which this agency is a ancestor in the agency hierarchy
       * isolated agency view: searches are restricted to agents in this
         agency
 
-    
+
     Agents may have an agent query record indicated by their respective
     record types. The agent query record is accessed via the
     ``AgentQuery``.
@@ -446,19 +446,19 @@ class AgentAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``AgentForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``AgentForms`` are requested to the ``Agent``  ``Id``
     that is to be updated using ``getAgentFormForUpdate()``. Similarly,
     the ``AgentForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``AgentForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Agents``. To unmap an ``Agent`` from
     the current ``Agency,`` the ``AgentAgencyAssignmentSession`` should
     be used. These delete operations attempt to remove the ``Agent``
     itself thus removing it from all known ``Agency`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -774,10 +774,43 @@ class AgentNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_agent_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_agent_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_agent_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_agent_notification(self, notification_id):
+        """Acknowledge an agent notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_agents(self):
         """Register for notifications of new agents.
 
-        ``AgentReceiver.newAgent()`` is invoked when a new ``Agent`` is
+        ``AgentReceiver.newAgents()`` is invoked when a new ``Agent`` is
         created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -789,7 +822,7 @@ class AgentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_agents(self):
         """Registers for notification of updated agents.
 
-        ``AgentReceiver.changedAgent()`` is invoked when an agent is
+        ``AgentReceiver.changedAgents()`` is invoked when an agent is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -801,7 +834,7 @@ class AgentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_agent(self, agent_id):
         """Registers for notification of an updated agent.
 
-        ``AgentReceiver.changedAgent()`` is invoked when the specified
+        ``AgentReceiver.changedAgents()`` is invoked when the specified
         agent is changed.
 
         :param agent_id: the ``Id`` of the ``Agent`` to monitor
@@ -816,7 +849,7 @@ class AgentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_agents(self):
         """Registers for notification of deleted agents.
 
-        ``AgentReceiver.deletedAgent()`` is invoked when an agent is
+        ``AgentReceiver.deletedAgents()`` is invoked when an agent is
         removed from this agency.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -828,7 +861,7 @@ class AgentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_agent(self, agent_id):
         """Registers for notification of a deleted agent.
 
-        ``AgentReceiver.deletedAgent()`` is invoked when the specified
+        ``AgentReceiver.deletedAgents()`` is invoked when the specified
         agent is removed from this agency.
 
         :param agent_id: the ``Id`` of the ``Agent`` to monitor
@@ -849,7 +882,7 @@ class AgentAgencySession(osid_sessions.OsidSession):
     to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1085,6 +1118,25 @@ class AgentAgencyAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_agent_to_agency(self, agent_id, from_agency_id, to_agency_id):
+        """Moves an ``Agent`` from one ``Agency`` to another.
+
+        Mappings to other ``Agencies`` are unaffected.
+
+        :param agent_id: the ``Id`` of the ``Agent``
+        :type agent_id: ``osid.id.Id``
+        :param from_agency_id: the ``Id`` of the current ``Agency``
+        :type from_agency_id: ``osid.id.Id``
+        :param to_agency_id: the ``Id`` of the destination ``Agency``
+        :type to_agency_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``agent_id, from_agency_id,`` or ``to_agency_id`` not found or ``agent_id`` not mapped to ``from_agency_id``
+        :raise: ``NullArgument`` -- ``agent_id, from_agency_id,`` or ``to_agency_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class AgentSmartAgencySession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -1219,18 +1271,18 @@ class AgencyLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Agencies`` it can access, without breaking execution.
     However, an administrative application may require all ``Agency``
     elements to be available.
-    
+
     Agencies may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Agency``.
@@ -1470,7 +1522,7 @@ class AgencySearchSession(AgencyQuerySession):
     ``get_agencies_by_search()`` returns a ``AgencySearchResults`` that
     can be used to access the resulting ``AgencyList`` or be used to
     perform a search within the result set through ``AgencySearch``.
-    
+
     Agencies may have a query record indicated by their respective
     record types. The query record is accessed via the ``AgencyQuery``.
 
@@ -1550,16 +1602,16 @@ class AgencyAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``AgencyForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``AgencyForms`` are requested to the ``Agency``  ``Id``
     that is to be updated using ``getAgencyFormForUpdate()``. Similarly,
     the ``AgencyForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``AgencyForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Agencies``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -1767,42 +1819,45 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_agency_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_agency_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_agency_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_agency_notification(self, notification_id):
+        """Acknowledge an agency notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_agencies(self):
         """Register for notifications of new agencies.
 
-        ``AgencyReceiver.newAgency()`` is invoked when a new ``Agency``
-        is created.
+        ``AgencyReceiver.newAgencies()`` is invoked when a new
+        ``Agency`` is created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_agency_ancestors(self, agency_id):
-        """Registers for notification if an ancestor is added to the specified agency in the agency hierarchy.
-
-        ``AgencyReceiver.newAgencyAncestor()`` is invoked when the
-        specified agency experiences an addition in ancestry.
-
-        :param agency_id: the ``Id`` of the agency to monitor
-        :type agency_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``agency_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_agency_descendants(self, agency_id):
-        """Registers for notification if a descendant is added to the specified agency in the agency hierarchy.
-
-        ``AgencyReceiver.newAgencyDescendant()`` is invoked when the
-        specified agency experiences an addition in descendants.
-
-        :param agency_id: the ``Id`` of the agency to monitor
-        :type agency_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``agency_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1812,8 +1867,8 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_agencies(self):
         """Registers for notification of updated agencies.
 
-        ``AgencyReceiver.changedAgency()`` is invoked when an agency is
-        changed.
+        ``AgencyReceiver.changedAgencies()`` is invoked when an agency
+        is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1824,8 +1879,8 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_agency(self, agency_id):
         """Registers for notification of an updated agency.
 
-        ``AgencyReceiver.changedAgency()`` is invoked when the specified
-        agency is changed.
+        ``AgencyReceiver.changedAgencies()`` is invoked when the
+        specified agency is changed.
 
         :param agency_id: the ``Id`` of the agency to monitor
         :type agency_id: ``osid.id.Id``
@@ -1839,8 +1894,8 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_agencies(self):
         """Registers for notification of deleted agencies.
 
-        ``AgencyReceiver.deletedAgency()`` is invoked when an agency is
-        deleted.
+        ``AgencyReceiver.deletedAgencies()`` is invoked when an agency
+        is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1851,8 +1906,8 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_agency(self, agency_id):
         """Registers for notification of a deleted agency.
 
-        ``AgencyReceiver.deletedAgency()`` is invoked when the specified
-        agency is deleted.
+        ``AgencyReceiver.deletedAgencies()`` is invoked when the
+        specified agency is deleted.
 
         :param agency_id: the ``Id`` of the agency to monitor
         :type agency_id: ``osid.id.Id``
@@ -1863,13 +1918,26 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_agency_ancestors(self, agency_id):
-        """Registers for notification if an ancestor is removed from the specified agency in the agency hierarchy.
+    def register_for_changed_agency_hierarchy(self):
+        """Registers for notification of an updated agency hierarchy structure.
 
-        ``AgencyReceiver.deletedAgencyAncestor()`` is invoked when the
-        specified agency experiences a removal of an ancestor.
+        ``AgencyReceiver.changedChildOfAgencies()`` is invoked when a
+        node experiences a change in its children.
 
-        :param agency_id: the ``Id`` of the agency to monitor
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_agency_hierarchy_for_ancestors(self, agency_id):
+        """Registers for notification of an updated agency hierarchy structure.
+
+        ``AgencyReceiver.changedChildOfAgencies()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
+
+        :param agency_id: the ``Id`` of the ``Agency`` node to monitor
         :type agency_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``agency_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1878,14 +1946,14 @@ class AgencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_agency_descendants(self, agency_id):
-        """Registers for notification if a descendant is removed from fthe specified agency in the agency hierarchy.
+    def register_for_changed_agency_hierarchy_for_descendants(self, agency_id):
+        """Registers for notification of an updated agency hierarchy structure.
 
-        ``AgencyReceiver.deletedAgencyDescednant()`` is invoked when the
-        specified agency experiences a removal of one of its
-        descendants.
+        ``AgencyReceiver.changedChildOfAgencies()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
 
-        :param agency_id: the ``Id`` of the agency to monitor
+        :param agency_id: the ``Id`` of the ``Agency`` node to monitor
         :type agency_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``agency_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1912,10 +1980,10 @@ class AgencyHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_agencies()`` or ``get_child_agencies()`` in
     lieu of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: agency elements may be silently omitted or re-
         ordered
       * plenary view: provides a complete set or is an error condition

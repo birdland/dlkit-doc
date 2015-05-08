@@ -8,7 +8,7 @@ class InstallationLookupSession(osid_sessions.OsidSession):
     ``Site``.
 
     Two views are defined in this session:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
       * normalized version view: multiple versions of the same package
@@ -16,7 +16,7 @@ class InstallationLookupSession(osid_sessions.OsidSession):
       * denormalized version vew: all versions of an installation are
         returned
 
-    
+
     Installations may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Installation``.
@@ -345,7 +345,7 @@ class InstallationSearchSession(InstallationQuerySession):
     ``InstallationSearchResults`` that can be used to access the
     resulting ``InstallationList`` or be used to perform a search within
     the result set through ``InstallationSearch``.
-    
+
     Installations may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``InstallationQuery``.
@@ -683,8 +683,8 @@ class InstallationNotificationSession(osid_sessions.OsidSession):
     def register_for_new_installations(self):
         """Register for notifications of new installations.
 
-        ``InstallationReceiver.newInstallation()`` is invoked when a new
-        installation is installed.
+        ``InstallationReceiver.newInstallations()`` is invoked when a
+        new installation is installed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -695,8 +695,8 @@ class InstallationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_installations(self):
         """Registers for notification of deleted installations.
 
-        ``InstallationReceiver.deletedInstallation()`` is invoked when a
-        installation is removed.
+        ``InstallationReceiver.deletedInstallations()`` is invoked when
+        a installation is removed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -707,7 +707,7 @@ class InstallationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_installation(self, installation_id):
         """Registers for notification of a deleted installation.
 
-        ``InstallationReceiver.deletedInstallation()`` is invoked when
+        ``InstallationReceiver.deletedInstallations()`` is invoked when
         the specified installation is removed.
 
         :param installation_id: the ``Id`` of the ``Installation`` to monitor
@@ -727,11 +727,11 @@ class SiteLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Sites may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Site``.
@@ -1079,7 +1079,7 @@ class PackageQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated depot view: searches include packages in depots of
         which this depot is a ancestor in the depot hierarchy
       * isolated depot view: searches are restricted to packages in this
@@ -1092,7 +1092,7 @@ class PackageQuerySession(osid_sessions.OsidSession):
         other installations depend are suppressed
       * denormalized dependency view: all dependencies are returned
 
-    
+
     Packages may have a query record indicated by their respective
     record types. The query record is accessed via the ``PackageQuery``.
 
@@ -1215,10 +1215,10 @@ class PackageSearchSession(PackageQuerySession):
     ``get_packages_by_search()`` returns a ``PackageSearchResults`` that
     can be used to access the resulting ``PackageList`` or be used to
     perform a search within the result set through ``PackageSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated depot view: searches include packages in depots of
         which this depot is a ancestor in the depot hierarchy
       * isolated depot view: searches are restricted to packages in this
@@ -1231,7 +1231,7 @@ class PackageSearchSession(PackageQuerySession):
         other installations depend are suppressed
       * denormalized dependency view: all dependencies are returned
 
-    
+
     Packages may have a query record indicated by their respective
     record types. The query record is accessed via the ``PackageQuery``.
 
@@ -1311,20 +1311,20 @@ class PackageAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``PackageForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``PackageForms`` are requested to the ``Package``
     ``Id`` that is to be updated using ``getPackageFormForUpdate()``.
     Similarly, the ``PackageForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``PackageForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Packages``. To unmap a ``Package``
     from the current ``Depot,`` the ``PackageDepotAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Package`` itself thus removing it from all known ``Depot``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -1832,7 +1832,7 @@ class PackageNotificationSession(osid_sessions.OsidSession):
     def register_for_new_packages(self):
         """Register for notifications of new packages.
 
-        ``PackageReceiver.newPackage()`` is invoked when a new package
+        ``PackageReceiver.newPackages()`` is invoked when a new package
         is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1844,7 +1844,7 @@ class PackageNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_packages(self):
         """Registers for notification of updated packages.
 
-        ``PackageReceiver.changedPackage()`` is invoked when a package
+        ``PackageReceiver.changedPackages()`` is invoked when a package
         is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1856,7 +1856,7 @@ class PackageNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_package(self, package_id):
         """Registers for notification of an updated package.
 
-        ``PackageReceiver.changedPackage()`` is invoked when the
+        ``PackageReceiver.changedPackages()`` is invoked when the
         specified package is changed.
 
         :param package_id: the ``Id`` of the ``Package`` to monitor
@@ -1871,7 +1871,7 @@ class PackageNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_packages(self):
         """Registers for notification of deleted packages.
 
-        ``PackageReceiver.deletedPackage()`` is invoked when a package
+        ``PackageReceiver.deletedPackages()`` is invoked when a package
         is removed from this depot.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1883,7 +1883,7 @@ class PackageNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_package(self, package_id):
         """Registers for notification of a deleted package.
 
-        ``PackageReceiver.deletedPackage()`` is invoked when the
+        ``PackageReceiver.deletedPackages()`` is invoked when the
         specified package is removed from this depot.
 
         :param package_id: the ``Id`` of the ``Package`` to monitor
@@ -1903,7 +1903,7 @@ class PackageDepotSession(osid_sessions.OsidSession):
     have its own authorizations governing who is allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -2291,18 +2291,18 @@ class DepotLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Depots`` it can access, without breaking execution.
     However, an administrative application may require all ``Depot``
     elements to be available.
-    
+
     Depots may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Depot``.
@@ -2543,7 +2543,7 @@ class DepotSearchSession(DepotQuerySession):
     ``get_depots_by_search()`` returns a ``DepotSearchResults`` that can
     be used to access the resulting ``DepotList`` or be used to perform
     a search within the result set through ``DepotSearch``.
-    
+
     Depots may have a query record indicated by their respective record
     types. The query record is accessed via the ``DepotQuery``.
 
@@ -2623,14 +2623,14 @@ class DepotAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``DepotForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``DepotForms`` are requested to the ``Depot``  ``Id``
     that is to be updated using ``getDepotFormForUpdate()``. Similarly,
     the ``DepotForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``Depot`` can only be used once for a successful update and cannot
     be reused.
-    
+
     The delete operations delete ``Depots``. This session also includes
     an ``Id`` aliasing mechanism to assign an external ``Id`` to an
     internally assigned Id.
@@ -2877,7 +2877,7 @@ class DepotNotificationSession(osid_sessions.OsidSession):
     def register_for_new_depots(self):
         """Register for notifications of new depots.
 
-        ``DepotReceiver.newDepot()`` is invoked when a new ``Depot`` is
+        ``DepotReceiver.newDepots()`` is invoked when a new ``Depot`` is
         created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2919,7 +2919,7 @@ class DepotNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_depots(self):
         """Registers for notification of updated depots.
 
-        ``DepotReceiver.changedDepot()`` is invoked when a depot is
+        ``DepotReceiver.changedDepots()`` is invoked when a depot is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2931,7 +2931,7 @@ class DepotNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_depot(self, depot_id):
         """Registers for notification of an updated depot.
 
-        ``DepotReceiver.changedDepot()`` is invoked when the specified
+        ``DepotReceiver.changedDepots()`` is invoked when the specified
         depot is changed.
 
         :param depot_id: the ``Id`` of the depot to monitor
@@ -2946,7 +2946,7 @@ class DepotNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_depots(self):
         """Registers for notification of deleted depots.
 
-        ``DepotReceiver.deletedDepot()`` is invoked when a depot is
+        ``DepotReceiver.deletedDepots()`` is invoked when a depot is
         deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2958,7 +2958,7 @@ class DepotNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_depot(self, depot_id):
         """Registers for notification of a deleted depot.
 
-        ``DepotReceiver.deletedDepot()`` is invoked when the specified
+        ``DepotReceiver.deletedDepots()`` is invoked when the specified
         depot is deleted.
 
         :param depot_id: the ``Id`` of the depot to monitor
@@ -3018,10 +3018,10 @@ class DepotHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_depots()`` or ``get_child_depots()`` in lieu
     of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: depot elements may be silently omitted or re-
         ordered
       * plenary view: provides a complete set or is an error condition

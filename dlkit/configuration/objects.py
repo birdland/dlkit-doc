@@ -443,7 +443,7 @@ class ParameterList(osid_objects.OsidList):
       while (pl.hasNext()) {
            Parameter[] parameters = pl.getNextParameters(pl.available());
       }
-    
+
 
 
     """
@@ -1322,7 +1322,7 @@ class ValueList(osid_objects.OsidList):
       while (vl.hasNext()) {
            Value[] values = vl.getNextValues(vl.available());
       }
-    
+
 
 
     """
@@ -1452,7 +1452,7 @@ class ConfigurationList(osid_objects.OsidList):
       while (cl.hasNext()) {
            Configuration[] configs = cl.getNextConfigurations(cl.available());
       }
-    
+
 
 
     """
@@ -1535,7 +1535,7 @@ class ConfigurationNodeList(osid_objects.OsidList):
       while (cnl.hasNext()) {
            ConfigurationNode[] nodes = cl.getNextConfigurationNodes(cnl.available());
       }
-    
+
 
 
     """

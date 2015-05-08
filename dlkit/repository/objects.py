@@ -21,7 +21,7 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     content may also include an uncompressed TIFF version. The ``Asset``
     ``Type`` may be "photograph" indicating that the photo itself is the
     asset managed in this repository.
-    
+
     Since an Asset may have multiple ``AssetContent`` structures, the
     decision of how many things to stuff inside a single asset comes
     down to if the content is actually a different format, or size, or
@@ -31,7 +31,7 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     the case where, to meet an accessibility requirement, one asset
     needs to be substituted for another. The Repository OSID manages
     this aspect outside the scope of the core ``Asset`` definition.
-    
+
     ``Assets`` map to ``AssetSubjects``.  ``AssetSubjects`` are
     ``OsidObjects`` that capture a subject matter. In the above example,
     an ``AssetSubject`` may be defined for the Bay Bridge and include
@@ -41,13 +41,13 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     may also be described using the Resource OSID in which case the use
     of the ``AssetSubject`` acts as a cover for the underlying
     ``Resource`` to assist repository-only consumers.
-    
+
     The ``Asset`` definition includes some basic copyright and related
     licensing information to assist in finding free-to-use content, or
     to convey the distribution restrictions that may be placed on the
     asset. Generally, if no data is available it is to be assumed that
     all rights are reserved.
-    
+
     A publisher is applicable if the content of this ``Asset`` has been
     published. Not all ``Assets`` in this ``Repository`` may have a
     published status and such a status may effect the applicability of
@@ -56,7 +56,7 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     acquired the asset and the source indicates the original provider or
     copyright owner. In the case of a published asset, the source is the
     publisher.
-    
+
     ``Assets`` also define methods to facilitate searches over time and
     space as it relates to the subject matter. This may at times be
     redundant with the ``AssetSubject``. In the case of the Bay Bridge
@@ -68,7 +68,7 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     in the view. In either case, a "photograph" type may unambiguously
     defined methods to describe the exact time the photograph was taken
     and the location of the photographer.
-    
+
     The core Asset defines methods to perform general searches and
     construct bibliographic entries without knowledge of a particular
     ``Asset`` or ``AssetContent`` record ``Type``.
@@ -125,7 +125,7 @@ can_distribute_compositions()`` may also be ``false``.
         """
         return # osid.locale.DisplayText
 
-    copyright = property(fget=get_copyright)
+    copyright_ = property(fget=get_copyright)
 
     def get_copyright_registration(self):
         """Gets the copyright registration information for this asset.
@@ -479,7 +479,7 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
 
     copyright_metadata = property(fget=get_copyright_metadata)
 
-    def set_copyright(self, copyright):
+    def set_copyright(self, copyright_):
         """Sets the copyright.
 
         :param copyright: the new copyright
@@ -499,7 +499,40 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """
         pass
 
-    copyright = property(fget=set_copyright, fdel=clear_copyright)
+    copyright_ = property(fget=set_copyright, fdel=clear_copyright)
+
+    def get_copyright_registration_metadata(self):
+        """Gets the metadata for the copyright registration.
+
+        :return: metadata for the copyright registration
+        :rtype: ``osid.Metadata``
+
+        """
+        return # osid.Metadata
+
+    copyright_registration_metadata = property(fget=get_copyright_registration_metadata)
+
+    def set_copyright_registration(self, registration):
+        """Sets the copyright registration.
+
+        :param registration: the new copyright registration
+        :type registration: ``string``
+        :raise: ``InvalidArgument`` -- ``copyright`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NullArgument`` -- ``copyright`` is ``null``
+
+        """
+        pass
+
+    def clear_copyright_registration(self):
+        """Removes the copyright registration.
+
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+
+        """
+        pass
+
+    copyright_registration = property(fget=set_copyright_registration, fdel=clear_copyright_registration)
 
     def get_distribute_verbatim_metadata(self):
         """Gets the metadata for the distribute verbatim rights flag.
@@ -854,7 +887,7 @@ class AssetList(osid_objects.OsidList):
       while (al.hasNext()) {
            Asset[] assets = al.getNextAssets(al.available());
       }
-    
+
 
 
     """
@@ -1153,7 +1186,7 @@ class AssetContentList(osid_objects.OsidList):
       while (acl.hasNext()) {
            AssetContent[] contents = acl.getNextAssetContents(acl.available());
       }
-    
+
 
 
     """
@@ -1270,7 +1303,7 @@ class CompositionList(osid_objects.OsidList):
       while (cl.hasNext()) {
            Composition[] compositions = cl.getNextCompositions(cl.available());
       }
-    
+
 
 
     """
@@ -1359,7 +1392,7 @@ class RepositoryList(osid_objects.OsidList):
       while (rl.hasNext()) {
            Repository[] repositories = rl.getNextRepositories(rl.available());
       }
-    
+
 
 
     """
@@ -1442,7 +1475,7 @@ class RepositoryNodeList(osid_objects.OsidList):
       while (rnl.hasNext()) {
            RepositoryNode[] nodes = rnl.getNextRepositoryNodes(rnl.available());
       }
-    
+
 
 
     """

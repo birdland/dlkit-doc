@@ -7,7 +7,7 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
     A Grade represents a qualified ranking defined in some grade system.
 
     Two views are defined in this session:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
       * federated gradebook view: lookups include grade systems from
@@ -16,7 +16,7 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
       * isolated gradebook view: lookups include only those grade
         systems defined in this gradebook
 
-    
+
     Grades and grade systems may have an additional records indicated by
     their respective record types. The record may not be accessed
     through a cast of the object.
@@ -244,14 +244,14 @@ class GradeSystemQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated gradebook view: searches include grade systems in
         gradebooks of which this gradebook is a ancestor in the
         gradebook hierarchy
       * isolated gradebook view: searches are restricted to grade
         systems in this gradebook
 
-    
+
     Grade systems may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``GradeSystemQuery``.
@@ -358,17 +358,17 @@ class GradeSystemSearchSession(GradeSystemQuerySession):
     ``GradeSystemSearchResults`` that can be used to access the
     resulting ``GradeSystemList`` or be used to perform a search within
     the result set through ``GradeSystemSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated gradebook view: searches include grade systems in
         gradebooks of which this gradebook is a ancestor in the
         gradebook hierarchy
       * isolated gradebook view: searches are restricted to grade
         systems in this gradebook
 
-    
+
     Grade systems may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``GradeSystemQuery``.
@@ -449,7 +449,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
     create operation, it cannot be reused with another create operation
     unless the first operation was unsuccessful. Each
     ``GradeSystemForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``GradeSystemForms`` are requested to the
     ``GradeSystem``  ``Id`` that is to be updated using
     ``getGradeSystemFormForUpdate()``. Similarly, the
@@ -457,13 +457,13 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
     and it can perform validation before submitting the update. The
     ``GradeSystemForm`` can only be used once for a successful update
     and cannot be reused.
-    
+
     The delete operations delete ``GradeSystems`` To unmap a
     ``GradeSystem`` from the current ``Gradebook,`` the
     ``GradeSystemGradebookAssignmentSession`` should be used. These
     delete operations attempt to remove the ``GradeSystem`` itself thus
     removing it from all known ``Gradebook`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -937,7 +937,7 @@ class GradeSystemNotificationSession(osid_sessions.OsidSession):
     def register_for_new_grade_systems(self):
         """Register for notifications of new grade systems.
 
-        ``GradeSystemReceiver.newGradeSystem()`` is invoked when a new
+        ``GradeSystemReceiver.newGradeSystems()`` is invoked when a new
         ``GradeSystem`` is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -949,7 +949,7 @@ class GradeSystemNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_systems(self):
         """Registers for notification of updated grade systems.
 
-        ``GradeSystemReceiver.changedGradeSystem()`` is invoked when a
+        ``GradeSystemReceiver.changedGradeSystems()`` is invoked when a
         system is changed or grades are changed within it.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -961,9 +961,9 @@ class GradeSystemNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_system(self, grade_system_id):
         """Registers for notification of an updated grade system.
 
-        ``GradeSystemReceiver.changedGradeSystem()`` is invoked when the
-        specified grade system is changed or grades are changed within
-        it.
+        ``GradeSystemReceiver.changedGradeSystems()`` is invoked when
+        the specified grade system is changed or grades are changed
+        within it.
 
         :param grade_system_id: the ``Id`` of the grade system to monitor
         :type grade_system_id: ``osid.id.Id``
@@ -977,7 +977,7 @@ class GradeSystemNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_systems(self):
         """Registers for notification of deleted grade systems.
 
-        ``GradeSystemReceiver.deletedGradeSystem()`` is invoked when a
+        ``GradeSystemReceiver.deletedGradeSystems()`` is invoked when a
         grade system is removed from this gradebook.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -989,8 +989,8 @@ class GradeSystemNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_system(self, grade_system_id):
         """Registers for notification of a deleted grade system.
 
-        ``GradeSystemReceiver.deletedGradeSystem()`` is invoked when the
-        specified system is removed from this gradebook.
+        ``GradeSystemReceiver.deletedGradeSystems()`` is invoked when
+        the specified system is removed from this gradebook.
 
         :param grade_system_id: the ``Id`` of the grade system to monitor
         :type grade_system_id: ``osid.id.Id``
@@ -1010,7 +1010,7 @@ class GradeSystemGradebookSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1699,14 +1699,14 @@ class GradeEntryQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated gradebook view: searches include grade entries in
         gradebooks of which this gradebook is a ancestor in the
         gradebook hierarchy
       * isolated gradebook view: searches are restricted to grade
         entries in this gradebook
 
-    
+
     Grade entries may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``GradeEntryQuery``.
@@ -1813,17 +1813,17 @@ class GradeEntrySearchSession(GradeEntryQuerySession):
     ``GradeEntrySearchResults`` that can be used to access the resulting
     ``GradeEntryList`` or be used to perform a search within the result
     set through ``GradeEntrySearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated gradebook view: searches include grade entries in
         gradebooks of which this gradebook is a ancestor in the
         gradebook hierarchy
       * isolated gradebook view: searches are restricted to grade
         entries in this gradebook
 
-    
+
     Grade entries may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``GradeEntryQuery``.
@@ -1904,20 +1904,20 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``GradeEntryForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``GradeEntryForms`` are requested to the ``GradeEntry``
     ``Id`` that is to be updated using ``getGradeEntryFormForUpdate()``.
     Similarly, the ``GradeEntryForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``GradeEntryForm`` can only be used once for a
     successful update and cannot be reused.
-    
+
     The delete operations delete ``GradeEntries``. To unmap a
     ``GradeEntry`` from the current ``Gradebook,`` the
     ``GradeEntryGradebookAssignmentSession`` should be used. These
     delete operations attempt to remove the ``GradeEntry`` itself thus
     removing it from all known ``Gradebook`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2259,7 +2259,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_new_grade_entries(self):
         """Register for notifications of new grade entries.
 
-        ``GradeEntryReceiver.newGradeEntry()`` is invoked when a new
+        ``GradeEntryReceiver.newGradeEntries()`` is invoked when a new
         grade entry is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2271,7 +2271,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_new_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a new grade entry for the specified gradebook column.
 
-        ``GradeEntryReceiver.newGradeEntry()`` is invoked when a new
+        ``GradeEntryReceiver.newGradeEntries()`` is invoked when a new
         entry for the resource is created.
 
         :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to monitor
@@ -2286,7 +2286,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_new_grade_entries_for_resource(self, resource_id):
         """Registers for notification of a new grade entry for the specified resource.
 
-        ``GradeEntryReceiver.newGradeEntry()`` is invoked when a new
+        ``GradeEntryReceiver.newGradeEntries()`` is invoked when a new
         entry for the resource is created.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -2301,7 +2301,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_new_grade_entries_by_grader(self, resource_id):
         """Registers for notification of a new grade entry for the specified grader agent.
 
-        ``GradeEntryReceiver.newGradeEntry()`` is invoked when a new
+        ``GradeEntryReceiver.newGradeEntries()`` is invoked when a new
         entry for the grader is created.
 
         :param resource_id: the ``Id`` of the ``Agent`` to monitor
@@ -2316,7 +2316,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_entries(self):
         """Registers for notification of updated grade entries.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when a
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when a
         grade entry is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2328,7 +2328,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of an updated grade entry for the specified gradebook column.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when an
         entry for the column is updated.
 
         :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to monitor
@@ -2343,7 +2343,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_entries_for_resource(self, resource_id):
         """Registers for notification of an updated grade entry for the specified key resource.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when an
         entry for the resource is updated.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -2358,7 +2358,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_entries_by_grader(self, resource_id):
         """Registers for notification of an updated grade entry for the specified grader.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when an
         entry for the agent is updated.
 
         :param resource_id: the ``Id`` of the ``Agent`` to monitor
@@ -2373,7 +2373,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_grade_entry(self, grade_entry_id):
         """Registers for notification of an updated grade entry.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when the
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when the
         specified grade entry is changed.
 
         :param grade_entry_id: the ``Id`` of the ``GradeEntry`` to monitor
@@ -2388,7 +2388,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_entries(self):
         """Registers for notification of deleted grade entries.
 
-        ``GradeEntryReceiver.deletedGradeEntry()`` is invoked when a
+        ``GradeEntryReceiver.deletedGradeEntries()`` is invoked when a
         grade entry is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2400,7 +2400,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_entries_for_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a deleted grade entry for the specified gradebook column.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when an
         entry for the column is removed from this gradebook.
 
         :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to monitor
@@ -2415,7 +2415,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_entries_for_resource(self, resource_id):
         """Registers for notification of a deleted grade entry for the specified key resource.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when an
         entry for the resource is removed from this gradebook.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -2430,7 +2430,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_entries_by_grader(self, resource_id):
         """Registers for notification of a deleted grade entry for the specified grader.
 
-        ``GradeEntryReceiver.changedGradeEntry()`` is invoked when an
+        ``GradeEntryReceiver.changedGradeEntries()`` is invoked when an
         entry for the agent is removed from this gradebook.
 
         :param resource_id: the ``Id`` of the ``Agent`` to monitor
@@ -2445,7 +2445,7 @@ class GradeEntryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_grade_entry(self, grade_entry_id):
         """Registers for notification of a deleted grade entry.
 
-        ``GradeEntryReceiver.deletedGradeEntry()`` is invoked when the
+        ``GradeEntryReceiver.deletedGradeEntries()`` is invoked when the
         specified entry is deleted.
 
         :param grade_entry_id: the ``Id`` of the ``GradeEntry`` to monitor
@@ -2693,13 +2693,13 @@ class GradebookColumnQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated gradebook view: searches include columns in gradebooks
         of which this gradebook is a ancestor in the gradebook hierarchy
       * isolated gradebook view: searches are restricted to columns in
         this gradebook
 
-    
+
     Gradebook columns may have a query record indicated by their
     respective record types. The query record is accessed via the
     ``GradebookColumnQuery``.
@@ -2806,16 +2806,16 @@ class GradebookColumnSearchSession(GradebookColumnQuerySession):
     ``GradebookColumnSearchResults`` that can be used to access the
     resulting ``GradebookColumnList`` or be used to perform a search
     within the result set through ``GradebookColumnSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated gradebook view: searches include columns in gradebooks
         of which this gradebook is a ancestor in the gradebook hierarchy
       * isolated gradebook view: searches are restricted to columns in
         this gradebook
 
-    
+
     Gradebook columns may have a query record indicated by their
     respective record types. The query record is accessed via the
     ``GradebookColumnQuery``.
@@ -2897,7 +2897,7 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
     submiited to a create operation, it cannot be reused with another
     create operation unless the first operation was unsuccessful. Each
     ``GradebookColumnForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``GradebookColumnForms`` are requested to the
     ``GradebookColumn``  ``Id`` that is to be updated using
     ``getGradebookColumnFormForUpdate()``. Similarly, the
@@ -2905,13 +2905,13 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``GradebookColumnForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``GradebookColumns`` To unmap a
     ``GradebookColumn`` from the current ``Gradebook,`` the
     ``GradebookColumnGradebookAssignmentSession`` should be used. These
     delete operations attempt to remove the ``GradebookColumnForm``
     itself thus removing it from all known ``Gradebook`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -3241,7 +3241,7 @@ class GradebookColumnNotificationSession(osid_sessions.OsidSession):
     def register_for_new_gradebook_columns(self):
         """Register for notifications of new gradebook columns.
 
-        ``GradebookColumnReceiver.newGradebookColumny()`` is invoked
+        ``GradebookColumnReceiver.newGradebookColumns()`` is invoked
         when a new column is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3253,7 +3253,7 @@ class GradebookColumnNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_gradebook_columns(self):
         """Registers for notification of updated gradebook columns.
 
-        ``GradebookColumnReceiver.changedGradebookColumn()`` is invoked
+        ``GradebookColumnReceiver.changedGradebookColumns()`` is invoked
         when a gradebook column is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3265,7 +3265,7 @@ class GradebookColumnNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_gradebook_column(self, gradebook_column_id):
         """Registers for notification of an updated gradebook column.
 
-        ``GradebookColumnReceiver.changedGradebookColumn()`` is invoked
+        ``GradebookColumnReceiver.changedGradebookColumns()`` is invoked
         when the specified gradebook column is changed.
 
         :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to monitor
@@ -3280,7 +3280,7 @@ class GradebookColumnNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_gradebook_columns(self):
         """Registers for notification of deleted gradebook columns.
 
-        ``GradebookColumnReceiver.deletedGradebookColumn()`` is invoked
+        ``GradebookColumnReceiver.deletedGradebookColumns()`` is invoked
         when a gradebook column is removed from this gradebook.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3292,7 +3292,7 @@ class GradebookColumnNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_gradebook_column(self, gradebook_column_id):
         """Registers for notification of a deleted gradebook column.
 
-        ``GradebookColumnReceiver.deletedGradebookColumn()`` is invoked
+        ``GradebookColumnReceiver.deletedGradebookColumns()`` is invoked
         when the specified column is removed from thia gradebook.
 
         :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to monitor
@@ -3313,7 +3313,7 @@ class GradebookColumnGradebookSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -3688,18 +3688,18 @@ class GradebookLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Gradebooks`` it can access, without breaking
     execution. However, an administrative application may require all
     ``Gradebook`` elements to be available.
-    
+
     Gradebooks may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Gradebook``.
@@ -3943,7 +3943,7 @@ class GradebookSearchSession(GradebookQuerySession):
     ``GradebookSearchResults`` that can be used to access the resulting
     ``GradebookList`` or be used to perform a search within the result
     set through ``GradebookSearch``.
-    
+
     Gradebooks may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``GradebookQuery``.
@@ -4024,16 +4024,16 @@ class GradebookAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``GradebookForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``GradebookForms`` are requested to the ``Gradebook``
     ``Id`` that is to be updated using ``getGradebookFormForUpdate()``.
     Similarly, the ``GradebookForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``GradebookForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Gradebooks``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -4244,7 +4244,7 @@ class GradebookNotificationSession(osid_sessions.OsidSession):
     def register_for_new_gradebooks(self):
         """Register for notifications of new gradebooks.
 
-        ``GradebookReceiver.newGradebook()`` is invoked when a new
+        ``GradebookReceiver.newGradebooks()`` is invoked when a new
         ``Gradebook`` is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4286,7 +4286,7 @@ class GradebookNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_gradebooks(self):
         """Registers for notification of updated gradebooks.
 
-        ``GradebookReceiver.changedGradebook()`` is invoked when a
+        ``GradebookReceiver.changedGradebooks()`` is invoked when a
         gradebook is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4298,7 +4298,7 @@ class GradebookNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_gradebook(self, gradebook_id):
         """Registers for notification of an updated gradebook.
 
-        ``GradebookReceiver.changedGradebook()`` is invoked when the
+        ``GradebookReceiver.changedGradebooks()`` is invoked when the
         specified gradebook is changed.
 
         :param gradebook_id: the ``Id`` of the gradebook to monitor
@@ -4313,7 +4313,7 @@ class GradebookNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_gradebooks(self):
         """Registers for notification of deleted gradebooks.
 
-        ``GradebookReceiver.deletedGradebook()`` is invoked when a
+        ``GradebookReceiver.deletedGradebooks()`` is invoked when a
         calenedar is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4325,7 +4325,7 @@ class GradebookNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_gradebook(self, gradebook_id):
         """Registers for notification of a deleted gradebook.
 
-        ``GradebookReceiver.deletedGradebook()`` is invoked when the
+        ``GradebookReceiver.deletedGradebooks()`` is invoked when the
         specified gradebook is deleted.
 
         :param gradebook_id: the ``Id`` of the gradebook to monitor
@@ -4386,10 +4386,10 @@ class GradebookHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_gradebooks()`` or ``get_child_gradebooks()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: gradebook elements may be silently omitted or
         re-ordered
       * plenary view: provides a complete set or is an error condition

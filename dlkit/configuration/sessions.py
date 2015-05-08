@@ -18,9 +18,9 @@ class ValueRetrievalSession(osid_sessions.OsidSession):
         the value that do not require explicit data for retrieval are
         ignored.
 
-    
+
     This session assumes an active view.
-    
+
     Values are not OSID objects and are obtained using a reference to a
     Parameter.
 
@@ -282,7 +282,7 @@ class ValueLookupSession(ValueRetrievalSession):
       * any status value view: Values of any active or inactive status
         are returned from methods.
 
-    
+
     Values are not OSID objects and are obtained using a reference to a
     Parameter.
 
@@ -389,7 +389,7 @@ class ValueLookupSession(ValueRetrievalSession):
         In plenary mode, the returned list contains all known values or
         an error results. Otherwise, the returned list may contain only
         those values that are accessible through this session.
-        
+
         In active mode, values are returned that are currently active.
         In any status mode, active and inactive values are returned.
 
@@ -431,7 +431,7 @@ class ValueQuerySession(osid_sessions.OsidSession):
     parameter ``Type`` also specifies the record for the value query.
 
     Two views of the configuration data are defined;
-    
+
       * federated: values defined in configurations that are a parent of
         this configuration in the configuration hierarchy are included
       * isolated: values are contained to within this configuration
@@ -539,9 +539,9 @@ class ValueSearchSession(ValueQuerySession):
     returns a ``ValueSearchResults`` that can be used to access the
     resulting ``ValueList`` or be used to perform a search within the
     result set through ``ValueSearch``.
-    
+
     Two views of the configuration data are defined;
-    
+
       * federated: values defined in configurations that are a parent of
         this configuration in the configuration hierarchy are included
       * isolated: values are contained to within this configuration
@@ -622,14 +622,14 @@ class ValueAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``ValueForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``ValueForms`` are requested to the ``Value``  ``Id``
     that is to be updated using ``getValueFormForUpdate()``. Similarly,
     the ``ValueForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``ValueForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -862,14 +862,14 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     session is closed.
 
     Two views are defined;
-    
+
       * federated: parameters defined in configurations that are a
         parent of this configuration in the configuration hierarchy are
         included for notifications
       * isolated: notifications are restricted to parameters are defined
         to within this configuration
 
-    
+
     The methods ``federate_valuer_view()`` and ``isolate_value_view()``
     behave as a radio group and one should be selected before invoking
     any lookup methods.
@@ -937,10 +937,43 @@ class ValueNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_value_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_value_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_value_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_value_notification(self, notification_id):
+        """Acknowledge a value notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_values(self):
         """Assigns a callback for notifications of new values.
 
-        ``ValueReceiver.newValue()`` is invoked when a new ``Value`` is
+        ``ValueReceiver.newValues()`` is invoked when a new ``Value`` is
         added to this configuration.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -952,7 +985,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_new_values_for_parameter(self, parameter_id):
         """Assigns a callback for notifications of new values for the given parameter.
 
-        ``ValueReceiver.newValue()`` is invoked when a new ``Value`` is
+        ``ValueReceiver.newValues()`` is invoked when a new ``Value`` is
         added to this configuration.
 
         :param parameter_id: the ``Id`` of the ``Parameter`` to monitor
@@ -967,7 +1000,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_values(self):
         """Assigns a callback for notification of updated parameter values in this configuration.
 
-        ``ValueReceiver.changedValue()`` is invoked when a ``Value`` is
+        ``ValueReceiver.changedValues()`` is invoked when a ``Value`` is
         changed in this configuration.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -979,7 +1012,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_values_for_parameter(self, parameter_id):
         """Assigns a callback for notifications of changed values for the given parameter.
 
-        ``ValueReceiver.changedValue()`` is invoked when a ``Value`` is
+        ``ValueReceiver.changedValues()`` is invoked when a ``Value`` is
         updated to this configuration.
 
         :param parameter_id: the ``Id`` of the ``Parameter`` to monitor
@@ -994,7 +1027,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_value(self, value_id):
         """Assigns a callback for notifications of an update to a value in this configuration.
 
-        ``ValueReceiver.changedValue()`` is invoked when the specified
+        ``ValueReceiver.changedValues()`` is invoked when the specified
         ``Value`` is updated in this configuration.
 
         :param value_id: the ``Id`` of the ``Value`` to monitor
@@ -1009,7 +1042,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_values(self):
         """Assigns a callback for notification of deleted values in this configuration.
 
-        ``ValueReceiver.changedValue()`` is invoked when a ``Value`` is
+        ``ValueReceiver.changedValues()`` is invoked when a ``Value`` is
         removed from this configuration.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1021,7 +1054,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_values_for_parameter(self, parameter_id):
         """Assigns a callback for notifications of changed values for the given parameter.
 
-        ``ValueReceiver.changedValue()`` is invoked when a ``Value`` is
+        ``ValueReceiver.changedValues()`` is invoked when a ``Value`` is
         removed from this configuration.
 
         :param parameter_id: the ``Id`` of the ``Parameter`` to monitor
@@ -1036,7 +1069,7 @@ class ValueNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_value(self, value_id):
         """Assigns a callback for notifications of an update to a value in this configuration.
 
-        ``ValueReceiver.changedValue()`` is invoked when the specified
+        ``ValueReceiver.changedValues()`` is invoked when the specified
         ``Value`` is removed from this configuration.
 
         :param value_id: the ``Id`` of the ``Value`` to monitor
@@ -1234,7 +1267,7 @@ class ParameterQuerySession(osid_sessions.OsidSession):
     The search query is constructed using the ``ParameterQuery``.
 
     Two views of the configuration data are defined;
-    
+
       * federated: parameters defined in configurations that are a
         parent of this configuration in the configuration hierarchy are
         included
@@ -1343,9 +1376,9 @@ class ParameterSearchSession(ParameterQuerySession):
     that can be used to access the resulting ``ParameterList`` or be
     used to perform a search within the result set through
     ``ParameterSearch``.
-    
+
     Two views of the configuration data are defined;
-    
+
       * federated: parameters defined in configurations that are a
         parent of this configuration in the configuration hierarchy are
         included
@@ -1429,20 +1462,20 @@ class ParameterAdminSession(osid_sessions.OsidSession):
     reused with another create operation unless the first operation was
     unsuccessful. Each ``ParameterForm`` corresponds to an attempted
     transaction.
-    
+
     For updates, ``ParameterForms`` are requested to the ``Parameter``
     ``Id`` that is to be updated using ``getParameterFormForUpdate()``.
     Similarly, the ``ParameterForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``ParameterForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Parameters``. To unmap a
     ``Parameter`` from the current ``Configuration,`` the
     ``ParameterConfigurationAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Parameter`` itself thus
     removing it from all known ``Configuration`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -1654,14 +1687,14 @@ class ParameterNotificationSession(osid_sessions.OsidSession):
     polling. Notifications are cancelled when this session is closed.
 
     Two views are defined;
-    
+
       * federated: parameters defined in configurations that are a
         parent of this configuration in the configuration hierarchy are
         included for notifications
       * isolated: notifications are restricted to parameters are defined
         to within this configuration
 
-    
+
     The methods ``federate_parameter_view()`` and
     ``isolate_parameter_view()`` behave as a radio group and one should
     be selected before invoking any lookup methods.
@@ -1728,10 +1761,43 @@ class ParameterNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_parameter_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_parameter_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_parameter_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_parameter_notification(self, notification_id):
+        """Acknowledge a parameter notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_parameters(self):
         """Assigns a callback for notifications of new parameters.
 
-        ``ParameterReceiver.newParameter()`` is invoked when a new
+        ``ParameterReceiver.newParameters()`` is invoked when a new
         ``Parameter`` is added to this configuration.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1743,7 +1809,7 @@ class ParameterNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_parameters(self):
         """Assigns a callback for notification of updated parameters.
 
-        ``ParameterReceiver.changedParameter()`` is invoked when a
+        ``ParameterReceiver.changedParameters()`` is invoked when a
         ``Parameter`` is changed in this configuration.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1755,7 +1821,7 @@ class ParameterNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_parameter(self, parameter_id):
         """Assigns a callback for notifications of an update to a parameter.
 
-        ``ParamaterReceiver.changedParameter()`` is invoked when the
+        ``ParamaterReceiver.changedParameters()`` is invoked when the
         specified ``Parameter`` is changed in this configuration.
 
         :param parameter_id: the ``Id`` of the ``Parameter`` to monitor
@@ -1770,7 +1836,7 @@ class ParameterNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_parameters(self):
         """Assigns a callback for notification of deleted parameters.
 
-        ``ParameterReceiver.deletedParamater()`` is invoked when a
+        ``ParameterReceiver.deletedParamaters()`` is invoked when a
         ``Parameter`` is deleted or removed from this configuration.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1782,7 +1848,7 @@ class ParameterNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_parameter(self, parameter_id):
         """Assigns a callback for notifications of a deleted parameter.
 
-        ``ParameterReceiver.deletedParameter()`` is invoked when the
+        ``ParameterReceiver.deletedParameters()`` is invoked when the
         specified ``Parameter`` is deleted or removed from this
         configuration.
 
@@ -1804,7 +1870,7 @@ class ParameterConfigurationSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -2044,6 +2110,25 @@ class ParameterConfigurationAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_parameter_to_configuration(self, parameter_id, from_configuration_id, to_configuration_id):
+        """Moves a ``Parameter`` from one ``Configuration`` to another.
+
+        Mappings to other ``Configurations`` are unaffected.
+
+        :param parameter_id: the ``Id`` of the ``Parameter``
+        :type parameter_id: ``osid.id.Id``
+        :param from_configuration_id: the ``Id`` of the current ``Configuration``
+        :type from_configuration_id: ``osid.id.Id``
+        :param to_configuration_id: the ``Id`` of the destination ``Configuration``
+        :type to_configuration_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``parameter_id from_configuration_id,`` or ``to_configuration_id`` not found or ``credit_id`` not mapped to ``from_configuration_id``
+        :raise: ``NullArgument`` -- ``parameter_id, from_configuration_id,`` or ``to_configuration_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class ParameterSmartConfigurationSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -2179,11 +2264,11 @@ class ConfigurationLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
@@ -2192,7 +2277,7 @@ class ConfigurationLookupSession(osid_sessions.OsidSession):
     ``Configurations`` referenced by it are available, and a test-taking
     applicationmay sacrifice some interoperability for the sake of
     precision.
-    
+
     Configurations may have an additional interface indicated by their
     respective types. The interface extension is accessed via the
     ``Configuration``. The returns may not be cast directly from the
@@ -2441,7 +2526,7 @@ class ConfigurationSearchSession(ConfigurationQuerySession):
     ``ConfigurationSearchResults`` that can be used to access the
     resulting ``ConfigurationList`` or be used to perform a search
     within the result set through ``ConfigurationSearch``.
-    
+
     Configurations may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ConfigurationQuery``. The returns in this session may not be cast
@@ -2526,7 +2611,7 @@ class ConfigurationAdminSession(osid_sessions.OsidSession):
     submiited to a create operation, it cannot be reused with another
     create operation unless the first operation was unsuccessful. Each
     ``ConfigurationForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``ConfigurationForms`` are requested to the
     ``Configuration``  ``Id`` that is to be updated using
     ``getConfigurationFormForUpdate()``. Similarly, the
@@ -2534,9 +2619,9 @@ class ConfigurationAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``ConfigurationForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Configurations``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2746,46 +2831,45 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_configuration_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_configuration_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_configuration_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_configuration_notification(self, notification_id):
+        """Acknowledge a configuration notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_configurations(self):
         """Registers for notifications of new configurations.
 
-        ``ConfigurationReceiver.newConfiguration()`` is invoked when a
+        ``ConfigurationReceiver.newConfigurations()`` is invoked when a
         new ``Configuration`` is created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_configuration_ancestors(self, configuration_id):
-        """Registers for notification if an ancestor is added to the specified configuration in the configuration hierarchy.
-
-        ``ConfigurationReceiver.newConfigurationAncestor()`` is invoked
-        when the specified configuration experiences an addition in
-        ancestry.
-
-        :param configuration_id: the ``Id`` of the configuration to monitor
-        :type configuration_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- a configuration was not found identified by the given ``Id``
-        :raise: ``NullArgument`` -- ``configuration_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_configuration_descendants(self, configuration_id):
-        """Registers for notification if a descendant is added to the specified configuration in the configuration hierarchy.
-
-        ``ConfigurationReceiver.newConfigurationDescendant()`` is
-        invoked when the specified configuration experiences an addition
-        in descendants.
-
-        :param configuration_id: the ``Id`` of the configuration to monitor
-        :type configuration_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- a configuration was not found identified by the given ``Id``
-        :raise: ``NullArgument`` -- ``configuration_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2795,8 +2879,8 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_configurations(self):
         """Registers for notification of updated configurations.
 
-        ``ConfigurationReceiver.changedConfiguration()`` is invoked when
-        a configuration is changed.
+        ``ConfigurationReceiver.changedConfigurations()`` is invoked
+        when a configuration is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2807,8 +2891,8 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_configuration(self, configuration_id):
         """Registers for notifications of an update to a configuration.
 
-        ``ConfigurationReceiver.changedConfiguration()`` is invoked when
-        the specified ``Configuration`` is changed.
+        ``ConfigurationReceiver.changedConfigurations()`` is invoked
+        when the specified ``Configuration`` is changed.
 
         :param configuration_id: the ``Id`` of the ``Configuration`` to monitor
         :type configuration_id: ``osid.id.Id``
@@ -2823,8 +2907,8 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_configurations(self):
         """Registers for notification of deleted configurations.
 
-        ``ConfigurationReceiver.deletedConfiguration()`` is invoked when
-        a ``Configuration`` is deleted.
+        ``ConfigurationReceiver.deletedConfigurations()`` is invoked
+        when a ``Configuration`` is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2835,7 +2919,7 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_configuration(self, configuration_id):
         """Registers for notifications of a deleted configuration.
 
-        ``ConfiguratinReceiver.deletedConfiguration()`` is invoked when
+        ``ConfiguratinReceiver.deletedConfigurations()`` is invoked when
         the specified configuration is deleted.
 
         :param configuration_id: the ``Id`` of the ``Configuration`` to monitor
@@ -2848,16 +2932,27 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_configuration_ancestors(self, configuration_id):
-        """Registers for notification if an ancestor is removed from the specified configuration in the configuration hierarchy.
+    def register_for_changed_configuration_hierarchy(self):
+        """Registers for notification of an updated configuration hierarchy structure.
 
-        ``ConfigurationReceiver.deletedConfigurationAncestor()`` is
-        invoked when the specified configuration experiences a removal
-        of an ancestor.
+        ``ConfigurationReceiver.changedChildOfConfigurations()`` is
+        invoked when a node experiences a change in its children.
 
-        :param configuration_id: the ``Id`` of the configuration to monitor
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_configuration_hierarchy_for_ancestors(self, configuration_id):
+        """Registers for notification of an updated configuration hierarchy structure.
+
+        ``ConfigurationReceiver.changedChildOfConfigurations()`` is
+        invoked when the specified node or any of its ancestors
+        experiences a change in its children.
+
+        :param configuration_id: the ``Id`` of the ``Configuration`` node to monitor
         :type configuration_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- a configuration was not found identified by the given ``Id``
         :raise: ``NullArgument`` -- ``configuration_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2865,16 +2960,15 @@ class ConfigurationNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_configuration_descendants(self, configuration_id):
-        """Registers for notification if a descendant is removed from fthe specified configuration in the configuration hierarchy.
+    def register_for_changed_configuration_hierarchy_for_descendants(self, configuration_id):
+        """Registers for notification of an updated configuration hierarchy structure.
 
-        ``ConfigurationReceiver.deletedConfigurationDescendant()`` is
-        invoked when the specified configuration experiences a removal
-        of one of its descdendents.
+        ``ConfigurationReceiver.changedChildOfConfigurations()`` is
+        invoked when the specified node or any of its descendants
+        experiences a change in its children.
 
-        :param configuration_id: the ``Id`` of the configuration to monitor
+        :param configuration_id: the ``Id`` of the ``Configuration`` node to monitor
         :type configuration_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- a configuration was not found identified by the given ``Id``
         :raise: ``NullArgument`` -- ``configuration_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2901,10 +2995,10 @@ class ConfigurationHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_configurationss()`` or
     ``get_child_configurations()`` in lieu of a ``PermissionDenied``
     error that may disrupt the traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: configuration elements may be silently omitted
         or re-ordered
       * plenary view: provides a complete set or is an error condition

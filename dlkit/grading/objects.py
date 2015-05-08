@@ -217,7 +217,7 @@ class GradeList(osid_objects.OsidList):
       while (gl.hasNext()) {
            Grade[] grades = gl.getNextGrades(gl.available());
       }
-    
+
 
 
     """
@@ -513,7 +513,7 @@ class GradeSystemList(osid_objects.OsidList):
       while (gsl.hasNext()) {
            GradeSystem[] systems = gsl.getNextGradeSystems(gsl.available());
       }
-    
+
 
 
     """
@@ -913,7 +913,7 @@ class GradeEntryList(osid_objects.OsidList):
       while (gel.hasNext()) {
            GradeEntry[] entries = gel.getNextGradeEntries(gel.available());
       }
-    
+
 
 
     """
@@ -1062,7 +1062,7 @@ class GradebookColumnList(osid_objects.OsidList):
       while (gcl.hasNext()) {
            GradebookColumn[] columns = gcl.getNextGradebookColumns(gcl.available());
       }
-    
+
 
 
     """
@@ -1282,7 +1282,7 @@ class GradebookList(osid_objects.OsidList):
       while (gl.hasNext()) {
            Gradebook[] gradebooks = gl.getNextGradebooks(gl.available());
       }
-    
+
 
 
     """
@@ -1365,7 +1365,7 @@ class GradebookNodeList(osid_objects.OsidList):
       while (gnl.hasNext()) {
            GradebookNode[] nodes = gnl.getNextGradebookNodes(gnl.available());
       }
-    
+
 
 
     """

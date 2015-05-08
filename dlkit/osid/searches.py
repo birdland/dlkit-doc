@@ -19,7 +19,7 @@ class OsidSearch(osid_rules.OsidCondition):
       
       ObjectSearchResults results = session.getObjectsBySearch(query, os);
       ObjectList list = results.getObjectList();
-    
+
 
 
     """

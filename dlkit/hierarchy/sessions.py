@@ -16,7 +16,7 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
     relationships should use the ``Id`` returned from the corresponding
     OSID object, not an Id that has been stored, to avoid problems with
     ``Id`` translation or aliasing.
-    
+
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parents()`` or ``get_children()`` in lieu of a
@@ -488,45 +488,45 @@ class HierarchyStructureNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_hierarchy_structure_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_hierarchy_structure_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_hierarchy_structure_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_hierarchy_structure_notification(self, notification_id):
+        """Acknowledge a hierarchy structure notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_hierarchy_nodes(self):
         """Register for notifications of new hierarchy nodes.
 
-        ``HierarchyStructureReceiver.newNode()`` is invoked when a new
+        ``HierarchyStructureReceiver.newNodes()`` is invoked when a new
         ``Hierarchy`` node is added.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_changed_ancestor(self, node_id):
-        """Registers for notification of an updated hierarchy structure that impacts the ancestors of the specified node.
-
-        ``HierarchyStructureReceiver.newAncestor()`` or
-        ``HierarchyStructureReceiver.deletedAncestor()`` is invoked when
-        the specified hierarchy node experiences a change in ancestry.
-
-        :param node_id: the ``Id`` of the ``hierarchy`` node to monitor
-        :type node_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``node_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_changed_descendant(self, node_id):
-        """Registers for notification of an updated hierarchy structure that impacts the descendants of the specified node.
-
-        ``HierarchyStructureReceiver.newDescendant()`` or
-        ``HierarchyStructureReceiver.deletedDescendant()`` is invoked
-        when the specified hierarchy node experiences a change in
-        offspring.
-
-        :param node_id: the ``Id`` of the ``hierarchy`` node to monitor
-        :type node_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``node_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -536,7 +536,7 @@ class HierarchyStructureNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_hierarchy_nodes(self):
         """Registers for notification of deleted hierarchy nodes.
 
-        ``HierarchyStructureReceiver.deletedNode()`` is invoked when a
+        ``HierarchyStructureReceiver.deletedNodes()`` is invoked when a
         hierarchy ndoe is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -548,10 +548,54 @@ class HierarchyStructureNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_hierarchy_node(self, node_id):
         """Registers for notification of a deleted hierarchy node.
 
-        ``HierarchyStructureReceiver.deletedNode()`` is invoked when the
-        specified hierarchy node is deleted.
+        ``HierarchyStructureReceiver.deletedNodes()`` is invoked when
+        the specified hierarchy node is deleted.
 
         :param node_id: the ``Id`` of the ``Hierarchy`` node to monitor
+        :type node_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``node_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_hierarchy(self):
+        """Registers for notification of an updated hierarchy structure.
+
+        ``HierarchyStructureReceiver.changedChildOfNodes()`` is invoked
+        when a node experiences a change in its children.
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_hierarchy_for_ancestors(self, billing_id):
+        """Registers for notification of an updated hierarchy structure.
+
+        ``BillingReceiver.changedChildOfBillings()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
+
+        :param billing_id: the ``Id`` of the node to monitor
+        :type billing_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``node_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_hierarchy_for_descendants(self, node_id):
+        """Registers for notification of an updated hierarchy structure.
+
+        ``HierarchyStructureReceiver.changedChildOfNodes()`` is invoked
+        when the specified node or any of its descendants experiences a
+        change in its children.
+
+        :param node_id: the ``Id`` of the node to monitor
         :type node_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``node_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -568,11 +612,11 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
@@ -828,7 +872,7 @@ class HierarchySearchSession(HierarchyQuerySession):
     ``HierarchySearchResults`` that can be used to access the resulting
     ``HierarchyList`` or be used to perform a search within the result
     set through ``HierarchySearch``.
-    
+
     Hierarchies may have a query record indicated by their respective
     record types. The query record query is accessed via the
     ``HierarchuQuery``.
@@ -909,16 +953,16 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``HierarchyForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``HierarchyForms`` are requested to the ``Hierarchy``
     ``Id`` that is to be updated using ``getHierarchyFormForUpdate()``.
     Similarly, the ``HierarchyForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``HierarchyForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Hierarchies``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -1132,10 +1176,43 @@ class HierarchyNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_hierarchy_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_hierarchy_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_hierarchy_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_hierarchy_notification(self, notification_id):
+        """Acknowledge a hierarchy notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_hierarchies(self):
         """Register for notifications of new hierarchies.
 
-        ``HierarchyReceiver.newHierarchy()`` is invoked when a new
+        ``HierarchyReceiver.newHierarchies()`` is invoked when a new
         ``Hierarchy`` is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1147,7 +1224,7 @@ class HierarchyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_hierarchies(self):
         """Registers for notification of updated hierarchies.
 
-        ``HierarchyReceiver.changedHierarchy()`` is invoked when a
+        ``HierarchyReceiver.changedHierarchies()`` is invoked when a
         hierarchy is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1159,7 +1236,7 @@ class HierarchyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_hierarchy(self, hierarchy_id):
         """Registers for notification of an updated hierarchy.
 
-        ``HierarchyReceiver.changedHierarchy()`` is invoked when the
+        ``HierarchyReceiver.changedHierarchies()`` is invoked when the
         specified hierarchy is changed.
 
         :param hierarchy_id: the ``Id`` of the ``hierarchy`` to monitor
@@ -1174,7 +1251,7 @@ class HierarchyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_hierarchies(self):
         """Registers for notification of deleted hierarchies.
 
-        ``HierarchyReceiver.deletedHierarchy()`` is invoked when a
+        ``HierarchyReceiver.deletedHierarchies()`` is invoked when a
         hierarchy is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1186,7 +1263,7 @@ class HierarchyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_hierarchy(self, hierarchy_id):
         """Registers for notification of a deleted hierarchy.
 
-        ``HierarchyReceiver.deletedHierarchy()`` is invoked when the
+        ``HierarchyReceiver.deletedHierarchies()`` is invoked when the
         specified hierarchy is deleted.
 
         :param hierarchy_id: the ``Id`` of the ``Hierarchy`` to monitor

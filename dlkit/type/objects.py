@@ -150,7 +150,7 @@ class TypeList(osid_objects.OsidList):
       while (tl.hasNext()) {
            Type[] types = tl.getNextTypes(tl.available());
       }
-    
+
 
 
     """

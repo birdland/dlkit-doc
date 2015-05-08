@@ -149,30 +149,6 @@ _________________
 
 
 
-Repository Query
-________________
-
-   .. automethod:: RepositoryManager.can_search_repositories
-
-   .. autoattribute:: RepositoryManager.repository_query
-
-   .. automethod:: RepositoryManager.get_repositories_by_query
-
-
-
-Repository Search
-_________________
-
-   .. autoattribute:: RepositoryManager.repository_search
-
-   .. autoattribute:: RepositoryManager.repository_search_order
-
-   .. automethod:: RepositoryManager.get_repositories_by_search
-
-   .. automethod:: RepositoryManager.get_repository_query_from_inspector
-
-
-
 Repository Admin
 ________________
 
@@ -197,95 +173,6 @@ ________________
    .. automethod:: RepositoryManager.can_manage_repository_aliases
 
    .. automethod:: RepositoryManager.alias_repository
-
-
-
-Repository Notification
-_______________________
-
-   .. automethod:: RepositoryManager.can_register_for_repository_notifications
-
-   .. automethod:: RepositoryManager.register_for_new_repositories
-
-   .. automethod:: RepositoryManager.register_for_new_repository_ancestors
-
-   .. automethod:: RepositoryManager.register_for_new_repository_descendants
-
-   .. automethod:: RepositoryManager.register_for_changed_repositories
-
-   .. automethod:: RepositoryManager.register_for_changed_repository
-
-   .. automethod:: RepositoryManager.register_for_deleted_repositories
-
-   .. automethod:: RepositoryManager.register_for_deleted_repository
-
-   .. automethod:: RepositoryManager.register_for_deleted_repository_ancestors
-
-   .. automethod:: RepositoryManager.register_for_deleted_repository_descendants
-
-
-
-Repository Hierarchy
-____________________
-
-   .. autoattribute:: RepositoryManager.repository_hierarchy_id
-
-   .. autoattribute:: RepositoryManager.repository_hierarchy
-
-   .. automethod:: RepositoryManager.can_access_repository_hierarchy
-
-   .. automethod:: RepositoryManager.use_comparative_repository_view
-
-   .. automethod:: RepositoryManager.use_plenary_repository_view
-
-   .. autoattribute:: RepositoryManager.root_repository_ids
-
-   .. autoattribute:: RepositoryManager.root_repositories
-
-   .. automethod:: RepositoryManager.has_parent_repositories
-
-   .. automethod:: RepositoryManager.is_parent_of_repository
-
-   .. automethod:: RepositoryManager.get_parent_repository_ids
-
-   .. automethod:: RepositoryManager.get_parent_repositories
-
-   .. automethod:: RepositoryManager.is_ancestor_of_repository
-
-   .. automethod:: RepositoryManager.has_child_repositories
-
-   .. automethod:: RepositoryManager.is_child_of_repository
-
-   .. automethod:: RepositoryManager.get_child_repository_ids
-
-   .. automethod:: RepositoryManager.get_child_repositories
-
-   .. automethod:: RepositoryManager.is_descendant_of_repository
-
-   .. automethod:: RepositoryManager.get_repository_node_ids
-
-   .. automethod:: RepositoryManager.get_repository_nodes
-
-
-
-Repository Hierarchy Design
-___________________________
-
-   .. autoattribute:: RepositoryManager.repository_hierarchy_id
-
-   .. autoattribute:: RepositoryManager.repository_hierarchy
-
-   .. automethod:: RepositoryManager.can_modify_repository_hierarchy
-
-   .. automethod:: RepositoryManager.add_root_repository
-
-   .. automethod:: RepositoryManager.remove_root_repository
-
-   .. automethod:: RepositoryManager.add_child_repository
-
-   .. automethod:: RepositoryManager.remove_child_repository
-
-   .. automethod:: RepositoryManager.remove_child_repositories
 
 
 
@@ -431,30 +318,6 @@ _________________
 
 
 
-Repository Query
-________________
-
-   .. automethod:: RepositoryProxyManager.can_search_repositories
-
-   .. autoattribute:: RepositoryProxyManager.repository_query
-
-   .. automethod:: RepositoryProxyManager.get_repositories_by_query
-
-
-
-Repository Search
-_________________
-
-   .. autoattribute:: RepositoryProxyManager.repository_search
-
-   .. autoattribute:: RepositoryProxyManager.repository_search_order
-
-   .. automethod:: RepositoryProxyManager.get_repositories_by_search
-
-   .. automethod:: RepositoryProxyManager.get_repository_query_from_inspector
-
-
-
 Repository Admin
 ________________
 
@@ -479,95 +342,6 @@ ________________
    .. automethod:: RepositoryProxyManager.can_manage_repository_aliases
 
    .. automethod:: RepositoryProxyManager.alias_repository
-
-
-
-Repository Notification
-_______________________
-
-   .. automethod:: RepositoryProxyManager.can_register_for_repository_notifications
-
-   .. automethod:: RepositoryProxyManager.register_for_new_repositories
-
-   .. automethod:: RepositoryProxyManager.register_for_new_repository_ancestors
-
-   .. automethod:: RepositoryProxyManager.register_for_new_repository_descendants
-
-   .. automethod:: RepositoryProxyManager.register_for_changed_repositories
-
-   .. automethod:: RepositoryProxyManager.register_for_changed_repository
-
-   .. automethod:: RepositoryProxyManager.register_for_deleted_repositories
-
-   .. automethod:: RepositoryProxyManager.register_for_deleted_repository
-
-   .. automethod:: RepositoryProxyManager.register_for_deleted_repository_ancestors
-
-   .. automethod:: RepositoryProxyManager.register_for_deleted_repository_descendants
-
-
-
-Repository Hierarchy
-____________________
-
-   .. autoattribute:: RepositoryProxyManager.repository_hierarchy_id
-
-   .. autoattribute:: RepositoryProxyManager.repository_hierarchy
-
-   .. automethod:: RepositoryProxyManager.can_access_repository_hierarchy
-
-   .. automethod:: RepositoryProxyManager.use_comparative_repository_view
-
-   .. automethod:: RepositoryProxyManager.use_plenary_repository_view
-
-   .. autoattribute:: RepositoryProxyManager.root_repository_ids
-
-   .. autoattribute:: RepositoryProxyManager.root_repositories
-
-   .. automethod:: RepositoryProxyManager.has_parent_repositories
-
-   .. automethod:: RepositoryProxyManager.is_parent_of_repository
-
-   .. automethod:: RepositoryProxyManager.get_parent_repository_ids
-
-   .. automethod:: RepositoryProxyManager.get_parent_repositories
-
-   .. automethod:: RepositoryProxyManager.is_ancestor_of_repository
-
-   .. automethod:: RepositoryProxyManager.has_child_repositories
-
-   .. automethod:: RepositoryProxyManager.is_child_of_repository
-
-   .. automethod:: RepositoryProxyManager.get_child_repository_ids
-
-   .. automethod:: RepositoryProxyManager.get_child_repositories
-
-   .. automethod:: RepositoryProxyManager.is_descendant_of_repository
-
-   .. automethod:: RepositoryProxyManager.get_repository_node_ids
-
-   .. automethod:: RepositoryProxyManager.get_repository_nodes
-
-
-
-Repository Hierarchy Design
-___________________________
-
-   .. autoattribute:: RepositoryProxyManager.repository_hierarchy_id
-
-   .. autoattribute:: RepositoryProxyManager.repository_hierarchy
-
-   .. automethod:: RepositoryProxyManager.can_modify_repository_hierarchy
-
-   .. automethod:: RepositoryProxyManager.add_root_repository
-
-   .. automethod:: RepositoryProxyManager.remove_root_repository
-
-   .. automethod:: RepositoryProxyManager.add_child_repository
-
-   .. automethod:: RepositoryProxyManager.remove_child_repository
-
-   .. automethod:: RepositoryProxyManager.remove_child_repositories
 
 
 

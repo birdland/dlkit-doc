@@ -165,7 +165,7 @@ class OsidAggregateableQueryInspector(OsidQueryInspector):
 
 
 
-class OsidContainableQueryInspector(OsidAggregateableQueryInspector):
+class OsidContainableQueryInspector(OsidQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
     These interfaces are used to examine the actual query terms used in

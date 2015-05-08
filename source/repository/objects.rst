@@ -75,6 +75,10 @@ Asset Form
 
    .. autoattribute:: AssetForm.copyright
 
+   .. autoattribute:: AssetForm.copyright_registration_metadata
+
+   .. autoattribute:: AssetForm.copyright_registration
+
    .. autoattribute:: AssetForm.distribute_verbatim_metadata
 
    .. autoattribute:: AssetForm.distribute_verbatim
@@ -195,42 +199,6 @@ Asset Content List
 
 
 
-Composition
------------
-
-.. autoclass:: Composition
-   :show-inheritance:
-
-   .. autoattribute:: Composition.children_ids
-
-   .. autoattribute:: Composition.children
-
-   .. automethod:: Composition.get_composition_record
-
-
-
-Composition Form
-----------------
-
-.. autoclass:: CompositionForm
-   :show-inheritance:
-
-   .. automethod:: CompositionForm.get_composition_form_record
-
-
-
-Composition List
-----------------
-
-.. autoclass:: CompositionList
-   :show-inheritance:
-
-   .. autoattribute:: CompositionList.next_composition
-
-   .. automethod:: CompositionList.get_next_compositions
-
-
-
 Repository Form
 ---------------
 
@@ -250,32 +218,6 @@ Repository List
    .. autoattribute:: RepositoryList.next_repository
 
    .. automethod:: RepositoryList.get_next_repositories
-
-
-
-Repository Node
----------------
-
-.. autoclass:: RepositoryNode
-   :show-inheritance:
-
-   .. autoattribute:: RepositoryNode.repository
-
-   .. autoattribute:: RepositoryNode.parent_repository_nodes
-
-   .. autoattribute:: RepositoryNode.child_repository_nodes
-
-
-
-Repository Node List
---------------------
-
-.. autoclass:: RepositoryNodeList
-   :show-inheritance:
-
-   .. autoattribute:: RepositoryNodeList.next_repository_node
-
-   .. automethod:: RepositoryNodeList.get_next_repository_nodes
 
 
 

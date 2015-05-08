@@ -588,7 +588,7 @@ class LearningManager(osid_managers.OsidManager, LearningProfile):
         requisites
       * ``ObjectiveRequisiteAssignmentSession:`` a session to manage
         objective requisites
-    
+
       * ``ActivityLookupSession:`` a session to look up activities
       * ``ActivityQuerySession:`` a session to query activities ``None``
       * ``ActivitySearchSession:`` a session to search activities
@@ -602,7 +602,7 @@ class LearningManager(osid_managers.OsidManager, LearningProfile):
         managing activity and objective bank mappings
       * ``ActivitySmartObjectiveBankSession:`` a session for managing
         dynamic objective banks of activities
-    
+
       * ``ProficiencyLookupSession:`` a session to retrieve
         proficiencies
       * ``ProficiencyQuerySession:`` a session to query proficiencies
@@ -622,7 +622,7 @@ class LearningManager(osid_managers.OsidManager, LearningProfile):
         of objectives
       * ``LearningPathSession:`` a session to examine learning paths of
         objectives
-    
+
       * ``ObjectiveBankLookupSession:`` a session to lookup objective
         banks
       * ``ObjectiveBankQuerySession:`` a session to query objective
@@ -1523,7 +1523,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         requisites
       * ``ObjectiveRequisiteAssignmentSession:`` a session to manage
         objective requisites
-    
+
       * ``ActivityLookupSession:`` a session to look up activities
       * ``ActivityQuerySession:`` a session to query activities ``None``
       * ``ActivitySearchSession:`` a session to search activities
@@ -1537,7 +1537,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         managing activity and objective bank mappings
       * ``ActivitySmartObjectiveBankSession:`` a session for managing
         dynamic objective banks of activities
-    
+
       * ``ProficiencyLookupSession:`` a session to retrieve
         proficiencies
       * ``ProficiencyQuerySession:`` a session to query proficiencies
@@ -1557,7 +1557,7 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         of objectives
       * ``LearningPathSession:`` a session to examine learning paths of
         objectives
-    
+
       * ``ObjectiveBankLookupSession:`` a session to lookup objective
         banks
       * ``ObjectiveBankQuerySession:`` a session to query objective

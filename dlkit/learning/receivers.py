@@ -3,73 +3,46 @@ from ..osid import receivers as osid_receivers
 
 class ObjectiveReceiver(osid_receivers.OsidReceiver):
     """The objective receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Objectives``."""
-    def new_objective(self, objective_id):
+    def new_objectives(self, notification_id, objective_ids):
         """The callback for notifications of new objectives.
 
-        :param objective_id: the ``Id`` of the new ``Objective``
-        :type objective_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_ids: the ``Ids`` of the new ``Objectives``
+        :type objective_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_objective(self, objective_id, ancestor_id):
-        """The callback for notifications of new objective ancestors.
-
-        :param objective_id: the ``Id`` of the ``Objective``
-        :type objective_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ``Objective`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_objective(self, objective_id, descendant_id):
-        """The callback for notifications of new objective descendants.
-
-        :param objective_id: the ``Id`` of the ``Objective``
-        :type objective_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new ``Objective`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_objective(self, objective_id):
+    def changed_objectives(self, notification_id, objective_ids):
         """The callback for notification of updated objectives.
 
-        :param objective_id: the ``Id`` of the updated ``Objective``
-        :type objective_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_ids: the ``Ids`` of the updated ``Objectives``
+        :type objective_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_objective(self, objective_id):
+    def deleted_objectives(self, notification_id, objective_ids):
         """The callback for notification of deleted objectives.
 
-        :param objective_id: the ``Id`` of the deleted ``Objective``
-        :type objective_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_ids: the ``Ids`` of the deleted ``Objectives``
+        :type objective_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_objective(self, objective_id, ancestor_id):
-        """The callback for notifications of deleted objective ancestors.
+    def changed_child_of_objectives(self, notification_id, objective_ids):
+        """The callback for notifications of changes to children of objective hierarchy nodes.
 
-        :param objective_id: the ``Id`` of the ``Objective``
-        :type objective_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ``Objective`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_objective(self, objective_id, descendant_id):
-        """The callback for notifications of deleted objective descendants.
-
-        :param objective_id: the ``Id`` of the ``Objective``
-        :type objective_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the removed ``Objective`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_ids: the ``Ids`` of the ``Objectives`` whose children have changed
+        :type objective_ids: ``osid.id.IdList``
 
         """
         pass
@@ -77,29 +50,35 @@ class ObjectiveReceiver(osid_receivers.OsidReceiver):
 
 class ActivityReceiver(osid_receivers.OsidReceiver):
     """The activity receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Activities``."""
-    def new_activity(self, activity_id):
+    def new_activities(self, notification_id, activity_ids):
         """The callback for notifications of new activities.
 
-        :param activity_id: the ``Id`` of the new ``Activity``
-        :type activity_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param activity_ids: the ``Id`` of the new ``Activities``
+        :type activity_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_activity(self, activity_id):
+    def changed_activities(self, notification_id, activity_ids):
         """The callback for notification of updated activities.
 
-        :param activity_id: the ``Id`` of the updated ``Activity``
-        :type activity_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param activity_ids: the ``Id`` of the updated ``Activities``
+        :type activity_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_activity(self, activity_id):
+    def deleted_activities(self, notification_id, activity_ids):
         """The callback for notification of deleted activities.
 
-        :param activity_id: the ``Id`` of the deleted ``Activity``
-        :type activity_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param activity_ids: the ``Id`` of the deleted ``Activities``
+        :type activity_ids: ``osid.id.IdList``
 
         """
         pass
@@ -107,29 +86,35 @@ class ActivityReceiver(osid_receivers.OsidReceiver):
 
 class ProficiencyReceiver(osid_receivers.OsidReceiver):
     """The proficiency receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted proficiencies."""
-    def new_proficiency(self, proficiency_id):
+    def new_proficiencies(self, notification_id, proficiency_ids):
         """The callback for notifications of new proficiencies.
 
-        :param proficiency_id: the ``Id`` of the new ``Proficiency``
-        :type proficiency_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param proficiency_ids: the ``Ids`` of the new ``Proficiencies``
+        :type proficiency_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_proficiency(self, proficiency_id):
+    def changed_proficiencies(self, notification_id, proficiency_ids):
         """The callback for notification of updated proficiencies.
 
-        :param proficiency_id: the ``Id`` of the updated ``Proficiency``
-        :type proficiency_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param proficiency_ids: the ``Ids`` of the updated ``Proficiencies``
+        :type proficiency_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_proficiency(self, proficiency_id):
+    def deleted_proficiencies(self, notification_id, proficiency_ids):
         """The callback for notification of deleted proficiencies.
 
-        :param proficiency_id: the ``Id`` of the deleted ``Proficiency``
-        :type proficiency_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param proficiency_ids: the ``Ids`` of the deleted ``Proficiencies``
+        :type proficiency_ids: ``osid.id.IdList``
 
         """
         pass
@@ -137,73 +122,46 @@ class ProficiencyReceiver(osid_receivers.OsidReceiver):
 
 class ObjectiveBankReceiver(osid_receivers.OsidReceiver):
     """The vault receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``ObjectiveBank`` objects."""
-    def new_objective_bank(self, objective_bank_id):
+    def new_objective_banks(self, notification_id, objective_bank_ids):
         """The callback for notifications of new objective banks.
 
-        :param objective_bank_id: the ``Id`` of the new ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_bank_ids: the ``Ids`` of the new ``ObjectiveBanks``
+        :type objective_bank_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_objective_bank(self, objective_bank_id, ancestor_id):
-        """The callback for notifications of new objective bank ancestors.
-
-        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ``ObjectiveBank`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_objective_bank(self, objective_bank_id, descendant_id):
-        """The callback for notifications of new objective bank descendants.
-
-        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new ``ObjectiveBank`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_objective_bank(self, objective_bank_id):
+    def changed_objective_banks(self, notification_id, objective_bank_ids):
         """The callback for notification of updated objective banks.
 
-        :param objective_bank_id: the ``Id`` of the updated ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_bank_ids: the ``Ids`` of the updated ``ObjectiveBanks``
+        :type objective_bank_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_objective_bank(self, objective_bank_id):
+    def deleted_objective_banks(self, notification_id, objective_bank_ids):
         """The callback for notification of deleted objective banks.
 
-        :param objective_bank_id: the ``Id`` of the deleted ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_bank_ids: the ``Ids`` of the deleted ``ObjectiveBanks``
+        :type objective_bank_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_objective_bank(self, objective_bank_id, ancestor_id):
-        """The callback for notifications of deleted objective bank ancestors.
+    def changed_child_of_objective_banks(self, notification_id, objective_bank_ids):
+        """The callback for notifications of changes to children of objective bank hierarchy nodes.
 
-        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ``ObjectiveBank`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_objective_bank(self, objective_bank_id, descendant_id):
-        """The callback for notifications of deleted objective bank descendants.
-
-        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the removed ``ObjectiveBank`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param objective_bank_ids: the ``Ids`` of the ``ObjectiveBanks`` whose children have changed
+        :type objective_bank_ids: ``osid.id.IdList``
 
         """
         pass

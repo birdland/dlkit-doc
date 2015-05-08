@@ -3,38 +3,29 @@ from ..osid import receivers as osid_receivers
 
 class ResourceReceiver(osid_receivers.OsidReceiver):
     """The resource receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Resource`` objects."""
-    def new_resource(self, resource_id):
+    def new_resources(self, resource_ids):
         """The callback for notifications of new resources.
 
-        :param resource_id: the ``Id`` of the new ``Resource``
-        :type resource_id: ``osid.id.Id``
+        :param resource_ids: the ``Ids`` of the new ``Resources``
+        :type resource_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_resource(self, resource_id):
+    def changed_resources(self, resource_ids):
         """The callback for notification of updated resources.
 
-        :param resource_id: the ``Id`` of the updated ``Resource``
-        :type resource_id: ``osid.id.Id``
+        :param resource_ids: the ``Ids`` of the updated ``Resources``
+        :type resource_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_resource_membership(self, resource_id):
-        """The callback for notification of updated resources.
-
-        :param resource_id: the ``Id`` of the updated ``Resource``
-        :type resource_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_resource(self, resource_id):
+    def deleted_resources(self, resource_ids):
         """the callback for notification of deleted resources.
 
-        :param resource_id: the ``Id`` of the deleted ``Resource``
-        :type resource_id: ``osid.id.Id``
+        :param resource_ids: the ``Ids`` of the deleted ``Resources``
+        :type resource_ids: ``osid.id.IdList``
 
         """
         pass
@@ -67,29 +58,29 @@ class GroupReceiver(osid_receivers.OsidReceiver):
 
 class ResourceRelationshipReceiver(osid_receivers.OsidReceiver):
     """The resource relationship receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``ResourceRelationships``."""
-    def new_resource_relationship(self, resource_relationship_id):
+    def new_resource_relationships(self, resource_relationship_ids):
         """The callback for notifications of new relationships.
 
-        :param resource_relationship_id: the ``Id`` of the new ``ResourceRelationship``
-        :type resource_relationship_id: ``osid.id.Id``
+        :param resource_relationship_ids: the ``Ids`` of the new ``ResourceRelationships``
+        :type resource_relationship_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_resource_relationship(self, resource_relationship_id):
+    def changed_resource_relationships(self, resource_relationship_ids):
         """The callback for notification of updated relationships.
 
-        :param resource_relationship_id: the ``Id`` of the updated ``ResourceRelationship``
-        :type resource_relationship_id: ``osid.id.Id``
+        :param resource_relationship_ids: the ``Ids`` of the updated ``ResourceRelationships``
+        :type resource_relationship_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_resource_relationship(self, resource_relationship_id):
+    def deleted_resource_relationships(self, resource_relationship_ids):
         """The callback for notification of deleted relationships.
 
-        :param resource_relationship_id: the ``Id`` of the deleted ``ResourceRelationship``
-        :type resource_relationship_id: ``osid.id.Id``
+        :param resource_relationship_ids: the ``Ids`` of the deleted ``ResourceRelationships``
+        :type resource_relationship_ids: ``osid.id.IdList``
 
         """
         pass
@@ -97,11 +88,11 @@ class ResourceRelationshipReceiver(osid_receivers.OsidReceiver):
 
 class BinReceiver(osid_receivers.OsidReceiver):
     """The bin receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Bin`` objects."""
-    def new_bin(self, bin_id):
+    def new_bins(self, bin_ids):
         """The callback for notifications of new bins.
 
-        :param bin_id: the ``Id`` of the new ``Bin``
-        :type bin_id: ``osid.id.Id``
+        :param bin_ids: the ``Ids`` of the new ``Bins``
+        :type bin_ids: ``osid.id.IdList``
 
         """
         pass
@@ -128,20 +119,20 @@ class BinReceiver(osid_receivers.OsidReceiver):
         """
         pass
 
-    def changed_bin(self, bin_id):
+    def changed_bins(self, bin_ids):
         """The callback for notification of updated bins.
 
-        :param bin_id: the ``Id`` of the updated ``Bin``
-        :type bin_id: ``osid.id.Id``
+        :param bin_ids: the ``Ids`` of the updated ``Bins``
+        :type bin_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_bin(self, bin_id):
+    def deleted_bins(self, bin_ids):
         """The callback for notification of deleted bins.
 
-        :param bin_id: the ``Id`` of the deleted ``Bin``
-        :type bin_id: ``osid.id.Id``
+        :param bin_ids: the ``Ids`` of the deleted ``Bins``
+        :type bin_ids: ``osid.id.IdList``
 
         """
         pass
@@ -166,6 +157,10 @@ class BinReceiver(osid_receivers.OsidReceiver):
         :type descendant_id: ``osid.id.Id``
 
         """
+        pass
+
+    def restructured_bin_hierarchy(self):
+        """The callback for notifications of changes to a bin hierarchy where the hierarchy needs to refreshed."""
         pass
 
 

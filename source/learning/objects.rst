@@ -67,32 +67,6 @@ Objective List
 
 
 
-Objective Node
---------------
-
-.. autoclass:: ObjectiveNode
-   :show-inheritance:
-
-   .. autoattribute:: ObjectiveNode.objective
-
-   .. autoattribute:: ObjectiveNode.parent_objective_nodes
-
-   .. autoattribute:: ObjectiveNode.child_objective_nodes
-
-
-
-Objective Node List
--------------------
-
-.. autoclass:: ObjectiveNodeList
-   :show-inheritance:
-
-   .. autoattribute:: ObjectiveNodeList.next_objective_node
-
-   .. automethod:: ObjectiveNodeList.get_next_objective_nodes
-
-
-
 Activity
 --------
 
@@ -159,62 +133,6 @@ Activity List
 
 
 
-Proficiency
------------
-
-.. autoclass:: Proficiency
-   :show-inheritance:
-
-   .. autoattribute:: Proficiency.resource_id
-
-   .. autoattribute:: Proficiency.resource
-
-   .. autoattribute:: Proficiency.objective_id
-
-   .. autoattribute:: Proficiency.objective
-
-   .. autoattribute:: Proficiency.completion
-
-   .. automethod:: Proficiency.has_level
-
-   .. autoattribute:: Proficiency.level_id
-
-   .. autoattribute:: Proficiency.level
-
-   .. automethod:: Proficiency.get_proficiency_record
-
-
-
-Proficiency Form
-----------------
-
-.. autoclass:: ProficiencyForm
-   :show-inheritance:
-
-   .. autoattribute:: ProficiencyForm.completion_metadata
-
-   .. autoattribute:: ProficiencyForm.completion
-
-   .. autoattribute:: ProficiencyForm.level_metadata
-
-   .. autoattribute:: ProficiencyForm.level
-
-   .. automethod:: ProficiencyForm.get_proficiency_form_record
-
-
-
-Proficiency List
-----------------
-
-.. autoclass:: ProficiencyList
-   :show-inheritance:
-
-   .. autoattribute:: ProficiencyList.next_proficiency
-
-   .. automethod:: ProficiencyList.get_next_proficiencies
-
-
-
 Objective Bank Form
 -------------------
 
@@ -234,32 +152,6 @@ Objective Bank List
    .. autoattribute:: ObjectiveBankList.next_objective_bank
 
    .. automethod:: ObjectiveBankList.get_next_objective_banks
-
-
-
-Objective Bank Node
--------------------
-
-.. autoclass:: ObjectiveBankNode
-   :show-inheritance:
-
-   .. autoattribute:: ObjectiveBankNode.objective_bank
-
-   .. autoattribute:: ObjectiveBankNode.parent_objective_bank_nodes
-
-   .. autoattribute:: ObjectiveBankNode.child_objective_bank_nodes
-
-
-
-Objective Bank Node List
-------------------------
-
-.. autoclass:: ObjectiveBankNodeList
-   :show-inheritance:
-
-   .. autoattribute:: ObjectiveBankNodeList.next_objective_bank_node
-
-   .. automethod:: ObjectiveBankNodeList.get_next_objective_bank_nodes
 
 
 

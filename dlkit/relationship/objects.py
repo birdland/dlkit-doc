@@ -88,7 +88,7 @@ class RelationshipList(osid_objects.OsidList):
       while (rl.hasNext()) {
            Relationship[] relationships = rl.getNextRelationships(rl.available());
       }
-    
+
 
 
     """
@@ -187,7 +187,7 @@ class FamilyList(osid_objects.OsidList):
       while (fl.hasNext()) {
            Family[] families = fl.getNextFamilies(fl.available());
       }
-    
+
 
 
     """
@@ -273,7 +273,7 @@ class FamilyNodeList(osid_objects.OsidList):
       while (fnl.hasNext()) {
            FamilyNode[] nodes = fnl.getNextFamilyNodes(fnl.available());
       }
-    
+
 
 
     """

@@ -227,7 +227,7 @@ class CommentList(osid_objects.OsidList):
       while (cl.hasNext()) {
            Comment[] comments = cl.getNextComments(cl.available());
       }
-    
+
 
 
     """
@@ -323,7 +323,7 @@ class BookList(osid_objects.OsidList):
       while (bl.hasNext()) {
            Book[] books = bl.getNextBooks(bl.available());
       }
-    
+
 
 
     """
@@ -409,7 +409,7 @@ class BookNodeList(osid_objects.OsidList):
       while (bnl.hasNext()) {
            BookNode[] nodes = bnl.getNextBookNodes(bnl.available());
       }
-    
+
 
 
     """

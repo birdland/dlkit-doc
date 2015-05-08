@@ -6,7 +6,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_title(self, style):
         """Specifies a preference for ordering the result set by asset title.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -16,7 +16,27 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_public_domain(self, style):
         """Specifies a preference for grouping the result set by published domain.
 
-        :param style: search order record
+        :param style: search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def order_by_copyright(self, style):
+        """Specifies a preference for grouping the result set by copyright.
+
+        :param style: search order style
+        :type style: ``osid.SearchOrderStyle``
+        :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        """
+        pass
+
+    def order_by_copyright_registration(self, style):
+        """Specifies a preference for grouping the result set by copyright registration.
+
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -26,7 +46,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_distribute_verbatim(self, style):
         """Specifies a preference for grouping the result set by the ability to distribute copies.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -36,7 +56,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_distribute_alterations(self, style):
         """Specifies a preference for grouping the result set by the ability to distribute alterations.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -46,7 +66,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_distribute_compositions(self, style):
         """Specifies a preference for grouping the result set by the ability to distribute compositions.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -56,7 +76,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_source(self, style):
         """Specifies a preference for ordering the result set by asset source.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -87,7 +107,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_created_date(self, style):
         """Specifies a preference for ordering the result set by created date.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -97,7 +117,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_published(self, style):
         """Specifies a preference for grouping the result set by published status.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -107,7 +127,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_published_date(self, style):
         """Specifies a preference for ordering the result set by published date.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -117,7 +137,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_principal_credit_string(self, style):
         """Specifies a preference for ordering the result set by the principal credit string.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
@@ -127,7 +147,7 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
     def order_by_temporal_coverage(self, style):
         """Specifies a preference for ordering the result set by temporal coverage.
 
-        :param style: search order record
+        :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 

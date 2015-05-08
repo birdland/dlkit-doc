@@ -209,13 +209,13 @@ class LocationQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated map view: searches include locations in maps of which
         this map is an ancestor in the map hierarchy
       * isolated map view: searches are restricted to locations in this
         map
 
-    
+
     Locations may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``LocationQuery``.
@@ -322,16 +322,16 @@ class LocationSearchSession(LocationQuerySession):
     that can be used to access the resulting ``LocationList`` or be used
     to perform a search within the result set through
     ``LocationSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated map view: searches include locations in maps of which
         this map is an ancestor in the map hierarchy
       * isolated map view: searches are restricted to locations in this
         map
 
-    
+
     Locations may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``LocationQuery``.
@@ -412,20 +412,20 @@ class LocationAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``LocationForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``LocationForms`` are requested to the ``Location``
     ``Id`` that is to be updated using ``getLocationFormForUpdate()``.
     Similarly, the ``LocationForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``LocationForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Locations``. To unmap a ``Location``
     from the current ``Map,`` the ``LocationMapAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Location`` itself thus removing it from all known ``Map``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -707,42 +707,45 @@ class LocationNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_location_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_location_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_location_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_location_notification(self, notification_id):
+        """Acknowledge a location notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_locations(self):
         """Register for notifications of new locations.
 
-        ``LocationReceiver.newLocation()`` is invoked when a new
+        ``LocationReceiver.newLocations()`` is invoked when a new
         ``Location`` appears in this map.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_location_ancestors(self, location_id):
-        """Registers for notification if an ancestor is added to the specified location in the location hierarchy.
-
-        ``LocationReceiver.newLocationAncestor()`` is invoked when the
-        specified location experiences an addition in ancestry.
-
-        :param location_id: the ``Id`` of the location to monitor
-        :type location_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``location_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_location_descendants(self, location_id):
-        """Registers for notification if a descendant is added to the specified location in the location hierarchy.
-
-        ``LocationReceiver.newLocationDescendant()`` is invoked when the
-        specified location experiences an addition in descendants.
-
-        :param location_id: the ``Id`` of the location to monitor
-        :type location_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``location_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -752,7 +755,7 @@ class LocationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_locations(self):
         """Registers for notification of updated locations.
 
-        ``LocationReceiver.changedLocation()`` is invoked when a
+        ``LocationReceiver.changedLocations()`` is invoked when a
         location in this map is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -764,7 +767,7 @@ class LocationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_location(self, location_id):
         """Registers for notification of an updated location.
 
-        ``LocationReceiver.changedLocation()`` is invoked when the
+        ``LocationReceiver.changedLocations()`` is invoked when the
         specified location in this map is changed.
 
         :param location_id: the ``Id`` of the ``Location`` to monitor
@@ -779,7 +782,7 @@ class LocationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_locations(self):
         """Registers for notification of deleted locations.
 
-        ``LocationReceiver.deletedLocation()`` is invoked when a
+        ``LocationReceiver.deletedLocations()`` is invoked when a
         location is deleted or removed from this map.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -791,7 +794,7 @@ class LocationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_location(self, location_id):
         """Registers for notification of a deleted location.
 
-        ``LocationReceiver.deletedLocation()`` is invoked when the
+        ``LocationReceiver.deletedLocations()`` is invoked when the
         specified location is deleted or removed from this map.
 
         :param location_id: the ``Id`` of the ``Location`` to monitor
@@ -803,31 +806,44 @@ class LocationNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_location_ancestors(self, location_id):
-        """Registers for notification if an ancestor is removed from the specified location in the location hierarchy.
+    def register_for_changed_location_hierarchy(self):
+        """Registers for notification of an updated location hierarchy structure.
 
-        ``LocationReceiver.deletedLocationAncestor()`` is invoked when
-        the specified location experiences a removal of an ancestor.
+        ``LocationReceiver.changedChildOfLocations()`` is invoked when a
+        node experiences a change in its children.
 
-        :param location_id: the ``Id`` of the location to monitor
-        :type location_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``location_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_location_descendants(self, location_id):
-        """Registers for notification if a descendant is removed from fthe specified location in the location hierarchy.
+    def register_for_changed_location_hierarchy_for_ancestors(self, location_id):
+        """Registers for notification of an updated location hierarchy structure.
 
-        ``LocationReceiver.deletedLocationDescednant()`` is invoked when
-        the specified location experiences a removal of one of its
-        descdendents.
+        ``LocationReceiver.changedChildOfLocations()`` is invoked when
+        the specified node or any of its ancestors experiences a change
+        in its children.
 
-        :param location_id: the ``Id`` of the location to monitor
+        :param location_id: the ``Id`` of the ``Location`` node to monitor
         :type location_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``location_id is null``
+        :raise: ``NullArgument`` -- ``location_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_location_hierarchy_for_descendants(self, location_id):
+        """Registers for notification of an updated location hierarchy structure.
+
+        ``LocationReceiver.changedChildOfLocations()`` is invoked when
+        the specified node or any of its descendants experiences a
+        change in its children.
+
+        :param location_id: the ``Id`` of the ``Location`` node to monitor
+        :type location_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``location_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -852,10 +868,10 @@ class LocationHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_m_locations()`` or ``get_child_locations()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative location view: location elements may be silently
         omitted or re-ordered
       * plenary location view: provides a complete set or is an error
@@ -1240,7 +1256,7 @@ class LocationMapSession(osid_sessions.OsidSession):
     have its own authorizations governing who is allowed to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1470,6 +1486,25 @@ class LocationMapAssignmentSession(osid_sessions.OsidSession):
         :type map_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``location_id`` or ``map_id`` not found or ``location_id`` not assigned to ``map_id``
         :raise: ``NullArgument`` -- ``location_id`` or ``map_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_location_to_map(self, location_id, from_map_id, to_map_id):
+        """Moves a ``Map`` from one ``Location`` to another.
+
+        Mappings to other ``Locations`` are unaffected.
+
+        :param location_id: the ``Id`` of the ``Location``
+        :type location_id: ``osid.id.Id``
+        :param from_map_id: the ``Id`` of the current ``Map``
+        :type from_map_id: ``osid.id.Id``
+        :param to_map_id: the ``Id`` of the destination ``Map``
+        :type to_map_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``location_id, from_map_id,`` or ``to_map_id`` not found or ``location_id`` not mapped to ``from_map_id``
+        :raise: ``NullArgument`` -- ``location_id, from_map_id,`` or ``to_map_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2208,6 +2243,39 @@ class ResourceLocationNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_resource_location_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_resource_location_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_resource_location_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_resource_location_notification(self, notification_id):
+        """Acknowledge a resource location notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_entered_locations(self):
         """Register for notifications of entered locations for a resource.
 
@@ -2652,11 +2720,11 @@ class MapLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
@@ -2901,7 +2969,7 @@ class MapSearchSession(MapQuerySession):
     ``MapSearchResults`` that can be used to access the resulting
     ``MapList`` or be used to perform a search within the result set
     through ``MapSearch``.
-    
+
     Maps may have a query record indicated by their respective record
     types. The query record is accessed via the ``MapQuery``.
 
@@ -2981,15 +3049,15 @@ class MapAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``MapForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``MapForms`` are requested to the ``Map``  ``Id`` that
     is to be updated using ``getMapFormForUpdate()``. Similarly, the
     ``MapForm`` has metadata about the data that can be updated and it
     can perform validation before submitting the update. The ``MapForm``
     can only be used once for a successful update and cannot be reused.
-    
+
     The delete operations delete ``Maps``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -3196,42 +3264,45 @@ class MapNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_map_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_map_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_map_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_map_notification(self, notification_id):
+        """Acknowledge a map notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_maps(self):
         """Register for notifications of new maps.
 
-        ``MapReceiver.newMap()`` is invoked when a new ``Map`` is
+        ``MapReceiver.newMaps()`` is invoked when a new ``Map`` is
         created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_map_ancestors(self, map_id):
-        """Registers for notification if an ancestor is added to the specified map in the map hierarchy.
-
-        ``MapReceiver.newMapAncestor()`` is invoked when the specified
-        map experiences an addition in ancestry.
-
-        :param map_id: the ``Id`` of the map to monitor
-        :type map_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``map_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_map_descendants(self, map_id):
-        """Registers for notification if a descendant is added to the specified map in the map hierarchy.
-
-        ``MapReceiver.newMapDescendant()`` is invoked when the specified
-        map experiences an addition in descendants.
-
-        :param map_id: the ``Id`` of the map to monitor
-        :type map_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``map_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3241,7 +3312,7 @@ class MapNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_maps(self):
         """Registers for notification of updated maps.
 
-        ``MapReceiver.changedMap()`` is invoked when a map is changed.
+        ``MapReceiver.changedMaps()`` is invoked when a map is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3252,7 +3323,7 @@ class MapNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_map(self, map_id):
         """Registers for notification of an updated map.
 
-        ``MapReceiver.changedMap()`` is invoked when the specified map
+        ``MapReceiver.changedMaps()`` is invoked when the specified map
         is changed.
 
         :param map_id: the Id of the ``Map`` to monitor
@@ -3267,7 +3338,7 @@ class MapNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_maps(self):
         """Registers for notification of deleted maps.
 
-        ``MapReceiver.deletedMap()`` is invoked when a map is deleted.
+        ``MapReceiver.deletedMaps()`` is invoked when a map is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3278,7 +3349,7 @@ class MapNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_map(self, map_id):
         """Registers for notification of a deleted map.
 
-        ``MapReceiver.deletedMap()`` is invoked when the specified map
+        ``MapReceiver.deletedMaps()`` is invoked when the specified map
         is deleted.
 
         :param map_id: the ``Id`` of the ``Map`` to monitor
@@ -3290,30 +3361,44 @@ class MapNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_map_ancestors(self, map_id):
-        """Registers for notification if an ancestor is removed from the specified map in the map hierarchy.
+    def register_for_changed_map_hierarchy(self):
+        """Registers for notification of an updated map hierarchy structure.
 
-        ``MapReceiver.deletedMapAncestor()`` is invoked when the
-        specified map experiences a removal of an ancestor.
+        ``MapReceiver.changedChildOfMaps()`` is invoked when a node
+        experiences a change in its children.
 
-        :param map_id: the ``Id`` of the map to monitor
-        :type map_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``map_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_map_descendants(self, map_id):
-        """Registers for notification if a descendant is removed from fthe specified map in the map hierarchy.
+    def register_for_changed_map_hierarchy_for_ancestors(self, map_id):
+        """Registers for notification of an updated map hierarchy structure.
 
-        ``MapReceiver.deletedMapDescednant()`` is invoked when the
-        specified map experiences a removal of one of its descdendents.
+        ``MapReceiver.changedChildOfMaps()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
 
-        :param map_id: the ``Id`` of the map to monitor
+        :param map_id: the ``Id`` of the ``Map`` node to monitor
         :type map_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``map_id is null``
+        :raise: ``NullArgument`` -- ``map_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_map_hierarchy_for_descendants(self, map_id):
+        """Registers for notification of an updated map hierarchy structure.
+
+        ``MapReceiver.changedChildOfMaps()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
+
+        :param map_id: the ``Id`` of the ``Map`` node to monitor
+        :type map_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``map_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3338,10 +3423,10 @@ class MapHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_maps()`` or ``get_child_maps()`` in lieu of
     a ``PermissionDenied`` error that may disrupt the traversal through
     authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative map view: map elements may be silently omitted or
         re-ordered
       * plenary map view: provides a complete set or is an error

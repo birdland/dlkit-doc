@@ -182,7 +182,7 @@ class IdList(osid_objects.OsidList):
       while (il.hasNext()) {
            Id[] ids = il.getNextIds(il.available());
       }
-    
+
 
 
     """

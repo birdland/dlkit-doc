@@ -411,32 +411,6 @@ Bank List
 
 
 
-Bank Node
----------
-
-.. autoclass:: BankNode
-   :show-inheritance:
-
-   .. autoattribute:: BankNode.bank
-
-   .. autoattribute:: BankNode.parent_bank_nodes
-
-   .. autoattribute:: BankNode.child_bank_nodes
-
-
-
-Bank Node List
---------------
-
-.. autoclass:: BankNodeList
-   :show-inheritance:
-
-   .. autoattribute:: BankNodeList.next_bank_node
-
-   .. automethod:: BankNodeList.get_next_bank_nodes
-
-
-
 Response List
 -------------
 

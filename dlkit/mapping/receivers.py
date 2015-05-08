@@ -3,73 +3,46 @@ from ..osid import receivers as osid_receivers
 
 class LocationReceiver(osid_receivers.OsidReceiver):
     """The location receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted locations."""
-    def new_location(self, location_id):
+    def new_locations(self, notification_id, location_ids):
         """The callback for notifications of new locations.
 
-        :param location_id: the ``Id`` of the new ``Location``
-        :type location_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param location_ids: the ``Ids`` of the new ``Locations``
+        :type location_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_location(self, location_id, ancestor_id):
-        """The callback for notifications of new location ancestors.
-
-        :param location_id: the ``Id`` of the ``Location``
-        :type location_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ``Location`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_location(self, location_id, descendant_id):
-        """The callback for notifications of new location descendants.
-
-        :param location_id: the ``Id`` of the ``Location``
-        :type location_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new ``Location`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_location(self, location_id):
+    def changed_locations(self, notification_id, location_ids):
         """The callback for notification of updated locations.
 
-        :param location_id: the ``Id`` of the updated ``Location``
-        :type location_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param location_ids: the ``Ids`` of the updated ``Locations``
+        :type location_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_location(self, location_id):
+    def deleted_locations(self, notification_id, location_ids):
         """The callback for notification of deleted locations.
 
-        :param location_id: the ``Id`` of the deleted ``Location``
-        :type location_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param location_ids: the ``Ids`` of the deleted ``Locations``
+        :type location_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_location(self, location_id, ancestor_id):
-        """The callback for notifications of deleted location ancestors.
+    def changed_child_of_locations(self, notification_id, location_ids):
+        """The callback for notifications of changes to children of location hierarchy nodes.
 
-        :param location_id: the ``Id`` of the ``Location``
-        :type location_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ``Location`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_location(self, location_id, descendant_id):
-        """The callback for notifications of deleted location descendants.
-
-        :param location_id: the ``Id`` of the ``Location``
-        :type location_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the removed ``Location`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param location_ids: the ``Ids`` of the ``Locations`` whose children have changed
+        :type location_ids: ``osid.id.IdList``
 
         """
         pass
@@ -77,73 +50,46 @@ class LocationReceiver(osid_receivers.OsidReceiver):
 
 class MapReceiver(osid_receivers.OsidReceiver):
     """The map receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Map`` objects."""
-    def new_map(self, map_id):
+    def new_maps(self, notification_id, map_ids):
         """The callback for notifications of new maps.
 
-        :param map_id: the ``Id`` of the new ``Map``
-        :type map_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param map_ids: the ``Ids`` of the new ``Maps``
+        :type map_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_map(self, map_id, ancestor_id):
-        """The callback for notifications of new map ancestors.
-
-        :param map_id: the ``Id`` of the ``Map``
-        :type map_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ``Map`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_map(self, map_id, descendant_id):
-        """The callback for notifications of new map descendants.
-
-        :param map_id: the ``Id`` of the ``Map``
-        :type map_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new ``Map`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_map(self, map_id):
+    def changed_maps(self, notification_id, map_ids):
         """The callback for notification of updated map.
 
-        :param map_id: the ``Id`` of the updated ``Map``
-        :type map_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param map_ids: the ``Ids`` of the updated ``Maps``
+        :type map_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_map(self, map_id):
+    def deleted_maps(self, notification_id, map_ids):
         """The callback for notification of deleted maps.
 
-        :param map_id: the ``Id`` of the deleted ``Map``
-        :type map_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param map_ids: the ``Ids`` of the deleted ``Maps``
+        :type map_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_map(self, map_id, ancestor_id):
-        """The callback for notifications of deleted map ancestors.
+    def changed_child_of_maps(self, notification_id, map_ids):
+        """The callback for notifications of changes to children of map hierarchy nodes.
 
-        :param map_id: the ``Id`` of the ``Map``
-        :type map_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ``Map`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_map(self, map_id, descendant_id):
-        """The callback for notifications of deleted map descendants.
-
-        :param map_id: the ``Id`` of the ``Map``
-        :type map_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the removed ``Map`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param map_ids: the ``Ids`` of the ``Maps`` whose children have changed
+        :type map_ids: ``osid.id.IdList``
 
         """
         pass
@@ -151,9 +97,11 @@ class MapReceiver(osid_receivers.OsidReceiver):
 
 class ResourceLocationReceiver(osid_receivers.OsidReceiver):
     """The resource location receiver is the consumer supplied interface for receiving notifications pertaining to location changes of resources."""
-    def entered_location(self, location_id, resource_id):
+    def entered_location(self, notification_id, location_id, resource_id):
         """The callback for notifications of resources entering locations.
 
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
         :param location_id: the ``Id`` of the ``Location``
         :type location_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
@@ -162,9 +110,11 @@ class ResourceLocationReceiver(osid_receivers.OsidReceiver):
         """
         pass
 
-    def exited_location(self, route_id, resource_id):
+    def exited_location(self, notification_id, route_id, resource_id):
         """The callback for notifications of resources exiting locations.
 
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
         :param route_id: the ``Id`` of the ``Location``
         :type route_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
@@ -173,9 +123,11 @@ class ResourceLocationReceiver(osid_receivers.OsidReceiver):
         """
         pass
 
-    def new_resource_coordinate(self, coordinate, resource_id):
+    def new_resource_coordinate(self, notification_id, coordinate, resource_id):
         """The callback for notifications of resources changing coordinates.
 
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
         :param coordinate: the new coordinate
         :type coordinate: ``osid.mapping.Coordinate``
         :param resource_id: the ``Id`` of the ``Resource``
@@ -187,9 +139,11 @@ class ResourceLocationReceiver(osid_receivers.OsidReceiver):
 
 class ResourcePositionReceiver(osid_receivers.OsidReceiver):
     """The resource location receiver is the consumer supplied interface for receiving notifications pertaining to position changes of resources."""
-    def moved_resource(self, resource_id, coordinate):
+    def moved_resource(self, notification_id, resource_id, coordinate):
         """The callback for notifications of resources entering locations.
 
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
         :param coordinate: the ``Id`` of the ``Coordinate``
@@ -198,9 +152,11 @@ class ResourcePositionReceiver(osid_receivers.OsidReceiver):
         """
         pass
 
-    def entered_spatial_unit(self, resource_id, spatial_unit):
+    def entered_spatial_unit(self, notification_id, resource_id, spatial_unit):
         """The callback for notifications of resources entering spatial units.
 
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
         :param spatial_unit: the ``Id`` of the ``SpatialUnit``
@@ -209,9 +165,11 @@ class ResourcePositionReceiver(osid_receivers.OsidReceiver):
         """
         pass
 
-    def exited_spatial_unit(self, resource_id, spatial_unit):
+    def exited_spatial_unit(self, notification_id, resource_id, spatial_unit):
         """The callback for notifications of resources exiting spatial units.
 
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
         :param spatial_unit: the ``Id`` of the ``SpatialUnit``

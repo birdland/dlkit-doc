@@ -85,29 +85,3 @@ Book List
 
 
 
-Book Node
----------
-
-.. autoclass:: BookNode
-   :show-inheritance:
-
-   .. autoattribute:: BookNode.book
-
-   .. autoattribute:: BookNode.parent_book_nodes
-
-   .. autoattribute:: BookNode.child_book_nodes
-
-
-
-Book Node List
---------------
-
-.. autoclass:: BookNodeList
-   :show-inheritance:
-
-   .. autoattribute:: BookNodeList.next_book_node
-
-   .. automethod:: BookNodeList.get_next_book_nodes
-
-
-

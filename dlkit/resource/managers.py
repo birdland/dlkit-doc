@@ -474,7 +474,7 @@ class ResourceManager(osid_managers.OsidManager, ResourceProfile):
         ``Agent`` mappings
       * ``ResourceAgentAssignmentSession:`` a session to manage
         ``Resource`` and ``Agent`` mappings
-    
+
       * ``ResourceRelationshipLookupSession:`` a session to retrieve
         resource relationships
       * ``ResourceRelationshipQuerySession:`` a session to query for
@@ -491,7 +491,7 @@ class ResourceManager(osid_managers.OsidManager, ResourceProfile):
         manage resource relationship to bin mappings
       * ``ResourceRelationshipSmartBinSession:`` a session to manage
         smart resource relationship bins
-    
+
       * ``BinLookupSession: a`` session to retrieve bins
       * ``BinQuerySession:`` a session to query bins
       * ``BinSearchSession:`` a session to search for bins
@@ -1219,7 +1219,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         ``Agent`` mappings
       * ``ResourceAgentAssignmentSession:`` a session to manage
         ``Resource`` and ``Agent`` mappings
-    
+
       * ``ResourceRelationshipLookupSession:`` a session to retrieve
         resource relationships
       * ``ResourceRelationshipQuerySession:`` a session to query for
@@ -1236,7 +1236,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         manage resource relationship to bin mappings
       * ``ResourceRelationshipSmartBinSession:`` a session to manage
         smart resource relationship bins
-    
+
       * ``BinLookupSession: a`` session to retrieve bins
       * ``BinQuerySession:`` a session to query bins
       * ``BinSearchSession:`` a session to search for bins

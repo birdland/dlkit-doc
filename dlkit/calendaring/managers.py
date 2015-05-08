@@ -1202,7 +1202,7 @@ class CalendaringManager(osid_managers.OsidManager, CalendaringProfile):
         managing recurring event and calendar mappings
       * ``RecurringEventSmartCalendarSession:`` a session to manage
         dynamic recurring event catalogs
-    
+
       * ``SupersedingEventLookupSession:`` a session to look up
         superseding events
       * ``SupersedingEventQuerySession:`` a session to query superseding
@@ -1232,7 +1232,7 @@ class CalendaringManager(osid_managers.OsidManager, CalendaringProfile):
         offset event and calendar mappings
       * ``OffsetEventSmartCalendarSession:`` a session to manage dynamic
         offset event catalogs
-    
+
       * ``ScheduleLookupSession:`` a session to look up schedules
       * ``ScheduleQuerySession:`` a session to query schedules ``None``
       * ``ScheduleSearchSession:`` a session to search schedules
@@ -1261,7 +1261,7 @@ class CalendaringManager(osid_managers.OsidManager, CalendaringProfile):
         managing schedule slot and calendar mappings
       * ``ScheduleSlotSmartCalendarSession:`` a session to manage
         dynamic schedule slot catalogs
-    
+
       * ``CommitmentLookupSession:`` a session to look up commitments
       * ``CommitmentQuerySession:`` a session to query commitments
         ``None``
@@ -1276,7 +1276,7 @@ class CalendaringManager(osid_managers.OsidManager, CalendaringProfile):
         commitment and calendar mappings
       * ``CommitmentSmartCalendarSession:`` a session to manage dynamic
         commitment catalogs
-    
+
       * ``TimePeriodLookupSession:`` a session to look up time periods
       * ``TimePeriodQuerySession:`` a session to query time periods
         ``None``
@@ -1291,7 +1291,7 @@ class CalendaringManager(osid_managers.OsidManager, CalendaringProfile):
         time period and calendar mappings
       * ``TimePeriodSmartCalendarSession:`` a session to manage dynamic
         time period catalogs
-    
+
       * ``CalendarLookupSession:`` a session to lookup calendars
       * ``CalendarSearchSession`` : a session to search calendars
       * ``CalendarAdminSession`` : a session to create, modify and
@@ -2931,7 +2931,7 @@ class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile
         managing recurring event and calendar mappings
       * ``RecurringEventSmartCalendarSession:`` a session to manage
         dynamic recurring event catalogs
-    
+
       * ``SupersedingEventLookupSession:`` a session to look up
         superseding events
       * ``SupersedingEventQuerySession:`` a session to query superseding
@@ -2961,7 +2961,7 @@ class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile
         offset event and calendar mappings
       * ``OffsetEventSmartCalendarSession:`` a session to manage dynamic
         offset event catalogs
-    
+
       * ``ScheduleLookupSession:`` a session to look up schedules
       * ``ScheduleQuerySession:`` a session to query schedules ``None``
       * ``ScheduleSearchSession:`` a session to search schedules
@@ -2990,7 +2990,7 @@ class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile
         managing schedule slot and calendar mappings
       * ``ScheduleSlotSmartCalendarSession:`` a session to manage
         dynamic schedule slot catalogs
-    
+
       * ``CommitmentLookupSession:`` a session to look up commitments
       * ``CommitmentQuerySession:`` a session to query commitments
         ``None``
@@ -3005,7 +3005,7 @@ class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile
         commitment and calendar mappings
       * ``CommitmentSmartCalendarSession:`` a session to manage dynamic
         commitment catalogs
-    
+
       * ``TimePeriodLookupSession:`` a session to look up time periods
       * ``TimePeriodQuerySession:`` a session to query time periods
         ``None``
@@ -3020,7 +3020,7 @@ class CalendaringProxyManager(osid_managers.OsidProxyManager, CalendaringProfile
         time period and calendar mappings
       * ``TimePeriodSmartCalendarSession:`` a session to manage dynamic
         time period catalogs
-    
+
       * ``CalendarLookupSession:`` a session to lookup calendars
       * ``CalendarSearchSession`` : a session to search calendars
       * ``CalendarAdminSession`` : a session to create, modify and

@@ -3,29 +3,35 @@ from ..osid import receivers as osid_receivers
 
 class ParameterReceiver(osid_receivers.OsidReceiver):
     """The parameter receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Parameter`` objects."""
-    def new_parameter(self, parameter_id):
+    def new_parameters(self, notification_id, parameter_ids):
         """The callback for notifications of new parameters.
 
-        :param parameter_id: the ``Id`` of the new ``Parameter``
-        :type parameter_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param parameter_ids: the ``Ids`` of the new ``Parameters``
+        :type parameter_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_parameter(self, parameter_id):
+    def changed_parameters(self, notification_id, parameter_ids):
         """The callback for notification of updated parameters.
 
-        :param parameter_id: the ``Id`` of the updated ``Parameter``
-        :type parameter_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param parameter_ids: the ``Ids`` of the updated ``Parameters``
+        :type parameter_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_parameter(self, parameter_id):
+    def deleted_parameters(self, notification_id, parameter_ids):
         """the callback for notification of deleted parameters.
 
-        :param parameter_id: the ``Id`` of the deleted ``Parameter``
-        :type parameter_id: ``osid.id.Id``
+        :param notification_id: the notification Id
+        :type notification_id: ``osid.id.Id``
+        :param parameter_ids: the ``Ids`` of the deleted ``Parameters``
+        :type parameter_ids: ``osid.id.IdList``
 
         """
         pass
@@ -33,29 +39,35 @@ class ParameterReceiver(osid_receivers.OsidReceiver):
 
 class ValueReceiver(osid_receivers.OsidReceiver):
     """The value receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Values``."""
-    def new_value(self, value_id):
+    def new_values(self, notification_id, value_ids):
         """The callback for notification of new values.
 
-        :param value_id: the ``Id`` of the ``Value``
-        :type value_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param value_ids: the ``Ids`` of the ``Values``
+        :type value_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_value(self, value_id):
+    def changed_values(self, notification_id, value_ids):
         """The callback for notification of changed values.
 
-        :param value_id: the ``Id`` of the ``Value``
-        :type value_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param value_ids: the ``Ids`` of the ``Values``
+        :type value_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_value(self, value_id):
+    def deleted_values(self, notification_id, value_ids):
         """The callback for notification of removed values.
 
-        :param value_id: the ``Id`` of the ``Value``
-        :type value_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param value_ids: the ``Ids`` of the ``Values``
+        :type value_ids: ``osid.id.IdList``
 
         """
         pass
@@ -63,73 +75,46 @@ class ValueReceiver(osid_receivers.OsidReceiver):
 
 class ConfigurationReceiver(osid_receivers.OsidReceiver):
     """The configuration receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Configuration`` objects."""
-    def new_configuration(self, configuration_id):
+    def new_configurations(self, notification_id, configuration_ids):
         """The callback for notifications of new configurations.
 
-        :param configuration_id: the ``Id`` of the new ``Configuration``
-        :type configuration_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param configuration_ids: the ``Ids`` of the new ``Configurations``
+        :type configuration_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_configuration(self, configuration_id, ancestor_id):
-        """The callback for notifications of new configuration ancestors.
-
-        :param configuration_id: the ``Id`` of the ``Configuration``
-        :type configuration_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the new ``Configuration`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_configuration(self, configuration_id, descendant_id):
-        """The callback for notifications of new configuration descendants.
-
-        :param configuration_id: the ``Id`` of the ``Configuration``
-        :type configuration_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new ``Configuration`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_configuration(self, configuration_id):
+    def changed_configurations(self, notification_id, configuration_ids):
         """The callback for notification of updated configurations.
 
-        :param configuration_id: the ``Id`` of the updated ``Configuration``
-        :type configuration_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param configuration_ids: the ``Ids`` of the updated ``Configurations``
+        :type configuration_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_configuration(self, configuration_id):
+    def deleted_configurations(self, notification_id, configuration_ids):
         """The callback for notification of deleted configurations.
 
-        :param configuration_id: the ``Id`` of the deleted ``Configuration``
-        :type configuration_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param configuration_ids: the ``Ids`` of the deleted ``Configurations``
+        :type configuration_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_configuration(self, configuration_id, ancestor_id):
-        """The callback for notifications of deleted configuration ancestors.
+    def changed_child_of_confgurations(self, notification_id, configuration_ids):
+        """The callback for notifications of changes to children of configuration hierarchy nodes.
 
-        :param configuration_id: the ``Id`` of the ``Configuration``
-        :type configuration_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ``Configuration`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_configuration(self, configuration_id, descendant_id):
-        """The callback for notifications of deleted configuration descendants.
-
-        :param configuration_id: the ``Id`` of the ``Configuration``
-        :type configuration_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the removed ``Configuration`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param configuration_ids: the ``Ids`` of the ``Configurations`` whose children have changed
+        :type configuration_ids: ``osid.id.IdList``
 
         """
         pass

@@ -25,50 +25,10 @@ Comment Query Record
 
 
 
-Comment Query Inspector Record
-------------------------------
-
-.. autoclass:: CommentQueryInspectorRecord
-   :show-inheritance:
-
-
-
-
-
 Comment Form Record
 -------------------
 
 .. autoclass:: CommentFormRecord
-   :show-inheritance:
-
-
-
-
-
-Comment Search Order Record
----------------------------
-
-.. autoclass:: CommentSearchOrderRecord
-   :show-inheritance:
-
-
-
-
-
-Comment Search Record
----------------------
-
-.. autoclass:: CommentSearchRecord
-   :show-inheritance:
-
-
-
-
-
-Comment Search Results Record
------------------------------
-
-.. autoclass:: CommentSearchResultsRecord
    :show-inheritance:
 
 
@@ -95,50 +55,10 @@ Book Query Record
 
 
 
-Book Query Inspector Record
----------------------------
-
-.. autoclass:: BookQueryInspectorRecord
-   :show-inheritance:
-
-
-
-
-
 Book Form Record
 ----------------
 
 .. autoclass:: BookFormRecord
-   :show-inheritance:
-
-
-
-
-
-Book Search Order Record
-------------------------
-
-.. autoclass:: BookSearchOrderRecord
-   :show-inheritance:
-
-
-
-
-
-Book Search Record
-------------------
-
-.. autoclass:: BookSearchRecord
-   :show-inheritance:
-
-
-
-
-
-Book Search Results Record
---------------------------
-
-.. autoclass:: BookSearchResultsRecord
    :show-inheritance:
 
 

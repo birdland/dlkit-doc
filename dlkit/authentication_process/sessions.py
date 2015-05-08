@@ -52,7 +52,7 @@ class AuthenticationValidationSession(osid_sessions.OsidSession):
 
     authentication_input = property(fget=get_authentication_input)
 
-    def authenticate(self, input):
+    def authenticate(self, input_):
         """Validates and returns the authentication credential from the given data.
 
         :param input: the authentication input to be validated
@@ -67,7 +67,7 @@ class AuthenticationValidationSession(osid_sessions.OsidSession):
         """
         return # osid.authentication.process.Authentication
 
-    def get_challenge_data(self, input):
+    def get_challenge_data(self, input_):
         """Gets data that can be used for a challenge to the peer attempting authentication.
 
         :param input: authentication input
@@ -94,7 +94,7 @@ class TrustLookupSession(osid_sessions.OsidSession):
 
     This session defines two sets of views which offer differing
     behaviors when retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete and ordered result set or is
         an error condition
@@ -106,7 +106,7 @@ class TrustLookupSession(osid_sessions.OsidSession):
         agency and any other trusts implicitly available in this agency
         through agency inheritence.
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there a particular element is
     inaccessible. For example, a hierarchy output can be plugged into a
@@ -115,7 +115,7 @@ class TrustLookupSession(osid_sessions.OsidSession):
     no longer exists. However, some administrative applications may need
     to know whether it had retrieved an entire set of objects and may
     sacrifice some interoperability for the sake of precision.
-    
+
     Trusts may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Trust``.

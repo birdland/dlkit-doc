@@ -535,7 +535,7 @@ class RepositoryManager(osid_managers.OsidManager, RepositoryProfile):
         composition mappings
       * ``AssetCompositionDesignSession:`` a session to map assets to
         compositions
-    
+
       * ``CompositionLookupSession: a`` session to retrieve compositions
       * ``CompositionQuerySession:`` a session to query compositions
       * ``CompositionSearchSession:`` a session to search for
@@ -550,7 +550,7 @@ class RepositoryManager(osid_managers.OsidManager, RepositoryProfile):
         composition repository mappings
       * ``CompositionSmartRepositorySession:`` a session to manage
         dynamic repositories of compositions
-    
+
       * ``RepositoryLookupSession: a`` session to retrieve repositories
       * ``RepositoryQuerySession:`` a session to query repositories
       * ``RepositorySearchSession:`` a session to search for
@@ -1222,7 +1222,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         composition mappings
       * ``AssetCompositionDesignSession:`` a session to map assets to
         compositions
-    
+
       * ``CompositionLookupSession: a`` session to retrieve compositions
       * ``CompositionQuerySession:`` a session to query compositions
       * ``CompositionSearchSession:`` a session to search for
@@ -1237,7 +1237,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         composition repository mappings
       * ``CompositionSmartRepositorySession:`` a session to manage
         dynamic repositories of compositions
-    
+
       * ``RepositoryLookupSession: a`` session to retrieve repositories
       * ``RepositoryQuerySession:`` a session to query repositories
       * ``RepositorySearchSession:`` a session to search for

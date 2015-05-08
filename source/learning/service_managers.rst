@@ -159,30 +159,6 @@ _____________________
 
 
 
-Objective Bank Query
-____________________
-
-   .. automethod:: LearningManager.can_search_objective_banks
-
-   .. autoattribute:: LearningManager.objective_bank_query
-
-   .. automethod:: LearningManager.get_objective_banks_by_query
-
-
-
-Objective Bank Search
-_____________________
-
-   .. autoattribute:: LearningManager.objective_bank_search
-
-   .. autoattribute:: LearningManager.objective_bank_search_order
-
-   .. automethod:: LearningManager.get_objective_banks_by_search
-
-   .. automethod:: LearningManager.get_objective_bank_query_from_inspector
-
-
-
 Objective Bank Admin
 ____________________
 
@@ -207,31 +183,6 @@ ____________________
    .. automethod:: LearningManager.can_manage_objective_bank_aliases
 
    .. automethod:: LearningManager.alias_objective_bank
-
-
-
-Objective Bank Notification
-___________________________
-
-   .. automethod:: LearningManager.can_register_for_objective_bank_notifications
-
-   .. automethod:: LearningManager.register_for_new_objective_banks
-
-   .. automethod:: LearningManager.register_for_new_objective_bank_ancestors
-
-   .. automethod:: LearningManager.register_for_new_objective_bank_descendants
-
-   .. automethod:: LearningManager.register_for_changed_objective_banks
-
-   .. automethod:: LearningManager.register_for_changed_objective_bank
-
-   .. automethod:: LearningManager.register_for_deleted_objective_banks
-
-   .. automethod:: LearningManager.register_for_deleted_objective_bank
-
-   .. automethod:: LearningManager.register_for_deleted_objective_bank_ancestors
-
-   .. automethod:: LearningManager.register_for_deleted_objective_bank_descendants
 
 
 
@@ -451,30 +402,6 @@ _____________________
 
 
 
-Objective Bank Query
-____________________
-
-   .. automethod:: LearningProxyManager.can_search_objective_banks
-
-   .. autoattribute:: LearningProxyManager.objective_bank_query
-
-   .. automethod:: LearningProxyManager.get_objective_banks_by_query
-
-
-
-Objective Bank Search
-_____________________
-
-   .. autoattribute:: LearningProxyManager.objective_bank_search
-
-   .. autoattribute:: LearningProxyManager.objective_bank_search_order
-
-   .. automethod:: LearningProxyManager.get_objective_banks_by_search
-
-   .. automethod:: LearningProxyManager.get_objective_bank_query_from_inspector
-
-
-
 Objective Bank Admin
 ____________________
 
@@ -499,31 +426,6 @@ ____________________
    .. automethod:: LearningProxyManager.can_manage_objective_bank_aliases
 
    .. automethod:: LearningProxyManager.alias_objective_bank
-
-
-
-Objective Bank Notification
-___________________________
-
-   .. automethod:: LearningProxyManager.can_register_for_objective_bank_notifications
-
-   .. automethod:: LearningProxyManager.register_for_new_objective_banks
-
-   .. automethod:: LearningProxyManager.register_for_new_objective_bank_ancestors
-
-   .. automethod:: LearningProxyManager.register_for_new_objective_bank_descendants
-
-   .. automethod:: LearningProxyManager.register_for_changed_objective_banks
-
-   .. automethod:: LearningProxyManager.register_for_changed_objective_bank
-
-   .. automethod:: LearningProxyManager.register_for_deleted_objective_banks
-
-   .. automethod:: LearningProxyManager.register_for_deleted_objective_bank
-
-   .. automethod:: LearningProxyManager.register_for_deleted_objective_bank_ancestors
-
-   .. automethod:: LearningProxyManager.register_for_deleted_objective_bank_descendants
 
 
 

@@ -355,7 +355,7 @@ class EventQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include events in calendars of
         which this calendar is an ancestor in the calendar hierarchy
       * isolated calendar view: searches are restricted to events in
@@ -368,7 +368,7 @@ class EventQuerySession(osid_sessions.OsidSession):
         events.
       * unsequestered event view: All event methods return all events.
 
-    
+
     Events may have a query record indicated by their respective record
     types. The query record is accessed via the ``EventQuery``.
 
@@ -490,10 +490,10 @@ class EventSearchSession(EventQuerySession):
     ``get_events_by_search()`` returns an ``EventSearchResults`` that
     can be used to access the resulting ``EventList`` or be used to
     perform a search within the result set through ``EventSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include events in calendars of
         which this calendar is a ancestor in the calendar hierarchy
       * isolated calendar view: searches are restricted to events in
@@ -503,7 +503,7 @@ class EventSearchSession(EventQuerySession):
       * normalized event view: a series of recurring events is
         represented by a single ``Event``
 
-    
+
     Events may have a query record indicated by their respective record
     types. The query record is accessed via the ``EventQuery``.
 
@@ -583,20 +583,20 @@ class EventAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``EventForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``EventForms`` are requested to the ``Event``  ``Id``
     that is to be updated using ``getEventFormForUpdate()``. Similarly,
     the ``EventForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``EventForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Events``. To unmap an ``Event`` from
     the current ``Calendar,`` the ``EventCalendarAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Event`` itself thus removing it from all known ``Calendar``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -885,10 +885,43 @@ class EventNotificationSession(osid_sessions.OsidSession):
         """A denormalized view sends a separate notification for each non- recurring event within a recurring set."""
         pass
 
+    def reliable_event_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_event_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_event_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_event_notification(self, notification_id):
+        """Acknowledge an event notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_events(self):
         """Register for notifications of new events.
 
-        ``EventReceiver.newEvent()`` is invoked when a new event is
+        ``EventReceiver.newEvents()`` is invoked when a new event is
         created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -900,7 +933,7 @@ class EventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_events(self):
         """Registers for notification of updated events.
 
-        ``EventReceiver.changedEvent()`` is invoked when an event is
+        ``EventReceiver.changedEvents()`` is invoked when an event is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -912,7 +945,7 @@ class EventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_event(self, event_id):
         """Registers for notification of an updated event.
 
-        ``EventReceiver.changedEvent()`` is invoked when the specified
+        ``EventReceiver.changedEvents()`` is invoked when the specified
         event is changed.
 
         :param event_id: the ``Id`` of the ``Event`` to monitor
@@ -927,7 +960,7 @@ class EventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_events(self):
         """Registers for notification of deleted events.
 
-        ``EventReceiver.deletedEvent()`` is invoked when an event is
+        ``EventReceiver.deletedEvents()`` is invoked when an event is
         removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -939,7 +972,7 @@ class EventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_event(self, event_id):
         """Registers for notification of a deleted event.
 
-        ``EventReceiver.changedEvent()`` is invoked when the specified
+        ``EventReceiver.changedEvents()`` is invoked when the specified
         event is removed from this calendar.
 
         :param event_id: the ``Id`` of the ``Event`` to monitor
@@ -960,7 +993,7 @@ class EventCalendarSession(osid_sessions.OsidSession):
     it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1204,6 +1237,25 @@ class EventCalendarAssignmentSession(osid_sessions.OsidSession):
         :type calendar_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``event_id or calendar_id not found or event_id not assigned to calendar_id``
         :raise: ``NullArgument`` -- ``event_id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_event_to_calendar(self, event_id, from_billing_id, to_biilling_id):
+        """Moves an ``Event`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param event_id: the ``Id`` of the ``Event``
+        :type event_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``event_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``event_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``event_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1842,14 +1894,14 @@ class RecurringEventQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include recurring events in
         calendars of which this calendar is an ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to recurring
         events in this calendar
 
-    
+
     ``RecurringEvents`` may have a query record indicated by their
     respective record types. The query ecord is accessed via the
     ``RecurringEventQuery``.
@@ -1958,17 +2010,17 @@ class RecurringEventSearchSession(RecurringEventQuerySession):
     ``RecurringEventSearchResults`` that can be used to access the
     resulting ``RecurringEventList`` or be used to perform a search
     within the result set through ``RecurringEventSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include recurring events in
         calendars of which this calendar is a ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to recurring
         events in this calendar
 
-    
+
     Recurring events may have a query record indicated by their
     respective record types. The query record is accessed via the
     ``RecurringEventQuery``.
@@ -2051,7 +2103,7 @@ class RecurringEventAdminSession(osid_sessions.OsidSession):
     be reused with another create operation unless the first operation
     was unsuccessful. Each ``RecurringEventForm`` corresponds to an
     attempted transaction.
-    
+
     For updates, ``RecurringEventForms`` are requested to the
     ``RecurringEvent``  ``Id`` that is to be updated using
     ``getRecurringEventFormForUpdate()``. Similarly, the
@@ -2059,13 +2111,13 @@ class RecurringEventAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``RecurringEventForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Recurring Events``. To unmap a
     ``RecurringEvent`` from the current ``Calendar,`` the
     ``RecurringEventCalendarAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Event`` itself thus
     removing it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2512,11 +2564,44 @@ class RecurringEventNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_recurring_event_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_recurring_event_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_recurring_event_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_recurring_event_notification(self, notification_id):
+        """Acknowledge a recurring event notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_recurring_events(self):
         """Register for notifications of new recurring events.
 
-        ``RecurringEventReceiver.newRecurringEvent()`` is invoked when a
-        new recurring event is created.
+        ``RecurringEventReceiver.newRecurringEvents()`` is invoked when
+        a new recurring event is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2527,7 +2612,7 @@ class RecurringEventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_recurring_events(self):
         """Registers for notification of updated recurring events.
 
-        ``RecurringEventReceiver.changedRecurringEvent()`` is invoked
+        ``RecurringEventReceiver.changedRecurringEvents()`` is invoked
         when a recurring event is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2539,7 +2624,7 @@ class RecurringEventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_recurring_event(self, recurring_event_id):
         """Registers for notification of an updated recurring event.
 
-        ``RecurringEventReceiver.changedRecurringEvent()`` is invoked
+        ``RecurringEventReceiver.changedRecurringEvents()`` is invoked
         when the specified recurring event is changed.
 
         :param recurring_event_id: the ``Id`` of the ``RecurringEvent`` to monitor
@@ -2554,7 +2639,7 @@ class RecurringEventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_recurring_events(self):
         """Registers for notification of deleted recurring events.
 
-        ``RecurringEventReceiver.deletedRecurringEvent()`` is invoked
+        ``RecurringEventReceiver.deletedRecurringEvents()`` is invoked
         when a recurring event is removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2566,7 +2651,7 @@ class RecurringEventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_recurring_event(self, recurring_event_id):
         """Registers for notification of a deleted recurring event.
 
-        ``RecurringEventReceiver.changedRecurringEvent()`` is invoked
+        ``RecurringEventReceiver.changedRecurringEvents()`` is invoked
         when the specified recurring event is removed from this
         calendar.
 
@@ -2588,7 +2673,7 @@ class RecurringEventCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -2825,6 +2910,25 @@ class RecurringEventCalendarAssignmentSession(osid_sessions.OsidSession):
         :type calendar_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``recurring_event_id`` or ``calendar_id`` not found or ``recurring_event_id`` not assigned to ``calendar_id``
         :raise: ``NullArgument`` -- ``recurring_event_id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_recurring_event_to_calendar(self, recurring_event_id, from_billing_id, to_biilling_id):
+        """Moves a ``RecurringEvent`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param recurring_event_id: the ``Id`` of the ``RecurringtEvent``
+        :type recurring_event_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``recurring_event_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``recurring_event_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``recurring_event_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3162,14 +3266,14 @@ class SupersedingEventQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include superseding events in
         calendars of which this calendar is an ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to superseding
         events in this calendar
 
-    
+
     ``SupersedingEvents`` may have a query record indicated by their
     respective record types. The query record is accessed via the
     SupersedingE ``ventQuery``.
@@ -3278,17 +3382,17 @@ class SupersedingEventSearchSession(SupersedingEventQuerySession):
     ``SupersedingEventSearchResults`` that can be used to access the
     resulting ``SupersedingEventList`` or be used to perform a search
     within the result set through ``SupersedingEventSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include superseding events in
         calendars of which this calendar is a ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to superseding
         events in this calendar
 
-    
+
     Superseding events may have a query record indicated by their
     respective record types. The query record is accessed via the
     ``SupersedingEventQuery``.
@@ -3371,7 +3475,7 @@ class SupersedingEventAdminSession(osid_sessions.OsidSession):
     cannot be reused with another create operation unless the first
     operation was unsuccessful. Each ``SupersedingEventForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``SupersedingEventForms`` are requested to the
     ``SupersedingEvent``  ``Id`` that is to be updated using
     ``getSupersedingEventFormForUpdate()``. Similarly, the
@@ -3379,13 +3483,13 @@ class SupersedingEventAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``SupersedingEventForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Superseding Events``. To unmap a
     ``SupersedingEvent`` from the current ``Calendar,`` the
     ``SupersedingEventCalendarAssignmentSession`` should be used. These
     delete operations attempt to remove the ``SupersedingEvent`` itself
     thus removing it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -3671,10 +3775,43 @@ class SupersedingEventNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_superseding_event_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_superseding_event_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_superseding_event_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_superseding_event_notification(self, notification_id):
+        """Acknowledge a superseding event notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_superseding_events(self):
         """Register for notifications of new superseding events.
 
-        ``SupersedingEventReceiver.newSupersedingEvent()`` is invoked
+        ``SupersedingEventReceiver.newSupersedingEvents()`` is invoked
         when a new superseding event is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3686,7 +3823,7 @@ class SupersedingEventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_superseding_events(self):
         """Registers for notification of updated superseding events.
 
-        ``SupersedingEventReceiver.changedSupersedingEvent()`` is
+        ``SupersedingEventReceiver.changedSupersedingEvents()`` is
         invoked when a superseding event is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3698,7 +3835,7 @@ class SupersedingEventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_superseding_event(self, superseding_event_id):
         """Registers for notification of an updated superseding event.
 
-        ``SupersedingEventReceiver.changedSupersedingEvent()`` is
+        ``SupersedingEventReceiver.changedSupersedingEvents()`` is
         invoked when the specified superseding event is changed.
 
         :param superseding_event_id: the ``Id`` of the ``Superseding`` to monitor
@@ -3713,7 +3850,7 @@ class SupersedingEventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_superseding_events(self):
         """Registers for notification of deleted superseding events.
 
-        ``SupersedingEventReceiver.deletedSupersedingEvent()`` is
+        ``SupersedingEventReceiver.deletedSupersedingEvents()`` is
         invoked when a superseding event is removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3725,7 +3862,7 @@ class SupersedingEventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_superseding_event(self, superseding_event_id):
         """Registers for notification of a deleted superseding event.
 
-        ``SupersedingEventReceiver.changedSupersedingEvent()`` is
+        ``SupersedingEventReceiver.changedSupersedingEvents()`` is
         invoked when the specified superseding event is removed from
         this calendar.
 
@@ -3747,7 +3884,7 @@ class SupersedingEventCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -3984,6 +4121,25 @@ class SupersedingEventCalendarAssignmentSession(osid_sessions.OsidSession):
         :type calendar_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``superseding_event_id`` or ``calendar_id`` not found or ``superseding_event_id`` not assigned to ``calendar_id``
         :raise: ``NullArgument`` -- ``superseding_event_id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_superseding_event_to_calendar(self, superseding_event_id, from_billing_id, to_biilling_id):
+        """Moves a ``SupersedingEvent`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param superseding_event_id: the ``Id`` of the ``SupersedingeEvent``
+        :type superseding_event_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``superseding_event_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``superseding_event_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``superseding_event_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -4320,14 +4476,14 @@ class OffsetEventQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include offset events in
         calendars of which this calendar is an ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to offset events
         in this calendar
 
-    
+
     ``OffsetEvents`` may have a query record indicated by their
     respective record types. The query record is accessed via the
     ``OffsetEventQuery``.
@@ -4436,17 +4592,17 @@ class OffsetEventSearchSession(OffsetEventQuerySession):
     ``OffsetEventSearchResults`` that can be used to access the
     resulting ``OffsetEventList`` or be used to perform a search within
     the result set through ``OffsetEventSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include offset events in
         calendars of which this calendar is a ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to offset events
         in this calendar
 
-    
+
     Offset events may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``OffsetEventQuery``.
@@ -4527,20 +4683,20 @@ class OffsetEventAdminSession(osid_sessions.OsidSession):
     create operation, it cannot be reused with another create operation
     unless the first operation was unsuccessful. Each
     ``OffsetEventForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``OffsetEventForms`` are requested to the
     ``OffsetEvent``  ``Id`` that is to be updated using
     ``getOffsetEventFormForUpdate()``. Similarly, the ``OffsetventForm``
     has metadata about the data that can be updated and it can perform
     validation before submitting the update. The ``OffsetEventForm`` can
     only be used once for a successful update and cannot be reused.
-    
+
     The delete operations delete ``Offset Events``. To unmap an
     ``OffsetEvent`` from the current ``Calendar,`` the
     ``OffstEventCalendarAssignmentSession`` should be used. These delete
     operations attempt to remove the ``OffsetEvent`` itself thus
     removing it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -4821,10 +4977,43 @@ class OffsetEventNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_offset_event_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_offset_event_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_offset_event_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_offset_event_notification(self, notification_id):
+        """Acknowledge an offset event notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_offset_events(self):
         """Register for notifications of new offset events.
 
-        ``OffsetEventReceiver.newOffsetEvent()`` is invoked when a new
+        ``OffsetEventReceiver.newOffsetEvents()`` is invoked when a new
         offset event is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4836,7 +5025,7 @@ class OffsetEventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_offset_events(self):
         """Registers for notification of updated offset events.
 
-        ``OffsetEventReceiver.changedOffsetEvent()`` is invoked when an
+        ``OffsetEventReceiver.changedOffsetEvents()`` is invoked when an
         offset event is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4848,8 +5037,8 @@ class OffsetEventNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_offset_event(self, offset_event_id):
         """Registers for notification of an updated offset event.
 
-        ``OffsetEventReceiver.changedOffsetEvent()`` is invoked when the
-        specified offset event is changed.
+        ``OffsetEventReceiver.changedOffsetEvents()`` is invoked when
+        the specified offset event is changed.
 
         :param offset_event_id: the ``Id`` of the ``OffsetEventId`` to monitor
         :type offset_event_id: ``osid.id.Id``
@@ -4863,7 +5052,7 @@ class OffsetEventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_offset_events(self):
         """Registers for notification of deleted offset events.
 
-        ``OffsetEventReceiver.deletedOffsetEvent()`` is invoked when an
+        ``OffsetEventReceiver.deletedOffsetEvents()`` is invoked when an
         offset event is removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4875,8 +5064,8 @@ class OffsetEventNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_offset_event(self, offset_event_id):
         """Registers for notification of a deleted offset event.
 
-        ``OffsetEventReceiver.changedOffsetEvent()`` is invoked when the
-        specified offset event is removed from this calendar.
+        ``OffsetEventReceiver.changedOffsetEvents()`` is invoked when
+        the specified offset event is removed from this calendar.
 
         :param offset_event_id: the ``Id`` of the ``OffsetEvent`` to monitor
         :type offset_event_id: ``osid.id.Id``
@@ -4896,7 +5085,7 @@ class OffsetEventCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -5129,6 +5318,25 @@ class OffsetEventCalendarAssignmentSession(osid_sessions.OsidSession):
         :type calendar_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``offset_event_id`` or ``calendar_id`` not found or ``offset_event_id`` not assigned to ``calendar_id``
         :raise: ``NullArgument`` -- ``offset_event_id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_offset_event_to_calendar(self, offset_event_id, from_billing_id, to_biilling_id):
+        """Moves an ``OffsetEvent`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param offset_event_id: the ``Id`` of the ``OffsetEvent``
+        :type offset_event_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``offset_event_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``offset_event_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``offset_event_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5548,13 +5756,13 @@ class ScheduleQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include schedules in calendars
         of which this calendar is an ancestor in the calendar hierarchy
       * isolated calendar view: searches are restricted to schedules in
         this calendar
 
-    
+
     Schedules may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ScheduleQuery``.
@@ -5663,16 +5871,16 @@ class ScheduleSearchSession(ScheduleQuerySession):
     that can be used to access the resulting ``SchedulesList`` or be
     used to perform a search within the result set through
     ``ScheduleSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include schedules in calendars
         of which this calendar is a ancestor in the calendar hierarchy
       * isolated calendar view: searches are restricted to schedules in
         this calendar
 
-    
+
     Schedules may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ScheduleQuery``.
@@ -5753,20 +5961,20 @@ class ScheduleAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``ScheduleForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``ScheduleForms`` are requested to the ``Schedule``
     ``Id`` that is to be updated using ``getScheduleFormForUpdate()``.
     Similarly, the ``ScheduleForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``ScheduleForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Schedules``. To unmap a ``Schedule``
     from the current ``Calendar,`` the
     ``ScheduleSCalendarAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Schedule`` itself thus removing
     it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -6047,10 +6255,43 @@ class ScheduleNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_schedule_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_schedule_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_schedule_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_schedule_notification(self, notification_id):
+        """Acknowledge a schedule notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_schedules(self):
         """Register for notifications of new schedules.
 
-        ``ScheduleReceiver.newSchedule()`` is invoked when a new
+        ``ScheduleReceiver.newSchedules()`` is invoked when a new
         schedule is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6062,7 +6303,7 @@ class ScheduleNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_schedules(self):
         """Registers for notification of updated schedule schedules.
 
-        ``ScheduleReceiver.changedSchedule()`` is invoked when a
+        ``ScheduleReceiver.changedSchedules()`` is invoked when a
         schedule is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6074,7 +6315,7 @@ class ScheduleNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_schedule(self, schedule_id):
         """Registers for notification of an updated schedule.
 
-        ``ScheduleReceiver.changedSchedule()`` is invoked when the
+        ``ScheduleReceiver.changedSchedules()`` is invoked when the
         specified schedule is changed.
 
         :param schedule_id: the ``Id`` of the ``Schedule`` to monitor
@@ -6089,7 +6330,7 @@ class ScheduleNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_schedules(self):
         """Registers for notification of deleted schedules.
 
-        ``ScheduleReceiver.deletedSchedule()`` is invoked when a
+        ``ScheduleReceiver.deletedSchedules()`` is invoked when a
         schedule is removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6101,7 +6342,7 @@ class ScheduleNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_schedule(self, schedule_id):
         """Registers for notification of a deleted schedule.
 
-        ``ScheduleReceiver.changedSchedule()`` is invoked when the
+        ``ScheduleReceiver.changedSchedules()`` is invoked when the
         specified schedule is removed from this calendar.
 
         :param schedule_id: the ``Id`` of the ``Schedule`` to monitor
@@ -6122,7 +6363,7 @@ class ScheduleCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -6355,6 +6596,25 @@ class ScheduleCalendarAssignmentSession(osid_sessions.OsidSession):
         :type calendar_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``schedule_id`` or ``calendar_id`` not found or ``schedule_id`` not assigned to ``calendar_id``
         :raise: ``NullArgument`` -- ``schedule_id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_schedule_to_calendar(self, schedule_id, from_billing_id, to_biilling_id):
+        """Moves a ``Schedule`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param schedule_id: the ``Id`` of the ``Schedule``
+        :type schedule_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``schedule_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``schedule_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``schedule_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -6705,7 +6965,7 @@ class ScheduleSlotQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include schedule slots in
         calendars of which this calendar is an ancestor in the calendar
         hierarchy
@@ -6716,7 +6976,7 @@ class ScheduleSlotQuerySession(osid_sessions.OsidSession):
       * unsequestered schedule slot view: All schedule slot methods
         return all schedule slots.
 
-    
+
     Schedule slots may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ScheduleSlotQuery``.
@@ -6833,17 +7093,17 @@ class ScheduleSlotSearchSession(ScheduleSlotQuerySession):
     ``ScheduleSlotSearchResults`` that can be used to access the
     resulting ``ScheduleSlotsList`` or be used to perform a search
     within the result set through ``ScheduleSlotSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include schedule slots in
         calendars of which this calendar is a ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to schedule
         slots in this calendar
 
-    
+
     Schedule slots may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ScheduleSlotQuery``.
@@ -6925,7 +7185,7 @@ class ScheduleSlotAdminSession(osid_sessions.OsidSession):
     submiited to a create operation, it cannot be reused with another
     create operation unless the first operation was unsuccessful. Each
     ``ScheduleSlotForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``ScheduleSlotForms`` are requested to the
     ``ScheduleSlot``  ``Id`` that is to be updated using
     ``getScheduleSlotFormForUpdate()``. Similarly, the
@@ -6933,13 +7193,13 @@ class ScheduleSlotAdminSession(osid_sessions.OsidSession):
     and it can perform validation before submitting the update. The
     ``ScheduleSlotForm`` can only be used once for a successful update
     and cannot be reused.
-    
+
     The delete operations delete ``Schedule Slots``. To unmap a
     ``ScheduleSlot`` from the current ``Calendar,`` the
     ``ScheduleSlotCalendarAssignmentSession`` should be used. These
     delete operations attempt to remove the ``ScheduleSlot`` itself thus
     removing it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -7220,11 +7480,44 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_schedule_slot_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_schedule_slot_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_schedule_slot_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_schedule_slot_notification(self, notification_id):
+        """Acknowledge a schedule slot notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_schedule_slots(self):
         """Register for notifications of new schedule slots.
 
-        ``ScheduleSlotReceiver.newScheduleSlot()`` is invoked when a new
-        schedule slot is created.
+        ``ScheduleSlotReceiver.newScheduleSlots()`` is invoked when a
+        new schedule slot is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -7235,8 +7528,8 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_schedule_slots(self):
         """Registers for notification of updated schedule schedule slots.
 
-        ``ScheduleSlotReceiver.changedScheduleSlot()`` is invoked when a
-        schedule slot is changed.
+        ``ScheduleSlotReceiver.changedScheduleSlots()`` is invoked when
+        a schedule slot is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -7247,7 +7540,7 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_schedule_slot(self, schedule_slot_id):
         """Registers for notification of an updated schedule slot.
 
-        ``ScheduleSlotReceiver.changedSchedulSlote()`` is invoked when
+        ``ScheduleSlotReceiver.changedSchedulSlots()`` is invoked when
         the specified schedule slot is changed.
 
         :param schedule_slot_id: the ``Id`` of the ``ScheduleSlot`` to monitor
@@ -7262,8 +7555,8 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_schedule_slots(self):
         """Registers for notification of deleted schedule slots.
 
-        ``ScheduleSlotReceiver.deletedScheduleSlot()`` is invoked when a
-        schedule slot is removed from this calendar.
+        ``ScheduleSlotReceiver.deletedScheduleSlots()`` is invoked when
+        a schedule slot is removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -7274,7 +7567,7 @@ class ScheduleSlotNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_schedule_slot(self, schedule_slot_id):
         """Registers for notification of a deleted schedule slot.
 
-        ``ScheduleSlotReceiver.changedScheduleSlot()`` is invoked when
+        ``ScheduleSlotReceiver.changedScheduleSlots()`` is invoked when
         the specified schedule slot is removed from this calendar.
 
         :param schedule_slot_id: the ``Id`` of the ``ScheduleSlot`` to monitor
@@ -7295,7 +7588,7 @@ class ScheduleSlotCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -7528,6 +7821,25 @@ class ScheduleSlotCalendarAssignmentSession(osid_sessions.OsidSession):
         :type calendar_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``schedule_slot_id`` or ``calendar_id`` not found or ``schedule_slot_id`` not assigned to ``calendar_id``
         :raise: ``NullArgument`` -- ``schedule_slot_id`` or ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_schedule_slot_to_calendar(self, schedule_slot_id, from_billing_id, to_biilling_id):
+        """Moves a ``ScheduleSlot`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param schedule_slot_id: the ``Id`` of the ``ScheduleSlot``
+        :type schedule_slot_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``schedule_slot_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``schedule_slot_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``schedule_slot_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -7875,7 +8187,7 @@ class CommitmentLookupSession(osid_sessions.OsidSession):
         inaccessible ``Commitments`` may be omitted from the list and
         may present the elements in any order including returning a
         unique set.
-        
+
         In effective mode, commitments are returned that are currently
         effective. In any effective mode, effective commitments and
         those currently expired are returned.
@@ -8029,7 +8341,7 @@ class CommitmentLookupSession(osid_sessions.OsidSession):
         inaccessible ``Commitments`` may be omitted from the list and
         may present the elements in any order including returning a
         unique set.
-        
+
         In effective mode, commitments are returned that are currently
         effective. In any effective mode, effective commitments and
         those currently expired are returned.
@@ -8080,7 +8392,7 @@ class CommitmentLookupSession(osid_sessions.OsidSession):
         inaccessible ``Commitments`` may be omitted from the list and
         may present the elements in any order including returning a
         unique set.
-        
+
         In effective mode, commitments are returned that are currently
         effective. In any effective mode, effective commitments and
         those currently expired are returned.
@@ -8146,14 +8458,14 @@ class CommitmentQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include commitments in
         calendars of which this calendar is an ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to commitments
         in this calendar only
 
-    
+
     Commitments may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``CommitmentQuery``.
@@ -8262,17 +8574,17 @@ class CommitmentSearchSession(CommitmentQuerySession):
     ``CommitmentSearchResults`` that can be used to access the resulting
     ``CommitmentList`` or be used to perform a search within the result
     set through ``CommitmentSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated calendar view: searches include commitments in
         calendars of which this calendar is a ancestor in the calendar
         hierarchy
       * isolated calendar view: searches are restricted to commitments
         in this calendar only
 
-    
+
     Commitments may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``CommitmentQuery``.
@@ -8354,20 +8666,20 @@ class CommitmentAdminSession(osid_sessions.OsidSession):
     reused with another create operation unless the first operation was
     unsuccessful. Each ``CommitmentForm`` corresponds to an attempted
     transaction.
-    
+
     For updates, ``CommitmentForms`` are requested to the ``Commitment``
     ``Id`` that is to be updated using ``getCommitmentFormForUpdate()``.
     Similarly, the ``CommitmentForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``CommitmentForm`` can only be used once for a
     successful update and cannot be reused.
-    
+
     The delete operations delete ``Commitment``. To unmap a
     ``Commitment`` from the current ``Calendar,`` the
     ``CommitmentCalendarAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Commitment`` itself thus removing
     it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -8653,10 +8965,43 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_commitment_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_commitment_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_commitment_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_commitment_notification(self, notification_id):
+        """Acknowledge a commitment notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_commitments(self):
         """Register for notifications of new commitments.
 
-        ``CommitmentReceiver.newCommitment()`` is invoked when a new
+        ``CommitmentReceiver.newCommitments()`` is invoked when a new
         commitment is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -8668,7 +9013,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_new_commitments_by_genus_type(self, commitment_genus_type):
         """Register for notifications of new commitments by commitment genus type.
 
-        ``CommitmentReceiver.newCommitment()`` is invoked when a new
+        ``CommitmentReceiver.newCommitments()`` is invoked when a new
         commitment is created.
 
         :param commitment_genus_type: the commitment genus type to monitor
@@ -8683,7 +9028,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_new_commitments_for_event(self, event_id):
         """Register for notifications of new commitments for the given event.
 
-        ``CommitmentReceiver.newCommitment()`` is invoked when a new
+        ``CommitmentReceiver.newCommitments()`` is invoked when a new
         commitment is created.
 
         :param event_id: the ``Id`` of the ``Event`` to monitor
@@ -8698,7 +9043,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_new_commitments_for_resource(self, resource_id):
         """Register for notifications of new commitments for the given resource.
 
-        ``CommitmentReceiver.newCommitment()`` is invoked when a new
+        ``CommitmentReceiver.newCommitments()`` is invoked when a new
         commitment is created.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -8713,7 +9058,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_commitments(self):
         """Registers for notification of updated commitments.
 
-        ``CommitmentReceiver.changedCommitment()`` is invoked when a
+        ``CommitmentReceiver.changedCommitments()`` is invoked when a
         commitment is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -8725,7 +9070,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_commitments_by_genus_type(self, commitment_genus_type):
         """Register for notifications of changed commitments by commitment genus type.
 
-        ``CommitmentReceiver.changedCommitment()`` is invoked when a
+        ``CommitmentReceiver.changedCommitments()`` is invoked when a
         commitment is changed.
 
         :param commitment_genus_type: the commitment genus type to monitor
@@ -8740,7 +9085,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_commitments_for_event(self, event_id):
         """Register for notifications of changed commitments for the given event.
 
-        ``CommitmentReceiver.changedCommitment()`` is invoked when a
+        ``CommitmentReceiver.changedCommitments()`` is invoked when a
         commitment is changed.
 
         :param event_id: the ``Id`` of the ``Event`` to monitor
@@ -8755,7 +9100,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_commitments_for_resource(self, resource_id):
         """Register for notifications of changed commitments for the given rsource.
 
-        ``CommitmentReceiver.changedCommitment()`` is invoked when a
+        ``CommitmentReceiver.changedCommitments()`` is invoked when a
         commitment is changed.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -8770,7 +9115,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_commitment(self, commitment_id):
         """Registers for notification of an updated commitment.
 
-        ``CommitmentReceiver.changedCommitment()`` is invoked when the
+        ``CommitmentReceiver.changedCommitments()`` is invoked when the
         specified commitment is changed.
 
         :param commitment_id: the ``Id`` of the ``Commitment`` to monitor
@@ -8785,7 +9130,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_commitments(self):
         """Registers for notification of deleted commitments.
 
-        ``CommitmentReceiver.deletedCommitment()`` is invoked when a
+        ``CommitmentReceiver.deletedCommitments()`` is invoked when a
         commitment is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -8797,7 +9142,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_commitments_by_genus_type(self, commitment_genus_type):
         """Register for notifications of deleted commitments by commitment genus type.
 
-        ``CommitmentReceiver.deletedCommitment()`` is invoked when a
+        ``CommitmentReceiver.deletedCommitments()`` is invoked when a
         commitment is deleted.
 
         :param commitment_genus_type: the commitment genus type to monitor
@@ -8812,7 +9157,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_commitments_for_event(self, event_id):
         """Register for notifications of deleted commitments for the given event.
 
-        ``CommitmentReceiver.deletedCommitment()`` is invoked when a
+        ``CommitmentReceiver.deletedCommitments()`` is invoked when a
         commitment is deleted.
 
         :param event_id: the ``Id`` of the ``Event`` to monitor
@@ -8827,7 +9172,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_commitments_for_resource(self, resource_id):
         """Register for notifications of deleted commitments for the given rsource.
 
-        ``CommitmentReceiver.deletedCommitment()`` is invoked when a
+        ``CommitmentReceiver.deletedCommitments()`` is invoked when a
         commitment is deleted.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -8842,7 +9187,7 @@ class CommitmentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_commitment(self, commitment_id):
         """Registers for notification of a deleted commitment.
 
-        ``CommitmentReceiver.changedCommitment()`` is invoked when the
+        ``CommitmentReceiver.changedCommitments()`` is invoked when the
         specified commitment is deleted.
 
         :param commitment_id: the ``Id`` of the ``Commitment`` to monitor
@@ -8863,7 +9208,7 @@ class CommitmentCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -9102,6 +9447,25 @@ class CommitmentCalendarAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_commitment_to_calendar(self, commitment_id, from_billing_id, to_biilling_id):
+        """Moves a ``Commitment`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param commitment_id: the ``Id`` of the ``Commitment``
+        :type commitment_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``commitment_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``commitment_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``commitment_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class CommitmentSmartCalendarSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -9238,7 +9602,7 @@ class TimePeriodLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
       * isolated calendar view: All time period methods in this session
@@ -9250,7 +9614,7 @@ class TimePeriodLookupSession(osid_sessions.OsidSession):
         this calendar and any other calendars implicitly available in
         this calendar through calendar inheritence.
 
-    
+
     Time periods may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``TimePeriod``.
@@ -9623,7 +9987,7 @@ class TimePeriodSearchSession(TimePeriodQuerySession):
     ``TimePeriodSearchResults`` that can be used to access the resulting
     ``TimePeriodList`` or be used to perform a search within the result
     set through ``TimePeriodSearch``.
-    
+
     Time periods may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``TimePeriodQuery``.
@@ -9704,20 +10068,20 @@ class TimePeriodAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``TimePeriodForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``TimePeriodForms`` are requested to the ``TimePeriod``
     ``Id`` that is to be updated using ``getTimePeriodFormForUpdate()``.
     Similarly, the ``TimePeriodForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``TimePeriodForm`` can only be used once for a
     successful update and cannot be reused.
-    
+
     The delete operations delete ``Time Periods``. To unmap a
     ``TimePeriod`` from the current ``Calendar,`` the
     ``TimePeriodCalendarAssignmentSession`` should be used. These delete
     operations attempt to remove the ``TimePeriod`` itself thus removing
     it from all known ``Calendar`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -10032,10 +10396,43 @@ class TimePeriodNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_time_period_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_time_period_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_time_period_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_time_period_notification(self, notification_id):
+        """Acknowledge a time period notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_time_periods(self):
         """Register for notifications of new time periods.
 
-        ``TimePeriodReceiver.newTimePeriod()`` is invoked when a new
+        ``TimePeriodReceiver.newTimePeriods()`` is invoked when a new
         time period is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -10047,7 +10444,7 @@ class TimePeriodNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_time_periods(self):
         """Registers for notification of updated time periods.
 
-        ``TimePeriodReceiver.changedTimePeriod()`` is invoked when a
+        ``TimePeriodReceiver.changedTimePeriods()`` is invoked when a
         time period is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -10059,7 +10456,7 @@ class TimePeriodNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_time_period(self, time_period_id):
         """Registers for notification of an updated time period.
 
-        ``TimePeriodReceiver.changedTimePeriod()`` is invoked when the
+        ``TimePeriodReceiver.changedTimePeriods()`` is invoked when the
         specified time period is changed.
 
         :param time_period_id: the ``Id`` of the ``TimePeriod`` to monitor
@@ -10074,7 +10471,7 @@ class TimePeriodNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_time_periods(self):
         """Registers for notification of deleted time periods.
 
-        ``TimePeriodReceiver.deletedTimePeriod()`` is invoked when a
+        ``TimePeriodReceiver.deletedTimePeriods()`` is invoked when a
         time period is removed from this calendar.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -10086,7 +10483,7 @@ class TimePeriodNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_time_period(self, time_period_id):
         """Registers for notification of a deleted time period.
 
-        ``TimePeriodReceiver.changedTimePeriod()`` is invoked when the
+        ``TimePeriodReceiver.changedTimePeriods()`` is invoked when the
         specified time period is removed from this calendar.
 
         :param time_period_id: the ``Id`` of the ``TimePeriod`` to monitor
@@ -10107,7 +10504,7 @@ class TimePeriodCalendarSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -10346,6 +10743,25 @@ class TimePeriodCalendarAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_time_period_to_calendar(self, time_period_id, from_billing_id, to_biilling_id):
+        """Moves a ``TimePeriod`` from one ``Calendar`` to another.
+
+        Mappings to other ``Calendars`` are unaffected.
+
+        :param time_period_id: the ``Id`` of the ``TimePeriod``
+        :type time_period_id: ``osid.id.Id``
+        :param from_billing_id: the ``Id`` of the current ``Calendar``
+        :type from_billing_id: ``osid.id.Id``
+        :param to_biilling_id: the ``Id`` of the destination ``Calendar``
+        :type to_biilling_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``time_period_id, from_calendar_id,`` or ``to_calendar_id`` not found or ``time_period_id`` not mapped to ``from_calendar_id``
+        :raise: ``NullArgument`` -- ``time_period_id, from_calendar_id,`` or ``to_calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class TimePeriodSmartCalendarSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -10482,18 +10898,18 @@ class CalendarLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Calendars`` it can access, without breaking execution.
     However, an administrative application may require all ``Calendar``
     elements to be available.
-    
+
     Calendars may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Calendar``.
@@ -10737,7 +11153,7 @@ class CalendarSearchSession(CalendarQuerySession):
     ``CalendarSearchResults`` that can be used to access the resulting
     ``CalendarList`` or be used to perform a search within the result
     set through ``CalendarSearch``.
-    
+
     Calendars may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``CalendarQuery``.
@@ -10833,14 +11249,14 @@ class CalendarAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``CalendarForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``CalendarForms`` are requested to the ``Calendar``
     ``Id`` that is to be updated using ``getCalendarFormForUpdate()``.
     Similarly, the ``CalendarForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``Calendar`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Calendars``. This session also
     includes an ``Id`` aliasing mechanism to assign an external ``Id``
     to an internally assigned Id.
@@ -11049,42 +11465,45 @@ class CalendarNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_calendar_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_calendar_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_calendar_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_calendar_notification(self, notification_id):
+        """Acknowledge a clendar notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_calendars(self):
         """Register for notifications of new calendars.
 
-        ``CalendarReceiver.newCalendar()`` is invoked when a new
+        ``CalendarReceiver.newCalendars()`` is invoked when a new
         ``Calendar`` is created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_calendar_ancestors(self, calendar_id):
-        """Registers for notification if an ancestor is added to the specified calendar in the calendar hierarchy.
-
-        ``CalendarReceiver.newCalendarAncestor()`` is invoked when the
-        specified calendar experiences an addition in ancestry.
-
-        :param calendar_id: the ``Id`` of the calendar to monitor
-        :type calendar_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``calendar_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_calendar_descendants(self, calendar_id):
-        """Registers for notification if a descendant is added to the specified calendar in the calendar hierarchy.
-
-        ``CalendarReceiver.newCalendarDescendant()`` is invoked when the
-        specified calendar experiences an addition in descendants.
-
-        :param calendar_id: the ``Id`` of the calendar to monitor
-        :type calendar_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``calendar_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -11094,7 +11513,7 @@ class CalendarNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_calendars(self):
         """Registers for notification of updated calendars.
 
-        ``CalendarReceiver.changedCalendar()`` is invoked when a
+        ``CalendarReceiver.changedCalendars()`` is invoked when a
         calendar is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -11106,7 +11525,7 @@ class CalendarNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_calendar(self, calendar_id):
         """Registers for notification of an updated calendar.
 
-        ``CalendarReceiver.changedCalendar()`` is invoked when the
+        ``CalendarReceiver.changedCalendars()`` is invoked when the
         specified calendar is changed.
 
         :param calendar_id: the ``Id`` of the calendar to monitor
@@ -11121,7 +11540,7 @@ class CalendarNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_calendars(self):
         """Registers for notification of deleted calendars.
 
-        ``CalendarReceiver.deletedCalendar()`` is invoked when a
+        ``CalendarReceiver.deletedCalendars()`` is invoked when a
         calenedar is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -11133,7 +11552,7 @@ class CalendarNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_calendar(self, calendar_id):
         """Registers for notification of a deleted calendar.
 
-        ``CalendarReceiver.deletedCalendar()`` is invoked when the
+        ``CalendarReceiver.deletedCalendars()`` is invoked when the
         specified calendar is deleted.
 
         :param calendar_id: the ``Id`` of the calendar to monitor
@@ -11145,31 +11564,43 @@ class CalendarNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_calendar_ancestors(self, calendar_id):
-        """Registers for notification if an ancestor is removed from the specified calendar in the calendar hierarchy.
+    def register_for_changed_calendar_hierarchy(self):
+        """Registers for notification of an updated calendar hierarchy structure.
 
-        ``CalendarReceiver.deletedCalendarAncestor()`` is invoked when
-        the specified calendar experiences a removal of an ancestor.
+        ``CalendarReceiver.changedChildOfCalendars()`` is invoked when a
+        node experiences a change in its children.
 
-        :param calendar_id: the ``Id`` of the calendar to monitor
-        :type calendar_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``calendar_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_calendar_descendants(self, calendar_id):
-        """Registers for notification if a descendant is removed from fthe specified calendar in the calendar hierarchy.
+    def register_for_changed_calendar_hierarchy_for_ancestors(self, calendar_id):
+        """Calendar ``Receiver.
 
-        ``CalendarReceiver.deletedCalendarDescednant()`` is invoked when
-        the specified calendar experiences a removal of one of its
-        descendants.
+        changedChildOfCalendars()`` is invoked when the specified node
+        or any of its ancestors experiences a change in its children.
 
-        :param calendar_id: the ``Id`` of the calendar to monitor
+        :param calendar_id: the ``Id`` of the ``Calendar`` node to monitor
         :type calendar_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``calendar_id is null``
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_calendar_hierarchy_for_descendants(self, calendar_id):
+        """Registers for notification of an updated calendar hierarchy structure.
+
+        ``CalendarReceiver.changedChildOfCalendars()`` is invoked when
+        the specified node or any of its descendants experiences a
+        change in its children.
+
+        :param calendar_id: the ``Id`` of the ``Calendar`` node to monitor
+        :type calendar_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``calendar_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -11194,10 +11625,10 @@ class CalendarHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_calendars()`` or ``get_child_calendars()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: calendar elements may be silently omitted or
         re-ordered
       * plenary view: provides a complete set or is an error condition

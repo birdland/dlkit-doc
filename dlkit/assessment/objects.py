@@ -57,7 +57,7 @@ class QuestionList(osid_objects.OsidList):
       while (ql.hasNext()) {
            Question[] question = al.getNextQuestions(ql.available());
       }
-    
+
 
 
     """
@@ -143,7 +143,7 @@ class AnswerList(osid_objects.OsidList):
       while (al.hasNext()) {
            Answer[] answer = al.getNextAnswers(al.available());
       }
-    
+
 
 
     """
@@ -341,7 +341,7 @@ class ItemList(osid_objects.OsidList):
       while (il.hasNext()) {
            Item[] items = il.getNextItems(il.available());
       }
-    
+
 
 
     """
@@ -562,7 +562,7 @@ class AssessmentList(osid_objects.OsidList):
       while (al.hasNext()) {
            Assessment[] assessments = al.hetNextAssessments(al.available());
       }
-    
+
 
 
     """
@@ -1145,7 +1145,7 @@ class AssessmentOfferedList(osid_objects.OsidList):
       while (aol.hasNext()) {
            AssessmentOffered[] assessments = aol.hetNextAssessmentsOffered(aol.available());
       }
-    
+
 
 
     """
@@ -1524,7 +1524,7 @@ class AssessmentTakenList(osid_objects.OsidList):
       while (atl.hasNext()) {
            AssessmentTaken[] assessments = atl.hetNextAssessmentsTaken(atl.available());
       }
-    
+
 
 
     """
@@ -1657,7 +1657,7 @@ class AssessmentSectionList(osid_objects.OsidList):
       while (asl.hasNext()) {
            AssessmentSection[] sections = asl.hetNextAssessmentSections(asl.available());
       }
-    
+
 
 
     """
@@ -1745,7 +1745,7 @@ class BankList(osid_objects.OsidList):
       while (bl.hasNext()) {
            Bank[] banks = bl.getNextBanks(bl.available());
       }
-    
+
 
 
     """
@@ -1828,7 +1828,7 @@ class BankNodeList(osid_objects.OsidList):
       while (bnl.hasNext()) {
            BankNode[] nodes = bnl.getNextBankNodes(bnl.available());
       }
-    
+
 
 
     """
@@ -1869,7 +1869,7 @@ class ResponseList(osid_objects.OsidList):
       while (rl.hasNext()) {
            Response[] responses = rl.getNextResponses(rl.available());
       }
-    
+
 
 
     """

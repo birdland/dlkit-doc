@@ -18,15 +18,15 @@ class ParameterQuery(osid_queries.OsidRuleQuery):
     ``ParameterQuery`` in the array behaves like an ``OR`` such that
     results are returned that match any of the given ``ParameterQuery``
     objects.
-    
+
     Any match method inside a ``ParameterQuery`` may be invoked multiple
     times. In the case of a match method, each invocation adds an
     element to an ``OR`` expression. Any of these terms may also be
     negated through the ``match`` flag.
       Parameter { ParameterQuery.matchDisplayName AND (ParameterQuery.matchDescription OR Parameter.matchDescription)} OR ParameterQuery
-    
 
-    
+
+
     String searches are described using a string search Type that
     indicates the type of regular expression or wildcarding encoding.
     Compatibility with a strings search Type can be tested within this

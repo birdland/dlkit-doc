@@ -7,29 +7,35 @@ class AgentReceiver(osid_receivers.OsidReceiver):
     A change to a key is a change to an ``Agent``.
 
     """
-    def new_agent(self, agent_id):
+    def new_agents(self, notification_id, agent_ids):
         """The callback for notifications of new agents.
 
-        :param agent_id: the ``Id`` of the new ``Agent``
-        :type agent_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agent_ids: the ``Id`` of the new ``Agents``
+        :type agent_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_agent(self, agent_id):
+    def changed_agents(self, notification_id, agent_ids):
         """The callback for notification of updated agents.
 
-        :param agent_id: the ``Id`` of the updated ``Agent``
-        :type agent_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agent_ids: the ``Id`` of the updated ``Agents``
+        :type agent_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_agent(self, agent_id):
+    def deleted_agents(self, notification_id, agent_ids):
         """the callback for notification of deleted agents.
 
-        :param agent_id: the ``Id`` of the deleted ``Agent``
-        :type agent_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agent_ids: the ``Id`` of the deleted ``Agents``
+        :type agent_ids: ``osid.id.IdList``
 
         """
         pass
@@ -37,73 +43,46 @@ class AgentReceiver(osid_receivers.OsidReceiver):
 
 class AgencyReceiver(osid_receivers.OsidReceiver):
     """The agency receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Agency`` objects."""
-    def new_agency(self, agency_id):
+    def new_agencies(self, notification_id, agency_ids):
         """The callback for notifications of new agencies.
 
-        :param agency_id: the ``Id`` of the new ``Agency``
-        :type agency_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agency_ids: the ``Ids`` of the new ``Agencies``
+        :type agency_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def new_ancestor_agency(self, agency_id, ancestor_id):
-        """The callback for notifications of new agency ancestors.
-
-        :param agency_id: the ``Id`` of the ``Agency``
-        :type agency_id: ``osid.id.Id``
-        :param ancestor_id: ``has_record_type(agency_record_type)`` is ``false``
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def new_descendant_agency(self, agency_id, descendant_id):
-        """The callback for notifications of new agency descendants.
-
-        :param agency_id: the ``Id`` of the ``Agency``
-        :type agency_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the new ``Agency`` descendant
-        :type descendant_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def changed_agency(self, agency_id):
+    def changed_agencies(self, notification_id, agency_ids):
         """The callback for notification of updated agencies.
 
-        :param agency_id: the ``Id`` of the updated ``Agency``
-        :type agency_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agency_ids: the ``Ids`` of the updated ``Agencies``
+        :type agency_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_agency(self, agency_id):
+    def deleted_agencies(self, notification_id, agency_ids):
         """The callback for notification of deleted agencies.
 
-        :param agency_id: the ``Id`` of the deleted ``Agency``
-        :type agency_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agency_ids: the ``Ids`` of the deleted ``Agencies``
+        :type agency_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_ancestor_agency(self, agency_id, ancestor_id):
-        """The callback for notifications of deleted agency ancestors.
+    def changed_child_of_agencies(self, notification_id, agency_ids):
+        """The callback for notifications of changes to children of agency hierarchy nodes.
 
-        :param agency_id: the ``Id`` of the ``Agency``
-        :type agency_id: ``osid.id.Id``
-        :param ancestor_id: the ``Id`` of the removed ``Agency`` ancestor
-        :type ancestor_id: ``osid.id.Id``
-
-        """
-        pass
-
-    def deleted_descendant_agency(self, agency_id, descendant_id):
-        """The callback for notifications of deleted agency descendants.
-
-        :param agency_id: the ``Id`` of the ``Agency``
-        :type agency_id: ``osid.id.Id``
-        :param descendant_id: the ``Id`` of the removed ``Agency`` descendant
-        :type descendant_id: ``osid.id.Id``
+        :param notification_id: the notification ``Id``
+        :type notification_id: ``osid.id.Id``
+        :param agency_ids: the ``Ids`` of the ``Agencies`` whose children have changed
+        :type agency_ids: ``osid.id.IdList``
 
         """
         pass

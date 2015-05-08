@@ -400,7 +400,7 @@ class ConfigurationManager(osid_managers.OsidManager, ConfigurationProfile):
         configuration values
       * ``ValueNotificationSession:`` a session for subscribing to
         changes of configuration values
-    
+
       * ``ParameterLookupSession:`` a session for retrieving defined
         parameters
       * ``ParameterQuerySession:`` a session for querying defined
@@ -421,7 +421,7 @@ class ConfigurationManager(osid_managers.OsidManager, ConfigurationProfile):
         mapping parameters to configurations
       * ``ParameterSmartConfigurationSession:`` a session for managing
         smart configurations of parameters
-    
+
       * ``ConfigurationLookupSession:`` a session for retrieving
         configurations
       * ``ConfigurationQuerySession:`` a session for querying
@@ -933,7 +933,7 @@ class ConfigurationProxyManager(osid_managers.OsidProxyManager, ConfigurationPro
         configuration values
       * ``ValueNotificationSession:`` a session for subscribing to
         changes of configuration values
-    
+
       * ``ParameterLookupSession:`` a session for retrieving defined
         parameters
       * ``ParameterQuerySession:`` a session for querying defined
@@ -954,7 +954,7 @@ class ConfigurationProxyManager(osid_managers.OsidProxyManager, ConfigurationPro
         mapping parameters to configurations
       * ``ParameterSmartConfigurationSession:`` a session for managing
         smart configurations of parameters
-    
+
       * ``ConfigurationLookupSession:`` a session for retrieving
         configurations
       * ``ConfigurationQuerySession:`` a session for querying

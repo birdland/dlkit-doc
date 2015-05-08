@@ -285,7 +285,7 @@ class RelationshipManager(osid_managers.OsidManager, RelationshipProfile):
         relationship to family catalog mappings
       * ``RelationshipSmartFamilySession:`` a session to manage dynamic
         relationship families
-    
+
       * ``FamilyLookupSession:`` a session to retrieve families
       * ``FamilyQuerySession:`` a session to query families
       * ``FamilySearchSession:`` a session to search for families
@@ -622,7 +622,7 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         relationship to family catalog mappings
       * ``RelationshipSmartFamilySession:`` a session to manage dynamic
         relationship families
-    
+
       * ``FamilyLookupSession:`` a session to retrieve families
       * ``FamilyQuerySession:`` a session to query families
       * ``FamilySearchSession:`` a session to search for families

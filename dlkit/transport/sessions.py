@@ -124,7 +124,7 @@ class OutboundMessageSession(osid_sessions.OsidSession):
     the ``Response`` arrives. The FSM of the protocol is indicated
     through the available ``Request``  ``Types`` that may change from
     one transaction to another.
-    
+
     While multiple requests may be submitted before receiving a
     response, the requests may or may not be queued.
 
@@ -245,12 +245,12 @@ class EndpointLookupSession(osid_sessions.OsidSession):
 
     This session defines two views which offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete and ordered result set or is
         an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data out of sync.
 

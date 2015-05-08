@@ -20,7 +20,7 @@ class ProxySession(osid_sessions.OsidSession):
 
     proxy_condition = property(fget=get_proxy_condition)
 
-    def get_proxy(self, input):
+    def get_proxy(self, input_):
         """Gets a proxy.
 
         :param input: a proxy condition

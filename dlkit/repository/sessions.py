@@ -8,7 +8,7 @@ class AssetLookupSession(osid_sessions.OsidSession):
     Repository.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -21,11 +21,11 @@ class AssetLookupSession(osid_sessions.OsidSession):
         repository and any other assets implicitly available in this
         repository through repository inheritence.
 
-    
+
     The methods ``use_federated_repository_view()`` and
     ``use_isolated_repository_view()`` behave as a radio group and one
     should be selected before invoking any lookup methods.
-    
+
     Assets may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Asset``.
@@ -254,14 +254,14 @@ class AssetQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated repository view: searches include assets in
         repositories of which this repository is a ancestor in the
         repository hierarchy
       * isolated repository view: searches are restricted to assets in
         this repository
 
-    
+
     Assets may have a query record indicated by their respective record
     types. The query record is accessed via the ``AssetQuery``.
 
@@ -366,17 +366,17 @@ class AssetSearchSession(AssetQuerySession):
     ``get_assets_by_search()`` returns an ``AssetSearchResults`` that
     can be used to access the resulting ``AssetList`` or be used to
     perform a search within the result set through ``AssetList``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated repository view: searches include assets in
         repositories of which this repository is a ancestor in the
         repository hierarchy
       * isolated repository view: searches are restricted to assets in
         this repository
 
-    
+
     Assets may have a query record indicated by their respective record
     types. The query record is accessed via the ``AssetQuery``.
 
@@ -456,23 +456,23 @@ class AssetAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``AssetForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``AssetForms`` are requested to the ``Asset``  ``Id``
     that is to be updated using ``getAssetFormForUpdate()``. Similarly,
     the ``AssetForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``AssetForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Assets``. To unmap an ``Asset`` from
     the current ``Repository,`` the ``AssetRepositoryAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Bid`` itself thus removing it from all known ``Repository``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
-    
+
     The view of the administrative methods defined in this session is
     determined by the provider. For an instance of this session where no
     repository has been specified, it may not be parallel to the
@@ -483,7 +483,7 @@ class AssetAdminSession(osid_sessions.OsidSession):
     operate on a predetermined set of ``Assets``. Another scenario is a
     federated provider who does not wish to permit administrative
     operations for the federation unaware.
-    
+
     Example create:
       if (!session.canCreateAssets()) {
           return "asset creation not permitted";
@@ -515,7 +515,7 @@ class AssetAdminSession(osid_sessions.OsidSession):
       }
       
       Asset newAsset = session.createAsset(form);
-    
+
 
 
     """
@@ -943,7 +943,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_new_assets(self):
         """Register for notifications of new assets.
 
-        ``AssetReceiver.newAsset()`` is invoked when a new ``Asset``
+        ``AssetReceiver.newAssets()`` is invoked when a new ``Asset``
         appears in this repository.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -955,8 +955,8 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_new_assets_by_genus_type(self, asset_genus_type):
         """Registers for notification of new assets of the given asset genus type.
 
-        ``AssetReceiver.newAsset()`` is invoked when an asset is appears
-        in this repository.
+        ``AssetReceiver.newAssets()`` is invoked when an asset is
+        appears in this repository.
 
         :param asset_genus_type: the genus type of the ``Asset`` to monitor
         :type asset_genus_type: ``osid.type.Type``
@@ -970,7 +970,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assets(self):
         """Registers for notification of updated assets.
 
-        ``AssetReceiver.changedAsset()`` is invoked when an asset in
+        ``AssetReceiver.changedAssets()`` is invoked when an asset in
         this repository is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -982,7 +982,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_assets_by_genus_type(self, asset_genus_type):
         """Registers for notification of updated assets of the given asset genus type.
 
-        ``AssetReceiver.changedAsset()`` is invoked when an asset in
+        ``AssetReceiver.changedAssets()`` is invoked when an asset in
         this repository is changed.
 
         :param asset_genus_type: the genus type of the ``Asset`` to monitor
@@ -997,7 +997,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_asset(self, asset_id):
         """Registers for notification of an updated asset.
 
-        ``AssetReceiver.changedAsset()`` is invoked when the specified
+        ``AssetReceiver.changedAssets()`` is invoked when the specified
         asset in this repository is changed.
 
         :param asset_id: the ``Id`` of the ``Asset`` to monitor
@@ -1012,7 +1012,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assets(self):
         """Registers for notification of deleted assets.
 
-        ``AssetReceiver.deletedAsset()`` is invoked when an asset is
+        ``AssetReceiver.deletedAssets()`` is invoked when an asset is
         deleted or removed from this repository.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1024,7 +1024,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_assets_by_genus_type(self, asset_genus_type):
         """Registers for notification of deleted assets of the given asset genus type.
 
-        ``AssetReceiver.deletedAsset()`` is invoked when an asset is
+        ``AssetReceiver.deletedAssets()`` is invoked when an asset is
         deleted or removed from this repository.
 
         :param asset_genus_type: the genus type of the ``Asset`` to monitor
@@ -1039,7 +1039,7 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_asset(self, asset_id):
         """Registers for notification of a deleted asset.
 
-        ``AssetReceiver.deletedAsset()`` is invoked when the specified
+        ``AssetReceiver.deletedAssets()`` is invoked when the specified
         asset is deleted or removed from this repository.
 
         :param asset_id: the ``Id`` of the ``Asset`` to monitor
@@ -1060,7 +1060,7 @@ class AssetRepositorySession(osid_sessions.OsidSession):
     to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1959,7 +1959,7 @@ class AssetCompositionSession(osid_sessions.OsidSession):
     A ``Composition`` represents a collection of ``Assets``.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1973,7 +1973,7 @@ class AssetCompositionSession(osid_sessions.OsidSession):
         defined in this repository and any other compositions implicitly
         available in this repository through repository inheritence.
 
-    
+
     The methods ``use_federated_asset_composition_view()`` and
     ``use_isolated_asset_compositiont_view()`` behave as a radio group
     and one should be selected before invoking any lookup methods.
@@ -2229,7 +2229,7 @@ class CompositionLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete and ordered result set or is
         an error condition
@@ -2250,14 +2250,14 @@ class CompositionLookupSession(osid_sessions.OsidSession):
       * unsequestered composition view: All composition methods return
         all compositions.
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Composition`` it can access, without breaking
     execution. However, an administrative application may require a
     complete set of ``Composition`` objects to be returned.
-    
+
     Compositions may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Composition``.
@@ -2477,7 +2477,7 @@ class CompositionQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     searching.
-    
+
       * federated repository view: searches include compositions in
         repositories of which this repository is an ancestor in the
         repository hierarchy
@@ -2488,7 +2488,7 @@ class CompositionQuerySession(osid_sessions.OsidSession):
       * unsequestered composition view: All composition methods return
         all compositions.
 
-    
+
     Compositions may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``CompositionQuery``.
@@ -2603,17 +2603,17 @@ class CompositionSearchSession(CompositionQuerySession):
     ``CompositionSearchResults`` that can be used to access the
     resulting ``Composition`` or be used to perform a search within the
     result set through ``CompositionSearch``.
-    
+
     This session defines views that offer differing behaviors when
     searching.
-    
+
       * federated repository view: searches include compositions in
         repositories of which this repository is an ancestor in the
         repository hierarchy
       * isolated repository view: searches are restricted to subjects in
         this repository
 
-    
+
     Compositions may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``CompositionQuery``.
@@ -2694,7 +2694,7 @@ class CompositionAdminSession(osid_sessions.OsidSession):
     create operation, it cannot be reused with another create operation
     unless the first operation was unsuccessful. Each
     ``CompositionForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``CompositionForms`` are requested to the
     ``Composition``  ``Id`` that is to be updated using
     ``getCompositionFormForUpdate()``. Similarly, the
@@ -2702,13 +2702,13 @@ class CompositionAdminSession(osid_sessions.OsidSession):
     and it can perform validation before submitting the update. The
     ``CompositionForm`` can only be used once for a successful update
     and cannot be reused.
-    
+
     The delete operations delete ``Compositions``. To unmap a
     ``Composition`` from the current ``Repository,`` the
     ``CompositionRepositoryAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Bid`` itself thus removing
     it from all known ``Repository`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2969,7 +2969,7 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
     are cancelled when this session is closed.
 
     Two view are defined in this session:
-    
+
       * ``federateRepositoryView:`` includes notifications of
         compositions in repositories of which this repository is an
         ancestor in the repository hierarchy
@@ -3042,7 +3042,7 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
     def register_for_new_compositions(self):
         """Register for notifications of new composition.
 
-        ``CompositionReceiver.newComposition()`` is invoked when a new
+        ``CompositionReceiver.newCompositions()`` is invoked when a new
         ``Composition`` appears in this repository.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3054,7 +3054,7 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_compositions(self):
         """Register for notifications of new compositions.
 
-        ``CompositionReceiver.changedComposition()`` is invoked when a
+        ``CompositionReceiver.changedCompositions()`` is invoked when a
         ``Composition`` is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3066,8 +3066,8 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_composition(self, composition_id):
         """Registers for notification of an updated composition.
 
-        ``CompositionReceiver.changedComposition()`` is invoked when the
-        specified composition is changed.
+        ``CompositionReceiver.changedCompositions()`` is invoked when
+        the specified composition is changed.
 
         :param composition_id: the ``Id`` of the ``Composition`` to monitor
         :type composition_id: ``osid.id.Id``
@@ -3081,7 +3081,7 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_compositions(self):
         """Register for notifications of new compositions.
 
-        ``CompositionReceiver.deletedComposition()`` is invoked when a
+        ``CompositionReceiver.deletedCompositions()`` is invoked when a
         ``Composition`` is removed from this repository.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3093,8 +3093,8 @@ class CompositionNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_composition(self, composition_id):
         """Registers for notification of a deleted composition.
 
-        ``CompositionReceiver.deletedComposition()`` is invoked when the
-        specified composition is removed from this repository.
+        ``CompositionReceiver.deletedCompositions()`` is invoked when
+        the specified composition is removed from this repository.
 
         :param composition_id: the ``Id`` of the ``Composition`` to monitor
         :type composition_id: ``osid.id.Id``
@@ -3114,7 +3114,7 @@ class CompositionRepositorySession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -3489,18 +3489,18 @@ class RepositoryLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Repositories`` it can access, without breaking
     execution. However, an administrative application may require all
     ``Repository`` elements to be available.
-    
+
     Repositories may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Repository``.
@@ -3749,7 +3749,7 @@ class RepositorySearchSession(RepositoryQuerySession):
     ``RepositorySearchResults`` that can be used to access the resulting
     ``RepositoryList`` or be used to perform a search within the result
     set through ``RepositorySearch``.
-    
+
     Repositories may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``RepositoryQuery``.
@@ -3830,14 +3830,14 @@ class RepositoryAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``RepositoryForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``RepositoryForms`` are requested to the ``Repository``
     ``Id`` that is to be updated using ``getRepositoryFormForUpdate()``.
     Similarly, the ``RepositoryForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``RepositoryForm`` can only be used once for a
     successful update and cannot be reused.
-    
+
     The delete operations delete ``Repositories``. This session includes
     an ``Id`` aliasing mechanism to assign an external ``Id`` to an
     internally assigned Id.
@@ -4049,7 +4049,7 @@ class RepositoryNotificationSession(osid_sessions.OsidSession):
     def register_for_new_repositories(self):
         """Register for notifications of new repositories.
 
-        ``RepositoryReceiver.newRepository()`` is invoked when a new
+        ``RepositoryReceiver.newRepositories()`` is invoked when a new
         ``Repository`` is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4091,7 +4091,7 @@ class RepositoryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_repositories(self):
         """Registers for notification of updated repositories.
 
-        ``RepositoryReceiver.changedRepository()`` is invoked when a
+        ``RepositoryReceiver.changedRepositories()`` is invoked when a
         repository is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4103,7 +4103,7 @@ class RepositoryNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_repository(self, repository_id):
         """Registers for notification of an updated repository.
 
-        ``RepositoryReceiver.changedRepository()`` is invoked when the
+        ``RepositoryReceiver.changedRepositories()`` is invoked when the
         specified repository is changed.
 
         :param repository_id: the ``Id`` of the ``Repository`` to monitor
@@ -4118,7 +4118,7 @@ class RepositoryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_repositories(self):
         """Registers for notification of deleted repositories.
 
-        ``RepositoryReceiver.deletedRepository()`` is invoked when a
+        ``RepositoryReceiver.deletedRepositories()`` is invoked when a
         repository is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4130,7 +4130,7 @@ class RepositoryNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_repository(self, repository_id):
         """Registers for notification of a deleted repository.
 
-        ``RepositoryReceiver.deletedRepository()`` is invoked when the
+        ``RepositoryReceiver.deletedRepositories()`` is invoked when the
         specified repository is deleted.
 
         :param repository_id: the ``Id`` of the ``Repository`` to monitor
@@ -4192,10 +4192,10 @@ class RepositoryHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parents()`` or ``get_children()`` in lieu of a
     ``PermissionDenied`` error that may disrupt the traversal through
     authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: repository elements may be silently omitted or
         re-ordered
       * plenary view: provides a complete set or is an error condition

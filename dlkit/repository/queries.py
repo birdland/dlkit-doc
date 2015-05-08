@@ -64,7 +64,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
 
     public_domain_terms = property(fdel=clear_public_domain_terms)
 
-    def match_copyright(self, copyright, string_match_type, match):
+    def match_copyright(self, copyright_, string_match_type, match):
         """Adds a copyright for this query.
 
         :param copyright: copyright string to match

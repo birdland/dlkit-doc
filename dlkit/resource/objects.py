@@ -196,7 +196,7 @@ class ResourceList(osid_objects.OsidList):
       while (rl.hasNext()) {
            Resource[] resources = rl.getNextResources(rl.available());
       }
-    
+
 
 
     """
@@ -279,7 +279,7 @@ class ResourceNodeList(osid_objects.OsidList):
       while rnl.hasNext()) {
            ResourceNode[] nodes = rnl.getNextResourceNodes(rnl.available());
       }
-    
+
 
 
     """
@@ -407,7 +407,7 @@ class ResourceRelationshipList(osid_objects.OsidList):
       while (rrl.hasNext()) {
            ResourceRelationship[] relationships = rrl.getNextResourceRelationships(rrl.available());
       }
-    
+
 
 
     """
@@ -494,7 +494,7 @@ class BinList(osid_objects.OsidList):
       while (bl.hasNext()) {
            Bin[] bins = bl.getNextBins(bl.available());
       }
-    
+
 
 
     """
@@ -577,7 +577,7 @@ class BinNodeList(osid_objects.OsidList):
       while (bnl.hasNext()) {
            BinNode[] nodes = bnl.getNextBinNodes(bnl.available());
       }
-    
+
 
 
     """

@@ -550,7 +550,7 @@ class GradingManager(osid_managers.OsidManager, GradingProfile):
         managing grade system to gradebook mappings
       * ``GradeSystemSmartGradebookSession:`` a session for managing
         smart gradebooks of grade systems
-    
+
       * ``GradeEntryLookupSession:`` a session to look up grade entries
       * ``GradeEntryQuerySession:`` a session to query grade entries
         ``None``
@@ -559,7 +559,7 @@ class GradingManager(osid_managers.OsidManager, GradingProfile):
         delete grade entries ``None``
       * ``GradeEntryNotificationSession: a`` session to receive messages
         pertaining to grade entry ```` changes
-    
+
       * ``GradebookColumnLookupSession:`` a session to look up gradebook
         columns
       * ``GradebookColumnQuerySession:`` a session to query gradebook
@@ -576,7 +576,7 @@ class GradingManager(osid_managers.OsidManager, GradingProfile):
         managing gradebook column to gradebook mappings
       * ``GradebookColumnSmartGradebookSession:`` a session for managing
         smart gradebooks of gradebook columns
-    
+
       * ``GradebookLookupSession:`` a session to lookup gradebooks
       * ``GradebookQuerySession:`` a session to query gradebooks
       * ``GradebookSearchSession`` : a session to search gradebooks
@@ -1254,7 +1254,7 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         managing grade system to gradebook mappings
       * ``GradeSystemSmartGradebookSession:`` a session for managing
         smart gradebooks of grade systems
-    
+
       * ``GradeEntryLookupSession:`` a session to look up grade entries
       * ``GradeEntryQuerySession:`` a session to query grade entries
         ``None``
@@ -1263,7 +1263,7 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         delete grade entries ``None``
       * ``GradeEntryNotificationSession: a`` session to receive messages
         pertaining to grade entry ```` changes
-    
+
       * ``GradebookColumnLookupSession:`` a session to look up gradebook
         columns
       * ``GradebookColumnQuerySession:`` a session to query gradebook
@@ -1282,7 +1282,7 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         managing gradebook column to gradebook mappings
       * ``GradebookColumnSmartGradebookSession:`` a session for managing
         smart gradebooks of gradebook columns
-    
+
       * ``GradebookLookupSession:`` a session to lookup gradebooks
       * ``GradebookQuerySession:`` a session to query gradebooks
       * ``GradebookSearchSession`` : a session to search gradebooks

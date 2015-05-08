@@ -3,29 +3,29 @@ from ..osid import receivers as osid_receivers
 
 class GradeSystemReceiver(osid_receivers.OsidReceiver):
     """The vault receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``GradeSystem`` objects."""
-    def new_grade_system(self, grade_system_id):
+    def new_grade_systems(self, grade_system_ids):
         """The callback for notifications of new grade systems.
 
-        :param grade_system_id: the ``Id`` of the new ``GradeSystem``
-        :type grade_system_id: ``osid.id.Id``
+        :param grade_system_ids: the ``Ids`` of the new ``GradeSystems``
+        :type grade_system_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_grade_system(self, grade_system_id):
+    def changed_grade_systems(self, grade_system_ids):
         """The callback for notification of updated grade systems.
 
-        :param grade_system_id: the ``Id`` of the updated ``GradeSystem``
-        :type grade_system_id: ``osid.id.Id``
+        :param grade_system_ids: the ``Ids`` of the updated ``GradeSystems``
+        :type grade_system_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_grade_system(self, grade_system_id):
+    def deleted_grade_systems(self, grade_system_ids):
         """The callback for notification of deleted grade systems.
 
-        :param grade_system_id: the ``Id`` of the deleted ``GradeSystem``
-        :type grade_system_id: ``osid.id.Id``
+        :param grade_system_ids: the ``Ids`` of the deleted ``GradeSystems``
+        :type grade_system_ids: ``osid.id.IdList``
 
         """
         pass
@@ -33,29 +33,29 @@ class GradeSystemReceiver(osid_receivers.OsidReceiver):
 
 class GradeEntryReceiver(osid_receivers.OsidReceiver):
     """The grade entry receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted grade entries."""
-    def new_grade_entry(self, grade_entry_id):
+    def new_grade_entries(self, grade_entry_ids):
         """The callback for notifications of new grade entries.
 
-        :param grade_entry_id: the ``Id`` of the new ``GradeEntry``
-        :type grade_entry_id: ``osid.id.Id``
+        :param grade_entry_ids: the ``Ids`` of the new ``GradeEntries``
+        :type grade_entry_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def changed_grade_entry(self, grade_entry_id):
+    def changed_grade_entries(self, grade_entry_ids):
         """The callback for notification of updated grade entries.
 
-        :param grade_entry_id: the ``Id`` of the updated ``GradeEntry``
-        :type grade_entry_id: ``osid.id.Id``
+        :param grade_entry_ids: the ``Ids`` of the updated ``GradeEntries``
+        :type grade_entry_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_grade_entry(self, grade_entry_id):
+    def deleted_grade_entries(self, grade_entry_ids):
         """The callback for notification of deleted grade entries.
 
-        :param grade_entry_id: the ``Id`` of the deleted ``GradeEntry``
-        :type grade_entry_id: ``osid.id.Id``
+        :param grade_entry_ids: the ``Ids`` of the deleted ``GradeEntries``
+        :type grade_entry_ids: ``osid.id.IdList``
 
         """
         pass
@@ -63,29 +63,29 @@ class GradeEntryReceiver(osid_receivers.OsidReceiver):
 
 class GradebookColumnReceiver(osid_receivers.OsidReceiver):
     """The grade receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``GradebookColumns``."""
-    def new_gradebook_column(self, gradebook_column_id):
+    def new_gradebook_columns(self, gradebook_column_ids):
         """The callback for notifications of new gradebook columns.
 
-        :param gradebook_column_id: the ``Id`` of the new ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
+        :param gradebook_column_ids: the ``Ids`` of the new ``GradebookColumns``
+        :type gradebook_column_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def chaneged_gradebook_column(self, gradebook_column_id):
+    def chaneged_gradebook_columns(self, gradebook_column_ids):
         """The callback for notifications of new gradebook columns.
 
-        :param gradebook_column_id: the ``Id`` of the new ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
+        :param gradebook_column_ids: the ``Ids`` of the new ``GradebookColumns``
+        :type gradebook_column_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_gradebook_column(self, gradebook_column_id):
+    def deleted_gradebook_columns(self, gradebook_column_ids):
         """The callback for notification of deleted gradebook columns.
 
-        :param gradebook_column_id: the ``Id`` of the deleted ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
+        :param gradebook_column_ids: the ``Ids`` of the deleted ``GradebookColumns``
+        :type gradebook_column_ids: ``osid.id.IdList``
 
         """
         pass
@@ -93,11 +93,11 @@ class GradebookColumnReceiver(osid_receivers.OsidReceiver):
 
 class GradebookReceiver(osid_receivers.OsidReceiver):
     """The vault receiver is the consumer supplied interface for receiving notifications pertaining to new, updated or deleted ``Gradebook`` objects."""
-    def new_gradebook(self, gradebook_id):
+    def new_gradebooks(self, gradebook_ids):
         """The callback for notifications of new gradebooks.
 
-        :param gradebook_id: the ``Id`` of the new ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
+        :param gradebook_ids: the ``Ids`` of the new ``Gradebooks``
+        :type gradebook_ids: ``osid.id.IdList``
 
         """
         pass
@@ -124,20 +124,20 @@ class GradebookReceiver(osid_receivers.OsidReceiver):
         """
         pass
 
-    def changed_gradebook(self, gradebook_id):
+    def changed_gradebooks(self, gradebook_ids):
         """The callback for notification of updated gradebooks.
 
-        :param gradebook_id: the ``Id`` of the updated ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
+        :param gradebook_ids: the ``Ids`` of the updated ``Gradebooks``
+        :type gradebook_ids: ``osid.id.IdList``
 
         """
         pass
 
-    def deleted_gradebook(self, gradebook_id):
+    def deleted_gradebooks(self, gradebook_ids):
         """The callback for notification of deleted gradebooks.
 
-        :param gradebook_id: the ``Id`` of the deleted ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
+        :param gradebook_ids: the ``Ids`` of the deleted ``Gradebooks``
+        :type gradebook_ids: ``osid.id.IdList``
 
         """
         pass
@@ -162,6 +162,10 @@ class GradebookReceiver(osid_receivers.OsidReceiver):
         :type descendant_id: ``osid.id.Id``
 
         """
+        pass
+
+    def restructured_gradebook_hierarchy(self):
+        """The callback for notifications of changes to a gradebook hierarchy where the hierarchy needs to refreshed."""
         pass
 
 

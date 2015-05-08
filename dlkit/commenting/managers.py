@@ -11,7 +11,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         Federation is not exposed when a set of books appears as a
         single book.
 
-        :return: ``true`` if visible federation is supproted, ``false`` otherwise
+        :return: ``true`` if visible federation is supported, ``false`` otherwise
         :rtype: ``boolean``
 
         """
@@ -293,7 +293,7 @@ class CommentingManager(osid_managers.OsidManager, CommentingProfile):
       * ``BookHierarchyDesignSession:`` a session to manage hierarchies
         of books
 
-    
+
     The commenting manager also provides a profile for determing the
     supported search types supported by this service.
 
@@ -648,7 +648,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
       * ``BookHierarchyDesignSession:`` a session to manage hierarchies
         of books
 
-    
+
     The commenting manager also provides a profile for determing the
     supported search types supported by this service.
 

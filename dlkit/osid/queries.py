@@ -13,22 +13,22 @@ class OsidQuery(osid_markers.Suppliable):
 
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
-    
+
     Any match method inside an ``OsidQuery`` may be invoked multiple
     times. In the case of a match method, each invocation adds an
     element to an ``OR`` expression. Any of these terms may also be
     negated through the ``match`` flag.
       OsidQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR OsidQuery.matchDescription)}
-    
 
-    
+
+
     ``OsidObjects`` allow for the definition of an additonal records and
     the ``OsidQuery`` parallels this mechanism. An interface type of an
     ``OsidObject`` record must also define the corresponding
     ``OsidQuery`` record which is available through query interfaces.
     Multiple requests of these typed interfaces may return the same
     underlying object and thus it is only useful to request once.
-    
+
     An ``OsidQuery`` may be used to query for set or unset values using
     the "match any" methods. A field that has not bee explicitly
     assigned may default to a value. If multiple language translations
@@ -317,7 +317,7 @@ class OsidAggregateableQuery(OsidQuery):
 
 
 
-class OsidContainableQuery(OsidAggregateableQuery):
+class OsidContainableQuery(OsidQuery):
     """This is the query interface for searching containers.
 
     Each method specifies an ``AND`` term while multiple invocations of
@@ -454,7 +454,7 @@ class OsidSourceableQuery(OsidQuery):
 
     branding_terms = property(fdel=clear_branding_terms)
 
-    def match_license(self, license, string_match_type, match):
+    def match_license(self, license_, string_match_type, match):
         """Adds a license to match.
 
         Multiple license matches can be added to perform a boolean
@@ -575,31 +575,31 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
-    
+
     Any match method inside an ``OsidObjectQuery`` may be invoked
     multiple times. In the case of a match method, each invocation adds
     an element to an ``OR`` expression. Any of these terms may also be
     negated through the ``match`` flag.
       OsidObjectQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR OsidObjectQuery.matchDescription)}
-    
 
-    
+
+
     ``OsidObjects`` allow for the definition of an additonal records and
     the ``OsidQuery`` parallels this mechanism. An interface type of an
     ``OsidObject`` record must also define the corresponding
     ``OsidQuery`` record which is available through query interfaces.
     Multiple requests of these typed interfaces may return the same
     underlying object and thus it is only useful to request once.
-    
+
     String searches are described using a string search ``Type`` that
     indicates the type of regular expression or wildcarding encoding.
     Compatibility with a strings search ``Type`` can be tested within
     this interface.
-    
-    As with all aspects of OSIDs,nulls cannot be used. Separate tests
+
+    As with all aspects of OSIDs, nulls cannot be used. Separate tests
     are available for querying for unset values except for required
     fields.
-    
+
     An example to find all objects whose name starts with "Fred" or
     whose name starts with "Barney", but the word "dinosaur" does not
     appear in the description and not the color is not purple.
@@ -614,7 +614,7 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
       recordQuery = query.getObjectRecord(colorRecordType);
       recordQuery.matchColor("purple", false);
       ObjectList list = session.getObjectsByQuery(query);
-    
+
 
 
     """

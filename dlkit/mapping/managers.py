@@ -467,7 +467,7 @@ class MappingManager(osid_managers.OsidManager, MappingProfile):
         to map mappings
       * ``LocationSmartMapSession:`` a session to manage dynamic maps of
         locations
-    
+
       * ``LocationAdjacencySession:`` a session to query neighboring
         locations
       * ``LocationSpatialSession:`` a session to lookup locations
@@ -482,7 +482,7 @@ class MappingManager(osid_managers.OsidManager, MappingProfile):
         to notifications when resources change positions
       * ``MyLocationSession:`` a session to query locations for the user
         agent
-    
+
       * ``MapLookupSession:`` a session to retrieve maps
       * ``MapQuerySession:`` a session to search for maps
       * ``MapSearchSession:`` a session to search for maps
@@ -1093,7 +1093,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         to map mappings
       * ``LocationSmartMapSession:`` a session to manage dynamic maps of
         locations
-    
+
       * ``LocationAdjacencySession:`` a session to query neighboring
         locations
       * ``LocationSpatialSession:`` a session to lookup locations
@@ -1108,7 +1108,7 @@ class MappingProxyManager(osid_managers.OsidProxyManager, MappingProfile):
         to notifications when resources change positions
       * ``MyLocationSession:`` a session to query locations for the user
         agent
-    
+
       * ``MapLookupSession:`` a session to retrieve maps
       * ``MapQuerySession:`` a session to search for maps
       * ``MapSearchSession:`` a session to search for maps

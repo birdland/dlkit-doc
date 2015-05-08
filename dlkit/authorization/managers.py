@@ -591,7 +591,7 @@ class AuthorizationManager(osid_managers.OsidManager, AuthorizationProfile):
         authorization to vault mappings
       * ``AuthorizationSmartVaultSession:`` a session to manage smart
         authorization vaults
-    
+
       * ``FunctionLookupSession:`` a session to look up ``Functions``
       * ``FunctionQuerySession:`` a session to query ``Functions``
       * ``FunctionSearchSession:`` a session to search ``Functions``
@@ -605,7 +605,7 @@ class AuthorizationManager(osid_managers.OsidManager, AuthorizationProfile):
         function and vault mappings
       * ``FunctionSmartVaultSession:`` a session to manage dynamic
         function vaults
-    
+
       * ``QualifierLookupSession:`` a session to look up ``Qualifiers``
       * ``QualifierQuerySession:`` a session to query ``Qualifiers``
       * ``QualifierSearchSession:`` a session to search ``Qualifiers``
@@ -623,7 +623,7 @@ class AuthorizationManager(osid_managers.OsidManager, AuthorizationProfile):
         qualifier and vault mappings
       * ``QualifierSmartVaultSession:`` a session to manage dynamic
         qualifier vaults
-    
+
       * ``VaultLookupSession:`` a session to lookup vaults
       * ``VaultQuerySession:`` a session to query Vaults
       * ``VaultSearchSession`` : a session to search vaults
@@ -1392,7 +1392,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         authorization to vault mappings
       * ``AuthorizationSmartVaultSession:`` a session to manage smart
         authorization vault
-    
+
       * ``FunctionLookupSession:`` a session to look up ``Functions``
       * ``FunctionQuerySession:`` a session to query ``Functions``
       * ``FunctionSearchSession:`` a session to search ``Functions``
@@ -1406,7 +1406,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         function and vault mappings
       * ``FunctionSmartVaultSession:`` a session to manage dynamic
         function vaults
-    
+
       * ``QualifierLookupSession:`` a session to look up ``Qualifiers``
       * ``QualifierQuerySession:`` a session to query ``Qualifiers``
       * ``QualifierSearchSession:`` a session to search ``Qualifiers``
@@ -1424,7 +1424,7 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
         qualifier and vault mappings
       * ``QualifierSmartVaultSession:`` a session to manage dynamic
         qualifier vaults
-    
+
       * ``VaultLookupSession:`` a session to lookup vaults
       * ``VaultQuerySession:`` a session to query Vaults
       * ``VaultSearchSession`` : a session to search vaults

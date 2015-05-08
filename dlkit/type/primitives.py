@@ -10,12 +10,12 @@ class Type(osid_markers.OsidPrimitive):
     object while the ``Type`` identifies a specification.
 
     The components of the Type that make up its identification are:
-    
+
       * identifier: a unique key or guid
       * namespace: the namespace of the identifier
       * authority: the isuer of the identifier
 
-    
+
     Persisting a type reference means to persist the above
     identification elements. In addition to these identifier components,
     A ``Type`` mai also provide some additional metadata such as a name,

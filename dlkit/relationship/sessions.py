@@ -7,7 +7,7 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
     A ``Relationship`` is mapped to two OSID ``Ids``.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -19,7 +19,7 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
       * any effective relationship view: Relationship methods return
         both effective and ineffective relationships.
 
-    
+
     Relationships may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Relationship``.
@@ -250,7 +250,7 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
         inaccessible. Otherwise, inaccessible ``Relationships`` may be
         omitted from the list and may present the elements in any order
         including returning a unique set.
-        
+
         In effective mode, relationships are returned that are currently
         effective. In any effective mode, effective relationships and
         those currently expired are returned.
@@ -334,7 +334,7 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
         inaccessible. Otherwise, inaccessible ``Relationships`` may be
         omitted from the list and may present the elements in any order
         including returning a unique set.
-        
+
         In effective mode, relationships are returned that are currently
         effective. In any effective mode, effective relationships and
         those currently expired are returned.
@@ -420,7 +420,7 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
         relationships corresponding to the given peer or an error
         results if a relationship is inaccessible. Otherwise,
         inaccessible ``Relationships`` may be omitted from the list.
-        
+
         In effective mode, relationships are returned that are currently
         effective. In any effective mode, effective relationships and
         those currently expired are returned.
@@ -588,7 +588,7 @@ class RelationshipSearchSession(RelationshipQuerySession):
     ``RelationshipSearchResults`` that can be used to access the
     resulting ``RelationshipList`` or be used to perform a search within
     the result set through ``RelationshipSearch``.
-    
+
     Relationships may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``RelationshipQuery``.
@@ -669,7 +669,7 @@ class RelationshipAdminSession(osid_sessions.OsidSession):
     submiited to a create operation, it cannot be reused with another
     create operation unless the first operation was unsuccessful. Each
     ``RelationshipForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``RelationshipForms`` are requested to the
     ``Relationship``  ``Id`` that is to be updated using
     ``getRelationshipFormForUpdate()``. Similarly, the
@@ -677,13 +677,13 @@ class RelationshipAdminSession(osid_sessions.OsidSession):
     and it can perform validation before submitting the update. The
     ``RelationshipForm`` can only be used once for a successful update
     and cannot be reused.
-    
+
     The delete operations delete ``Relationships``. To unmap a
     ``Relationship`` from the current ``Family,`` the
     ``RelationshipFamilyAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Relationship`` itself thus
     removing it from all known ``Family`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -969,11 +969,44 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_relationship_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_relationship_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_relationship_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_relationship_notification(self, notification_id):
+        """Acknowledge a relationship notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_relationships(self):
         """Register for notifications of new relationships.
 
-        ``RelationshipReceiver.newRelationship()`` is invoked when a new
-        ``Relationship`` appears in this family.
+        ``RelationshipReceiver.newRelationships()`` is invoked when a
+        new ``Relationship`` appears in this family.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -984,8 +1017,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_relationships_for_source(self, source_id):
         """Register for notifications of new relationships from the given source.
 
-        ``RelationshipReceiver.newRelationship()`` is invoked when a new
-        ``Relationship`` appears for the given peer.
+        ``RelationshipReceiver.newRelationships()`` is invoked when a
+        new ``Relationship`` appears for the given peer.
 
         :param source_id: the ``Id`` of the source to monitor
         :type source_id: ``osid.id.Id``
@@ -999,8 +1032,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_relationships_for_destination(self, destination_id):
         """Register for notifications of new relationships to the given destination.
 
-        ``RelationshipReceiver.newRelationship()`` is invoked when a new
-        ``Relationship`` appears for the given peer.
+        ``RelationshipReceiver.newRelationships()`` is invoked when a
+        new ``Relationship`` appears for the given peer.
 
         :param destination_id: the ``Id`` of the destination node to monitor
         :type destination_id: ``osid.id.Id``
@@ -1014,8 +1047,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_relationships_by_genus_type(self, relationship_genus_type):
         """Register for notifications of new relationships.
 
-        ``RelationshipReceiver.newRelationship()`` is invoked when a new
-        ``Relationship`` appears for the given peer.
+        ``RelationshipReceiver.newRelationships()`` is invoked when a
+        new ``Relationship`` appears for the given peer.
 
         :param relationship_genus_type: the genus type of the ``Relationship`` to monitor
         :type relationship_genus_type: ``osid.type.Type``
@@ -1029,8 +1062,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_relationships(self):
         """Registers for notification of updated relationships.
 
-        ``RelationshipReceiver.changedRelationship()`` is invoked when a
-        relationship in this family is changed.
+        ``RelationshipReceiver.changedRelationships()`` is invoked when
+        a relationship in this family is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1041,8 +1074,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_relationships_for_source(self, source_id):
         """Register for notifications of updated relationships from the given source node.
 
-        ``RelationshipReceiver.changedRelationship()`` is invoked when a
-        ``Relationship`` if changed for the given peer.
+        ``RelationshipReceiver.changedRelationships()`` is invoked when
+        a ``Relationship`` if changed for the given peer.
 
         :param source_id: the ``Id`` of the source node to monitor
         :type source_id: ``osid.id.Id``
@@ -1056,8 +1089,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_relationships_for_destination(self, destination_id):
         """Register for notifications of updated relationships to the given destination node.
 
-        ``RelationshipReceiver.changedRelationship()`` is invoked when a
-        ``Relationship`` if changed for the given peer.
+        ``RelationshipReceiver.changedRelationships()`` is invoked when
+        a ``Relationship`` if changed for the given peer.
 
         :param destination_id: the ``Id`` of the destination node to monitor
         :type destination_id: ``osid.id.Id``
@@ -1071,8 +1104,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_relationships_by_genus_type(self, relationship_genus_type):
         """Register for notifications of updated relationships.
 
-        ``RelationshipReceiver.changedRelationship()`` is invoked when a
-        ``Relationship`` if changed for the given peer.
+        ``RelationshipReceiver.changedRelationships()`` is invoked when
+        a ``Relationship`` if changed for the given peer.
 
         :param relationship_genus_type: the genus type of the ``Relationship`` to monitor
         :type relationship_genus_type: ``osid.type.Type``
@@ -1086,7 +1119,7 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_relationship(self, relationship_id):
         """Registers for notification of an updated relationship.
 
-        ``RelationshipReceiver.changedRelationship()`` is invoked when
+        ``RelationshipReceiver.changedRelationships()`` is invoked when
         the specified relationship in this family is changed.
 
         :param relationship_id: the ``Id`` of the ``Relationship`` to monitor
@@ -1101,8 +1134,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_relationships(self):
         """Registers for notification of deleted relationships.
 
-        ``RelationshipReceiver.deletedRelationship()`` is invoked when a
-        relationship is deleted or removed from this family.
+        ``RelationshipReceiver.deletedRelationships()`` is invoked when
+        a relationship is deleted or removed from this family.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1113,8 +1146,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_relationships_for_source(self, source_id):
         """Register for notifications of deleted relationships from the given source node.
 
-        ``RelationshipReceiver.deletedRelationship()`` is invoked when a
-        ``Relationship`` if removed for the given peer.
+        ``RelationshipReceiver.deletedRelationships()`` is invoked when
+        a ``Relationship`` if removed for the given peer.
 
         :param source_id: the ``Id`` of the source node to monitor
         :type source_id: ``osid.id.Id``
@@ -1128,8 +1161,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_relationships_for_destination(self, destination_id):
         """Register for notifications of deleted relationships to the given destination node.
 
-        ``RelationshipReceiver.deletedRelationship()`` is invoked when a
-        ``Relationship`` if removed for the given peer.
+        ``RelationshipReceiver.deletedRelationships()`` is invoked when
+        a ``Relationship`` if removed for the given peer.
 
         :param destination_id: the ``Id`` of the destination node to monitor
         :type destination_id: ``osid.id.Id``
@@ -1143,8 +1176,8 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_relationships_by_genus_type(self, relationship_genus_type):
         """Register for notifications of deleted relationships.
 
-        ``RelationshipReceiver.deletedRelationship()`` is invoked when a
-        ``Relationship`` if removed for the given peer.
+        ``RelationshipReceiver.deletedRelationships()`` is invoked when
+        a ``Relationship`` if removed for the given peer.
 
         :param relationship_genus_type: the genus type of the ``Relationship`` to monitor
         :type relationship_genus_type: ``osid.type.Type``
@@ -1158,7 +1191,7 @@ class RelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_relationship(self, relationship_id):
         """Registers for notification of a deleted relationship.
 
-        ``RelationshipReceiver.deletedRelationship()`` is invoked when
+        ``RelationshipReceiver.deletedRelationships()`` is invoked when
         the specified relationship is deleted or removed from this
         family.
 
@@ -1180,7 +1213,7 @@ class RelationshipFamilySession(osid_sessions.OsidSession):
     look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1417,6 +1450,25 @@ class RelationshipFamilyAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_relationship_to_family(self, relationship_id, from_family_id, to_family_id):
+        """Moves a ``Relationship`` from one ``Family`` to another.
+
+        Mappings to other ``Families`` are unaffected.
+
+        :param relationship_id: the ``Id`` of the ``Relationship``
+        :type relationship_id: ``osid.id.Id``
+        :param from_family_id: the ``Id`` of the current ``Family``
+        :type from_family_id: ``osid.id.Id``
+        :param to_family_id: the ``Id`` of the destination ``Family``
+        :type to_family_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``relationship_id, from_family_id,`` or ``to_family_id`` not found or ``relationship_id`` not mapped to ``from_family_id``
+        :raise: ``NullArgument`` -- ``relationship_id, from_family_id,`` or ``to_family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class RelationshipSmartFamilySession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -1552,11 +1604,11 @@ class FamilyLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
@@ -1807,7 +1859,7 @@ class FamilySearchSession(FamilyQuerySession):
     ``get_families_by_search()`` returns a ``FamilySearchResults`` that
     can be used to access the resulting ``FamilyList`` or be used to
     perform a search within the result set through ``FamilySearch``.
-    
+
     Families may have a query record indicated by their respective
     record types. The query record is accessed via the ``FamilyQuery``.
     The returns in this session may not be cast directly to these
@@ -1889,16 +1941,16 @@ class FamilyAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``FamilyForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``FamilyForms`` are requested to the ``Family``  ``Id``
     that is to be updated using ``getFamilyFormForUpdate()``. Similarly,
     the ``FamilyForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``FamilyForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Families``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2110,42 +2162,45 @@ class FamilyNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_family_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_family_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_family_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_family_notification(self, notification_id):
+        """Acknowledge a family notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_families(self):
         """Register for notifications of new families.
 
-        ``FamilyReceiver.newFamily()`` is invoked when a new ``Family``
-        is created.
+        ``FamilyReceiver.newFamilies()`` is invoked when a new
+        ``Family`` is created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_family_ancestors(self, family_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new ancestor of the specified family.
-
-        ``FamilyReceiver.newAncestorFamily()`` is invoked when the
-        specified family node gets a new ancestor.
-
-        :param family_id: the ``Id`` of the ``Family`` node to monitor
-        :type family_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``family_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_family_descendants(self, family_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new descendant of the specified family.
-
-        ``FamilyReceiver.newDescendantFamily()`` is invoked when the
-        specified family node gets a new descendant.
-
-        :param family_id: the ``Id`` of the ``Family`` node to monitor
-        :type family_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2155,7 +2210,7 @@ class FamilyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_families(self):
         """Registers for notification of updated families.
 
-        ``FamilyReceiver.changedFamily()`` is invoked when a family is
+        ``FamilyReceiver.changedFamilies()`` is invoked when a family is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2167,8 +2222,8 @@ class FamilyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_family(self, family_id):
         """Registers for notification of an updated family.
 
-        ``FamilyReceiver.changedFamily()`` is invoked when the specified
-        family is changed.
+        ``FamilyReceiver.changedFamilies()`` is invoked when the
+        specified family is changed.
 
         :param family_id: the ``Id`` of the ``Family`` to monitor
         :type family_id: ``osid.id.Id``
@@ -2182,7 +2237,7 @@ class FamilyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_families(self):
         """Registers for notification of deleted families.
 
-        ``FamilyReceiver.deletedFamily()`` is invoked when a family is
+        ``FamilyReceiver.deletedFamilies()`` is invoked when a family is
         deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2194,23 +2249,8 @@ class FamilyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_family(self, family_id):
         """Registers for notification of a deleted family.
 
-        ``FamilyReceiver.deletedFamily()`` is invoked when the specified
-        family is deleted.
-
-        :param family_id: the ``Id`` of the ``Family`` to monitor
-        :type family_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``family_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_deleted_family_ancestors(self, family_id):
-        """Registers for notification of an updated hierarchy structure that removes an ancestor of the specified family.
-
-        ``FamilyReceiver.deletedAncestor()`` is invoked when the
-        specified family node loses an ancestor.
+        ``FamilyReceiver.deletedFamilies()`` is invoked when the
+        specified family is deleted.
 
         :param family_id: the ``Id`` of the ``Family`` to monitor
         :type family_id: ``osid.id.Id``
@@ -2221,13 +2261,42 @@ class FamilyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_family_descendants(self, family_id):
-        """Registers for notification of an updated hierarchy structure that removes a descendant of the specified family.
+    def register_for_changed_family_hierarchy(self):
+        """Registers for notification of an updated family hierarchy structure.
 
-        ``FamilyReceiver.deletedDescendant()`` is invoked when the
-        specified family node loses a descendant.
+        ``FamilyReceiver.changedChildOfFamilies()`` is invoked when a
+        node experiences a change in its children.
 
-        :param family_id: the ``Id`` of the ``Family`` to monitor
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_family_hierarchy_for_ancestors(self, family_id):
+        """Registers for notification of an updated family hierarchy structure.
+
+        ``FamilyReceiver.changedChildOfFamilies()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
+
+        :param family_id: the ``Id`` of the ``Family`` node to monitor
+        :type family_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_family_hierarchy_for_descendants(self, family_id):
+        """Registers for notification of an updated family hierarchy structure.
+
+        ``FamilyReceiver.changedChildOfFamilies()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
+
+        :param family_id: the ``Id`` of the ``Family`` node to monitor
         :type family_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2254,10 +2323,10 @@ class FamilyHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_families()`` or ``get_child_families()`` in
     lieu of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: family elements may be silently omitted or re-
         ordered
       * plenary view: provides a complete set or is an error condition

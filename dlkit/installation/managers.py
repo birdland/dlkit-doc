@@ -432,7 +432,7 @@ class InstallationManager(osid_managers.OsidManager, InstallationProfile):
       * ``InstallationNotificationSession`` a session for subscribing to
         new or deleted installations
       * ``SiteLookupSession:`` a session for listing installation sites
-    
+
       * ``PackageLookupSession:`` a session to look up packages ``None``
       * ``PackageQuerySession:`` a session to query packages
       * ``PackageSearchSession:`` a session to search packages
@@ -446,7 +446,7 @@ class InstallationManager(osid_managers.OsidManager, InstallationProfile):
         package and depot mappings
       * ``PackageSmartDepotSession:`` a session for managing smart
         depots of packages
-    
+
       * ``DepotLookupSession:`` a session to lookup depots
       * ``DepotQuerySession:`` a session to query depots
       * ``DepotSearchSession`` : a session to search depots
@@ -953,7 +953,7 @@ class InstallationProxyManager(osid_managers.OsidProxyManager, InstallationProfi
       * ``InstallationNotificationSession`` a session for subscribing to
         new or deleted installations
       * ``SiteLookupSession:`` a session for listing installation sites
-    
+
       * ``PackageLookupSession:`` a session to look up packages ``None``
       * ``PackageQuerySession:`` a session to query packages
       * ``PackageSearchSession:`` a session to search packages
@@ -967,7 +967,7 @@ class InstallationProxyManager(osid_managers.OsidProxyManager, InstallationProfi
         package and depot mappings
       * ``PackageSmartDepotSession:`` a session for managing smart
         depots of packages
-    
+
       * ``DepotLookupSession:`` a session to lookup depots
       * ``DepotQuerySession:`` a session to query depots
       * ``DepotSearchSession`` : a session to search depots

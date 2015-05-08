@@ -24,7 +24,7 @@ class Package(osid_objects.OsidObject, osid_markers.Sourceable):
         """
         return # osid.locale.DisplayText
 
-    copyright = property(fget=get_copyright)
+    copyright_ = property(fget=get_copyright)
 
     def requests_license_acknowledgement(self):
         """Tests if the provider requests acknowledgement of the license.
@@ -205,7 +205,7 @@ class PackageForm(osid_objects.OsidObjectForm, osid_objects.OsidSourceableForm):
 
     copyright_metadata = property(fget=get_copyright_metadata)
 
-    def set_copyright(self, copyright):
+    def set_copyright(self, copyright_):
         """Sets the copyright.
 
         :param copyright: the new copyright
@@ -225,7 +225,7 @@ class PackageForm(osid_objects.OsidObjectForm, osid_objects.OsidSourceableForm):
         """
         pass
 
-    copyright = property(fget=set_copyright, fdel=clear_copyright)
+    copyright_ = property(fget=set_copyright, fdel=clear_copyright)
 
     def get_requires_license_acknowledgement_metadata(self):
         """Gets the metadata for the requires license acknowledgement flag.
@@ -416,7 +416,7 @@ class PackageList(osid_objects.OsidList):
       while (pl.hasNext()) {
            Package[] packages = pl.getNextPackages(pl.available());
       }
-    
+
 
 
     """
@@ -594,7 +594,7 @@ class InstallationContentList(osid_objects.OsidList):
       while (icl.hasNext()) {
            InstallationContent[] content = icl.getNextInstallationContents(icl.available());
       }
-    
+
 
 
     """
@@ -682,7 +682,7 @@ class DepotList(osid_objects.OsidList):
       while (dl.hasNext()) {
            Depot[] depots = dl.getNextDepots(dl.available());
       }
-    
+
 
 
     """
@@ -765,7 +765,7 @@ class DepotNodeList(osid_objects.OsidList):
       while (dnl.hasNext()) {
            DepotNode[] nodes = dnl.getNextDepotNodes(dnl.available());
       }
-    
+
 
 
     """
@@ -943,7 +943,7 @@ class InstallationList(osid_objects.OsidList):
       while (il.hasNext()) {
            Installation[] installs = il.getNextInstallations(il.available());
       }
-    
+
 
 
     """
@@ -1017,7 +1017,7 @@ class SiteList(osid_objects.OsidList):
       while (sl.hasNext()) {
            Site[] sites = sl.getNextSites(sl.available());
       }
-    
+
 
 
     """

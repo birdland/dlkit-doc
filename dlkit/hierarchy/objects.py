@@ -64,7 +64,7 @@ class HierarchyList(osid_objects.OsidList):
       while (hl.hasNext()) {
            Hierarchy[] hierarchies = hl.getNextHierarchies(hl.available());
       }
-    
+
 
 
     """
@@ -138,7 +138,7 @@ class NodeList(osid_objects.OsidList):
       while (nl.hasNext()) {
            Node[] nodes = nl.getNextNodes(nl.available());
       }
-    
+
 
 
     """

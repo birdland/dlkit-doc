@@ -34,10 +34,33 @@ Contents:
    :maxdepth: 2
    
    tutorial
+   acknowledgement/toc
+   authentication/toc
+   authentication_process/toc
+   authorization/toc
    assessment/toc
+   assessment_authoring/toc
+   calendaring/toc
    commenting/toc
+   filing/toc
+   forum/toc
+   grading/toc
+   hierarchy/toc
+   id/toc
+   journaling/toc
    learning/toc
+   locale/toc
+   logging/toc
+   mapping/toc
+   ontology/toc
+   proxy/toc
+   relationship/toc
    repository/toc
+   resource/toc
+   rules/toc
+   transport/toc
+   type/toc
+   workflow/toc
 
 
 Indices and tables

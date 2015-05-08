@@ -212,14 +212,14 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated objective bank view: searches include objectives in
         objective banks of which this objective bank is a ancestor in
         the objective bank hierarchy
       * isolated objective bank view: searches are restricted to
         objectives in this objective bank
 
-    
+
     Objectives may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ObjectiveQuery``.
@@ -329,17 +329,17 @@ class ObjectiveSearchSession(ObjectiveQuerySession):
     that can be used to access the resulting ``ObjectiveList`` or be
     used to perform a search within the result set through
     ``ObjectiveSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated objective bank view: searches include objectives in
         objective banks of which this objective bank is a ancestor in
         the objective bank hierarchy
       * isolated objective bank view: searches are restricted to
         objectives in this objective bank
 
-    
+
     Objectives may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ObjectiveQuery``.
@@ -420,20 +420,20 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``ObjectiveForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``ObjectiveForms`` are requested to the ``Objective``
     ``Id`` that is to be updated using ``getObjectiveFormForUpdate()``.
     Similarly, the ``ObjectiveForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``ObjectiveForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Objectives``. To unmap an
     ``Objective`` from the current ``ObjectiveBank,`` the
     ``ObjectiveObjectiveBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Objective`` itself thus
     removing it from all known ``ObjectiveBank`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -715,10 +715,43 @@ class ObjectiveNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_objective_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_objective_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_objective_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_objective_notification(self, notification_id):
+        """Acknowledge an objective notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_objectives(self):
         """Register for notifications of new objectives.
 
-        ``ObjectiveReceiver.newObjective()`` is invoked when a new
+        ``ObjectiveReceiver.newObjectives()`` is invoked when a new
         objective is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -727,40 +760,10 @@ class ObjectiveNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_new_objective_ancestors(self, objective_id):
-        """Registers for notification if an ancestor is added to the specified objective in the objective hierarchy.
-
-        ``ObjectiveReceiver.newObjectiveAncestor()`` is invoked when the
-        specified objetcive experiences an addition in ancestry.
-
-        :param objective_id: the ``Id`` of the objective to monitor
-        :type objective_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-        """
-        pass
-
-    def register_for_new_objective_descendants(self, objective_id):
-        """Registers for notification if a descendant is added to the specified objective in the objective hierarchy.
-
-        ``ObjectiveReceiver.newObjectiveDescendant()`` is invoked when
-        the specified objective experiences an addition in descendants.
-
-        :param objective_id: the Id of the objective to monitor
-        :type objective_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-        """
-        pass
-
     def register_for_changed_objectives(self):
         """Registers for notification of updated objectives.
 
-        ``ObjectiveReceiver.changedObjective()`` is invoked when an
+        ``ObjectiveReceiver.changedObjectives()`` is invoked when an
         objective is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -772,7 +775,7 @@ class ObjectiveNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_objective(self, objective_id):
         """Registers for notification of an updated objective.
 
-        ``ObjectiveReceiver.changedObjective()`` is invoked when the
+        ``ObjectiveReceiver.changedObjectives()`` is invoked when the
         specified objective is changed.
 
         :param objective_id: the ``Id`` of the ``Objective`` to monitor
@@ -787,7 +790,7 @@ class ObjectiveNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_objectives(self):
         """Registers for notification of deleted objectives.
 
-        ``ObjectiveReceiver.deletedObjective()`` is invoked when an
+        ``ObjectiveReceiver.deletedObjectives()`` is invoked when an
         objective is removed from this objective bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -799,7 +802,7 @@ class ObjectiveNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_objective(self, objective_id):
         """Registers for notification of a deleted objective.
 
-        ``ObjectiveReceiver.changedObjective()`` is invoked when the
+        ``ObjectiveReceiver.changedObjectives()`` is invoked when the
         specified objective is removed from this objective bank.
 
         :param objective_id: the ``Id`` of the ``Objective`` to monitor
@@ -811,33 +814,46 @@ class ObjectiveNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_objective_ancestors(self, objective_id):
-        """Registers for notification if an ancestor is removed from the specified objective in the objective hierarchy.
+    def register_for_changed_objective_hierarchy(self):
+        """Registers for notification of an updated objective hierarchy structure.
 
-        ``ObjectiveReceiver.deletedObjectiveAncestor()`` is invoked when
-        the specified objective experiences a removal of an ancestor.
+        ``ObjectiveReceiver.changedChildOfObjectives()`` is invoked when
+        a node experiences a change in its children.
 
-        :param objective_id: the ``Id`` of the objective to monitor
-        :type objective_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_objective_descendants(self, objective_id):
-        """Registers for notification if a descendant is removed from fthe specified objective in the objective hierarchy.
+    def register_for_changed_objective_hierarchy_for_ancestors(self, objective_id):
+        """Registers for notification of an updated objective hierarchy structure.
 
-        ``ObjectiveReceiver.deletedObjectiveDescednant()`` is invoked
-        when the specified objective experiences a removal of one of its
-        descendants.
+        ``ObjectiveReceiver.changedChildOfObjectives()`` is invoked when
+        the specified node or any of its ancestors experiences a change
+        in its children.
 
-        :param objective_id: the ``Id`` of the objective to monitor
+        :param objective_id: the ``Id`` of the ``Objective`` node to monitor
         :type objective_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_id is null``
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_objective_hierarchy_for_descendants(self, objective_id):
+        """Registers for notification of an updated objective hierarchy structure.
+
+        ``ObjectiveReceiver.changedChildOfObjectives()`` is invoked when
+        the specified node or any of its descendants experiences a
+        change in its children.
+
+        :param objective_id: the ``Id`` of the ``Objective`` node to monitor
+        :type objective_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
@@ -861,10 +877,10 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_objectives()`` or ``get_child_objectives()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: objective elements may be silently omitted or
         re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -1376,7 +1392,7 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1615,6 +1631,25 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
+        """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
+
+        Mappings to other ``ObjectiveBanks`` are unaffected.
+
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param from_objective_bank_id: the ``Id`` of the current ``ObjectiveBank``
+        :type from_objective_bank_id: ``osid.id.Id``
+        :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
+        :type to_objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or ``objective_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class ObjectiveSmartObjectiveBankSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -1751,7 +1786,7 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
       * isolated objective bank view: All objective methods in this
@@ -1765,7 +1800,7 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         available in this objective bank through objective bank
         inheritence.
 
-    
+
     Objectives may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Objective``.
@@ -2082,7 +2117,7 @@ class ActivityLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
       * isolated objective bank view: All activity methods in this
@@ -2096,7 +2131,7 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         available in this objective bank through objective bank
         inheritence.
 
-    
+
     Activities may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Activity``.
@@ -2400,14 +2435,14 @@ class ActivityQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated objective bank view: searches include activities in
         objective banks of which this objective bank is a ancestor in
         the objective bank hierarchy
       * isolated objective bank view: searches are restricted to
         activities in this objective bank
 
-    
+
     Activities may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ActivityQuery``.
@@ -2517,17 +2552,17 @@ class ActivitySearchSession(ActivityQuerySession):
     that can be used to access the resulting ``ActivityList`` or be used
     to perform a search within the result set through
     ``ActivitySearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated objective bank view: searches include activities in
         objective banks of which this objective bank is a ancestor in
         the objective bank hierarchy
       * isolated objective bank view: searches are restricted to
         activities in this objective bank
 
-    
+
     Activities may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ActivityQuery``.
@@ -2608,20 +2643,20 @@ class ActivityAdminSession(osid_sessions.OsidSession):
     create operation, it cannot be reused with another create operation
     unless the first operation was unsuccessful. Each ``ActivityForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``ActivityForms`` are requested to the ``Activity``
     ``Id`` that is to be updated using ``getActivityFormForUpdate()``.
     Similarly, the ``ActivityForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``ActivityForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Activities``. To unmap an
     ``Activity`` from the current ``ObjectiveBank,`` the
     ``ActivityObjectiveBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Activity`` itself thus
     removing it from all known ``ObjectiveBank`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2906,10 +2941,43 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_activity_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_activity_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_activity_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_activity_notification(self, notification_id):
+        """Acknowledge an activity notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_activities(self):
         """Register for notifications of new activities.
 
-        ``ActivityReceiver.newActivity()`` is invoked when a new
+        ``ActivityReceiver.newActivities()`` is invoked when a new
         activity is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2921,7 +2989,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_new_activities_for_objective(self, objective_id):
         """Register for notifications of new activities for the given objective.
 
-        ``ActivityReceiver.newActivity()`` is invoked when a new
+        ``ActivityReceiver.newActivities()`` is invoked when a new
         activity is created.
 
         :param objective_id: the ``Id`` of the ``Activity`` to monitor
@@ -2936,7 +3004,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_activities(self):
         """Registers for notification of updated activities.
 
-        ``ActivityReceiver.changedActivity()`` is invoked when an
+        ``ActivityReceiver.changedActivities()`` is invoked when an
         activity is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2948,7 +3016,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_activities_for_objective(self, objective_id):
         """Registers for notification of updated activities.
 
-        ``ActivityReceiver.changedActivity()`` is invoked when an
+        ``ActivityReceiver.changedActivities()`` is invoked when an
         activity is changed.
 
         :param objective_id: the ``Id`` of the ``Objective`` to monitor
@@ -2963,7 +3031,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_activity(self, activity_id):
         """Registers for notification of an updated activity.
 
-        ``ActivityReceiver.changedActivity()`` is invoked when the
+        ``ActivityReceiver.changedActivities()`` is invoked when the
         specified activity is changed.
 
         :param activity_id: the ``Id`` of the ``Activity`` to monitor
@@ -2978,7 +3046,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_activities(self):
         """Registers for notification of deleted activities.
 
-        ``ActivityReceiver.deletedActivity()`` is invoked when an
+        ``ActivityReceiver.deletedActivities()`` is invoked when an
         activity is removed from this objective bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2990,7 +3058,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_activities_for_objective(self, objective_id):
         """Registers for notification of deleted activities.
 
-        ``ActivityReceiver.deletedActivity()`` is invoked when an
+        ``ActivityReceiver.deletedActivities()`` is invoked when an
         activity is removed from this objective bank.
 
         :param objective_id: the ``Id`` of the ``Objective`` to monitor
@@ -3005,7 +3073,7 @@ class ActivityNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_activity(self, activity_id):
         """Registers for notification of a deleted activity.
 
-        ``ActivityReceiver.changedActivity()`` is invoked when the
+        ``ActivityReceiver.changedActivities()`` is invoked when the
         specified activity is removed from this objective bank.
 
         :param activity_id: the ``Id`` of the ``Activity`` to monitor
@@ -3026,7 +3094,7 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -3259,6 +3327,25 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type objective_bank_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
+        """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
+
+        Mappings to other ``ObjectiveBanks`` are unaffected.
+
+        :param activity_id: the ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :param from_objective_bank_id: the ``Id`` of the current ``ObjectiveBank``
+        :type from_objective_bank_id: ``osid.id.Id``
+        :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
+        :type to_objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3863,14 +3950,14 @@ class ProficiencyQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated objective bank view: searches include proficiencies in
         objective banks of which this objective bank is an ancestor in
         the obective bank hierarchy
       * isolated objective bank view: searches are restricted to
         proficiencies in this objective bank
 
-    
+
     Proficiencies may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ProficiencyQuery``.
@@ -3978,17 +4065,17 @@ class ProficiencySearchSession(ProficiencyQuerySession):
     ``ProficiencySearchResults`` that can be used to access the
     resulting ``ProficiencyList`` or be used to perform a search within
     the result set through ``ProficiencySearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated objective bank view: searches include proficiencies in
         objective banks of which this objective bank is an ancestor in
         the obective bank hierarchy
       * isolated objective bank view: searches are restricted to
         proficiencies in this objective bank
 
-    
+
     Proficiencies may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ProficiencyQuery``.
@@ -4070,7 +4157,7 @@ class ProficiencyAdminSession(osid_sessions.OsidSession):
     reused with another create operation unless the first operation was
     unsuccessful. Each ``ProficiencyForm`` corresponds to an attempted
     transaction.
-    
+
     For updates, ``ProficiencyForms`` are requested to the
     ``Proficiency``  ``Id`` that is to be updated using
     ``getProficiencyFormForUpdate()``. Similarly, the
@@ -4078,13 +4165,13 @@ class ProficiencyAdminSession(osid_sessions.OsidSession):
     and it can perform validation before submitting the update. The
     ``ProficiencyForm`` can only be used once for a successful update
     and cannot be reused.
-    
+
     The delete operations delete ``Proficiencies``. To unmap a
     ``Proficiency`` from the current ``ObjectiveBank,`` the
     ``ProficiencyObjectiveBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Proficiency`` itself thus
     removing it from all known ``ObjectiveBank`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -4381,10 +4468,43 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_proficiency_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_proficiency_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_proficiency_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_proficiency_notification(self, notification_id):
+        """Acknowledge a proficiency notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_proficiencies(self):
         """Register for notifications of new proficiencies.
 
-        ``ProficiencyReceiver.newProficiency()`` is invoked when a new
+        ``ProficiencyReceiver.newProficiencies()`` is invoked when a new
         ``Proficiency`` appears in this objective bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4396,7 +4516,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_new_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Register for notifications of new proficiencies with the given genus type.
 
-        ``ProficiencyReceiver.newProficiency()`` is invoked when a new
+        ``ProficiencyReceiver.newProficiencies()`` is invoked when a new
         ``Proficiency`` appears for the given resource in this objective
         bank.
 
@@ -4412,7 +4532,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_new_proficiencies_for_objective(self, objective_id):
         """Register for notifications of new proficiencies.
 
-        ``ProficiencyReceiver.newProficiency()`` is invoked when a new
+        ``ProficiencyReceiver.newProficiencies()`` is invoked when a new
         ``Proficiency`` appears for the given objective in this
         objective bank.
 
@@ -4428,7 +4548,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_new_proficiencies_for_resource(self, resource_id):
         """Register for notifications of new proficiencies.
 
-        ``ProficiencyReceiver.newProficiency()`` is invoked when a new
+        ``ProficiencyReceiver.newProficiencies()`` is invoked when a new
         ``Proficiency`` appears for the given resource in this objective
         bank.
 
@@ -4444,7 +4564,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_proficiencies(self):
         """Registers for notification of updated proficiencies.
 
-        ``ProficiencyReceiver.changedProficiency()`` is invoked when a
+        ``ProficiencyReceiver.changedProficiencies()`` is invoked when a
         proficiency in this objective bank is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4456,7 +4576,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Registers for notification of updated proficiencies of the given genus type.
 
-        ``ProficiencyReceiver.changedProficiency()`` is invoked when a
+        ``ProficiencyReceiver.changedProficiencies()`` is invoked when a
         proficiency in this objective bank is changed.
 
         :param proficiency_genus_type: the genus type of the ``Proficiency`` to monitor
@@ -4471,9 +4591,9 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_proficiencies_for_objective(self, objective_id):
         """Registers for notification of an updated proficiency.
 
-        ``ProficiencyReceiver.changedProficiency()`` is invoked when the
-        specified proficiency related to the given objective is changed
-        in this objective bank.
+        ``ProficiencyReceiver.changedProficiencies()`` is invoked when
+        the specified proficiency related to the given objective is
+        changed in this objective bank.
 
         :param objective_id: the ``Id`` of the ``Objective`` to monitor
         :type objective_id: ``osid.id.Id``
@@ -4487,9 +4607,9 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_proficiencies_for_resource(self, resource_id):
         """Registers for notification of an updated proficiency.
 
-        ``ProficiencyReceiver.changedProficiency()`` is invoked when the
-        specified proficiency related to the given resource is changed
-        in this objective bank.
+        ``ProficiencyReceiver.changedProficiencies()`` is invoked when
+        the specified proficiency related to the given resource is
+        changed in this objective bank.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
         :type resource_id: ``osid.id.Id``
@@ -4503,8 +4623,8 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_proficiency(self, proficiency_id):
         """Registers for notification of an updated proficiency.
 
-        ``ProficiencyReceiver.changedProficiency()`` is invoked when the
-        specified proficiency in this objective bank is changed.
+        ``ProficiencyReceiver.changedProficiencies()`` is invoked when
+        the specified proficiency in this objective bank is changed.
 
         :param proficiency_id: the ``Id`` of the ``Proficiency`` to monitor
         :type proficiency_id: ``osid.id.Id``
@@ -4518,7 +4638,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_proficiencies(self):
         """Registers for notification of deleted proficiencies.
 
-        ``ProficiencyReceiver.deletedProficiency()`` is invoked when a
+        ``ProficiencyReceiver.deletedProficiencies()`` is invoked when a
         proficiency is deleted or removed from this objective bank.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4530,7 +4650,7 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_proficiencies_by_genus_type(self, proficiency_genus_type):
         """Registers for notification of deleted proficiencies of the given genus type.
 
-        ``ProficiencyReceiver.deletedProficiency()`` is invoked when a
+        ``ProficiencyReceiver.deletedProficiencies()`` is invoked when a
         proficiency is deleted or removed from this objective bank.
 
         :param proficiency_genus_type: the genus type of the ``Proficiency`` to monitor
@@ -4545,8 +4665,8 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_proficiencies_for_objective(self, objective_id):
         """Registers for notification of a deleted proficiency.
 
-        ``ProficiencyReceiver.deletedProficiency()`` is invoked when the
-        specified proficiency related to the objective is deleted or
+        ``ProficiencyReceiver.deletedProficiencies()`` is invoked when
+        the specified proficiency related to the objective is deleted or
         removed from this objective bank.
 
         :param objective_id: the ``Id`` of the ``Objective`` to monitor
@@ -4561,8 +4681,8 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_proficiencies_for_resource(self, resource_id):
         """Registers for notification of a deleted proficiency.
 
-        ``ProficiencyReceiver.deletedProficiency()`` is invoked when the
-        specified proficiency related to the resource is deleted or
+        ``ProficiencyReceiver.deletedProficiencies()`` is invoked when
+        the specified proficiency related to the resource is deleted or
         removed from this objective bank.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -4577,9 +4697,9 @@ class ProficiencyNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_proficiency(self, proficiency_id):
         """Registers for notification of a deleted proficiency.
 
-        ``ProficiencyReceiver.deletedProficiency()`` is invoked when the
-        specified proficiency is deleted or removed from this objective
-        bank.
+        ``ProficiencyReceiver.deletedProficiencies()`` is invoked when
+        the specified proficiency is deleted or removed from this
+        objective bank.
 
         :param proficiency_id: the ``Id`` of the ``Proficiency`` to monitor
         :type proficiency_id: ``osid.id.Id``
@@ -4599,7 +4719,7 @@ class ProficiencyObjectiveBankSession(osid_sessions.OsidSession):
     allowed to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -4831,6 +4951,25 @@ class ProficiencyObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type objective_bank_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``proficiency_id`` or ``objective_bank_id`` not found or ``proficiency_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``proficiency_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_proficiency_to_objective_bank(self, proficiency_id, from_objective_bank_id, to_objective_bank_id):
+        """Moves a ``Proficiency`` from one ``ObjectiveBank`` to another.
+
+        Mappings to other ``ObjectiveBanks`` are unaffected.
+
+        :param proficiency_id: the ``Id`` of the ``Proficiency``
+        :type proficiency_id: ``osid.id.Id``
+        :param from_objective_bank_id: the ``Id`` of the current ``ObjectiveBank``
+        :type from_objective_bank_id: ``osid.id.Id``
+        :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
+        :type to_objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``proficiency_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or ``proficiency_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``proficiency_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5265,18 +5404,18 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``ObjectiveBanks`` it can access, without breaking
     execution. However, an administrative application may require all
     ``ObjectiveBank`` elements to be available.
-    
+
     ``ObjectiveBanks`` may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``ObjectiveBank``.
@@ -5525,7 +5664,7 @@ class ObjectiveBankSearchSession(ObjectiveBankQuerySession):
     ``ObjectiveBankSearchResults`` that can be used to access the
     resulting ``ObjectiveBankList`` or be used to perform a search
     within the result set through ``ObjectiveBankSearch``.
-    
+
     ``ObjectiveBanks`` may have a query record indicated by their
     respective record types. The query record is accessed via the
     ``ObjectiveBankQuery``.
@@ -5607,7 +5746,7 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
     submiited to a create operation, it cannot be reused with another
     create operation unless the first operation was unsuccessful. Each
     ``ObjectiveBankForm`` corresponds to an attempted transaction.
-    
+
     For updates, ``ObjectiveBankForms`` are requested to the
     ``ObjectiveBank``  ``Id`` that is to be updated using
     ``getObjectiveBankFormForUpdate()``. Similarly, the
@@ -5615,11 +5754,11 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``ObjectiveBankForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``ObjectiveBanks``. It is safer to
     remove all mappings to the ``ObjectiveBank`` catalogs before
     deletion.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -5827,44 +5966,45 @@ class ObjectiveBankNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_objective_bank_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_objective_bank_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_objective_bank_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_objective_bank_notification(self, notification_id):
+        """Acknowledge an objective bank notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_objective_banks(self):
         """Register for notifications of new objective banks.
 
-        ``ObjectiveBankReceiver.newObjectiveBank()`` is invoked when a
+        ``ObjectiveBankReceiver.newObjectiveBanks()`` is invoked when a
         new ``ObjectiveBank`` is created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_objective_bank_ancestors(self, objective_bank_id):
-        """Registers for notification if an ancestor is added to the specified objective bank in the objective bank hierarchy.
-
-        ``ObjectiveBankReceiver.newObjectiveBankAncestor()`` is invoked
-        when the specified objective bank experiences an addition in
-        ancestry.
-
-        :param objective_bank_id: the ``Id`` of the objective bank to monitor
-        :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_bank_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_objective_bank_descendants(self, objective_bank_id):
-        """Registers for notification if a descendant is added to the specified objective bank in the objective bank hierarchy.
-
-        ``ObjectiveBankReceiver.newObjectiveBankDescendant()`` is
-        invoked when the specified objective bank experiences an
-        addition in descendants.
-
-        :param objective_bank_id: the ``Id`` of the objective bank to monitor
-        :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_bank_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5874,8 +6014,8 @@ class ObjectiveBankNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_objective_banks(self):
         """Registers for notification of updated objective banks.
 
-        ``ObjectiveBankReceiver.changedObjectiveBank()`` is invoked when
-        an objective bank is changed.
+        ``ObjectiveBankReceiver.changedObjectiveBanks()`` is invoked
+        when an objective bank is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -5886,8 +6026,8 @@ class ObjectiveBankNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_objective_bank(self, objective_bank_id):
         """Registers for notification of an updated objective bank.
 
-        ``ObjectiveBankReceiver.changedObjectiveBank()`` is invoked when
-        the specified objective bank is changed.
+        ``ObjectiveBankReceiver.changedObjectiveBanks()`` is invoked
+        when the specified objective bank is changed.
 
         :param objective_bank_id: the ``Id`` of the objective bank to monitor
         :type objective_bank_id: ``osid.id.Id``
@@ -5901,8 +6041,8 @@ class ObjectiveBankNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_objective_banks(self):
         """Registers for notification of deleted objective banks.
 
-        ``ObjectiveBankReceiver.deletedObjectiveBank()`` is invoked when
-        a calenedar is deleted.
+        ``ObjectiveBankReceiver.deletedObjectiveBanks()`` is invoked
+        when a calenedar is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -5913,8 +6053,8 @@ class ObjectiveBankNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_objective_bank(self, objective_bank_id):
         """Registers for notification of a deleted objective bank.
 
-        ``ObjectiveBankReceiver.deletedObjectiveBank()`` is invoked when
-        the specified objective bank is deleted.
+        ``ObjectiveBankReceiver.deletedObjectiveBanks()`` is invoked
+        when the specified objective bank is deleted.
 
         :param objective_bank_id: the ``Id`` of the objective bank to monitor
         :type objective_bank_id: ``osid.id.Id``
@@ -5925,32 +6065,44 @@ class ObjectiveBankNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_objective_bank_ancestors(self, objective_bank_id):
-        """Registers for notification if an ancestor is removed from the specified objective bank in the objective bank hierarchy.
+    def register_for_changed_objective_bank_hierarchy(self):
+        """Registers for notification of an updated objective bank hierarchy structure.
 
-        ``ObjectiveBankReceiver.deletedObjectiveBankAncestor()`` is
-        invoked when the specified objective bank experiences a removal
-        of an ancestor.
+        ``ObjectiveBankReceiver.changedChildOfObjectiveBanks()`` is
+        invoked when a node experiences a change in its children.
 
-        :param objective_bank_id: the ``Id`` of the objective bank to monitor
-        :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_bank_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_objective_bank_descendants(self, objective_bank_id):
-        """Registers for notification if a descendant is removed from fthe specified objective bank in the objective bank hierarchy.
+    def register_for_changed_objective_bank_hierarchy_for_ancestors(self, objective_bank_id):
+        """Registers for notification of an updated objective bank hierarchy structure.
 
-        ``ObjectiveBankReceiver.deletedObjectiveBankDescednant()`` is
-        invoked when the specified objective bank experiences a removal
-        of one of its descendants.
+        ``ObjectiveBankReceiver.changedChildOfObjectiveBanks()`` is
+        invoked when the specified node or any of its ancestors
+        experiences a change in its children.
 
-        :param objective_bank_id: the ``Id`` of the objective bank to monitor
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank`` node to monitor
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``objective_bank_id is null``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_objective_bank_hierarchy_for_descendants(self, objective_bank_id):
+        """Registers for notification of an updated objective bank hierarchy structure.
+
+        ``ObjectiveBankReceiver.changedChildOfObjectiveBanks()`` is
+        invoked when the specified node or any of its descendants
+        experiences a change in its children.
+
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank`` node to monitor
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5976,10 +6128,10 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_objective_banks()`` or
     ``get_child_objective_banks()`` in lieu of a ``PermissionDenied``
     error that may disrupt the traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: objective bank elements may be silently
         omitted or re-ordered
       * plenary view: provides a complete set or is an error condition

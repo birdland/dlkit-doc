@@ -387,7 +387,7 @@ class AuthorizationLookupSession(osid_sessions.OsidSession):
         authorizations or an error results. Otherwise, the returned list
         may contain only those authorizations that are accessible
         through this session.
-        
+
         In effective mode, authorizations are returned that are
         currently effective. In any effective mode, active
         authorizations and those currently expired are returned.
@@ -516,7 +516,7 @@ class AuthorizationLookupSession(osid_sessions.OsidSession):
         authorizations or an error results. Otherwise, the returned list
         may contain only those authorizations that are accessible
         through this session.
-        
+
         In effective mode, authorizations are returned that are
         currently effective. In any effective mode, active
         authorizations and those currently expired are returned.
@@ -645,7 +645,7 @@ class AuthorizationQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated view: searches include authorizations in ``Vaults`` of
         which this vault is a ancestor in the vault hierarchy
       * isolated view: searches are restricted to authorizations in this
@@ -783,10 +783,10 @@ class AuthorizationSearchSession(AuthorizationQuerySession):
     ``AuthorizationSearchResults`` that can be used to access the
     resulting ``AuthorizationList`` or be used to perform a search
     within the result set through ``AuthorizationSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated view: searches include authorizations in ``Vaults`` of
         which this vault is a ancestor in the vault hierarchy
       * isolated view: searches are restricted to authorizations in this
@@ -875,7 +875,7 @@ class AuthorizationAdminSession(osid_sessions.OsidSession):
     be reused with another create operation unless the first operation
     was unsuccessful. Each ``AuthorizationForm`` corresponds to an
     attempted transaction.
-    
+
     For updates, ``AuthorizationForms`` are requested to the
     ``Authorization``  ``Id`` that is to be updated using
     ``getAuthorizationFormForUpdate()``. Similarly, the
@@ -883,13 +883,13 @@ class AuthorizationAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``AuthorizationForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Authorizations``. To unmap an
     ``Authorization`` from the current ``Vault,`` the
     ``AuthorizationVaultAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Authorization`` itself thus
     removing it from all known ``Vault`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -1227,6 +1227,39 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_authorization_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_authorization_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_authorization_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_authorization_notification(self, notification_id):
+        """Acknowledge an authorization notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def use_implicit_authorization_view(self):
         """Sets the view for methods in this session to implicit authorizations.
 
@@ -1255,7 +1288,7 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_new_authorizations(self):
         """Register for notifications of new authorizations.
 
-        ``AuthorizationReceiver.newAuthorization()`` is invoked when a
+        ``AuthorizationReceiver.newAuthorizations()`` is invoked when a
         new ``Authorization`` appears in this vault.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1267,7 +1300,7 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_new_authorizations_for_resource(self, resource_id):
         """Registers for notification of new authorizations for the given resource including any authorizations related to the resource through an agent.
 
-        ``AuthorizationReceiver.newAuthorization()`` is invoked when an
+        ``AuthorizationReceiver.newAuthorizations()`` is invoked when an
         authorization appears in this vault.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -1282,7 +1315,7 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_new_authorizations_for_function(self, function_id):
         """Register for notifications of new authorizations for the given function.
 
-        ``AuthorizationReceiver.newAuthorization()`` is invoked when a
+        ``AuthorizationReceiver.newAuthorizations()`` is invoked when a
         new ``Authorization`` appears in this vault.
 
         :param function_id: the ``Id`` of the ``Function`` to monitor
@@ -1297,8 +1330,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_authorizations(self):
         """Registers for notification of updated authorizations.
 
-        ``AuthorizationReceiver.changedAuthorization()`` is invoked when
-        an authorization in this vault is changed.
+        ``AuthorizationReceiver.changedAuthorizations()`` is invoked
+        when an authorization in this vault is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1309,8 +1342,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_authorizations_for_resource(self, resource_id):
         """Registers for notification of updated authorizations for the given resource including any authorizations related to the resource through an agent.
 
-        ``AuthorizationReceiver.changedAuthorization()`` is invoked when
-        an authorization in this vault is changed.
+        ``AuthorizationReceiver.changedAuthorizations()`` is invoked
+        when an authorization in this vault is changed.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
         :type resource_id: ``osid.id.Id``
@@ -1324,8 +1357,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_authorizations_for_function(self, function_id):
         """Registers for notification of updated authorizations for the given function.
 
-        ``AuthorizationReceiver.changedAuthorization()`` is invoked when
-        an authorization in this vault is changed.
+        ``AuthorizationReceiver.changedAuthorizations()`` is invoked
+        when an authorization in this vault is changed.
 
         :param function_id: the ``Id`` of the ``Function`` to monitor
         :type function_id: ``osid.id.Id``
@@ -1339,8 +1372,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_authorization(self, authorization_id):
         """Registers for notification of an updated authorization.
 
-        ``AuthorizationReceiver.changedAuthorization()`` is invoked when
-        the specified authorization in this vault is changed.
+        ``AuthorizationReceiver.changedAuthorizations()`` is invoked
+        when the specified authorization in this vault is changed.
 
         :param authorization_id: the ``Id`` of the ``Authorization`` to monitor
         :type authorization_id: ``osid.id.Id``
@@ -1354,8 +1387,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_authorizations(self):
         """Registers for notification of deleted authorizations.
 
-        ``AuthorizationReceiver.deletedAuthorization()`` is invoked when
-        an authorization is removed from this vault.
+        ``AuthorizationReceiver.deletedAuthorizations()`` is invoked
+        when an authorization is removed from this vault.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1366,8 +1399,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_authorizations_for_resource(self, resource_id):
         """Registers for notification of deleted authorizations for the given resource including any authorizations related to the resource through an agent.
 
-        ``AuthorizationReceiver.deletedAuthorization()`` is invoked when
-        an authorization is removed from this vault.
+        ``AuthorizationReceiver.deletedAuthorizations()`` is invoked
+        when an authorization is removed from this vault.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
         :type resource_id: ``osid.id.Id``
@@ -1381,8 +1414,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_authorizations_for_function(self, function_id):
         """Registers for notification of deleted authorizations for the given function.
 
-        ``AuthorizationReceiver.deletedAuthorization()`` is invoked when
-        an authorization is removed from this vault.
+        ``AuthorizationReceiver.deletedAuthorizations()`` is invoked
+        when an authorization is removed from this vault.
 
         :param function_id: the ``Id`` of the ``Function`` to monitor
         :type function_id: ``osid.id.Id``
@@ -1396,8 +1429,8 @@ class AuthorizationNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_authorization(self, authorization_id):
         """Registers for notification of a deleted authorization.
 
-        ``AuthorizationReceiver.deletedAuthorization()`` is invoked when
-        the specified authorization is removed from this vault.
+        ``AuthorizationReceiver.deletedAuthorizations()`` is invoked
+        when the specified authorization is removed from this vault.
 
         :param authorization_id: the ``Id`` of the ``Authorization`` to monitor
         :type authorization_id: ``osid.id.Id``
@@ -1417,7 +1450,7 @@ class AuthorizationVaultSession(osid_sessions.OsidSession):
     to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1649,6 +1682,25 @@ class AuthorizationVaultAssignmentSession(osid_sessions.OsidSession):
         :type vault_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``authorization_id`` or ``vault_id`` not found or ``authorization_id`` not assigned to ``vault_id``
         :raise: ``NullArgument`` -- ``authorization_id`` or ``vault_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_authorization_to_vault(self, authorization_id, from_vault_id, to_vault_id):
+        """Moves an ``Authorization`` from one ``Vault`` to another.
+
+        Mappings to other ``Vaults`` are unaffected.
+
+        :param authorization_id: the ``Id`` of the ``Authorization``
+        :type authorization_id: ``osid.id.Id``
+        :param from_vault_id: the ``Id`` of the current ``Vault``
+        :type from_vault_id: ``osid.id.Id``
+        :param to_vault_id: the ``Id`` of the destination ``Vault``
+        :type to_vault_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``authorization_id, from_vault_id,`` or ``to_vault_id`` not found or ``authorization_id`` not mapped to ``from_vault_id``
+        :raise: ``NullArgument`` -- ``authorization_id, from_vault_id,`` or ``to_vault_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2001,13 +2053,13 @@ class FunctionQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated vault view: searches include functions in vaults of
         which this vault is a ancestor in the vault hierarchy
       * isolated vault view: searches are restricted to functions in
         this vault
 
-    
+
     Functions may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``FunctionQuery``.
@@ -2116,16 +2168,16 @@ class FunctionSearchSession(FunctionQuerySession):
     that can be used to access the resulting ``FunctionList`` or be used
     to perform a search within the result set through
     ``FunctionSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated vault view: searches include functions in vaults of
         which this vault is a ancestor in the vault hierarchy
       * isolated vault view: searches are restricted to functions in
         this vault
 
-    
+
     Functions may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``FunctionQuery``.
@@ -2207,20 +2259,20 @@ class FunctionAdminSession(osid_sessions.OsidSession):
     reused with another create operation unless the first operation was
     unsuccessful. Each ``FunctionForm`` corresponds to an attempted
     transaction.
-    
+
     For updates, ``FunctionForms`` are requested to the ``Function``
     ``Id`` that is to be updated using ``getFunctionFormForUpdate()``.
     Similarly, the ``FunctionForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``FunctionForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Functions``. To unmap a ``Function``
     from the current ``Vault,`` the ``FunctionVaultAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Function`` itself thus removing it from all known ``Vault``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2500,10 +2552,43 @@ class FunctionNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_function_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_function_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_function_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_function_notification(self, notification_id):
+        """Acknowledge a function notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_functions(self):
         """Register for notifications of new functions.
 
-        ``FunctionReceiver.newFunction()`` is invoked when a new
+        ``FunctionReceiver.newFunctions()`` is invoked when a new
         Function is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2515,7 +2600,7 @@ class FunctionNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_functions(self):
         """Registers for notification of updated functions.
 
-        ``FunctionReceiver.changedFunction()`` is invoked when a
+        ``FunctionReceiver.changedFunctions()`` is invoked when a
         function is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2527,7 +2612,7 @@ class FunctionNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_function(self, function_id):
         """Registers for notification of an updated function.
 
-        ``FunctionReceiver.changedFunction()`` is invoked when the
+        ``FunctionReceiver.changedFunctions()`` is invoked when the
         specified function is changed.
 
         :param function_id: the ``Id`` of the ``Function`` to monitor
@@ -2542,7 +2627,7 @@ class FunctionNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_functions(self):
         """Registers for notification of deleted functions.
 
-        ``FunctionReceiver.deletedFunction()`` is invoked when a
+        ``FunctionReceiver.deletedFunctions()`` is invoked when a
         function is removed from this vault.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2554,7 +2639,7 @@ class FunctionNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_function(self, function_id):
         """Registers for notification of a deleted function.
 
-        ``FunctionReceiver.changedFunction()`` is invoked when the
+        ``FunctionReceiver.changedFunctions()`` is invoked when the
         specified function is removed from this vault.
 
         :param function_id: the ``Id`` of the ``Function`` to monitor
@@ -2574,7 +2659,7 @@ class FunctionVaultSession(osid_sessions.OsidSession):
     have its own authorizations governing who is allowed to look at it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -2806,6 +2891,25 @@ class FunctionVaultAssignmentSession(osid_sessions.OsidSession):
         :type vault_id: ``osid.id.Id``
         :raise: ``NotFound`` -- ``function_id`` or ``vault_id`` not found or ``function_id`` not assigned to ``vault_id``
         :raise: ``NullArgument`` -- ``function_id`` or ``vault_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def reassign_function_to_vault(self, function_id, from_vault_id, to_vault_id):
+        """Moves a ``Function`` from one ``Vault`` to another.
+
+        Mappings to other ``Vaults`` are unaffected.
+
+        :param function_id: the ``Id`` of the ``Function``
+        :type function_id: ``osid.id.Id``
+        :param from_vault_id: the ``Id`` of the current ``Vault``
+        :type from_vault_id: ``osid.id.Id``
+        :param to_vault_id: the ``Id`` of the destination ``Vault``
+        :type to_vault_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``function_id, from_vault_id,`` or ``to_vault_id`` not found or ``function_id`` not mapped to ``from_vault_id``
+        :raise: ``NullArgument`` -- ``function_id, from_vault_id,`` or ``to_vault_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3152,13 +3256,13 @@ class QualifierQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated vault view: searches include qualifiers in vaults of
         which this vault is an ancestor in the vault hierarchy
       * isolated vault view: searches are restricted to qualifiers in
         this vault
 
-    
+
     Qualifiers may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``QualifierQuery``.
@@ -3267,16 +3371,16 @@ class QualifierSearchSession(QualifierQuerySession):
     that can be used to access the resulting ``QualifierList`` or be
     used to perform a search within the result set through
     ``QualifierSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated vault view: searches include qualifiers in vaults of
         which this vault is an ancestor in the vault hierarchy
       * isolated vault view: searches are restricted to qualifiers in
         this vault
 
-    
+
     Qualifiers may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``QualifierQuery``.
@@ -3358,20 +3462,20 @@ class QualifierAdminSession(osid_sessions.OsidSession):
     reused with another create operation unless the first operation was
     unsuccessful. Each ``QualifierForm`` corresponds to an attempted
     transaction.
-    
+
     For updates, ``QualifierForms`` are requested to the ``Qualifier``
     ``Id`` that is to be updated using ``getQualifierFormForUpdate()``.
     Similarly, the ``QualifierForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``QualifierForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Qualifiers``. To unmap a
     ``Qualifier`` from the current ``Vault,`` the
     ``QualifierVaultAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Qualifier`` itself thus removing
     it from all known ``Vault`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -3652,42 +3756,45 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_qualifier_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_qualifier_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_qualifier_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_qualifier_notification(self, notification_id):
+        """Acknowledge a qualifier notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_qualifiers(self):
         """Register for notifications of new qualifiers.
 
-        ``QualifierReceiver.newQualifier()`` is invoked when a new
+        ``QualifierReceiver.newQualifiers()`` is invoked when a new
         ``Qualifier`` is created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_qualifier_ancestors(self, qualifier_id):
-        """Registers for notification if an ancestor is added to the specified qualifier in the qualifier hierarchy.
-
-        ``QualifierReceiver.newQualifierAncestor()`` is invoked when the
-        specified qualifier experiences an addition in ancestry.
-
-        :param qualifier_id: the ``Id`` of the qualifier to monitor
-        :type qualifier_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``qualifier_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_qualifier_descendants(self, qualifier_id):
-        """Registers for notification if a descendant is added to fthe specified qualifier in the qualifier hierarchy.
-
-        ``QualifierReceiver.newQualifierDescendant()`` is invoked when
-        the specified qualifier experiences an addition in descdendants.
-
-        :param qualifier_id: the ``Id`` of the qualifier to monitor
-        :type qualifier_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``qualifier_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3697,7 +3804,7 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_qualifiers(self):
         """Registers for notification of updated qualifiers.
 
-        ``QualifierReceiver.changedQualifier()`` is invoked when a
+        ``QualifierReceiver.changedQualifiers()`` is invoked when a
         qualifier is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3709,7 +3816,7 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_qualifier(self, qualifier_id):
         """Registers for notification of an updated qualifier.
 
-        ``QualifierReceiver.changedQualifier()`` is invoked when the
+        ``QualifierReceiver.changedQualifiers()`` is invoked when the
         specified qualifier is changed.
 
         :param qualifier_id: the ``Id`` of the ``Qualifier`` to monitor
@@ -3724,7 +3831,7 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_qualifiers(self):
         """Registers for notification of deleted qualifiers.
 
-        ``QualifierReceiver.deletedQualifier()`` is invoked when a
+        ``QualifierReceiver.deletedQualifiers()`` is invoked when a
         qualifier is removed from this vault.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3736,7 +3843,7 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_qualifier(self, qualifier_id):
         """Registers for notification of a deleted qualifier.
 
-        ``QualifierReceiver.deletedQualifier()`` is invoked when the
+        ``QualifierReceiver.deletedQualifiers()`` is invoked when the
         specified qualifier is removed from this vault.
 
         :param qualifier_id: the ``Id`` of the ``Qualifier`` to monitor
@@ -3748,13 +3855,26 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_qualifier_ancestors(self, qualifier_id):
-        """Registers for notification if an ancestor is removed from the specified qualifier in the qualifier hierarchy.
+    def register_for_changed_qualifier_hierarchy(self):
+        """Registers for notification of an updated qualifier hierarchy structure.
 
-        ``QualifierReceiver.deletedQualifierAncestor()`` is invoked when
-        the specified qualifier experiences a removal of an ancestor.
+        ``QualifierReceiver.changedChildOfQualfiers()`` is invoked when
+        a node experiences a change in its children.
 
-        :param qualifier_id: the ``Id`` of the qualifier to monitor
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_qualifier_hierarchy_for_ancestors(self, qualifier_id):
+        """Registers for notification of an updated qualifier hierarchy structure.
+
+        ``QualifierReceiver.changedChildOfQualifiers()`` is invoked when
+        the specified node or any of its ancestors experiences a change
+        in its children.
+
+        :param qualifier_id: the ``Id`` of the ``Qualifier`` node to monitor
         :type qualifier_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``qualifier_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3763,14 +3883,14 @@ class QualifierNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_qualifier_descendants(self, qualifier_id):
-        """Registers for notification if a descendant is removed from fthe specified qualifier in the qualifier hierarchy.
+    def register_for_changed_qualifier_hierarchy_for_descendants(self, qualifier_id):
+        """Registers for notification of an updated qualifier hierarchy structure.
 
-        ``QualifierReceiver.deletedQualifierDescednant()`` is invoked
-        when the specified qualifier experiences a removal of one of its
-        descendants.
+        ``QualifierReceiver.changedChildOfQualifiers()`` is invoked when
+        the specified node or any of its descendants experiences a
+        change in its children.
 
-        :param qualifier_id: the ``Id`` of the qualifier to monitor
+        :param qualifier_id: the ``Id`` of the ``Qualifier`` node to monitor
         :type qualifier_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``qualifier_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3797,10 +3917,10 @@ class QualifierHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_qualifiers()`` or ``get_child_qualifiers()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: qualifier elements may be silently omitted or
         re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -4221,7 +4341,7 @@ class QualifierVaultSession(osid_sessions.OsidSession):
     it.
 
     This lookup session defines two views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -4459,6 +4579,25 @@ class QualifierVaultAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_qualifier_to_vault(self, qualifier_id, from_vault_id, to_vault_id):
+        """Moves a ``Qualifier`` from one ``Vault`` to another.
+
+        Mappings to other ``Vaults`` are unaffected.
+
+        :param qualifier_id: the ``Id`` of the ``Qualifier``
+        :type qualifier_id: ``osid.id.Id``
+        :param from_vault_id: the ``Id`` of the current ``Vault``
+        :type from_vault_id: ``osid.id.Id``
+        :param to_vault_id: the ``Id`` of the destination ``Vault``
+        :type to_vault_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``qualfiier_id, from_vault_id,`` or ``to_vault_id`` not found or ``qualfiier_id,`` not mapped to ``from_vault_id``
+        :raise: ``NullArgument`` -- ``qualfiier_id,, from_vault_id,`` or ``to_vault_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class QualifierSmartVaultSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -4594,18 +4733,18 @@ class VaultLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Vaults`` it can access, without breaking execution.
     However, an administrative application may require all ``Vault``
     elements to be available.
-    
+
     Vaults may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Vault``.
@@ -4846,7 +4985,7 @@ class VaultSearchSession(VaultQuerySession):
     ``get_vaults_by_search()`` returns a ``VaultSearchResults`` that can
     be used to access the resulting ``VaultList`` or be used to perform
     a search within the result set through ``VaultSearch``.
-    
+
     Vaults may have a query record indicated by their respective record
     types. The query record is accessed via the ``VaultQuery``.
 
@@ -4926,17 +5065,17 @@ class VaultAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``VaultForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``VaultForms`` are requested to the ``Vault``  ``Id``
     that is to be updated using ``getVaultFormForUpdate()``. Similarly,
     the ``VaultForm`` has metadata about the data that can be updated
     and it can perform validation before submitting the update. The
     ``VaultForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Vaults``. It is safer to remove all
     mappings to the ``Vault`` catalogs before deletion.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -5144,42 +5283,45 @@ class VaultNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_vault_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_vault_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_vault_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_vault_notification(self, notification_id):
+        """Acknowledge a vault notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_vaults(self):
         """Register for notifications of new vaults.
 
-        ``VaultReceiver.newVault()`` is invoked when a new ``Vault`` is
+        ``VaultReceiver.newVaults()`` is invoked when a new ``Vault`` is
         created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_vault_ancestors(self, vault_id):
-        """Registers for notification if an ancestor is added to the specified vault in the vault hierarchy.
-
-        ``VaultReceiver.newVaultAncestor()`` is invoked when the
-        specified vault experiences an addition in ancestry.
-
-        :param vault_id: the ``Id`` of the vault to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_vault_descendants(self, vault_id):
-        """Registers for notification if a descendant is added to the specified vault in the vault hierarchy.
-
-        ``VaultReceiver.newVaultDescendant()`` is invoked when the
-        specified vault experiences an addition in descendants.
-
-        :param vault_id: the ``Id`` of the vault to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5189,7 +5331,7 @@ class VaultNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_vaults(self):
         """Registers for notification of updated vaults.
 
-        ``VaultReceiver.changedVault()`` is invoked when a vault is
+        ``VaultReceiver.changedVaults()`` is invoked when a vault is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5201,7 +5343,7 @@ class VaultNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_vault(self, vault_id):
         """Registers for notification of an updated vault.
 
-        ``VaultReceiver.changedVault()`` is invoked when the specified
+        ``VaultReceiver.changedVaults()`` is invoked when the specified
         vault is changed.
 
         :param vault_id: the Id of the vault to monitor
@@ -5216,7 +5358,7 @@ class VaultNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_vaults(self):
         """Registers for notification of deleted vaults.
 
-        ``VaultReceiver.deletedVault()`` is invoked when a vault is
+        ``VaultReceiver.deletedVaults()`` is invoked when a vault is
         deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -5228,7 +5370,7 @@ class VaultNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_vault(self, vault_id):
         """Registers for notification of a deleted vault.
 
-        ``VaultReceiver.deletedVault()`` is invoked when the specified
+        ``VaultReceiver.deletedVaults()`` is invoked when the specified
         vault is deleted.
 
         :param vault_id: the Id of the vault to monitor
@@ -5240,30 +5382,44 @@ class VaultNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_vault_ancestors(self, vault_id):
-        """Registers for notification if an ancestor is removed from the specified vault in the vault hierarchy.
+    def register_for_changed_vault_hierarchy(self):
+        """Registers for notification of an updated vault hierarchy structure.
 
-        ``VaultReceiver.deletedVaultAncestor()`` is invoked when the
-        specified vault experiences a removal of an ancestor.
+        ``VaultReceiver.changedChildOfVaults()`` is invoked when a node
+        experiences a change in its children.
 
-        :param vault_id: the Id of the vault to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
         """
         pass
 
-    def register_for_deleted_vault_descendants(self, vault_id):
-        """Registers for notification if a descendant is removed from fthe specified vault in the vault hierarchy.
+    def register_for_changed_vault_hierarchy_for_ancestors(self, vault_id):
+        """Registers for notification of an updated vault hierarchy structure.
 
-        ``VaultReceiver.deletedVaultDescednant()`` is invoked when the
-        specified vault experiences a removal of one of its descendants.
+        ``VaultReceiver.changedChildOfVaults()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
 
-        :param vault_id: the Id of the vault to monitor
+        :param vault_id: the ``Id`` of the ``Vault`` node to monitor
         :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id is null``
+        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_vault_hierarchy_for_descendants(self, vault_id):
+        """Registers for notification of an updated vault hierarchy structure.
+
+        ``VaultReceiver.changedChildOfVaults()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
+
+        :param vault_id: the ``Id`` of the ``Vault`` node to monitor
+        :type vault_id: ``osid.id.Id``
+        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5288,10 +5444,10 @@ class VaultHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_vaults()`` or ``get_child_vaults()`` in lieu
     of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: vault elements may be silently omitted or re-
         ordered
       * plenary view: provides a complete set or is an error condition

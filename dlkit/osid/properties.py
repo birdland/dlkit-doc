@@ -68,7 +68,7 @@ class PropertyList(osid_objects.OsidList):
       while (pl.hasNext()) {
            Property[] properties = pl.getNextProperties(pl.available());
       }
-    
+
 
 
     """

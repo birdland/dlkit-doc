@@ -703,7 +703,7 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
         assessments taken
       * ``AssessmentResultsSession:`` a session to retrieve assessment
         results
-    
+
       * ``ItemLookupSession:`` a session to look up ``Items``
       * ``ItemQuerySession`` : a session to query ``Items``
       * ``ItemSearchSession:`` a session to search ``Items``
@@ -716,7 +716,7 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
       * ``ItemBankAssignmentSession:`` a session for managing item and
         bank mappings
       * ``ItemSmartBankSession:`` a session for managing dynamic banks
-    
+
       * ``AssessmentLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentQuerySession:`` a session to query ``Assessments``
@@ -725,7 +725,7 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
         delete ``Assessments``
       * ``AssessmentNotificationSession: a`` session to receive messages
         pertaining to ``Assessment`` changes
-    
+
       * ``AssessmentBankSession:`` a session for looking up assessment
         and bank mappings
       * ``AssessmentBankAssignmentSession:`` a session for managing
@@ -734,7 +734,7 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
         banks
       * ``AssessmentBasicAuthoringSession:`` a session for making simple
         mappings of assessment items to assessments
-    
+
       * ``AssessmentOfferedLookupSession:`` a session to look up
         ``AssessmentsOffered``
       * ``AssessmentOfferedQuerySession:`` a session to query
@@ -751,7 +751,7 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
         managing assessments offered and bank mappings
       * ``AssessmentOfferedSmartBankSession`` : a session to manage
         dynamic banks of assessments offered
-    
+
       * ``AssessmentTakenLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentTakenQuerySession:`` a session to query
@@ -768,7 +768,7 @@ class AssessmentManager(osid_managers.OsidManager, AssessmentProfile):
         managing assessments taken and bank mappings
       * ``AssessmentTakenSmartBankSession:`` a session to manage dynamic
         banks of assessments taken
-    
+
       * ``BankLookupSession:`` a session to lookup banks
       * ``BankQuerySession`` : a session to query banks
       * ``BankSearchSession:`` a session to search banks
@@ -1762,7 +1762,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         assessments taken
       * ``AssessmentResultsSession:`` a session to retrieve assessment
         results
-    
+
       * ``ItemLookupSession:`` a session to look up ``Items``
       * ``ItemQuerySession`` : a session to query ``Items``
       * ``ItemSearchSession:`` a session to search ``Items``
@@ -1775,7 +1775,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
       * ``ItemBankAssignmentSession:`` a session for managing item and
         bank mappings
       * ``ItemSmartBankSession:`` a session for managing dynamic banks
-    
+
       * ``AssessmentLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentQuerySession:`` a session to query ``Assessments``
@@ -1784,7 +1784,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         delete ``Assessments``
       * ``AssessmentNotificationSession: a`` session to receive messages
         pertaining to ``Assessment`` changes
-    
+
       * ``AssessmentBankSession:`` a session for looking up assessment
         and bank mappings
       * ``AssessmentBankAssignmentSession:`` a session for managing
@@ -1793,7 +1793,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         banks
       * ``AssessmentBasicAuthoringSession:`` a session for making simple
         mappings of assessment items to assessments
-    
+
       * ``AssessmentOfferedLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentOfferedQuerySession:`` a session to query
@@ -1810,7 +1810,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         managing assessment and bank mappings
       * ``AssessmentOfferedSmartBankSession`` : a session to manage
         dynamic banks
-    
+
       * ``AssessmentTakenLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentTakenQuerySession:`` a session to query
@@ -1827,7 +1827,7 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         managing assessments taken and bank mappings
       * ``AssessmentTakenSmartBankSession:`` a session to manage dynamic
         banks of assessments taken
-    
+
       * ``BankLookupSession:`` a session to lookup banks
       * ``BankQuerySession`` : a session to query banks
       * ``BankSearchSession:`` a session to search banks

@@ -32,7 +32,7 @@ class EndpointList(osid_objects.OsidList):
       while (el.hasNext()) {
            Endpoint[] endpoints = el.getNextEndpoints(el.available());
       }
-    
+
 
 
     """

@@ -10,14 +10,14 @@ class Authorization(osid_objects.OsidRelationship):
 
     The actor of an authorization may be specified in a variety of
     forms.
-    
+
       * ``Agent``
       * ``Resource:`` the authorization provider uses all the ``Agents``
         associated with a ``Resource`` for matching authorizations
       * ``Resource`` and ``Trust:`` the authorization provider uses the
         associated ``Agents`` within a cicle of ``Trust``
 
-    
+
     An explicit ``Authorization`` represents the mappings as they are
     specified in the authorization provdier. Implicit authorizations may
     be retrieved which are authorizations inferred through the
@@ -25,7 +25,7 @@ class Authorization(osid_objects.OsidRelationship):
     ``Authorization`` is one where ``is_implicit()`` is true and should
     not be used for modification as it is only available for auditing
     purposes.
-    
+
     An ``Authorization`` containing a ``Resource`` may also provide the
     associated Agent in a request for implicit authorizations or for all
     the authorizations, both explicit and implicit, for a given
@@ -248,7 +248,7 @@ class AuthorizationList(osid_objects.OsidList):
       while (al.hasNext()) {
            Authorization[] authorizations = al.getNextAuthorizations(al.available());
       }
-    
+
 
 
     """
@@ -400,7 +400,7 @@ class FunctionList(osid_objects.OsidList):
       while (fl.hasNext()) {
            Function[] functions = fl.getNextFunctions(fl.available());
       }
-    
+
 
 
     """
@@ -494,7 +494,7 @@ class QualifierList(osid_objects.OsidList):
       while (ql.hasNext()) {
            Qualifier[] qualifiers = ql.hetNextQualifiers(ql.available());
       }
-    
+
 
 
     """
@@ -577,7 +577,7 @@ class QualifierNodeList(osid_objects.OsidList):
       while (qnl.hasNext()) {
            QualifierNode[] nodes = qnl.hetNextQualifierNodes(qnl.available());
       }
-    
+
 
 
     """
@@ -665,7 +665,7 @@ class VaultList(osid_objects.OsidList):
       while (vl.hasNext()) {
            Vault[] vaults = vl.getNextVaults(vl.available());
       }
-    
+
 
 
     """
@@ -748,7 +748,7 @@ class VaultNodeList(osid_objects.OsidList):
       while (vnl.hasNext()) {
            VaultNode[] nodes = vnl.getNextVaultNodes(vnl.available());
       }
-    
+
 
 
     """

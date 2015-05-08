@@ -18,11 +18,11 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     determine what ``PropertyTypes`` are supported. The ``OsidManager``
     is also used to create the appropriate ``OsidSession`` for object
     creation, updates and deletes.
-    
+
     All ``OsidObjects`` are identified by an immutable ``Id``. An ``Id``
     is assigned to an object upon creation of the object and cannot be
     changed once assigned.
-    
+
     An ``OsidObject`` may support one or more supplementary records
     which are expressed in the form of interfaces. Each record interface
     is identified by a Type. A record interface may extend another
@@ -30,7 +30,7 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     implied. In this case of interface inheritance, support of the
     parent record type may be implied through ``has_record_type()`` and
     not explicit in ``getRecordTypes()``.
-    
+
     For example, if recordB extends recordA, typeB is a child of typeA.
     If a record implements typeB, than it also implements typeA. An
     application that only knows about typeA retrieves recordA. An
@@ -40,7 +40,7 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     typeB as they may not exist until explicitly requested. The
     mechanics of this polymorphism is defined by the language binder.
     One mechanism might be the use of casting.
-    
+
     In addition to the record ``Types,`` OSID Objects also have a genus
     ``Type``. A genus ``Type`` indicates a classification or kind of the
     object where an "is a" relationship exists. The purpose of of the
@@ -54,14 +54,14 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     of ``Book`` or ``Journal``. While this distinction can aid a search,
     these genres should be treated in such a way that do not introduce
     interoperability problems.
-    
+
     Like record Types, the genus Types may also exist in an implicit
     type hierarchy. An OSID object always has at least one genus. Genus
     types should not be confused with subject tagging, which is managed
     externally to the object. Unlike record ``Types,`` an object's genus
     may be modified. However, once an object's record is created with a
     record ``Type,`` it cannot be changed.
-    
+
     Methods that return values are not permitted to return nulls. If a
     value is not set, it is indicated in the ``Metadata`` of the update
     form.
@@ -129,31 +129,31 @@ class OsidRelationship(OsidObject, osid_markers.Temporal):
     The relationship between the student and the course remains
     pertinent, independent of any journaled changes that may have
     occurred to either the student or the course.
-    
+
     Once the student has dropped the course, the relationship has
     expired such that ``is_effective()`` becomes false. It can be
     inferred that during the period of the effective dates, the student
     was actively registered in the course. Here is an example:
-    
+
       * T1. September 1: Student registers for course for grades
       * T2. September 10: Student drops course
       * T3. September 15: Student re-registers for course pass/fail
 
-    
+
     The relationships are:
       T1. R1 {effective,   September 1  -> end of term,  data=grades}
       T2. R1 {ineffective, September 1  -> September 10, data=grades}
       T3. R1 {ineffective, September 1  -> September 10, data=grades}
           R2 {effective,   September 10 -> end of term,  data=p/f}
-    
 
-    
+
+
     An OSID Provider may also permit dates to be set in the future in
     which case the relationship can become automatically become
     effective at a future time and later expire. More complex
     effectiveness management can be done through other rule-based
     services.
-    
+
     OSID Consumer lookups and queries of relationships need to consider
     that it may be only effective relationshps are of interest.
 
@@ -204,7 +204,7 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
 
     ``OsidCatalogs`` allow for the retrieval of a provider identity and
     branding.
-    
+
     Collections visible through an ``OsidCatalog`` may be the output of
     a dynamic query or some other rules-based evaluation. The facts
     surrounding the evaluation are the ``OsidObjects`` visible to the
@@ -212,7 +212,7 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
     input conditions may satisifed on a service-wide basis using an
     ``OsidQuery`` or environmental conditions supplied to the services
     via a ``Proxy`` .
-    
+
     Often, the selection of an ``OsidCatalog`` in instantiating an
     ``OsidSession`` provides access to a set of ``OsidObjects`` .
     Because the view inside an ``OsidCatalog`` can also be produced
@@ -220,7 +220,7 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
     alias) of the ``OsidCatalog`` may be used as an abstract means of
     requesting a predefined set of behaviors or data constraints from an
     OSID Provider.
-    
+
     The flexibility of interpretation together with its central role in
     federation to build a rich and complex service from a set of
     individual OSID Providers makes cataloging an essential pattern to
@@ -244,7 +244,7 @@ class OsidRule(OsidObject, osid_markers.Operable):
     evaluation, an enabled rule overrides any evaluation to return
     ``true`` and a disabled rule overrides any evaluation to return
     ``false``.
-    
+
     ``Rules`` are never required to consume or implement. They serve as
     a mechanism to offer a level of management not attainable in the
     immediate service definition. Each Rule implies evaluating a set of
@@ -303,24 +303,24 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
     The managed ``OsidObject`` may have varying semantics as to what its
     on/off status means and in particular, which methods are used to
     indicate the effect of an ``OsidEnabler``. Some axamples:
-    
+
       * ``Operables:``  ``OsidEnablers`` effect the operational status.
       * ``Temporals:``  ``OsidEnablers`` may be used to extend or
         shorten the effectiveness of a ``Temporal`` such as an
         ``OsidRelationship.``
 
-    
+
     In the case where an ``OsidEnabler`` may cause a discontinuity in a
     ``Temporal,`` the ``OsidEnabler`` may cause the creation of new
     ``Temporals`` to capture the gap in effectiveness.
-    
+
     For example, An ``OsidRelationship`` that began in 2007 may be
     brought to an end in 2008 due to the absence of any active
     ``OsidEnablers``. When an effective ``OsidEnabler`` appears in 2009,
     a new ``OsidRelationship`` is created with a starting effective date
     of 2009 leaving the existing ``OsidRelationship`` with effective
     dates from 2007 to 2008.
-    
+
     An ``OsidEnabler`` itself is both a ``Temporal`` and an ``OsidRule``
     whose activity status of the object may be controlled
     administratively, using a span of effective dates, through an
@@ -514,7 +514,7 @@ class OsidGovernator(OsidObject, osid_markers.Operable, osid_markers.Sourceable)
     ``OsidGovernators`` are ``Sourceable``. An ``OsidGovernator``
     implies a governance that often corresponds to a provider of a
     process as opposed to a catalog provider of ``OsidObjects``.
-    
+
     ``OsidGovernators`` are ``Operable``. They indicate an active and
     operational status and related rules may be administratively
     overridden using this control point. Administratively setting the
@@ -537,7 +537,7 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
     the detail of the implied evaluated data. The behavior of a direct
     create or update of a report is not specified but is not limited to
     an override or a cascading update of underlying data.
-    
+
     The start and end date represents the date range used in the
     evaluation of the transactional data on which this report is based.
     The start and end date may be the same indicating that the
@@ -547,13 +547,13 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
     interpolate or extrapolate the date. These dates should be examined
     to understand what actually occurred and to what dates the
     information in this report pertains.
-    
+
     These dates differ from the dates the report itself was requested,
     created, or modified. The dates refer to the context of the
     evaluation. In a managed report, the dates are simply the dates to
     which the report information pertains. The history of a single
     report may be examined in the Journaling OSID.
-    
+
     For example, the Location of a Resource at 12:11pm is reported to be
     in Longwood and at 12:23pm is reported to be at Chestnut Hill. A
     request of a ``ResourceLocation``. A data correction may update the
@@ -561,14 +561,14 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
     from 12:11pm to 12:09pm may be examined in the Journaling OSID while
     the 12:11pm time would not longer be visible in current versions of
     this report.
-    
+
     Reports may be indexed by a managed time period such as a ``Term``
     or ``FiscalPeriod``. The evaluation dates may map to the opening and
     closing dates of the time period. Evaluation dates that differ from
     the time period may indicate that the transactional data is
     incomplete for that time period or that the report was calculated
     using a requested date range.
-    
+
     ``OsidCompendiums`` are subjugates to other ``OsidObjects`` in that
     what is reported is tied to an instance of a dimension such as a
     person, account, or an ``OsidCatalog`` .
@@ -649,15 +649,15 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
     or break up a large update intio smaller units. The tradeoff is the
     granularity of error feedback vs. the performance gain of a single
     transaction.
-    
+
     ``OsidForms`` are ``Identifiable``. The ``Id`` of the ``OsidForm``
     is used to uniquely identify the update or create transaction and
     not that of the object being updated. Currently, it is not necessary
     to have these ``Ids`` persisted.
-    
+
     As with all aspects of the OSIDs, nulls cannot be used. Methods to
     clear values are also defined in the form.
-    
+
     A new ``OsidForm`` should be acquired for each transaction upon an
     ``OsidObject``. Forms should not be reused from one object to
     another even if the supplied data is the same as the forms may
@@ -669,7 +669,7 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
       ColorForm recordForm = form.getFormRecord(colorRecordType);
       recordForm.setColor("green");
       session.updateObject(objectId, form);
-    
+
 
 
     """
@@ -910,7 +910,7 @@ class OsidAggregateableForm(OsidForm):
 
 
 
-class OsidContainableForm(OsidAggregateableForm):
+class OsidContainableForm(OsidForm):
     """This form is used to create and update containers."""
     def get_sequestered_metadata(self):
         """Gets the metadata for the sequestered flag.
@@ -1024,7 +1024,7 @@ class OsidSourceableForm(OsidForm):
 
     license_metadata = property(fget=get_license_metadata)
 
-    def set_license(self, license):
+    def set_license(self, license_):
         """Sets the license.
 
         :param license: the new license
@@ -1044,7 +1044,7 @@ class OsidSourceableForm(OsidForm):
         """
         pass
 
-    license = property(fget=set_license, fdel=clear_license)
+    license_ = property(fget=set_license, fdel=clear_license)
 
 
 class OsidFederateableForm(OsidForm):
@@ -1131,7 +1131,7 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
     ``OsidObject``. Additionally, ``Metadata`` may be examined for each
     data element to assist in understanding particular rules concerning
     acceptable data.
-    
+
     The form may provide some feedback as to the validity of certain
     data updates before the update transaction is issued to the
     correspodning session but a successful modification of the form is
@@ -1140,10 +1140,10 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
     or break up a large update intio smaller units. The tradeoff is the
     granularity of error feedback vs. the performance gain of a single
     transaction.
-    
+
     As with all aspects of the OSIDs, nulls cannot be used. Methods to
     clear values are also defined in the form.
-    
+
     A new ``OsidForm`` should be acquired for each transaction upon an
     ``OsidObject``. Forms should not be reused from one object to
     another even if the supplied data is the same as the forms may
@@ -1155,7 +1155,7 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
       ColorForm recordForm = form.getFormRecord(colorRecordType);
       recordForm.setColor("green");
       session.updateObject(objectId, form);
-    
+
 
 
     """
@@ -1615,7 +1615,7 @@ class OsidList:
     fixed buffer should be done with caution a awareness that an
     implementation may return a number of elements ranging from zero to
     infinity.
-    
+
     Lists are returned by methods when multiple return values are
     possible. There is no guarantee that successive calls to the same
     method will return the same set of elements in a list. Unless an

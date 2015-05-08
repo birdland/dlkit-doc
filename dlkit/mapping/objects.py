@@ -115,7 +115,7 @@ class LocationList(osid_objects.OsidList):
       while (ll.hasNext()) {
            Location[] locations = ll.getNextLocations(ll.available());
       }
-    
+
 
 
     """
@@ -201,7 +201,7 @@ class LocationNodeList(osid_objects.OsidList):
       while (lnl.hasNext()) {
            LocationNode[] locationNodes = lnl.getNextLocationNodes(lnl.available());
       }
-    
+
 
 
     """
@@ -291,7 +291,7 @@ class MapList(osid_objects.OsidList):
       while (ml.hasNext()) {
            Map[] maps = ml.getNextMaps(ml.available());
       }
-    
+
 
 
     """
@@ -377,7 +377,7 @@ class MapNodeList(osid_objects.OsidList):
       while (mnl.hasNext()) {
            MapNode[] nodes = ml.getNextMapNodes(mnl.available());
       }
-    
+
 
 
     """
@@ -522,7 +522,7 @@ class ResourceLocationList(osid_objects.OsidList):
       while (rll.hasNext()) {
            ResourceLocation[] locations = rll.getNextResourceLocations(rll.available());
       }
-    
+
 
 
     """
@@ -566,7 +566,7 @@ class CoordinateList(osid_objects.OsidList):
       while (cl.hasNext()) {
            Coordinate[] coordinates = cl.getNextCoordinates(cl.available());
       }
-    
+
 
 
     """
@@ -610,7 +610,7 @@ class SpatialUnitList(osid_objects.OsidList):
       while (sul.hasNext()) {
            SpatialUnit[] units = sul.getNextSpatialUnits(sul.available());
       }
-    
+
 
 
     """

@@ -304,7 +304,7 @@ class AuthenticationManager(osid_managers.OsidManager, AuthenticationProfile):
         ``Agents``
       * ``AgentNotificationSession: a`` session to receive messages
         pertaining to ``Agent`` changes
-    
+
       * ``AgentAgencySession:`` a session to retrieve ``Agent`` to
         ``Agency`` mappings
       * ``AgentAgencyAssignmentSession:`` a session to manage ``Agent``
@@ -641,7 +641,7 @@ class AuthenticationProxyManager(osid_managers.OsidProxyManager, AuthenticationP
         ``Agents``
       * Agent ``NotificationSession:`` session to receive messages
         pertaining to ``Agent`` changes
-    
+
       * ``AgentAgencySession:`` a session to retrieve ``Agent`` to
         ``Agency`` mappings
       * ``AgentAgencyAssignmentSession:`` a session to manage ``Agent``

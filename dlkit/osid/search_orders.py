@@ -99,7 +99,7 @@ class OsidAggregateableSearchOrder(OsidSearchOrder):
 
 
 
-class OsidContainableSearchOrder(OsidAggregateableSearchOrder):
+class OsidContainableSearchOrder(OsidSearchOrder):
     """An interface for specifying the ordering of search results."""
     def order_by_sequestered(self, style):
         """Specifies a preference for ordering the result set by the sequestered flag.

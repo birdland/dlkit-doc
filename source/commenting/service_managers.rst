@@ -99,30 +99,6 @@ ___________
 
 
 
-Book Query
-__________
-
-   .. automethod:: CommentingManager.can_search_books
-
-   .. autoattribute:: CommentingManager.book_query
-
-   .. automethod:: CommentingManager.get_books_by_query
-
-
-
-Book Search
-___________
-
-   .. autoattribute:: CommentingManager.book_search
-
-   .. autoattribute:: CommentingManager.book_search_order
-
-   .. automethod:: CommentingManager.get_books_by_search
-
-   .. automethod:: CommentingManager.get_book_query_from_inspector
-
-
-
 Book Admin
 __________
 
@@ -147,31 +123,6 @@ __________
    .. automethod:: CommentingManager.can_manage_book_aliases
 
    .. automethod:: CommentingManager.alias_book
-
-
-
-Book Notification
-_________________
-
-   .. automethod:: CommentingManager.can_register_for_book_notifications
-
-   .. automethod:: CommentingManager.register_for_new_books
-
-   .. automethod:: CommentingManager.register_for_new_book_ancestors
-
-   .. automethod:: CommentingManager.register_for_new_book_descendants
-
-   .. automethod:: CommentingManager.register_for_changed_books
-
-   .. automethod:: CommentingManager.register_for_changed_book
-
-   .. automethod:: CommentingManager.register_for_deleted_books
-
-   .. automethod:: CommentingManager.register_for_deleted_book
-
-   .. automethod:: CommentingManager.register_for_deleted_book_ancestors
-
-   .. automethod:: CommentingManager.register_for_deleted_book_descendants
 
 
 
@@ -331,30 +282,6 @@ ___________
 
 
 
-Book Query
-__________
-
-   .. automethod:: CommentingProxyManager.can_search_books
-
-   .. autoattribute:: CommentingProxyManager.book_query
-
-   .. automethod:: CommentingProxyManager.get_books_by_query
-
-
-
-Book Search
-___________
-
-   .. autoattribute:: CommentingProxyManager.book_search
-
-   .. autoattribute:: CommentingProxyManager.book_search_order
-
-   .. automethod:: CommentingProxyManager.get_books_by_search
-
-   .. automethod:: CommentingProxyManager.get_book_query_from_inspector
-
-
-
 Book Admin
 __________
 
@@ -379,31 +306,6 @@ __________
    .. automethod:: CommentingProxyManager.can_manage_book_aliases
 
    .. automethod:: CommentingProxyManager.alias_book
-
-
-
-Book Notification
-_________________
-
-   .. automethod:: CommentingProxyManager.can_register_for_book_notifications
-
-   .. automethod:: CommentingProxyManager.register_for_new_books
-
-   .. automethod:: CommentingProxyManager.register_for_new_book_ancestors
-
-   .. automethod:: CommentingProxyManager.register_for_new_book_descendants
-
-   .. automethod:: CommentingProxyManager.register_for_changed_books
-
-   .. automethod:: CommentingProxyManager.register_for_changed_book
-
-   .. automethod:: CommentingProxyManager.register_for_deleted_books
-
-   .. automethod:: CommentingProxyManager.register_for_deleted_book
-
-   .. automethod:: CommentingProxyManager.register_for_deleted_book_ancestors
-
-   .. automethod:: CommentingProxyManager.register_for_deleted_book_descendants
 
 
 

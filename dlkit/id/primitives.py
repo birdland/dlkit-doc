@@ -10,7 +10,7 @@ class Id(osid_markers.OsidPrimitive):
       * ``namespace:`` the namespace of the identifier
       * ``authority:`` the issuer of the identifier
 
-    
+
     Two Ids are equal if their namespace, identifier and authority
     strings are equal. Only the identifier is case-sensitive. Persisting
     an ``Id`` means persisting the above components.

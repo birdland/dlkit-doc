@@ -256,7 +256,7 @@ class NumericFormattingSession(osid_sessions.OsidSession):
         """
         return # string
 
-    def string_to_cardinal(self, str):
+    def string_to_cardinal(self, str_):
         """Parses a cardinal string.
 
         :param str: a cardinal string
@@ -298,7 +298,7 @@ class NumericFormattingSession(osid_sessions.OsidSession):
         """
         return # string
 
-    def decimal_to_string(self, str):
+    def decimal_to_string(self, str_):
         """Parses a decimal string.
 
         :param str: a decimal string
@@ -340,7 +340,7 @@ class NumericFormattingSession(osid_sessions.OsidSession):
         """
         return # string
 
-    def integer_to_string(self, str):
+    def integer_to_string(self, str_):
         """Parses an integer string.
 
         :param str: an integer string

@@ -20,7 +20,7 @@ class AgentQuery(osid_queries.OsidObjectQuery):
       companyAgentQuery.matchLoginName("tjcoppet");
       
       AgentList agentList = session.getAgentsByQuery(query);
-    
+
 
 
     """

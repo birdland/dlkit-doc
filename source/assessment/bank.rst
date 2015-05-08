@@ -15,27 +15,6 @@ Bank
 
 
 
-My Assessment Taken Methods
----------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_get_my_taken_assessments
-
-   .. automethod:: Bank.get_assessments_started_during
-
-   .. autoattribute:: Bank.assessments_started
-
-   .. automethod:: Bank.get_assessments_in_progress_during
-
-   .. autoattribute:: Bank.assessments_in_progress
-
-   .. autoattribute:: Bank.assessments_completed
-
-
-
 Assessment Methods
 ------------------
 
@@ -127,25 +106,6 @@ Assessment Methods
 
 
 
-Assessment Results Methods
---------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_access_assessment_results
-
-   .. automethod:: Bank.get_items
-
-   .. automethod:: Bank.get_responses
-
-   .. automethod:: Bank.are_results_available
-
-   .. automethod:: Bank.get_grade_entries
-
-
-
 Item Lookup Methods
 -------------------
 
@@ -201,19 +161,6 @@ Item Query Methods
    .. autoattribute:: Bank.item_query
 
    .. automethod:: Bank.get_items_by_query
-
-
-
-Item Search Methods
--------------------
-
-   .. autoattribute:: Bank.item_search
-
-   .. autoattribute:: Bank.item_search_order
-
-   .. automethod:: Bank.get_items_by_search
-
-   .. automethod:: Bank.get_item_query_from_inspector
 
 
 
@@ -284,102 +231,6 @@ Item Admin Methods
 
 
 
-Item Notification Methods
--------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_register_for_item_notifications
-
-   .. automethod:: Bank.use_federated_bank_view
-
-   .. automethod:: Bank.use_isolated_bank_view
-
-   .. automethod:: Bank.reliable_item_notifications
-
-   .. automethod:: Bank.unreliable_item_notifications
-
-   .. automethod:: Bank.acknowledge_item_notification
-
-   .. automethod:: Bank.register_for_new_items
-
-   .. automethod:: Bank.register_for_changed_items
-
-   .. automethod:: Bank.register_for_changed_item
-
-   .. automethod:: Bank.register_for_deleted_items
-
-   .. automethod:: Bank.register_for_deleted_item
-
-
-
-Item Bank Methods
------------------
-
-   .. automethod:: Bank.can_lookup_item_bank_mappings
-
-   .. automethod:: Bank.use_comparative_bank_view
-
-   .. automethod:: Bank.use_plenary_bank_view
-
-   .. automethod:: Bank.get_item_ids_by_bank
-
-   .. automethod:: Bank.get_items_by_bank
-
-   .. automethod:: Bank.get_item_ids_by_banks
-
-   .. automethod:: Bank.get_items_by_banks
-
-   .. automethod:: Bank.get_bank_ids_by_item
-
-   .. automethod:: Bank.get_banks_by_item
-
-
-
-Item Bank Assignment Methods
-----------------------------
-
-   .. automethod:: Bank.can_assign_items
-
-   .. automethod:: Bank.can_assign_items_to_bank
-
-   .. automethod:: Bank.get_assignable_bank_ids
-
-   .. automethod:: Bank.get_assignable_bank_ids_for_item
-
-   .. automethod:: Bank.assign_item_to_bank
-
-   .. automethod:: Bank.unassign_item_from_bank
-
-   .. automethod:: Bank.reassign_item_to_billing
-
-
-
-Item Smart Bank Methods
------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_manage_smart_banks
-
-   .. autoattribute:: Bank.item_query
-
-   .. autoattribute:: Bank.item_search_order
-
-   .. automethod:: Bank.apply_item_query
-
-   .. automethod:: Bank.inspect_item_query
-
-   .. automethod:: Bank.apply_item_sequencing
-
-   .. automethod:: Bank.get_item_query_from_inspector
-
-
-
 Assessment Lookup Methods
 -------------------------
 
@@ -430,19 +281,6 @@ Assessment Query Methods
 
 
 
-Assessment Search Methods
--------------------------
-
-   .. autoattribute:: Bank.assessment_search
-
-   .. autoattribute:: Bank.assessment_search_order
-
-   .. automethod:: Bank.get_assessments_by_search
-
-   .. automethod:: Bank.get_assessment_query_from_inspector
-
-
-
 Assessment Admin Methods
 ------------------------
 
@@ -471,102 +309,6 @@ Assessment Admin Methods
    .. automethod:: Bank.can_manage_assessment_aliases
 
    .. automethod:: Bank.alias_assessment
-
-
-
-Assessment Notification Methods
--------------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_register_for_assessment_notifications
-
-   .. automethod:: Bank.use_federated_bank_view
-
-   .. automethod:: Bank.use_isolated_bank_view
-
-   .. automethod:: Bank.reliable_assessment_notifications
-
-   .. automethod:: Bank.unreliable_assessment_notifications
-
-   .. automethod:: Bank.acknowledge_assessment_notification
-
-   .. automethod:: Bank.register_for_new_assessments
-
-   .. automethod:: Bank.register_for_changed_assessments
-
-   .. automethod:: Bank.register_for_changed_assessment
-
-   .. automethod:: Bank.register_for_deleted_assessments
-
-   .. automethod:: Bank.register_for_deleted_assessment
-
-
-
-Assessment Bank Methods
------------------------
-
-   .. automethod:: Bank.can_lookup_assessment_bank_mappings
-
-   .. automethod:: Bank.use_comparative_bank_view
-
-   .. automethod:: Bank.use_plenary_bank_view
-
-   .. automethod:: Bank.get_assessment_ids_by_bank
-
-   .. automethod:: Bank.get_assessments_by_bank
-
-   .. automethod:: Bank.get_assessment_ids_by_banks
-
-   .. automethod:: Bank.get_assessments_by_banks
-
-   .. automethod:: Bank.get_bank_ids_by_assessment
-
-   .. automethod:: Bank.get_banks_by_assessment
-
-
-
-Assessment Bank Assignment Methods
-----------------------------------
-
-   .. automethod:: Bank.can_assign_assessments
-
-   .. automethod:: Bank.can_assign_assessments_to_bank
-
-   .. automethod:: Bank.get_assignable_bank_ids
-
-   .. automethod:: Bank.get_assignable_bank_ids_for_assessment
-
-   .. automethod:: Bank.assign_assessment_to_bank
-
-   .. automethod:: Bank.unassign_assessment_from_bank
-
-   .. automethod:: Bank.reassign_assessment_to_billing
-
-
-
-Assessment Smart Bank Methods
------------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_manage_smart_banks
-
-   .. autoattribute:: Bank.assessment_query
-
-   .. autoattribute:: Bank.assessment_search_order
-
-   .. automethod:: Bank.apply_assessment_query
-
-   .. automethod:: Bank.inspect_assessment_query
-
-   .. automethod:: Bank.apply_assessment_sequencing
-
-   .. automethod:: Bank.get_assessment_query_from_inspector
 
 
 
@@ -645,19 +387,6 @@ Assessment Offered Query Methods
 
 
 
-Assessment Offered Search Methods
----------------------------------
-
-   .. autoattribute:: Bank.assessment_offered_search
-
-   .. autoattribute:: Bank.assessment_offered_search_order
-
-   .. automethod:: Bank.get_assessments_offered_by_search
-
-   .. automethod:: Bank.get_assessment_offered_query_from_inspector
-
-
-
 Assessment Offered Admin Methods
 --------------------------------
 
@@ -686,108 +415,6 @@ Assessment Offered Admin Methods
    .. automethod:: Bank.can_manage_assessment_offered_aliases
 
    .. automethod:: Bank.alias_assessment_offered
-
-
-
-Assessment Offered Notification Methods
----------------------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_register_for_assessment_offered_notifications
-
-   .. automethod:: Bank.use_federated_bank_view
-
-   .. automethod:: Bank.use_isolated_bank_view
-
-   .. automethod:: Bank.reliable_assessment_offered_notifications
-
-   .. automethod:: Bank.unreliable_assessment_offered_notifications
-
-   .. automethod:: Bank.acknowledge_assessment_offered_notification
-
-   .. automethod:: Bank.register_for_new_assessments_offered
-
-   .. automethod:: Bank.register_for_new_assessments_offered_for_assessment
-
-   .. automethod:: Bank.register_for_changed_assessments_offered
-
-   .. automethod:: Bank.register_for_changed_assessments_offered_for_assessment
-
-   .. automethod:: Bank.register_for_changed_assessment_offered
-
-   .. automethod:: Bank.register_for_deleted_assessments_offered
-
-   .. automethod:: Bank.register_for_deleted_assessments_offered_for_assessment
-
-   .. automethod:: Bank.register_for_deleted_assessment_offered
-
-
-
-Assessment Offered Bank Methods
--------------------------------
-
-   .. automethod:: Bank.can_lookup_assessment_offered_bank_mappings
-
-   .. automethod:: Bank.use_comparative_bank_view
-
-   .. automethod:: Bank.use_plenary_bank_view
-
-   .. automethod:: Bank.get_assessment_offered_ids_by_bank
-
-   .. automethod:: Bank.get_assessments_offered_by_bank
-
-   .. automethod:: Bank.get_assessment_offered_ids_by_banks
-
-   .. automethod:: Bank.get_assessments_offered_by_banks
-
-   .. automethod:: Bank.get_bank_ids_by_assessment_offered
-
-   .. automethod:: Bank.get_banks_by_assessment_offered
-
-
-
-Assessment Offered Bank Assignment Methods
-------------------------------------------
-
-   .. automethod:: Bank.can_assign_assessments_offered
-
-   .. automethod:: Bank.can_assign_assessments_offered_to_bank
-
-   .. automethod:: Bank.get_assignable_bank_ids
-
-   .. automethod:: Bank.get_assignable_bank_ids_for_assessment_offered
-
-   .. automethod:: Bank.assign_assessment_offered_to_bank
-
-   .. automethod:: Bank.unassign_assessment_offered_from_bank
-
-   .. automethod:: Bank.reassign_assessment_offered_to_billing
-
-
-
-Assessment Offered Smart Bank Methods
--------------------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_manage_smart_banks
-
-   .. autoattribute:: Bank.assessment_offered_query
-
-   .. autoattribute:: Bank.assessment_offered_search_order
-
-   .. automethod:: Bank.apply_assessment_offered_query
-
-   .. automethod:: Bank.inspect_assessment_offered_query
-
-   .. automethod:: Bank.apply_assessment_offered_sequencing
-
-   .. automethod:: Bank.get_assessment_offered_query_from_inspector
 
 
 
@@ -863,19 +490,6 @@ Assessment Taken Query Methods
 
 
 
-Assessment Taken Search Methods
--------------------------------
-
-   .. autoattribute:: Bank.assessment_taken_search
-
-   .. autoattribute:: Bank.assessment_taken_search_order
-
-   .. automethod:: Bank.get_assessments_taken_by_search
-
-   .. automethod:: Bank.get_assessment_taken_query_from_inspector
-
-
-
 Assessment Taken Admin Methods
 ------------------------------
 
@@ -904,120 +518,6 @@ Assessment Taken Admin Methods
    .. automethod:: Bank.can_manage_assessment_taken_aliases
 
    .. automethod:: Bank.alias_assessment_taken
-
-
-
-Assessment Taken Notification Methods
--------------------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_register_for_assessment_taken_notifications
-
-   .. automethod:: Bank.use_federated_bank_view
-
-   .. automethod:: Bank.use_isolated_bank_view
-
-   .. automethod:: Bank.reliable_assessment_taken_notifications
-
-   .. automethod:: Bank.unreliable_assessment_taken_notifications
-
-   .. automethod:: Bank.acknowledge_assessment_taken_notification
-
-   .. automethod:: Bank.register_for_new_assessments_taken
-
-   .. automethod:: Bank.register_for_new_assessments_taken_for_taker
-
-   .. automethod:: Bank.register_for_new_assessments_taken_for_assessment_offered
-
-   .. automethod:: Bank.register_for_new_assessments_taken_for_assessment
-
-   .. automethod:: Bank.register_for_changed_assessments_taken
-
-   .. automethod:: Bank.register_for_changed_assessments_taken_for_taker
-
-   .. automethod:: Bank.register_for_changed_assessments_taken_for_assessment_offered
-
-   .. automethod:: Bank.register_for_changed_assessments_taken_for_assessment
-
-   .. automethod:: Bank.register_for_changed_assessment_taken
-
-   .. automethod:: Bank.register_for_deleted_assessments_taken
-
-   .. automethod:: Bank.register_for_deleted_assessments_taken_for_taker
-
-   .. automethod:: Bank.register_for_deleted_assessments_taken_for_assessment_offered
-
-   .. automethod:: Bank.register_for_deleted_assessments_taken_for_assessment
-
-   .. automethod:: Bank.register_for_deleted_assessment_taken
-
-
-
-Assessment Taken Bank Methods
------------------------------
-
-   .. automethod:: Bank.can_lookup_assessment_taken_bank_mappings
-
-   .. automethod:: Bank.use_comparative_bank_view
-
-   .. automethod:: Bank.use_plenary_bank_view
-
-   .. automethod:: Bank.get_assessment_taken_ids_by_bank
-
-   .. automethod:: Bank.get_assessments_taken_by_bank
-
-   .. automethod:: Bank.get_assessment_taken_ids_by_banks
-
-   .. automethod:: Bank.get_assessments_taken_by_banks
-
-   .. automethod:: Bank.get_bank_ids_by_assessment_taken
-
-   .. automethod:: Bank.get_banks_by_assessment_taken
-
-
-
-Assessment Taken Bank Assignment Methods
-----------------------------------------
-
-   .. automethod:: Bank.can_assign_assessments_taken
-
-   .. automethod:: Bank.can_assign_assessments_taken_to_bank
-
-   .. automethod:: Bank.get_assignable_bank_ids
-
-   .. automethod:: Bank.get_assignable_bank_ids_for_assessment_taken
-
-   .. automethod:: Bank.assign_assessment_taken_to_bank
-
-   .. automethod:: Bank.unassign_assessment_taken_from_bank
-
-   .. automethod:: Bank.reassign_assessment_taken_to_billing
-
-
-
-Assessment Taken Smart Bank Methods
------------------------------------
-
-   .. autoattribute:: Bank.bank_id
-
-   .. autoattribute:: Bank.bank
-
-   .. automethod:: Bank.can_manage_smart_banks
-
-   .. autoattribute:: Bank.assessment_taken_query
-
-   .. autoattribute:: Bank.assessment_taken_search_order
-
-   .. automethod:: Bank.apply_assessment_taken_query
-
-   .. automethod:: Bank.inspect_assessment_taken_query
-
-   .. automethod:: Bank.apply_assessment_taken_sequencing
-
-   .. automethod:: Bank.get_assessment_taken_query_from_inspector
 
 
 

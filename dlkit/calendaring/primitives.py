@@ -266,9 +266,9 @@ class DateTime(osid_markers.OsidPrimitive):
       getHour() == 0
       getGranularity() == DateTimeResolution.DAY
       definesUncertainty() == false
-    
 
-    
+
+
     Another example showing that the time is probably 1pm but could have
     been as late as 3pm or early as noon.
       getMillennium() == 3
@@ -283,9 +283,9 @@ class DateTime(osid_markers.OsidPrimitive):
       getUncertaintyGranularity() == DateTimeResolution.HOUR
       getUncertaintyMinus() == 1
       getUncertaintyPlus == 2
-    
 
-    
+
+
     An example marking the birth of the universe. 13.73 billion years
     +/- 120 million years. The granularity suggests that no more
     resolution than one million years can be inferred from the "clock",
@@ -299,7 +299,7 @@ class DateTime(osid_markers.OsidPrimitive):
       getUncertaintyGranularity() == DateTimeResolution.EPOCH
       getUncertaintyMinus() == 120
       getUncertaintyPlus == 120
-    
+
 
 
     """

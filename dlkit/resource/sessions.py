@@ -8,7 +8,7 @@ class ResourceLookupSession(osid_sessions.OsidSession):
     place or thing used to identify an object used in various services.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -21,11 +21,11 @@ class ResourceLookupSession(osid_sessions.OsidSession):
         bin and any other resources implicitly available in this bin
         through bin inheritence.
 
-    
+
     The methods ``use_federated_bin_view()`` and
     ``use_isolated_bin_view()`` behave as a radio group and one should
     be selected before invoking any lookup methods.
-    
+
     Resources may have an additional records indicated by their
     respective record types. The record may not be accessed through a
     cast of the ``Resource``.
@@ -237,13 +237,13 @@ class ResourceQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated bin view: searches include resources in bins of which
         this bin is a ancestor in the bin hierarchy
       * isolated bin view: searches are restricted to resources in this
         bin
 
-    
+
     Resources may have a resource record indicated by their respective
     record types. The resource query record is accessed via the
     ``ResourceQuery``.
@@ -351,16 +351,16 @@ class ResourceSearchSession(ResourceQuerySession):
     ``get_resources_by_search()`` returns an ``ResourceSearchResults``
     that can be used to access the resulting ``ResourceList`` or be used
     to perform a search within the result set through ``ResourceList``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated bin view: searches include resources in bins of which
         this bin is a ancestor in the bin hierarchy
       * isolated bin view: searches are restricted to resources in this
         bin
 
-    
+
     Resources may have a resource query record indicated by their
     respective record types. The resource query record is accessed via
     the ``ResourceQuery``.
@@ -441,20 +441,20 @@ class ResourceAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``ResourceForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``ResourceForms`` are requested to the ``Resource``
     ``Id`` that is to be updated using ``getResourceFormForUpdate()``.
     Similarly, the ``ResourceForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``ResourceForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Resources``. To unmap a ``Resource``
     from the current ``Bin,`` the ``ResourceBinAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Resource`` itself thus removing it from all known ``Bin``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -739,7 +739,7 @@ class ResourceNotificationSession(osid_sessions.OsidSession):
     def register_for_new_resources(self):
         """Register for notifications of new resources.
 
-        ``ResourceReceiver.newResource()`` is invoked when a new
+        ``ResourceReceiver.newResources()`` is invoked when a new
         ``Resource`` is appears in this bin.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -751,7 +751,7 @@ class ResourceNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resources(self):
         """Registers for notification of updated resources.
 
-        ``ResourceReceiver.changedResource()`` is invoked when a
+        ``ResourceReceiver.changedResources()`` is invoked when a
         resource in this bin is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -763,7 +763,7 @@ class ResourceNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resource(self, resource_id):
         """Registers for notification of an updated resource.
 
-        ``ResourceReceiver.changedResource()`` is invoked when the
+        ``ResourceReceiver.changedResources()`` is invoked when the
         specified resource in this bin is changed.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -778,7 +778,7 @@ class ResourceNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resources(self):
         """Registers for notification of deleted resources.
 
-        ``ResourceReceiver.deletedResource()`` is invoked when a
+        ``ResourceReceiver.deletedResources()`` is invoked when a
         resource is deleted or removed from this bin.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -790,7 +790,7 @@ class ResourceNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resource(self, resource_id):
         """Registers for notification of a deleted resource.
 
-        ``ResourceReceiver.deletedResource()`` is invoked when the
+        ``ResourceReceiver.deletedResources()`` is invoked when the
         specified resource is deleted or removed from this bin.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -810,7 +810,7 @@ class ResourceBinSession(osid_sessions.OsidSession):
     have its own authorizations governing who is allowed to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1667,10 +1667,10 @@ class GroupHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_resources()`` or ``get_child_resources()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: resource elements may be silently omitted or
         re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -1827,7 +1827,7 @@ class ResourceAgentSession(osid_sessions.OsidSession):
     may map to multiple ``Agents``.
 
     This lookup session defines several views
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -2497,13 +2497,13 @@ class ResourceRelationshipQuerySession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated bin view: searches include relationships in bins of
         which this bin is a ancestor in the bin hierarchy
       * isolated bin view: searches are restricted to relationships in
         this bin only
 
-    
+
     Relationships may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``ResourceRelationshipQuery``.
@@ -2613,16 +2613,16 @@ class ResourceRelationshipSearchSession(ResourceRelationshipQuerySession):
     ``ResourceRelationshipSearchResults`` that can be used to access the
     resulting ``ResourceRelationshipList`` or be used to perform a
     search within the result set through ``ResourceRelationshipSearch``.
-    
+
     This session defines views that offer differing behaviors for
     searching.
-    
+
       * federated bin view: searches include relationships in bins of
         which this bin is a ancestor in the bin hierarchy
       * isolated bin view: searches are restricted to relationships in
         this bin only
 
-    
+
     Relationships may have a resource relationship query record
     indicated by their respective record types. The resource
     relationship query record is accessed via the
@@ -2708,7 +2708,7 @@ class ResourceRelationshipAdminSession(osid_sessions.OsidSession):
     cannot be reused with another create operation unless the first
     operation was unsuccessful. Each ``ResourceRelationshipForm``
     corresponds to an attempted transaction.
-    
+
     For updates, ``ResourceRelationshipForms`` are requested to the
     ``ResourceRelationship``  ``Id`` that is to be updated using
     ``getResourceRelationshipFormForUpdate()``. Similarly, the
@@ -2716,13 +2716,13 @@ class ResourceRelationshipAdminSession(osid_sessions.OsidSession):
     updated and it can perform validation before submitting the update.
     The ``ResourceRelationshipForm`` can only be used once for a
     successful update and cannot be reused.
-    
+
     The delete operations delete ``ResourceRelationships``. To unmap s
     ``ResourceRelationship`` from the current ``Bin,`` the
     ``ResourceRelationshipBinAssignmentSession`` should be used. These
     delete operations attempt to remove the ``ResourceRelationship``
     itself thus removing it from all known ``Bin`` catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -3011,7 +3011,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_resource_relationships(self):
         """Register for notifications of new relationship.
 
-        ``ResourceRelationshipReceiver.newResourceRelationship()`` is
+        ``ResourceRelationshipReceiver.newResourceRelationships()`` is
         invoked when a new relationship is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3023,7 +3023,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_resource_relationships_by_genus_type(self, resource_relationship_genus_type):
         """Register for notifications of new relationships of the given genus type.
 
-        ``ResourceRelationshipReceiver.newResourceRelationship()`` is
+        ``ResourceRelationshipReceiver.newResourceRelationships()`` is
         invoked when a new relationship is created.
 
         :param resource_relationship_genus_type: the rsource relationship genus type
@@ -3038,7 +3038,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_resource_relationships_for_source_resource(self, resource_id):
         """Register for notifications of new relationships from the given resource.
 
-        ``ResourceRelationshipReceiver.newResourceRelationship()`` is
+        ``ResourceRelationshipReceiver.newResourceRelationships()`` is
         invoked when a new relationship is created.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -3053,7 +3053,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_new_resource_relationships_for_destination_resource(self, resource_id):
         """Register for notifications of new relationships to the given resource.
 
-        ``ResourceRelationshipReceiver.newResourceRelationship()`` is
+        ``ResourceRelationshipReceiver.newResourceRelationships()`` is
         invoked when a new relationship is created.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -3068,7 +3068,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resource_relationships(self):
         """Registers for notification of updated relationships.
 
-        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        ``ResourceRelationshipReceiver.changedResourceRelationships()``
         is invoked when a relationship is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3080,7 +3080,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resource_relationships_by_genus_type(self, resource_relationship_genus_type):
         """Register for notifications of changed relationshipsof the given genus type.
 
-        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        ``ResourceRelationshipReceiver.changedResourceRelationships()``
         is invoked when a relationship is changed.
 
         :param resource_relationship_genus_type: the rsource relationship genus type
@@ -3095,7 +3095,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resource_relationships_for_source_resource(self, resource_id):
         """Register for notifications of changed relationships from the given resource.
 
-        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        ``ResourceRelationshipReceiver.changedResourceRelationships()``
         is invoked when a relationship is changed.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -3110,7 +3110,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resource_relationships_for_destination_resource(self, resource_id):
         """Register for notifications of changed relationships to the given resource.
 
-        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        ``ResourceRelationshipReceiver.changedResourceRelationships()``
         is invoked when a relationship is changed.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -3125,7 +3125,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_resource_relationship(self, resource_relationship_id):
         """Registers for notification of an updated relationship.
 
-        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        ``ResourceRelationshipReceiver.changedResourceRelationships()``
         is invoked when the specified relationship is changed.
 
         :param resource_relationship_id: the ``Id`` of the ``ResourceRelationship`` to monitor
@@ -3140,7 +3140,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resource_relationships(self):
         """Registers for notification of deleted relationships.
 
-        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        ``ResourceRelationshipReceiver.deletedResourceRelationships()``
         is invoked when a relationship is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -3152,7 +3152,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resource_relationships_by_genus_type(self, resource_relationship_genus_type):
         """Register for notifications of deleted relationships of the given genus type.
 
-        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        ``ResourceRelationshipReceiver.deletedResourceRelationships()``
         is invoked when a relationship is deleted.
 
         :param resource_relationship_genus_type: the rsource relationship genus type
@@ -3167,7 +3167,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resource_relationships_for_source_resource(self, resource_id):
         """Register for notifications of deleted relationships from the given resource.
 
-        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        ``ResourceRelationshipReceiver.deletedResourceRelationships()``
         is invoked when a relationship is deleted.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -3182,7 +3182,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resource_relationships_for_destination_resource(self, resource_id):
         """Register for notifications of deleted relationships to the given resource.
 
-        ``ResourceRelationshipReceiver.deletedResourceRelationship()``
+        ``ResourceRelationshipReceiver.deletedResourceRelationships()``
         is invoked when a relationship is deleted.
 
         :param resource_id: the ``Id`` of the ``Resource`` to monitor
@@ -3197,7 +3197,7 @@ class ResourceRelationshipNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_resource_relationship(self, resource_relationship_id):
         """Registers for notification of a deleted relationship.
 
-        ``ResourceRelationshipReceiver.changedResourceRelationship()``
+        ``ResourceRelationshipReceiver.changedResourceRelationships()``
         is invoked when the specified relationship is deleted.
 
         :param resource_relationship_id: the ``Id`` of the ``ResourceRelationship`` to monitor
@@ -3217,7 +3217,7 @@ class ResourceRelationshipBinSession(osid_sessions.OsidSession):
     have its own authorizations governing who is allowed to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -3592,18 +3592,18 @@ class BinLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
-    
+
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Bins`` it can access, without breaking execution.
     However, an administrative application may require all ``Bin``
     elements to be available.
-    
+
     Bins may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
     ``Bin``.
@@ -3846,7 +3846,7 @@ class BinSearchSession(BinQuerySession):
     ``BinSearchResults`` that can be used to access the resulting
     ``BinList`` or be used to perform a search within the result set
     through ``BinSearch``.
-    
+
     Bins may have a bin query record indicated by their respective
     record types. The bin query record is accessed via the ``BinQuery``.
 
@@ -3926,15 +3926,15 @@ class BinAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``BinForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``BinForms`` are requested to the ``Bin``  ``Id`` that
     is to be updated using ``getBinFormForUpdate()``. Similarly, the
     ``BinForm`` has metadata about the data that can be updated and it
     can perform validation before submitting the update. The ``BinForm``
     can only be used once for a successful update and cannot be reused.
-    
+
     The delete operations delete ``Bins``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -4142,7 +4142,7 @@ class BinNotificationSession(osid_sessions.OsidSession):
     def register_for_new_bins(self):
         """Register for notifications of new bins.
 
-        ``BinReceiver.newBin()`` is invoked when a new ``Bin`` is
+        ``BinReceiver.newBins()`` is invoked when a new ``Bin`` is
         created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4184,7 +4184,7 @@ class BinNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_bins(self):
         """Registers for notification of updated bins.
 
-        ``BinReceiver.changedBin()`` is invoked when a bin is changed.
+        ``BinReceiver.changedBins()`` is invoked when a bin is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4195,7 +4195,7 @@ class BinNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_bin(self, bin_id):
         """Registers for notification of an updated bin.
 
-        ``BinReceiver.changedBin()`` is invoked when the specified bin
+        ``BinReceiver.changedBins()`` is invoked when the specified bin
         is changed.
 
         :param bin_id: the Id of the Bin to monitor
@@ -4210,7 +4210,7 @@ class BinNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_bins(self):
         """Registers for notification of deleted bins.
 
-        ``BinReceiver.deletedBin()`` is invoked when a bin is deleted.
+        ``BinReceiver.deletedBins()`` is invoked when a bin is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4221,7 +4221,7 @@ class BinNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_bin(self, bin_id):
         """Registers for notification of a deleted bin.
 
-        ``BinReceiver.deletedBin()`` is invoked when the specified bin
+        ``BinReceiver.deletedBins()`` is invoked when the specified bin
         is deleted.
 
         :param bin_id: the ``Id`` of the ``Bin`` to monitor
@@ -4281,10 +4281,10 @@ class BinHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_bins()`` or ``get_child_bins()`` in lieu of
     a ``PermissionDenied`` error that may disrupt the traversal through
     authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: bin elements may be silently omitted or re-
         ordered
       * plenary view: provides a complete set or is an error condition

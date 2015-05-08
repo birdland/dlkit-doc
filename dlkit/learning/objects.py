@@ -261,7 +261,7 @@ class ObjectiveList(osid_objects.OsidList):
       while (ol.hasNext()) {
            Objective[] objectives = ol.getNextObjectives(ol.available());
       }
-    
+
 
 
     """
@@ -344,7 +344,7 @@ class ObjectiveNodeList(osid_objects.OsidList):
       while (onl.hasNext()) {
            ObjectiveNode[] nodes = onl.getNextObjectiveNodes(onl.available());
       }
-    
+
 
 
     """
@@ -672,7 +672,7 @@ class ActivityList(osid_objects.OsidList):
       while (al.hasNext()) {
            Activity[] activities = al.getNextActivities(al.available());
       }
-    
+
 
 
     """
@@ -917,7 +917,7 @@ class ProficiencyList(osid_objects.OsidList):
       while (pl.hasNext()) {
            Proficiency[] proficiencies = pl.getNextProficiencies(pl.available());
       }
-    
+
 
 
     """
@@ -1009,7 +1009,7 @@ class ObjectiveBankList(osid_objects.OsidList):
       while (obl.hasNext()) {
            ObjectiveBank[] objectivBanks = obl.getNextObjectiveBanks(obl.available());
       }
-    
+
 
 
     """
@@ -1092,7 +1092,7 @@ class ObjectiveBankNodeList(osid_objects.OsidList):
       while (obnl.hasNext()) {
            ObjectiveBankNode[] nodes = obnl.getNextObjectiveBankNodes(obnl.available());
       }
-    
+
 
 
     """

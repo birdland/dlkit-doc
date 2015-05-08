@@ -187,7 +187,7 @@ class TrustList(osid_objects.OsidList):
       while (tl.hasNext()) {
            Trust[] trusts = tl.getNextTrusts(tl.available());
       }
-    
+
 
 
     """

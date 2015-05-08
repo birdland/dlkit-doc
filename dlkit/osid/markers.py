@@ -200,7 +200,7 @@ class Aggregateable:
     explicit mapping to the ``Asset`` managed through an ``OsidSession``
     but accessible directly within the ``Asset`` to enable its
     consumption outside the Repository OSID.
-    
+
     This marker has little practicality other than to identify a service
     pattern that is neither a data attribute nor a separately accessible
     relationship or mapping.
@@ -209,7 +209,7 @@ class Aggregateable:
 
 
 
-class Containable(Aggregateable):
+class Containable:
     """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself directly accessible without knowledge of the originating service."""
     def is_sequestered(self):
         """Tests if this ``Containable`` is sequestered in that it should not appear outside of its aggregated composition.
@@ -285,7 +285,7 @@ class Sourceable:
         """
         return # osid.locale.DisplayText
 
-    license = property(fget=get_license)
+    license_ = property(fget=get_license)
 
 
 class Federateable:
@@ -308,7 +308,7 @@ class Operable:
     The operational status indicates the Operable is functioning. This
     status is not set administratively but instead refelects suitable
     conditions for operation.
-    
+
     Operables may be administratively turned on of off through the
     enabled and disabled administrative overrides. If there are no
     related ``OsidEnabler`` rules, then ``is_enabled()`` should be set
@@ -316,14 +316,14 @@ class Operable:
     ``Operable`` to be on and ``is_enabled()`` set to ``false`` and
     ``is_disabled()`` set to true for the ``Operable`` to be ``off``.
     ``is_enabled()`` and ``is_disabled()`` cannot both be ``tru`` e.
-    
+
     If there are related ``OsidEnabler`` rules, the active status of at
     least one ``OsidEnabler`` results in a ``true`` value for
     ``isOperational()``. This active status can be overridden by setting
     ``is_disabled()`` to ``true``. If there are no active
     ``OsidEnabler`` rules, ``is_operational()`` is false resulting in an
     ``off``  ``Operable`` unless ``is_enabled()`` is ``true`` .
-    
+
     For the active status to be completely determined by the
     ``OsidEnablers,`` both ``is_enabled()`` and ``is_disabled()`` should
     be ``false`` where the ``is_active()`` status is completely driven

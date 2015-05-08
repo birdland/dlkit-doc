@@ -294,7 +294,7 @@ class EventList(osid_objects.OsidList):
       while (el.hasNext()) {
            Event[] events = el.getNextEvents(el.available());
       }
-    
+
 
 
     """
@@ -555,7 +555,7 @@ class RecurringEventList(osid_objects.OsidList):
       while (rel.hasNext()) {
            RecurringEvent[] events = rel.getNextRecurringEvents(rel.available());
       }
-    
+
 
 
     """
@@ -816,7 +816,7 @@ class SupersedingEventList(osid_objects.OsidList):
       while (sel.hasNext()) {
            SupersedingEvent[] events = sel.getNextSupersedingEvents(sel.available());
       }
-    
+
 
 
     """
@@ -1635,7 +1635,7 @@ class OffsetEventList(osid_objects.OsidList):
       while (oel.hasNext()) {
            OffsetEvent[] events = oel.getNextOffsetEvents(oel.available());
       }
-    
+
 
 
     """
@@ -2126,7 +2126,7 @@ class ScheduleList(osid_objects.OsidList):
       while (sl.hasNext()) {
            Schedule[] schedules = sl.getNextSchedules(sl.available());
       }
-    
+
 
 
     """
@@ -2528,7 +2528,7 @@ class ScheduleSlotList(osid_objects.OsidList):
       while (ssl.hasNext()) {
            ScheduleSlot[] slots = ssl.getNextScheduleSlots(ssl.available());
       }
-    
+
 
 
     """
@@ -2734,7 +2734,7 @@ class TimePeriodList(osid_objects.OsidList):
       while (tp.hasNext()) {
            TimePeriod[] periods = tp.getNextTimePeriods(tp.available());
       }
-    
+
 
 
     """
@@ -2861,7 +2861,7 @@ class CommitmentList(osid_objects.OsidList):
       while (cl.hasNext()) {
            Commitment[] commitments = cl.getNextCommitment(cl.available());
       }
-    
+
 
 
     """
@@ -2950,7 +2950,7 @@ class CalendarList(osid_objects.OsidList):
       while (cl.hasNext()) {
            Calendar[] calendars = cl.getNextCalendars(cl.available());
       }
-    
+
 
 
     """
@@ -3033,7 +3033,7 @@ class CalendarNodeList(osid_objects.OsidList):
       while (cnl.hasNext()) {
            CalendarNode[] nodes = cnl.getNextCalendarNodes(cnl.available());
       }
-    
+
 
 
     """
@@ -3133,7 +3133,7 @@ class MeetingTimeList(osid_objects.OsidList):
       while (mtl.hasNext()) {
            MeetingTime[] times = mtl.getNextMeetingTimes(mtl.available());
       }
-    
+
 
 
     """
@@ -3173,7 +3173,7 @@ class TimeList(osid_objects.OsidList):
       while (tl.hasNext()) {
            Time[] times = tl.getNextTimes(tl.available());
       }
-    
+
 
 
     """
@@ -3214,7 +3214,7 @@ class DateTimeList(osid_objects.OsidList):
       while dtl.hasNext()) {
            DateTime[] times = dtl.getNextDateTimes(dtl.available());
       }
-    
+
 
 
     """
@@ -3255,7 +3255,7 @@ class DurationList(osid_objects.OsidList):
       while dl.hasNext()) {
            Duration[] durations = dl.getNextDurations(dl.available());
       }
-    
+
 
 
     """
@@ -3323,7 +3323,7 @@ class DateTimeIntervalList(osid_objects.OsidList):
       while (dtil.hasNext()) {
            DateTimeInterval[] intervals = dtil.getNextDateTimeIntervals(dtil.available());
       }
-    
+
 
 
     """

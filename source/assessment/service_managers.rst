@@ -185,30 +185,6 @@ ___________
 
 
 
-Bank Query
-__________
-
-   .. automethod:: AssessmentManager.can_search_banks
-
-   .. autoattribute:: AssessmentManager.bank_query
-
-   .. automethod:: AssessmentManager.get_banks_by_query
-
-
-
-Bank Search
-___________
-
-   .. autoattribute:: AssessmentManager.bank_search
-
-   .. autoattribute:: AssessmentManager.bank_search_order
-
-   .. automethod:: AssessmentManager.get_banks_by_search
-
-   .. automethod:: AssessmentManager.get_bank_query_from_inspector
-
-
-
 Bank Admin
 __________
 
@@ -233,35 +209,6 @@ __________
    .. automethod:: AssessmentManager.can_manage_bank_aliases
 
    .. automethod:: AssessmentManager.alias_bank
-
-
-
-Bank Notification
-_________________
-
-   .. automethod:: AssessmentManager.can_register_for_bank_notifications
-
-   .. automethod:: AssessmentManager.reliable_bank_notifications
-
-   .. automethod:: AssessmentManager.unreliable_bank_notifications
-
-   .. automethod:: AssessmentManager.acknowledge_bank_notification
-
-   .. automethod:: AssessmentManager.register_for_new_banks
-
-   .. automethod:: AssessmentManager.register_for_changed_banks
-
-   .. automethod:: AssessmentManager.register_for_changed_bank
-
-   .. automethod:: AssessmentManager.register_for_deleted_banks
-
-   .. automethod:: AssessmentManager.register_for_deleted_bank
-
-   .. automethod:: AssessmentManager.register_for_changed_bank_hierarchy
-
-   .. automethod:: AssessmentManager.register_for_changed_bank_hierarchy_for_ancestors
-
-   .. automethod:: AssessmentManager.register_for_changed_bank_hierarchy_for_descendants
 
 
 
@@ -507,30 +454,6 @@ ___________
 
 
 
-Bank Query
-__________
-
-   .. automethod:: AssessmentProxyManager.can_search_banks
-
-   .. autoattribute:: AssessmentProxyManager.bank_query
-
-   .. automethod:: AssessmentProxyManager.get_banks_by_query
-
-
-
-Bank Search
-___________
-
-   .. autoattribute:: AssessmentProxyManager.bank_search
-
-   .. autoattribute:: AssessmentProxyManager.bank_search_order
-
-   .. automethod:: AssessmentProxyManager.get_banks_by_search
-
-   .. automethod:: AssessmentProxyManager.get_bank_query_from_inspector
-
-
-
 Bank Admin
 __________
 
@@ -555,35 +478,6 @@ __________
    .. automethod:: AssessmentProxyManager.can_manage_bank_aliases
 
    .. automethod:: AssessmentProxyManager.alias_bank
-
-
-
-Bank Notification
-_________________
-
-   .. automethod:: AssessmentProxyManager.can_register_for_bank_notifications
-
-   .. automethod:: AssessmentProxyManager.reliable_bank_notifications
-
-   .. automethod:: AssessmentProxyManager.unreliable_bank_notifications
-
-   .. automethod:: AssessmentProxyManager.acknowledge_bank_notification
-
-   .. automethod:: AssessmentProxyManager.register_for_new_banks
-
-   .. automethod:: AssessmentProxyManager.register_for_changed_banks
-
-   .. automethod:: AssessmentProxyManager.register_for_changed_bank
-
-   .. automethod:: AssessmentProxyManager.register_for_deleted_banks
-
-   .. automethod:: AssessmentProxyManager.register_for_deleted_bank
-
-   .. automethod:: AssessmentProxyManager.register_for_changed_bank_hierarchy
-
-   .. automethod:: AssessmentProxyManager.register_for_changed_bank_hierarchy_for_ancestors
-
-   .. automethod:: AssessmentProxyManager.register_for_changed_bank_hierarchy_for_descendants
 
 
 

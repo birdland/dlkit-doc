@@ -63,7 +63,7 @@ class AgentList(osid_objects.OsidList):
       while (al.hasNext()) {
            Agent[] agents = al.getNextAgents(al.available());
       }
-    
+
 
 
     """
@@ -152,7 +152,7 @@ class AgencyList(osid_objects.OsidList):
       while (al.hasNext()) {
            Agency[] agencies = al.getNextAgencies(al.available());
       }
-    
+
 
 
     """
@@ -235,7 +235,7 @@ class AgencyNodeList(osid_objects.OsidList):
       while (anl.hasNext()) {
            AgencyNode[] nodes = anl.getNextAgencyNodes(anl.available());
       }
-    
+
 
 
     """

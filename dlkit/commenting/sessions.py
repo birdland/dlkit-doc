@@ -562,7 +562,7 @@ class RatingLookupSession(osid_sessions.OsidSession):
         """
         return # osid.grading.Grade
 
-    def get_top_references(self, max):
+    def get_top_references(self, max_):
         """Gets the top rated references in this book.
 
         :param max: the maximum number to return
@@ -706,7 +706,7 @@ class CommentSearchSession(CommentQuerySession):
     ``CommentSearchResults`` that can be used to access the resulting
     ``CommentList`` or be used to perform a search within the result set
     through ``CommentSearch``.
-    
+
     Comments may have a query record indicated by their respective
     record types. The query record is accessed via the ``CommentQuery``.
     The returns in this session may not be cast directly to these
@@ -789,20 +789,20 @@ class CommentAdminSession(osid_sessions.OsidSession):
     reused with another create operation unless the first operation was
     unsuccessful. Each ``CommentForm`` corresponds to an attempted
     transaction.
-    
+
     For updates, ``CommentForms`` are requested to the ``Comment``
     ``Id`` that is to be updated using ``getCommentFormForUpdate()``.
     Similarly, the ``CommentForm`` has metadata about the data that can
     be updated and it can perform validation before submitting the
     update. The ``CommentForm`` can only be used once for a successful
     update and cannot be reused.
-    
+
     The delete operations delete ``Comments``. To unmap a ``Comment``
     from the current ``Book,`` the ``CommentBookAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Comment`` itself thus removing it from all known ``Book``
     catalogs.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -1081,10 +1081,43 @@ class CommentNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reliable_comment_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_comment_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_comment_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_comment_notification(self, notification_id):
+        """Acknowledge a comment notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_comments(self):
         """Register for notifications of new comments.
 
-        ``CommentReceiver.newComment()`` is invoked when a new
+        ``CommentReceiver.newComments()`` is invoked when a new
         ``Comment`` is created.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1096,7 +1129,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_new_comments_for_commentor(self, resource_id):
         """Register for notifications of new comments by the given resource ``Id``.
 
-        ``CommentReceiver.newComment()`` is invoked when a new
+        ``CommentReceiver.newComments()`` is invoked when a new
         ``Comment`` is created.
 
         :param resource_id: the ``Id`` of the resource to monitor
@@ -1111,7 +1144,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_new_comments_for_reference(self, reference_id):
         """Register for notifications of new comments for the given reference ``Id``.
 
-        ``CommentReceiver.newComment()`` is invoked when a new
+        ``CommentReceiver.newComments()`` is invoked when a new
         ``Comment`` is created.
 
         :param reference_id: the ``Id`` of the reference to monitor
@@ -1126,7 +1159,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_comments(self):
         """Registers for notification of updated comments.
 
-        ``CommentReceiver.changedComment()`` is invoked when a comment
+        ``CommentReceiver.changedComments()`` is invoked when a comment
         is changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1138,7 +1171,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_comments_for_commentor(self, resource_id):
         """Register for notifications of changed comments by the given resource ``Id``.
 
-        ``CommentReceiver.changedComment()`` is invoked when a
+        ``CommentReceiver.changedComments()`` is invoked when a
         ``Comment`` by the resource is changed.
 
         :param resource_id: the ``Id`` of the resource to monitor
@@ -1153,7 +1186,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_comments_for_reference(self, reference_id):
         """Register for notifications of changed comments for the given reference ``Id``.
 
-        ``CommentReceiver.changedComment()`` is invoked when a
+        ``CommentReceiver.changedComments()`` is invoked when a
         ``Comment`` for the reference is changed.
 
         :param reference_id: the ``Id`` of the reference to monitor
@@ -1168,7 +1201,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_comment(self, comment_id):
         """Registers for notification of an updated comment.
 
-        ``CommentReceiver.changedComment()`` is invoked when the
+        ``CommentReceiver.changedComments()`` is invoked when the
         specified comment is changed.
 
         :param comment_id: the ``Id`` of the ``Comment`` to monitor
@@ -1184,7 +1217,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_comments(self):
         """Registers for notification of deleted comments.
 
-        ``CommentReceiver.deletedComment()`` is invoked when a comment
+        ``CommentReceiver.deletedComments()`` is invoked when a comment
         is deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1196,7 +1229,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_comments_for_commentor(self, resource_id):
         """Register for notifications of deleted comments by the given resource ``Id``.
 
-        ``CommentReceiver.deletedComment()`` is invoked when a
+        ``CommentReceiver.deletedComments()`` is invoked when a
         ``Comment`` by the resource is deleted.
 
         :param resource_id: the ``Id`` of the resource to monitor
@@ -1211,7 +1244,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_comments_for_reference(self, reference_id):
         """Register for notifications of deleted comments for the given reference ``Id``.
 
-        ``CommentReceiver.deletedComment()`` is invoked when a
+        ``CommentReceiver.deletedComments()`` is invoked when a
         ``Comment`` for the reference is deleted.
 
         :param reference_id: the ``Id`` of the reference to monitor
@@ -1226,7 +1259,7 @@ class CommentNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_comment(self, comment_id):
         """Registers for notification of a deleted comment.
 
-        ``CommentReceiver.deletedComment()`` is invoked when the
+        ``CommentReceiver.deletedComments()`` is invoked when the
         specified comment is deleted.
 
         :param comment_id: the ``Id`` of the ``Comment`` to monitor
@@ -1247,7 +1280,7 @@ class CommentBookSession(osid_sessions.OsidSession):
     have its own authorizations governing who is allowed to look at it.
 
     This lookup session defines several views:
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
         condition
@@ -1485,6 +1518,25 @@ class CommentBookAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
+    def reassign_comment_to_book(self, comment_id, from_book_id, to_book_id):
+        """Moves a ``Credit`` from one ``Book`` to another.
+
+        Mappings to other ``Books`` are unaffected.
+
+        :param comment_id: the ``Id`` of the ``Comment``
+        :type comment_id: ``osid.id.Id``
+        :param from_book_id: the ``Id`` of the current ``Book``
+        :type from_book_id: ``osid.id.Id``
+        :param to_book_id: the ``Id`` of the destination ``Book``
+        :type to_book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``comment_id, from_book_id,`` or ``to_book_id`` not found or ``comment`` not mapped to ``from_book_id``
+        :raise: ``NullArgument`` -- ``comment_id, book_id_id,`` or ``to_book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
 
 class CommentSmartBookSession(osid_sessions.OsidSession):
     """This session manages queries and sequencing to create "smart" dynamic catalogs.
@@ -1619,7 +1671,7 @@ class BookLookupSession(osid_sessions.OsidSession):
 
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
 
@@ -1864,7 +1916,7 @@ class BookSearchSession(BookQuerySession):
     ``get_books_by_search()`` returns a ``BookSearchResults`` that can
     be used to access the resulting ``BookList`` or be used to perform a
     search within the result set through ``BookSearch``.
-    
+
     Books may have a query record indicated by their respective record
     types. The query record is accessed via the ``BookQuery``. The
     returns in this session may not be cast directly to these
@@ -1946,16 +1998,16 @@ class BookAdminSession(osid_sessions.OsidSession):
     operation, it cannot be reused with another create operation unless
     the first operation was unsuccessful. Each ``BookForm`` corresponds
     to an attempted transaction.
-    
+
     For updates, ``BookForms`` are requested to the ``Book``  ``Id``
     that is to be updated using ``getBookFormForUpdate()``. Similarly,
     the ``BookForm`` has metadata about the data that can be updated and
     it can perform validation before submitting the update. The
     ``BookForm`` can only be used once for a successful update and
     cannot be reused.
-    
+
     The delete operations delete ``Books``.
-    
+
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
 
@@ -2165,42 +2217,45 @@ class BookNotificationSession(osid_sessions.OsidSession):
         """
         return # boolean
 
+    def reliable_book_notifications(self):
+        """Reliable notifications are desired.
+
+        In reliable mode, notifications are to be acknowledged using
+        ``acknowledge_book_notification()`` .
+
+
+
+        """
+        pass
+
+    def unreliable_book_notifications(self):
+        """Unreliable notifications are desired.
+
+        In unreliable mode, notifications do not need to be
+        acknowledged.
+
+
+
+        """
+        pass
+
+    def acknowledge_book_notification(self, notification_id):
+        """Acknowledge a book notification.
+
+        :param notification_id: the ``Id`` of the notification
+        :type notification_id: ``osid.id.Id``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
     def register_for_new_books(self):
         """Register for notifications of new books.
 
-        ``BookReceiver.newBook()`` is invoked when a new ``Book`` is
+        ``BookReceiver.newBooks()`` is invoked when a new ``Book`` is
         created.
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_book_ancestors(self, book_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new ancestor of the specified book.
-
-        ``BookReceiver.newAncestorBook()`` is invoked when the specified
-        book node gets a new ancestor.
-
-        :param book_id: the ``Id`` of the ``Book`` node to monitor
-        :type book_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``book_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_new_book_descendants(self, book_id):
-        """Registers for notification of an updated hierarchy structure that introduces a new descendant of the specified book.
-
-        ``BookReceiver.newDescendantBook()`` is invoked when the
-        specified book node gets a new descendant.
-
-        :param book_id: the ``Id`` of the ``Book`` node to monitor
-        :type book_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2210,7 +2265,7 @@ class BookNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_books(self):
         """Registers for notification of updated books.
 
-        ``BookReceiver.changedBook()`` is invoked when a book is
+        ``BookReceiver.changedBooks()`` is invoked when a book is
         changed.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2222,7 +2277,7 @@ class BookNotificationSession(osid_sessions.OsidSession):
     def register_for_changed_book(self, book_id):
         """Registers for notification of an updated book.
 
-        ``BookReceiver.changedBook()`` is invoked when the specified
+        ``BookReceiver.changedBooks()`` is invoked when the specified
         book is changed.
 
         :param book_id: the ``Id`` of the ``Book`` to monitor
@@ -2237,7 +2292,7 @@ class BookNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_books(self):
         """Registers for notification of deleted books.
 
-        ``BookReceiver.deletedBook()`` is invoked when a book is
+        ``BookReceiver.deletedBooks()`` is invoked when a book is
         deleted.
 
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2249,7 +2304,7 @@ class BookNotificationSession(osid_sessions.OsidSession):
     def register_for_deleted_book(self, book_id):
         """Registers for notification of a deleted book.
 
-        ``BookReceiver.deletedBook()`` is invoked when the specified
+        ``BookReceiver.deletedBooks()`` is invoked when the specified
         book is deleted.
 
         :param book_id: the ``Id`` of the ``Book`` to monitor
@@ -2261,13 +2316,26 @@ class BookNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_book_ancestors(self, book_id):
-        """Registers for notification of an updated hierarchy structure that removes an ancestor of the specified book ``BookReceiver.
+    def register_for_changed_book_hierarchy(self):
+        """Registers for notification of an updated book hierarchy structure.
 
-        deletedAncestor()`` is invoked when the specified book node
-        loses an ancestor.
+        ``BookReceiver.changedChildOfBookss()`` is invoked when a node
+        experiences a change in its children.
 
-        :param book_id: the ``Id`` of the ``Book`` to monitor
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        """
+        pass
+
+    def register_for_changed_book_hierarchy_for_ancestors(self, book_id):
+        """Registers for notification of an updated book hierarchy structure.
+
+        ``BookReceiver.changedChildOfBooks()`` is invoked when the
+        specified node or any of its ancestors experiences a change in
+        its children.
+
+        :param book_id: the ``Id`` of the ``Book`` node to monitor
         :type book_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2276,13 +2344,14 @@ class BookNotificationSession(osid_sessions.OsidSession):
         """
         pass
 
-    def register_for_deleted_book_descendants(self, book_id):
-        """Registers for notification of an updated hierarchy structure that removes a descendant of the specified book.
+    def register_for_changed_book_hierarchy_for_descendants(self, book_id):
+        """Registers for notification of an updated book hierarchy structure.
 
-        ``BookReceiver.deletedDescendant()`` is invoked when the
-        specified book node loses a descendant.
+        ``BookReceiver.changedChildOfBooks()`` is invoked when the
+        specified node or any of its descendants experiences a change in
+        its children.
 
-        :param book_id: the ``Id`` of the ``Book`` to monitor
+        :param book_id: the ``Id`` of the ``Book`` node to monitor
         :type book_id: ``osid.id.Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2309,10 +2378,10 @@ class BookHierarchySession(osid_sessions.OsidSession):
     returns of ``get_parent_books()`` or ``get_child_books()`` in lieu
     of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
-    
+
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-    
+
       * comparative view: book elements may be silently omitted or re-
         ordered
       * plenary view: provides a complete set or is an error condition

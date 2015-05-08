@@ -55,7 +55,7 @@ class PackageQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSourceableQuer
 
     version_since_terms = property(fdel=clear_version_since_terms)
 
-    def match_copyright(self, copyright, string_match_type, match):
+    def match_copyright(self, copyright_, string_match_type, match):
         """Matches the copyright.
 
         :param copyright: copyright string
