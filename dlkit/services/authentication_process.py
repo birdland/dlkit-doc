@@ -102,6 +102,79 @@ Server side authentication:
 
 
 """
+from ..osid import managers as osid_managers
+from .osid_errors import Unimplemented, IllegalState, OperationFailed
+from ..osid import sessions as osid_sessions
+
+
+class AuthenticationProcessProfile(osid_managers.OsidProfile):
+
+    def get_authentication_record_types(self):
+        """Gets the supported authentication record types.
+
+        :return: a list containing the supported authentication record types
+        :rtype: ``osid.type.TypeList``
+
+        """
+        raise UNIMPLEMENTED()
+
+    authentication_record_types = property(fget=get_authentication_record_types)
+
+    def get_authentication_input_record_types(self):
+        """Gets the supported authentication input record types.
+
+        :return: a list containing the supported authentication input record types
+        :rtype: ``osid.type.TypeList``
+
+        """
+        raise UNIMPLEMENTED()
+
+    authentication_input_record_types = property(fget=get_authentication_input_record_types)
+
+    def get_challenge_record_types(self):
+        """Gets the supported challenge types.
+
+        :return: a list containing the supported challenge types
+        :rtype: ``osid.type.TypeList``
+
+        """
+        raise UNIMPLEMENTED()
+
+    challenge_record_types = property(fget=get_challenge_record_types)
+
+    def get_credential_types(self):
+        """Gets the supported credential types.
+
+        :return: a list containing the supported credential types
+        :rtype: ``osid.type.TypeList``
+
+        """
+        raise UNIMPLEMENTED()
+
+    credential_types = property(fget=get_credential_types)
+
+    def get_trust_types(self):
+        """Gets the supported trust types.
+
+        :return: a list containing the supported trust types
+        :rtype: ``osid.type.TypeList``
+
+        """
+        raise UNIMPLEMENTED()
+
+    trust_types = property(fget=get_trust_types)
+
+
+
+class AuthenticationProcessManager(osid_managers.OsidManager, osid_sessions.OsidSession, AuthenticationProcessProfile):
+    pass
+
+
+
+
+class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, AuthenticationProcessProfile):
+    pass
+
 
 
 
