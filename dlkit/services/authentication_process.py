@@ -171,12 +171,6 @@ class AuthenticationProcessManager(osid_managers.OsidManager, osid_sessions.Osid
 
 
 
-class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, AuthenticationProcessProfile):
-    pass
-
-
-
-
 class Agencies(Authentication.ProcessManager):
     pass
 

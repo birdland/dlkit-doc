@@ -59,20 +59,3 @@ class IdManager(osid_managers.OsidManager, osid_sessions.OsidSession, IdProfile)
 
 
 
-class IdProxyManager(osid_managers.OsidProxyManager, IdProfile):
-
-    def get_id_batch_proxy_manager(self):
-        """Gets an ``IdnProxyManager``.
-
-        :return: an ``IdBatchProxyManager``
-        :rtype: ``osid.id.batch.IdBatchProxyManager``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_id_batch()`` is ``false``
-
-        """
-        return # osid.id.batch.IdBatchProxyManager
-
-    id_batch_proxy_manager = property(fget=get_id_batch_proxy_manager)
-
-
-

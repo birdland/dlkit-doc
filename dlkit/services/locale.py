@@ -428,9 +428,3 @@ class LocaleManager(osid_managers.OsidManager, osid_sessions.OsidSession, Locale
 
 
 
-class LocaleProxyManager(osid_managers.OsidProxyManager, LocaleProfile):
-    pass
-
-
-
-
