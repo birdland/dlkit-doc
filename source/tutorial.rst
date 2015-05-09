@@ -11,7 +11,8 @@ assets, assessments, etc, since there is data available for testing.
 .. _MC3: http://mc3.mit.edu/
 
 All of the other DLKit Interface Specifications build on most of the 
-same patterns outlined in this tutorial, beginning with loading managers.
+same patterns outlined in this tutorial, beginning with loading managers. Make sure that the dlkit
+package is in your python path or install the library.
 
 The Runtime Manager and Proxy Authentication
 --------------------------------------------
@@ -31,24 +32,24 @@ This ``runtime`` object is your gateway to access  all the underlying service ma
 The django runtime knows about Django's own services for users.  You will have access to an HTTPRequest object that includes an user authentication (the
 request variable in the examples below).  This needs to be encapsulated in a Proxy object::
 
-    from dlkit_django import proxy_session
-    condition = proxy_session.get_proxy_condition()
+    from dlkit_django import PROXY_SESSION
+    condition = PROXY_SESSION.get_proxy_condition()
     condition.set_http_request(request)
-    proxy = proxy_session.get_proxy(condition)
+    proxy = PROXY_SESSION.get_proxy(condition)
 
 Or, if you are standing up dlkit in edX, get an XBlockUser() object from the xblock runtime. 
 That object is assumed to be stored the 'xblock_user' variable below::
 
-    from dlkit_xblock import proxy_session
-    condition = proxy_session.get_proxy_condition()
+    from dlkit_xblock import PROXY_SESSION
+    condition = PROXY_SESSION.get_proxy_condition()
     condition.set_xblock_user(xblock_user)
-    proxy = proxy_session.get_proxy(condition)
+    proxy = PROXY_SESSION.get_proxy(condition)
 
 Now you have a Proxy object that holds the user data and eventually other stuff, like locale information, etc, 
 that can be used to instantiate new service Managers, which you can also insert into your HttpRequest.session::
 
-    from dlkit_django import runtime
-    request.session.lm = runtime.get_service_manager('LEARNING', proxy)
+    from dlkit_django import RUNTIME
+    request.session.lm = RUNTIME.get_service_manager('LEARNING', proxy)
 
 For the duration of the session you can use this for all the other things.
 that you normally do.
