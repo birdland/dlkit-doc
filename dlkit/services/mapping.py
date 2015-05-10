@@ -225,25 +225,6 @@ class MappingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Mappi
         """
         pass
 
-    def get_map(self, map_id):
-        """Gets the ``Map`` specified by its ``Id``.
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Map`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Map`` and retained for compatibility.
-
-        :param map_id: ``Id`` of the ``Map``
-        :type map_id: ``osid.id.Id``
-        :return: the map
-        :rtype: ``osid.mapping.Map``
-        :raise: ``NotFound`` -- ``map_id`` not found
-        :raise: ``NullArgument`` -- ``map_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.mapping.Map
-
     def get_maps_by_ids(self, map_ids):
         """Gets a ``MapList`` corresponding to the given ``IdList``.
         In plenary mode, the returned list contains all of the maps

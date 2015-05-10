@@ -646,26 +646,6 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         pass
 
-    def get_objective_bank(self, objective_bank_id):
-        """Gets the ``ObjectiveBank`` specified by its ``Id``.
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``ObjectiveBank`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``ObjectiveBank`` and
-        retained for compatility.
-
-        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
-        :type objective_bank_id: ``osid.id.Id``
-        :return: the objective bank
-        :rtype: ``osid.learning.ObjectiveBank``
-        :raise: ``NotFound`` -- ``objective_bank_id`` not found
-        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.learning.ObjectiveBank
-
     def get_objective_banks_by_ids(self, objective_bank_ids):
         """Gets a ``ObjectiveBankList`` corresponding to the given ``IdList``.
         In plenary mode, the returned list contains all of the objective
@@ -1590,30 +1570,6 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.learning.ObjectiveLookupSession
-
-    def get_objective_bank_id(self):
-        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
-
-        :return: the ``ObjectiveBank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-        """
-        return # osid.id.Id
-
-    objective_bank_id = property(fget=get_objective_bank_id)
-
-    def get_objective_bank(self):
-        """Gets the ``ObjectiveBank`` associated with this session.
-
-        :return: the ``ObjectiveBank`` associated with this session
-        :rtype: ``osid.learning.ObjectiveBank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.learning.ObjectiveBank
-
-    objective_bank = property(fget=get_objective_bank)
 
     def can_lookup_objectives(self):
         """Tests if this user can perform ``Objective`` lookups.

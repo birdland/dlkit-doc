@@ -6,6 +6,7 @@ Repository
 
    service_managers
    repository
-   records
    objects
    queries
+   records
+   rules

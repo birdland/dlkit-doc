@@ -7,9 +7,9 @@ Osid
    service_managers
    no_catalog
    managers
-   records
    objects
    markers
-   rules
    queries
    metadata
+   records
+   rules

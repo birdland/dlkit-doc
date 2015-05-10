@@ -6,6 +6,7 @@ Commenting
 
    service_managers
    book
-   records
    objects
    queries
+   records
+   rules

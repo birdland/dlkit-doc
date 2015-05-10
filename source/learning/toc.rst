@@ -6,6 +6,7 @@ Learning
 
    service_managers
    objective_bank
-   records
    objects
    queries
+   records
+   rules

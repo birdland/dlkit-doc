@@ -870,25 +870,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         """
         pass
 
-    def get_bank(self, bank_id):
-        """Gets the ``Bank`` specified by its ``Id``.
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Bank`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Bank`` and retained for compatibility.
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: the bank
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-        """
-        return # osid.assessment.Bank
-
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.
         In plenary mode, the returned list contains all of the banks
@@ -1806,30 +1787,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.assessment.MyAssessmentTakenSession
-
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
 
     def can_get_my_taken_assessments(self):
         """Tests if this user can perform ``AssessmentOffered`` lookups.

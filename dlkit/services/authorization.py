@@ -278,25 +278,6 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         """
         pass
 
-    def get_vault(self, vault_id):
-        """Gets the ``Vault`` specified by its ``Id``.
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Vault`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Vault`` and retained for compatibility.
-
-        :param vault_id: ``Id`` of the ``Vault``
-        :type vault_id: ``osid.id.Id``
-        :return: the vault
-        :rtype: ``osid.authorization.Vault``
-        :raise: ``NotFound`` -- ``vault_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.Vault
-
     def get_vaults_by_ids(self, vault_ids):
         """Gets a ``VaultList`` corresponding to the given ``IdList``.
         In plenary mode, the returned list contains all of the vaults

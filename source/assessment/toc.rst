@@ -6,7 +6,7 @@ Assessment
 
    service_managers
    bank
-   records
    objects
-   rules
    queries
+   records
+   rules
