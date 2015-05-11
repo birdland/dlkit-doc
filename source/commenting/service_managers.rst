@@ -16,7 +16,7 @@ Commenting Manager
 
 
 Commenting Profile Methods
-__________________
+--------------------------
 
    .. automethod:: CommentingManager.supports_visible_federation
 

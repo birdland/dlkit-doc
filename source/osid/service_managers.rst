@@ -20,7 +20,7 @@ Osid Runtime Manager
 
 
 Osid Manager Methods
-____________
+--------------------
 
    .. automethod:: OsidRuntimeManager.initialize
 
@@ -31,7 +31,7 @@ ____________
 
 
 Osid Proxy Manager Methods
-__________________
+--------------------------
 
    .. automethod:: OsidRuntimeManager.initialize
 
@@ -42,7 +42,7 @@ __________________
 
 
 Osid Runtime Profile Methods
-____________________
+----------------------------
 
    .. automethod:: OsidRuntimeManager.supports_configuration
 

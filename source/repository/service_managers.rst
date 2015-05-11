@@ -18,7 +18,7 @@ Repository Manager
 
 
 Repository Profile Methods
-__________________
+--------------------------
 
    .. automethod:: RepositoryManager.supports_visible_federation
 

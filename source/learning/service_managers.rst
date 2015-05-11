@@ -16,7 +16,7 @@ Learning Manager
 
 
 Learning Profile Methods
-________________
+------------------------
 
    .. automethod:: LearningManager.supports_visible_federation
 

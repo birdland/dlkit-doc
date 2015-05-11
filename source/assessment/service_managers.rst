@@ -18,7 +18,7 @@ Assessment Manager
 
 
 Assessment Profile Methods
-__________________
+--------------------------
 
    .. automethod:: AssessmentManager.supports_visible_federation
 
