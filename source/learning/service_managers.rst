@@ -132,8 +132,8 @@ Learning Profile Methods
 
 
 
-Objective Bank Lookup
-_____________________
+Objective Bank Lookup Methods
+-----------------------------
 
    .. automethod:: LearningManager.can_lookup_objective_banks
 
@@ -157,8 +157,8 @@ _____________________
 
 
 
-Objective Bank Admin
-____________________
+Objective Bank Admin Methods
+----------------------------
 
    .. automethod:: LearningManager.can_create_objective_banks
 
@@ -184,8 +184,8 @@ ____________________
 
 
 
-Objective Bank Hierarchy
-________________________
+Objective Bank Hierarchy Methods
+--------------------------------
 
    .. autoattribute:: LearningManager.objective_bank_hierarchy_id
 
@@ -227,8 +227,8 @@ ________________________
 
 
 
-Objective Bank Hierarchy Design
-_______________________________
+Objective Bank Hierarchy Design Methods
+---------------------------------------
 
    .. autoattribute:: LearningManager.objective_bank_hierarchy_id
 

@@ -72,8 +72,8 @@ Commenting Profile Methods
 
 
 
-Book Lookup
-___________
+Book Lookup Methods
+-------------------
 
    .. automethod:: CommentingManager.can_lookup_books
 
@@ -97,8 +97,8 @@ ___________
 
 
 
-Book Admin
-__________
+Book Admin Methods
+------------------
 
    .. automethod:: CommentingManager.can_create_books
 
@@ -124,8 +124,8 @@ __________
 
 
 
-Book Hierarchy
-______________
+Book Hierarchy Methods
+----------------------
 
    .. autoattribute:: CommentingManager.book_hierarchy_id
 
@@ -167,8 +167,8 @@ ______________
 
 
 
-Book Hierarchy Design
-_____________________
+Book Hierarchy Design Methods
+-----------------------------
 
    .. autoattribute:: CommentingManager.book_hierarchy_id
 

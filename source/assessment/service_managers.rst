@@ -158,8 +158,8 @@ Assessment Profile Methods
 
 
 
-Bank Lookup
-___________
+Bank Lookup Methods
+-------------------
 
    .. automethod:: AssessmentManager.can_lookup_banks
 
@@ -183,8 +183,8 @@ ___________
 
 
 
-Bank Admin
-__________
+Bank Admin Methods
+------------------
 
    .. automethod:: AssessmentManager.can_create_banks
 
@@ -210,8 +210,8 @@ __________
 
 
 
-Bank Hierarchy
-______________
+Bank Hierarchy Methods
+----------------------
 
    .. autoattribute:: AssessmentManager.bank_hierarchy_id
 
@@ -253,8 +253,8 @@ ______________
 
 
 
-Bank Hierarchy Design
-_____________________
+Bank Hierarchy Design Methods
+-----------------------------
 
    .. autoattribute:: AssessmentManager.bank_hierarchy_id
 

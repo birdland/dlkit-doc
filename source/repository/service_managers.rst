@@ -122,8 +122,8 @@ Repository Profile Methods
 
 
 
-Repository Lookup
-_________________
+Repository Lookup Methods
+-------------------------
 
    .. automethod:: RepositoryManager.can_lookup_repositories
 
@@ -147,8 +147,8 @@ _________________
 
 
 
-Repository Admin
-________________
+Repository Admin Methods
+------------------------
 
    .. automethod:: RepositoryManager.can_create_repositories
 
