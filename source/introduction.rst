@@ -66,17 +66,17 @@ installable, the easiest way to use it is to ``git clone`` it into your
 project directory along with its submodules. An example directory
 structure is:
 
-  my_project/
-    |----__init__.py
-    |----my_project/
-    |----dlkit/
-    |      |----aws_adapter/
-    |      |----handcar/
-    |      |----mongo/records/
-    |      |----primordium/
-    |----dlkit_runtime/
-           |----configs.py
-           |----registry.py
+  | my_project/
+  |   |----__init__.py
+  |   |----my_project/
+  |   |----dlkit/
+  |   |      |----aws_adapter/
+  |   |      |----handcar/
+  |   |      |----mongo/records/
+  |   |      |----primordium/
+  |   |----dlkit_runtime/
+  |          |----configs.py
+  |          |----registry.py
 
 
 Dependencies
@@ -85,7 +85,7 @@ Dependencies
 DLKit has several dependencies that are also listed as git submodules. They
 are relisted here for convenience, along with their git repositories:
 
-* AWS Adapter (for storing / retrieving files from Amazon AWS S3): https://github.mit.edu/sei/aws_adapter
-* Handcar (MC3 learning service): https://github.mit.edu/sei/handcar
-* Primordium (basic object types): https://github.mit.edu/sei/primordium
-* Record extensions (for extending objects in the MongoDB implementation): https://github.mit.edu/sei/dlkit_records
+  * AWS Adapter (for storing / retrieving files from Amazon AWS S3): https://github.mit.edu/sei/aws_adapter
+  * Handcar (MC3 learning service): https://github.mit.edu/sei/handcar
+  * Primordium (basic object types): https://github.mit.edu/sei/primordium
+  * Record extensions (for extending objects in the MongoDB implementation): https://github.mit.edu/sei/dlkit_records
