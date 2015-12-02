@@ -70,10 +70,10 @@ structure is:
   |   |----__init__.py
   |   |----my_project/
   |   |----dlkit/
-  |   |      |----aws_adapter/
-  |   |      |----handcar/
-  |   |      |----mongo/records/
-  |   |      |----primordium/
+  |          |----aws_adapter/
+  |          |----handcar/
+  |          |----mongo/records/
+  |          |----primordium/
   |   |----dlkit_runtime/
   |          |----configs.py
   |          |----registry.py
