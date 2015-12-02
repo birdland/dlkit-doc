@@ -11,7 +11,7 @@ runtime.
 Configuring Runtimes
 --------------------
 
-To access `managers` using a runtime, you first need to create
+To access ``managers`` using a runtime, you first need to create
 a user proxy, which wraps the user object and allows DLKit to calculate
 authorizations. You then pass the proxy into the runtime and request managers.::
 
@@ -26,23 +26,23 @@ authorizations. You then pass the proxy into the runtime and request managers.::
 Service Managers and Catalogs
 -----------------------------
 
-In the `services` convenience layer, you typically deal with two objects for each service,
-the `manager` and a `catalog`, which subclass a subset of OSID classes. This means that you
+In the ``services`` convenience layer, you typically deal with two objects for each service,
+the ``manager`` and a ``catalog``, which subclass a subset of OSID classes. This means that you
 do not have to worry about managing OSID sessions -- this is managed for you and simplifies
 your interactions with DLKit.
 
 Service Managers
 ^^^^^^^^^^^^^^^^
 Service managers typically give you access to all methods that do not require a specific
-catalog. For example, the `LearningManager` lets you create, update, query, and delete
-`ObjectiveBanks` in the `learning` service.::
+catalog. For example, the ``LearningManager`` lets you create, update, query, and delete
+``ObjectiveBanks`` in the ``learning`` service.::
 
     bank = lm.get_objective_bank(bank_id)
 
 Service Catalogs
 ^^^^^^^^^^^^^^^^
-The catalogs you get back from a `service manager` typically give you access too
-all objects within that catalog. So an `ObjectiveBank` lets you create, update, query,
+The catalogs you get back from a ``service manager`` typically give you access too
+all objects within that catalog. So an ``ObjectiveBank`` lets you create, update, query,
 and delete learning objectives and activities.::
 
     objectives = bank.get_objectives()
@@ -60,13 +60,13 @@ The optional parameter (on creation) allows you to specify which record extensio
 you want applied to the object. For example, an Open edX-type objective bank might have
 additional methods that allow you to export content in OLX format.
 
-Once you have an object's `id`, you can also update it with a form.::
+Once you have an object's ``id``, you can also update it with a form.::
 
     form = lm.get_objective_bank_form_for_update(bank_id)
     form.description = "For testing with"
     updated_bank = lm.update_objective_bank(form)
 
-To update objects within a catalog, you would do the same thing, but via a `catalog` object.::
+To update objects within a catalog, you would do the same thing, but via a ``catalog`` object.::
 
     form = bank.get_objective_form_for_create([])
     form = bank.get_objective_form_for_update(objective_id)
