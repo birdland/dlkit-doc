@@ -1,3 +1,5 @@
+.. _learning-tutorial:
+
 Tutorial: DLKit Learning Service Basics
 =======================================
 
@@ -25,7 +27,7 @@ runtime environment you want to use and make sure that your Django project's set
 Now you can get the ``RuntimeManager`` root instance for your runtime environment. Note that there is only one, and 
 it gets instantiated at environment launch time, it is thread-safe and used by all consumer application sessions::
 
-    from dlkit_django import runtime
+    from dlkit_django import RUNTIME
 
 This ``runtime`` object is your gateway to access  all the underlying service managers and their respective service sessions and functionality
 

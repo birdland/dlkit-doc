@@ -53,14 +53,10 @@ Usage
 While DLKit is an implementation of the OSIDs, a convenience layer has
 been built on top of the OSID implementation. This layer is called ``dlkit.services``,
 and it is recommended that new developers start working with this layer, first.
-General instructions for these are outlined in the basic_ section.
-
-.. _basic: ../basic.html
+General instructions for these are outlined in the :ref:`basic-usage` section.
 
 If users find certain functionality missing or inconvenient, then they
-should check out the advanced_ section.
-
-.. _advanced: ../advanced.html
+should check out the :ref:`advanced-usage` section.
 
 Directory Structure
 -------------------
