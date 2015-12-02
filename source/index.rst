@@ -38,12 +38,18 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   
+
+   introduction
+   basic
+   advanced
+   configuration
    tutorial
    assessment/toc
    commenting/toc
+   grading/toc
    learning/toc
    repository/toc
+   resource/toc
 
 
 Indices and tables
