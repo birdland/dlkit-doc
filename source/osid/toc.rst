@@ -8,7 +8,10 @@ Osid
    service_managers
    no_catalog
    managers
+   sessions
    objects
+   search_orders
+   searches
    markers
    queries
    metadata

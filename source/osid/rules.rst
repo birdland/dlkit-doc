@@ -1,3 +1,4 @@
+
 .. currentmodule:: dlkit.osid.rules
 .. automodule:: dlkit.osid.rules
 
@@ -15,6 +16,33 @@ Osid Condition
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Input
 ----------
 
@@ -25,6 +53,33 @@ Osid Input
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Result
 -----------
 
@@ -32,6 +87,33 @@ Osid Result
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 

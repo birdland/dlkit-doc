@@ -7,7 +7,10 @@ Assessment
    summary
    service_managers
    bank
+   managers
+   sessions
    objects
+   searches
    queries
    records
    rules

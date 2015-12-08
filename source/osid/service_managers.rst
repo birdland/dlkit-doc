@@ -1,3 +1,4 @@
+
 .. currentmodule:: dlkit.services.osid
 .. automodule:: dlkit.services.osid
 
@@ -19,32 +20,30 @@ Osid Runtime Manager
 
 
 
-Osid Manager Methods
---------------------
+Osid Methods
+------------
 
-   .. automethod:: OsidRuntimeManager.initialize
+   .. autoattribute:: OsidSession.locale
 
-   .. automethod:: OsidRuntimeManager.rollback_service
+   .. automethod:: OsidSession.is_authenticated
 
-   .. automethod:: OsidRuntimeManager.change_branch
+   .. autoattribute:: OsidSession.authenticated_agent_id
 
+   .. autoattribute:: OsidSession.authenticated_agent
 
+   .. autoattribute:: OsidSession.effective_agent_id
 
-Osid Proxy Manager Methods
---------------------------
+   .. autoattribute:: OsidSession.effective_agent
 
-   .. automethod:: OsidRuntimeManager.initialize
+   .. autoattribute:: OsidSession.date
 
-   .. automethod:: OsidRuntimeManager.rollback_service
+   .. autoattribute:: OsidSession.clock_rate
 
-   .. automethod:: OsidRuntimeManager.change_branch
+   .. autoattribute:: OsidSession.format_type
 
+   .. automethod:: OsidSession.supports_transactions
 
-
-Osid Runtime Profile Methods
-----------------------------
-
-   .. automethod:: OsidRuntimeManager.supports_configuration
+   .. automethod:: OsidSession.start_transaction
 
 
 

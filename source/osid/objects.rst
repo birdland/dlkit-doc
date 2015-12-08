@@ -1,3 +1,4 @@
+
 .. currentmodule:: dlkit.osid.objects
 .. automodule:: dlkit.osid.objects
 
@@ -21,6 +22,33 @@ Osid Object
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Relationship
 -----------------
 
@@ -35,6 +63,33 @@ Osid Relationship
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Catalog
 ------------
 
@@ -42,6 +97,33 @@ Osid Catalog
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -56,6 +138,33 @@ Osid Rule
    .. autoattribute:: OsidRule.rule_id
 
    .. autoattribute:: OsidRule.rule
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -91,6 +200,33 @@ Osid Enabler
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Constrainer
 ----------------
 
@@ -98,6 +234,33 @@ Osid Constrainer
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -111,6 +274,33 @@ Osid Processor
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Governator
 ---------------
 
@@ -118,6 +308,33 @@ Osid Governator
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -137,6 +354,33 @@ Osid Compendium
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Capsule
 ------------
 
@@ -144,6 +388,33 @@ Osid Capsule
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -173,6 +444,33 @@ Osid Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Identifiable Form
 ----------------------
 
@@ -180,6 +478,33 @@ Osid Identifiable Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -193,6 +518,33 @@ Osid Extensible Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Browsable Form
 -------------------
 
@@ -200,6 +552,33 @@ Osid Browsable Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -219,6 +598,33 @@ Osid Temporal Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Subjugateable Form
 -----------------------
 
@@ -226,6 +632,33 @@ Osid Subjugateable Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -239,6 +672,33 @@ Osid Aggregateable Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Containable Form
 ---------------------
 
@@ -248,6 +708,33 @@ Osid Containable Form
    .. autoattribute:: OsidContainableForm.sequestered_metadata
 
    .. autoattribute:: OsidContainableForm.sequestered
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -271,6 +758,33 @@ Osid Sourceable Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Federateable Form
 ----------------------
 
@@ -278,6 +792,33 @@ Osid Federateable Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -294,6 +835,33 @@ Osid Operable Form
    .. autoattribute:: OsidOperableForm.disabled_metadata
 
    .. autoattribute:: OsidOperableForm.disabled
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -317,6 +885,33 @@ Osid Object Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Relationship Form
 ----------------------
 
@@ -324,6 +919,33 @@ Osid Relationship Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -337,6 +959,33 @@ Osid Catalog Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Rule Form
 --------------
 
@@ -346,6 +995,33 @@ Osid Rule Form
    .. autoattribute:: OsidRuleForm.rule_metadata
 
    .. autoattribute:: OsidRuleForm.rule
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -373,6 +1049,33 @@ Osid Enabler Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Constrainer Form
 ---------------------
 
@@ -380,6 +1083,33 @@ Osid Constrainer Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -393,6 +1123,33 @@ Osid Processor Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Governator Form
 --------------------
 
@@ -400,6 +1157,33 @@ Osid Governator Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -427,6 +1211,33 @@ Osid Compendium Form
 
 
 
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
+
+
+
 Osid Capsule Form
 -----------------
 
@@ -434,6 +1245,33 @@ Osid Capsule Form
    :show-inheritance:
 
 
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -448,6 +1286,33 @@ Osid List
    .. automethod:: OsidList.available
 
    .. automethod:: OsidList.skip
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
@@ -468,6 +1333,33 @@ Osid Node
    .. automethod:: OsidNode.has_children
 
    .. autoattribute:: OsidNode.child_ids
+
+
+
+Osid Methods
+------------
+
+   .. autoattribute:: OsidSession.locale
+
+   .. automethod:: OsidSession.is_authenticated
+
+   .. autoattribute:: OsidSession.authenticated_agent_id
+
+   .. autoattribute:: OsidSession.authenticated_agent
+
+   .. autoattribute:: OsidSession.effective_agent_id
+
+   .. autoattribute:: OsidSession.effective_agent
+
+   .. autoattribute:: OsidSession.date
+
+   .. autoattribute:: OsidSession.clock_rate
+
+   .. autoattribute:: OsidSession.format_type
+
+   .. automethod:: OsidSession.supports_transactions
+
+   .. automethod:: OsidSession.start_transaction
 
 
 
