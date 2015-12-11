@@ -1,3 +1,4 @@
+
 from ..osid import records as osid_records
 
 
@@ -8,6 +9,9 @@ class QuestionRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -18,6 +22,9 @@ class QuestionQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -28,6 +35,9 @@ class QuestionFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -38,6 +48,9 @@ class AnswerRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -48,6 +61,9 @@ class AnswerQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -58,6 +74,9 @@ class AnswerFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -68,6 +87,9 @@ class ItemRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -78,6 +100,9 @@ class ItemQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -88,6 +113,22 @@ class ItemFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class ItemSearchRecord(osid_records.OsidRecord):
+    """A record for an ``ItemSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -98,6 +139,9 @@ class AssessmentRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -108,6 +152,9 @@ class AssessmentQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -118,6 +165,22 @@ class AssessmentFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class AssessmentSearchRecord(osid_records.OsidRecord):
+    """A record for an ``AssessmentSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -128,6 +191,9 @@ class AssessmentOfferedRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -138,6 +204,9 @@ class AssessmentOfferedQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -148,6 +217,22 @@ class AssessmentOfferedFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class AssessmentOfferedSearchRecord(osid_records.OsidRecord):
+    """A record for an ``AssessmentOfferedSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -158,6 +243,9 @@ class AssessmentTakenRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -168,6 +256,9 @@ class AssessmentTakenQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -178,6 +269,22 @@ class AssessmentTakenFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class AssessmentTakenSearchRecord(osid_records.OsidRecord):
+    """A record for an ``AssessmentTakenSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -188,6 +295,9 @@ class AssessmentSectionRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -198,6 +308,9 @@ class BankRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -208,6 +321,9 @@ class BankQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -218,6 +334,22 @@ class BankFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class BankSearchRecord(osid_records.OsidRecord):
+    """A record for a ``BankSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -228,6 +360,9 @@ class ResponseRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 

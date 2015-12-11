@@ -1,3 +1,4 @@
+
 from ..osid import rules as osid_rules
 
 
@@ -9,27 +10,33 @@ class Response(osid_rules.OsidCondition):
     corresponding setters.
 
     """
+    
+
+
+
     def get_item_id(self):
         """Gets the ``Id`` of the ``Item``.
 
-        :return: the assessment item ``Id``
-        :rtype: ``osid.id.Id``
+        return: (osid.id.Id) - the assessment item ``Id``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     item_id = property(fget=get_item_id)
 
+
     def get_item(self):
         """Gets the ``Item``.
 
-        :return: the assessment item
-        :rtype: ``osid.assessment.Item``
+        return: (osid.assessment.Item) - the assessment item
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.Item
 
     item = property(fget=get_item)
+
 
     def get_response_record(self, item_record_type):
         """Gets the response record corresponding to the given ``Item`` record ``Type``.
@@ -40,13 +47,14 @@ class Response(osid_rules.OsidCondition):
         ``Type`` hierarchy where ``has_record_type(item_record_type)``
         is ``true`` .
 
-        :param item_record_type: an item record type
-        :type item_record_type: ``osid.type.Type``
-        :return: the response record
-        :rtype: ``osid.assessment.records.ResponseRecord``
-        :raise: ``NullArgument`` -- ``item_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(item_record_type)`` is ``false``
+        arg:    item_record_type (osid.type.Type): an item record type
+        return: (osid.assessment.records.ResponseRecord) - the response
+                record
+        raise:  NullArgument - ``item_record_type`` is ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported - ``has_record_type(item_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.records.ResponseRecord

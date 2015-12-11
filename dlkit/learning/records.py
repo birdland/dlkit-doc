@@ -1,3 +1,4 @@
+
 from ..osid import records as osid_records
 
 
@@ -8,6 +9,9 @@ class ObjectiveRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -18,6 +22,9 @@ class ObjectiveQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -28,6 +35,22 @@ class ObjectiveFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class ObjectiveSearchRecord(osid_records.OsidRecord):
+    """A record for an ``ObjectiveSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -38,6 +61,9 @@ class ActivityRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -48,6 +74,9 @@ class ActivityQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -58,6 +87,22 @@ class ActivityFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class ActivitySearchRecord(osid_records.OsidRecord):
+    """A record for an ``ActivitySearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 
@@ -68,6 +113,9 @@ class ObjectiveBankRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -78,6 +126,9 @@ class ObjectiveBankQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -88,6 +139,22 @@ class ObjectiveBankFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
+
+
+
+class ObjectiveBankSearchRecord(osid_records.OsidRecord):
+    """A record for a ``ObjectiveBankSearch``.
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+    """
+    
+
+
 
 
 

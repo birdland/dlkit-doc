@@ -1,3 +1,4 @@
+
 from ..osid import markers as osid_markers
 
 
@@ -67,38 +68,62 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     form.
 
     """
-    def get_display_name(self):
-        """Gets the preferred display name associated with this instance of this OSID object appropriate for display to the user.
+    
 
-        :return: the display name
-        :rtype: ``osid.locale.DisplayText``
+
+
+    def get_display_name(self):
+        """Gets the preferred display name associated with this instance of this OSID object appropriate for display to
+        the user.
+
+        return: (osid.locale.DisplayText) - the display name
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: A display name is a string used for
+        identifying an object in human terms. A provider may wish to
+        initialize the display name based on one or more object
+        attributes. In some cases, the display name may not map to a
+        specific or significant object attribute but simply be used as a
+        preferred display name that can be modified. A provider may also
+        wish to translate the display name into a specific locale using
+        the Locale service. Some OSIDs define methods for more detailed
+        naming.
 
         """
         return # osid.locale.DisplayText
 
     display_name = property(fget=get_display_name)
 
+
     def get_description(self):
         """Gets the description associated with this instance of this OSID object.
 
-        :return: the description
-        :rtype: ``osid.locale.DisplayText``
+        return: (osid.locale.DisplayText) - the description
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: A description is a string used for
+        describing an object in human terms and may not have
+        significance in the underlying system. A provider may wish to
+        initialize the description based on one or more object
+        attributes and/or treat it as an auxiliary piece of data that
+        can be modified. A provider may also wish to translate the
+        description into a specific locale using the Locale service.
 
         """
         return # osid.locale.DisplayText
 
     description = property(fget=get_description)
 
+
     def get_genus_type(self):
         """Gets the genus type of this object.
 
-        :return: the genus type of this object
-        :rtype: ``osid.type.Type``
+        return: (osid.type.Type) - the genus type of this object
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.Type
 
     genus_type = property(fget=get_genus_type)
+
 
     def is_of_genus_type(self, genus_type):
         """Tests if this object is of the given genus ``Type``.
@@ -106,11 +131,11 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
         The given genus type may be supported by the object through the
         type hierarchy.
 
-        :param genus_type: a genus type
-        :type genus_type: ``osid.type.Type``
-        :return: ``true`` if this object is of the given genus ``Type,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``genus_type`` is ``null``
+        arg:    genus_type (osid.type.Type): a genus type
+        return: (boolean) - ``true`` if this object is of the given
+                genus ``Type,``  ``false`` otherwise
+        raise:  NullArgument - ``genus_type`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -158,35 +183,42 @@ class OsidRelationship(OsidObject, osid_markers.Temporal):
     that it may be only effective relationshps are of interest.
 
     """
+    
+
+
+
     def has_end_reason(self):
         """Tests if a reason this relationship came to an end is known.
 
-        :return: ``true`` if an end reason is available, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``is_effective()`` is ``true``
+        return: (boolean) - ``true`` if an end reason is available,
+                ``false`` otherwise
+        raise:  IllegalState - ``is_effective()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_end_reason_id(self):
         """Gets a state ``Id`` indicating why this relationship has ended.
 
-        :return: a state ``Id``
-        :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_end_reason()`` is ``false``
+        return: (osid.id.Id) - a state ``Id``
+        raise:  IllegalState - ``has_end_reason()`` is ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     end_reason_id = property(fget=get_end_reason_id)
 
+
     def get_end_reason(self):
         """Gets a state indicating why this relationship has ended.
 
-        :return: a state
-        :rtype: ``osid.process.State``
-        :raise: ``IllegalState`` -- ``has_end_reason()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
+        return: (osid.process.State) - a state
+        raise:  IllegalState - ``has_end_reason()`` is ``false``
+        raise:  OperationFailed - unable to complete request
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.process.State
@@ -228,6 +260,9 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
     of functionality. Most OSIDs include a cataloging pattern.
 
     """
+    
+
+
 
 
 
@@ -257,34 +292,41 @@ class OsidRule(OsidObject, osid_markers.Operable):
     ``OsidQuery`` .
 
     """
+    
+
+
+
     def has_rule(self):
         """Tests if an explicit rule is available.
 
-        :return: ``true`` if an explicit rule is available, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if an explicit rule is available,
+                ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_rule_id(self):
         """Gets the explicit rule ``Id``.
 
-        :return: the rule ``Id``
-        :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_rule()`` is ``false``
+        return: (osid.id.Id) - the rule ``Id``
+        raise:  IllegalState - ``has_rule()`` is ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     rule_id = property(fget=get_rule_id)
 
+
     def get_rule(self):
         """Gets the explicit rule.
 
-        :return: the rule
-        :rtype: ``osid.rules.Rule``
-        :raise: ``IllegalState`` -- ``has_rule()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
+        return: (osid.rules.Rule) - the rule
+        raise:  IllegalState - ``has_rule()`` is ``false``
+        raise:  OperationFailed - unable to complete request
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.rules.Rule
@@ -328,6 +370,10 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
     canned rules based on dates, events, and cyclic events.
 
     """
+    
+
+
+
     def is_effective_by_schedule(self):
         """Tests if the effectiveness of the enabler is governed by a ``Schedule``.
 
@@ -336,39 +382,46 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
         ``is_effective_by_event()`` and
         ``is_effective_by_cyclic_event()`` must be ``false``.
 
-        :return: ``true`` if the enabler is governed by schedule, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if the enabler is governed by
+                schedule, ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_schedule_id(self):
         """Gets the schedule ``Id``.
 
-        :return: the schedule ``Id``
-        :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``is_effective_by_schedule()`` is ``false``
+        return: (osid.id.Id) - the schedule ``Id``
+        raise:  IllegalState - ``is_effective_by_schedule()`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     schedule_id = property(fget=get_schedule_id)
 
+
     def get_schedule(self):
         """Gets the schedule.
 
-        :return: the schedule
-        :rtype: ``osid.calendaring.Schedule``
-        :raise: ``IllegalState`` -- ``is_effective_by_schedule()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
+        return: (osid.calendaring.Schedule) - the schedule
+        raise:  IllegalState - ``is_effective_by_schedule()`` is
+                ``false``
+        raise:  OperationFailed - unable to complete request
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.Schedule
 
     schedule = property(fget=get_schedule)
 
+
     def is_effective_by_event(self):
-        """Tests if the effectiveness of the enabler is governed by an ``Event`` such that the start and end dates of the event govern the effectiveness.
+        """Tests if the effectiveness of the enabler is governed by an ``Event`` such that the start and end dates of
+        the event govern the effectiveness.
 
         The event may also be a ``RecurringEvent`` in which case the
         enabler is effective for start and end dates of each event in
@@ -377,36 +430,40 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
         ``true,`` ``is_effective_by_schedule()`` and
         ``is_effective_by_cyclic_event()`` must be ``false``.
 
-        :return: ``true`` if the enabler is governed by an event, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if the enabler is governed by an
+                event, ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_event_id(self):
         """Gets the event ``Id``.
 
-        :return: the event ``Id``
-        :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``is_effective_by_event()`` is ``false``
+        return: (osid.id.Id) - the event ``Id``
+        raise:  IllegalState - ``is_effective_by_event()`` is ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     event_id = property(fget=get_event_id)
 
+
     def get_event(self):
         """Gets the event.
 
-        :return: the event
-        :rtype: ``osid.calendaring.Event``
-        :raise: ``IllegalState`` -- ``is_effective_by_event()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
+        return: (osid.calendaring.Event) - the event
+        raise:  IllegalState - ``is_effective_by_event()`` is ``false``
+        raise:  OperationFailed - unable to complete request
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.Event
 
     event = property(fget=get_event)
+
 
     def is_effective_by_cyclic_event(self):
         """Tests if the effectiveness of the enabler is governed by a ``CyclicEvent``.
@@ -416,65 +473,77 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
         ``true,`` ``is_effective_by_schedule()`` and
         ``is_effective_by_event()`` must be ``false``.
 
-        :return: ``true`` if the enabler is governed by a cyclic event, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if the enabler is governed by a
+                cyclic event, ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_cyclic_event_id(self):
         """Gets the cyclic event ``Id``.
 
-        :return: the cyclic event ``Id``
-        :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``is_effective_by_cyclic_event()`` is ``false``
+        return: (osid.id.Id) - the cyclic event ``Id``
+        raise:  IllegalState - ``is_effective_by_cyclic_event()`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     cyclic_event_id = property(fget=get_cyclic_event_id)
 
+
     def get_cyclic_event(self):
         """Gets the cyclic event.
 
-        :return: the cyclic event
-        :rtype: ``osid.calendaring.cycle.CyclicEvent``
-        :raise: ``IllegalState`` -- ``is_effective_by_cyclic_event()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
+        return: (osid.calendaring.cycle.CyclicEvent) - the cyclic event
+        raise:  IllegalState - ``is_effective_by_cyclic_event()`` is
+                ``false``
+        raise:  OperationFailed - unable to complete request
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.cycle.CyclicEvent
 
     cyclic_event = property(fget=get_cyclic_event)
 
+
     def is_effective_for_demographic(self):
         """Tests if the effectiveness of the enabler applies to a demographic resource.
 
-        :return: ``true`` if the rule apples to a demographic. ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if the rule apples to a
+                demographic. ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_demographic_id(self):
         """Gets the demographic resource ``Id``.
 
-        :return: the resource ``Id``
-        :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``is_effective_for_demographic()`` is ``false``
+        return: (osid.id.Id) - the resource ``Id``
+        raise:  IllegalState - ``is_effective_for_demographic()`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     demographic_id = property(fget=get_demographic_id)
 
+
     def get_demographic(self):
         """Gets the demographic resource.
 
-        :return: the resource representing the demographic
-        :rtype: ``osid.resource.Resource``
-        :raise: ``IllegalState`` -- ``is_effective_for_demographic()`` is ``false``
-        :raise: ``OperationFailed`` -- unable to complete request
+        return: (osid.resource.Resource) - the resource representing the
+                demographic
+        raise:  IllegalState - ``is_effective_for_demographic()`` is
+                ``false``
+        raise:  OperationFailed - unable to complete request
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.resource.Resource
@@ -489,6 +558,9 @@ class OsidConstrainer(OsidRule):
     constrainment or incorporate external logic using a rule.
 
     """
+    
+
+
 
 
 
@@ -499,6 +571,9 @@ class OsidProcessor(OsidRule):
     incorporate external logic using a rule.
 
     """
+    
+
+
 
 
 
@@ -522,11 +597,15 @@ class OsidGovernator(OsidObject, osid_markers.Operable, osid_markers.Sourceable)
     rule mapped to this ``OsidGovernator``.
 
     """
+    
+
+
 
 
 
 class OsidCompendium(OsidObject, osid_markers.Subjugateable):
-    """``OsidCompendium`` is the top level interface for reports based on measurements, calculations, summaries, or views of transactional activity within periods of time.
+    """``OsidCompendium`` is the top level interface for reports based on measurements, calculations, summaries, or views of
+        transactional activity within periods of time.
 
     This time dimension of this report may align with managed time
     periods, specific dates, or both. Oh my.
@@ -574,27 +653,33 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
     person, account, or an ``OsidCatalog`` .
 
     """
+    
+
+
+
     def get_start_date(self):
         """Gets the start date used in the evaluation of the transactional data on which this report is based.
 
-        :return: the date
-        :rtype: ``osid.calendaring.DateTime``
+        return: (osid.calendaring.DateTime) - the date
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.DateTime
 
     start_date = property(fget=get_start_date)
 
+
     def get_end_date(self):
         """Gets the end date used in the evaluation of the transactional data on which this report is based.
 
-        :return: the date
-        :rtype: ``osid.calendaring.DateTime``
+        return: (osid.calendaring.DateTime) - the date
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.DateTime
 
     end_date = property(fget=get_end_date)
+
 
     def is_interpolated(self):
         """Tests if this report is interpolated within measured data or known transactions.
@@ -602,11 +687,13 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
         Interpolation may occur if the start or end date fall between
         two known facts or managed time period.
 
-        :return: ``true`` if this report is interpolated, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this report is interpolated,
+                ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
+
 
     def is_extrapolated(self):
         """Tests if this report is extrapolated outside measured data or known transactions.
@@ -616,8 +703,9 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
         within a managed time period in progress where the results of
         the entire time period are projected.
 
-        :return: ``true`` if this report is extrapolated, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this report is extrapolated,
+                ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -630,6 +718,9 @@ class OsidCapsule:
     semantically unrelated objects from a method.
 
     """
+    
+
+
 
 
 
@@ -671,38 +762,47 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
       session.updateObject(objectId, form);
 
 
-
     """
+    
+
+
+
     def is_for_update(self):
         """Tests if this form is for an update operation.
 
-        :return: ``true`` if this form is for an update operation, ``false`` if for a create operation
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this form is for an update
+                operation, ``false`` if for a create operation
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_default_locale(self):
         """Gets a default locale for ``DisplayTexts`` when a locale is not specified.
 
-        :return: the default locale
-        :rtype: ``osid.locale.Locale``
+        return: (osid.locale.Locale) - the default locale
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.Locale
 
     default_locale = property(fget=get_default_locale)
 
+
     def get_locales(self):
         """Gets a list of locales for available ``DisplayText`` translations that can be performed using this form.
 
-        :return: a list of available locales or an empty list if no translation operations are available
-        :rtype: ``osid.locale.LocaleList``
+        return: (osid.locale.LocaleList) - a list of available locales
+                or an empty list if no translation operations are
+                available
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.LocaleList
 
     locales = property(fget=get_locales)
+
 
     def set_locale(self, language_type, script_type):
         """Specifies a language and script type for ``DisplayText`` fields in this form.
@@ -714,15 +814,17 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         ``Metadata`` indicates the fields are unset as they may be
         returning a defeult value based on the default locale.
 
-        :param language_type: the language type
-        :type language_type: ``osid.type.Type``
-        :param script_type: the script type
-        :type script_type: ``osid.type.Type``
-        :raise: ``NullArgument`` -- ``language_type`` or ``script_type`` is null
-        :raise: ``Unsupported`` -- ``language_type`` and ``script_type`` not available from ``get_locales()``
+        arg:    language_type (osid.type.Type): the language type
+        arg:    script_type (osid.type.Type): the script type
+        raise:  NullArgument - ``language_type`` or ``script_type`` is
+                null
+        raise:  Unsupported - ``language_type`` and ``script_type`` not
+                available from ``get_locales()``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def get_journal_comment_metadata(self):
         """Gets the metadata for the comment corresponding to this form submission.
@@ -731,27 +833,29 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         the corresponding object for the purposes of logging and
         auditing.
 
-        :return: metadata for the comment
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the comment
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     journal_comment_metadata = property(fget=get_journal_comment_metadata)
 
+
     def set_journal_comment(self, comment):
         """Sets a comment.
 
-        :param comment: the new comment
-        :type comment: ``string``
-        :raise: ``InvalidArgument`` -- ``comment`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadonly()`` is ``true``
-        :raise: ``NullArgument`` -- ``comment`` is ``null``
+        arg:    comment (string): the new comment
+        raise:  InvalidArgument - ``comment`` is invalid
+        raise:  NoAccess - ``Metadata.isReadonly()`` is ``true``
+        raise:  NullArgument - ``comment`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
     journal_comment = property(fset=set_journal_comment)
+
 
     def is_valid(self):
         """Tests if ths form is in a valid state for submission.
@@ -759,29 +863,32 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         A form is valid if all required data has been supplied compliant
         with any constraints.
 
-        :return: ``false`` if there is a known error in this form, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``OperationFailed`` -- attempt to perform validation failed
+        return: (boolean) - ``false`` if there is a known error in this
+                form, ``true`` otherwise
+        raise:  OperationFailed - attempt to perform validation failed
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_validation_messages(self):
         """Gets text messages corresponding to additional instructions to pass form validation.
 
-        :return: a list of messages
-        :rtype: ``osid.locale.DisplayText``
+        return: (osid.locale.DisplayText) - a list of messages
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     validation_messages = property(fget=get_validation_messages)
 
+
     def get_invalid_metadata(self):
         """Gets a list of metadata for the elements in this form which are not valid.
 
-        :return: invalid metadata
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - invalid metadata
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
@@ -796,6 +903,9 @@ class OsidIdentifiableForm(OsidForm):
     method of a session.
 
     """
+    
+
+
 
 
 
@@ -806,14 +916,18 @@ class OsidExtensibleForm(OsidForm, osid_markers.Extensible):
     method of a session.
 
     """
+    
+
+
+
     def get_required_record_types(self):
         """Gets the required record types for this form.
 
         The required records may change as a result of other data in
         this form and should be checked before submission.
 
-        :return: a list of required record types
-        :rtype: ``osid.type.TypeList``
+        return: (osid.type.TypeList) - a list of required record types
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -828,295 +942,359 @@ class OsidBrowsableForm(OsidForm):
     method of a session.
 
     """
+    
+
+
 
 
 
 class OsidTemporalForm(OsidForm):
     """This form is used to create and update temporals."""
+    
+
+
+
     def get_start_date_metadata(self):
         """Gets the metadata for a start date.
 
-        :return: metadata for the date
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the date
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     start_date_metadata = property(fget=get_start_date_metadata)
 
+
     def set_start_date(self, date):
         """Sets the start date.
 
-        :param date: the new date
-        :type date: ``osid.calendaring.DateTime``
-        :raise: ``InvalidArgument`` -- ``date`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``date`` is ``null``
+        arg:    date (osid.calendaring.DateTime): the new date
+        raise:  InvalidArgument - ``date`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``date`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_start_date(self):
         """Clears the start date.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    start_date = property(fget=set_start_date, fdel=clear_start_date)
+    start_date = property(fset=set_start_date, fdel=clear_start_date)
+
 
     def get_end_date_metadata(self):
         """Gets the metadata for an end date.
 
-        :return: metadata for the date
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the date
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     end_date_metadata = property(fget=get_end_date_metadata)
 
+
     def set_end_date(self, date):
         """Sets the end date.
 
-        :param date: the new date
-        :type date: ``osid.calendaring.DateTime``
-        :raise: ``InvalidArgument`` -- ``date`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``date`` is ``null``
+        arg:    date (osid.calendaring.DateTime): the new date
+        raise:  InvalidArgument - ``date`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``date`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_end_date(self):
         """Clears the end date.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    end_date = property(fget=set_end_date, fdel=clear_end_date)
+    end_date = property(fset=set_end_date, fdel=clear_end_date)
 
 
 class OsidSubjugateableForm(OsidForm):
     """This form is used to create and update dependent objects."""
+    
+
+
 
 
 
 class OsidAggregateableForm(OsidForm):
     """This form is used to create and update assemblages."""
+    
+
+
 
 
 
 class OsidContainableForm(OsidForm):
     """This form is used to create and update containers."""
+    
+
+
+
     def get_sequestered_metadata(self):
         """Gets the metadata for the sequestered flag.
 
-        :return: metadata for the sequestered flag
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the sequestered flag
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     sequestered_metadata = property(fget=get_sequestered_metadata)
 
+
     def set_sequestered(self, sequestered):
         """Sets the sequestered flag.
 
-        :param sequestered: the new sequestered flag
-        :type sequestered: ``boolean``
-        :raise: ``InvalidArgument`` -- ``sequestered`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        arg:    sequestered (boolean): the new sequestered flag
+        raise:  InvalidArgument - ``sequestered`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_sequestered(self):
         """Clears the sequestered flag.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    sequestered = property(fget=set_sequestered, fdel=clear_sequestered)
+    sequestered = property(fset=set_sequestered, fdel=clear_sequestered)
 
 
 class OsidSourceableForm(OsidForm):
     """This form is used to create and update sourceables."""
+    
+
+
+
     def get_provider_metadata(self):
         """Gets the metadata for a provider.
 
-        :return: metadata for the provider
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the provider
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     provider_metadata = property(fget=get_provider_metadata)
 
+
     def set_provider(self, provider_id):
         """Sets a provider.
 
-        :param provider_id: the new provider
-        :type provider_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``provider_id`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``provider_id`` is ``null``
+        arg:    provider_id (osid.id.Id): the new provider
+        raise:  InvalidArgument - ``provider_id`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``provider_id`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_provider(self):
         """Removes the provider.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    provider = property(fget=set_provider, fdel=clear_provider)
+    provider = property(fset=set_provider, fdel=clear_provider)
+
 
     def get_branding_metadata(self):
         """Gets the metadata for the asset branding.
 
-        :return: metadata for the asset branding.
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the asset branding.
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     branding_metadata = property(fget=get_branding_metadata)
 
+
     def set_branding(self, asset_ids):
         """Sets the branding.
 
-        :param asset_ids: the new assets
-        :type asset_ids: ``osid.id.Id[]``
-        :raise: ``InvalidArgument`` -- ``asset_ids`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``asset_ids`` is ``null``
+        arg:    asset_ids (osid.id.Id[]): the new assets
+        raise:  InvalidArgument - ``asset_ids`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``asset_ids`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_branding(self):
         """Removes the branding.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    branding = property(fget=set_branding, fdel=clear_branding)
+    branding = property(fset=set_branding, fdel=clear_branding)
+
 
     def get_license_metadata(self):
         """Gets the metadata for the license.
 
-        :return: metadata for the license
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the license
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     license_metadata = property(fget=get_license_metadata)
 
+
     def set_license(self, license_):
         """Sets the license.
 
-        :param license: the new license
-        :type license: ``string``
-        :raise: ``InvalidArgument`` -- ``license`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``license`` is ``null``
+        arg:    license (string): the new license
+        raise:  InvalidArgument - ``license`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``license`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_license(self):
         """Removes the license.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    license_ = property(fget=set_license, fdel=clear_license)
+    license_ = property(fset=set_license, fdel=clear_license)
 
 
 class OsidFederateableForm(OsidForm):
     """This form is used to create and update federateables."""
+    
+
+
 
 
 
 class OsidOperableForm(OsidForm):
     """This form is used to create and update operables."""
+    
+
+
+
     def get_enabled_metadata(self):
         """Gets the metadata for the enabled flag.
 
-        :return: metadata for the enabled flag
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the enabled flag
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     enabled_metadata = property(fget=get_enabled_metadata)
 
+
     def set_enabled(self, enabled):
         """Sets the administratively enabled flag.
 
-        :param enabled: the new enabled flag
-        :type enabled: ``boolean``
-        :raise: ``InvalidArgument`` -- ``enabled`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        arg:    enabled (boolean): the new enabled flag
+        raise:  InvalidArgument - ``enabled`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_enabled(self):
         """Removes the administratively enabled flag.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    enabled = property(fget=set_enabled, fdel=clear_enabled)
+    enabled = property(fset=set_enabled, fdel=clear_enabled)
+
 
     def get_disabled_metadata(self):
         """Gets the metadata for the disabled flag.
 
-        :return: metadata for the disabled flag
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the disabled flag
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     disabled_metadata = property(fget=get_disabled_metadata)
 
+
     def set_disabled(self, disabled):
         """Sets the administratively disabled flag.
 
-        :param disabled: the new disabled flag
-        :type disabled: ``boolean``
-        :raise: ``InvalidArgument`` -- ``disabled`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        arg:    disabled (boolean): the new disabled flag
+        raise:  InvalidArgument - ``disabled`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_disabled(self):
         """Removes the administratively disabled flag.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    disabled = property(fget=set_disabled, fdel=clear_disabled)
+    disabled = property(fset=set_disabled, fdel=clear_disabled)
 
 
 class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm):
@@ -1157,18 +1335,22 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
       session.updateObject(objectId, form);
 
 
-
     """
+    
+
+
+
     def get_display_name_metadata(self):
         """Gets the metadata for a display name.
 
-        :return: metadata for the display name
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the display name
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     display_name_metadata = property(fget=get_display_name_metadata)
+
 
     def set_display_name(self, display_name):
         """Sets a display name.
@@ -1176,68 +1358,78 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
         A display name is required and if not set, will be set by the
         provider.
 
-        :param display_name: the new display name
-        :type display_name: ``string``
-        :raise: ``InvalidArgument`` -- ``display_name`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadonly()`` is ``true``
-        :raise: ``NullArgument`` -- ``display_name`` is ``null``
+        arg:    display_name (string): the new display name
+        raise:  InvalidArgument - ``display_name`` is invalid
+        raise:  NoAccess - ``Metadata.isReadonly()`` is ``true``
+        raise:  NullArgument - ``display_name`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_display_name(self):
         """Clears the display name.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    display_name = property(fget=set_display_name, fdel=clear_display_name)
+    display_name = property(fset=set_display_name, fdel=clear_display_name)
+
 
     def get_description_metadata(self):
         """Gets the metadata for a description.
 
-        :return: metadata for the description
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the description
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     description_metadata = property(fget=get_description_metadata)
 
+
     def set_description(self, description):
         """Sets a description.
 
-        :param description: the new description
-        :type description: ``string``
-        :raise: ``InvalidArgument`` -- ``description`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadonly()`` is ``true``
-        :raise: ``NullArgument`` -- ``description`` is ``null``
+        arg:    description (string): the new description
+        raise:  InvalidArgument - ``description`` is invalid
+        raise:  NoAccess - ``Metadata.isReadonly()`` is ``true``
+        raise:  NullArgument - ``description`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_description(self):
         """Clears the description.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    description = property(fget=set_description, fdel=clear_description)
+    description = property(fset=set_description, fdel=clear_description)
+
 
     def get_genus_type_metadata(self):
         """Gets the metadata for a genus type.
 
-        :return: metadata for the genus
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the genus
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     genus_type_metadata = property(fget=get_genus_type_metadata)
+
 
     def set_genus_type(self, genus_type):
         """Sets a genus.
@@ -1245,357 +1437,432 @@ class OsidObjectForm(OsidIdentifiableForm, OsidExtensibleForm, OsidBrowsableForm
         A genus cannot be cleared because all objects have at minimum a
         root genus.
 
-        :param genus_type: the new genus
-        :type genus_type: ``osid.type.Type``
-        :raise: ``InvalidArgument`` -- ``genus_type`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadonly()`` is ``true``
-        :raise: ``NullArgument`` -- ``genus_type`` is ``null``
+        arg:    genus_type (osid.type.Type): the new genus
+        raise:  InvalidArgument - ``genus_type`` is invalid
+        raise:  NoAccess - ``Metadata.isReadonly()`` is ``true``
+        raise:  NullArgument - ``genus_type`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_genus_type(self):
         """Clears the genus type.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    genus_type = property(fget=set_genus_type, fdel=clear_genus_type)
+    genus_type = property(fset=set_genus_type, fdel=clear_genus_type)
 
 
 class OsidRelationshipForm(OsidObjectForm, OsidTemporalForm):
     """This form is used to create and update relationshps."""
+    
+
+
 
 
 
 class OsidCatalogForm(OsidObjectForm, OsidSourceableForm, OsidFederateableForm):
     """This form is used to create and update catalogs."""
+    
+
+
 
 
 
 class OsidRuleForm(OsidObjectForm, OsidOperableForm):
     """This form is used to create and update rules."""
+    
+
+
+
     def get_rule_metadata(self):
         """Gets the metadata for an associated rule.
 
-        :return: metadata for the rule
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the rule
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     rule_metadata = property(fget=get_rule_metadata)
 
+
     def set_rule(self, rule_id):
         """Sets a rule.
 
-        :param rule_id: the new rule
-        :type rule_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``rule_id`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``rule_id`` is ``null``
+        arg:    rule_id (osid.id.Id): the new rule
+        raise:  InvalidArgument - ``rule_id`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``rule_id`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_rule(self):
         """Removes the rule.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    rule = property(fget=set_rule, fdel=clear_rule)
+    rule = property(fset=set_rule, fdel=clear_rule)
 
 
 class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
     """This form is used to create and update enablers."""
+    
+
+
+
     def get_schedule_metadata(self):
         """Gets the metadata for an associated schedule.
 
-        :return: metadata for the schedule
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the schedule
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     schedule_metadata = property(fget=get_schedule_metadata)
 
+
     def set_schedule(self, schedule_id):
         """Sets a schedule.
 
-        :param schedule_id: the new schedule
-        :type schedule_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``schedule_id`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``schedule_id`` is ``null``
+        arg:    schedule_id (osid.id.Id): the new schedule
+        raise:  InvalidArgument - ``schedule_id`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``schedule_id`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_schedule(self):
         """Removes the schedule.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    schedule = property(fget=set_schedule, fdel=clear_schedule)
+    schedule = property(fset=set_schedule, fdel=clear_schedule)
+
 
     def get_event_metadata(self):
         """Gets the metadata for an associated event.
 
-        :return: metadata for the event
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the event
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     event_metadata = property(fget=get_event_metadata)
 
+
     def set_event(self, event_id):
         """Sets an event.
 
-        :param event_id: the new event
-        :type event_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``event_id`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``event_id`` is ``null``
+        arg:    event_id (osid.id.Id): the new event
+        raise:  InvalidArgument - ``event_id`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``event_id`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_event(self):
         """Removes the event.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    event = property(fget=set_event, fdel=clear_event)
+    event = property(fset=set_event, fdel=clear_event)
+
 
     def get_cyclic_event_metadata(self):
         """Gets the metadata for the cyclic event.
 
-        :return: metadata for the cyclic event
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the cyclic event
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     cyclic_event_metadata = property(fget=get_cyclic_event_metadata)
 
+
     def set_cyclic_event(self, cyclic_event_id):
         """Sets the cyclic event.
 
-        :param cyclic_event_id: the new cyclic event
-        :type cyclic_event_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``cyclic_event_id`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``cyclic_event_id`` is ``null``
+        arg:    cyclic_event_id (osid.id.Id): the new cyclic event
+        raise:  InvalidArgument - ``cyclic_event_id`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``cyclic_event_id`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_cyclic_event(self):
         """Removes the cyclic event.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    cyclic_event = property(fget=set_cyclic_event, fdel=clear_cyclic_event)
+    cyclic_event = property(fset=set_cyclic_event, fdel=clear_cyclic_event)
+
 
     def get_demographic_metadata(self):
         """Gets the metadata for an associated demographic.
 
-        :return: metadata for the resource.
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the resource.
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     demographic_metadata = property(fget=get_demographic_metadata)
 
+
     def set_demographic(self, resource_id):
         """Sets a resource demographic.
 
-        :param resource_id: the new resource
-        :type resource_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``resource_id`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        arg:    resource_id (osid.id.Id): the new resource
+        raise:  InvalidArgument - ``resource_id`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``resource_id`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_demographic(self):
         """Removes the resource demographic.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` is ``true`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    demographic = property(fget=set_demographic, fdel=clear_demographic)
+    demographic = property(fset=set_demographic, fdel=clear_demographic)
 
 
 class OsidConstrainerForm(OsidRuleForm):
     """This form is used to create and update constrainers."""
+    
+
+
 
 
 
 class OsidProcessorForm(OsidRuleForm):
     """This form is used to create and update processors."""
+    
+
+
 
 
 
 class OsidGovernatorForm(OsidObjectForm, OsidOperableForm, OsidSourceableForm):
     """This form is used to create and update governators."""
+    
+
+
 
 
 
 class OsidCompendiumForm(OsidObjectForm, OsidSubjugateableForm):
     """This form is used to create and update governators."""
+    
+
+
+
     def get_start_date_metadata(self):
         """Gets the metadata for a start date.
 
-        :return: metadata for the date
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the date
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     start_date_metadata = property(fget=get_start_date_metadata)
 
+
     def set_start_date(self, date):
         """Sets the start date.
 
-        :param date: the new date
-        :type date: ``osid.calendaring.DateTime``
-        :raise: ``InvalidArgument`` -- ``date`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``date`` is ``null``
+        arg:    date (osid.calendaring.DateTime): the new date
+        raise:  InvalidArgument - ``date`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``date`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_start_date(self):
         """Clears the start date.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    start_date = property(fget=set_start_date, fdel=clear_start_date)
+    start_date = property(fset=set_start_date, fdel=clear_start_date)
+
 
     def get_end_date_metadata(self):
         """Gets the metadata for an end date.
 
-        :return: metadata for the date
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the date
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     end_date_metadata = property(fget=get_end_date_metadata)
 
+
     def set_end_date(self, date):
         """Sets the end date.
 
-        :param date: the new date
-        :type date: ``osid.calendaring.DateTime``
-        :raise: ``InvalidArgument`` -- ``date`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
-        :raise: ``NullArgument`` -- ``date`` is ``null``
+        arg:    date (osid.calendaring.DateTime): the new date
+        raise:  InvalidArgument - ``date`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        raise:  NullArgument - ``date`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_end_date(self):
         """Clears the end date.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    end_date = property(fget=set_end_date, fdel=clear_end_date)
+    end_date = property(fset=set_end_date, fdel=clear_end_date)
+
 
     def get_interpolated_metadata(self):
         """Gets the metadata for the interpolated flag.
 
-        :return: metadata for the interpolated flag
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the interpolated flag
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     interpolated_metadata = property(fget=get_interpolated_metadata)
 
+
     def set_interpolated(self, interpolated):
         """Sets the interpolated flag.
 
-        :param interpolated: the new interpolated flag
-        :type interpolated: ``boolean``
-        :raise: ``InvalidArgument`` -- ``interpolated`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        arg:    interpolated (boolean): the new interpolated flag
+        raise:  InvalidArgument - ``interpolated`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_interpolated(self):
         """Clears the interpolated flag.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    interpolated = property(fget=set_interpolated, fdel=clear_interpolated)
+    interpolated = property(fset=set_interpolated, fdel=clear_interpolated)
+
 
     def get_extrapolated_metadata(self):
         """Gets the metadata for the extrapolated flag.
 
-        :return: metadata for the extrapolated flag
-        :rtype: ``osid.Metadata``
+        return: (osid.Metadata) - metadata for the extrapolated flag
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Metadata
 
     extrapolated_metadata = property(fget=get_extrapolated_metadata)
 
+
     def set_extrapolated(self, extrapolated):
         """Sets the extrapolated flag.
 
-        :param extrapolated: the new extrapolated flag
-        :type extrapolated: ``boolean``
-        :raise: ``InvalidArgument`` -- ``extrapolated`` is invalid
-        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+        arg:    extrapolated (boolean): the new extrapolated flag
+        raise:  InvalidArgument - ``extrapolated`` is invalid
+        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def clear_extrapolated(self):
         """Clears the extrapolated flag.
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+        raise:  NoAccess - ``Metadata.isRequired()`` or
+                ``Metadata.isReadOnly()`` is ``true``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-    extrapolated = property(fget=set_extrapolated, fdel=clear_extrapolated)
+    extrapolated = property(fset=set_extrapolated, fdel=clear_extrapolated)
 
 
 class OsidCapsuleForm(OsidForm):
     """This form is used to create and update capsules."""
+    
+
+
 
 
 
@@ -1623,14 +1890,25 @@ class OsidList:
     elements is not known.
 
     """
+    
+
+
+
     def has_next(self):
         """Tests if there are more elements in this list.
 
-        :return: ``true`` if more elements are available in this list, ``false`` if the end of the list has been reached
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if more elements are available in
+                this list, ``false`` if the end of the list has been
+                reached
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: Any errors that may result from accesing
+        the underlying set of elements are to be deferred until the
+        consumer attempts retrieval in which case the provider must
+        return ``true`` for this method.
 
         """
         return # boolean
+
 
     def available(self):
         """Gets the number of elements available for retrieval.
@@ -1646,11 +1924,21 @@ class OsidList:
         This method does not imply asynchronous usage. All OSID methods
         may block.
 
-        :return: the number of elements available for retrieval
-        :rtype: ``cardinal``
+        return: (cardinal) - the number of elements available for
+                retrieval
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: Any errors that may result from accesing
+        the underlying set of elements are to be deferred until the
+        consumer attempts retrieval in which case the provider must
+        return a positive integer for this method so the consumer can
+        continue execution to receive the error. In all other
+        circumstances, the provider must not return a number greater
+        than the number of elements known since this number will be fed
+        as a parameter to the bulk retrieval method.
 
         """
         return # cardinal
+
 
     def skip(self, n):
         """Skip the specified number of elements in the list.
@@ -1659,8 +1947,8 @@ class OsidList:
         the list, hasNext() becomes false and available() returns zero
         as there are no more elements to retrieve.
 
-        :param n: the number of elements to skip
-        :type n: ``cardinal``
+        arg:    n (cardinal): the number of elements to skip
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -1673,6 +1961,10 @@ class OsidNode(osid_markers.Identifiable, osid_markers.Containable):
     this node.
 
     """
+    
+
+
+
     def is_root(self):
         """Tests if this node is a root in the hierarchy (has no parents).
 
@@ -1681,11 +1973,13 @@ class OsidNode(osid_markers.Identifiable, osid_markers.Containable):
         ``has_parents()`` is false, the parents of this node may be
         accessed thorugh another node structure retrieval.
 
-        :return: ``true`` if this node is a root in the hierarchy, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this node is a root in the
+                hierarchy, ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
+
 
     def has_parents(self):
         """Tests if any parents are available in this node structure.
@@ -1693,22 +1987,25 @@ class OsidNode(osid_markers.Identifiable, osid_markers.Containable):
         There may be no more parents in this node structure however
         there may be parents that exist in the hierarchy.
 
-        :return: ``true`` if this node has parents, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this node has parents, ``false``
+                otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_parent_ids(self):
         """Gets the parents of this node.
 
-        :return: the parents of this node
-        :rtype: ``osid.id.IdList``
+        return: (osid.id.IdList) - the parents of this node
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
     parent_ids = property(fget=get_parent_ids)
+
 
     def is_leaf(self):
         """Tests if this node is a leaf in the hierarchy (has no children).
@@ -1719,11 +2016,13 @@ class OsidNode(osid_markers.Identifiable, osid_markers.Containable):
         this node may be accessed thorugh another node structure
         retrieval.
 
-        :return: ``true`` if this node is a leaf in the hierarchy, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this node is a leaf in the
+                hierarchy, ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
+
 
     def has_children(self):
         """Tests if any children are available in this node structure.
@@ -1731,17 +2030,19 @@ class OsidNode(osid_markers.Identifiable, osid_markers.Containable):
         There may be no more children available in this node structure
         but this node may have children in the hierarchy.
 
-        :return: ``true`` if this node has children, ``false`` otherwise
-        :rtype: ``boolean``
+        return: (boolean) - ``true`` if this node has children,
+                ``false`` otherwise
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
+
     def get_child_ids(self):
         """Gets the children of this node.
 
-        :return: the children of this node
-        :rtype: ``osid.id.IdList``
+        return: (osid.id.IdList) - the children of this node
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList

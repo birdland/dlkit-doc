@@ -192,6 +192,25 @@ Relationship Lookup Methods
 
 
 
+Relationship Query Methods
+--------------------------
+
+   .. autoattribute:: RelationshipQuerySession.family_id
+
+   .. autoattribute:: RelationshipQuerySession.family
+
+   .. automethod:: RelationshipQuerySession.use_federated_family_view
+
+   .. automethod:: RelationshipQuerySession.use_isolated_family_view
+
+   .. automethod:: RelationshipQuerySession.can_search_relationships
+
+   .. autoattribute:: RelationshipQuerySession.relationship_query
+
+   .. automethod:: RelationshipQuerySession.get_relationships_by_query
+
+
+
 Relationship Admin Methods
 --------------------------
 

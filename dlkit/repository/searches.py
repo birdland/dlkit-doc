@@ -1,28 +1,37 @@
+
 from ..osid import searches as osid_searches
 
 
 class AssetSearch(osid_searches.OsidSearch):
     """The search interface for governing asset searches."""
+    
+
+
+
     def search_among_assets(self, asset_ids):
         """Execute this search among the given list of assets.
 
-        :param asset_ids: list of asset ``Ids``
-        :type asset_ids: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``asset_ids`` is ``null``
+        arg:    asset_ids (osid.id.IdList): list of asset ``Ids``
+        raise:  NullArgument - ``asset_ids`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def order_asset_results(self, asset_search_order):
         """Specify an ordering to the search results.
 
-        :param asset_search_order: asset search order
-        :type asset_search_order: ``osid.repository.AssetSearchOrder``
-        :raise: ``NullArgument`` -- ``asset_search_order`` is ``null``
-        :raise: ``Unsupported`` -- ``asset_search_order`` is not of this service
+        arg:    asset_search_order (osid.repository.AssetSearchOrder):
+                asset search order
+        raise:  NullArgument - ``asset_search_order`` is ``null``
+        raise:  Unsupported - ``asset_search_order`` is not of this
+                service
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def get_asset_search_record(self, asset_search_record_type):
         """Gets the asset search record corresponding to the given asset search record ``Type``.
@@ -30,13 +39,16 @@ class AssetSearch(osid_searches.OsidSearch):
         This method used to retrieve an object implementing the
         requested record.
 
-        :param asset_search_record_type: an asset search record type
-        :type asset_search_record_type: ``osid.type.Type``
-        :return: the asset search record
-        :rtype: ``osid.repository.records.AssetSearchRecord``
-        :raise: ``NullArgument`` -- ``asset_search_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(asset_search_record_type)`` is ``false``
+        arg:    asset_search_record_type (osid.type.Type): an asset
+                search record type
+        return: (osid.repository.records.AssetSearchRecord) - the asset
+                search record
+        raise:  NullArgument - ``asset_search_record_type`` is ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported -
+                ``has_record_type(asset_search_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.AssetSearchRecord
@@ -44,28 +56,35 @@ class AssetSearch(osid_searches.OsidSearch):
 
 class AssetSearchResults(osid_searches.OsidSearchResults):
     """This interface provides a means to capture results of a search."""
+    
+
+
+
     def get_assets(self):
         """Gets the asset list resulting from a search.
 
-        :return: the asset list
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``IllegalState`` -- the list has already been retrieved
+        return: (osid.repository.AssetList) - the asset list
+        raise:  IllegalState - the list has already been retrieved
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.AssetList
 
     assets = property(fget=get_assets)
 
+
     def get_asset_query_inspector(self):
         """Gets the inspector for the query to examine the terms used in the search.
 
-        :return: the query inspector
-        :rtype: ``osid.repository.AssetQueryInspector``
+        return: (osid.repository.AssetQueryInspector) - the query
+                inspector
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.AssetQueryInspector
 
     asset_query_inspector = property(fget=get_asset_query_inspector)
+
 
     def get_asset_search_results_record(self, asset_search_record_type):
         """Gets the asset search results record corresponding to the given asset search record ``Type``.
@@ -73,13 +92,16 @@ class AssetSearchResults(osid_searches.OsidSearchResults):
         This method is used to retrieve an object implementing the
         requested record.
 
-        :param asset_search_record_type: an asset search record type
-        :type asset_search_record_type: ``osid.type.Type``
-        :return: the asset search results record
-        :rtype: ``osid.repository.records.AssetSearchResultsRecord``
-        :raise: ``NullArgument`` -- ``asset_search_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(asset_search_record_type)`` is ``false``
+        arg:    asset_search_record_type (osid.type.Type): an asset
+                search record type
+        return: (osid.repository.records.AssetSearchResultsRecord) - the
+                asset search results record
+        raise:  NullArgument - ``asset_search_record_type`` is ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported -
+                ``has_record_type(asset_search_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.AssetSearchResultsRecord
@@ -87,26 +109,35 @@ class AssetSearchResults(osid_searches.OsidSearchResults):
 
 class CompositionSearch(osid_searches.OsidSearch):
     """The interface for governing composition searches."""
+    
+
+
+
     def search_among_compositions(self, composition_ids):
         """Execute this search among the given list of compositions.
 
-        :param composition_ids: list of compositions
-        :type composition_ids: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``composition_ids`` is ``null``
+        arg:    composition_ids (osid.id.IdList): list of compositions
+        raise:  NullArgument - ``composition_ids`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def order_composition_results(self, composition_search_order):
         """Specify an ordering to the search results.
 
-        :param composition_search_order: composition search order
-        :type composition_search_order: ``osid.repository.CompositionSearchOrder``
-        :raise: ``NullArgument`` -- ``composition_search_order`` is ``null``
-        :raise: ``Unsupported`` -- ``composition_search_order`` is not of this service
+        arg:    composition_search_order
+                (osid.repository.CompositionSearchOrder): composition
+                search order
+        raise:  NullArgument - ``composition_search_order`` is ``null``
+        raise:  Unsupported - ``composition_search_order`` is not of
+                this service
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def get_composition_search_record(self, composition_search_record_type):
         """Gets the composition search record corresponding to the given composition search record ``Type``.
@@ -114,13 +145,17 @@ class CompositionSearch(osid_searches.OsidSearch):
         This method is used to retrieve an object implementing the
         requested record.
 
-        :param composition_search_record_type: a composition search record type
-        :type composition_search_record_type: ``osid.type.Type``
-        :return: the composition search record
-        :rtype: ``osid.repository.records.CompositionSearchRecord``
-        :raise: ``NullArgument`` -- ``composition_search_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(composition_search_record_type)`` is ``false``
+        arg:    composition_search_record_type (osid.type.Type): a
+                composition search record type
+        return: (osid.repository.records.CompositionSearchRecord) - the
+                composition search record
+        raise:  NullArgument - ``composition_search_record_type`` is
+                ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported -
+                ``has_record_type(composition_search_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.CompositionSearchRecord
@@ -128,28 +163,35 @@ class CompositionSearch(osid_searches.OsidSearch):
 
 class CompositionSearchResults(osid_searches.OsidSearchResults):
     """This interface provides a means to capture results of a search."""
+    
+
+
+
     def get_compositions(self):
         """Gets the composition list resulting from a search.
 
-        :return: the composition list
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``IllegalState`` -- the list has already been retrieved
+        return: (osid.repository.CompositionList) - the composition list
+        raise:  IllegalState - the list has already been retrieved
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.CompositionList
 
     compositions = property(fget=get_compositions)
 
+
     def get_composition_query_inspector(self):
         """Gets the inspector for the query to examine the terms used in the search.
 
-        :return: the query inspector
-        :rtype: ``osid.repository.CompositionQueryInspector``
+        return: (osid.repository.CompositionQueryInspector) - the query
+                inspector
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.CompositionQueryInspector
 
     composition_query_inspector = property(fget=get_composition_query_inspector)
+
 
     def get_composition_search_results_record(self, composition_search_record_type):
         """Gets the composition search results record corresponding to the given composition search record ``Type``.
@@ -157,13 +199,17 @@ class CompositionSearchResults(osid_searches.OsidSearchResults):
         This method is used to retrieve an object implementing the
         requested record.
 
-        :param composition_search_record_type: a composition search record type
-        :type composition_search_record_type: ``osid.type.Type``
-        :return: the composition search results record
-        :rtype: ``osid.repository.records.CompositionSearchResultsRecord``
-        :raise: ``NullArgument`` -- ``composition_search_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(composition_search_record_type)`` is ``false``
+        arg:    composition_search_record_type (osid.type.Type): a
+                composition search record type
+        return: (osid.repository.records.CompositionSearchResultsRecord)
+                - the composition search results record
+        raise:  NullArgument - ``composition_search_record_type`` is
+                ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported -
+                ``has_record_type(composition_search_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.CompositionSearchResultsRecord
@@ -171,26 +217,35 @@ class CompositionSearchResults(osid_searches.OsidSearchResults):
 
 class RepositorySearch(osid_searches.OsidSearch):
     """The interface for governing repository searches."""
+    
+
+
+
     def search_among_repositories(self, repository_ids):
         """Execute this search among the given list of repositories.
 
-        :param repository_ids: list of repositories
-        :type repository_ids: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
+        arg:    repository_ids (osid.id.IdList): list of repositories
+        raise:  NullArgument - ``repository_ids`` is ``null``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def order_repository_results(self, repository_search_order):
         """Specify an ordering to the search results.
 
-        :param repository_search_order: repository search order
-        :type repository_search_order: ``osid.repository.RepositorySearchOrder``
-        :raise: ``NullArgument`` -- ``repository_search_order`` is ``null``
-        :raise: ``Unsupported`` -- ``repository_search_order`` is not of this service
+        arg:    repository_search_order
+                (osid.repository.RepositorySearchOrder): repository
+                search order
+        raise:  NullArgument - ``repository_search_order`` is ``null``
+        raise:  Unsupported - ``repository_search_order`` is not of this
+                service
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
+
 
     def get_repository_search_record(self, repository_search_record_type):
         """Gets the repository search record corresponding to the given repository search record ``Type``.
@@ -198,13 +253,17 @@ class RepositorySearch(osid_searches.OsidSearch):
         This method is used to retrieve an object implementing the
         requested record.
 
-        :param repository_search_record_type: a repository search record type
-        :type repository_search_record_type: ``osid.type.Type``
-        :return: the repository search record
-        :rtype: ``osid.repository.records.RepositorySearchRecord``
-        :raise: ``NullArgument`` -- ``repository_search_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(repository_search_record_type)`` is ``false``
+        arg:    repository_search_record_type (osid.type.Type): a
+                repository search record type
+        return: (osid.repository.records.RepositorySearchRecord) - the
+                repository search record
+        raise:  NullArgument - ``repository_search_record_type`` is
+                ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported -
+                ``has_record_type(repository_search_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.RepositorySearchRecord
@@ -212,28 +271,35 @@ class RepositorySearch(osid_searches.OsidSearch):
 
 class RepositorySearchResults(osid_searches.OsidSearchResults):
     """This interface provides a means to capture results of a search."""
+    
+
+
+
     def get_repositories(self):
         """Gets the repository list resulting from the search.
 
-        :return: the repository list
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``IllegalState`` -- the list has already been retrieved
+        return: (osid.repository.RepositoryList) - the repository list
+        raise:  IllegalState - the list has already been retrieved
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.RepositoryList
 
     repositories = property(fget=get_repositories)
 
+
     def get_repository_query_inspector(self):
         """Gets the inspector for the query to examine the terms used in the search.
 
-        :return: the query inspector
-        :rtype: ``osid.repository.RepositoryQueryInspector``
+        return: (osid.repository.RepositoryQueryInspector) - the query
+                inspector
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.RepositoryQueryInspector
 
     repository_query_inspector = property(fget=get_repository_query_inspector)
+
 
     def get_repository_search_results_record(self, repository_search_record_type):
         """Gets the repository search results record corresponding to the given repository search record ``Type``.
@@ -241,13 +307,17 @@ class RepositorySearchResults(osid_searches.OsidSearchResults):
         This method is used to retrieve an object implementing the
         requested record.
 
-        :param repository_search_record_type: a repository search record type
-        :type repository_search_record_type: ``osid.type.Type``
-        :return: the repository search results record
-        :rtype: ``osid.repository.records.RepositorySearchResultsRecord``
-        :raise: ``NullArgument`` -- ``repository_search_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(repository_search_record_type)`` is ``false``
+        arg:    repository_search_record_type (osid.type.Type): a
+                repository search record type
+        return: (osid.repository.records.RepositorySearchResultsRecord)
+                - the repository search results record
+        raise:  NullArgument - ``repository_search_record_type`` is
+                ``null``
+        raise:  OperationFailed - unable to complete request
+        raise:  Unsupported -
+                ``has_record_type(repository_search_record_type)`` is
+                ``false``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.RepositorySearchResultsRecord

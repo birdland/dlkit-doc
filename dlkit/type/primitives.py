@@ -1,3 +1,4 @@
+
 from ..osid import markers as osid_markers
 
 
@@ -22,31 +23,22 @@ class Type(osid_markers.OsidPrimitive):
     description and domain.
 
     """
-    def __eq__(self, other):
-        if isinstance(other, Type):
-            return (
-                self.get_authority() == other.get_authority() and
-                self.get_identifier_namespace() == other.get_identifier_namespace() and
-                self.get_identifier() == other.get_identifier()
-                )
-        return NotImplemented
+    
 
-    def __ne__(self, other):
-        result = self.__eq__(other)
-        if result is NotImplemented:
-            return result
-        return not result
+
 
     def get_display_name(self):
         """Gets the full display name of this ``Type``.
 
-        :return: the display name of this ``Type``
-        :rtype: ``osid.locale.DisplayText``
+        return: (osid.locale.DisplayText) - the display name of this
+                ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     display_name = property(fget=get_display_name)
+
 
     def get_display_label(self):
         """Gets the shorter display label for this ``Type``.
@@ -54,24 +46,28 @@ class Type(osid_markers.OsidPrimitive):
         Where a display name of a ``Type`` might be ``"`` Critical
         Logging Priority Type", the display label could be "critical".
 
-        :return: the display label for this ``Type``
-        :rtype: ``osid.locale.DisplayText``
+        return: (osid.locale.DisplayText) - the display label for this
+                ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     display_label = property(fget=get_display_label)
 
+
     def get_description(self):
         """Gets a description of this ``Type``.
 
-        :return: the description of this ``Type``
-        :rtype: ``osid.locale.DisplayText``
+        return: (osid.locale.DisplayText) - the description of this
+                ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     description = property(fget=get_description)
+
 
     def get_domain(self):
         """Gets the domain.
@@ -79,13 +75,14 @@ class Type(osid_markers.OsidPrimitive):
         The domain can provide an information label about ths
         application space of this Type.
 
-        :return: the domain of this ``Type``
-        :rtype: ``osid.locale.DisplayText``
+        return: (osid.locale.DisplayText) - the domain of this ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     domain = property(fget=get_domain)
+
 
     def get_authority(self):
         """Gets the authority of this ``Type``.
@@ -96,21 +93,22 @@ class Type(osid_markers.OsidPrimitive):
         for this ``Type``. This method is used to compare one ``Type``
         to another.
 
-        :return: the authority of this ``Type``
-        :rtype: ``string``
+        return: (string) - the authority of this ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # string
 
     authority = property(fget=get_authority)
 
+
     def get_identifier_namespace(self):
         """Gets the namespace of the identifier.
 
         This method is used to compare one ``Type`` to another.
 
-        :return: the authority of this ``Type``
-        :rtype: ``string``
+        return: (string) - the authority of this ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # string
@@ -119,13 +117,14 @@ class Type(osid_markers.OsidPrimitive):
 
     namespace = property(fget=get_identifier_namespace)
 
+
     def get_identifier(self):
         """Gets the identifier of this ``Type``.
 
         This method is used to compare one ``Type`` to another.
 
-        :return: the identifier of this ``Type``
-        :rtype: ``string``
+        return: (string) - the identifier of this ``Type``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # string

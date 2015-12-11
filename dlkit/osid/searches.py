@@ -1,3 +1,4 @@
+
 from ..osid import rules as osid_rules
 
 
@@ -12,17 +13,20 @@ class OsidSearch(osid_rules.OsidCondition):
     search interface to retrieve the first 25 results:
       OsidSearch os = session.getObjectSearch();
       os.limitResultSet(1, 25);
-      
+
       OsidQuery query;
       query = session.getObjectQuery();
       query.addDescriptionMatch("*food*", wildcardStringMatchType, true);
-      
+
       ObjectSearchResults results = session.getObjectsBySearch(query, os);
       ObjectList list = results.getObjectList();
 
 
-
     """
+    
+
+
+
     def limit_result_set(self, start, end):
         """By default, searches return all matching results.
 
@@ -32,11 +36,11 @@ class OsidSearch(osid_rules.OsidCondition):
         ordering is requested. The ending position must be greater than
         the starting position.
 
-        :param start: the start of the result set
-        :type start: ``cardinal``
-        :param end: the end of the result set
-        :type end: ``cardinal``
-        :raise: ``InvalidArgument`` -- ``end`` is less than or equal to ``start``
+        arg:    start (cardinal): the start of the result set
+        arg:    end (cardinal): the end of the result set
+        raise:  InvalidArgument - ``end`` is less than or equal to
+                ``start``
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -57,6 +61,10 @@ class OsidSearchResults(osid_rules.OsidResult):
     duration = record.getTimeForSearch();
 
     """
+    
+
+
+
     def get_result_size(self):
         """Returns the size of a result set from a search query.
 
@@ -64,8 +72,8 @@ class OsidSearchResults(osid_rules.OsidResult):
         refining search queries and may not be the number of elements
         available through an ``OsidList``.
 
-        :return: the result size
-        :rtype: ``cardinal``
+        return: (cardinal) - the result size
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # cardinal

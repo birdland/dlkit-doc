@@ -16,13 +16,3 @@ Type Manager
 
 
 
-Type Proxy Manager
-------------------
-
-.. autoclass:: TypeProxyManager
-   :show-inheritance:
-
-
-
-
-

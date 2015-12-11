@@ -1,3 +1,4 @@
+
 from ..osid import records as osid_records
 
 
@@ -8,6 +9,9 @@ class ProxyRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
@@ -18,6 +22,9 @@ class ProxyConditionRecord(osid_records.OsidRecord):
     underlying object.
 
     """
+    
+
+
 
 
 
