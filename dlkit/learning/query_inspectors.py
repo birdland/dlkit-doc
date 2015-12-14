@@ -1,13 +1,18 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
 class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidFederateableQueryInspector):
     """This is the query inspector for examining objective queries."""
+
     def get_assessment_id_terms(self):
         """Gets the asset ``Id`` query terms.
 
         :return: the asset ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -20,6 +25,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the asset terms
         :rtype: ``osid.repository.AssetQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.AssetQueryInspector
 
@@ -30,6 +38,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the knowledge category ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -42,6 +53,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the knowledge category terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -52,6 +66,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the cognitive process ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -64,6 +81,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the cognitive process terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -74,6 +94,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -86,6 +109,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the query terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -96,6 +122,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -108,6 +137,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the query terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -118,6 +150,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -130,6 +165,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the query terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -140,6 +178,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -152,6 +193,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the query terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -162,6 +206,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -174,6 +221,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the query terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -184,6 +234,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the activity ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -196,6 +249,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the activity terms
         :rtype: ``osid.learning.ActivityQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ActivityQueryInspector
 
@@ -207,6 +263,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :return: the objective bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -217,6 +276,9 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
 
         :return: the objective bank terms
         :rtype: ``osid.learning.ObjectiveBankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankQueryInspector
@@ -234,17 +296,23 @@ class ObjectiveQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, os
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(objective_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.records.ObjectiveQueryInspectorRecord
 
 
 class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
     """This is the query inspector for examining activity queries."""
+
     def get_objective_id_terms(self):
         """Gets the objective ``Id`` query terms.
 
         :return: the objective ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -257,6 +325,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
         :return: the objective terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -267,6 +338,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
 
         :return: the asset ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -279,6 +353,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
         :return: the asset terms
         :rtype: ``osid.repository.AssetQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.AssetQueryInspector
 
@@ -289,6 +366,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
 
         :return: the course ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -301,6 +381,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
         :return: the course terms
         :rtype: ``osid.course.CourseQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.course.CourseQueryInspector
 
@@ -311,6 +394,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
 
         :return: the assessment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -323,6 +409,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
         :return: the assessment terms
         :rtype: ``osid.assessment.AssessmentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentQueryInspector
 
@@ -334,6 +423,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
         :return: the objective bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -344,6 +436,9 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
 
         :return: the objective bank terms
         :rtype: ``osid.learning.ObjectiveBankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankQueryInspector
@@ -361,17 +456,23 @@ class ActivityQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osi
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(activity_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.records.ActivityQueryInspectorRecord
 
 
 class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector):
     """This is the query inspector for examining proficiency queries."""
+
     def get_resource_id_terms(self):
         """Gets the resource ``Id`` terms.
 
         :return: the resource ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -384,6 +485,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
         :return: the resource terms
         :rtype: ``osid.resource.ResourceQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.resource.ResourceQueryInspector
 
@@ -394,6 +498,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
 
         :return: the objective ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -406,6 +513,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
         :return: the objective terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -416,6 +526,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
 
         :return: the completion terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -428,6 +541,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
         :return: the minimum completion terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -438,6 +554,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
 
         :return: the level ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -450,6 +569,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
         :return: the level terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -461,6 +583,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
         :return: the objective bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -471,6 +596,9 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
 
         :return: the objective bank terms
         :rtype: ``osid.learning.ObjectiveBankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankQueryInspector
@@ -488,17 +616,23 @@ class ProficiencyQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspe
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(proficiency_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.records.ProficiencyQueryInspectorRecord
 
 
 class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     """This is the query inspector for examining objective bank queries."""
+
     def get_objective_id_terms(self):
         """Gets the objective ``Id`` query terms.
 
         :return: the objective ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -511,6 +645,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
         :return: the objective terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -521,6 +658,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
 
         :return: the activity ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -533,6 +673,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
         :return: the activity terms
         :rtype: ``osid.learning.ActivityQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ActivityQueryInspector
 
@@ -543,6 +686,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
 
         :return: the ancestor objective bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -555,6 +701,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
         :return: the ancestor objective bank terms
         :rtype: ``osid.learning.ObjectiveBankQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveBankQueryInspector
 
@@ -566,6 +715,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
         :return: the descendant objective bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -576,6 +728,9 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
 
         :return: the descendant objective bank terms
         :rtype: ``osid.learning.ObjectiveBankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankQueryInspector
@@ -592,6 +747,8 @@ class ObjectiveBankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspecto
         :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(objective_bank_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.records.ObjectiveBankQueryInspectorRecord

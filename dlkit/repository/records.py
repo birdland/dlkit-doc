@@ -9,8 +9,6 @@ class AssetRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class AssetQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -35,8 +31,6 @@ class AssetFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -48,8 +42,6 @@ class AssetSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -61,8 +53,6 @@ class AssetContentRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -74,8 +64,6 @@ class AssetContentQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -87,8 +75,6 @@ class AssetContentFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -100,8 +86,6 @@ class CompositionRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -113,8 +97,6 @@ class CompositionQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -126,8 +108,6 @@ class CompositionFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -139,8 +119,6 @@ class CompositionSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -152,8 +130,6 @@ class RepositoryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -165,8 +141,6 @@ class RepositoryQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -178,8 +152,6 @@ class RepositoryFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -191,8 +163,6 @@ class RepositorySearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 

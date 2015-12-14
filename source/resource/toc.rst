@@ -6,11 +6,10 @@ Resource
 
    summary
    service_managers
-   bin
    managers
    sessions
    objects
+   service_catalog
    searches
    queries
    records
-   rules

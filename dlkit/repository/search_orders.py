@@ -1,14 +1,18 @@
+
 from ..osid import search_orders as osid_search_orders
 
 
 class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidAggregateableSearchOrder, osid_search_orders.OsidSourceableSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_title(self, style):
         """Specifies a preference for ordering the result set by asset title.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -20,6 +24,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -29,6 +35,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -40,6 +48,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -49,6 +59,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -60,6 +72,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -69,6 +83,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -80,6 +96,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -88,6 +106,9 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
 
         :return: ``true`` if a source search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -98,6 +119,9 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :return: the resource search order for the source
         :rtype: ``osid.resource.ResourceSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_source_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_source_search_order()`` is ``true``.*
 
         """
         return # osid.resource.ResourceSearchOrder
@@ -111,6 +135,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -120,6 +146,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -131,6 +159,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -141,6 +171,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -150,6 +182,8 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -167,12 +201,15 @@ class AssetSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(asset_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.records.AssetSearchOrderRecord
 
 
 class CompositionSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidContainableSearchOrder, osid_search_orders.OsidOperableSearchOrder, osid_search_orders.OsidSourceableSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_composition_search_order_record(self, composition_record_type):
         """Gets the composition search order record corresponding to the given repository record ``Type``.
 
@@ -187,12 +224,15 @@ class CompositionSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_sear
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(composition_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.records.CompositionSearchOrderRecord
 
 
 class RepositorySearchOrder(osid_search_orders.OsidCatalogSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_repository_search_order_record(self, repository_record_type):
         """Gets the repository search order record corresponding to the given repository record ``Type``.
 
@@ -205,6 +245,8 @@ class RepositorySearchOrder(osid_search_orders.OsidCatalogSearchOrder):
         :raise: ``NullArgument`` -- ``repository_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(repository_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.RepositorySearchOrderRecord

@@ -36,17 +36,6 @@ Proxy
 
    .. automethod:: Proxy.get_proxy_record
 
-
-
-Proxy Methods
--------------
-
-   .. autoattribute:: ProxySession.proxy_condition
-
-   .. automethod:: ProxySession.get_proxy
-
-
-
 Proxy Condition
 ---------------
 
@@ -72,15 +61,4 @@ Proxy Condition
    .. autoattribute:: ProxyCondition.format_type
 
    .. automethod:: ProxyCondition.get_proxy_condition_record
-
-
-
-Proxy Methods
--------------
-
-   .. autoattribute:: ProxySession.proxy_condition
-
-   .. automethod:: ProxySession.get_proxy
-
-
 

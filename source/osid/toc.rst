@@ -6,7 +6,6 @@ Osid
 
    summary
    service_managers
-   no_catalog
    managers
    sessions
    objects

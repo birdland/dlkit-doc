@@ -23,15 +23,14 @@ class Type(osid_markers.OsidPrimitive):
     description and domain.
 
     """
-    
-
-
 
     def get_display_name(self):
         """Gets the full display name of this ``Type``.
 
-        return: (osid.locale.DisplayText) - the display name of this
-                ``Type``
+        :return: the display name of this ``Type``
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -39,15 +38,16 @@ class Type(osid_markers.OsidPrimitive):
 
     display_name = property(fget=get_display_name)
 
-
     def get_display_label(self):
         """Gets the shorter display label for this ``Type``.
 
         Where a display name of a ``Type`` might be ``"`` Critical
         Logging Priority Type", the display label could be "critical".
 
-        return: (osid.locale.DisplayText) - the display label for this
-                ``Type``
+        :return: the display label for this ``Type``
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -55,12 +55,13 @@ class Type(osid_markers.OsidPrimitive):
 
     display_label = property(fget=get_display_label)
 
-
     def get_description(self):
         """Gets a description of this ``Type``.
 
-        return: (osid.locale.DisplayText) - the description of this
-                ``Type``
+        :return: the description of this ``Type``
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -68,21 +69,22 @@ class Type(osid_markers.OsidPrimitive):
 
     description = property(fget=get_description)
 
-
     def get_domain(self):
         """Gets the domain.
 
         The domain can provide an information label about ths
         application space of this Type.
 
-        return: (osid.locale.DisplayText) - the domain of this ``Type``
+        :return: the domain of this ``Type``
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     domain = property(fget=get_domain)
-
 
     def get_authority(self):
         """Gets the authority of this ``Type``.
@@ -93,7 +95,10 @@ class Type(osid_markers.OsidPrimitive):
         for this ``Type``. This method is used to compare one ``Type``
         to another.
 
-        return: (string) - the authority of this ``Type``
+        :return: the authority of this ``Type``
+        :rtype: ``string``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -101,13 +106,15 @@ class Type(osid_markers.OsidPrimitive):
 
     authority = property(fget=get_authority)
 
-
     def get_identifier_namespace(self):
         """Gets the namespace of the identifier.
 
         This method is used to compare one ``Type`` to another.
 
-        return: (string) - the authority of this ``Type``
+        :return: the authority of this ``Type``
+        :rtype: ``string``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -117,13 +124,15 @@ class Type(osid_markers.OsidPrimitive):
 
     namespace = property(fget=get_identifier_namespace)
 
-
     def get_identifier(self):
         """Gets the identifier of this ``Type``.
 
         This method is used to compare one ``Type`` to another.
 
-        return: (string) - the identifier of this ``Type``
+        :return: the identifier of this ``Type``
+        :rtype: ``string``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

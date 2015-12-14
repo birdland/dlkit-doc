@@ -18,14 +18,14 @@ class OsidSession:
     through the transaction interface.
 
     """
-    
-
-
 
     def get_locale(self):
         """Gets the locale indicating the localization preferences in effect for this session.
 
-        return: (osid.locale.Locale) - the locale
+        :return: the locale
+        :rtype: ``osid.locale.Locale``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -33,17 +33,17 @@ class OsidSession:
 
     locale = property(fget=get_locale)
 
-
     def is_authenticated(self):
         """Tests if an agent is authenticated to this session.
 
-        return: (boolean) - ``true`` if valid authentication credentials
-                exist, ``false`` otherwise
+        :return: ``true`` if valid authentication credentials exist, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_authenticated_agent_id(self):
         """Gets the ``Id`` of the agent authenticated to this session.
@@ -51,8 +51,10 @@ class OsidSession:
         This is the agent for which credentials are used either acquired
         natively or via an ``OsidProxyManager``.
 
-        return: (osid.id.Id) - the authenticated agent ``Id``
-        raise:  IllegalState - ``is_authenticated()`` is ``false``
+        :return: the authenticated agent ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- ``is_authenticated()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -60,23 +62,23 @@ class OsidSession:
 
     authenticated_agent_id = property(fget=get_authenticated_agent_id)
 
-
     def get_authenticated_agent(self):
         """Gets the agent authenticated to this session.
 
         This is the agent for which credentials are used either acquired
         natively or via an ``OsidProxyManager``.
 
-        return: (osid.authentication.Agent) - the authenticated agent
-        raise:  IllegalState - ``is_authenticated()`` is ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: the authenticated agent
+        :rtype: ``osid.authentication.Agent``
+        :raise: ``IllegalState`` -- ``is_authenticated()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.authentication.Agent
 
     authenticated_agent = property(fget=get_authenticated_agent)
-
 
     def get_effective_agent_id(self):
         """Gets the ``Id`` of the effective agent in use by this session.
@@ -87,14 +89,16 @@ class OsidSession:
         ``false,`` then the effective agent may be a default agent used
         for authorization by an unknwon or anonymous user.
 
-        return: (osid.id.Id) - the effective agent
+        :return: the effective agent
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     effective_agent_id = property(fget=get_effective_agent_id)
-
 
     def get_effective_agent(self):
         """Gets the effective agent in use by this session.
@@ -105,8 +109,10 @@ class OsidSession:
         ``false,`` then the effective agent may be a default agent used
         for authorization by an unknwon or anonymous user.
 
-        return: (osid.authentication.Agent) - the effective agent
-        raise:  OperationFailed - unable to complete request
+        :return: the effective agent
+        :rtype: ``osid.authentication.Agent``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -114,11 +120,13 @@ class OsidSession:
 
     effective_agent = property(fget=get_effective_agent)
 
-
     def get_date(self):
         """Gets the service date which may be the current date or the effective date in which this session exists.
 
-        return: (timestamp) - the service date
+        :return: the service date
+        :rtype: ``timestamp``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -126,11 +134,13 @@ class OsidSession:
 
     date = property(fget=get_date)
 
-
     def get_clock_rate(self):
         """Gets the rate of the service clock.
 
-        return: (decimal) - the clock rate
+        :return: the clock rate
+        :rtype: ``decimal``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -138,12 +148,13 @@ class OsidSession:
 
     clock_rate = property(fget=get_clock_rate)
 
-
     def get_format_type(self):
         """Gets the ``DisplayText`` format ``Type`` preference in effect for this session.
 
-        return: (osid.type.Type) - the effective ``DisplayText`` format
-                ``Type``
+        :return: the effective ``DisplayText`` format ``Type``
+        :rtype: ``osid.type.Type``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -151,17 +162,17 @@ class OsidSession:
 
     format_type = property(fget=get_format_type)
 
-
     def supports_transactions(self):
         """Tests for the availability of transactions.
 
-        return: (boolean) - ``true`` if transaction methods are
-                available, ``false`` otherwise
+        :return: ``true`` if transaction methods are available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def start_transaction(self):
         """Starts a new transaction for this sesson.
@@ -173,10 +184,12 @@ class OsidSession:
         transaction before the previous has been committed or aborted
         results in an ``IllegalState`` error.
 
-        return: (osid.transaction.Transaction) - a new transaction
-        raise:  IllegalState - a transaction is already open
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - transactions not supported
+        :return: a new transaction
+        :rtype: ``osid.transaction.Transaction``
+        :raise: ``IllegalState`` -- a transaction is already open
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- transactions not supported
+
         *compliance: optional -- This method must be implemented if
         ``supports_transactions()`` is true.*
         *implementation notes*: Ideally, a provider that supports

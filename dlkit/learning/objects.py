@@ -6,26 +6,26 @@ from ..osid import sessions as osid_sessions
 
 class Objective(osid_objects.OsidObject, osid_markers.Federateable):
     """An ``Objective`` is a statable learning objective."""
-    
-
-
 
     def has_assessment(self):
         """Tests if an assessment is associated with this objective.
 
-        return: (boolean) - ``true`` if an assessment exists, ``false``
-                otherwise
+        :return: ``true`` if an assessment exists, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_assessment_id(self):
         """Gets the assessment ``Id`` associated with this learning objective.
 
-        return: (osid.id.Id) - the assessment ``Id``
-        raise:  IllegalState - ``has_assessment()`` is ``false``
+        :return: the assessment ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- ``has_assessment()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -33,13 +33,14 @@ class Objective(osid_objects.OsidObject, osid_markers.Federateable):
 
     assessment_id = property(fget=get_assessment_id)
 
-
     def get_assessment(self):
         """Gets the assessment associated with this learning objective.
 
-        return: (osid.assessment.Assessment) - the assessment
-        raise:  IllegalState - ``has_assessment()`` is ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: the assessment
+        :rtype: ``osid.assessment.Assessment``
+        :raise: ``IllegalState`` -- ``has_assessment()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -47,23 +48,25 @@ class Objective(osid_objects.OsidObject, osid_markers.Federateable):
 
     assessment = property(fget=get_assessment)
 
-
     def has_knowledge_category(self):
         """Tests if this objective has a knowledge dimension.
 
-        return: (boolean) - ``true`` if a knowledge category exists,
-                ``false`` otherwise
+        :return: ``true`` if a knowledge category exists, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_knowledge_category_id(self):
         """Gets the grade ``Id`` associated with the knowledge dimension.
 
-        return: (osid.id.Id) - the grade ``Id``
-        raise:  IllegalState - ``has_knowledge_category()`` is ``false``
+        :return: the grade ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- ``has_knowledge_category()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -71,13 +74,14 @@ class Objective(osid_objects.OsidObject, osid_markers.Federateable):
 
     knowledge_category_id = property(fget=get_knowledge_category_id)
 
-
     def get_knowledge_category(self):
         """Gets the grade associated with the knowledge dimension.
 
-        return: (osid.grading.Grade) - the grade
-        raise:  IllegalState - ``has_knowledge_category()`` is ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: the grade
+        :rtype: ``osid.grading.Grade``
+        :raise: ``IllegalState`` -- ``has_knowledge_category()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -85,23 +89,25 @@ class Objective(osid_objects.OsidObject, osid_markers.Federateable):
 
     knowledge_category = property(fget=get_knowledge_category)
 
-
     def has_cognitive_process(self):
         """Tests if this objective has a cognitive process type.
 
-        return: (boolean) - ``true`` if a cognitive process exists,
-                ``false`` otherwise
+        :return: ``true`` if a cognitive process exists, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_cognitive_process_id(self):
         """Gets the grade ``Id`` associated with the cognitive process.
 
-        return: (osid.id.Id) - the grade ``Id``
-        raise:  IllegalState - ``has_cognitive_process()`` is ``false``
+        :return: the grade ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- ``has_cognitive_process()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -109,20 +115,20 @@ class Objective(osid_objects.OsidObject, osid_markers.Federateable):
 
     cognitive_process_id = property(fget=get_cognitive_process_id)
 
-
     def get_cognitive_process(self):
         """Gets the grade associated with the cognitive process.
 
-        return: (osid.grading.Grade) - the grade
-        raise:  IllegalState - ``has_cognitive_process()`` is ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: the grade
+        :rtype: ``osid.grading.Grade``
+        :raise: ``IllegalState`` -- ``has_cognitive_process()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.Grade
 
     cognitive_process = property(fget=get_cognitive_process)
-
 
     def get_objective_record(self, objective_record_type):
         """Gets the objective bank record corresponding to the given ``Objective`` record ``Type``.
@@ -133,14 +139,14 @@ class Objective(osid_objects.OsidObject, osid_markers.Federateable):
         parents in a ``Type`` hierarchy where
         ``has_record_type(objective_record_type)`` is ``true`` .
 
-        arg:    objective_record_type (osid.type.Type): an objective
-                record type
-        return: (osid.learning.records.ObjectiveRecord) - the objective
-                record
-        raise:  NullArgument - ``objective_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(objective_record_type)``
-                is ``false``
+        :param objective_record_type: an objective record type
+        :type objective_record_type: ``osid.type.Type``
+        :return: the objective record
+        :rtype: ``osid.learning.records.ObjectiveRecord``
+        :raise: ``NullArgument`` -- ``objective_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(objective_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -157,14 +163,14 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
     constraints.
 
     """
-    
-
-
 
     def get_assessment_metadata(self):
         """Gets the metadata for an assessment.
 
-        return: (osid.Metadata) - metadata for the assessment
+        :return: metadata for the assessment
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -172,25 +178,25 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
     assessment_metadata = property(fget=get_assessment_metadata)
 
-
     def set_assessment(self, assessment_id):
         """Sets the assessment.
 
-        arg:    assessment_id (osid.id.Id): the new assessment
-        raise:  InvalidArgument - ``assessment_id`` is invalid
-        raise:  NoAccess - ``assessment_id`` cannot be modified
-        raise:  NullArgument - ``assessment_id`` is ``null``
+        :param assessment_id: the new assessment
+        :type assessment_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``assessment_id`` is invalid
+        :raise: ``NoAccess`` -- ``assessment_id`` cannot be modified
+        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_assessment(self):
         """Clears the assessment.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -198,11 +204,13 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
     assessment = property(fset=set_assessment, fdel=clear_assessment)
 
-
     def get_knowledge_category_metadata(self):
         """Gets the metadata for a knowledge category.
 
-        return: (osid.Metadata) - metadata for the knowledge category
+        :return: metadata for the knowledge category
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -210,25 +218,25 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
     knowledge_category_metadata = property(fget=get_knowledge_category_metadata)
 
-
     def set_knowledge_category(self, grade_id):
         """Sets the knowledge category.
 
-        arg:    grade_id (osid.id.Id): the new knowledge category
-        raise:  InvalidArgument - ``grade_id`` is invalid
-        raise:  NoAccess - ``grade_id`` cannot be modified
-        raise:  NullArgument - ``grade_id`` is ``null``
+        :param grade_id: the new knowledge category
+        :type grade_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``grade_id`` is invalid
+        :raise: ``NoAccess`` -- ``grade_id`` cannot be modified
+        :raise: ``NullArgument`` -- ``grade_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_knowledge_category(self):
         """Clears the knowledge category.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -236,11 +244,13 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
     knowledge_category = property(fset=set_knowledge_category, fdel=clear_knowledge_category)
 
-
     def get_cognitive_process_metadata(self):
         """Gets the metadata for a cognitive process.
 
-        return: (osid.Metadata) - metadata for the cognitive process
+        :return: metadata for the cognitive process
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -248,25 +258,25 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
     cognitive_process_metadata = property(fget=get_cognitive_process_metadata)
 
-
     def set_cognitive_process(self, grade_id):
         """Sets the cognitive process.
 
-        arg:    grade_id (osid.id.Id): the new cognitive process
-        raise:  InvalidArgument - ``grade_id`` is invalid
-        raise:  NoAccess - ``grade_id`` cannot be modified
-        raise:  NullArgument - ``grade_id`` is ``null``
+        :param grade_id: the new cognitive process
+        :type grade_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``grade_id`` is invalid
+        :raise: ``NoAccess`` -- ``grade_id`` cannot be modified
+        :raise: ``NullArgument`` -- ``grade_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_cognitive_process(self):
         """Clears the cognitive process.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -274,18 +284,17 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
     cognitive_process = property(fset=set_cognitive_process, fdel=clear_cognitive_process)
 
-
     def get_objective_form_record(self, objective_record_type):
         """Gets the ``ObjectiveFormRecord`` corresponding to the given objective record ``Type``.
 
-        arg:    objective_record_type (osid.type.Type): the objective
-                record type
-        return: (osid.learning.records.ObjectiveFormRecord) - the
-                objective form record
-        raise:  NullArgument - ``objective_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(objective_record_type)``
-                is ``false``
+        :param objective_record_type: the objective record type
+        :type objective_record_type: ``osid.type.Type``
+        :return: the objective form record
+        :rtype: ``osid.learning.records.ObjectiveFormRecord``
+        :raise: ``NullArgument`` -- ``objective_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(objective_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -306,19 +315,16 @@ class ObjectiveList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_objective(self):
         """Gets the next ``Objective`` in this list.
 
-        return: (osid.learning.Objective) - the next ``Objective`` in
-                this list. The ``has_next()`` method should be used to
-                test that a next ``Objective`` is available before
-                calling this method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``Objective`` in this list. The ``has_next()`` method should be used to test that a next
+        ``Objective`` is available before calling this method.
+        :rtype: ``osid.learning.Objective``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -326,19 +332,18 @@ class ObjectiveList(osid_objects.OsidList):
 
     next_objective = property(fget=get_next_objective)
 
-
     def get_next_objectives(self, n):
         """Gets the next set of ``Objective`` elements in this list which must be less than or equal to the number
         returned from ``available()``.
 
-        arg:    n (cardinal): the number of ``Objective`` elements
-                requested which should be less than or equal to
-                ``available()``
-        return: (osid.learning.Objective) - an array of ``Objective``
-                elements.The length of the array is less than or equal
-                to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``Objective`` elements requested which should be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``Objective`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.learning.Objective``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -353,15 +358,14 @@ class ObjectiveNode(osid_objects.OsidNode):
     ``ObjectiveHierarchySession``.
 
     """
-    
-
-
 
     def get_objective(self):
         """Gets the ``Objective`` at this node.
 
-        return: (osid.learning.Objective) - the objective represented by
-                this node
+        :return: the objective represented by this node
+        :rtype: ``osid.learning.Objective``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -369,12 +373,13 @@ class ObjectiveNode(osid_objects.OsidNode):
 
     objective = property(fget=get_objective)
 
-
     def get_parent_objective_nodes(self):
         """Gets the parents of this objective.
 
-        return: (osid.learning.ObjectiveNodeList) - the parents of the
-                ``id``
+        :return: the parents of the ``id``
+        :rtype: ``osid.learning.ObjectiveNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -382,12 +387,13 @@ class ObjectiveNode(osid_objects.OsidNode):
 
     parent_objective_nodes = property(fget=get_parent_objective_nodes)
 
-
     def get_child_objective_nodes(self):
         """Gets the children of this objective.
 
-        return: (osid.learning.ObjectiveNodeList) - the children of this
-                objective
+        :return: the children of this objective
+        :rtype: ``osid.learning.ObjectiveNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -410,20 +416,16 @@ class ObjectiveNodeList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_objective_node(self):
         """Gets the next ``ObjectiveNode`` in this list.
 
-        return: (osid.learning.ObjectiveNode) - the next
-                ``ObjectiveNode`` in this list. The ``has_next()``
-                method should be used to test that a next
-                ``ObjectiveNode`` is available before calling this
-                method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``ObjectiveNode`` in this list. The ``has_next()`` method should be used to test that a next
+        ``ObjectiveNode`` is available before calling this method.
+        :rtype: ``osid.learning.ObjectiveNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -431,19 +433,19 @@ class ObjectiveNodeList(osid_objects.OsidList):
 
     next_objective_node = property(fget=get_next_objective_node)
 
-
     def get_next_objective_nodes(self, n):
         """Gets the next set of ``ObjectiveNode`` elements in this list which must be less than or equal to the number
         returned from ``available()``.
 
-        arg:    n (cardinal): the number of ``ObjectiveNode`` elements
-                requested which should be less than or equal to
-                ``available()``
-        return: (osid.learning.ObjectiveNode) - an array of
-                ``ObjectiveNode`` elements.The length of the array is
-                less than or equal to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``ObjectiveNode`` elements requested which should be less than or equal to
+        ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``ObjectiveNode`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.learning.ObjectiveNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -464,14 +466,14 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
     objective described or related in the ``ActivityRecord``.
 
     """
-    
-
-
 
     def get_objective_id(self):
         """Gets the ``Id`` of the related objective.
 
-        return: (osid.id.Id) - the objective ``Id``
+        :return: the objective ``Id``
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -479,12 +481,13 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     objective_id = property(fget=get_objective_id)
 
-
     def get_objective(self):
         """Gets the related objective.
 
-        return: (osid.learning.Objective) - the related objective
-        raise:  OperationFailed - unable to complete request
+        :return: the related objective
+        :rtype: ``osid.learning.Objective``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -492,24 +495,25 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     objective = property(fget=get_objective)
 
-
     def is_asset_based_activity(self):
         """Tests if this is an asset based activity.
 
-        return: (boolean) - ``true`` if this activity is based on
-                assets, ``false`` otherwise
+        :return: ``true`` if this activity is based on assets, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_asset_ids(self):
         """Gets the ``Ids`` of any assets associated with this activity.
 
-        return: (osid.id.IdList) - list of asset ``Ids``
-        raise:  IllegalState - ``is_asset_based_activity()`` is
-                ``false``
+        :return: list of asset ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``IllegalState`` -- ``is_asset_based_activity()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -517,14 +521,14 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     asset_ids = property(fget=get_asset_ids)
 
-
     def get_assets(self):
         """Gets any assets associated with this activity.
 
-        return: (osid.repository.AssetList) - list of assets
-        raise:  IllegalState - ``is_asset_based_activity()`` is
-                ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: list of assets
+        :rtype: ``osid.repository.AssetList``
+        :raise: ``IllegalState`` -- ``is_asset_based_activity()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -532,24 +536,25 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     assets = property(fget=get_assets)
 
-
     def is_course_based_activity(self):
         """Tests if this is a course based activity.
 
-        return: (boolean) - ``true`` if this activity is based on
-                courses, ``false`` otherwise
+        :return: ``true`` if this activity is based on courses, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_course_ids(self):
         """Gets the ``Ids`` of any courses associated with this activity.
 
-        return: (osid.id.IdList) - list of course ``Ids``
-        raise:  IllegalState - ``is_course_based_activity()`` is
-                ``false``
+        :return: list of course ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``IllegalState`` -- ``is_course_based_activity()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -557,14 +562,14 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     course_ids = property(fget=get_course_ids)
 
-
     def get_courses(self):
         """Gets any courses associated with this activity.
 
-        return: (osid.course.CourseList) - list of courses
-        raise:  IllegalState - ``is_course_based_activity()`` is
-                ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: list of courses
+        :rtype: ``osid.course.CourseList``
+        :raise: ``IllegalState`` -- ``is_course_based_activity()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -572,27 +577,28 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     courses = property(fget=get_courses)
 
-
     def is_assessment_based_activity(self):
         """Tests if this is an assessment based activity.
 
         These assessments are for learning the objective and not for
         assessing prodiciency in the objective.
 
-        return: (boolean) - ``true`` if this activity is based on
-                assessments, ``false`` otherwise
+        :return: ``true`` if this activity is based on assessments, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_assessment_ids(self):
         """Gets the ``Ids`` of any assessments associated with this activity.
 
-        return: (osid.id.IdList) - list of assessment ``Ids``
-        raise:  IllegalState - ``is_assessment_based_activity()`` is
-                ``false``
+        :return: list of assessment ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``IllegalState`` -- ``is_assessment_based_activity()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -600,21 +606,20 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
 
     assessment_ids = property(fget=get_assessment_ids)
 
-
     def get_assessments(self):
         """Gets any assessments associated with this activity.
 
-        return: (osid.assessment.AssessmentList) - list of assessments
-        raise:  IllegalState - ``is_assessment_based_activity()`` is
-                ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: list of assessments
+        :rtype: ``osid.assessment.AssessmentList``
+        :raise: ``IllegalState`` -- ``is_assessment_based_activity()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.AssessmentList
 
     assessments = property(fget=get_assessments)
-
 
     def get_activity_record(self, activity_record_type):
         """Gets the activity record corresponding to the given ``Activity`` record ``Type``.
@@ -625,14 +630,14 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
         parents in a ``Type`` hierarchy where
         ``has_record_type(activity_record_type)`` is ``true`` .
 
-        arg:    activity_record_type (osid.type.Type): the type of the
-                record to retrieve
-        return: (osid.learning.records.ActivityRecord) - the activity
-                record
-        raise:  NullArgument - ``activity_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(activity_record_type)``
-                is ``false``
+        :param activity_record_type: the type of the record to retrieve
+        :type activity_record_type: ``osid.type.Type``
+        :return: the activity record
+        :rtype: ``osid.learning.records.ActivityRecord``
+        :raise: ``NullArgument`` -- ``activity_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(activity_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -649,14 +654,14 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
     constraints.
 
     """
-    
-
-
 
     def get_assets_metadata(self):
         """Gets the metadata for the assets.
 
-        return: (osid.Metadata) - metadata for the assets
+        :return: metadata for the assets
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -664,25 +669,25 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
     assets_metadata = property(fget=get_assets_metadata)
 
-
     def set_assets(self, asset_ids):
         """Sets the assets.
 
-        arg:    asset_ids (osid.id.Id[]): the asset ``Ids``
-        raise:  InvalidArgument - ``asset_ids`` is invalid
-        raise:  NullArgument - ``asset_ids`` is ``null``
-        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        :param asset_ids: the asset ``Ids``
+        :type asset_ids: ``osid.id.Id[]``
+        :raise: ``InvalidArgument`` -- ``asset_ids`` is invalid
+        :raise: ``NullArgument`` -- ``asset_ids`` is ``null``
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_assets(self):
         """Clears the assets.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -690,11 +695,13 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
     assets = property(fset=set_assets, fdel=clear_assets)
 
-
     def get_courses_metadata(self):
         """Gets the metadata for the courses.
 
-        return: (osid.Metadata) - metadata for the courses
+        :return: metadata for the courses
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -702,25 +709,25 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
     courses_metadata = property(fget=get_courses_metadata)
 
-
     def set_courses(self, course_ids):
         """Sets the courses.
 
-        arg:    course_ids (osid.id.Id[]): the course ``Ids``
-        raise:  InvalidArgument - ``course_ids`` is invalid
-        raise:  NullArgument - ``course_ids`` is ``null``
-        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        :param course_ids: the course ``Ids``
+        :type course_ids: ``osid.id.Id[]``
+        :raise: ``InvalidArgument`` -- ``course_ids`` is invalid
+        :raise: ``NullArgument`` -- ``course_ids`` is ``null``
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_courses(self):
         """Clears the courses.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -728,11 +735,13 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
     courses = property(fset=set_courses, fdel=clear_courses)
 
-
     def get_assessments_metadata(self):
         """Gets the metadata for the assessments.
 
-        return: (osid.Metadata) - metadata for the assessments
+        :return: metadata for the assessments
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -740,25 +749,25 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
     assessments_metadata = property(fget=get_assessments_metadata)
 
-
     def set_assessments(self, assessment_ids):
         """Sets the assessments.
 
-        arg:    assessment_ids (osid.id.Id[]): the assessment ``Ids``
-        raise:  InvalidArgument - ``assessment_ids`` is invalid
-        raise:  NullArgument - ``assessment_ids`` is ``null``
-        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        :param assessment_ids: the assessment ``Ids``
+        :type assessment_ids: ``osid.id.Id[]``
+        :raise: ``InvalidArgument`` -- ``assessment_ids`` is invalid
+        :raise: ``NullArgument`` -- ``assessment_ids`` is ``null``
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_assessments(self):
         """Clears the assessments.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -766,18 +775,17 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
     assessments = property(fset=set_assessments, fdel=clear_assessments)
 
-
     def get_activity_form_record(self, activity_record_type):
         """Gets the ``ActivityFormRecord`` corresponding to the given activity record ``Type``.
 
-        arg:    activity_record_type (osid.type.Type): the activity
-                record type
-        return: (osid.learning.records.ActivityFormRecord) - the
-                activity form record
-        raise:  NullArgument - ``activity_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(activity_record_type)``
-                is ``false``
+        :param activity_record_type: the activity record type
+        :type activity_record_type: ``osid.type.Type``
+        :return: the activity form record
+        :rtype: ``osid.learning.records.ActivityFormRecord``
+        :raise: ``NullArgument`` -- ``activity_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(activity_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -798,19 +806,16 @@ class ActivityList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_activity(self):
         """Gets the next ``Activity`` in this list.
 
-        return: (osid.learning.Activity) - the next ``Activity`` in this
-                list. The ``has_next()`` method should be used to test
-                that a next ``Activity`` is available before calling
-                this method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``Activity`` in this list. The ``has_next()`` method should be used to test that a next
+        ``Activity`` is available before calling this method.
+        :rtype: ``osid.learning.Activity``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -818,19 +823,18 @@ class ActivityList(osid_objects.OsidList):
 
     next_activity = property(fget=get_next_activity)
 
-
     def get_next_activities(self, n):
         """Gets the next set of ``Activity`` elements in this list which must be less than or equal to the number
         returned from ``available()``.
 
-        arg:    n (cardinal): the number of ``Activity`` elements
-                requested which should be less than or equal to
-                ``available()``
-        return: (osid.learning.Activity) - an array of ``Activity``
-                elements.The length of the array is less than or equal
-                to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``Activity`` elements requested which should be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``Activity`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.learning.Activity``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -839,9 +843,6 @@ class ActivityList(osid_objects.OsidList):
 
 class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """an objective bank defines a collection of objectives."""
-    
-
-
 
     def get_objective_bank_record(self, objective_bank_record_type):
         """Gets the objective bank record corresponding to the given ``ObjectiveBank`` record ``Type``.
@@ -852,16 +853,14 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         parents in a ``Type`` hierarchy where
         ``has_record_type(objective_bank_record_type)`` is ``true`` .
 
-        arg:    objective_bank_record_type (osid.type.Type): an
-                objective bank record type
-        return: (osid.learning.records.ObjectiveBankRecord) - the
-                objective bank record
-        raise:  NullArgument - ``objective_bank_record_type`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported -
-                ``has_record_type(objective_bank_record_type)`` is
-                ``false``
+        :param objective_bank_record_type: an objective bank record type
+        :type objective_bank_record_type: ``osid.type.Type``
+        :return: the objective bank record
+        :rtype: ``osid.learning.records.ObjectiveBankRecord``
+        :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(objective_bank_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -878,23 +877,18 @@ class ObjectiveBankForm(osid_objects.OsidCatalogForm):
     constraints.
 
     """
-    
-
-
 
     def get_objective_bank_form_record(self, objective_bank_record_type):
         """Gets the ``ObjectiveBankFormRecord`` corresponding to the given objective bank record ``Type``.
 
-        arg:    objective_bank_record_type (osid.type.Type): an
-                objective bank record type
-        return: (osid.learning.records.ObjectiveBankFormRecord) - the
-                objective bank form record
-        raise:  NullArgument - ``objective_bank_record_type`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported -
-                ``has_record_type(objective_bank_record_type)`` is
-                ``false``
+        :param objective_bank_record_type: an objective bank record type
+        :type objective_bank_record_type: ``osid.type.Type``
+        :return: the objective bank form record
+        :rtype: ``osid.learning.records.ObjectiveBankFormRecord``
+        :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(objective_bank_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -915,20 +909,16 @@ class ObjectiveBankList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_objective_bank(self):
         """Gets the next ``ObjectiveBank`` in this list.
 
-        return: (osid.learning.ObjectiveBank) - the next
-                ``ObjectiveBank`` in this list. The ``has_next()``
-                method should be used to test that a next
-                ``ObjectiveBank`` is available before calling this
-                method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``ObjectiveBank`` in this list. The ``has_next()`` method should be used to test that a next
+        ``ObjectiveBank`` is available before calling this method.
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -936,19 +926,18 @@ class ObjectiveBankList(osid_objects.OsidList):
 
     next_objective_bank = property(fget=get_next_objective_bank)
 
-
     def get_next_objective_banks(self, n):
         """Gets the next set of ``ObjectiveBank`` elements in this list which must be less than or equal to the return
         from ``available()``.
 
-        arg:    n (cardinal): the number of ``ObjectiveBank`` elements
-                requested which must be less than or equal to
-                ``available()``
-        return: (osid.learning.ObjectiveBank) - an array of
-                ``ObjectiveBank`` elements.The length of the array is
-                less than or equal to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``ObjectiveBank`` elements requested which must be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``ObjectiveBank`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -963,15 +952,14 @@ class ObjectiveBankNode(osid_objects.OsidNode):
     ``ObjectiveBankHierarchySession``.
 
     """
-    
-
-
 
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` at this node.
 
-        return: (osid.learning.ObjectiveBank) - the objective bank
-                represented by this node
+        :return: the objective bank represented by this node
+        :rtype: ``osid.learning.ObjectiveBank``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -979,12 +967,13 @@ class ObjectiveBankNode(osid_objects.OsidNode):
 
     objective_bank = property(fget=get_objective_bank)
 
-
     def get_parent_objective_bank_nodes(self):
         """Gets the parents of this objective bank.
 
-        return: (osid.learning.ObjectiveBankNodeList) - the parents of
-                the ``id``
+        :return: the parents of the ``id``
+        :rtype: ``osid.learning.ObjectiveBankNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -992,12 +981,13 @@ class ObjectiveBankNode(osid_objects.OsidNode):
 
     parent_objective_bank_nodes = property(fget=get_parent_objective_bank_nodes)
 
-
     def get_child_objective_bank_nodes(self):
         """Gets the children of this objective bank.
 
-        return: (osid.learning.ObjectiveBankNodeList) - the children of
-                this objective bank
+        :return: the children of this objective bank
+        :rtype: ``osid.learning.ObjectiveBankNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1020,20 +1010,16 @@ class ObjectiveBankNodeList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_objective_bank_node(self):
         """Gets the next ``ObjectiveBankNode`` in this list.
 
-        return: (osid.learning.ObjectiveBankNode) - the next
-                ``ObjectiveBankNode`` in this list. The ``has_next()``
-                method should be used to test that a next
-                ``ObjectiveBankNode`` is available before calling this
-                method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``ObjectiveBankNode`` in this list. The ``has_next()`` method should be used to test that a
+        next ``ObjectiveBankNode`` is available before calling this method.
+        :rtype: ``osid.learning.ObjectiveBankNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1041,19 +1027,19 @@ class ObjectiveBankNodeList(osid_objects.OsidList):
 
     next_objective_bank_node = property(fget=get_next_objective_bank_node)
 
-
     def get_next_objective_bank_nodes(self, n):
         """Gets the next set of ``ObjectiveBankNode`` elements in this list which must be less than or equal to the
         return from ``available()``.
 
-        arg:    n (cardinal): the number of ``ObjectiveBankNode``
-                elements requested which must be less than or equal to
-                ``available()``
-        return: (osid.learning.ObjectiveBankNode) - an array of
-                ``ObjectiveBankNode`` elements.The length of the array
-                is less than or equal to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``ObjectiveBankNode`` elements requested which must be less than or equal to
+        ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``ObjectiveBankNode`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.learning.ObjectiveBankNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

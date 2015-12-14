@@ -9,8 +9,6 @@ class RelationshipRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class RelationshipQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -35,8 +31,6 @@ class RelationshipFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -48,8 +42,6 @@ class RelationshipSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -61,8 +53,6 @@ class FamilyRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -74,8 +64,6 @@ class FamilyQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -87,8 +75,6 @@ class FamilyFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -100,8 +86,6 @@ class FamilySearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 

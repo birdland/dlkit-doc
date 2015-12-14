@@ -12,6 +12,126 @@ Learning Manager
 .. autoclass:: LearningManager
    :show-inheritance:
 
+   .. autoattribute:: LearningManager.objective_lookup_session
+
+   .. automethod:: LearningManager.get_objective_lookup_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_query_session
+
+   .. automethod:: LearningManager.get_objective_query_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_search_session
+
+   .. automethod:: LearningManager.get_objective_search_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_admin_session
+
+   .. automethod:: LearningManager.get_objective_admin_session_for_objective_bank
+
+   .. automethod:: LearningManager.get_objective_notification_session
+
+   .. automethod:: LearningManager.get_objective_notification_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_hierarchy_session
+
+   .. automethod:: LearningManager.get_objective_hierarchy_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_hierarchy_design_session
+
+   .. automethod:: LearningManager.get_objective_hierarchy_design_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_sequencing_session
+
+   .. automethod:: LearningManager.get_objective_sequencing_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_objective_bank_session
+
+   .. autoattribute:: LearningManager.objective_objective_bank_assignment_session
+
+   .. automethod:: LearningManager.get_objective_smart_objective_bank_session
+
+   .. autoattribute:: LearningManager.objective_requisite_session
+
+   .. automethod:: LearningManager.get_objective_requisite_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_requisite_assignment_session
+
+   .. automethod:: LearningManager.get_objective_requisite_assignment_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.activity_lookup_session
+
+   .. automethod:: LearningManager.get_activity_lookup_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.activity_query_session
+
+   .. automethod:: LearningManager.get_activity_query_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.activity_search_session
+
+   .. automethod:: LearningManager.get_activity_search_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.activity_admin_session
+
+   .. automethod:: LearningManager.get_activity_admin_session_for_objective_bank
+
+   .. automethod:: LearningManager.get_activity_notification_session
+
+   .. automethod:: LearningManager.get_activity_notification_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.activity_objective_bank_session
+
+   .. autoattribute:: LearningManager.activity_objective_bank_assignment_session
+
+   .. automethod:: LearningManager.get_activity_smart_objective_bank_session
+
+   .. autoattribute:: LearningManager.proficiency_lookup_session
+
+   .. automethod:: LearningManager.get_proficiency_lookup_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.proficiency_query_session
+
+   .. automethod:: LearningManager.get_proficiency_query_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.proficiency_search_session
+
+   .. automethod:: LearningManager.get_proficiency_search_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.proficiency_admin_session
+
+   .. automethod:: LearningManager.get_proficiency_admin_session_for_objective_bank
+
+   .. automethod:: LearningManager.get_proficiency_notification_session
+
+   .. automethod:: LearningManager.get_proficiency_notification_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.proficiency_objective_bank_session
+
+   .. autoattribute:: LearningManager.proficiency_objective_bank_assignment_session
+
+   .. automethod:: LearningManager.get_proficiency_smart_objective_bank_session
+
+   .. autoattribute:: LearningManager.my_learning_path_session
+
+   .. automethod:: LearningManager.get_my_learning_path_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.learning_path_session
+
+   .. automethod:: LearningManager.get_learning_path_session_for_objective_bank
+
+   .. autoattribute:: LearningManager.objective_bank_lookup_session
+
+   .. autoattribute:: LearningManager.objective_bank_query_session
+
+   .. autoattribute:: LearningManager.objective_bank_search_session
+
+   .. autoattribute:: LearningManager.objective_bank_admin_session
+
+   .. automethod:: LearningManager.get_objective_bank_notification_session
+
+   .. autoattribute:: LearningManager.objective_bank_hierarchy_session
+
+   .. autoattribute:: LearningManager.objective_bank_hierarchy_design_session
+
    .. autoattribute:: LearningManager.learning_batch_manager
 
 
@@ -19,480 +139,530 @@ Learning Manager
 Objective Objective Bank Methods
 --------------------------------
 
-   .. automethod:: ObjectiveObjectiveBankSession.can_lookup_objective_objective_bank_mappings
+   .. automethod:: LearningManager.can_lookup_objective_objective_bank_mappings
 
-   .. automethod:: ObjectiveObjectiveBankSession.use_comparative_objective_bank_view
+   .. automethod:: LearningManager.use_comparative_objective_bank_view
 
-   .. automethod:: ObjectiveObjectiveBankSession.use_plenary_objective_bank_view
+   .. automethod:: LearningManager.use_plenary_objective_bank_view
 
-   .. automethod:: ObjectiveObjectiveBankSession.get_objective_ids_by_objective_bank
+   .. automethod:: LearningManager.get_objective_ids_by_objective_bank
 
-   .. automethod:: ObjectiveObjectiveBankSession.get_objectives_by_objective_bank
+   .. automethod:: LearningManager.get_objectives_by_objective_bank
 
-   .. automethod:: ObjectiveObjectiveBankSession.get_objective_ids_by_objective_banks
+   .. automethod:: LearningManager.get_objective_ids_by_objective_banks
 
-   .. automethod:: ObjectiveObjectiveBankSession.get_objectives_by_objective_banks
+   .. automethod:: LearningManager.get_objectives_by_objective_banks
 
-   .. automethod:: ObjectiveObjectiveBankSession.get_objective_bank_ids_by_objective
+   .. automethod:: LearningManager.get_objective_bank_ids_by_objective
 
-   .. automethod:: ObjectiveObjectiveBankSession.get_objective_banks_by_objective
+   .. automethod:: LearningManager.get_objective_banks_by_objective
 
 
 
 Objective Objective Bank Assignment Methods
 -------------------------------------------
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.can_assign_objectives
+   .. automethod:: LearningManager.can_assign_objectives
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.can_assign_objectives_to_objective_bank
+   .. automethod:: LearningManager.can_assign_objectives_to_objective_bank
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.get_assignable_objective_bank_ids
+   .. automethod:: LearningManager.get_assignable_objective_bank_ids
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.get_assignable_objective_bank_ids_for_objective
+   .. automethod:: LearningManager.get_assignable_objective_bank_ids_for_objective
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.assign_objective_to_objective_bank
+   .. automethod:: LearningManager.assign_objective_to_objective_bank
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.unassign_objective_from_objective_bank
+   .. automethod:: LearningManager.unassign_objective_from_objective_bank
 
-   .. automethod:: ObjectiveObjectiveBankAssignmentSession.reassign_proficiency_to_objective_bank
+   .. automethod:: LearningManager.reassign_proficiency_to_objective_bank
 
 
 
 Activity Objective Bank Methods
 -------------------------------
 
-   .. automethod:: ActivityObjectiveBankSession.can_lookup_activity_objective_bank_mappings
+   .. automethod:: LearningManager.can_lookup_activity_objective_bank_mappings
 
-   .. automethod:: ActivityObjectiveBankSession.use_comparative_objective_bank_view
+   .. automethod:: LearningManager.use_comparative_objective_bank_view
 
-   .. automethod:: ActivityObjectiveBankSession.use_plenary_objective_bank_view
+   .. automethod:: LearningManager.use_plenary_objective_bank_view
 
-   .. automethod:: ActivityObjectiveBankSession.get_activity_ids_by_objective_bank
+   .. automethod:: LearningManager.get_activity_ids_by_objective_bank
 
-   .. automethod:: ActivityObjectiveBankSession.get_activities_by_objective_bank
+   .. automethod:: LearningManager.get_activities_by_objective_bank
 
-   .. automethod:: ActivityObjectiveBankSession.get_activity_ids_by_objective_banks
+   .. automethod:: LearningManager.get_activity_ids_by_objective_banks
 
-   .. automethod:: ActivityObjectiveBankSession.get_activities_by_objective_banks
+   .. automethod:: LearningManager.get_activities_by_objective_banks
 
-   .. automethod:: ActivityObjectiveBankSession.get_objective_bank_ids_by_activity
+   .. automethod:: LearningManager.get_objective_bank_ids_by_activity
 
-   .. automethod:: ActivityObjectiveBankSession.get_objective_banks_by_activity
+   .. automethod:: LearningManager.get_objective_banks_by_activity
 
 
 
 Activity Objective Bank Assignment Methods
 ------------------------------------------
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.can_assign_activities
+   .. automethod:: LearningManager.can_assign_activities
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.can_assign_activities_to_objective_bank
+   .. automethod:: LearningManager.can_assign_activities_to_objective_bank
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.get_assignable_objective_bank_ids
+   .. automethod:: LearningManager.get_assignable_objective_bank_ids
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.get_assignable_objective_bank_ids_for_activity
+   .. automethod:: LearningManager.get_assignable_objective_bank_ids_for_activity
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.assign_activity_to_objective_bank
+   .. automethod:: LearningManager.assign_activity_to_objective_bank
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.unassign_activity_from_objective_bank
+   .. automethod:: LearningManager.unassign_activity_from_objective_bank
 
-   .. automethod:: ActivityObjectiveBankAssignmentSession.reassign_activity_to_objective_bank
+   .. automethod:: LearningManager.reassign_activity_to_objective_bank
 
 
 
 Objective Bank Lookup Methods
 -----------------------------
 
-   .. automethod:: ObjectiveBankLookupSession.can_lookup_objective_banks
+   .. automethod:: LearningManager.can_lookup_objective_banks
 
-   .. automethod:: ObjectiveBankLookupSession.use_comparative_objective_bank_view
+   .. automethod:: LearningManager.use_comparative_objective_bank_view
 
-   .. automethod:: ObjectiveBankLookupSession.use_plenary_objective_bank_view
+   .. automethod:: LearningManager.use_plenary_objective_bank_view
 
-   .. automethod:: ObjectiveBankLookupSession.get_objective_bank
+   .. automethod:: LearningManager.get_objective_bank
 
-   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_ids
+   .. automethod:: LearningManager.get_objective_banks_by_ids
 
-   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_genus_type
+   .. automethod:: LearningManager.get_objective_banks_by_genus_type
 
-   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_parent_genus_type
+   .. automethod:: LearningManager.get_objective_banks_by_parent_genus_type
 
-   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_record_type
+   .. automethod:: LearningManager.get_objective_banks_by_record_type
 
-   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_provider
+   .. automethod:: LearningManager.get_objective_banks_by_provider
 
-   .. autoattribute:: ObjectiveBankLookupSession.objective_banks
+   .. autoattribute:: LearningManager.objective_banks
 
 
 
 Objective Bank Admin Methods
 ----------------------------
 
-   .. automethod:: ObjectiveBankAdminSession.can_create_objective_banks
+   .. automethod:: LearningManager.can_create_objective_banks
 
-   .. automethod:: ObjectiveBankAdminSession.can_create_objective_bank_with_record_types
+   .. automethod:: LearningManager.can_create_objective_bank_with_record_types
 
-   .. automethod:: ObjectiveBankAdminSession.get_objective_bank_form_for_create
+   .. automethod:: LearningManager.get_objective_bank_form_for_create
 
-   .. automethod:: ObjectiveBankAdminSession.create_objective_bank
+   .. automethod:: LearningManager.create_objective_bank
 
-   .. automethod:: ObjectiveBankAdminSession.can_update_objective_banks
+   .. automethod:: LearningManager.can_update_objective_banks
 
-   .. automethod:: ObjectiveBankAdminSession.get_objective_bank_form_for_update
+   .. automethod:: LearningManager.get_objective_bank_form_for_update
 
-   .. automethod:: ObjectiveBankAdminSession.update_objective_bank
+   .. automethod:: LearningManager.update_objective_bank
 
-   .. automethod:: ObjectiveBankAdminSession.can_delete_objective_banks
+   .. automethod:: LearningManager.can_delete_objective_banks
 
-   .. automethod:: ObjectiveBankAdminSession.delete_objective_bank
+   .. automethod:: LearningManager.delete_objective_bank
 
-   .. automethod:: ObjectiveBankAdminSession.can_manage_objective_bank_aliases
+   .. automethod:: LearningManager.can_manage_objective_bank_aliases
 
-   .. automethod:: ObjectiveBankAdminSession.alias_objective_bank
+   .. automethod:: LearningManager.alias_objective_bank
 
 
 
 Objective Bank Hierarchy Methods
 --------------------------------
 
-   .. autoattribute:: ObjectiveBankHierarchySession.objective_bank_hierarchy_id
+   .. autoattribute:: LearningManager.objective_bank_hierarchy_id
 
-   .. autoattribute:: ObjectiveBankHierarchySession.objective_bank_hierarchy
+   .. autoattribute:: LearningManager.objective_bank_hierarchy
 
-   .. automethod:: ObjectiveBankHierarchySession.can_access_objective_bank_hierarchy
+   .. automethod:: LearningManager.can_access_objective_bank_hierarchy
 
-   .. automethod:: ObjectiveBankHierarchySession.use_comparative_objective_bank_view
+   .. automethod:: LearningManager.use_comparative_objective_bank_view
 
-   .. automethod:: ObjectiveBankHierarchySession.use_plenary_objective_bank_view
+   .. automethod:: LearningManager.use_plenary_objective_bank_view
 
-   .. autoattribute:: ObjectiveBankHierarchySession.root_objective_bank_ids
+   .. autoattribute:: LearningManager.root_objective_bank_ids
 
-   .. autoattribute:: ObjectiveBankHierarchySession.root_objective_banks
+   .. autoattribute:: LearningManager.root_objective_banks
 
-   .. automethod:: ObjectiveBankHierarchySession.has_parent_objective_banks
+   .. automethod:: LearningManager.has_parent_objective_banks
 
-   .. automethod:: ObjectiveBankHierarchySession.is_parent_of_objective_bank
+   .. automethod:: LearningManager.is_parent_of_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchySession.get_parent_objective_bank_ids
+   .. automethod:: LearningManager.get_parent_objective_bank_ids
 
-   .. automethod:: ObjectiveBankHierarchySession.get_parent_objective_banks
+   .. automethod:: LearningManager.get_parent_objective_banks
 
-   .. automethod:: ObjectiveBankHierarchySession.is_ancestor_of_objective_bank
+   .. automethod:: LearningManager.is_ancestor_of_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchySession.has_child_objective_banks
+   .. automethod:: LearningManager.has_child_objective_banks
 
-   .. automethod:: ObjectiveBankHierarchySession.is_child_of_objective_bank
+   .. automethod:: LearningManager.is_child_of_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchySession.get_child_objective_bank_ids
+   .. automethod:: LearningManager.get_child_objective_bank_ids
 
-   .. automethod:: ObjectiveBankHierarchySession.get_child_objective_banks
+   .. automethod:: LearningManager.get_child_objective_banks
 
-   .. automethod:: ObjectiveBankHierarchySession.is_descendant_of_objective_bank
+   .. automethod:: LearningManager.is_descendant_of_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchySession.get_objective_bank_node_ids
+   .. automethod:: LearningManager.get_objective_bank_node_ids
 
-   .. automethod:: ObjectiveBankHierarchySession.get_objective_bank_nodes
+   .. automethod:: LearningManager.get_objective_bank_nodes
 
 
 
 Objective Bank Hierarchy Design Methods
 ---------------------------------------
 
-   .. autoattribute:: ObjectiveBankHierarchyDesignSession.objective_bank_hierarchy_id
+   .. autoattribute:: LearningManager.objective_bank_hierarchy_id
 
-   .. autoattribute:: ObjectiveBankHierarchyDesignSession.objective_bank_hierarchy
+   .. autoattribute:: LearningManager.objective_bank_hierarchy
 
-   .. automethod:: ObjectiveBankHierarchyDesignSession.can_modify_objective_bank_hierarchy
+   .. automethod:: LearningManager.can_modify_objective_bank_hierarchy
 
-   .. automethod:: ObjectiveBankHierarchyDesignSession.add_root_objective_bank
+   .. automethod:: LearningManager.add_root_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchyDesignSession.remove_root_objective_bank
+   .. automethod:: LearningManager.remove_root_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchyDesignSession.add_child_objective_bank
+   .. automethod:: LearningManager.add_child_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchyDesignSession.remove_child_objective_bank
+   .. automethod:: LearningManager.remove_child_objective_bank
 
-   .. automethod:: ObjectiveBankHierarchyDesignSession.remove_child_objective_banks
+   .. automethod:: LearningManager.remove_child_objective_banks
 
 
 
-Objective Lookup Methods
-------------------------
-
-   .. autoattribute:: ObjectiveLookupSession.objective_bank_id
-
-   .. autoattribute:: ObjectiveLookupSession.objective_bank
-
-   .. automethod:: ObjectiveLookupSession.can_lookup_objectives
-
-   .. automethod:: ObjectiveLookupSession.use_comparative_objective_view
-
-   .. automethod:: ObjectiveLookupSession.use_plenary_objective_view
-
-   .. automethod:: ObjectiveLookupSession.use_federated_objective_bank_view
-
-   .. automethod:: ObjectiveLookupSession.use_isolated_objective_bank_view
-
-   .. automethod:: ObjectiveLookupSession.get_objective
-
-   .. automethod:: ObjectiveLookupSession.get_objectives_by_ids
-
-   .. automethod:: ObjectiveLookupSession.get_objectives_by_genus_type
-
-   .. automethod:: ObjectiveLookupSession.get_objectives_by_parent_genus_type
-
-   .. automethod:: ObjectiveLookupSession.get_objectives_by_record_type
-
-   .. autoattribute:: ObjectiveLookupSession.objectives
-
-
-
-Objective Query Methods
------------------------
-
-   .. autoattribute:: ObjectiveQuerySession.objective_bank_id
-
-   .. autoattribute:: ObjectiveQuerySession.objective_bank
-
-   .. automethod:: ObjectiveQuerySession.can_search_objectives
-
-   .. automethod:: ObjectiveQuerySession.use_federated_objective_bank_view
-
-   .. automethod:: ObjectiveQuerySession.use_isolated_objective_bank_view
-
-   .. autoattribute:: ObjectiveQuerySession.objective_query
-
-   .. automethod:: ObjectiveQuerySession.get_objectives_by_query
-
-
-
-Objective Admin Methods
------------------------
-
-   .. autoattribute:: ObjectiveAdminSession.objective_bank_id
-
-   .. autoattribute:: ObjectiveAdminSession.objective_bank
-
-   .. automethod:: ObjectiveAdminSession.can_create_objectives
-
-   .. automethod:: ObjectiveAdminSession.can_create_objective_with_record_types
-
-   .. automethod:: ObjectiveAdminSession.get_objective_form_for_create
-
-   .. automethod:: ObjectiveAdminSession.create_objective
-
-   .. automethod:: ObjectiveAdminSession.can_update_objectives
-
-   .. automethod:: ObjectiveAdminSession.get_objective_form_for_update
-
-   .. automethod:: ObjectiveAdminSession.update_objective
-
-   .. automethod:: ObjectiveAdminSession.can_delete_objectives
-
-   .. automethod:: ObjectiveAdminSession.delete_objective
-
-   .. automethod:: ObjectiveAdminSession.can_manage_objective_aliases
-
-   .. automethod:: ObjectiveAdminSession.alias_objective
-
-
-
-Objective Hierarchy Methods
----------------------------
-
-   .. autoattribute:: ObjectiveHierarchySession.objective_hierarchy_id
-
-   .. autoattribute:: ObjectiveHierarchySession.objective_hierarchy
-
-   .. automethod:: ObjectiveHierarchySession.can_access_objective_hierarchy
-
-   .. automethod:: ObjectiveHierarchySession.use_comparative_objective_view
-
-   .. automethod:: ObjectiveHierarchySession.use_plenary_objective_view
-
-   .. autoattribute:: ObjectiveHierarchySession.root_objective_ids
-
-   .. autoattribute:: ObjectiveHierarchySession.root_objectives
-
-   .. automethod:: ObjectiveHierarchySession.has_parent_objectives
-
-   .. automethod:: ObjectiveHierarchySession.is_parent_of_objective
-
-   .. automethod:: ObjectiveHierarchySession.get_parent_objective_ids
-
-   .. automethod:: ObjectiveHierarchySession.get_parent_objectives
-
-   .. automethod:: ObjectiveHierarchySession.is_ancestor_of_objective
-
-   .. automethod:: ObjectiveHierarchySession.has_child_objectives
-
-   .. automethod:: ObjectiveHierarchySession.is_child_of_objective
-
-   .. automethod:: ObjectiveHierarchySession.get_child_objective_ids
-
-   .. automethod:: ObjectiveHierarchySession.get_child_objectives
-
-   .. automethod:: ObjectiveHierarchySession.is_descendant_of_objective
-
-   .. automethod:: ObjectiveHierarchySession.get_objective_node_ids
-
-   .. automethod:: ObjectiveHierarchySession.get_objective_nodes
-
-
-
-Objective Hierarchy Design Methods
-----------------------------------
-
-   .. autoattribute:: ObjectiveHierarchyDesignSession.objective_hierarchy_id
-
-   .. autoattribute:: ObjectiveHierarchyDesignSession.objective_hierarchy
-
-   .. automethod:: ObjectiveHierarchyDesignSession.can_modify_objective_hierarchy
-
-   .. automethod:: ObjectiveHierarchyDesignSession.add_root_objective
-
-   .. automethod:: ObjectiveHierarchyDesignSession.remove_root_objective
-
-   .. automethod:: ObjectiveHierarchyDesignSession.add_child_objective
-
-   .. automethod:: ObjectiveHierarchyDesignSession.remove_child_objective
-
-   .. automethod:: ObjectiveHierarchyDesignSession.remove_child_objectives
-
-
-
-Objective Sequencing Methods
-----------------------------
-
-   .. autoattribute:: ObjectiveSequencingSession.objective_hierarchy_id
-
-   .. autoattribute:: ObjectiveSequencingSession.objective_hierarchy
-
-   .. automethod:: ObjectiveSequencingSession.can_sequence_objectives
-
-   .. automethod:: ObjectiveSequencingSession.move_objective_ahead
-
-   .. automethod:: ObjectiveSequencingSession.move_objective_behind
-
-   .. automethod:: ObjectiveSequencingSession.sequence_objectives
-
-
-
-Objective Requisite Methods
----------------------------
-
-   .. autoattribute:: ObjectiveRequisiteSession.objective_bank_id
-
-   .. autoattribute:: ObjectiveRequisiteSession.objective_bank
-
-   .. automethod:: ObjectiveRequisiteSession.can_lookup_objective_prerequisites
-
-   .. automethod:: ObjectiveRequisiteSession.use_comparative_objective_view
-
-   .. automethod:: ObjectiveRequisiteSession.use_plenary_objective_view
-
-   .. automethod:: ObjectiveRequisiteSession.use_federated_objective_bank_view
-
-   .. automethod:: ObjectiveRequisiteSession.use_isolated_objective_bank_view
-
-   .. automethod:: ObjectiveRequisiteSession.get_requisite_objectives
-
-   .. automethod:: ObjectiveRequisiteSession.get_all_requisite_objectives
-
-   .. automethod:: ObjectiveRequisiteSession.get_dependent_objectives
-
-   .. automethod:: ObjectiveRequisiteSession.is_objective_required
-
-   .. automethod:: ObjectiveRequisiteSession.get_equivalent_objectives
-
-
-
-Objective Requisite Assignment Methods
---------------------------------------
-
-   .. autoattribute:: ObjectiveRequisiteAssignmentSession.objective_bank_id
-
-   .. autoattribute:: ObjectiveRequisiteAssignmentSession.objective_bank
-
-   .. automethod:: ObjectiveRequisiteAssignmentSession.can_assign_requisites
-
-   .. automethod:: ObjectiveRequisiteAssignmentSession.assign_objective_requisite
-
-   .. automethod:: ObjectiveRequisiteAssignmentSession.unassign_objective_requisite
-
-   .. automethod:: ObjectiveRequisiteAssignmentSession.assign_equivalent_objective
-
-   .. automethod:: ObjectiveRequisiteAssignmentSession.unassign_equivalent_objective
-
-
-
-Activity Lookup Methods
------------------------
-
-   .. autoattribute:: ActivityLookupSession.objective_bank_id
-
-   .. autoattribute:: ActivityLookupSession.objective_bank
-
-   .. automethod:: ActivityLookupSession.can_lookup_activities
-
-   .. automethod:: ActivityLookupSession.use_comparative_activity_view
-
-   .. automethod:: ActivityLookupSession.use_plenary_activity_view
-
-   .. automethod:: ActivityLookupSession.use_federated_objective_bank_view
-
-   .. automethod:: ActivityLookupSession.use_isolated_objective_bank_view
-
-   .. automethod:: ActivityLookupSession.get_activity
-
-   .. automethod:: ActivityLookupSession.get_activities_by_ids
-
-   .. automethod:: ActivityLookupSession.get_activities_by_genus_type
-
-   .. automethod:: ActivityLookupSession.get_activities_by_parent_genus_type
-
-   .. automethod:: ActivityLookupSession.get_activities_by_record_type
-
-   .. automethod:: ActivityLookupSession.get_activities_for_objective
-
-   .. automethod:: ActivityLookupSession.get_activities_for_objectives
-
-   .. automethod:: ActivityLookupSession.get_activities_by_asset
-
-   .. automethod:: ActivityLookupSession.get_activities_by_assets
-
-   .. autoattribute:: ActivityLookupSession.activities
-
-
-
-Activity Admin Methods
+Learning Proxy Manager
 ----------------------
 
-   .. autoattribute:: ActivityAdminSession.objective_bank_id
+.. autoclass:: LearningProxyManager
+   :show-inheritance:
 
-   .. autoattribute:: ActivityAdminSession.objective_bank
+   .. automethod:: LearningProxyManager.get_objective_lookup_session
 
-   .. automethod:: ActivityAdminSession.can_create_activities
+   .. automethod:: LearningProxyManager.get_objective_lookup_session_for_objective_bank
 
-   .. automethod:: ActivityAdminSession.can_create_activity_with_record_types
+   .. automethod:: LearningProxyManager.get_objective_query_session
 
-   .. automethod:: ActivityAdminSession.get_activity_form_for_create
+   .. automethod:: LearningProxyManager.get_objective_query_session_for_objective_bank
 
-   .. automethod:: ActivityAdminSession.create_activity
+   .. automethod:: LearningProxyManager.get_objective_search_session
 
-   .. automethod:: ActivityAdminSession.can_update_activities
+   .. automethod:: LearningProxyManager.get_objective_search_session_for_objective_bank
 
-   .. automethod:: ActivityAdminSession.get_activity_form_for_update
+   .. automethod:: LearningProxyManager.get_objective_admin_session
 
-   .. automethod:: ActivityAdminSession.update_activity
+   .. automethod:: LearningProxyManager.get_objective_admin_session_for_objective_bank
 
-   .. automethod:: ActivityAdminSession.can_delete_activities
+   .. automethod:: LearningProxyManager.get_objective_notification_session
 
-   .. automethod:: ActivityAdminSession.delete_activity
+   .. automethod:: LearningProxyManager.get_objective_notification_session_for_objective_bank
 
-   .. automethod:: ActivityAdminSession.can_manage_activity_aliases
+   .. automethod:: LearningProxyManager.get_objective_hierarchy_session
 
-   .. automethod:: ActivityAdminSession.alias_activity
+   .. automethod:: LearningProxyManager.get_objective_hierarchy_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_hierarchy_design_session
+
+   .. automethod:: LearningProxyManager.get_objective_hierarchy_design_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_sequencing_session
+
+   .. automethod:: LearningProxyManager.get_objective_sequencing_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_objective_bank_session
+
+   .. automethod:: LearningProxyManager.get_objective_objective_bank_assignment_session
+
+   .. automethod:: LearningProxyManager.get_objective_smart_objective_bank_session
+
+   .. automethod:: LearningProxyManager.get_objective_requisite_session
+
+   .. automethod:: LearningProxyManager.get_objective_requisite_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_requisite_assignment_session
+
+   .. automethod:: LearningProxyManager.get_objective_requisite_assignment_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_lookup_session
+
+   .. automethod:: LearningProxyManager.get_activity_lookup_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_query_session
+
+   .. automethod:: LearningProxyManager.get_activity_query_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_search_session
+
+   .. automethod:: LearningProxyManager.get_activity_search_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_admin_session
+
+   .. automethod:: LearningProxyManager.get_activity_admin_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_notification_session
+
+   .. automethod:: LearningProxyManager.get_activity_notification_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_objective_bank_session
+
+   .. automethod:: LearningProxyManager.get_activity_objective_bank_assignment_session
+
+   .. automethod:: LearningProxyManager.get_activity_smart_objective_bank_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_lookup_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_lookup_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_proficiency_query_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_query_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_proficiency_search_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_search_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_proficiency_admin_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_admin_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_proficiency_notification_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_notification_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_proficiency_objective_bank_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_objective_bank_assignment_session
+
+   .. automethod:: LearningProxyManager.get_proficiency_smart_objective_bank_session
+
+   .. automethod:: LearningProxyManager.get_my_learning_path_session
+
+   .. automethod:: LearningProxyManager.get_my_learning_path_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_learning_path_session
+
+   .. automethod:: LearningProxyManager.get_learning_path_session_for_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_bank_lookup_session
+
+   .. automethod:: LearningProxyManager.get_objective_bank_query_session
+
+   .. automethod:: LearningProxyManager.get_objective_bank_search_session
+
+   .. automethod:: LearningProxyManager.get_objective_bank_admin_session
+
+   .. automethod:: LearningProxyManager.get_objective_bank_notification_session
+
+   .. automethod:: LearningProxyManager.get_objective_bank_hierarchy_session
+
+   .. automethod:: LearningProxyManager.get_objective_bank_hierarchy_design_session
+
+   .. autoattribute:: LearningProxyManager.learning_batch_proxy_manager
+
+
+
+Objective Objective Bank Methods
+--------------------------------
+
+   .. automethod:: LearningProxyManager.can_lookup_objective_objective_bank_mappings
+
+   .. automethod:: LearningProxyManager.use_comparative_objective_bank_view
+
+   .. automethod:: LearningProxyManager.use_plenary_objective_bank_view
+
+   .. automethod:: LearningProxyManager.get_objective_ids_by_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objectives_by_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_ids_by_objective_banks
+
+   .. automethod:: LearningProxyManager.get_objectives_by_objective_banks
+
+   .. automethod:: LearningProxyManager.get_objective_bank_ids_by_objective
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_objective
+
+
+
+Objective Objective Bank Assignment Methods
+-------------------------------------------
+
+   .. automethod:: LearningProxyManager.can_assign_objectives
+
+   .. automethod:: LearningProxyManager.can_assign_objectives_to_objective_bank
+
+   .. automethod:: LearningProxyManager.get_assignable_objective_bank_ids
+
+   .. automethod:: LearningProxyManager.get_assignable_objective_bank_ids_for_objective
+
+   .. automethod:: LearningProxyManager.assign_objective_to_objective_bank
+
+   .. automethod:: LearningProxyManager.unassign_objective_from_objective_bank
+
+   .. automethod:: LearningProxyManager.reassign_proficiency_to_objective_bank
+
+
+
+Activity Objective Bank Methods
+-------------------------------
+
+   .. automethod:: LearningProxyManager.can_lookup_activity_objective_bank_mappings
+
+   .. automethod:: LearningProxyManager.use_comparative_objective_bank_view
+
+   .. automethod:: LearningProxyManager.use_plenary_objective_bank_view
+
+   .. automethod:: LearningProxyManager.get_activity_ids_by_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activities_by_objective_bank
+
+   .. automethod:: LearningProxyManager.get_activity_ids_by_objective_banks
+
+   .. automethod:: LearningProxyManager.get_activities_by_objective_banks
+
+   .. automethod:: LearningProxyManager.get_objective_bank_ids_by_activity
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_activity
+
+
+
+Activity Objective Bank Assignment Methods
+------------------------------------------
+
+   .. automethod:: LearningProxyManager.can_assign_activities
+
+   .. automethod:: LearningProxyManager.can_assign_activities_to_objective_bank
+
+   .. automethod:: LearningProxyManager.get_assignable_objective_bank_ids
+
+   .. automethod:: LearningProxyManager.get_assignable_objective_bank_ids_for_activity
+
+   .. automethod:: LearningProxyManager.assign_activity_to_objective_bank
+
+   .. automethod:: LearningProxyManager.unassign_activity_from_objective_bank
+
+   .. automethod:: LearningProxyManager.reassign_activity_to_objective_bank
+
+
+
+Objective Bank Lookup Methods
+-----------------------------
+
+   .. automethod:: LearningProxyManager.can_lookup_objective_banks
+
+   .. automethod:: LearningProxyManager.use_comparative_objective_bank_view
+
+   .. automethod:: LearningProxyManager.use_plenary_objective_bank_view
+
+   .. automethod:: LearningProxyManager.get_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_ids
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_genus_type
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_parent_genus_type
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_record_type
+
+   .. automethod:: LearningProxyManager.get_objective_banks_by_provider
+
+   .. autoattribute:: LearningProxyManager.objective_banks
+
+
+
+Objective Bank Admin Methods
+----------------------------
+
+   .. automethod:: LearningProxyManager.can_create_objective_banks
+
+   .. automethod:: LearningProxyManager.can_create_objective_bank_with_record_types
+
+   .. automethod:: LearningProxyManager.get_objective_bank_form_for_create
+
+   .. automethod:: LearningProxyManager.create_objective_bank
+
+   .. automethod:: LearningProxyManager.can_update_objective_banks
+
+   .. automethod:: LearningProxyManager.get_objective_bank_form_for_update
+
+   .. automethod:: LearningProxyManager.update_objective_bank
+
+   .. automethod:: LearningProxyManager.can_delete_objective_banks
+
+   .. automethod:: LearningProxyManager.delete_objective_bank
+
+   .. automethod:: LearningProxyManager.can_manage_objective_bank_aliases
+
+   .. automethod:: LearningProxyManager.alias_objective_bank
+
+
+
+Objective Bank Hierarchy Methods
+--------------------------------
+
+   .. autoattribute:: LearningProxyManager.objective_bank_hierarchy_id
+
+   .. autoattribute:: LearningProxyManager.objective_bank_hierarchy
+
+   .. automethod:: LearningProxyManager.can_access_objective_bank_hierarchy
+
+   .. automethod:: LearningProxyManager.use_comparative_objective_bank_view
+
+   .. automethod:: LearningProxyManager.use_plenary_objective_bank_view
+
+   .. autoattribute:: LearningProxyManager.root_objective_bank_ids
+
+   .. autoattribute:: LearningProxyManager.root_objective_banks
+
+   .. automethod:: LearningProxyManager.has_parent_objective_banks
+
+   .. automethod:: LearningProxyManager.is_parent_of_objective_bank
+
+   .. automethod:: LearningProxyManager.get_parent_objective_bank_ids
+
+   .. automethod:: LearningProxyManager.get_parent_objective_banks
+
+   .. automethod:: LearningProxyManager.is_ancestor_of_objective_bank
+
+   .. automethod:: LearningProxyManager.has_child_objective_banks
+
+   .. automethod:: LearningProxyManager.is_child_of_objective_bank
+
+   .. automethod:: LearningProxyManager.get_child_objective_bank_ids
+
+   .. automethod:: LearningProxyManager.get_child_objective_banks
+
+   .. automethod:: LearningProxyManager.is_descendant_of_objective_bank
+
+   .. automethod:: LearningProxyManager.get_objective_bank_node_ids
+
+   .. automethod:: LearningProxyManager.get_objective_bank_nodes
+
+
+
+Objective Bank Hierarchy Design Methods
+---------------------------------------
+
+   .. autoattribute:: LearningProxyManager.objective_bank_hierarchy_id
+
+   .. autoattribute:: LearningProxyManager.objective_bank_hierarchy
+
+   .. automethod:: LearningProxyManager.can_modify_objective_bank_hierarchy
+
+   .. automethod:: LearningProxyManager.add_root_objective_bank
+
+   .. automethod:: LearningProxyManager.remove_root_objective_bank
+
+   .. automethod:: LearningProxyManager.add_child_objective_bank
+
+   .. automethod:: LearningProxyManager.remove_child_objective_bank
+
+   .. automethod:: LearningProxyManager.remove_child_objective_banks
 
 
 

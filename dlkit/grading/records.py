@@ -9,8 +9,6 @@ class GradeRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class GradeQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -35,8 +31,6 @@ class GradeFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -48,8 +42,6 @@ class GradeSystemRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -61,8 +53,6 @@ class GradeSystemQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -74,8 +64,6 @@ class GradeSystemFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -87,8 +75,6 @@ class GradeSystemSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -100,8 +86,6 @@ class GradeEntryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -113,8 +97,6 @@ class GradeEntryQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -126,8 +108,6 @@ class GradeEntryFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -139,8 +119,6 @@ class GradeEntrySearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -152,8 +130,6 @@ class GradebookColumnRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -165,8 +141,6 @@ class GradebookColumnQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -178,8 +152,6 @@ class GradebookColumnFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -191,8 +163,6 @@ class GradebookColumnSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -204,8 +174,6 @@ class GradebookColumnSummaryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -217,8 +185,6 @@ class GradebookColumnSummaryQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -230,8 +196,6 @@ class GradebookRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -243,8 +207,6 @@ class GradebookQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -256,8 +218,6 @@ class GradebookFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -269,8 +229,6 @@ class GradebookSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 

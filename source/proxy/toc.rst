@@ -6,7 +6,6 @@ Proxy
 
    summary
    service_managers
-   no_catalog
    managers
    sessions
    records

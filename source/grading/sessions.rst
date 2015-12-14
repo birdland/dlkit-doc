@@ -1,74 +1,16 @@
 
-.. currentmodule:: dlkit.services.grading
+.. currentmodule:: dlkit.grading.sessions
+.. automodule:: dlkit.grading.sessions
 
-Gradebook
-=========
-
-
-Gradebook
----------
-
-.. autoclass:: Gradebook
-   :show-inheritance:
-
-   .. automethod:: Gradebook.get_gradebook_record
+Sessions
+========
 
 
-
-Gradebook Lookup Methods
-------------------------
-
-   .. automethod:: GradebookLookupSession.can_lookup_gradebooks
-
-   .. automethod:: GradebookLookupSession.use_comparative_gradebook_view
-
-   .. automethod:: GradebookLookupSession.use_plenary_gradebook_view
-
-   .. automethod:: GradebookLookupSession.get_gradebook
-
-   .. automethod:: GradebookLookupSession.get_gradebooks_by_ids
-
-   .. automethod:: GradebookLookupSession.get_gradebooks_by_genus_type
-
-   .. automethod:: GradebookLookupSession.get_gradebooks_by_parent_genus_type
-
-   .. automethod:: GradebookLookupSession.get_gradebooks_by_record_type
-
-   .. automethod:: GradebookLookupSession.get_gradebooks_by_provider
-
-   .. autoattribute:: GradebookLookupSession.gradebooks
-
-
-
-Gradebook Admin Methods
------------------------
-
-   .. automethod:: GradebookAdminSession.can_create_gradebooks
-
-   .. automethod:: GradebookAdminSession.can_create_gradebook_with_record_types
-
-   .. automethod:: GradebookAdminSession.get_gradebook_form_for_create
-
-   .. automethod:: GradebookAdminSession.create_gradebook
-
-   .. automethod:: GradebookAdminSession.can_update_gradebooks
-
-   .. automethod:: GradebookAdminSession.get_gradebook_form_for_update
-
-   .. automethod:: GradebookAdminSession.update_gradebook
-
-   .. automethod:: GradebookAdminSession.can_delete_gradebooks
-
-   .. automethod:: GradebookAdminSession.delete_gradebook
-
-   .. automethod:: GradebookAdminSession.can_manage_gradebook_aliases
-
-   .. automethod:: GradebookAdminSession.alias_gradebook
-
-
-
-Grade System Lookup Methods
+Grade System Lookup Session
 ---------------------------
+
+.. autoclass:: GradeSystemLookupSession
+   :show-inheritance:
 
    .. autoattribute:: GradeSystemLookupSession.gradebook_id
 
@@ -98,10 +40,11 @@ Grade System Lookup Methods
 
    .. autoattribute:: GradeSystemLookupSession.grade_systems
 
-
-
-Grade System Query Methods
+Grade System Query Session
 --------------------------
+
+.. autoclass:: GradeSystemQuerySession
+   :show-inheritance:
 
    .. autoattribute:: GradeSystemQuerySession.gradebook_id
 
@@ -117,10 +60,11 @@ Grade System Query Methods
 
    .. automethod:: GradeSystemQuerySession.get_grade_systems_by_query
 
-
-
-Grade System Admin Methods
+Grade System Admin Session
 --------------------------
+
+.. autoclass:: GradeSystemAdminSession
+   :show-inheritance:
 
    .. autoattribute:: GradeSystemAdminSession.gradebook_id
 
@@ -170,10 +114,11 @@ Grade System Admin Methods
 
    .. automethod:: GradeSystemAdminSession.alias_grade
 
-
-
-Grade Entry Lookup Methods
+Grade Entry Lookup Session
 --------------------------
+
+.. autoclass:: GradeEntryLookupSession
+   :show-inheritance:
 
    .. autoattribute:: GradeEntryLookupSession.gradebook_id
 
@@ -221,10 +166,11 @@ Grade Entry Lookup Methods
 
    .. autoattribute:: GradeEntryLookupSession.grade_entries
 
-
-
-Grade Entry Query Methods
+Grade Entry Query Session
 -------------------------
+
+.. autoclass:: GradeEntryQuerySession
+   :show-inheritance:
 
    .. autoattribute:: GradeEntryQuerySession.gradebook_id
 
@@ -240,10 +186,11 @@ Grade Entry Query Methods
 
    .. automethod:: GradeEntryQuerySession.get_grade_entries_by_query
 
-
-
-Grade Entry Admin Methods
+Grade Entry Admin Session
 -------------------------
+
+.. autoclass:: GradeEntryAdminSession
+   :show-inheritance:
 
    .. autoattribute:: GradeEntryAdminSession.gradebook_id
 
@@ -277,10 +224,11 @@ Grade Entry Admin Methods
 
    .. automethod:: GradeEntryAdminSession.alias_grade_entry
 
-
-
-Gradebook Column Lookup Methods
+Gradebook Column Lookup Session
 -------------------------------
+
+.. autoclass:: GradebookColumnLookupSession
+   :show-inheritance:
 
    .. autoattribute:: GradebookColumnLookupSession.gradebook_id
 
@@ -312,10 +260,11 @@ Gradebook Column Lookup Methods
 
    .. automethod:: GradebookColumnLookupSession.get_gradebook_column_summary
 
-
-
-Gradebook Column Query Methods
+Gradebook Column Query Session
 ------------------------------
+
+.. autoclass:: GradebookColumnQuerySession
+   :show-inheritance:
 
    .. autoattribute:: GradebookColumnQuerySession.gradebook_id
 
@@ -331,10 +280,11 @@ Gradebook Column Query Methods
 
    .. automethod:: GradebookColumnQuerySession.get_gradebook_columns_by_query
 
-
-
-Gradebook Column Admin Methods
+Gradebook Column Admin Session
 ------------------------------
+
+.. autoclass:: GradebookColumnAdminSession
+   :show-inheritance:
 
    .. autoattribute:: GradebookColumnAdminSession.gradebook_id
 
@@ -368,5 +318,57 @@ Gradebook Column Admin Methods
 
    .. automethod:: GradebookColumnAdminSession.alias_gradebook_column
 
+Gradebook Lookup Session
+------------------------
 
+.. autoclass:: GradebookLookupSession
+   :show-inheritance:
+
+   .. automethod:: GradebookLookupSession.can_lookup_gradebooks
+
+   .. automethod:: GradebookLookupSession.use_comparative_gradebook_view
+
+   .. automethod:: GradebookLookupSession.use_plenary_gradebook_view
+
+   .. automethod:: GradebookLookupSession.get_gradebook
+
+   .. automethod:: GradebookLookupSession.get_gradebooks_by_ids
+
+   .. automethod:: GradebookLookupSession.get_gradebooks_by_genus_type
+
+   .. automethod:: GradebookLookupSession.get_gradebooks_by_parent_genus_type
+
+   .. automethod:: GradebookLookupSession.get_gradebooks_by_record_type
+
+   .. automethod:: GradebookLookupSession.get_gradebooks_by_provider
+
+   .. autoattribute:: GradebookLookupSession.gradebooks
+
+Gradebook Admin Session
+-----------------------
+
+.. autoclass:: GradebookAdminSession
+   :show-inheritance:
+
+   .. automethod:: GradebookAdminSession.can_create_gradebooks
+
+   .. automethod:: GradebookAdminSession.can_create_gradebook_with_record_types
+
+   .. automethod:: GradebookAdminSession.get_gradebook_form_for_create
+
+   .. automethod:: GradebookAdminSession.create_gradebook
+
+   .. automethod:: GradebookAdminSession.can_update_gradebooks
+
+   .. automethod:: GradebookAdminSession.get_gradebook_form_for_update
+
+   .. automethod:: GradebookAdminSession.update_gradebook
+
+   .. automethod:: GradebookAdminSession.can_delete_gradebooks
+
+   .. automethod:: GradebookAdminSession.delete_gradebook
+
+   .. automethod:: GradebookAdminSession.can_manage_gradebook_aliases
+
+   .. automethod:: GradebookAdminSession.alias_gradebook
 

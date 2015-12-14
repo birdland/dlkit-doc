@@ -47,9 +47,14 @@ Contents:
    assessment/toc
    commenting/toc
    grading/toc
+   hierarchy/toc
    learning/toc
+   osid/toc
+   proxy/toc
+   relationship/toc
    repository/toc
    resource/toc
+   type/toc
 
 
 Indices and tables

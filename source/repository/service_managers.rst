@@ -12,6 +12,92 @@ Repository Manager
 .. autoclass:: RepositoryManager
    :show-inheritance:
 
+   .. autoattribute:: RepositoryManager.asset_lookup_session
+
+   .. automethod:: RepositoryManager.get_asset_lookup_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_query_session
+
+   .. automethod:: RepositoryManager.get_asset_query_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_search_session
+
+   .. automethod:: RepositoryManager.get_asset_search_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_admin_session
+
+   .. automethod:: RepositoryManager.get_asset_admin_session_for_repository
+
+   .. automethod:: RepositoryManager.get_asset_notification_session
+
+   .. automethod:: RepositoryManager.get_asset_notification_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_repository_session
+
+   .. autoattribute:: RepositoryManager.asset_repository_assignment_session
+
+   .. automethod:: RepositoryManager.get_asset_smart_repository_session
+
+   .. autoattribute:: RepositoryManager.asset_temporal_session
+
+   .. automethod:: RepositoryManager.get_asset_temporal_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_temporal_assignment_session
+
+   .. automethod:: RepositoryManager.get_asset_temporal_assignment_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_spatial_session
+
+   .. automethod:: RepositoryManager.get_asset_spatial_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_spatial_assignment_session
+
+   .. automethod:: RepositoryManager.get_asset_spatial_assignment_session_for_repository
+
+   .. autoattribute:: RepositoryManager.asset_composition_session
+
+   .. autoattribute:: RepositoryManager.asset_composition_design_session
+
+   .. autoattribute:: RepositoryManager.composition_lookup_session
+
+   .. automethod:: RepositoryManager.get_composition_lookup_session_for_repository
+
+   .. autoattribute:: RepositoryManager.composition_query_session
+
+   .. automethod:: RepositoryManager.get_composition_query_session_for_repository
+
+   .. autoattribute:: RepositoryManager.composition_search_session
+
+   .. automethod:: RepositoryManager.get_composition_search_session_for_repository
+
+   .. autoattribute:: RepositoryManager.composition_admin_session
+
+   .. automethod:: RepositoryManager.get_composition_admin_session_for_repository
+
+   .. automethod:: RepositoryManager.get_composition_notification_session
+
+   .. automethod:: RepositoryManager.get_composition_notification_session_for_repository
+
+   .. autoattribute:: RepositoryManager.composition_repository_session
+
+   .. autoattribute:: RepositoryManager.composition_repository_assignment_session
+
+   .. automethod:: RepositoryManager.get_composition_smart_repository_session
+
+   .. autoattribute:: RepositoryManager.repository_lookup_session
+
+   .. autoattribute:: RepositoryManager.repository_query_session
+
+   .. autoattribute:: RepositoryManager.repository_search_session
+
+   .. autoattribute:: RepositoryManager.repository_admin_session
+
+   .. automethod:: RepositoryManager.get_repository_notification_session
+
+   .. autoattribute:: RepositoryManager.repository_hierarchy_session
+
+   .. autoattribute:: RepositoryManager.repository_hierarchy_design_session
+
    .. autoattribute:: RepositoryManager.repository_batch_manager
 
    .. autoattribute:: RepositoryManager.repository_rules_manager
@@ -21,516 +107,512 @@ Repository Manager
 Asset Repository Methods
 ------------------------
 
-   .. automethod:: AssetRepositorySession.can_lookup_asset_repository_mappings
+   .. automethod:: RepositoryManager.can_lookup_asset_repository_mappings
 
-   .. automethod:: AssetRepositorySession.use_comparative_repository_view
+   .. automethod:: RepositoryManager.use_comparative_repository_view
 
-   .. automethod:: AssetRepositorySession.use_plenary_repository_view
+   .. automethod:: RepositoryManager.use_plenary_repository_view
 
-   .. automethod:: AssetRepositorySession.get_asset_ids_by_repository
+   .. automethod:: RepositoryManager.get_asset_ids_by_repository
 
-   .. automethod:: AssetRepositorySession.get_assets_by_repository
+   .. automethod:: RepositoryManager.get_assets_by_repository
 
-   .. automethod:: AssetRepositorySession.get_asset_ids_by_repositories
+   .. automethod:: RepositoryManager.get_asset_ids_by_repositories
 
-   .. automethod:: AssetRepositorySession.get_assets_by_repositories
+   .. automethod:: RepositoryManager.get_assets_by_repositories
 
-   .. automethod:: AssetRepositorySession.get_repository_ids_by_asset
+   .. automethod:: RepositoryManager.get_repository_ids_by_asset
 
-   .. automethod:: AssetRepositorySession.get_repositories_by_asset
+   .. automethod:: RepositoryManager.get_repositories_by_asset
 
 
 
 Asset Repository Assignment Methods
 -----------------------------------
 
-   .. automethod:: AssetRepositoryAssignmentSession.can_assign_assets
+   .. automethod:: RepositoryManager.can_assign_assets
 
-   .. automethod:: AssetRepositoryAssignmentSession.can_assign_assets_to_repository
+   .. automethod:: RepositoryManager.can_assign_assets_to_repository
 
-   .. automethod:: AssetRepositoryAssignmentSession.get_assignable_repository_ids
+   .. automethod:: RepositoryManager.get_assignable_repository_ids
 
-   .. automethod:: AssetRepositoryAssignmentSession.get_assignable_repository_ids_for_asset
+   .. automethod:: RepositoryManager.get_assignable_repository_ids_for_asset
 
-   .. automethod:: AssetRepositoryAssignmentSession.assign_asset_to_repository
+   .. automethod:: RepositoryManager.assign_asset_to_repository
 
-   .. automethod:: AssetRepositoryAssignmentSession.unassign_asset_from_repository
+   .. automethod:: RepositoryManager.unassign_asset_from_repository
 
 
 
 Composition Repository Methods
 ------------------------------
 
-   .. automethod:: CompositionRepositorySession.use_comparative_composition_repository_view
+   .. automethod:: RepositoryManager.use_comparative_composition_repository_view
 
-   .. automethod:: CompositionRepositorySession.use_plenary_composition_repository_view
+   .. automethod:: RepositoryManager.use_plenary_composition_repository_view
 
-   .. automethod:: CompositionRepositorySession.can_lookup_composition_repository_mappings
+   .. automethod:: RepositoryManager.can_lookup_composition_repository_mappings
 
-   .. automethod:: CompositionRepositorySession.get_composition_ids_by_repository
+   .. automethod:: RepositoryManager.get_composition_ids_by_repository
 
-   .. automethod:: CompositionRepositorySession.get_compositions_by_repository
+   .. automethod:: RepositoryManager.get_compositions_by_repository
 
-   .. automethod:: CompositionRepositorySession.get_composition_ids_by_repositories
+   .. automethod:: RepositoryManager.get_composition_ids_by_repositories
 
-   .. automethod:: CompositionRepositorySession.get_compoitions_by_repositories
+   .. automethod:: RepositoryManager.get_compoitions_by_repositories
 
-   .. automethod:: CompositionRepositorySession.get_repository_ids_by_composition
+   .. automethod:: RepositoryManager.get_repository_ids_by_composition
 
-   .. automethod:: CompositionRepositorySession.get_repositories_by_composition
+   .. automethod:: RepositoryManager.get_repositories_by_composition
 
 
 
 Composition Repository Assignment Methods
 -----------------------------------------
 
-   .. automethod:: CompositionRepositoryAssignmentSession.can_assign_compositions
+   .. automethod:: RepositoryManager.can_assign_compositions
 
-   .. automethod:: CompositionRepositoryAssignmentSession.can_assign_compositions_to_repository
+   .. automethod:: RepositoryManager.can_assign_compositions_to_repository
 
-   .. automethod:: CompositionRepositoryAssignmentSession.get_assignable_repository_ids
+   .. automethod:: RepositoryManager.get_assignable_repository_ids
 
-   .. automethod:: CompositionRepositoryAssignmentSession.get_assignable_repository_ids_for_composition
+   .. automethod:: RepositoryManager.get_assignable_repository_ids_for_composition
 
-   .. automethod:: CompositionRepositoryAssignmentSession.assign_composition_to_repository
+   .. automethod:: RepositoryManager.assign_composition_to_repository
 
-   .. automethod:: CompositionRepositoryAssignmentSession.unassign_composition_from_repository
+   .. automethod:: RepositoryManager.unassign_composition_from_repository
 
 
 
 Repository Lookup Methods
 -------------------------
 
-   .. automethod:: RepositoryLookupSession.can_lookup_repositories
+   .. automethod:: RepositoryManager.can_lookup_repositories
 
-   .. automethod:: RepositoryLookupSession.use_comparative_repository_view
+   .. automethod:: RepositoryManager.use_comparative_repository_view
 
-   .. automethod:: RepositoryLookupSession.use_plenary_repository_view
+   .. automethod:: RepositoryManager.use_plenary_repository_view
 
-   .. automethod:: RepositoryLookupSession.get_repository
+   .. automethod:: RepositoryManager.get_repository
 
-   .. automethod:: RepositoryLookupSession.get_repositories_by_ids
+   .. automethod:: RepositoryManager.get_repositories_by_ids
 
-   .. automethod:: RepositoryLookupSession.get_repositories_by_genus_type
+   .. automethod:: RepositoryManager.get_repositories_by_genus_type
 
-   .. automethod:: RepositoryLookupSession.get_repositories_by_parent_genus_type
+   .. automethod:: RepositoryManager.get_repositories_by_parent_genus_type
 
-   .. automethod:: RepositoryLookupSession.get_repositories_by_record_type
+   .. automethod:: RepositoryManager.get_repositories_by_record_type
 
-   .. automethod:: RepositoryLookupSession.get_repositories_by_provider
+   .. automethod:: RepositoryManager.get_repositories_by_provider
 
-   .. autoattribute:: RepositoryLookupSession.repositories
+   .. autoattribute:: RepositoryManager.repositories
 
 
 
 Repository Query Methods
 ------------------------
 
-   .. automethod:: RepositoryQuerySession.can_search_repositories
+   .. automethod:: RepositoryManager.can_search_repositories
 
-   .. autoattribute:: RepositoryQuerySession.repository_query
+   .. autoattribute:: RepositoryManager.repository_query
 
-   .. automethod:: RepositoryQuerySession.get_repositories_by_query
+   .. automethod:: RepositoryManager.get_repositories_by_query
 
 
 
 Repository Admin Methods
 ------------------------
 
-   .. automethod:: RepositoryAdminSession.can_create_repositories
+   .. automethod:: RepositoryManager.can_create_repositories
 
-   .. automethod:: RepositoryAdminSession.can_create_repository_with_record_types
+   .. automethod:: RepositoryManager.can_create_repository_with_record_types
 
-   .. automethod:: RepositoryAdminSession.get_repository_form_for_create
+   .. automethod:: RepositoryManager.get_repository_form_for_create
 
-   .. automethod:: RepositoryAdminSession.create_repository
+   .. automethod:: RepositoryManager.create_repository
 
-   .. automethod:: RepositoryAdminSession.can_update_repositories
+   .. automethod:: RepositoryManager.can_update_repositories
 
-   .. automethod:: RepositoryAdminSession.get_repository_form_for_update
+   .. automethod:: RepositoryManager.get_repository_form_for_update
 
-   .. automethod:: RepositoryAdminSession.update_repository
+   .. automethod:: RepositoryManager.update_repository
 
-   .. automethod:: RepositoryAdminSession.can_delete_repositories
+   .. automethod:: RepositoryManager.can_delete_repositories
 
-   .. automethod:: RepositoryAdminSession.delete_repository
+   .. automethod:: RepositoryManager.delete_repository
 
-   .. automethod:: RepositoryAdminSession.can_manage_repository_aliases
+   .. automethod:: RepositoryManager.can_manage_repository_aliases
 
-   .. automethod:: RepositoryAdminSession.alias_repository
+   .. automethod:: RepositoryManager.alias_repository
 
 
 
 Repository Hierarchy Methods
 ----------------------------
 
-   .. autoattribute:: RepositoryHierarchySession.repository_hierarchy_id
+   .. autoattribute:: RepositoryManager.repository_hierarchy_id
 
-   .. autoattribute:: RepositoryHierarchySession.repository_hierarchy
+   .. autoattribute:: RepositoryManager.repository_hierarchy
 
-   .. automethod:: RepositoryHierarchySession.can_access_repository_hierarchy
+   .. automethod:: RepositoryManager.can_access_repository_hierarchy
 
-   .. automethod:: RepositoryHierarchySession.use_comparative_repository_view
+   .. automethod:: RepositoryManager.use_comparative_repository_view
 
-   .. automethod:: RepositoryHierarchySession.use_plenary_repository_view
+   .. automethod:: RepositoryManager.use_plenary_repository_view
 
-   .. autoattribute:: RepositoryHierarchySession.root_repository_ids
+   .. autoattribute:: RepositoryManager.root_repository_ids
 
-   .. autoattribute:: RepositoryHierarchySession.root_repositories
+   .. autoattribute:: RepositoryManager.root_repositories
 
-   .. automethod:: RepositoryHierarchySession.has_parent_repositories
+   .. automethod:: RepositoryManager.has_parent_repositories
 
-   .. automethod:: RepositoryHierarchySession.is_parent_of_repository
+   .. automethod:: RepositoryManager.is_parent_of_repository
 
-   .. automethod:: RepositoryHierarchySession.get_parent_repository_ids
+   .. automethod:: RepositoryManager.get_parent_repository_ids
 
-   .. automethod:: RepositoryHierarchySession.get_parent_repositories
+   .. automethod:: RepositoryManager.get_parent_repositories
 
-   .. automethod:: RepositoryHierarchySession.is_ancestor_of_repository
+   .. automethod:: RepositoryManager.is_ancestor_of_repository
 
-   .. automethod:: RepositoryHierarchySession.has_child_repositories
+   .. automethod:: RepositoryManager.has_child_repositories
 
-   .. automethod:: RepositoryHierarchySession.is_child_of_repository
+   .. automethod:: RepositoryManager.is_child_of_repository
 
-   .. automethod:: RepositoryHierarchySession.get_child_repository_ids
+   .. automethod:: RepositoryManager.get_child_repository_ids
 
-   .. automethod:: RepositoryHierarchySession.get_child_repositories
+   .. automethod:: RepositoryManager.get_child_repositories
 
-   .. automethod:: RepositoryHierarchySession.is_descendant_of_repository
+   .. automethod:: RepositoryManager.is_descendant_of_repository
 
-   .. automethod:: RepositoryHierarchySession.get_repository_node_ids
+   .. automethod:: RepositoryManager.get_repository_node_ids
 
-   .. automethod:: RepositoryHierarchySession.get_repository_nodes
+   .. automethod:: RepositoryManager.get_repository_nodes
 
 
 
 Repository Hierarchy Design Methods
 -----------------------------------
 
-   .. autoattribute:: RepositoryHierarchyDesignSession.repository_hierarchy_id
+   .. autoattribute:: RepositoryManager.repository_hierarchy_id
 
-   .. autoattribute:: RepositoryHierarchyDesignSession.repository_hierarchy
+   .. autoattribute:: RepositoryManager.repository_hierarchy
 
-   .. automethod:: RepositoryHierarchyDesignSession.can_modify_repository_hierarchy
+   .. automethod:: RepositoryManager.can_modify_repository_hierarchy
 
-   .. automethod:: RepositoryHierarchyDesignSession.add_root_repository
+   .. automethod:: RepositoryManager.add_root_repository
 
-   .. automethod:: RepositoryHierarchyDesignSession.remove_root_repository
+   .. automethod:: RepositoryManager.remove_root_repository
 
-   .. automethod:: RepositoryHierarchyDesignSession.add_child_repository
+   .. automethod:: RepositoryManager.add_child_repository
 
-   .. automethod:: RepositoryHierarchyDesignSession.remove_child_repository
+   .. automethod:: RepositoryManager.remove_child_repository
 
-   .. automethod:: RepositoryHierarchyDesignSession.remove_child_repositories
+   .. automethod:: RepositoryManager.remove_child_repositories
 
 
 
-Asset Lookup Methods
---------------------
+Repository Proxy Manager
+------------------------
 
-   .. autoattribute:: AssetLookupSession.repository_id
+.. autoclass:: RepositoryProxyManager
+   :show-inheritance:
 
-   .. autoattribute:: AssetLookupSession.repository
+   .. automethod:: RepositoryProxyManager.get_asset_lookup_session
 
-   .. automethod:: AssetLookupSession.can_lookup_assets
+   .. automethod:: RepositoryProxyManager.get_asset_lookup_session_for_repository
 
-   .. automethod:: AssetLookupSession.use_comparative_asset_view
+   .. automethod:: RepositoryProxyManager.get_asset_query_session
 
-   .. automethod:: AssetLookupSession.use_plenary_asset_view
+   .. automethod:: RepositoryProxyManager.get_asset_query_session_for_repository
 
-   .. automethod:: AssetLookupSession.use_federated_repository_view
+   .. automethod:: RepositoryProxyManager.get_asset_search_session
 
-   .. automethod:: AssetLookupSession.use_isolated_repository_view
+   .. automethod:: RepositoryProxyManager.get_asset_search_session_for_repository
 
-   .. automethod:: AssetLookupSession.get_asset
+   .. automethod:: RepositoryProxyManager.get_asset_admin_session
 
-   .. automethod:: AssetLookupSession.get_assets_by_ids
+   .. automethod:: RepositoryProxyManager.get_asset_admin_session_for_repository
 
-   .. automethod:: AssetLookupSession.get_assets_by_genus_type
+   .. automethod:: RepositoryProxyManager.get_asset_notification_session
 
-   .. automethod:: AssetLookupSession.get_assets_by_parent_genus_type
+   .. automethod:: RepositoryProxyManager.get_asset_notification_session_for_repository
 
-   .. automethod:: AssetLookupSession.get_assets_by_record_type
+   .. automethod:: RepositoryProxyManager.get_asset_repository_session
 
-   .. automethod:: AssetLookupSession.get_assets_by_provider
+   .. automethod:: RepositoryProxyManager.get_asset_repository_assignment_session
 
-   .. autoattribute:: AssetLookupSession.assets
+   .. automethod:: RepositoryProxyManager.get_asset_smart_repository_session
 
+   .. automethod:: RepositoryProxyManager.get_asset_temporal_session
 
+   .. automethod:: RepositoryProxyManager.get_asset_temporal_session_for_repository
 
-Asset Query Methods
--------------------
+   .. automethod:: RepositoryProxyManager.get_asset_temporal_assignment_session
 
-   .. autoattribute:: AssetQuerySession.repository_id
+   .. automethod:: RepositoryProxyManager.get_asset_temporal_assignment_session_for_repository
 
-   .. autoattribute:: AssetQuerySession.repository
+   .. automethod:: RepositoryProxyManager.get_asset_spatial_session
 
-   .. automethod:: AssetQuerySession.can_search_assets
+   .. automethod:: RepositoryProxyManager.get_asset_spatial_session_for_repository
 
-   .. automethod:: AssetQuerySession.use_federated_repository_view
+   .. automethod:: RepositoryProxyManager.get_asset_spatial_assignment_session
 
-   .. automethod:: AssetQuerySession.use_isolated_repository_view
+   .. automethod:: RepositoryProxyManager.get_asset_spatial_assignment_session_for_repository
 
-   .. autoattribute:: AssetQuerySession.asset_query
+   .. automethod:: RepositoryProxyManager.get_asset_composition_session
 
-   .. automethod:: AssetQuerySession.get_assets_by_query
+   .. automethod:: RepositoryProxyManager.get_asset_composition_design_session
 
+   .. automethod:: RepositoryProxyManager.get_composition_lookup_session
 
+   .. automethod:: RepositoryProxyManager.get_composition_lookup_session_for_repository
 
-Asset Search Methods
---------------------
+   .. automethod:: RepositoryProxyManager.get_composition_query_session
 
-   .. autoattribute:: AssetSearchSession.asset_search
+   .. automethod:: RepositoryProxyManager.get_composition_query_session_for_repository
 
-   .. autoattribute:: AssetSearchSession.asset_search_order
+   .. automethod:: RepositoryProxyManager.get_composition_search_session
 
-   .. automethod:: AssetSearchSession.get_assets_by_search
+   .. automethod:: RepositoryProxyManager.get_composition_search_session_for_repository
 
-   .. automethod:: AssetSearchSession.get_asset_query_from_inspector
+   .. automethod:: RepositoryProxyManager.get_composition_admin_session
 
+   .. automethod:: RepositoryProxyManager.get_composition_admin_session_for_repository
 
+   .. automethod:: RepositoryProxyManager.get_composition_notification_session
 
-Asset Admin Methods
--------------------
+   .. automethod:: RepositoryProxyManager.get_composition_notification_session_for_repository
 
-   .. autoattribute:: AssetAdminSession.repository_id
+   .. automethod:: RepositoryProxyManager.get_composition_repository_session
 
-   .. autoattribute:: AssetAdminSession.repository
+   .. automethod:: RepositoryProxyManager.get_composition_repository_assignment_session
 
-   .. automethod:: AssetAdminSession.can_create_assets
+   .. automethod:: RepositoryProxyManager.get_composition_smart_repository_session
 
-   .. automethod:: AssetAdminSession.can_create_asset_with_record_types
+   .. automethod:: RepositoryProxyManager.get_repository_lookup_session
 
-   .. automethod:: AssetAdminSession.get_asset_form_for_create
+   .. automethod:: RepositoryProxyManager.get_repository_query_session
 
-   .. automethod:: AssetAdminSession.create_asset
+   .. automethod:: RepositoryProxyManager.get_repository_search_session
 
-   .. automethod:: AssetAdminSession.can_update_assets
+   .. automethod:: RepositoryProxyManager.get_repository_admin_session
 
-   .. automethod:: AssetAdminSession.get_asset_form_for_update
+   .. automethod:: RepositoryProxyManager.get_repository_notification_session
 
-   .. automethod:: AssetAdminSession.update_asset
+   .. automethod:: RepositoryProxyManager.get_repository_hierarchy_session
 
-   .. automethod:: AssetAdminSession.can_delete_assets
+   .. automethod:: RepositoryProxyManager.get_repository_hierarchy_design_session
 
-   .. automethod:: AssetAdminSession.delete_asset
+   .. autoattribute:: RepositoryProxyManager.repository_batch_proxy_manager
 
-   .. automethod:: AssetAdminSession.can_manage_asset_aliases
+   .. autoattribute:: RepositoryProxyManager.repository_rules_proxy_manager
 
-   .. automethod:: AssetAdminSession.alias_asset
 
-   .. automethod:: AssetAdminSession.can_create_asset_content
 
-   .. automethod:: AssetAdminSession.can_create_asset_content_with_record_types
+Asset Repository Methods
+------------------------
 
-   .. automethod:: AssetAdminSession.get_asset_content_form_for_create
+   .. automethod:: RepositoryProxyManager.can_lookup_asset_repository_mappings
 
-   .. automethod:: AssetAdminSession.create_asset_content
+   .. automethod:: RepositoryProxyManager.use_comparative_repository_view
 
-   .. automethod:: AssetAdminSession.can_update_asset_contents
+   .. automethod:: RepositoryProxyManager.use_plenary_repository_view
 
-   .. automethod:: AssetAdminSession.get_asset_content_form_for_update
+   .. automethod:: RepositoryProxyManager.get_asset_ids_by_repository
 
-   .. automethod:: AssetAdminSession.update_asset_content
+   .. automethod:: RepositoryProxyManager.get_assets_by_repository
 
-   .. automethod:: AssetAdminSession.can_delete_asset_contents
+   .. automethod:: RepositoryProxyManager.get_asset_ids_by_repositories
 
-   .. automethod:: AssetAdminSession.delete_asset_content
+   .. automethod:: RepositoryProxyManager.get_assets_by_repositories
 
+   .. automethod:: RepositoryProxyManager.get_repository_ids_by_asset
 
+   .. automethod:: RepositoryProxyManager.get_repositories_by_asset
 
-Asset Notification Methods
---------------------------
 
-   .. autoattribute:: AssetNotificationSession.repository_id
 
-   .. autoattribute:: AssetNotificationSession.repository
+Asset Repository Assignment Methods
+-----------------------------------
 
-   .. automethod:: AssetNotificationSession.can_register_for_asset_notifications
+   .. automethod:: RepositoryProxyManager.can_assign_assets
 
-   .. automethod:: AssetNotificationSession.use_federated_repository_view
+   .. automethod:: RepositoryProxyManager.can_assign_assets_to_repository
 
-   .. automethod:: AssetNotificationSession.use_isolated_repository_view
+   .. automethod:: RepositoryProxyManager.get_assignable_repository_ids
 
-   .. automethod:: AssetNotificationSession.register_for_new_assets
+   .. automethod:: RepositoryProxyManager.get_assignable_repository_ids_for_asset
 
-   .. automethod:: AssetNotificationSession.register_for_new_assets_by_genus_type
+   .. automethod:: RepositoryProxyManager.assign_asset_to_repository
 
-   .. automethod:: AssetNotificationSession.register_for_changed_assets
+   .. automethod:: RepositoryProxyManager.unassign_asset_from_repository
 
-   .. automethod:: AssetNotificationSession.register_for_changed_assets_by_genus_type
 
-   .. automethod:: AssetNotificationSession.register_for_changed_asset
 
-   .. automethod:: AssetNotificationSession.register_for_deleted_assets
+Composition Repository Methods
+------------------------------
 
-   .. automethod:: AssetNotificationSession.register_for_deleted_assets_by_genus_type
+   .. automethod:: RepositoryProxyManager.use_comparative_composition_repository_view
 
-   .. automethod:: AssetNotificationSession.register_for_deleted_asset
+   .. automethod:: RepositoryProxyManager.use_plenary_composition_repository_view
 
-   .. automethod:: AssetNotificationSession.reliable_asset_notifications
+   .. automethod:: RepositoryProxyManager.can_lookup_composition_repository_mappings
 
-   .. automethod:: AssetNotificationSession.unreliable_asset_notifications
+   .. automethod:: RepositoryProxyManager.get_composition_ids_by_repository
 
-   .. automethod:: AssetNotificationSession.acknowledge_asset_notification
+   .. automethod:: RepositoryProxyManager.get_compositions_by_repository
 
+   .. automethod:: RepositoryProxyManager.get_composition_ids_by_repositories
 
+   .. automethod:: RepositoryProxyManager.get_compoitions_by_repositories
 
-Asset Composition Methods
+   .. automethod:: RepositoryProxyManager.get_repository_ids_by_composition
+
+   .. automethod:: RepositoryProxyManager.get_repositories_by_composition
+
+
+
+Composition Repository Assignment Methods
+-----------------------------------------
+
+   .. automethod:: RepositoryProxyManager.can_assign_compositions
+
+   .. automethod:: RepositoryProxyManager.can_assign_compositions_to_repository
+
+   .. automethod:: RepositoryProxyManager.get_assignable_repository_ids
+
+   .. automethod:: RepositoryProxyManager.get_assignable_repository_ids_for_composition
+
+   .. automethod:: RepositoryProxyManager.assign_composition_to_repository
+
+   .. automethod:: RepositoryProxyManager.unassign_composition_from_repository
+
+
+
+Repository Lookup Methods
 -------------------------
 
-   .. autoattribute:: AssetCompositionSession.repository_id
+   .. automethod:: RepositoryProxyManager.can_lookup_repositories
 
-   .. autoattribute:: AssetCompositionSession.repository
+   .. automethod:: RepositoryProxyManager.use_comparative_repository_view
 
-   .. automethod:: AssetCompositionSession.can_access_asset_compositions
+   .. automethod:: RepositoryProxyManager.use_plenary_repository_view
 
-   .. automethod:: AssetCompositionSession.use_comparative_asset_composition_view
+   .. automethod:: RepositoryProxyManager.get_repository
 
-   .. automethod:: AssetCompositionSession.use_plenary_asset_composition_view
+   .. automethod:: RepositoryProxyManager.get_repositories_by_ids
 
-   .. automethod:: AssetCompositionSession.use_federated_repository_view
+   .. automethod:: RepositoryProxyManager.get_repositories_by_genus_type
 
-   .. automethod:: AssetCompositionSession.use_isolated_repository_view
+   .. automethod:: RepositoryProxyManager.get_repositories_by_parent_genus_type
 
-   .. automethod:: AssetCompositionSession.get_composition_assets
+   .. automethod:: RepositoryProxyManager.get_repositories_by_record_type
 
-   .. automethod:: AssetCompositionSession.get_compositions_by_asset
+   .. automethod:: RepositoryProxyManager.get_repositories_by_provider
 
+   .. autoattribute:: RepositoryProxyManager.repositories
 
 
-Asset Composition Design Methods
---------------------------------
 
-   .. autoattribute:: AssetCompositionDesignSession.repository_id
+Repository Query Methods
+------------------------
 
-   .. autoattribute:: AssetCompositionDesignSession.repository
+   .. automethod:: RepositoryProxyManager.can_search_repositories
 
-   .. automethod:: AssetCompositionDesignSession.can_compose_assets
+   .. autoattribute:: RepositoryProxyManager.repository_query
 
-   .. automethod:: AssetCompositionDesignSession.add_asset
+   .. automethod:: RepositoryProxyManager.get_repositories_by_query
 
-   .. automethod:: AssetCompositionDesignSession.move_asset_ahead
 
-   .. automethod:: AssetCompositionDesignSession.move_asset_behind
 
-   .. automethod:: AssetCompositionDesignSession.order_assets
+Repository Admin Methods
+------------------------
 
-   .. automethod:: AssetCompositionDesignSession.remove_asset
+   .. automethod:: RepositoryProxyManager.can_create_repositories
 
+   .. automethod:: RepositoryProxyManager.can_create_repository_with_record_types
 
+   .. automethod:: RepositoryProxyManager.get_repository_form_for_create
 
-Composition Lookup Methods
---------------------------
+   .. automethod:: RepositoryProxyManager.create_repository
 
-   .. autoattribute:: CompositionLookupSession.repository_id
+   .. automethod:: RepositoryProxyManager.can_update_repositories
 
-   .. autoattribute:: CompositionLookupSession.repository
+   .. automethod:: RepositoryProxyManager.get_repository_form_for_update
 
-   .. automethod:: CompositionLookupSession.can_lookup_compositions
+   .. automethod:: RepositoryProxyManager.update_repository
 
-   .. automethod:: CompositionLookupSession.use_comparative_composition_view
+   .. automethod:: RepositoryProxyManager.can_delete_repositories
 
-   .. automethod:: CompositionLookupSession.use_plenary_composition_view
+   .. automethod:: RepositoryProxyManager.delete_repository
 
-   .. automethod:: CompositionLookupSession.use_federated_repository_view
+   .. automethod:: RepositoryProxyManager.can_manage_repository_aliases
 
-   .. automethod:: CompositionLookupSession.use_isolated_repository_view
+   .. automethod:: RepositoryProxyManager.alias_repository
 
-   .. automethod:: CompositionLookupSession.use_active_composition_view
 
-   .. automethod:: CompositionLookupSession.use_any_status_composition_view
 
-   .. automethod:: CompositionLookupSession.use_sequestered_composition_view
+Repository Hierarchy Methods
+----------------------------
 
-   .. automethod:: CompositionLookupSession.use_unsequestered_composition_view
+   .. autoattribute:: RepositoryProxyManager.repository_hierarchy_id
 
-   .. automethod:: CompositionLookupSession.get_composition
+   .. autoattribute:: RepositoryProxyManager.repository_hierarchy
 
-   .. automethod:: CompositionLookupSession.get_compositions_by_ids
+   .. automethod:: RepositoryProxyManager.can_access_repository_hierarchy
 
-   .. automethod:: CompositionLookupSession.get_compositions_by_genus_type
+   .. automethod:: RepositoryProxyManager.use_comparative_repository_view
 
-   .. automethod:: CompositionLookupSession.get_compositions_by_parent_genus_type
+   .. automethod:: RepositoryProxyManager.use_plenary_repository_view
 
-   .. automethod:: CompositionLookupSession.get_compositions_by_record_type
+   .. autoattribute:: RepositoryProxyManager.root_repository_ids
 
-   .. automethod:: CompositionLookupSession.get_compositions_by_provider
+   .. autoattribute:: RepositoryProxyManager.root_repositories
 
-   .. autoattribute:: CompositionLookupSession.compositions
+   .. automethod:: RepositoryProxyManager.has_parent_repositories
 
+   .. automethod:: RepositoryProxyManager.is_parent_of_repository
 
+   .. automethod:: RepositoryProxyManager.get_parent_repository_ids
 
-Composition Query Methods
--------------------------
+   .. automethod:: RepositoryProxyManager.get_parent_repositories
 
-   .. autoattribute:: CompositionQuerySession.repository_id
+   .. automethod:: RepositoryProxyManager.is_ancestor_of_repository
 
-   .. autoattribute:: CompositionQuerySession.repository
+   .. automethod:: RepositoryProxyManager.has_child_repositories
 
-   .. automethod:: CompositionQuerySession.can_search_compositions
+   .. automethod:: RepositoryProxyManager.is_child_of_repository
 
-   .. automethod:: CompositionQuerySession.use_federated_repository_view
+   .. automethod:: RepositoryProxyManager.get_child_repository_ids
 
-   .. automethod:: CompositionQuerySession.use_isolated_repository_view
+   .. automethod:: RepositoryProxyManager.get_child_repositories
 
-   .. automethod:: CompositionQuerySession.use_sequestered_composition_view
+   .. automethod:: RepositoryProxyManager.is_descendant_of_repository
 
-   .. automethod:: CompositionQuerySession.use_unsequestered_composition_view
+   .. automethod:: RepositoryProxyManager.get_repository_node_ids
 
-   .. autoattribute:: CompositionQuerySession.composition_query
+   .. automethod:: RepositoryProxyManager.get_repository_nodes
 
-   .. automethod:: CompositionQuerySession.get_compositions_by_query
 
 
+Repository Hierarchy Design Methods
+-----------------------------------
 
-Composition Search Methods
---------------------------
+   .. autoattribute:: RepositoryProxyManager.repository_hierarchy_id
 
-   .. autoattribute:: CompositionSearchSession.composition_search
+   .. autoattribute:: RepositoryProxyManager.repository_hierarchy
 
-   .. autoattribute:: CompositionSearchSession.composition_search_order
+   .. automethod:: RepositoryProxyManager.can_modify_repository_hierarchy
 
-   .. automethod:: CompositionSearchSession.get_compositions_by_search
+   .. automethod:: RepositoryProxyManager.add_root_repository
 
-   .. automethod:: CompositionSearchSession.get_composition_query_from_inspector
+   .. automethod:: RepositoryProxyManager.remove_root_repository
 
+   .. automethod:: RepositoryProxyManager.add_child_repository
 
+   .. automethod:: RepositoryProxyManager.remove_child_repository
 
-Composition Admin Methods
--------------------------
-
-   .. autoattribute:: CompositionAdminSession.repository_id
-
-   .. autoattribute:: CompositionAdminSession.repository
-
-   .. automethod:: CompositionAdminSession.can_create_compositions
-
-   .. automethod:: CompositionAdminSession.can_create_composition_with_record_types
-
-   .. automethod:: CompositionAdminSession.get_composition_form_for_create
-
-   .. automethod:: CompositionAdminSession.create_composition
-
-   .. automethod:: CompositionAdminSession.can_update_compositions
-
-   .. automethod:: CompositionAdminSession.get_composition_form_for_update
-
-   .. automethod:: CompositionAdminSession.update_composition
-
-   .. automethod:: CompositionAdminSession.can_delete_compositions
-
-   .. automethod:: CompositionAdminSession.delete_composition
-
-   .. automethod:: CompositionAdminSession.delete_composition_node
-
-   .. automethod:: CompositionAdminSession.add_composition_child
-
-   .. automethod:: CompositionAdminSession.remove_composition_child
-
-   .. automethod:: CompositionAdminSession.can_manage_composition_aliases
-
-   .. automethod:: CompositionAdminSession.alias_composition
+   .. automethod:: RepositoryProxyManager.remove_child_repositories
 
 
 

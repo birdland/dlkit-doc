@@ -28,8 +28,6 @@ Type Form
 
    .. autoattribute:: TypeForm.domain
 
-
-
 Type List
 ---------
 
@@ -39,6 +37,4 @@ Type List
    .. autoattribute:: TypeList.next_type
 
    .. automethod:: TypeList.get_next_types
-
-
 

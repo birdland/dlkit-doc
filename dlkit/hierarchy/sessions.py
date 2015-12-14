@@ -25,15 +25,14 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
     authorized pathways.
 
     """
-    
-
-
 
     def get_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -41,21 +40,20 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
 
     hierarchy_id = property(fget=get_hierarchy_id)
 
-
     def get_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     hierarchy = property(fget=get_hierarchy)
-
 
     def can_access_hierarchy(self):
         """Tests if this user can perform hierarchy queries.
@@ -66,20 +64,23 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer lookup
         operations.
 
-        return: (boolean) - ``false`` if lookup methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_roots(self):
         """Gets the root nodes of this hierarchy.
 
-        return: (osid.id.IdList) - the root nodes
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the root nodes
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -87,34 +88,37 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
 
     roots = property(fget=get_roots)
 
-
     def has_parents(self, id_):
         """Tests if this ``Id`` contains any parents.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        return: (boolean) - ``true`` if this ``Id`` contains parents,
-                ``false`` otherwise
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :return: ``true`` if this ``Id`` contains parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def is_parent(self, id_, parent_id):
         """Tests if an ``Id`` is a direct parent of another.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        arg:    parent_id (osid.id.Id): the ``Id`` of a parent
-        return: (boolean) - ``true`` if this ``parent_id`` is a parent
-                of ``id,``  ``false`` otherwise
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` or ``parent_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :param parent_id: the ``Id`` of a parent
+        :type parent_id: ``osid.id.Id``
+        :return: ``true`` if this ``parent_id`` is a parent of ``id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``parent_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``parent_id`` not found return
         ``false``.
@@ -122,33 +126,37 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-
     def get_parents(self, id_):
         """Gets the parents of the given ``id``.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        return: (osid.id.IdList) - the parents of the ``id``
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :return: the parents of the ``id``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def is_ancestor(self, id_, ancestor_id):
         """Tests if an ``Id`` is an ancestor of another.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        arg:    ancestor_id (osid.id.Id): the ``Id`` of an ancestor
-        return: (boolean) - ``true`` if this ``ancestor_id`` is a parent
-                of ``id,``  ``false`` otherwise
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` or ``ancestor_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :param ancestor_id: the ``Id`` of an ancestor
+        :type ancestor_id: ``osid.id.Id``
+        :return: ``true`` if this ``ancestor_id`` is a parent of ``id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``ancestor_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``ancestor_id`` not found return
         ``false``.
@@ -156,34 +164,37 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-
     def has_children(self, id_):
         """Tests if this ``Id`` has any children.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        return: (boolean) - ``true`` if this ``Id`` has children,
-                ``false`` otherwise
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :return: ``true`` if this ``Id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def is_child(self, id_, child_id):
         """Tests if a node is a direct child of another.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        arg:    child_id (osid.id.Id): the ``Id`` of a child
-        return: (boolean) - ``true`` if this ``child_id`` is a child of
-                the ``Id,``  ``false`` otherwise
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` or ``child_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :param child_id: the ``Id`` of a child
+        :type child_id: ``osid.id.Id``
+        :return: ``true`` if this ``child_id`` is a child of the ``Id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``child_id`` not found return
         ``false``.
@@ -191,58 +202,63 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-
     def get_children(self, id_):
         """Gets the children of the given ``Id``.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        return: (osid.id.IdList) - the children of the ``id``
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :return: the children of the ``id``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def is_descendant(self, id_, descendant_id):
         """Tests if a node is a descendant of another.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        arg:    descendant_id (osid.id.Id): the ``Id`` of a descendant
-        return: (boolean) - ``true`` if this ``descendant_id`` is a
-                child of the ``Id,``  ``false`` otherwise
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` or ``descendant`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :param descendant_id: the ``Id`` of a descendant
+        :type descendant_id: ``osid.id.Id``
+        :return: ``true`` if this ``descendant_id`` is a child of the ``Id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``descendant`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If not found return ``false``.
 
         """
         return # boolean
 
-
     def get_nodes(self, id_, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given ``Id``.
 
-        arg:    id (osid.id.Id): the ``Id`` to query
-        arg:    ancestor_levels (cardinal): the maximum number of
-                ancestor levels to include. A value of 0 returns no
-                parents in the node.
-        arg:    descendant_levels (cardinal): the maximum number of
-                descendant levels to include. A value of 0 returns no
-                children in the node.
-        arg:    include_siblings (boolean): ``true`` to include the
-                siblings of the given node, ``false`` to omit the
-                siblings
-        return: (osid.hierarchy.Node) - a node
-        raise:  NotFound - ``id`` is not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` to query
+        :type id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+        node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+        in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``id`` is not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -258,15 +274,14 @@ class HierarchyDesignSession(osid_sessions.OsidSession):
     inherited data, in the associated OSID.
 
     """
-    
-
-
 
     def get_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -274,21 +289,20 @@ class HierarchyDesignSession(osid_sessions.OsidSession):
 
     hierarchy_id = property(fget=get_hierarchy_id)
 
-
     def get_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     hierarchy = property(fget=get_hierarchy)
-
 
     def can_modify_hierarchy(self):
         """Tests if this user can change the hierarchy.
@@ -299,85 +313,91 @@ class HierarchyDesignSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer these
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if changing this hierarchy is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def add_root(self, id_):
         """Adds a root node.
 
-        arg:    id (osid.id.Id): the ``Id`` of the node
-        raise:  AlreadyExists - ``id`` is already in hierarchy
-        raise:  NotFound - ``id`` not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` of the node
+        :type id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``id`` not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def add_child(self, id_, child_id):
         """Adds a child to a ``Id``.
 
-        arg:    id (osid.id.Id): the ``Id`` of the node
-        arg:    child_id (osid.id.Id): the ``Id`` of the new child
-        raise:  AlreadyExists - ``child_id`` is already a child of
-                ``id``
-        raise:  NotFound - ``id`` or ``child_id`` not found
-        raise:  NullArgument - ``id`` or ``child_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` of the node
+        :type id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``child_id`` is already a child of ``id``
+        :raise: ``NotFound`` -- ``id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def remove_root(self, id_):
         """Removes a root node.
 
-        arg:    id (osid.id.Id): the ``Id`` of the node
-        raise:  NotFound - ``id`` was not found or not in hierarchy
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` of the node
+        :type id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``id`` was not found or not in hierarchy
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def remove_child(self, id_, child_id):
         """Removes a childfrom an ``Id``.
 
-        arg:    id (osid.id.Id): the ``Id`` of the node
-        arg:    child_id (osid.id.Id): the ``Id`` of the child to remove
-        raise:  NotFound - ``id`` or ``child_id`` was not found or
-                ``child_id`` is not a child of ``id``
-        raise:  NullArgument - ``id`` or ``child_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` of the node
+        :type id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the child to remove
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child of ``id``
+        :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def remove_children(self, id_):
         """Removes all childrenfrom an ``Id``.
 
-        arg:    id (osid.id.Id): the ``Id`` of the node
-        raise:  NotFound - an node identified by the given ``Id`` was
-                not found
-        raise:  NullArgument - ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: the ``Id`` of the node
+        :type id: ``osid.id.Id``
+        :raise: ``NotFound`` -- an node identified by the given ``Id`` was not found
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -406,9 +426,6 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
     of precision.
 
     """
-    
-
-
 
     def can_lookup_hierarchies(self):
         """Tests if this user can perform ``Hierarchy`` lookups.
@@ -419,13 +436,14 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer lookup
         operations to unauthorized users.
 
-        return: (boolean) - ``false`` if lookup methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_hierarchy_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -434,11 +452,12 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_hierarchy_view(self):
         """A complete view of the ``Hierarchy`` returns is desired.
@@ -447,11 +466,12 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def get_hierarchy(self, hierarchy_id):
         """Gets the ``Hierarchy`` specified by its ``Id``.
@@ -462,18 +482,19 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         duplicate ``Id`` was assigned to a ``Hierarchy`` and retained
         for compati
 
-        arg:    hierarchy_id (osid.id.Id): the ``Id`` of the
-                ``Hierarchy`` to retrieve
-        return: (osid.hierarchy.Hierarchy) - the returned ``Hierarchy``
-        raise:  NotFound - no ``Hierarchy`` found with the given ``Id``
-        raise:  NullArgument - ``hierarchy_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_id: the ``Id`` of the ``Hierarchy`` to retrieve
+        :type hierarchy_id: ``osid.id.Id``
+        :return: the returned ``Hierarchy``
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``NotFound`` -- no ``Hierarchy`` found with the given ``Id``
+        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
-
 
     def get_hierarchies_by_ids(self, hierarchy_ids):
         """Gets a ``Hierarchy`` corresponding to the given ``IdList``.
@@ -486,19 +507,19 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         and may present the elements in any order including returning a
         unique set.
 
-        arg:    hierarchy_ids (osid.id.IdList): the list of ``Ids`` to
-                retrieve
-        return: (osid.hierarchy.HierarchyList) - the returned
-                ``Hierarchy`` list
-        raise:  NotFound - an ``Id was`` not found
-        raise:  NullArgument - ``hierarchy_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_ids: the list of ``Ids`` to retrieve
+        :type hierarchy_ids: ``osid.id.IdList``
+        :return: the returned ``Hierarchy`` list
+        :rtype: ``osid.hierarchy.HierarchyList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``hierarchy_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyList
-
 
     def get_hierarchies_by_genus_type(self, hierarchy_genus_type):
         """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include hierarchies of
@@ -509,18 +530,18 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         may contain only those hierarchies that are accessible through
         this session.
 
-        arg:    hierarchy_genus_type (osid.type.Type): a hierarchy genus
-                type
-        return: (osid.hierarchy.HierarchyList) - the returned
-                ``Hierarchy`` list
-        raise:  NullArgument - ``hierarchy_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_genus_type: a hierarchy genus type
+        :type hierarchy_genus_type: ``osid.type.Type``
+        :return: the returned ``Hierarchy`` list
+        :rtype: ``osid.hierarchy.HierarchyList``
+        :raise: ``NullArgument`` -- ``hierarchy_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyList
-
 
     def get_hierarchies_by_parent_genus_type(self, hierarchy_genus_type):
         """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include any additional
@@ -531,18 +552,18 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         may contain only those hierarchies that are accessible through
         this session.
 
-        arg:    hierarchy_genus_type (osid.type.Type): a hierarchy genus
-                type
-        return: (osid.hierarchy.HierarchyList) - the returned
-                ``Hierarchy`` list
-        raise:  NullArgument - ``hierarchy_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_genus_type: a hierarchy genus type
+        :type hierarchy_genus_type: ``osid.type.Type``
+        :return: the returned ``Hierarchy`` list
+        :rtype: ``osid.hierarchy.HierarchyList``
+        :raise: ``NullArgument`` -- ``hierarchy_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyList
-
 
     def get_hierarchies_by_record_type(self, hierarchy_record_type):
         """Gets a ``HierarchyList`` corresponding to the given hierarchy record ``Type``.
@@ -553,18 +574,18 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         may contain only those hierarchies that are accessible through
         this session.
 
-        arg:    hierarchy_record_type (osid.type.Type): a hierarchy
-                record type
-        return: (osid.hierarchy.HierarchyList) - the returned
-                ``Hierarchy`` list
-        raise:  NullArgument - ``hierarchy_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_record_type: a hierarchy record type
+        :type hierarchy_record_type: ``osid.type.Type``
+        :return: the returned ``Hierarchy`` list
+        :rtype: ``osid.hierarchy.HierarchyList``
+        :raise: ``NullArgument`` -- ``hierarchy_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyList
-
 
     def get_hierarchies_by_provider(self, resource_id):
         """Gets a ``HierarchyList`` for the given provider ````.
@@ -575,17 +596,18 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         may contain only those hierarchies that are accessible through
         this session.
 
-        arg:    resource_id (osid.id.Id): a resource ``Id``
-        return: (osid.hierarchy.HierarchyList) - the returned
-                ``Hierarchy`` list
-        raise:  NullArgument - ``resource_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Hierarchy`` list
+        :rtype: ``osid.hierarchy.HierarchyList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyList
-
 
     def get_hierarchies(self):
         """Gets all hierarchies.
@@ -595,10 +617,11 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         may contain only those hierarchies that are accessible through
         this session.
 
-        return: (osid.hierarchy.HierarchyList) - a list of
-                ``Hierarchies``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: a list of ``Hierarchies``
+        :rtype: ``osid.hierarchy.HierarchyList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -638,9 +661,6 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
     external ``Id`` to an internally assigned Id.
 
     """
-    
-
-
 
     def can_create_hierarchies(self):
         """Tests if this user can create ``Hierarchy`` objects.
@@ -651,13 +671,14 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may not wish to offer
         create operations to unauthorized users.
 
-        return: (boolean) - ``false`` if ``Hierarchy`` creation is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Hierarchy`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def can_create_hierarchy_with_record_types(self, hierarchy_record_types):
         """Tests if this user can create a single ``Hierarchy`` using the desired record types.
@@ -668,16 +689,16 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         Providing an empty array tests if a ``Hierarchy`` can be created
         with no records.
 
-        arg:    hierarchy_record_types (osid.type.Type[]): array of
-                hierarchy record types
-        return: (boolean) - ``true`` if ``Hierarchy`` creation using the
-                specified ``Types`` is supported, ``false`` otherwise
-        raise:  NullArgument - ``hierarchy_record_types`` is ``null``
+        :param hierarchy_record_types: array of hierarchy record types
+        :type hierarchy_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``hierarchy_record_types`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_hierarchy_form_for_create(self, hierarchy_record_types):
         """Gets the hierarchy form for creating new hierarchies.
@@ -686,40 +707,38 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         method is used for creating new hierarchies, where only the
         ``Hierarchy`` ``Type`` is known.
 
-        arg:    hierarchy_record_types (osid.type.Type[]): array of
-                hierarchy record types
-        return: (osid.hierarchy.HierarchyForm) - the hierarchy form
-        raise:  NullArgument - ``hierarchy_record_types`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - unable to get form for requested record
-                types
+        :param hierarchy_record_types: array of hierarchy record types
+        :type hierarchy_record_types: ``osid.type.Type[]``
+        :return: the hierarchy form
+        :rtype: ``osid.hierarchy.HierarchyForm``
+        :raise: ``NullArgument`` -- ``hierarchy_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyForm
 
-
     def create_hierarchy(self, hierarchy_form):
         """Creates a new ``Hierarchy``.
 
-        arg:    hierarchy_form (osid.hierarchy.HierarchyForm): the form
-                for this ``Hierarchy``
-        return: (osid.hierarchy.Hierarchy) - the new ``Hierarchy``
-        raise:  IllegalState - ``hierarchy_form`` already used in a
-                create transaction
-        raise:  InvalidArgument - one or more of the form elements is
-                invalid
-        raise:  NullArgument - ``hierarchy_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``hierarchy_form`` did not originate from
-                ``get_hierarchy_form_for_create()``
+        :param hierarchy_form: the form for this ``Hierarchy``
+        :type hierarchy_form: ``osid.hierarchy.HierarchyForm``
+        :return: the new ``Hierarchy``
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``IllegalState`` -- ``hierarchy_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``hierarchy_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_create()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
-
 
     def can_update_hierarchies(self):
         """Tests if this user can update ``Hierarchy`` objects.
@@ -730,13 +749,14 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may not wish to offer
         update operations to unauthorized users.
 
-        return: (boolean) - ``false`` if ``Hierarchy`` modification is
-                not authorized, ``true`` otherwise
+        :return: ``false`` if ``Hierarchy`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_hierarchy_form_for_update(self, hierarchy_id):
         """Gets the hierarchy form for updating an existing hierarchy.
@@ -744,38 +764,36 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         A new hierarchy form should be requested for each update
         transaction.
 
-        arg:    hierarchy_id (osid.id.Id): the ``Id`` of the
-                ``Hierarchy``
-        return: (osid.hierarchy.HierarchyForm) - the hierarchy form
-        raise:  NotFound - ``hierarchy_id`` is not found
-        raise:  NullArgument - ``hierarchy_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_id: the ``Id`` of the ``Hierarchy``
+        :type hierarchy_id: ``osid.id.Id``
+        :return: the hierarchy form
+        :rtype: ``osid.hierarchy.HierarchyForm``
+        :raise: ``NotFound`` -- ``hierarchy_id`` is not found
+        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.HierarchyForm
 
-
     def update_hierarchy(self, hierarchy_form):
         """Updates an existing hierarchy.
 
-        arg:    hierarchy_form (osid.hierarchy.HierarchyForm): the form
-                containing the elements to be updated
-        raise:  IllegalState - ``hierarchy_form`` already used in an
-                update transaction
-        raise:  InvalidArgument - the form contains an invalid value
-        raise:  NullArgument - ``hierarchy_id`` or ``hierarchy_form`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``hierarchy_form`` did not originate from
-                ``get_hierarchy_form_for_update()``
+        :param hierarchy_form: the form containing the elements to be updated
+        :type hierarchy_form: ``osid.hierarchy.HierarchyForm``
+        :raise: ``IllegalState`` -- ``hierarchy_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``hierarchy_id`` or ``hierarchy_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_update()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_delete_hierarchies(self):
         """Tests if this user can delete ``Hierarchy`` objects.
@@ -786,28 +804,29 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may not wish to offer
         delete operations to unauthorized users.
 
-        return: (boolean) - ``false`` if ``Hierarchy`` deletion is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Hierarchy`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def delete_hierarchy(self, hierarchy_id):
         """Deletes a ``Hierarchy``.
 
-        arg:    hierarchy_id (osid.id.Id): the ``Id`` of the
-                ``Hierarchy`` to remove
-        raise:  NotFound - ``hierarchy_id`` not found
-        raise:  NullArgument - ``hierarchy_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_id: the ``Id`` of the ``Hierarchy`` to remove
+        :type hierarchy_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``hierarchy_id`` not found
+        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_manage_hierarchy_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Hierarchy`` objects.
@@ -818,13 +837,14 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer alias
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Hierarchy`` aliasing is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Hierarchy`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def alias_hierarchy(self, hierarchy_id, alias_id):
         """Adds an ``Id`` to a ``Hierarchy`` for the purpose of creating compatibility.
@@ -834,15 +854,16 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         ``Id``. If the alias is a pointer to another vault it is
         reassigned to the given vault ``Id``.
 
-        arg:    hierarchy_id (osid.id.Id): the ``Id`` of an
-                ``Hierarchy``
-        arg:    alias_id (osid.id.Id): the alias ``Id``
-        raise:  AlreadyExists - ``alias_id`` is already assigned
-        raise:  NotFound - ``hierarchy_id`` not found
-        raise:  NullArgument - ``hierarchy_id`` or ``alias_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param hierarchy_id: the ``Id`` of an ``Hierarchy``
+        :type hierarchy_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``hierarchy_id`` not found
+        :raise: ``NullArgument`` -- ``hierarchy_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

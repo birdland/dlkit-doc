@@ -1,13 +1,18 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
 class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidAggregateableQueryInspector, osid_query_inspectors.OsidSourceableQueryInspector):
     """This is the query inspector for examining asset queries."""
+
     def get_title_terms(self):
         """Gets the title query terms.
 
         :return: the title terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -20,6 +25,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -30,6 +38,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -42,6 +53,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.StringTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.StringTerm
 
@@ -52,6 +66,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -64,6 +81,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -74,6 +94,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -86,6 +109,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -96,6 +122,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.resource.ResourceQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.resource.ResourceQueryInspector
@@ -108,6 +137,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -118,6 +150,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -130,6 +165,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -140,6 +178,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the principal credit string terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -152,6 +193,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -162,6 +206,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -174,6 +221,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.mapping.LocationQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.mapping.LocationQueryInspector
 
@@ -184,6 +234,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.SpatialUnitTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.SpatialUnitTerm
@@ -196,6 +249,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.SpatialUnitTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.SpatialUnitTerm
 
@@ -206,6 +262,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -218,6 +277,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.repository.AssetContentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.AssetContentQueryInspector
 
@@ -228,6 +290,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -240,6 +305,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.repository.CompositionQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.CompositionQueryInspector
 
@@ -251,6 +319,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -261,6 +332,9 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the query terms
         :rtype: ``osid.repository.RepositoryQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.RepositoryQueryInspector
@@ -278,17 +352,23 @@ class AssetQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(asset_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.records.AssetQueryInspectorRecord
 
 
 class AssetContentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
     """This is the query inspector for examining asset content queries."""
+
     def get_accessibility_type_terms(self):
         """Gets the accesibility type query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.TypeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.TypeTerm
@@ -301,6 +381,9 @@ class AssetContentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector,
         :return: the query terms
         :rtype: ``osid.search.terms.CardinalRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.CardinalRangeTerm
 
@@ -312,6 +395,9 @@ class AssetContentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector,
         :return: the query terms
         :rtype: ``osid.search.terms.BytesTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BytesTerm
 
@@ -322,6 +408,9 @@ class AssetContentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector,
 
         :return: the query terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -339,17 +428,23 @@ class AssetContentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector,
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(asset_content_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.records.AssetContentQueryInspectorRecord
 
 
 class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidContainableQueryInspector, osid_query_inspectors.OsidOperableQueryInspector, osid_query_inspectors.OsidSourceableQueryInspector):
     """This is the query inspector for examining composition queries."""
+
     def get_asset_id_terms(self):
         """Gets the asset ``Id`` query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -362,6 +457,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the query terms
         :rtype: ``osid.repository.AssetQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.AssetQueryInspector
 
@@ -372,6 +470,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -384,6 +485,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the query terms
         :rtype: ``osid.repository.CompositionQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.CompositionQueryInspector
 
@@ -394,6 +498,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -406,6 +513,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the query terms
         :rtype: ``osid.repository.CompositionQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.CompositionQueryInspector
 
@@ -417,6 +527,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -427,6 +540,9 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the query terms
         :rtype: ``osid.repository.RepositoryQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.RepositoryQueryInspector
@@ -444,17 +560,23 @@ class CompositionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(composition_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.records.CompositionQueryInspectorRecord
 
 
 class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     """This is the query inspector for examining repository queries."""
+
     def get_asset_id_terms(self):
         """Gets the asset ``Id`` query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -467,6 +589,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the query terms
         :rtype: ``osid.repository.AssetQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.AssetQueryInspector
 
@@ -477,6 +602,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -489,6 +617,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the query terms
         :rtype: ``osid.repository.CompositionQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.CompositionQueryInspector
 
@@ -499,6 +630,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -511,6 +645,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the query terms
         :rtype: ``osid.repository.RepositoryQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.RepositoryQueryInspector
 
@@ -522,6 +659,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -532,6 +672,9 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the query terms
         :rtype: ``osid.repository.RepositoryQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.RepositoryQueryInspector
@@ -548,6 +691,8 @@ class RepositoryQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :raise: ``NullArgument`` -- ``repository_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(repository_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.records.RepositoryQueryInspectorRecord

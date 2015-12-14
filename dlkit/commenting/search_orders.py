@@ -1,14 +1,18 @@
+
 from ..osid import search_orders as osid_search_orders
 
 
 class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_reference(self, style):
         """Specifies a preference for ordering the result set by the reference.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -20,6 +24,8 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -28,6 +34,9 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if a resource order interface is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -38,6 +47,9 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the resource search order interface
         :rtype: ``osid.resource.ResourceQuery``
         :raise: ``Unimplemented`` -- ``supports_commentor_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_commentor_search_order()`` is ``true``.*
 
         """
         return # osid.resource.ResourceQuery
@@ -51,6 +63,8 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -59,6 +73,9 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if an agent order interface is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -69,6 +86,9 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the agent search order interface
         :rtype: ``osid.authentication.AgentSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_commenting_agent_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_commenting_agent_search_order()`` is ``true``.*
 
         """
         return # osid.authentication.AgentSearchOrder
@@ -82,6 +102,8 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -92,6 +114,8 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -100,6 +124,9 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if a rating order interface is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -110,6 +137,9 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the rating search order interface
         :rtype: ``osid.grading.GradeSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_rating_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_rating_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSearchOrder
@@ -129,12 +159,15 @@ class CommentSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(comment_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.commenting.records.CommentSearchOrderRecord
 
 
 class BookSearchOrder(osid_search_orders.OsidCatalogSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_book_search_order_record(self, book_record_type):
         """Gets the book search order record corresponding to the given book record Type.
 
@@ -147,6 +180,8 @@ class BookSearchOrder(osid_search_orders.OsidCatalogSearchOrder):
         :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.commenting.records.BookSearchOrderRecord

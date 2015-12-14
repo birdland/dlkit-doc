@@ -1,13 +1,18 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
 class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidSubjugateableQueryInspector):
     """This is the query inspector for examining grade queries."""
+
     def get_grade_system_id_terms(self):
         """Gets the grade system ``Id`` terms.
 
         :return: the grade system ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -20,6 +25,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the grade system terms
         :rtype: ``osid.grading.GradeSystemQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeSystemQueryInspector
 
@@ -30,6 +38,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the input score start range terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -42,6 +53,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the input score end range terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalRangeTerm
 
@@ -52,6 +66,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the input score range terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -64,6 +81,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the output score terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalRangeTerm
 
@@ -74,6 +94,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the grade entry ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -86,6 +109,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the grade entry terms
         :rtype: ``osid.grading.GradeEntryQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeEntryQueryInspector
 
@@ -97,6 +123,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :return: the gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -107,6 +136,9 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
 
         :return: the gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradebookQueryInspector
@@ -124,17 +156,23 @@ class GradeQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_q
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradeQueryInspectorRecord
 
 
 class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_query_inspectors.OsidAggregateableQueryInspector):
     """This is the query inspector for examining grade system queries."""
+
     def get_based_on_grades_terms(self):
         """Gets the grade-based systems terms.
 
         :return: the grade-based systems terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -147,6 +185,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the grade ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -157,6 +198,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the grade terms
         :rtype: ``osid.grading.GradeQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradeQueryInspector
@@ -169,6 +213,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the lowest numeric score terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalRangeTerm
 
@@ -179,6 +226,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the numeric score increment terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -191,6 +241,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the highest numeric score terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalRangeTerm
 
@@ -201,6 +254,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the gradebook column ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -213,6 +269,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the gradebook column terms
         :rtype: ``osid.grading.GradebookColumnQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookColumnQueryInspector
 
@@ -224,6 +283,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :return: the gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -234,6 +296,9 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
 
         :return: the gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradebookQueryInspector
@@ -251,17 +316,23 @@ class GradeSystemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, 
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_system_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradeSystemQueryInspectorRecord
 
 
 class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector):
     """This is the query inspector for examining grade entry queries."""
+
     def get_gradebook_column_id_terms(self):
         """Gets the gradebook column ``Id`` terms.
 
         :return: the gradebook column ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -274,6 +345,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the gradebook column terms
         :rtype: ``osid.grading.GradebookColumnQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookColumnQueryInspector
 
@@ -284,6 +358,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the key resource ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -296,6 +373,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the key resource terms
         :rtype: ``osid.resource.ResourceQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.resource.ResourceQueryInspector
 
@@ -306,6 +386,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the derived terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -318,6 +401,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the overridden grade entry ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -328,6 +414,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the overridden grade entry terms
         :rtype: ``osid.grading.GradeEntryQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradeEntryQueryInspector
@@ -340,6 +429,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the ignored for calculation terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -350,6 +442,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the grade ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -362,6 +457,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the grade terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -372,6 +470,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the score terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -384,6 +485,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the time graded terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -394,6 +498,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the grader ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -406,6 +513,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the grader terms
         :rtype: ``osid.resource.ResourceQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.resource.ResourceQueryInspector
 
@@ -416,6 +526,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the grading agent ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -428,6 +541,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the grading agent terms
         :rtype: ``osid.authentication.AgentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.authentication.AgentQueryInspector
 
@@ -439,6 +555,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :return: the gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -449,6 +568,9 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
 
         :return: the gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradebookQueryInspector
@@ -466,17 +588,23 @@ class GradeEntryQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspec
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_entry_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradeEntryQueryInspectorRecord
 
 
 class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
     """This is the query inspector for examining gradebook column queries."""
+
     def get_grade_system_id_terms(self):
         """Gets the grade system ``Id`` terms.
 
         :return: the grade system ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -489,6 +617,9 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the grade system terms
         :rtype: ``osid.grading.GradeSystemQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeSystemQueryInspector
 
@@ -500,6 +631,9 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the grade entry ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -510,6 +644,9 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the grade entry terms
         :rtype: ``osid.grading.GradeEntryQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradeEntryQueryInspector
@@ -522,6 +659,9 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the gradebook column summary terms
         :rtype: ``osid.grading.GradebookColumnSummaryQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookColumnSummaryQueryInspector
 
@@ -532,6 +672,9 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -544,13 +687,17 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookQueryInspector
 
     gradebook_terms = property(fget=get_gradebook_terms)
 
     def get_gradebook_column_query_inspector_record(self, gradebook_column_record_type):
-        """Gets the gradebook column query inspector record corresponding to the given ``GradebookColumn`` record ``Type``.
+        """Gets the gradebook column query inspector record corresponding to the given ``GradebookColumn`` record
+        ``Type``.
 
         :param gradebook_column_record_type: a gradebook column record type
         :type gradebook_column_record_type: ``osid.type.Type``
@@ -560,17 +707,23 @@ class GradebookColumnQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradebookColumnQueryInspectorRecord
 
 
 class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryInspector):
     """This is the query inspector for examining gradebook column summary queries."""
+
     def get_gradebook_column_id_terms(self):
         """Gets the gradebook column ``Id`` terms.
 
         :return: the gradebook column ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -583,6 +736,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the gradebookc column terms
         :rtype: ``osid.grading.GradebookColumnQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookColumnQueryInspector
 
@@ -593,6 +749,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the mean terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -605,6 +764,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the minimum mean terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -615,6 +777,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the median terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -627,6 +792,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the minimum median terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -637,6 +805,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the mode terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -649,6 +820,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the minimum mode terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -659,6 +833,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the rms terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -671,6 +848,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the minimum rms terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -681,6 +861,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the standard deviation terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -693,6 +876,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the minimum standard deviation terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -703,6 +889,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the sum terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DecimalRangeTerm
@@ -715,6 +904,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the minimum sum terms
         :rtype: ``osid.search.terms.DecimalTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalTerm
 
@@ -725,6 +917,9 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
 
         :return: the gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -737,13 +932,17 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :return: the gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookQueryInspector
 
     gradebook_terms = property(fget=get_gradebook_terms)
 
     def get_gradebook_column_summary_query_inspector_record(self, gradebook_column_summary_record_type):
-        """Gets the gradebook column summary query inspector record corresponding to the given ``GradebookColumnSummary`` record ``Type``.
+        """Gets the gradebook column summary query inspector record corresponding to the given
+        ``GradebookColumnSummary`` record ``Type``.
 
         :param gradebook_column_summary_record_type: a gradebook column summry record type
         :type gradebook_column_summary_record_type: ``osid.type.Type``
@@ -753,17 +952,23 @@ class GradebookColumnSummaryQueryInspector(osid_query_inspectors.OsidRuleQueryIn
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradebookColumnSummaryQueryInspectorRecord
 
 
 class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     """This is the query inspector for examining gradebook queries."""
+
     def get_grade_system_id_terms(self):
         """Gets the grade system ``Id`` terms.
 
         :return: the grade system ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -776,6 +981,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the grade system terms
         :rtype: ``osid.grading.GradeSystemQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeSystemQueryInspector
 
@@ -786,6 +994,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the grade entry ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -798,6 +1009,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the grade entry terms
         :rtype: ``osid.grading.GradeEntryQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeEntryQueryInspector
 
@@ -808,6 +1022,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the gradebook column ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -820,6 +1037,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the gradebook column terms
         :rtype: ``osid.grading.GradebookColumnQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookColumnQueryInspector
 
@@ -830,6 +1050,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the ancestor gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -842,6 +1065,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the ancestor gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradebookQueryInspector
 
@@ -853,6 +1079,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the descendant gradebook ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -863,6 +1092,9 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the descendant gradebook terms
         :rtype: ``osid.grading.GradebookQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradebookQueryInspector
@@ -879,6 +1111,8 @@ class GradebookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :raise: ``NullArgument`` -- ``gradebook_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.records.GradebookQueryInspectorRecord

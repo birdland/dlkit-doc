@@ -5,9 +5,6 @@ from ..osid import sessions as osid_sessions
 
 class RelationshipProfile(osid_managers.OsidProfile):
     """The relationship profile describes the interoperability among relationship services."""
-    
-
-
 
     def supports_visible_federation(self):
         """Tests if any family federation is exposed.
@@ -17,79 +14,86 @@ class RelationshipProfile(osid_managers.OsidProfile):
         Federation is not exposed when a set of families appears as a
         single family.
 
-        return: (boolean) - ``true`` if visible federation is supported,
-                ``false`` otherwise
+        :return: ``true`` if visible federation is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_lookup(self):
         """Tests if looking up relationships is supported.
 
-        return: (boolean) - ``true`` if relationship lookup is
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship lookup is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_query(self):
         """Tests if querying relationships is supported.
 
-        return: (boolean) - ``true`` if relationship query is supported,
-                ``false`` otherwise
+        :return: ``true`` if relationship query is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_search(self):
         """Tests if searching relationships is supported.
 
-        return: (boolean) - ``true`` if relationship search is
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship search is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_admin(self):
         """Tests if relationship administrative service is supported.
 
-        return: (boolean) - ``true`` if relationship administration is
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship administration is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_notification(self):
         """Tests if a relationship notification service is supported.
 
-        return: (boolean) - ``true`` if relationship notification is
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship notification is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_family(self):
         """Tests if a relationship family cataloging service is supported.
 
-        return: (boolean) - ``true`` if relationship families are
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship families are supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_family_assignment(self):
         """Tests if a relationship cataloging service is supported.
@@ -97,130 +101,143 @@ class RelationshipProfile(osid_managers.OsidProfile):
         A relationship cataloging service maps relationships to
         families.
 
-        return: (boolean) - ``true`` if relationship families are
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship families are supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_smart_family(self):
         """Tests if a relationship smart family cataloging service is supported.
 
-        return: (boolean) - ``true`` if relationship smart families are
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship smart families are supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_family_lookup(self):
         """Tests if looking up families is supported.
 
-        return: (boolean) - ``true`` if family lookup is supported,
-                ``false`` otherwise
+        :return: ``true`` if family lookup is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_family_query(self):
         """Tests if querying families is supported.
 
-        return: (boolean) - ``true`` if family query is supported,
-                ``false`` otherwise
+        :return: ``true`` if family query is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_family_search(self):
         """Tests if searching families is supported.
 
-        return: (boolean) - ``true`` if family search is supported,
-                ``false`` otherwise
+        :return: ``true`` if family search is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_family_admin(self):
         """Tests if familyadministrative service is supported.
 
-        return: (boolean) - ``true`` if family administration is
-                supported, ``false`` otherwise
+        :return: ``true`` if family administration is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_family_notification(self):
         """Tests if a family notification service is supported.
 
-        return: (boolean) - ``true`` if family notification is
-                supported, ``false`` otherwise
+        :return: ``true`` if family notification is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def supports_family_hierarchy(self):
         """Tests for the availability of a family hierarchy traversal service.
 
-        return: (boolean) - ``true`` if family hierarchy traversal is
-                available, ``false`` otherwise
+        :return: ``true`` if family hierarchy traversal is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented in all
         providers.*
 
         """
         return # boolean
 
-
     def supports_family_hierarchy_design(self):
         """Tests for the availability of a family hierarchy design service.
 
-        return: (boolean) - ``true`` if family hierarchy design is
-                available, ``false`` otherwise
+        :return: ``true`` if family hierarchy design is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_batch(self):
         """Tests for the availability of a relationship batch service.
 
-        return: (boolean) - ``true`` if a relationship batch service is
-                available, ``false`` otherwise
+        :return: ``true`` if a relationship batch service is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def supports_relationship_rules(self):
         """Tests if a relationship rules service is supported.
 
-        return: (boolean) - ``true`` if relationship rules service is
-                supported, ``false`` otherwise
+        :return: ``true`` if relationship rules service is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_relationship_record_types(self):
         """Gets the supported ``Relationship`` record types.
 
-        return: (osid.type.TypeList) - a list containing the supported
-                ``Relationship`` record types
+        :return: a list containing the supported ``Relationship`` record types
+        :rtype: ``osid.type.TypeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -228,26 +245,27 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
     relationship_record_types = property(fget=get_relationship_record_types)
 
-
     def supports_relationship_record_type(self, relationship_record_type):
         """Tests if the given ``Relationship`` record type is supported.
 
-        arg:    relationship_record_type (osid.type.Type): a ``Type``
-                indicating a ``Relationship`` record type
-        return: (boolean) - ``true`` if the given ``Type`` is supported,
-                ``false`` otherwise
-        raise:  NullArgument - ``relationship_record_type`` is ``null``
+        :param relationship_record_type: a ``Type`` indicating a ``Relationship`` record type
+        :type relationship_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``relationship_record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_relationship_search_record_types(self):
         """Gets the supported ``Relationship`` search record types.
 
-        return: (osid.type.TypeList) - a list containing the supported
-                ``Relationship`` search record types
+        :return: a list containing the supported ``Relationship`` search record types
+        :rtype: ``osid.type.TypeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -255,28 +273,27 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
     relationship_search_record_types = property(fget=get_relationship_search_record_types)
 
-
     def supports_relationship_search_record_type(self, relationship_search_record_type):
         """Tests if the given ``Relationship`` search record type is supported.
 
-        arg:    relationship_search_record_type (osid.type.Type): a
-                ``Type`` indicating a ``Relationship`` search record
-                type
-        return: (boolean) - ``true`` if the given search record type is
-                supported, ``false`` otherwise
-        raise:  NullArgument - ``relationship_search_record_type`` is
-                ``null``
+        :param relationship_search_record_type: a ``Type`` indicating a ``Relationship`` search record type
+        :type relationship_search_record_type: ``osid.type.Type``
+        :return: ``true`` if the given search record type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``relationship_search_record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_family_record_types(self):
         """Gets the supported ``Family`` record types.
 
-        return: (osid.type.TypeList) - a list containing the supported
-                ``Family`` types
+        :return: a list containing the supported ``Family`` types
+        :rtype: ``osid.type.TypeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -284,26 +301,27 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
     family_record_types = property(fget=get_family_record_types)
 
-
     def supports_family_record_type(self, family_record_type):
         """Tests if the given ``Family`` record type is supported.
 
-        arg:    family_record_type (osid.type.Type): a ``Type``
-                indicating a ``Family`` record type
-        return: (boolean) - ``true`` if the given ``Type`` is supported,
-                ``false`` otherwise
-        raise:  NullArgument - ``family_record_type`` is ``null``
+        :param family_record_type: a ``Type`` indicating a ``Family`` record type
+        :type family_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``family_record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_family_search_record_types(self):
         """Gets the supported ``Family`` search record types.
 
-        return: (osid.type.TypeList) - a list containing the supported
-                ``Family`` search record types
+        :return: a list containing the supported ``Family`` search record types
+        :rtype: ``osid.type.TypeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -311,15 +329,15 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
     family_search_record_types = property(fget=get_family_search_record_types)
 
-
     def supports_family_search_record_type(self, family_search_record_type):
         """Tests if the given ``Family`` search record type is supported.
 
-        arg:    family_search_record_type (osid.type.Type): a ``Type``
-                indicating a ``Family`` search record type
-        return: (boolean) - ``true`` if the given ``Type`` is supported,
-                ``false`` otherwise
-        raise:  NullArgument - ``family_search_record_type`` is ``null``
+        :param family_search_record_type: a ``Type`` indicating a ``Family`` search record type
+        :type family_search_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``family_search_record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -359,18 +377,15 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         hierarchy
 
     """
-    
-
-
 
     def get_relationship_lookup_session(self):
         """Gets the ``OsidSession`` associated with the relationship lookup service.
 
-        return: (osid.relationship.RelationshipLookupSession) - a
-                ``RelationshipLookupSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_lookup()`` is
-                ``false``
+        :return: a ``RelationshipLookupSession``
+        :rtype: ``osid.relationship.RelationshipLookupSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_lookup()`` is ``true``.*
 
@@ -379,18 +394,19 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_lookup_session = property(fget=get_relationship_lookup_session)
 
-
     def get_relationship_lookup_session_for_family(self, family_id):
         """Gets the ``OsidSession`` associated with the relationship lookup service for the given family.
 
-        arg:    family_id (osid.id.Id): the ``Id`` of the family
-        return: (osid.relationship.RelationshipLookupSession) - a
-                ``RelationshipLookupSession``
-        raise:  NotFound - no ``Family`` found by the given ``Id``
-        raise:  NullArgument - ``family_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_lookup()`` or
-                ``supports_visible_federation()`` is ``false``
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :return: a ``RelationshipLookupSession``
+        :rtype: ``osid.relationship.RelationshipLookupSession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or ``supports_visible_federation()`` is
+        ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_lookup()`` and
         ``supports_visible_federation()`` are ``true``*
@@ -398,15 +414,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         """
         return # osid.relationship.RelationshipLookupSession
 
-
     def get_relationship_query_session(self):
         """Gets the ``OsidSession`` associated with the relationship query service.
 
-        return: (osid.relationship.RelationshipQuerySession) - a
-                ``RelationshipQuerySession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_query()`` is
-                ``false``
+        :return: a ``RelationshipQuerySession``
+        :rtype: ``osid.relationship.RelationshipQuerySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_query()`` is ``true``.*
 
@@ -415,18 +430,18 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_query_session = property(fget=get_relationship_query_session)
 
-
     def get_relationship_query_session_for_family(self, family_id):
         """Gets the ``OsidSession`` associated with the relationship query service for the given family.
 
-        arg:    family_id (osid.id.Id): the ``Id`` of the family
-        return: (osid.relationship.RelationshipQuerySession) - a
-                ``RelationshipQuerySession``
-        raise:  NotFound - no ``Family`` found by the given ``Id``
-        raise:  NullArgument - ``family_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_query()`` or
-                ``supports_visible_federation()`` is ``false``
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :return: a ``RelationshipQuerySession``
+        :rtype: ``osid.relationship.RelationshipQuerySession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or ``supports_visible_federation()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_query()`` and
         ``supports_visible_federation()`` are ``true``*
@@ -434,15 +449,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         """
         return # osid.relationship.RelationshipQuerySession
 
-
     def get_relationship_search_session(self):
         """Gets the ``OsidSession`` associated with the relationship search service.
 
-        return: (osid.relationship.RelationshipSearchSession) - a
-                ``RelationshipSearchSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_search()`` is
-                ``false``
+        :return: a ``RelationshipSearchSession``
+        :rtype: ``osid.relationship.RelationshipSearchSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_search()`` is ``true``.*
 
@@ -451,18 +465,19 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_search_session = property(fget=get_relationship_search_session)
 
-
     def get_relationship_search_session_for_family(self, family_id):
         """Gets the ``OsidSession`` associated with the relationship search service for the given family.
 
-        arg:    family_id (osid.id.Id): the ``Id`` of the ``Family``
-        return: (osid.relationship.RelationshipSearchSession) - a
-                ``RelationshipSearchSession``
-        raise:  NotFound - no family found by the given ``Id``
-        raise:  NullArgument - ``family_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_search()`` or
-                ``supports_visible_federation()`` is ``false``
+        :param family_id: the ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: a ``RelationshipSearchSession``
+        :rtype: ``osid.relationship.RelationshipSearchSession``
+        :raise: ``NotFound`` -- no family found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or ``supports_visible_federation()`` is
+        ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_search()`` and
         ``supports_visible_federation()`` are ``true``*
@@ -470,15 +485,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         """
         return # osid.relationship.RelationshipSearchSession
 
-
     def get_relationship_admin_session(self):
         """Gets the ``OsidSession`` associated with the relationship administration service.
 
-        return: (osid.relationship.RelationshipAdminSession) - a
-                ``RelationshipAdminSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_admin()`` is
-                ``false``
+        :return: a ``RelationshipAdminSession``
+        :rtype: ``osid.relationship.RelationshipAdminSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_admin()`` is ``true``.*
 
@@ -487,18 +501,18 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_admin_session = property(fget=get_relationship_admin_session)
 
-
     def get_relationship_admin_session_for_family(self, family_id):
         """Gets the ``OsidSession`` associated with the relationship administration service for the given family.
 
-        arg:    family_id (osid.id.Id): the ``Id`` of the ``Family``
-        return: (osid.relationship.RelationshipAdminSession) - a
-                ``RelationshipAdminSession``
-        raise:  NotFound - no family found by the given ``Id``
-        raise:  NullArgument - ``family_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_admin()`` or
-                ``supports_visible_federation()`` is ``false``
+        :param family_id: the ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: a ``RelationshipAdminSession``
+        :rtype: ``osid.relationship.RelationshipAdminSession``
+        :raise: ``NotFound`` -- no family found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or ``supports_visible_federation()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_admin()`` and
         ``supports_visible_federation()`` are ``true``*
@@ -506,39 +520,38 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         """
         return # osid.relationship.RelationshipAdminSession
 
-
     def get_relationship_notification_session(self, relationship_receiver):
         """Gets the ``OsidSession`` associated with the relationship notification service.
 
-        arg:    relationship_receiver
-                (osid.relationship.RelationshipReceiver): the receiver
-        return: (osid.relationship.RelationshipNotificationSession) - a
-                ``RelationshipNotificationSession``
-        raise:  NullArgument - ``relationship_receiver`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_notification()``
-                is ``false``
+        :param relationship_receiver: the receiver
+        :type relationship_receiver: ``osid.relationship.RelationshipReceiver``
+        :return: a ``RelationshipNotificationSession``
+        :rtype: ``osid.relationship.RelationshipNotificationSession``
+        :raise: ``NullArgument`` -- ``relationship_receiver`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_notification()`` is ``true``.*
 
         """
         return # osid.relationship.RelationshipNotificationSession
 
-
     def get_relationship_notification_session_for_family(self, relationship_receiver, family_id):
         """Gets the ``OsidSession`` associated with the relationship notification service for the given family.
 
-        arg:    relationship_receiver
-                (osid.relationship.RelationshipReceiver): the receiver
-        arg:    family_id (osid.id.Id): the ``Id`` of the ``Family``
-        return: (osid.relationship.RelationshipNotificationSession) - a
-                ``RelationshipNotificationSession``
-        raise:  NotFound - no family found by the given ``Id``
-        raise:  NullArgument - ``relationship_receiver`` or
-                ``family_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_notification()``
-                or ``supports_visible_federation()`` is ``false``
+        :param relationship_receiver: the receiver
+        :type relationship_receiver: ``osid.relationship.RelationshipReceiver``
+        :param family_id: the ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: a ``RelationshipNotificationSession``
+        :rtype: ``osid.relationship.RelationshipNotificationSession``
+        :raise: ``NotFound`` -- no family found by the given ``Id``
+        :raise: ``NullArgument`` -- ``relationship_receiver`` or ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or ``supports_visible_federation()`` is
+        ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_notification()`` and
         ``supports_visible_federation()`` are ``true``*
@@ -546,15 +559,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         """
         return # osid.relationship.RelationshipNotificationSession
 
-
     def get_relationship_family_session(self):
         """Gets the ``OsidSession`` to lookup relationship/family mappings.
 
-        return: (osid.relationship.RelationshipFamilySession) - a
-                ``RelationshipFamilySession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_family()`` is
-                ``false``
+        :return: a ``RelationshipFamilySession``
+        :rtype: ``osid.relationship.RelationshipFamilySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_family()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_family()`` is ``true``.*
 
@@ -563,16 +575,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_family_session = property(fget=get_relationship_family_session)
 
-
     def get_relationship_family_assignment_session(self):
         """Gets the ``OsidSession`` associated with assigning relationships to families.
 
-        return: (osid.relationship.RelationshipFamilyAssignmentSession)
-                - a ``RelationshipFamilyAssignmentSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented -
-                ``supports_relationship_family_assignment()`` is
-                ``false``
+        :return: a ``RelationshipFamilyAssignmentSession``
+        :rtype: ``osid.relationship.RelationshipFamilyAssignmentSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_family_assignment()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_family_assignment()`` is ``true``.*
 
@@ -581,33 +591,32 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_family_assignment_session = property(fget=get_relationship_family_assignment_session)
 
-
     def get_relationship_smart_family_session(self, family_id):
         """Gets the ``OsidSession`` to manage dynamic families of retlationships.
 
-        arg:    family_id (osid.id.Id): the ``Id`` of the ``Family``
-        return: (osid.relationship.RelationshipSmartFamilySession) - a
-                ``RelationshipSmartFamilySession``
-        raise:  NotFound - no family found by the given ``Id``
-        raise:  NullArgument - ``family_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_smart_family()``
-                is ``false``
+        :param family_id: the ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: a ``RelationshipSmartFamilySession``
+        :rtype: ``osid.relationship.RelationshipSmartFamilySession``
+        :raise: ``NotFound`` -- no family found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_smart_family()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_smart_family()`` is ``true``.*
 
         """
         return # osid.relationship.RelationshipSmartFamilySession
 
-
     def get_family_lookup_session(self):
         """Gets the ``OsidSession`` associated with the family lookup service.
 
-        return: (osid.relationship.FamilyLookupSession) - a
-                ``FamilyLookupSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_lookup()`` is
-                ``false``
+        :return: a ``FamilyLookupSession``
+        :rtype: ``osid.relationship.FamilyLookupSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_lookup()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_lookup()`` is ``true``.*
 
@@ -616,14 +625,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     family_lookup_session = property(fget=get_family_lookup_session)
 
-
     def get_family_query_session(self):
         """Gets the ``OsidSession`` associated with the family query service.
 
-        return: (osid.relationship.FamilyQuerySession) - a
-                ``FamilyQuerySession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_query()`` is ``false``
+        :return: a ``FamilyQuerySession``
+        :rtype: ``osid.relationship.FamilyQuerySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_query()`` is ``true``.*
 
@@ -632,15 +641,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     family_query_session = property(fget=get_family_query_session)
 
-
     def get_family_search_session(self):
         """Gets the ``OsidSession`` associated with the family search service.
 
-        return: (osid.relationship.FamilySearchSession) - a
-                ``FamilySearchSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_search()`` is
-                ``false``
+        :return: a ``FamilySearchSession``
+        :rtype: ``osid.relationship.FamilySearchSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_search()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_search()`` is ``true``.*
 
@@ -649,14 +657,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     family_search_session = property(fget=get_family_search_session)
 
-
     def get_family_admin_session(self):
         """Gets the ``OsidSession`` associated with the family administrative service.
 
-        return: (osid.relationship.FamilyAdminSession) - a
-                ``FamilyAdminSession``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_admin()`` is ``false``
+        :return: a ``FamilyAdminSession``
+        :rtype: ``osid.relationship.FamilyAdminSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_admin()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_admin()`` is ``true``.*
 
@@ -665,33 +673,31 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     family_admin_session = property(fget=get_family_admin_session)
 
-
     def get_family_notification_session(self, family_receiver):
         """Gets the ``OsidSession`` associated with the family notification service.
 
-        arg:    family_receiver (osid.relationship.FamilyReceiver): the
-                receiver
-        return: (osid.relationship.FamilyNotificationSession) - a
-                ``FamilyNotificationSession``
-        raise:  NullArgument - ``family_receiver`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_notification()`` is
-                ``false``
+        :param family_receiver: the receiver
+        :type family_receiver: ``osid.relationship.FamilyReceiver``
+        :return: a ``FamilyNotificationSession``
+        :rtype: ``osid.relationship.FamilyNotificationSession``
+        :raise: ``NullArgument`` -- ``family_receiver`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_notification()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_notification()`` is ``true``.*
 
         """
         return # osid.relationship.FamilyNotificationSession
 
-
     def get_family_hierarchy_session(self):
         """Gets the ``OsidSession`` associated with the family hierarchy service.
 
-        return: (osid.relationship.FamilyHierarchySession) - a
-                ``FamilyHierarchySession`` for families
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_hierarchy()`` is
-                ``false``
+        :return: a ``FamilyHierarchySession`` for families
+        :rtype: ``osid.relationship.FamilyHierarchySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_hierarchy()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_hierarchy()`` is ``true``.*
 
@@ -700,15 +706,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     family_hierarchy_session = property(fget=get_family_hierarchy_session)
 
-
     def get_family_hierarchy_design_session(self):
         """Gets the ``OsidSession`` associated with the family hierarchy design service.
 
-        return: (osid.relationship.FamilyHierarchyDesignSession) - a
-                ``HierarchyDesignSession`` for families
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_family_hierarchy_design()``
-                is ``false``
+        :return: a ``HierarchyDesignSession`` for families
+        :rtype: ``osid.relationship.FamilyHierarchyDesignSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_hierarchy_design()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_family_hierarchy_design()`` is ``true``.*
 
@@ -717,15 +722,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     family_hierarchy_design_session = property(fget=get_family_hierarchy_design_session)
 
-
     def get_relationship_batch_manager(self):
         """Gets the relationship batch manager.
 
-        return: (osid.relationship.batch.RelationshipBatchManager) - a
-                ``RelationshipBatchManager``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_batch()`` is
-                ``false``
+        :return: a ``RelationshipBatchManager``
+        :rtype: ``osid.relationship.batch.RelationshipBatchManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_batch()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_batch()`` is ``true``.*
 
@@ -734,15 +738,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
     relationship_batch_manager = property(fget=get_relationship_batch_manager)
 
-
     def get_relationship_rules_manager(self):
         """Gets the relationship rules manager.
 
-        return: (osid.relationship.rules.RelationshipRulesManager) - a
-                ``RelationshipRulesManager``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unimplemented - ``supports_relationship_rules()`` is
-                ``false``
+        :return: a ``RelationshipRulesManager``
+        :rtype: ``osid.relationship.rules.RelationshipRulesManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_rules()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_rules()`` is ``true``.*
 
@@ -750,5 +753,445 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # osid.relationship.rules.RelationshipRulesManager
 
     relationship_rules_manager = property(fget=get_relationship_rules_manager)
+
+
+class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile):
+    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
+        aspects of this service.
+
+    Methods in this manager support the passing of a Proxy. The sessions
+    included in this manager are:
+
+      * ``RelationshipLookupSession:`` a session to retrieve and examine
+        relationships
+      * ``RelationshipQuerySession:`` a session to query relationships
+      * ``RelationshipSearchSession:`` a session to search for
+        relationships
+      * ``RelationshipAdminSession:`` a session to manage relationships
+      * ``RelationshipNotificationSession:`` a session to receive
+        notifications pertaining to relationship changes
+      * ``RelationshipFamilySession:`` a session to look up relationship
+        to family mappings
+      * ``RelationshipFamilyAssignmentSession:`` a session to manage
+        relationship to family catalog mappings
+      * ``RelationshipSmartFamilySession:`` a session to manage dynamic
+        relationship families
+
+      * ``FamilyLookupSession:`` a session to retrieve families
+      * ``FamilyQuerySession:`` a session to query families
+      * ``FamilySearchSession:`` a session to search for families
+      * ``FamilyAdminSession:`` a session to create and delete families
+      * ``FamilyNotificationSession:`` a session to receive
+        notifications pertaining to family changes
+      * ``FamilyHierarchySession:`` a session to traverse a hierarchy of
+        families
+      * ``FamilyHierarchyDesignSession:`` a session to manage a family
+        hierarchy
+
+    """
+
+    def get_relationship_lookup_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the relationship lookup service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipLookupSession``
+        :rtype: ``osid.relationship.RelationshipLookupSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_lookup()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipLookupSession
+
+    def get_relationship_lookup_session_for_family(self, family_id, proxy):
+        """Gets the ``OsidSession`` associated with the relationship lookup service for the given family.
+
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipLookupSession``
+        :rtype: ``osid.relationship.RelationshipLookupSession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or ``supports_visible_federation()`` is
+        ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_lookup()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+        """
+        return # osid.relationship.RelationshipLookupSession
+
+    def get_relationship_query_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the relationship query service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipQuerySession``
+        :rtype: ``osid.relationship.RelationshipQuerySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_query()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipQuerySession
+
+    def get_relationship_query_session_for_family(self, family_id, proxy):
+        """Gets the ``OsidSession`` associated with the relationship query service for the given family.
+
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipQuerySession``
+        :rtype: ``osid.relationship.RelationshipQuerySession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or ``supports_visible_federation()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_query()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+        """
+        return # osid.relationship.RelationshipQuerySession
+
+    def get_relationship_search_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the relationship search service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipSearchSession``
+        :rtype: ``osid.relationship.RelationshipSearchSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_search()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipSearchSession
+
+    def get_relationship_search_session_for_family(self, family_id, proxy):
+        """Gets the ``OsidSession`` associated with the relationship search service for the given family.
+
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipSearchSession``
+        :rtype: ``osid.relationship.RelationshipSearchSession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or ``supports_visible_federation()`` is
+        ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_search()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+        """
+        return # osid.relationship.RelationshipSearchSession
+
+    def get_relationship_admin_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the relationship administration service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipAdminSession``
+        :rtype: ``osid.relationship.RelationshipAdminSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_admin()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipAdminSession
+
+    def get_relationship_admin_session_for_family(self, family_id, proxy):
+        """Gets the ``OsidSession`` associated with the relationship administration service for the given family.
+
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipAdminSession``
+        :rtype: ``osid.relationship.RelationshipAdminSession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or ``supports_visible_federation()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_admin()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+        """
+        return # osid.relationship.RelationshipAdminSession
+
+    def get_relationship_notification_session(self, relationship_receiver, proxy):
+        """Gets the ``OsidSession`` associated with the relationship notification service.
+
+        :param relationship_receiver: the receiver
+        :type relationship_receiver: ``osid.relationship.RelationshipReceiver``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipNotificationSession``
+        :rtype: ``osid.relationship.RelationshipNotificationSession``
+        :raise: ``NullArgument`` -- ``relationship_receiver`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_notification()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipNotificationSession
+
+    def get_relationship_notification_session_for_family(self, relationship_receiver, family_id, proxy):
+        """Gets the ``OsidSession`` associated with the relationship notification service for the given family.
+
+        :param relationship_receiver: the receiver
+        :type relationship_receiver: ``osid.relationship.RelationshipReceiver``
+        :param family_id: the ``Id`` of the family
+        :type family_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipNotificationSession``
+        :rtype: ``osid.relationship.RelationshipNotificationSession``
+        :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``relationship_receiver, family_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or ``supports_visible_federation()`` is
+        ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_notification()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+        """
+        return # osid.relationship.RelationshipNotificationSession
+
+    def get_relationship_family_session(self, proxy):
+        """Gets the ``OsidSession`` to lookup relationship/family mappings.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipFamilySession``
+        :rtype: ``osid.relationship.RelationshipFamilySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_family()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_family()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipFamilySession
+
+    def get_relationship_family_assignment_session(self, proxy):
+        """Gets the ``OsidSession`` associated with assigning relationships to families.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipFamilyAssignmentSession``
+        :rtype: ``osid.relationship.RelationshipFamilyAssignmentSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_family_assignment()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_family_assignment()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipFamilyAssignmentSession
+
+    def get_relationship_smart_family_session(self, family_id, proxy):
+        """Gets the ``OsidSession`` to manage dynamic families of retlationships.
+
+        :param family_id: the ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RelationshipSmartFamilySession``
+        :rtype: ``osid.relationship.RelationshipSmartFamilySession``
+        :raise: ``NotFound`` -- no family found by the given ``Id``
+        :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_smart_family()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_smart_family()`` is ``true``.*
+
+        """
+        return # osid.relationship.RelationshipSmartFamilySession
+
+    def get_family_lookup_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the family lookup service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FamilyLookupSession``
+        :rtype: ``osid.relationship.FamilyLookupSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_lookup()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_family_lookup()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilyLookupSession
+
+    def get_family_query_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the family query service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FamilyQuerySession``
+        :rtype: ``osid.relationship.FamilyQuerySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_query()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_famil_query()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilyQuerySession
+
+    def get_family_search_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the family search service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FamilySearchSession``
+        :rtype: ``osid.relationship.FamilySearchSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_search()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_family_search()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilySearchSession
+
+    def get_family_admin_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the family administrative service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FamilyAdminSession``
+        :rtype: ``osid.relationship.FamilyAdminSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_admin()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_family_admin()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilyAdminSession
+
+    def get_family_notification_session(self, family_receiver, proxy):
+        """Gets the ``OsidSession`` associated with the family notification service.
+
+        :param family_receiver: the receiver
+        :type family_receiver: ``osid.relationship.FamilyReceiver``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FamilyNotificationSession``
+        :rtype: ``osid.relationship.FamilyNotificationSession``
+        :raise: ``NullArgument`` -- ``family_receiver`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_notification()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_family_notification()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilyNotificationSession
+
+    def get_family_hierarchy_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the family hierarchy service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``FamilyHierarchySession`` for families
+        :rtype: ``osid.relationship.FamilyHierarchySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_hierarchy()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_family_hierarchy()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilyHierarchySession
+
+    def get_family_hierarchy_design_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the family hierarchy design service.
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``HierarchyDesignSession`` for families
+        :rtype: ``osid.relationship.FamilyHierarchyDesignSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_family_hierarchy_design()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_family_hierarchy_design()`` is ``true``.*
+
+        """
+        return # osid.relationship.FamilyHierarchyDesignSession
+
+    def get_relationship_batch_proxy_manager(self):
+        """Gets the relationship batch proxy manager.
+
+        :return: a ``RelationshipBatchProxyManager``
+        :rtype: ``osid.relationship.batch.RelationshipBatchProxyManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_rules()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_rules()`` is ``true``.*
+
+        """
+        return # osid.relationship.batch.RelationshipBatchProxyManager
+
+    relationship_batch_proxy_manager = property(fget=get_relationship_batch_proxy_manager)
+
+    def get_relationship_rules_proxy_manager(self):
+        """Gets the relationship rules proxy manager.
+
+        :return: a ``RelationshipRulesProxyManager``
+        :rtype: ``osid.relationship.rules.RelationshipRulesProxyManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_relationship_rules()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_relationship_rules()`` is ``true``.*
+
+        """
+        return # osid.relationship.rules.RelationshipRulesProxyManager
+
+    relationship_rules_proxy_manager = property(fget=get_relationship_rules_proxy_manager)
 
 

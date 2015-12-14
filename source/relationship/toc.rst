@@ -6,11 +6,10 @@ Relationship
 
    summary
    service_managers
-   family
    managers
    sessions
    objects
+   service_catalog
    searches
    queries
    records
-   rules

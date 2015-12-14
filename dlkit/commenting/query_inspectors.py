@@ -1,13 +1,18 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
 class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector):
     """The comment query inspector for examining comment queries."""
+
     def get_reference_id_terms(self):
         """Gets the reference ``Id`` terms.
 
         :return: the reference ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -20,6 +25,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
         :return: the resource ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -30,6 +38,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
 
         :return: the resource terms
         :rtype: ``osid.resource.ResourceQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.resource.ResourceQueryInspector
@@ -42,6 +53,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
         :return: the agent ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -52,6 +66,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
 
         :return: the agent terms
         :rtype: ``osid.authentication.AgentQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.authentication.AgentQueryInspector
@@ -64,6 +81,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
         :return: the text query terms
         :rtype: ``osid.search.terms.StringTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.StringTerm
 
@@ -74,6 +94,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
 
         :return: the rating ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -86,6 +109,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
         :return: the rating terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -97,6 +123,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
         :return: the book ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -107,6 +136,9 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
 
         :return: the book terms
         :rtype: ``osid.commenting.BookQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.commenting.BookQueryInspector
@@ -124,17 +156,23 @@ class CommentQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(comment_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.commenting.records.CommentQueryInspectorRecord
 
 
 class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     """This is the query inspector for examining bok queries."""
+
     def get_comment_id_terms(self):
         """Gets the comment ``Id`` terms.
 
         :return: the comment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -147,6 +185,9 @@ class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the comment terms
         :rtype: ``osid.commenting.CommentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.commenting.CommentQueryInspector
 
@@ -157,6 +198,9 @@ class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the ancestor book ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -169,6 +213,9 @@ class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the ancestor book terms
         :rtype: ``osid.commenting.BookQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.commenting.BookQueryInspector
 
@@ -180,6 +227,9 @@ class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the descendant book ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -190,6 +240,9 @@ class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the descendant book terms
         :rtype: ``osid.commenting.BookQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.commenting.BookQueryInspector
@@ -206,6 +259,8 @@ class BookQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.commenting.records.BookQueryInspectorRecord

@@ -1,14 +1,18 @@
+
 from ..osid import search_orders as osid_search_orders
 
 
 class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidSubjugateableSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_grade_system(self, style):
         """Specified a preference for ordering results by the grade system.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -19,6 +23,9 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :return: ``true`` if a grade system search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -28,6 +35,9 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :return: the grade system search order
         :rtype: ``osid.grading.GradeSystemSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_grade_system_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_grade_system_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSystemSearchOrder
@@ -41,6 +51,8 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -51,6 +63,8 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -60,6 +74,8 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -77,18 +93,23 @@ class GradeSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_ord
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradeSearchOrderRecord
 
 
 class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidAggregateableSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_based_on_grades(self, style):
         """Orders the results by systems based on grades.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -100,6 +121,8 @@ class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_sear
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -110,6 +133,8 @@ class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_sear
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -119,6 +144,8 @@ class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_sear
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -136,18 +163,23 @@ class GradeSystemSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_sear
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_system_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradeSystemSearchOrderRecord
 
 
 class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_gradebook_column(self, style):
         """Specified a preference for ordering results by the gradebook column.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -158,6 +190,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: ``true`` if a gradebook column search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -167,6 +202,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the gradebook column search order
         :rtype: ``osid.grading.GradebookColumnSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_gradebook_column_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradebookColumnSearchOrder
@@ -180,6 +218,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -188,6 +228,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if a key resource search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -198,6 +241,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the key resource search order
         :rtype: ``osid.resource.ResourceSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_key_resource_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_key_resource_search_order()`` is ``true``.*
 
         """
         return # osid.resource.ResourceSearchOrder
@@ -211,6 +257,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -220,6 +268,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -231,6 +281,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -239,6 +291,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if a grade search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -249,6 +304,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the grade search order
         :rtype: ``osid.grading.GradeSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_grade_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_grade_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSearchOrder
@@ -262,6 +320,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -272,6 +332,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -280,6 +342,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if a resource search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -290,6 +355,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the resource search order
         :rtype: ``osid.resource.ResourceSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_grader_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_grader_search_order()`` is ``true``.*
 
         """
         return # osid.resource.ResourceSearchOrder
@@ -303,6 +371,8 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -311,6 +381,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if an agent search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -321,6 +394,9 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: the agent search order
         :rtype: ``osid.authentication.AgentSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_grading_agent_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_grading_agent_search_order()`` is ``true``.*
 
         """
         return # osid.authentication.AgentSearchOrder
@@ -340,18 +416,23 @@ class GradeEntrySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_entry_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradeEntrySearchOrderRecord
 
 
 class GradebookColumnSearchOrder(osid_search_orders.OsidObjectSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_grade_system(self, style):
         """Specified a preference for ordering results by the grade system.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -362,6 +443,9 @@ class GradebookColumnSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         :return: ``true`` if a grade system search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -371,6 +455,9 @@ class GradebookColumnSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         :return: the grade system search order
         :rtype: ``osid.grading.GradeSystemSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_grade_system_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_grade_system_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSystemSearchOrder
@@ -383,6 +470,9 @@ class GradebookColumnSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         :return: ``true`` if a gradebook column summary search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -392,6 +482,10 @@ class GradebookColumnSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         :return: the gradebook column summary search order
         :rtype: ``osid.grading.GradebookColumnSummarySearchOrder``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_summary_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_gradebook_column_summary_search_order()`` is
+        ``true``.*
 
         """
         return # osid.grading.GradebookColumnSummarySearchOrder
@@ -411,18 +505,23 @@ class GradebookColumnSearchOrder(osid_search_orders.OsidObjectSearchOrder):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradebookColumnSearchOrderRecord
 
 
 class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_mean(self, style):
         """Specified a preference for ordering results by the mean.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -434,6 +533,8 @@ class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -443,6 +544,8 @@ class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -454,6 +557,8 @@ class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -463,6 +568,8 @@ class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -474,11 +581,14 @@ class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
     def get_gradebook_column_summary_search_order_record(self, gradebook_column_summary_record_type):
-        """Gets the gradebook column summary search order record corresponding to the given gradebook column summary record ``Type``.
+        """Gets the gradebook column summary search order record corresponding to the given gradebook column summary
+        record ``Type``.
 
         Multiple retrievals return the same underlying object.
 
@@ -490,12 +600,15 @@ class GradebookColumnSummarySearchOrder(osid_search_orders.OsidRuleSearchOrder):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.records.GradebookColumnSummarySearchOrderRecord
 
 
 class GradebookSearchOrder(osid_search_orders.OsidCatalogSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_gradebook_search_order_record(self, gradebook_record_type):
         """Gets the gradebook search order record corresponding to the given gradebook record ``Type``.
 
@@ -508,6 +621,8 @@ class GradebookSearchOrder(osid_search_orders.OsidCatalogSearchOrder):
         :raise: ``NullArgument`` -- ``gradebook_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.records.GradebookSearchOrderRecord

@@ -9,8 +9,6 @@ class ResourceRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class ResourceQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -35,8 +31,6 @@ class ResourceFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -48,8 +42,6 @@ class ResourceSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -61,8 +53,6 @@ class BinRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -74,8 +64,6 @@ class BinQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -87,8 +75,6 @@ class BinFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -100,8 +86,6 @@ class BinSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 

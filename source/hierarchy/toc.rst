@@ -6,11 +6,10 @@ Hierarchy
 
    summary
    service_managers
-   hierarchy
    managers
    sessions
    objects
+   service_catalog
    searches
    queries
    records
-   rules

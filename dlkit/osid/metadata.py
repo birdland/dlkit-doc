@@ -10,14 +10,14 @@ class Metadata:
     from provider to provider or from object to object.
 
     """
-    
-
-
 
     def get_element_id(self):
         """Gets a unique ``Id`` for the data element.
 
-        return: (osid.id.Id) - an ``Id``
+        :return: an ``Id``
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -25,18 +25,19 @@ class Metadata:
 
     element_id = property(fget=get_element_id)
 
-
     def get_element_label(self):
         """Gets a display label for the data element.
 
-        return: (osid.locale.DisplayText) - a display label
+        :return: a display label
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
 
     element_label = property(fget=get_element_label)
-
 
     def get_instructions(self):
         """Gets instructions for updating this element value.
@@ -45,7 +46,10 @@ class Metadata:
         property that may include special instructions or caveats to the
         end-user above and beyond what this interface provides.
 
-        return: (osid.locale.DisplayText) - instructions
+        :return: instructions
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -53,12 +57,13 @@ class Metadata:
 
     instructions = property(fget=get_instructions)
 
-
     def get_syntax(self):
         """Gets the syntax of this data.
 
-        return: (osid.Syntax) - an enumeration indicating thetype of
-                value
+        :return: an enumeration indicating thetype of value
+        :rtype: ``osid.Syntax``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -66,28 +71,29 @@ class Metadata:
 
     syntax = property(fget=get_syntax)
 
-
     def is_array(self):
         """Tests if this data element is an array.
 
-        return: (boolean) - ``true`` if this data is an array, ``false``
-                if a single element
+        :return: ``true`` if this data is an array, ``false`` if a single element
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_required(self):
         """Tests if this data element is required for creating new objects.
 
-        return: (boolean) - ``true`` if this element value is required,
-                ``false`` otherwise
+        :return: ``true`` if this element value is required, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_read_only(self):
         """Tests if this data can be updated.
@@ -96,13 +102,14 @@ class Metadata:
         guarantee that an authorization failure will not occur when the
         create or update transaction is issued.
 
-        return: (boolean) - ``true`` if this data is not updatable,
-                ``false`` otherwise
+        :return: ``true`` if this data is not updatable, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_linked(self):
         """Tests if this data element is linked to other data in the object.
@@ -110,13 +117,14 @@ class Metadata:
         Updating linked data elements should refresh all metadata and
         revalidate object elements.
 
-        return: (boolean) - true if this element is linked, false if
-                updates have no side effect
+        :return: true if this element is linked, false if updates have no side effect
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_value_known(self):
         """Tests if an existing value is known for this data element.
@@ -124,31 +132,34 @@ class Metadata:
         If it is known that a value does not exist, then this method
         returns ``true``.
 
-        return: (boolean) - ``true`` if the element value is known,
-                ``false`` if the element value is not known
+        :return: ``true`` if the element value is known, ``false`` if the element value is not known
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def has_value(self):
         """Tests if this data element has a set non-default value.
 
-        return: (boolean) - ``true`` if this element value has been set,
-                ``false`` otherwise
-        raise:  IllegalState - ``is_value_known()`` is ``false``
+        :return: ``true`` if this element value has been set, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_units(self):
         """Gets the units of this data for display purposes ('lbs', 'gills', 'furlongs').
 
-        return: (osid.locale.DisplayText) - the display units of this
-                data or an empty string if not applicable
+        :return: the display units of this data or an empty string if not applicable
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -156,13 +167,14 @@ class Metadata:
 
     units = property(fget=get_units)
 
-
     def get_minimum_elements(self):
         """In the case where an array or list of elements is specified in an ``OsidForm,`` this specifies the minimum
         number of elements that must be included.
 
-        return: (cardinal) - the minimum elements or ``1`` if
-                ``is_array()`` is ``false``
+        :return: the minimum elements or ``1`` if ``is_array()`` is ``false``
+        :rtype: ``cardinal``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -170,13 +182,14 @@ class Metadata:
 
     minimum_elements = property(fget=get_minimum_elements)
 
-
     def get_maximum_elements(self):
         """In the case where an array or list of elements is specified in an ``OsidForm,`` this specifies the maximum
         number of elements that can be specified.
 
-        return: (cardinal) - the maximum elements or ``1`` if
-                ``is_array()`` is ``false``
+        :return: the maximum elements or ``1`` if ``is_array()`` is ``false``
+        :rtype: ``cardinal``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -184,12 +197,13 @@ class Metadata:
 
     maximum_elements = property(fget=get_maximum_elements)
 
-
     def get_minimum_cardinal(self):
         """Gets the minimum cardinal value.
 
-        return: (cardinal) - the minimum cardinal
-        raise:  IllegalState - syntax is not a ``CARDINAL``
+        :return: the minimum cardinal
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -197,12 +211,13 @@ class Metadata:
 
     minimum_cardinal = property(fget=get_minimum_cardinal)
 
-
     def get_maximum_cardinal(self):
         """Gets the maximum cardinal value.
 
-        return: (cardinal) - the maximum cardinal
-        raise:  IllegalState - syntax is not a ``CARDINAL``
+        :return: the maximum cardinal
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -210,20 +225,19 @@ class Metadata:
 
     maximum_cardinal = property(fget=get_maximum_cardinal)
 
-
     def get_cardinal_set(self):
         """Gets the set of acceptable cardinal values.
 
-        return: (cardinal) - a set of cardinals or an empty array if not
-                restricted
-        raise:  IllegalState - syntax is not a ``CARDINAL``
+        :return: a set of cardinals or an empty array if not restricted
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # cardinal
 
     cardinal_set = property(fget=get_cardinal_set)
-
 
     def get_default_cardinal_values(self):
         """Gets the default cardinal values.
@@ -232,16 +246,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (cardinal) - the default cardinal values
-        raise:  IllegalState - syntax is not a ``CARDINAL`` or
-                ``is_required()`` is ``true``
+        :return: the default cardinal values
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # cardinal
 
     default_cardinal_values = property(fget=get_default_cardinal_values)
-
 
     def get_existing_cardinal_values(self):
         """Gets the existing cardinal values.
@@ -250,9 +264,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (cardinal) - the existing cardinal values
-        raise:  IllegalState - syntax is not a ``CARDINAL`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing cardinal values
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -260,13 +275,13 @@ class Metadata:
 
     existing_cardinal_values = property(fget=get_existing_cardinal_values)
 
-
     def get_coordinate_types(self):
         """Gets the set of acceptable coordinate types.
 
-        return: (osid.type.Type) - the set of coordinate types
-        raise:  IllegalState - syntax is not a ``COORDINATE or
-                SPATIALUNIT``
+        :return: the set of coordinate types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE or SPATIALUNIT``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -274,82 +289,82 @@ class Metadata:
 
     coordinate_types = property(fget=get_coordinate_types)
 
-
     def supports_coordinate_type(self, coordinate_type):
         """Tests if the given coordinate type is supported.
 
-        arg:    coordinate_type (osid.type.Type): a coordinate Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not a ``COORDINATE``
-        raise:  NullArgument - ``coordinate_type`` is ``null``
+        :param coordinate_type: a coordinate Type
+        :type coordinate_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE``
+        :raise: ``NullArgument`` -- ``coordinate_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_axes_for_coordinate_type(self, coordinate_type):
         """Gets the number of axes for a given supported coordinate type.
 
-        arg:    coordinate_type (osid.type.Type): a coordinate Type
-        return: (cardinal) - the number of axes
-        raise:  IllegalState - syntax is not a ``COORDINATE``
-        raise:  NullArgument - ``coordinate_type`` is ``null``
-        raise:  Unsupported -
-                ``supports_coordinate_type(coordinate_type)`` is
-                ``false``
+        :param coordinate_type: a coordinate Type
+        :type coordinate_type: ``osid.type.Type``
+        :return: the number of axes
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE``
+        :raise: ``NullArgument`` -- ``coordinate_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_coordinate_type(coordinate_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # cardinal
 
-
     def get_minimum_coordinate_values(self, coordinate_type):
         """Gets the minimum coordinate values given supported coordinate type.
 
-        arg:    coordinate_type (osid.type.Type): a coordinate Type
-        return: (decimal) - the minimum coordinate values
-        raise:  IllegalState - syntax is not a ``COORDINATE``
-        raise:  NullArgument - ``coordinate_type`` is ``null``
-        raise:  Unsupported -
-                ``supports_coordinate_type(coordinate_type)`` is
-                ``false``
+        :param coordinate_type: a coordinate Type
+        :type coordinate_type: ``osid.type.Type``
+        :return: the minimum coordinate values
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE``
+        :raise: ``NullArgument`` -- ``coordinate_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_coordinate_type(coordinate_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # decimal
-
 
     def get_maximum_coordinate_values(self, coordinate_type):
         """Gets the maximum coordinate values given supported coordinate type.
 
-        arg:    coordinate_type (osid.type.Type): a coordinate Type
-        return: (decimal) - the maximum coordinate values
-        raise:  IllegalState - syntax is not a ``COORDINATE``
-        raise:  NullArgument - ``coordinate_type`` is ``null``
-        raise:  Unsupported -
-                ``supports_coordinate_type(coordinate_type)`` is
-                ``false``
+        :param coordinate_type: a coordinate Type
+        :type coordinate_type: ``osid.type.Type``
+        :return: the maximum coordinate values
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE``
+        :raise: ``NullArgument`` -- ``coordinate_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_coordinate_type(coordinate_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # decimal
 
-
     def get_coordinate_set(self):
         """Gets the set of acceptable coordinate values.
 
-        return: (osid.mapping.Coordinate) - a set of coordinates or an
-                empty array if not restricted
-        raise:  IllegalState - syntax is not a ``COORDINATE``
+        :return: a set of coordinates or an empty array if not restricted
+        :rtype: ``osid.mapping.Coordinate``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Coordinate
 
     coordinate_set = property(fget=get_coordinate_set)
-
 
     def get_default_coordinate_values(self):
         """Gets the default coordinate values.
@@ -358,17 +373,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.mapping.Coordinate) - the default coordinate
-                values
-        raise:  IllegalState - syntax is not a ``COORDINATE`` or
-                ``is_required()`` is ``true``
+        :return: the default coordinate values
+        :rtype: ``osid.mapping.Coordinate``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Coordinate
 
     default_coordinate_values = property(fget=get_default_coordinate_values)
-
 
     def get_existing_coordinate_values(self):
         """Gets the existing coordinate values.
@@ -377,10 +391,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.mapping.Coordinate) - the existing coordinate
-                values
-        raise:  IllegalState - syntax is not a ``COORDINATE`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing coordinate values
+        :rtype: ``osid.mapping.Coordinate``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -388,12 +402,13 @@ class Metadata:
 
     existing_coordinate_values = property(fget=get_existing_coordinate_values)
 
-
     def get_currency_types(self):
         """Gets the set of acceptable currency types.
 
-        return: (osid.type.Type) - the set of currency types
-        raise:  IllegalState - syntax is not a ``CURRENCY``
+        :return: the set of currency types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -401,26 +416,28 @@ class Metadata:
 
     currency_types = property(fget=get_currency_types)
 
-
     def supports_currency_type(self, currency_type):
         """Tests if the given currency type is supported.
 
-        arg:    currency_type (osid.type.Type): a currency Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not a ``CURRENCY``
-        raise:  NullArgument - ``currency_type`` is ``null``
+        :param currency_type: a currency Type
+        :type currency_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY``
+        :raise: ``NullArgument`` -- ``currency_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_minimum_currency(self):
         """Gets the minimum currency value.
 
-        return: (osid.financials.Currency) - the minimum currency
-        raise:  IllegalState - syntax is not a ``CURRENCY``
+        :return: the minimum currency
+        :rtype: ``osid.financials.Currency``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -428,12 +445,13 @@ class Metadata:
 
     minimum_currency = property(fget=get_minimum_currency)
 
-
     def get_maximum_currency(self):
         """Gets the maximum currency value.
 
-        return: (osid.financials.Currency) - the maximum currency
-        raise:  IllegalState - syntax is not a ``CURRENCY``
+        :return: the maximum currency
+        :rtype: ``osid.financials.Currency``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -441,20 +459,19 @@ class Metadata:
 
     maximum_currency = property(fget=get_maximum_currency)
 
-
     def get_currency_set(self):
         """Gets the set of acceptable currency values.
 
-        return: (osid.financials.Currency) - a set of currencies or an
-                empty array if not restricted
-        raise:  IllegalState - syntax is not a ``CURRENCY``
+        :return: a set of currencies or an empty array if not restricted
+        :rtype: ``osid.financials.Currency``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.financials.Currency
 
     currency_set = property(fget=get_currency_set)
-
 
     def get_default_currency_values(self):
         """Gets the default currency values.
@@ -463,16 +480,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.financials.Currency) - the default currency values
-        raise:  IllegalState - syntax is not a ``CURRENCY`` or
-                ``is_required()`` is ``true``
+        :return: the default currency values
+        :rtype: ``osid.financials.Currency``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.financials.Currency
 
     default_currency_values = property(fget=get_default_currency_values)
-
 
     def get_existing_currency_values(self):
         """Gets the existing currency values.
@@ -481,10 +498,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.financials.Currency) - the existing currency
-                values
-        raise:  IllegalState - syntax is not a ``CURRENCY`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing currency values
+        :rtype: ``osid.financials.Currency``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -492,13 +509,13 @@ class Metadata:
 
     existing_currency_values = property(fget=get_existing_currency_values)
 
-
     def get_date_time_resolution(self):
         """Gets the smallest resolution of the date time value.
 
-        return: (osid.calendaring.DateTimeResolution) - the resolution
-        raise:  IllegalState - syntax is not a ``DATETIME, DURATION`` ,
-                or ``TIME``
+        :return: the resolution
+        :rtype: ``osid.calendaring.DateTimeResolution``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME, DURATION`` , or ``TIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -506,13 +523,13 @@ class Metadata:
 
     date_time_resolution = property(fget=get_date_time_resolution)
 
-
     def get_calendar_types(self):
         """Gets the set of acceptable calendar types.
 
-        return: (osid.type.Type) - the set of calendar types
-        raise:  IllegalState - syntax is not a ``DATETIME`` or
-                ``DURATION``
+        :return: the set of calendar types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME`` or ``DURATION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -520,29 +537,28 @@ class Metadata:
 
     calendar_types = property(fget=get_calendar_types)
 
-
     def supports_calendar_type(self, calendar_type):
         """Tests if the given calendar type is supported.
 
-        arg:    calendar_type (osid.type.Type): a calendar Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not a ``DATETIME`` or
-                ``DURATION``
-        raise:  NullArgument - ``calendar_type`` is ``null``
+        :param calendar_type: a calendar Type
+        :type calendar_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME`` or ``DURATION``
+        :raise: ``NullArgument`` -- ``calendar_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_time_types(self):
         """Gets the set of acceptable time types.
 
-        return: (osid.type.Type) - a set of time types or an empty array
-                if not restricted
-        raise:  IllegalState - syntax is not a ``DATETIME, DURATION,``
-                or ``TIME``
+        :return: a set of time types or an empty array if not restricted
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME, DURATION,`` or ``TIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -550,27 +566,28 @@ class Metadata:
 
     time_types = property(fget=get_time_types)
 
-
     def supports_time_type(self, time_type):
         """Tests if the given time type is supported.
 
-        arg:    time_type (osid.type.Type): a time Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not a ``DATETIME, DURATION,``
-                or ``TIME``
-        raise:  NullArgument - ``time_type`` is ``null``
+        :param time_type: a time Type
+        :type time_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME, DURATION,`` or ``TIME``
+        :raise: ``NullArgument`` -- ``time_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_minimum_date_time(self):
         """Gets the minimum date time value.
 
-        return: (osid.calendaring.DateTime) - the minimum value
-        raise:  IllegalState - syntax is not a ``DATETIME``
+        :return: the minimum value
+        :rtype: ``osid.calendaring.DateTime``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -578,12 +595,13 @@ class Metadata:
 
     minimum_date_time = property(fget=get_minimum_date_time)
 
-
     def get_maximum_date_time(self):
         """Gets the maximum date time value.
 
-        return: (osid.calendaring.DateTime) - the maximum value
-        raise:  IllegalState - syntax is not a ``DATETIME``
+        :return: the maximum value
+        :rtype: ``osid.calendaring.DateTime``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -591,20 +609,19 @@ class Metadata:
 
     maximum_date_time = property(fget=get_maximum_date_time)
 
-
     def get_date_time_set(self):
         """Gets the set of acceptable date time values.
 
-        return: (osid.calendaring.DateTime) - a set of values or an
-                empty array if not restricted
-        raise:  IllegalState - syntax is not a ``DATETIME``
+        :return: a set of values or an empty array if not restricted
+        :rtype: ``osid.calendaring.DateTime``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.DateTime
 
     date_time_set = property(fget=get_date_time_set)
-
 
     def get_default_date_time_values(self):
         """Gets the default date time values.
@@ -613,17 +630,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.calendaring.DateTime) - the default date time
-                values
-        raise:  IllegalState - syntax is not a ``DATETIME`` or
-                ``is_required()`` is ``true``
+        :return: the default date time values
+        :rtype: ``osid.calendaring.DateTime``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.DateTime
 
     default_date_time_values = property(fget=get_default_date_time_values)
-
 
     def get_existing_date_time_values(self):
         """Gets the existing date time values.
@@ -632,10 +648,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.calendaring.DateTime) - the existing date time
-                values
-        raise:  IllegalState - syntax is not a ``DATETIME`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing date time values
+        :rtype: ``osid.calendaring.DateTime``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -643,12 +659,13 @@ class Metadata:
 
     existing_date_time_values = property(fget=get_existing_date_time_values)
 
-
     def get_decimal_scale(self):
         """Gets the number of digits to the right of the decimal point.
 
-        return: (cardinal) - the scale
-        raise:  IllegalState - syntax is not a ``DECIMAL``
+        :return: the scale
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``DECIMAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -656,12 +673,13 @@ class Metadata:
 
     decimal_scale = property(fget=get_decimal_scale)
 
-
     def get_minimum_decimal(self):
         """Gets the minimum decimal value.
 
-        return: (decimal) - the minimum decimal
-        raise:  IllegalState - syntax is not a ``DECIMAL``
+        :return: the minimum decimal
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``DECIMAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -669,12 +687,13 @@ class Metadata:
 
     minimum_decimal = property(fget=get_minimum_decimal)
 
-
     def get_maximum_decimal(self):
         """Gets the maximum decimal value.
 
-        return: (decimal) - the maximum decimal
-        raise:  IllegalState - syntax is not a ``DECIMAL``
+        :return: the maximum decimal
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``DECIMAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -682,20 +701,19 @@ class Metadata:
 
     maximum_decimal = property(fget=get_maximum_decimal)
 
-
     def get_decimal_set(self):
         """Gets the set of acceptable decimal values.
 
-        return: (decimal) - a set of decimals or an empty array if not
-                restricted
-        raise:  IllegalState - syntax is not a ``DECIMAL``
+        :return: a set of decimals or an empty array if not restricted
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``DECIMAL``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # decimal
 
     decimal_set = property(fget=get_decimal_set)
-
 
     def get_default_decimal_values(self):
         """Gets the default decimal values.
@@ -704,16 +722,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (decimal) - the default decimal values
-        raise:  IllegalState - syntax is not a ``DECIMAL`` or
-                ``is_required()`` is ``true``
+        :return: the default decimal values
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``DECIMAL`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # decimal
 
     default_decimal_values = property(fget=get_default_decimal_values)
-
 
     def get_existing_decimal_values(self):
         """Gets the existing decimal values.
@@ -722,9 +740,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (decimal) - the existing decimal values
-        raise:  IllegalState - syntax is not a ``DECIMAL`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing decimal values
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``DECIMAL`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -732,12 +751,13 @@ class Metadata:
 
     existing_decimal_values = property(fget=get_existing_decimal_values)
 
-
     def get_distance_resolution(self):
         """Gets the smallest resolution of the distance value.
 
-        return: (osid.mapping.DistanceResolution) - the resolution
-        raise:  IllegalState - syntax is not a ``DISTANCE``
+        :return: the resolution
+        :rtype: ``osid.mapping.DistanceResolution``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -745,12 +765,13 @@ class Metadata:
 
     distance_resolution = property(fget=get_distance_resolution)
 
-
     def get_minimum_distance(self):
         """Gets the minimum distance value.
 
-        return: (osid.mapping.Distance) - the minimum value
-        raise:  IllegalState - syntax is not a ``DISTANCE``
+        :return: the minimum value
+        :rtype: ``osid.mapping.Distance``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -758,12 +779,13 @@ class Metadata:
 
     minimum_distance = property(fget=get_minimum_distance)
 
-
     def get_maximum_distance(self):
         """Gets the maximum distance value.
 
-        return: (osid.mapping.Distance) - the maximum value
-        raise:  IllegalState - syntax is not a ``DISTANCE``
+        :return: the maximum value
+        :rtype: ``osid.mapping.Distance``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -771,20 +793,19 @@ class Metadata:
 
     maximum_distance = property(fget=get_maximum_distance)
 
-
     def get_distance_set(self):
         """Gets the set of acceptable distance values.
 
-        return: (osid.mapping.Distance) - a set of values or an empty
-                array if not restricted
-        raise:  IllegalState - syntax is not a ``DISTANCE``
+        :return: a set of values or an empty array if not restricted
+        :rtype: ``osid.mapping.Distance``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Distance
 
     distance_set = property(fget=get_distance_set)
-
 
     def get_default_distance_values(self):
         """Gets the default distance values.
@@ -793,16 +814,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.mapping.Distance) - the default distance values
-        raise:  IllegalState - syntax is not a ``DISTANCE`` or
-                ``is_required()`` is ``true``
+        :return: the default distance values
+        :rtype: ``osid.mapping.Distance``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Distance
 
     default_distance_values = property(fget=get_default_distance_values)
-
 
     def get_existing_distance_values(self):
         """Gets the existing distance values.
@@ -811,9 +832,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.mapping.Distance) - the existing distance values
-        raise:  IllegalState - syntax is not a ``DISTANCE`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing distance values
+        :rtype: ``osid.mapping.Distance``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -821,12 +843,13 @@ class Metadata:
 
     existing_distance_values = property(fget=get_existing_distance_values)
 
-
     def get_minimum_duration(self):
         """Gets the minimum duration.
 
-        return: (osid.calendaring.Duration) - the minimum duration
-        raise:  IllegalState - syntax is not a ``DURATION``
+        :return: the minimum duration
+        :rtype: ``osid.calendaring.Duration``
+        :raise: ``IllegalState`` -- syntax is not a ``DURATION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -834,12 +857,13 @@ class Metadata:
 
     minimum_duration = property(fget=get_minimum_duration)
 
-
     def get_maximum_duration(self):
         """Gets the maximum duration.
 
-        return: (osid.calendaring.Duration) - the maximum duration
-        raise:  IllegalState - syntax is not a ``DURATION``
+        :return: the maximum duration
+        :rtype: ``osid.calendaring.Duration``
+        :raise: ``IllegalState`` -- syntax is not a ``DURATION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -847,20 +871,19 @@ class Metadata:
 
     maximum_duration = property(fget=get_maximum_duration)
 
-
     def get_duration_set(self):
         """Gets the set of acceptable duration values.
 
-        return: (osid.calendaring.Duration) - a set of durations or an
-                empty array if not restricted
-        raise:  IllegalState - syntax is not a ``DURATION``
+        :return: a set of durations or an empty array if not restricted
+        :rtype: ``osid.calendaring.Duration``
+        :raise: ``IllegalState`` -- syntax is not a ``DURATION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.Duration
 
     duration_set = property(fget=get_duration_set)
-
 
     def get_default_duration_values(self):
         """Gets the default duration values.
@@ -869,17 +892,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most at most a single value.
 
-        return: (osid.calendaring.Duration) - the default duration
-                values
-        raise:  IllegalState - syntax is not a DURATION or
-                ``is_required()`` is ``true``
+        :return: the default duration values
+        :rtype: ``osid.calendaring.Duration``
+        :raise: ``IllegalState`` -- syntax is not a DURATION or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.Duration
 
     default_duration_values = property(fget=get_default_duration_values)
-
 
     def get_existing_duration_values(self):
         """Gets the existing duration values.
@@ -888,10 +910,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.calendaring.Duration) - the existing duration
-                values
-        raise:  IllegalState - syntax is not a ``DURATION`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing duration values
+        :rtype: ``osid.calendaring.Duration``
+        :raise: ``IllegalState`` -- syntax is not a ``DURATION`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -899,13 +921,13 @@ class Metadata:
 
     existing_duration_values = property(fget=get_existing_duration_values)
 
-
     def get_heading_types(self):
         """Gets the set of acceptable heading types.
 
-        return: (osid.type.Type) - a set of heading types or an empty
-                array if not restricted
-        raise:  IllegalState - syntax is not a ``HEADING``
+        :return: a set of heading types or an empty array if not restricted
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -913,78 +935,82 @@ class Metadata:
 
     heading_types = property(fget=get_heading_types)
 
-
     def supports_heading_type(self, heading_type):
         """Tests if the given heading type is supported.
 
-        arg:    heading_type (osid.type.Type): a heading Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not a ``HEADING``
-        raise:  NullArgument - ``heading_type`` is ``null``
+        :param heading_type: a heading Type
+        :type heading_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING``
+        :raise: ``NullArgument`` -- ``heading_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_axes_for_heading_type(self, heading_type):
         """Gets the number of axes for a given supported heading type.
 
-        arg:    heading_type (osid.type.Type): a heading Type
-        return: (cardinal) - the number of axes
-        raise:  IllegalState - syntax is not a ``HEADING``
-        raise:  NullArgument - ``heading_type`` is ``null``
-        raise:  Unsupported - ``supports_heading_type(heading_type)`` is
-                ``false``
+        :param heading_type: a heading Type
+        :type heading_type: ``osid.type.Type``
+        :return: the number of axes
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING``
+        :raise: ``NullArgument`` -- ``heading_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_heading_type(heading_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # cardinal
 
-
     def get_minimum_heading_values(self, heading_type):
         """Gets the minimum heading values given supported heading type.
 
-        arg:    heading_type (osid.type.Type): a heading Type
-        return: (decimal) - the minimum heading values
-        raise:  IllegalState - syntax is not a ``HEADING``
-        raise:  NullArgument - ``heading_type`` is ``null``
-        raise:  Unsupported - ``supports_heading_type(heading_type)`` is
-                ``false``
+        :param heading_type: a heading Type
+        :type heading_type: ``osid.type.Type``
+        :return: the minimum heading values
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING``
+        :raise: ``NullArgument`` -- ``heading_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_heading_type(heading_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # decimal
-
 
     def get_maximum_heading_values(self, heading_type):
         """Gets the maximum heading values given supported heading type.
 
-        arg:    heading_type (osid.type.Type): a heading Type
-        return: (decimal) - the maximum heading values
-        raise:  IllegalState - syntax is not a ``HEADING``
-        raise:  NullArgument - ``heading_type`` is ``null``
-        raise:  Unsupported - ``supports_heading_type(heading_type)`` is
-                ``false``
+        :param heading_type: a heading Type
+        :type heading_type: ``osid.type.Type``
+        :return: the maximum heading values
+        :rtype: ``decimal``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING``
+        :raise: ``NullArgument`` -- ``heading_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_heading_type(heading_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # decimal
 
-
     def get_heading_set(self):
         """Gets the set of acceptable heading values.
 
-        return: (osid.mapping.Heading) - the set of heading
-        raise:  IllegalState - syntax is not a ``HEADING``
+        :return: the set of heading
+        :rtype: ``osid.mapping.Heading``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Heading
 
     heading_set = property(fget=get_heading_set)
-
 
     def get_default_heading_values(self):
         """Gets the default heading values.
@@ -993,16 +1019,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.mapping.Heading) - the default heading values
-        raise:  IllegalState - syntax is not a ``HEADING`` or
-                ``is_required()`` is ``true``
+        :return: the default heading values
+        :rtype: ``osid.mapping.Heading``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Heading
 
     default_heading_values = property(fget=get_default_heading_values)
-
 
     def get_existing_heading_values(self):
         """Gets the existing heading values.
@@ -1011,9 +1037,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.mapping.Heading) - the existing heading values
-        raise:  IllegalState - syntax is not a ``HEADING`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing heading values
+        :rtype: ``osid.mapping.Heading``
+        :raise: ``IllegalState`` -- syntax is not a ``HEADING`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1021,20 +1048,19 @@ class Metadata:
 
     existing_heading_values = property(fget=get_existing_heading_values)
 
-
     def get_id_set(self):
         """Gets the set of acceptable ``Ids``.
 
-        return: (osid.id.Id) - a set of ``Ids`` or an empty array if not
-                restricted
-        raise:  IllegalState - syntax is not an ``ID``
+        :return: a set of ``Ids`` or an empty array if not restricted
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- syntax is not an ``ID``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     id_set = property(fget=get_id_set)
-
 
     def get_default_id_values(self):
         """Gets the default ``Id`` values.
@@ -1043,16 +1069,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.id.Id) - the default ``Id`` values
-        raise:  IllegalState - syntax is not an ``ID`` or
-                ``is_required()`` is ``true``
+        :return: the default ``Id`` values
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- syntax is not an ``ID`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.Id
 
     default_id_values = property(fget=get_default_id_values)
-
 
     def get_existing_id_values(self):
         """Gets the existing ``Id`` values.
@@ -1061,8 +1087,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.id.Id) - the existing ``Id`` values
-        raise:  IllegalState - syntax is not an ``ID``
+        :return: the existing ``Id`` values
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- syntax is not an ``ID``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1070,12 +1098,13 @@ class Metadata:
 
     existing_id_values = property(fget=get_existing_id_values)
 
-
     def get_minimum_integer(self):
         """Gets the minimum integer value.
 
-        return: (integer) - the minimum value
-        raise:  IllegalState - syntax is not an ``INTEGER``
+        :return: the minimum value
+        :rtype: ``integer``
+        :raise: ``IllegalState`` -- syntax is not an ``INTEGER``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1083,12 +1112,13 @@ class Metadata:
 
     minimum_integer = property(fget=get_minimum_integer)
 
-
     def get_maximum_integer(self):
         """Gets the maximum integer value.
 
-        return: (integer) - the maximum value
-        raise:  IllegalState - syntax is not an ``INTEGER``
+        :return: the maximum value
+        :rtype: ``integer``
+        :raise: ``IllegalState`` -- syntax is not an ``INTEGER``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1096,20 +1126,19 @@ class Metadata:
 
     maximum_integer = property(fget=get_maximum_integer)
 
-
     def get_integer_set(self):
         """Gets the set of acceptable integer values.
 
-        return: (integer) - a set of values or an empty array if not
-                restricted
-        raise:  IllegalState - syntax is not an ``INTEGER``
+        :return: a set of values or an empty array if not restricted
+        :rtype: ``integer``
+        :raise: ``IllegalState`` -- syntax is not an ``INTEGER``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # integer
 
     integer_set = property(fget=get_integer_set)
-
 
     def get_default_integer_values(self):
         """Gets the default integer values.
@@ -1118,16 +1147,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (integer) - the default integer values
-        raise:  IllegalState - syntax is not an ``INTEGER`` or
-                ``is_required()`` is ``true``
+        :return: the default integer values
+        :rtype: ``integer``
+        :raise: ``IllegalState`` -- syntax is not an ``INTEGER`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # integer
 
     default_integer_values = property(fget=get_default_integer_values)
-
 
     def get_existing_integer_values(self):
         """Gets the existing integer values.
@@ -1136,9 +1165,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (integer) - the existing integer values
-        raise:  IllegalState - syntax is not a ``INTEGER`` or
-                isValueKnown() is false
+        :return: the existing integer values
+        :rtype: ``integer``
+        :raise: ``IllegalState`` -- syntax is not a ``INTEGER`` or isValueKnown() is false
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1146,13 +1176,13 @@ class Metadata:
 
     existing_integer_values = property(fget=get_existing_integer_values)
 
-
     def get_object_types(self):
         """Gets the set of acceptable ``Types`` for an arbitrary object.
 
-        return: (osid.type.Type) - a set of ``Types`` or an empty array
-                if not restricted
-        raise:  IllegalState - syntax is not an ``OBJECT``
+        :return: a set of ``Types`` or an empty array if not restricted
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not an ``OBJECT``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1160,34 +1190,34 @@ class Metadata:
 
     object_types = property(fget=get_object_types)
 
-
     def supports_object_type(self, object_type):
         """Tests if the given object type is supported.
 
-        arg:    object_type (osid.type.Type): an object Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not an ``OBJECT``
-        raise:  NullArgument - ``object_type`` is ``null``
+        :param object_type: an object Type
+        :type object_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not an ``OBJECT``
+        :raise: ``NullArgument`` -- ``object_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_object_set(self):
         """Gets the set of acceptable object values.
 
-        return: (object) - a set of values or an empty array if not
-                restricted
-        raise:  IllegalState - syntax is not an ``OBJECT``
+        :return: a set of values or an empty array if not restricted
+        :rtype: ``object``
+        :raise: ``IllegalState`` -- syntax is not an ``OBJECT``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # object
 
     object_set = property(fget=get_object_set)
-
 
     def get_default_object_values(self):
         """Gets the default object values.
@@ -1196,16 +1226,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (object) - the default object values
-        raise:  IllegalState - syntax is not an ``OBJECT`` or
-                ``is_required()`` is ``true``
+        :return: the default object values
+        :rtype: ``object``
+        :raise: ``IllegalState`` -- syntax is not an ``OBJECT`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # object
 
     default_object_values = property(fget=get_default_object_values)
-
 
     def get_existing_object_values(self):
         """Gets the existing object values.
@@ -1214,9 +1244,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (object) - the existing object values
-        raise:  IllegalState - syntax is not an OBJECT or
-                ``is_value_known()`` is ``false``
+        :return: the existing object values
+        :rtype: ``object``
+        :raise: ``IllegalState`` -- syntax is not an OBJECT or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1224,12 +1255,13 @@ class Metadata:
 
     existing_object_values = property(fget=get_existing_object_values)
 
-
     def get_spatial_unit_record_types(self):
         """Gets the set of acceptable spatial unit record types.
 
-        return: (osid.type.Type) - the set of spatial unit types
-        raise:  IllegalState - syntax is not ``SPATIALUNIT``
+        :return: the set of spatial unit types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not ``SPATIALUNIT``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1237,35 +1269,34 @@ class Metadata:
 
     spatial_unit_record_types = property(fget=get_spatial_unit_record_types)
 
-
     def supports_spatial_unit_record_type(self, spatial_unit_record_type):
         """Tests if the given spatial unit record type is supported.
 
-        arg:    spatial_unit_record_type (osid.type.Type): a spatial
-                unit record Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not an ``SPATIALUNIT``
-        raise:  NullArgument - ``spatial_unit_record_type`` is ``null``
+        :param spatial_unit_record_type: a spatial unit record Type
+        :type spatial_unit_record_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not an ``SPATIALUNIT``
+        :raise: ``NullArgument`` -- ``spatial_unit_record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_spatial_unit_set(self):
         """Gets the set of acceptable spatial unit values.
 
-        return: (osid.mapping.SpatialUnit) - a set of spatial units or
-                an empty array if not restricted
-        raise:  IllegalState - syntax is not a ``SPATIALUNIT``
+        :return: a set of spatial units or an empty array if not restricted
+        :rtype: ``osid.mapping.SpatialUnit``
+        :raise: ``IllegalState`` -- syntax is not a ``SPATIALUNIT``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.SpatialUnit
 
     spatial_unit_set = property(fget=get_spatial_unit_set)
-
 
     def get_default_spatial_unit_values(self):
         """Gets the default spatial unit values.
@@ -1274,17 +1305,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.mapping.SpatialUnit) - the default spatial unit
-                values
-        raise:  IllegalState - syntax is not a ``SPATIALUNIT`` or
-                ``is_required()`` is ``true``
+        :return: the default spatial unit values
+        :rtype: ``osid.mapping.SpatialUnit``
+        :raise: ``IllegalState`` -- syntax is not a ``SPATIALUNIT`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.SpatialUnit
 
     default_spatial_unit_values = property(fget=get_default_spatial_unit_values)
-
 
     def get_existing_spatial_unit_values(self):
         """Gets the existing spatial unit values.
@@ -1293,10 +1323,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.mapping.SpatialUnit) - the existing spatial unit
-                values
-        raise:  IllegalState - syntax is not a SPATIALUNIT or
-                ``is_value_known()`` is ``false``
+        :return: the existing spatial unit values
+        :rtype: ``osid.mapping.SpatialUnit``
+        :raise: ``IllegalState`` -- syntax is not a SPATIALUNIT or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1304,12 +1334,13 @@ class Metadata:
 
     existing_spatial_unit_values = property(fget=get_existing_spatial_unit_values)
 
-
     def get_minimum_speed(self):
         """Gets the minimum speed value.
 
-        return: (osid.mapping.Speed) - the minimum speed
-        raise:  IllegalState - syntax is not a ``SPEED``
+        :return: the minimum speed
+        :rtype: ``osid.mapping.Speed``
+        :raise: ``IllegalState`` -- syntax is not a ``SPEED``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1317,12 +1348,13 @@ class Metadata:
 
     minimum_speed = property(fget=get_minimum_speed)
 
-
     def get_maximum_speed(self):
         """Gets the maximum speed value.
 
-        return: (osid.mapping.Speed) - the maximum speed
-        raise:  IllegalState - syntax is not a ``SPEED``
+        :return: the maximum speed
+        :rtype: ``osid.mapping.Speed``
+        :raise: ``IllegalState`` -- syntax is not a ``SPEED``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1330,20 +1362,19 @@ class Metadata:
 
     maximum_speed = property(fget=get_maximum_speed)
 
-
     def get_speed_set(self):
         """Gets the set of acceptable speed values.
 
-        return: (osid.mapping.Speed) - a set of speeds or an empty array
-                if not restricted
-        raise:  IllegalState - syntax is not a ``SPEED``
+        :return: a set of speeds or an empty array if not restricted
+        :rtype: ``osid.mapping.Speed``
+        :raise: ``IllegalState`` -- syntax is not a ``SPEED``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Speed
 
     speed_set = property(fget=get_speed_set)
-
 
     def get_default_speed_values(self):
         """Gets the default speed values.
@@ -1352,16 +1383,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.mapping.Speed) - the default speed values
-        raise:  IllegalState - syntax is not a ``SPEED`` or
-                ``is_required()`` is ``true``
+        :return: the default speed values
+        :rtype: ``osid.mapping.Speed``
+        :raise: ``IllegalState`` -- syntax is not a ``SPEED`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.mapping.Speed
 
     default_speed_values = property(fget=get_default_speed_values)
-
 
     def get_existing_speed_values(self):
         """Gets the existing speed values.
@@ -1370,9 +1401,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.mapping.Speed) - the existing speed values
-        raise:  IllegalState - syntax is not a ``SPEED`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing speed values
+        :rtype: ``osid.mapping.Speed``
+        :raise: ``IllegalState`` -- syntax is not a ``SPEED`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1380,12 +1412,13 @@ class Metadata:
 
     existing_speed_values = property(fget=get_existing_speed_values)
 
-
     def get_minimum_string_length(self):
         """Gets the minimum string length.
 
-        return: (cardinal) - the minimum string length
-        raise:  IllegalState - syntax is not a ``STRING``
+        :return: the minimum string length
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1393,12 +1426,13 @@ class Metadata:
 
     minimum_string_length = property(fget=get_minimum_string_length)
 
-
     def get_maximum_string_length(self):
         """Gets the maximum string length.
 
-        return: (cardinal) - the maximum string length
-        raise:  IllegalState - syntax is not a ``STRING``
+        :return: the maximum string length
+        :rtype: ``cardinal``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1406,15 +1440,16 @@ class Metadata:
 
     maximum_string_length = property(fget=get_maximum_string_length)
 
-
     def get_string_match_types(self):
         """Gets the set of valid string match types for use in validating a string.
 
         If the string match type indicates a regular expression then
         ``get_string_expression()`` returns a regular expression.
 
-        return: (osid.type.Type) - the set of string match types
-        raise:  IllegalState - syntax is not a ``STRING``
+        :return: the set of string match types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1422,42 +1457,44 @@ class Metadata:
 
     string_match_types = property(fget=get_string_match_types)
 
-
     def supports_string_match_type(self, string_match_type):
         """Tests if the given string match type is supported.
 
-        arg:    string_match_type (osid.type.Type): a string match type
-        return: (boolean) - ``true`` if the given string match type Is
-                supported, ``false`` otherwise
-        raise:  IllegalState - syntax is not a ``STRING``
-        raise:  NullArgument - ``string_match_type`` is ``null``
+        :param string_match_type: a string match type
+        :type string_match_type: ``osid.type.Type``
+        :return: ``true`` if the given string match type Is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+        :raise: ``NullArgument`` -- ``string_match_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_string_expression(self, string_match_type):
         """Gets the regular expression of an acceptable string for the given string match type.
 
-        arg:    string_match_type (osid.type.Type): a string match type
-        return: (string) - the regular expression
-        raise:  NullArgument - ``string_match_type`` is ``null``
-        raise:  IllegalState - syntax is not a ``STRING``
-        raise:  Unsupported -
-                ``supports_string_match_type(string_match_type`` ) is
-                ``false``
+        :param string_match_type: a string match type
+        :type string_match_type: ``osid.type.Type``
+        :return: the regular expression
+        :rtype: ``string``
+        :raise: ``NullArgument`` -- ``string_match_type`` is ``null``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+        :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type`` ) is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # string
 
-
     def get_string_format_types(self):
         """Gets the set of valid string formats.
 
-        return: (osid.type.Type) - the set of valid text format types
-        raise:  IllegalState - syntax is not a ``STRING``
+        :return: the set of valid text format types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1465,20 +1502,19 @@ class Metadata:
 
     string_format_types = property(fget=get_string_format_types)
 
-
     def get_string_set(self):
         """Gets the set of acceptable string values.
 
-        return: (string) - a set of strings or an empty array if not
-                restricted
-        raise:  IllegalState - syntax is not a ``STRING``
+        :return: a set of strings or an empty array if not restricted
+        :rtype: ``string``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # string
 
     string_set = property(fget=get_string_set)
-
 
     def get_default_string_values(self):
         """Gets the default string values.
@@ -1487,16 +1523,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (string) - the default string values
-        raise:  IllegalState - syntax is not a ``STRING`` or
-                ``is_required()`` is ``true``
+        :return: the default string values
+        :rtype: ``string``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # string
 
     default_string_values = property(fget=get_default_string_values)
-
 
     def get_existing_string_values(self):
         """Gets the existing string values.
@@ -1505,9 +1541,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (string) - the existing string values
-        raise:  IllegalState - syntax is not a ``STRING`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing string values
+        :rtype: ``string``
+        :raise: ``IllegalState`` -- syntax is not a ``STRING`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1515,12 +1552,13 @@ class Metadata:
 
     existing_string_values = property(fget=get_existing_string_values)
 
-
     def get_minimum_time(self):
         """Gets the minimum time value.
 
-        return: (osid.calendaring.Time) - the minimum time
-        raise:  IllegalState - syntax is not a ``TIME``
+        :return: the minimum time
+        :rtype: ``osid.calendaring.Time``
+        :raise: ``IllegalState`` -- syntax is not a ``TIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1528,12 +1566,13 @@ class Metadata:
 
     minimum_time = property(fget=get_minimum_time)
 
-
     def get_maximum_time(self):
         """Gets the maximum time value.
 
-        return: (osid.calendaring.Time) - the maximum time
-        raise:  IllegalState - syntax is not a ``TIME``
+        :return: the maximum time
+        :rtype: ``osid.calendaring.Time``
+        :raise: ``IllegalState`` -- syntax is not a ``TIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1541,20 +1580,19 @@ class Metadata:
 
     maximum_time = property(fget=get_maximum_time)
 
-
     def get_time_set(self):
         """Gets the set of acceptable time values.
 
-        return: (osid.calendaring.Time) - a set of times or an empty
-                array if not restricted
-        raise:  IllegalState - syntax is not a ``TIME``
+        :return: a set of times or an empty array if not restricted
+        :rtype: ``osid.calendaring.Time``
+        :raise: ``IllegalState`` -- syntax is not a ``TIME``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.Time
 
     time_set = property(fget=get_time_set)
-
 
     def get_default_time_values(self):
         """Gets the default time values.
@@ -1563,16 +1601,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.calendaring.Time) - the default time values
-        raise:  IllegalState - syntax is not a ``TIME`` or
-                ``is_required()`` is ``true``
+        :return: the default time values
+        :rtype: ``osid.calendaring.Time``
+        :raise: ``IllegalState`` -- syntax is not a ``TIME`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.calendaring.Time
 
     default_time_values = property(fget=get_default_time_values)
-
 
     def get_existing_time_values(self):
         """Gets the existing time values.
@@ -1581,9 +1619,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.calendaring.Time) - the existing time values
-        raise:  IllegalState - syntax is not a ``TIME`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing time values
+        :rtype: ``osid.calendaring.Time``
+        :raise: ``IllegalState`` -- syntax is not a ``TIME`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1591,20 +1630,19 @@ class Metadata:
 
     existing_time_values = property(fget=get_existing_time_values)
 
-
     def get_type_set(self):
         """Gets the set of acceptable ``Types``.
 
-        return: (osid.type.Type) - a set of ``Types`` or an empty array
-                if not restricted
-        raise:  IllegalState - syntax is not a ``TYPE``
+        :return: a set of ``Types`` or an empty array if not restricted
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``TYPE``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.Type
 
     type_set = property(fget=get_type_set)
-
 
     def get_default_type_values(self):
         """Gets the default type values.
@@ -1613,16 +1651,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.type.Type) - the default type values
-        raise:  IllegalState - syntax is not a ``TYPE`` or
-                ``is_required()`` is ``true``
+        :return: the default type values
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``TYPE`` or ``is_required()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.Type
 
     default_type_values = property(fget=get_default_type_values)
-
 
     def get_existing_type_values(self):
         """Gets the existing type values.
@@ -1631,9 +1669,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.type.Type) - the existing type values
-        raise:  IllegalState - syntax is not a ``TYPE`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing type values
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``TYPE`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1641,12 +1680,13 @@ class Metadata:
 
     existing_type_values = property(fget=get_existing_type_values)
 
-
     def get_version_types(self):
         """Gets the set of acceptable version types.
 
-        return: (osid.type.Type) - the set of version types
-        raise:  IllegalState - syntax is not a ``VERSION``
+        :return: the set of version types
+        :rtype: ``osid.type.Type``
+        :raise: ``IllegalState`` -- syntax is not a ``VERSION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1654,26 +1694,28 @@ class Metadata:
 
     version_types = property(fget=get_version_types)
 
-
     def supports_version_type(self, version_type):
         """Tests if the given version type is supported.
 
-        arg:    version_type (osid.type.Type): a version Type
-        return: (boolean) - ``true`` if the type is supported, ``false``
-                otherwise
-        raise:  IllegalState - syntax is not a ``VERSION``
-        raise:  NullArgument - ``version_type`` is ``null``
+        :param version_type: a version Type
+        :type version_type: ``osid.type.Type``
+        :return: ``true`` if the type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``IllegalState`` -- syntax is not a ``VERSION``
+        :raise: ``NullArgument`` -- ``version_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_minimum_version(self):
         """Gets the minumim acceptable ``Version``.
 
-        return: (osid.installation.Version) - the minumim ``Version``
-        raise:  IllegalState - syntax is not a ``VERSION``
+        :return: the minumim ``Version``
+        :rtype: ``osid.installation.Version``
+        :raise: ``IllegalState`` -- syntax is not a ``VERSION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1681,12 +1723,13 @@ class Metadata:
 
     minimum_version = property(fget=get_minimum_version)
 
-
     def get_maximum_version(self):
         """Gets the maximum acceptable ``Version``.
 
-        return: (osid.installation.Version) - the maximum ``Version``
-        raise:  IllegalState - syntax is not a ``VERSION``
+        :return: the maximum ``Version``
+        :rtype: ``osid.installation.Version``
+        :raise: ``IllegalState`` -- syntax is not a ``VERSION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1694,20 +1737,19 @@ class Metadata:
 
     maximum_version = property(fget=get_maximum_version)
 
-
     def get_version_set(self):
         """Gets the set of acceptable ``Versions``.
 
-        return: (osid.installation.Version) - a set of ``Versions`` or
-                an empty array if not restricted
-        raise:  IllegalState - syntax is not a ``VERSION``
+        :return: a set of ``Versions`` or an empty array if not restricted
+        :rtype: ``osid.installation.Version``
+        :raise: ``IllegalState`` -- syntax is not a ``VERSION``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.installation.Version
 
     version_set = property(fget=get_version_set)
-
 
     def get_default_version_values(self):
         """Gets the default version values.
@@ -1716,16 +1758,16 @@ class Metadata:
         or is cleared. If ``is_array()`` is false, then this method
         returns at most a single value.
 
-        return: (osid.installation.Version) - the default version values
-        raise:  IllegalState - syntax is not a TIME or isValueKnown() is
-                false
+        :return: the default version values
+        :rtype: ``osid.installation.Version``
+        :raise: ``IllegalState`` -- syntax is not a TIME or isValueKnown() is false
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.installation.Version
 
     default_version_values = property(fget=get_default_version_values)
-
 
     def get_existing_version_values(self):
         """Gets the existing version values.
@@ -1734,10 +1776,10 @@ class Metadata:
         these values are the default values ````. If ``is_array()`` is
         false, then this method returns at most a single value.
 
-        return: (osid.installation.Version) - the existing version
-                values
-        raise:  IllegalState - syntax is not a ``VERSION`` or
-                ``is_value_known()`` is ``false``
+        :return: the existing version values
+        :rtype: ``osid.installation.Version``
+        :raise: ``IllegalState`` -- syntax is not a ``VERSION`` or ``is_value_known()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

@@ -14,33 +14,11 @@ Proxy Record
 
 
 
-
-
-Proxy Methods
--------------
-
-   .. autoattribute:: ProxySession.proxy_condition
-
-   .. automethod:: ProxySession.get_proxy
-
-
-
 Proxy Condition Record
 ----------------------
 
 .. autoclass:: ProxyConditionRecord
    :show-inheritance:
-
-
-
-
-
-Proxy Methods
--------------
-
-   .. autoattribute:: ProxySession.proxy_condition
-
-   .. automethod:: ProxySession.get_proxy
 
 
 

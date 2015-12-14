@@ -1,8 +1,10 @@
+
 from ..osid import search_orders as osid_search_orders
 
 
 class HierarchySearchOrder(osid_search_orders.OsidCatalogSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_hierarchy_search_order_record(self, hierarchy_record_type):
         """Gets the hierarchy search order record corresponding to the given hierarchy record ``Type``.
 
@@ -15,6 +17,8 @@ class HierarchySearchOrder(osid_search_orders.OsidCatalogSearchOrder):
         :raise: ``NullArgument`` -- ``hierarchy_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(hierarchy_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.records.HierarchySearchOrderRecord

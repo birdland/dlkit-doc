@@ -1,14 +1,18 @@
+
 from ..osid import search_orders as osid_search_orders
 
 
 class RelationshipSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_source(self, style):
         """Specifies a preference for ordering the result set by the source peer.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -19,6 +23,8 @@ class RelationshipSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -37,12 +43,15 @@ class RelationshipSearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(relationship_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.relationship.records.RelationshipSearchOrderRecord
 
 
 class FamilySearchOrder(osid_search_orders.OsidCatalogSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_family_search_order_record(self, family_record_type):
         """Gets the family search record order corresponding to the given family record Type.
 
@@ -56,6 +65,8 @@ class FamilySearchOrder(osid_search_orders.OsidCatalogSearchOrder):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(family_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.relationship.records.FamilySearchOrderRecord

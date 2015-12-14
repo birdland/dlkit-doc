@@ -1,13 +1,18 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
 class HierarchyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     """This is the query inspector for examining hierarchy queries."""
+
     def get_node_id_terms(self):
         """Gets the node ``Id`` query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -24,6 +29,8 @@ class HierarchyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :raise: ``NullArgument`` -- ``hierarchy_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(hierarchy_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.records.HierarchyQueryInspectorRecord

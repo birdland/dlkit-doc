@@ -1,13 +1,18 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
 class RelationshipQueryInspector(osid_query_inspectors.OsidRelationshipQueryInspector):
     """This is the query inspector for examining relationship queries."""
+
     def get_source_id_terms(self):
         """Gets the peer ``Id`` terms.
 
         :return: the peer ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -20,6 +25,9 @@ class RelationshipQueryInspector(osid_query_inspectors.OsidRelationshipQueryInsp
         :return: the other peer ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -30,6 +38,9 @@ class RelationshipQueryInspector(osid_query_inspectors.OsidRelationshipQueryInsp
 
         :return: the same peer terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -42,6 +53,9 @@ class RelationshipQueryInspector(osid_query_inspectors.OsidRelationshipQueryInsp
         :return: the family ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -52,6 +66,9 @@ class RelationshipQueryInspector(osid_query_inspectors.OsidRelationshipQueryInsp
 
         :return: the family terms
         :rtype: ``osid.relationship.FamilyQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.relationship.FamilyQueryInspector
@@ -70,17 +87,23 @@ class RelationshipQueryInspector(osid_query_inspectors.OsidRelationshipQueryInsp
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(relationship_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.relationship.records.RelationshipQueryInspectorRecord
 
 
 class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     """This is the query inspector for examining family queries."""
+
     def get_relationship_id_terms(self):
         """Gets the relationship ``Id`` terms.
 
         :return: the relationship ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -93,6 +116,9 @@ class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the relationship terms
         :rtype: ``osid.relationship.RelationshipQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.relationship.RelationshipQueryInspector
 
@@ -103,6 +129,9 @@ class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the ancestor family ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -115,6 +144,9 @@ class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the ancestor family terms
         :rtype: ``osid.relationship.FamilyQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.relationship.FamilyQueryInspector
 
@@ -126,6 +158,9 @@ class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the descendant family ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -136,6 +171,9 @@ class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the descendant family terms
         :rtype: ``osid.relationship.FamilyQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.relationship.FamilyQueryInspector
@@ -153,6 +191,8 @@ class FamilyQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(family_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.relationship.records.FamilyQueryInspectorRecord

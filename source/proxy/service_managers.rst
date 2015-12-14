@@ -12,16 +12,16 @@ Proxy Manager
 .. autoclass:: ProxyManager
    :show-inheritance:
 
-
+   .. autoattribute:: ProxyManager.proxy_session
 
 
 
 Proxy Methods
 -------------
 
-   .. autoattribute:: ProxySession.proxy_condition
+   .. autoattribute:: ProxyManager.proxy_condition
 
-   .. automethod:: ProxySession.get_proxy
+   .. automethod:: ProxyManager.get_proxy
 
 
 
@@ -31,16 +31,16 @@ Proxy Proxy Manager
 .. autoclass:: ProxyProxyManager
    :show-inheritance:
 
-
+   .. automethod:: ProxyProxyManager.get_proxy_session
 
 
 
 Proxy Methods
 -------------
 
-   .. autoattribute:: ProxySession.proxy_condition
+   .. autoattribute:: ProxyProxyManager.proxy_condition
 
-   .. automethod:: ProxySession.get_proxy
+   .. automethod:: ProxyProxyManager.get_proxy
 
 
 

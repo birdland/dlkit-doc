@@ -6,11 +6,10 @@ Grading
 
    summary
    service_managers
-   gradebook
    managers
    sessions
    objects
+   service_catalog
    searches
    queries
    records
-   rules

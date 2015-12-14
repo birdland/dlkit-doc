@@ -9,8 +9,6 @@ class HierarchyRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class HierarchyQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -35,8 +31,6 @@ class HierarchyFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -48,8 +42,6 @@ class HierarchySearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 

@@ -9,8 +9,6 @@ class CommentRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class CommentQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -35,8 +31,6 @@ class CommentFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -48,8 +42,6 @@ class CommentSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -61,8 +53,6 @@ class BookRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -74,8 +64,6 @@ class BookQueryRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -87,8 +75,6 @@ class BookFormRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -100,8 +86,6 @@ class BookSearchRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 

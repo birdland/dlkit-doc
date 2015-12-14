@@ -1,3 +1,4 @@
+
 from ..osid import query_inspectors as osid_query_inspectors
 
 
@@ -10,6 +11,7 @@ class QuestionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_question_query_inspector_record(self, question_record_type):
         """Gets the record query inspector corresponding to the given ``Question`` record ``Type``.
 
@@ -20,6 +22,8 @@ class QuestionQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :raise: ``NullArgument`` -- ``question_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(question_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.records.QuestionQueryInspectorRecord
@@ -34,6 +38,7 @@ class AnswerQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_answer_query_inspector_record(self, question_record_type):
         """Gets the record query inspector corresponding to the given ``Question`` record ``Type``.
 
@@ -44,6 +49,8 @@ class AnswerQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :raise: ``NullArgument`` -- ``question_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(question_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.records.AnswerQueryInspectorRecord
@@ -58,11 +65,15 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
     modification in the search sessions.
 
     """
+
     def get_learning_objective_id_terms(self):
         """Gets the learning objective ``Id`` query terms.
 
         :return: the learning objective ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -75,6 +86,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
         :return: the learning objective terms
         :rtype: ``osid.learning.ObjectiveQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.ObjectiveQueryInspector
 
@@ -85,6 +99,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
 
         :return: the question ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -97,6 +114,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
         :return: the question terms
         :rtype: ``osid.assessment.QuestionQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.QuestionQueryInspector
 
@@ -107,6 +127,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
 
         :return: the answer ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -119,6 +142,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
         :return: the answer terms
         :rtype: ``osid.assessment.AnswerQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AnswerQueryInspector
 
@@ -129,6 +155,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
 
         :return: the assessment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -141,6 +170,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
         :return: the assessment terms
         :rtype: ``osid.assessment.AssessmentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentQueryInspector
 
@@ -152,6 +184,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
         :return: the bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -162,6 +197,9 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
 
         :return: the bank terms
         :rtype: ``osid.assessment.BankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.BankQueryInspector
@@ -179,6 +217,8 @@ class ItemQueryInspector(osid_query_inspectors.OsidObjectQueryInspector, osid_qu
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(item_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.records.ItemQueryInspectorRecord
 
@@ -192,11 +232,15 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_level_id_terms(self):
         """Gets the level ``Id`` query terms.
 
         :return: the level ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -209,6 +253,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :return: the level terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -219,6 +266,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
         :return: the assessment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -231,6 +281,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :return: the assessment terms
         :rtype: ``osid.assessment.AssessmentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentQueryInspector
 
@@ -241,6 +294,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
         :return: the item ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -253,6 +309,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :return: the item terms
         :rtype: ``osid.assessment.ItemQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.ItemQueryInspector
 
@@ -263,6 +322,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
         :return: the assessment offered ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -275,6 +337,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :return: the assessment offered terms
         :rtype: ``osid.assessment.AssessmentOfferedQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentOfferedQueryInspector
 
@@ -285,6 +350,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
         :return: the assessment taken ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -297,6 +365,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :return: the assessment taken terms
         :rtype: ``osid.assessment.AssessmentTakenQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentTakenQueryInspector
 
@@ -308,6 +379,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :return: the bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -318,6 +392,9 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
 
         :return: the bank terms
         :rtype: ``osid.assessment.BankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.BankQueryInspector
@@ -335,6 +412,8 @@ class AssessmentQueryInspector(osid_query_inspectors.OsidObjectQueryInspector):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(assessment_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.records.AssessmentQueryInspectorRecord
 
@@ -348,11 +427,15 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
     modification in the search sessions.
 
     """
+
     def get_assessment_id_terms(self):
         """Gets the assessment ``Id`` query terms.
 
         :return: the assessment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -365,6 +448,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the assessment terms
         :rtype: ``osid.assessment.AssessmentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentQueryInspector
 
@@ -375,6 +461,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the level ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -387,6 +476,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the level terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -397,6 +489,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the boolean terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -409,6 +504,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the boolean terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -419,6 +517,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the start time terms
         :rtype: ``osid.search.terms.DateTimeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DateTimeTerm
@@ -431,6 +532,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the deadline terms
         :rtype: ``osid.search.terms.DateTimeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeTerm
 
@@ -441,6 +545,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the duration terms
         :rtype: ``osid.search.terms.DurationTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DurationTerm
@@ -453,6 +560,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the grade system ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -463,6 +573,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the grade system terms
         :rtype: ``osid.grading.GradeSystemQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradeSystemQueryInspector
@@ -475,6 +588,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the grade system ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -485,6 +601,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the grade system terms
         :rtype: ``osid.grading.GradeSystemQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradeSystemQueryInspector
@@ -497,6 +616,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the assessment offered ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -507,6 +629,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the assessment offered terms
         :rtype: ``osid.assessment.AssessmentOfferedQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.AssessmentOfferedQueryInspector
@@ -519,6 +644,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the assessment taken ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -529,6 +657,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
 
         :return: the assessment taken terms
         :rtype: ``osid.assessment.AssessmentTakenQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.AssessmentTakenQueryInspector
@@ -541,6 +672,9 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -552,13 +686,17 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :return: the bank terms
         :rtype: ``osid.assessment.BankQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.BankQueryInspector
 
     bank_terms = property(fget=get_bank_terms)
 
     def get_assessment_offered_query_inspector_record(self, assessment_offered_record_type):
-        """Gets the assessment offered query inspector record corresponding to the given ``AssessmentOffered`` record ``Type``.
+        """Gets the assessment offered query inspector record corresponding to the given ``AssessmentOffered`` record
+        ``Type``.
 
         :param assessment_offered_record_type: an assessment offered record type
         :type assessment_offered_record_type: ``osid.type.Type``
@@ -567,6 +705,8 @@ class AssessmentOfferedQueryInspector(osid_query_inspectors.OsidObjectQueryInspe
         :raise: ``NullArgument`` -- ``assessment_offered_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(assessment_offered_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.records.AssessmentOfferedQueryInspectorRecord
@@ -581,11 +721,15 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
     modification in the search sessions.
 
     """
+
     def get_assessment_offered_id_terms(self):
         """Gets the assessment offered ``Id`` query terms.
 
         :return: the assessment offered ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -598,6 +742,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the assessment offered terms
         :rtype: ``osid.assessment.AssessmentOfferedQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentOfferedQueryInspector
 
@@ -608,6 +755,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the resource ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -620,6 +770,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the resource terms
         :rtype: ``osid.resource.ResourceQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.resource.ResourceQueryInspector
 
@@ -630,6 +783,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the agent ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -642,6 +798,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the agent terms
         :rtype: ``osid.authentication.AgentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.authentication.AgentQueryInspector
 
@@ -652,6 +811,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the start time terms
         :rtype: ``osid.search.terms.DateTimeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DateTimeTerm
@@ -664,6 +826,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the completion time terms
         :rtype: ``osid.search.terms.DateTimeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeTerm
 
@@ -674,6 +839,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the time spent terms
         :rtype: ``osid.search.terms.DurationTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DurationTerm
@@ -686,6 +854,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the grade system ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -696,6 +867,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the grade system terms
         :rtype: ``osid.grading.GradeSystemQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.grading.GradeSystemQueryInspector
@@ -708,6 +882,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the score terms
         :rtype: ``osid.search.terms.DecimalRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DecimalRangeTerm
 
@@ -718,6 +895,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the grade ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -730,6 +910,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the grade terms
         :rtype: ``osid.grading.GradeQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.grading.GradeQueryInspector
 
@@ -740,6 +923,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the comment terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -752,6 +938,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the assessment taken ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -762,6 +951,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
 
         :return: the assessment taken terms
         :rtype: ``osid.assessment.AssessmentTakenQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.AssessmentTakenQueryInspector
@@ -774,6 +966,9 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -785,13 +980,17 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :return: the bank terms
         :rtype: ``osid.assessment.BankQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.BankQueryInspector
 
     bank_terms = property(fget=get_bank_terms)
 
     def get_assessment_taken_query_inspector_record(self, assessment_taken_record_type):
-        """Gets the assessment taken query inspector record corresponding to the given ``AssessmentTaken`` record ``Type``.
+        """Gets the assessment taken query inspector record corresponding to the given ``AssessmentTaken`` record
+        ``Type``.
 
         :param assessment_taken_record_type: an assessment taken record type
         :type assessment_taken_record_type: ``osid.type.Type``
@@ -800,6 +999,8 @@ class AssessmentTakenQueryInspector(osid_query_inspectors.OsidObjectQueryInspect
         :raise: ``NullArgument`` -- ``assessment_taken_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(assessment_taken_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.records.AssessmentTakenQueryInspectorRecord
@@ -814,11 +1015,15 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_item_id_terms(self):
         """Gets the item ``Id`` query terms.
 
         :return: the item ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -831,6 +1036,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the item query terms
         :rtype: ``osid.assessment.ItemQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.ItemQueryInspector
 
@@ -841,6 +1049,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the assessment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -853,6 +1064,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the assessment terms
         :rtype: ``osid.assessment.AssessmentQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentQueryInspector
 
@@ -863,6 +1077,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the assessment offered ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -875,6 +1092,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the assessment offered terms
         :rtype: ``osid.assessment.AssessmentOfferedQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.AssessmentOfferedQueryInspector
 
@@ -885,6 +1105,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the ancestor bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -897,6 +1120,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the ancestor bank terms
         :rtype: ``osid.assessment.BankQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.assessment.BankQueryInspector
 
@@ -908,6 +1134,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :return: the descendant bank ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -918,6 +1147,9 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
 
         :return: the descendant bank terms
         :rtype: ``osid.assessment.BankQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.BankQueryInspector
@@ -934,6 +1166,8 @@ class BankQueryInspector(osid_query_inspectors.OsidCatalogQueryInspector):
         :raise: ``NullArgument`` -- ``bank_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(bank_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.assessment.records.BankQueryInspectorRecord

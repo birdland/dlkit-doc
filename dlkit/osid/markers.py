@@ -11,17 +11,12 @@ class OsidPrimitive:
     Consumer must be consumable by any OSID Provider.
 
     """
-    
-
 
 
 
 
 class Identifiable:
     """A marker interface for objects uniquely identified with an OSID ``Id``."""
-    
-
-
 
     def get_id(self):
         """Gets the Id associated with this instance of this OSID object.
@@ -32,7 +27,10 @@ class Identifiable:
         the new Id should be preferred over the old one for future
         queries.
 
-        return: (osid.id.Id) - the ``Id``
+        :return: the ``Id``
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: The ``Id`` is intended to be constant
         and persistent. A consumer may at any time persist the ``Id``
@@ -60,7 +58,6 @@ class Identifiable:
 
     ident = property(fget=get_id)
 
-
     def is_current(self):
         """Tests to see if the last method invoked retrieved up-to-date data.
 
@@ -72,8 +69,10 @@ class Identifiable:
         snapshot in case of error. This method returns false if the data
         last retrieved was stale.
 
-        return: (boolean) - ``true`` if the last data retrieval was up
-                to date, ``false`` otherwise
+        :return: ``true`` if the last data retrieval was up to date, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: Providers should return false unless all
         getters are implemented using real-time queries, or some trigger
@@ -87,9 +86,6 @@ class Identifiable:
 
 class Extensible:
     """A marker interface for objects that contain ``OsidRecords``."""
-    
-
-
 
     def get_record_types(self):
         """Gets the record types available in this object.
@@ -101,14 +97,16 @@ class Extensible:
         list. Interoperability with the typed interface to this object
         should be performed through ``hasRecordType()``.
 
-        return: (osid.type.TypeList) - the record types available
+        :return: the record types available
+        :rtype: ``osid.type.TypeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
 
     record_types = property(fget=get_record_types)
-
 
     def has_record_type(self, record_type):
         """Tests if this object supports the given record ``Type``.
@@ -117,9 +115,12 @@ class Extensible:
         interface/type inheritence. This method should be checked before
         retrieving the record interface.
 
-        arg:    record_type (osid.type.Type): a type
-        return: (boolean) - ``true`` if a record of the given record
-                ``Type`` is available, ``false`` otherwise
+        :param record_type: a type
+        :type record_type: ``osid.type.Type``
+        :return: ``true`` if a record of the given record ``Type`` is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -128,9 +129,6 @@ class Extensible:
 
 class Browsable:
     """A marker interface for objects that offer property inspection."""
-    
-
-
 
     def get_properties(self):
         """Gets a list of properties.
@@ -141,16 +139,17 @@ class Browsable:
         specific property should use the extension interface defined by
         its ``Type``.
 
-        return: (osid.PropertyList) - a list of properties
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - an authorization failure occurred
+        :return: a list of properties
+        :rtype: ``osid.PropertyList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- an authorization failure occurred
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.PropertyList
 
     properties = property(fget=get_properties)
-
 
     def get_properties_by_record_type(self, record_type):
         """Gets a list of properties corresponding to the specified record type.
@@ -163,14 +162,15 @@ class Browsable:
         by parents of the record ``type`` in the case a record's
         interface extends another.
 
-        arg:    record_type (osid.type.Type): the record type
-                corresponding to the properties set to retrieve
-        return: (osid.PropertyList) - a list of properties
-        raise:  NullArgument - ``record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - an authorization failure occurred
-        raise:  Unsupported - ``has_record_type(record_type)`` is
-                ``false``
+        :param record_type: the record type corresponding to the properties set to retrieve
+        :type record_type: ``osid.type.Type``
+        :return: a list of properties
+        :rtype: ``osid.PropertyList``
+        :raise: ``NullArgument`` -- ``record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- an authorization failure occurred
+        :raise: ``Unsupported`` -- ``has_record_type(record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -179,33 +179,32 @@ class Browsable:
 
 class Suppliable:
     """A marker interface for OSID Provider-owned objects used to supply input from an OSID Consumer."""
-    
-
 
 
 
 
 class Temporal:
     """``Temporal`` is used to indicate the object endures for a period of time."""
-    
-
-
 
     def is_effective(self):
         """Tests if the current date is within the start end end dates inclusive.
 
-        return: (boolean) - ``true`` if this is effective, ``false``
-                otherwise
+        :return: ``true`` if this is effective, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_start_date(self):
         """Gets the start date.
 
-        return: (osid.calendaring.DateTime) - the start date
+        :return: the start date
+        :rtype: ``osid.calendaring.DateTime``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -213,11 +212,13 @@ class Temporal:
 
     start_date = property(fget=get_start_date)
 
-
     def get_end_date(self):
         """Gets the end date.
 
-        return: (osid.calendaring.DateTime) - the end date
+        :return: the end date
+        :rtype: ``osid.calendaring.DateTime``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -236,8 +237,6 @@ class Subjugateable:
     ``OsidObject``.
 
     """
-    
-
 
 
 
@@ -264,8 +263,6 @@ class Aggregateable:
     relationship or mapping.
 
     """
-    
-
 
 
 
@@ -273,17 +270,16 @@ class Aggregateable:
 class Containable:
     """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself
         directly accessible without knowledge of the originating service."""
-    
-
-
 
     def is_sequestered(self):
         """Tests if this ``Containable`` is sequestered in that it should not appear outside of its aggregated
         composition.
 
-        return: (boolean) - ``true`` if this containable is sequestered,
-                ``false`` if this containable may appear outside its
-                aggregate
+        :return: ``true`` if this containable is sequestered, ``false`` if this containable may appear outside its
+        aggregate
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -297,14 +293,14 @@ class Sourceable:
     services.
 
     """
-    
-
-
 
     def get_provider_id(self):
         """Gets the ``Id`` of the provider.
 
-        return: (osid.id.Id) - the provider ``Id``
+        :return: the provider ``Id``
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -312,12 +308,13 @@ class Sourceable:
 
     provider_id = property(fget=get_provider_id)
 
-
     def get_provider(self):
         """Gets the ``Resource`` representing the provider.
 
-        return: (osid.resource.Resource) - the provider
-        raise:  OperationFailed - unable to complete request
+        :return: the provider
+        :rtype: ``osid.resource.Resource``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -325,11 +322,13 @@ class Sourceable:
 
     provider = property(fget=get_provider)
 
-
     def get_branding_ids(self):
         """Gets the branding asset ``Ids``.
 
-        return: (osid.id.IdList) - a list of asset ``Ids``
+        :return: a list of asset ``Ids``
+        :rtype: ``osid.id.IdList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -337,12 +336,13 @@ class Sourceable:
 
     branding_ids = property(fget=get_branding_ids)
 
-
     def get_branding(self):
         """Gets a branding, such as an image or logo, expressed using the ``Asset`` interface.
 
-        return: (osid.repository.AssetList) - a list of assets
-        raise:  OperationFailed - unable to complete request
+        :return: a list of assets
+        :rtype: ``osid.repository.AssetList``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -350,13 +350,15 @@ class Sourceable:
 
     branding = property(fget=get_branding)
 
-
     def get_license(self):
         """Gets the terms of usage.
 
         An empty license means the terms are unknown.
 
-        return: (osid.locale.DisplayText) - the license
+        :return: the license
+        :rtype: ``osid.locale.DisplayText``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -372,8 +374,6 @@ class Federateable:
     the hiererarchy that any ``OsidObject`` "includes" its children.
 
     """
-    
-
 
 
 
@@ -410,9 +410,6 @@ class Operable:
     from ``isOperational()``.
 
     """
-    
-
-
 
     def is_active(self):
         """Tests if this operable is active.
@@ -421,13 +418,14 @@ class Operable:
         and ``is_disabled()`` is ``false,`` or ``is_enabled()`` is
         ``true``.
 
-        return: (boolean) - ``true`` if this operable is on, ``false``
-                if it is off
+        :return: ``true`` if this operable is on, ``false`` if it is off
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_enabled(self):
         """Tests if this operable is administravely enabled.
@@ -436,14 +434,14 @@ class Operable:
         If this method returns ``true`` then ``is_disabled()`` must
         return ``false``.
 
-        return: (boolean) - ``true`` if this operable is enabled,
-                ``false`` if the active status is determined by other
-                rules
+        :return: ``true`` if this operable is enabled, ``false`` if the active status is determined by other rules
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_disabled(self):
         """Tests if this operable is administravely disabled.
@@ -452,14 +450,14 @@ class Operable:
         ``OsidEnabler``. If this method returns ``true`` then
         ``is_enabled()`` must return ``false``.
 
-        return: (boolean) - ``true`` if this operable is disabled,
-                ``false`` if the active status is determined by other
-                rules
+        :return: ``true`` if this operable is disabled, ``false`` if the active status is determined by other rules
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_operational(self):
         """Tests if this ``Operable`` is operational.
@@ -467,8 +465,10 @@ class Operable:
         This Operable is operational if any of the applied
         ``OsidEnablers`` are ``true``.
 
-        return: (boolean) - ``true`` if this operable is operational,
-                ``false`` otherwise
+        :return: ``true`` if this operable is operational, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

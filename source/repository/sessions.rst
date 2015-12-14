@@ -1,229 +1,16 @@
 
-.. currentmodule:: dlkit.services.repository
+.. currentmodule:: dlkit.repository.sessions
+.. automodule:: dlkit.repository.sessions
 
-Repository
-==========
+Sessions
+========
 
 
-Repository
-----------
-
-.. autoclass:: Repository
-   :show-inheritance:
-
-   .. automethod:: Repository.get_repository_record
-
-
-
-Asset Repository Methods
-------------------------
-
-   .. automethod:: AssetRepositorySession.can_lookup_asset_repository_mappings
-
-   .. automethod:: AssetRepositorySession.use_comparative_repository_view
-
-   .. automethod:: AssetRepositorySession.use_plenary_repository_view
-
-   .. automethod:: AssetRepositorySession.get_asset_ids_by_repository
-
-   .. automethod:: AssetRepositorySession.get_assets_by_repository
-
-   .. automethod:: AssetRepositorySession.get_asset_ids_by_repositories
-
-   .. automethod:: AssetRepositorySession.get_assets_by_repositories
-
-   .. automethod:: AssetRepositorySession.get_repository_ids_by_asset
-
-   .. automethod:: AssetRepositorySession.get_repositories_by_asset
-
-
-
-Asset Repository Assignment Methods
------------------------------------
-
-   .. automethod:: AssetRepositoryAssignmentSession.can_assign_assets
-
-   .. automethod:: AssetRepositoryAssignmentSession.can_assign_assets_to_repository
-
-   .. automethod:: AssetRepositoryAssignmentSession.get_assignable_repository_ids
-
-   .. automethod:: AssetRepositoryAssignmentSession.get_assignable_repository_ids_for_asset
-
-   .. automethod:: AssetRepositoryAssignmentSession.assign_asset_to_repository
-
-   .. automethod:: AssetRepositoryAssignmentSession.unassign_asset_from_repository
-
-
-
-Composition Repository Methods
-------------------------------
-
-   .. automethod:: CompositionRepositorySession.use_comparative_composition_repository_view
-
-   .. automethod:: CompositionRepositorySession.use_plenary_composition_repository_view
-
-   .. automethod:: CompositionRepositorySession.can_lookup_composition_repository_mappings
-
-   .. automethod:: CompositionRepositorySession.get_composition_ids_by_repository
-
-   .. automethod:: CompositionRepositorySession.get_compositions_by_repository
-
-   .. automethod:: CompositionRepositorySession.get_composition_ids_by_repositories
-
-   .. automethod:: CompositionRepositorySession.get_compoitions_by_repositories
-
-   .. automethod:: CompositionRepositorySession.get_repository_ids_by_composition
-
-   .. automethod:: CompositionRepositorySession.get_repositories_by_composition
-
-
-
-Composition Repository Assignment Methods
------------------------------------------
-
-   .. automethod:: CompositionRepositoryAssignmentSession.can_assign_compositions
-
-   .. automethod:: CompositionRepositoryAssignmentSession.can_assign_compositions_to_repository
-
-   .. automethod:: CompositionRepositoryAssignmentSession.get_assignable_repository_ids
-
-   .. automethod:: CompositionRepositoryAssignmentSession.get_assignable_repository_ids_for_composition
-
-   .. automethod:: CompositionRepositoryAssignmentSession.assign_composition_to_repository
-
-   .. automethod:: CompositionRepositoryAssignmentSession.unassign_composition_from_repository
-
-
-
-Repository Lookup Methods
--------------------------
-
-   .. automethod:: RepositoryLookupSession.can_lookup_repositories
-
-   .. automethod:: RepositoryLookupSession.use_comparative_repository_view
-
-   .. automethod:: RepositoryLookupSession.use_plenary_repository_view
-
-   .. automethod:: RepositoryLookupSession.get_repository
-
-   .. automethod:: RepositoryLookupSession.get_repositories_by_ids
-
-   .. automethod:: RepositoryLookupSession.get_repositories_by_genus_type
-
-   .. automethod:: RepositoryLookupSession.get_repositories_by_parent_genus_type
-
-   .. automethod:: RepositoryLookupSession.get_repositories_by_record_type
-
-   .. automethod:: RepositoryLookupSession.get_repositories_by_provider
-
-   .. autoattribute:: RepositoryLookupSession.repositories
-
-
-
-Repository Query Methods
-------------------------
-
-   .. automethod:: RepositoryQuerySession.can_search_repositories
-
-   .. autoattribute:: RepositoryQuerySession.repository_query
-
-   .. automethod:: RepositoryQuerySession.get_repositories_by_query
-
-
-
-Repository Admin Methods
-------------------------
-
-   .. automethod:: RepositoryAdminSession.can_create_repositories
-
-   .. automethod:: RepositoryAdminSession.can_create_repository_with_record_types
-
-   .. automethod:: RepositoryAdminSession.get_repository_form_for_create
-
-   .. automethod:: RepositoryAdminSession.create_repository
-
-   .. automethod:: RepositoryAdminSession.can_update_repositories
-
-   .. automethod:: RepositoryAdminSession.get_repository_form_for_update
-
-   .. automethod:: RepositoryAdminSession.update_repository
-
-   .. automethod:: RepositoryAdminSession.can_delete_repositories
-
-   .. automethod:: RepositoryAdminSession.delete_repository
-
-   .. automethod:: RepositoryAdminSession.can_manage_repository_aliases
-
-   .. automethod:: RepositoryAdminSession.alias_repository
-
-
-
-Repository Hierarchy Methods
-----------------------------
-
-   .. autoattribute:: RepositoryHierarchySession.repository_hierarchy_id
-
-   .. autoattribute:: RepositoryHierarchySession.repository_hierarchy
-
-   .. automethod:: RepositoryHierarchySession.can_access_repository_hierarchy
-
-   .. automethod:: RepositoryHierarchySession.use_comparative_repository_view
-
-   .. automethod:: RepositoryHierarchySession.use_plenary_repository_view
-
-   .. autoattribute:: RepositoryHierarchySession.root_repository_ids
-
-   .. autoattribute:: RepositoryHierarchySession.root_repositories
-
-   .. automethod:: RepositoryHierarchySession.has_parent_repositories
-
-   .. automethod:: RepositoryHierarchySession.is_parent_of_repository
-
-   .. automethod:: RepositoryHierarchySession.get_parent_repository_ids
-
-   .. automethod:: RepositoryHierarchySession.get_parent_repositories
-
-   .. automethod:: RepositoryHierarchySession.is_ancestor_of_repository
-
-   .. automethod:: RepositoryHierarchySession.has_child_repositories
-
-   .. automethod:: RepositoryHierarchySession.is_child_of_repository
-
-   .. automethod:: RepositoryHierarchySession.get_child_repository_ids
-
-   .. automethod:: RepositoryHierarchySession.get_child_repositories
-
-   .. automethod:: RepositoryHierarchySession.is_descendant_of_repository
-
-   .. automethod:: RepositoryHierarchySession.get_repository_node_ids
-
-   .. automethod:: RepositoryHierarchySession.get_repository_nodes
-
-
-
-Repository Hierarchy Design Methods
------------------------------------
-
-   .. autoattribute:: RepositoryHierarchyDesignSession.repository_hierarchy_id
-
-   .. autoattribute:: RepositoryHierarchyDesignSession.repository_hierarchy
-
-   .. automethod:: RepositoryHierarchyDesignSession.can_modify_repository_hierarchy
-
-   .. automethod:: RepositoryHierarchyDesignSession.add_root_repository
-
-   .. automethod:: RepositoryHierarchyDesignSession.remove_root_repository
-
-   .. automethod:: RepositoryHierarchyDesignSession.add_child_repository
-
-   .. automethod:: RepositoryHierarchyDesignSession.remove_child_repository
-
-   .. automethod:: RepositoryHierarchyDesignSession.remove_child_repositories
-
-
-
-Asset Lookup Methods
+Asset Lookup Session
 --------------------
+
+.. autoclass:: AssetLookupSession
+   :show-inheritance:
 
    .. autoattribute:: AssetLookupSession.repository_id
 
@@ -253,10 +40,11 @@ Asset Lookup Methods
 
    .. autoattribute:: AssetLookupSession.assets
 
-
-
-Asset Query Methods
+Asset Query Session
 -------------------
+
+.. autoclass:: AssetQuerySession
+   :show-inheritance:
 
    .. autoattribute:: AssetQuerySession.repository_id
 
@@ -272,10 +60,11 @@ Asset Query Methods
 
    .. automethod:: AssetQuerySession.get_assets_by_query
 
-
-
-Asset Search Methods
+Asset Search Session
 --------------------
+
+.. autoclass:: AssetSearchSession
+   :show-inheritance:
 
    .. autoattribute:: AssetSearchSession.asset_search
 
@@ -285,10 +74,11 @@ Asset Search Methods
 
    .. automethod:: AssetSearchSession.get_asset_query_from_inspector
 
-
-
-Asset Admin Methods
+Asset Admin Session
 -------------------
+
+.. autoclass:: AssetAdminSession
+   :show-inheritance:
 
    .. autoattribute:: AssetAdminSession.repository_id
 
@@ -334,10 +124,11 @@ Asset Admin Methods
 
    .. automethod:: AssetAdminSession.delete_asset_content
 
-
-
-Asset Notification Methods
+Asset Notification Session
 --------------------------
+
+.. autoclass:: AssetNotificationSession
+   :show-inheritance:
 
    .. autoattribute:: AssetNotificationSession.repository_id
 
@@ -371,10 +162,53 @@ Asset Notification Methods
 
    .. automethod:: AssetNotificationSession.acknowledge_asset_notification
 
+Asset Repository Session
+------------------------
 
+.. autoclass:: AssetRepositorySession
+   :show-inheritance:
 
-Asset Composition Methods
+   .. automethod:: AssetRepositorySession.can_lookup_asset_repository_mappings
+
+   .. automethod:: AssetRepositorySession.use_comparative_repository_view
+
+   .. automethod:: AssetRepositorySession.use_plenary_repository_view
+
+   .. automethod:: AssetRepositorySession.get_asset_ids_by_repository
+
+   .. automethod:: AssetRepositorySession.get_assets_by_repository
+
+   .. automethod:: AssetRepositorySession.get_asset_ids_by_repositories
+
+   .. automethod:: AssetRepositorySession.get_assets_by_repositories
+
+   .. automethod:: AssetRepositorySession.get_repository_ids_by_asset
+
+   .. automethod:: AssetRepositorySession.get_repositories_by_asset
+
+Asset Repository Assignment Session
+-----------------------------------
+
+.. autoclass:: AssetRepositoryAssignmentSession
+   :show-inheritance:
+
+   .. automethod:: AssetRepositoryAssignmentSession.can_assign_assets
+
+   .. automethod:: AssetRepositoryAssignmentSession.can_assign_assets_to_repository
+
+   .. automethod:: AssetRepositoryAssignmentSession.get_assignable_repository_ids
+
+   .. automethod:: AssetRepositoryAssignmentSession.get_assignable_repository_ids_for_asset
+
+   .. automethod:: AssetRepositoryAssignmentSession.assign_asset_to_repository
+
+   .. automethod:: AssetRepositoryAssignmentSession.unassign_asset_from_repository
+
+Asset Composition Session
 -------------------------
+
+.. autoclass:: AssetCompositionSession
+   :show-inheritance:
 
    .. autoattribute:: AssetCompositionSession.repository_id
 
@@ -394,10 +228,11 @@ Asset Composition Methods
 
    .. automethod:: AssetCompositionSession.get_compositions_by_asset
 
-
-
-Asset Composition Design Methods
+Asset Composition Design Session
 --------------------------------
+
+.. autoclass:: AssetCompositionDesignSession
+   :show-inheritance:
 
    .. autoattribute:: AssetCompositionDesignSession.repository_id
 
@@ -415,10 +250,11 @@ Asset Composition Design Methods
 
    .. automethod:: AssetCompositionDesignSession.remove_asset
 
-
-
-Composition Lookup Methods
+Composition Lookup Session
 --------------------------
+
+.. autoclass:: CompositionLookupSession
+   :show-inheritance:
 
    .. autoattribute:: CompositionLookupSession.repository_id
 
@@ -456,10 +292,11 @@ Composition Lookup Methods
 
    .. autoattribute:: CompositionLookupSession.compositions
 
-
-
-Composition Query Methods
+Composition Query Session
 -------------------------
+
+.. autoclass:: CompositionQuerySession
+   :show-inheritance:
 
    .. autoattribute:: CompositionQuerySession.repository_id
 
@@ -479,10 +316,11 @@ Composition Query Methods
 
    .. automethod:: CompositionQuerySession.get_compositions_by_query
 
-
-
-Composition Search Methods
+Composition Search Session
 --------------------------
+
+.. autoclass:: CompositionSearchSession
+   :show-inheritance:
 
    .. autoattribute:: CompositionSearchSession.composition_search
 
@@ -492,10 +330,11 @@ Composition Search Methods
 
    .. automethod:: CompositionSearchSession.get_composition_query_from_inspector
 
-
-
-Composition Admin Methods
+Composition Admin Session
 -------------------------
+
+.. autoclass:: CompositionAdminSession
+   :show-inheritance:
 
    .. autoattribute:: CompositionAdminSession.repository_id
 
@@ -529,5 +368,177 @@ Composition Admin Methods
 
    .. automethod:: CompositionAdminSession.alias_composition
 
+Composition Repository Session
+------------------------------
 
+.. autoclass:: CompositionRepositorySession
+   :show-inheritance:
+
+   .. automethod:: CompositionRepositorySession.use_comparative_composition_repository_view
+
+   .. automethod:: CompositionRepositorySession.use_plenary_composition_repository_view
+
+   .. automethod:: CompositionRepositorySession.can_lookup_composition_repository_mappings
+
+   .. automethod:: CompositionRepositorySession.get_composition_ids_by_repository
+
+   .. automethod:: CompositionRepositorySession.get_compositions_by_repository
+
+   .. automethod:: CompositionRepositorySession.get_composition_ids_by_repositories
+
+   .. automethod:: CompositionRepositorySession.get_compoitions_by_repositories
+
+   .. automethod:: CompositionRepositorySession.get_repository_ids_by_composition
+
+   .. automethod:: CompositionRepositorySession.get_repositories_by_composition
+
+Composition Repository Assignment Session
+-----------------------------------------
+
+.. autoclass:: CompositionRepositoryAssignmentSession
+   :show-inheritance:
+
+   .. automethod:: CompositionRepositoryAssignmentSession.can_assign_compositions
+
+   .. automethod:: CompositionRepositoryAssignmentSession.can_assign_compositions_to_repository
+
+   .. automethod:: CompositionRepositoryAssignmentSession.get_assignable_repository_ids
+
+   .. automethod:: CompositionRepositoryAssignmentSession.get_assignable_repository_ids_for_composition
+
+   .. automethod:: CompositionRepositoryAssignmentSession.assign_composition_to_repository
+
+   .. automethod:: CompositionRepositoryAssignmentSession.unassign_composition_from_repository
+
+Repository Lookup Session
+-------------------------
+
+.. autoclass:: RepositoryLookupSession
+   :show-inheritance:
+
+   .. automethod:: RepositoryLookupSession.can_lookup_repositories
+
+   .. automethod:: RepositoryLookupSession.use_comparative_repository_view
+
+   .. automethod:: RepositoryLookupSession.use_plenary_repository_view
+
+   .. automethod:: RepositoryLookupSession.get_repository
+
+   .. automethod:: RepositoryLookupSession.get_repositories_by_ids
+
+   .. automethod:: RepositoryLookupSession.get_repositories_by_genus_type
+
+   .. automethod:: RepositoryLookupSession.get_repositories_by_parent_genus_type
+
+   .. automethod:: RepositoryLookupSession.get_repositories_by_record_type
+
+   .. automethod:: RepositoryLookupSession.get_repositories_by_provider
+
+   .. autoattribute:: RepositoryLookupSession.repositories
+
+Repository Query Session
+------------------------
+
+.. autoclass:: RepositoryQuerySession
+   :show-inheritance:
+
+   .. automethod:: RepositoryQuerySession.can_search_repositories
+
+   .. autoattribute:: RepositoryQuerySession.repository_query
+
+   .. automethod:: RepositoryQuerySession.get_repositories_by_query
+
+Repository Admin Session
+------------------------
+
+.. autoclass:: RepositoryAdminSession
+   :show-inheritance:
+
+   .. automethod:: RepositoryAdminSession.can_create_repositories
+
+   .. automethod:: RepositoryAdminSession.can_create_repository_with_record_types
+
+   .. automethod:: RepositoryAdminSession.get_repository_form_for_create
+
+   .. automethod:: RepositoryAdminSession.create_repository
+
+   .. automethod:: RepositoryAdminSession.can_update_repositories
+
+   .. automethod:: RepositoryAdminSession.get_repository_form_for_update
+
+   .. automethod:: RepositoryAdminSession.update_repository
+
+   .. automethod:: RepositoryAdminSession.can_delete_repositories
+
+   .. automethod:: RepositoryAdminSession.delete_repository
+
+   .. automethod:: RepositoryAdminSession.can_manage_repository_aliases
+
+   .. automethod:: RepositoryAdminSession.alias_repository
+
+Repository Hierarchy Session
+----------------------------
+
+.. autoclass:: RepositoryHierarchySession
+   :show-inheritance:
+
+   .. autoattribute:: RepositoryHierarchySession.repository_hierarchy_id
+
+   .. autoattribute:: RepositoryHierarchySession.repository_hierarchy
+
+   .. automethod:: RepositoryHierarchySession.can_access_repository_hierarchy
+
+   .. automethod:: RepositoryHierarchySession.use_comparative_repository_view
+
+   .. automethod:: RepositoryHierarchySession.use_plenary_repository_view
+
+   .. autoattribute:: RepositoryHierarchySession.root_repository_ids
+
+   .. autoattribute:: RepositoryHierarchySession.root_repositories
+
+   .. automethod:: RepositoryHierarchySession.has_parent_repositories
+
+   .. automethod:: RepositoryHierarchySession.is_parent_of_repository
+
+   .. automethod:: RepositoryHierarchySession.get_parent_repository_ids
+
+   .. automethod:: RepositoryHierarchySession.get_parent_repositories
+
+   .. automethod:: RepositoryHierarchySession.is_ancestor_of_repository
+
+   .. automethod:: RepositoryHierarchySession.has_child_repositories
+
+   .. automethod:: RepositoryHierarchySession.is_child_of_repository
+
+   .. automethod:: RepositoryHierarchySession.get_child_repository_ids
+
+   .. automethod:: RepositoryHierarchySession.get_child_repositories
+
+   .. automethod:: RepositoryHierarchySession.is_descendant_of_repository
+
+   .. automethod:: RepositoryHierarchySession.get_repository_node_ids
+
+   .. automethod:: RepositoryHierarchySession.get_repository_nodes
+
+Repository Hierarchy Design Session
+-----------------------------------
+
+.. autoclass:: RepositoryHierarchyDesignSession
+   :show-inheritance:
+
+   .. autoattribute:: RepositoryHierarchyDesignSession.repository_hierarchy_id
+
+   .. autoattribute:: RepositoryHierarchyDesignSession.repository_hierarchy
+
+   .. automethod:: RepositoryHierarchyDesignSession.can_modify_repository_hierarchy
+
+   .. automethod:: RepositoryHierarchyDesignSession.add_root_repository
+
+   .. automethod:: RepositoryHierarchyDesignSession.remove_root_repository
+
+   .. automethod:: RepositoryHierarchyDesignSession.add_child_repository
+
+   .. automethod:: RepositoryHierarchyDesignSession.remove_child_repository
+
+   .. automethod:: RepositoryHierarchyDesignSession.remove_child_repositories
 

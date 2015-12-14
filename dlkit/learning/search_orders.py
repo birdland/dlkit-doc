@@ -1,14 +1,18 @@
+
 from ..osid import search_orders as osid_search_orders
 
 
 class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidFederateableSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_assessment(self, style):
         """Specified a preference for ordering results by the assessment.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -19,6 +23,9 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :return: ``true`` if an assessment search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -28,6 +35,9 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :return: the assessment search order
         :rtype: ``osid.assessment.AssessmentSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_assessment_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_assessment_search_order()`` is ``true``.*
 
         """
         return # osid.assessment.AssessmentSearchOrder
@@ -41,6 +51,8 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -49,6 +61,9 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
 
         :return: ``true`` if a grade search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -59,6 +74,9 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :return: a grade search order
         :rtype: ``osid.grading.GradeSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_knowledge_category_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_knowledge_category_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSearchOrder
@@ -72,6 +90,8 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -80,6 +100,9 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
 
         :return: ``true`` if a grade search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -90,6 +113,9 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :return: a grade search order
         :rtype: ``osid.grading.GradeSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_cognitive_process_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_cognitive_process_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSearchOrder
@@ -109,18 +135,23 @@ class ObjectiveSearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(objective_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.records.ObjectiveSearchOrderRecord
 
 
 class ActivitySearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_orders.OsidSubjugateableSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_objective(self, style):
         """Specifies a preference for ordering the result set by the objective.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -131,6 +162,9 @@ class ActivitySearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_
         :return: ``true`` if an objective search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -140,6 +174,9 @@ class ActivitySearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_
         :return: an objective search order
         :rtype: ``osid.learning.ObjectiveSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_objective_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_objective_search_order()`` is ``true``.*
 
         """
         return # osid.learning.ObjectiveSearchOrder
@@ -159,18 +196,23 @@ class ActivitySearchOrder(osid_search_orders.OsidObjectSearchOrder, osid_search_
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(activity_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.records.ActivitySearchOrderRecord
 
 
 class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def order_by_resource(self, style):
         """Specifies a preference for ordering the result set by the resource.
 
         :param style: search order style
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
@@ -181,6 +223,9 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: ``true`` if a resource search order is available, ``false`` otherwise
         :rtype: ``boolean``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # boolean
 
@@ -190,6 +235,9 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: a resource search order
         :rtype: ``osid.resource.ResourceSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_resource_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_resource_search_order()`` is ``true``.*
 
         """
         return # osid.resource.ResourceSearchOrder
@@ -203,6 +251,8 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -211,6 +261,9 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if an objective search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -221,6 +274,9 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: an objective search order
         :rtype: ``osid.learning.ObjectiveSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_objective_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_objective_search_order()`` is ``true``.*
 
         """
         return # osid.learning.ObjectiveSearchOrder
@@ -234,6 +290,8 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -244,6 +302,8 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :type style: ``osid.SearchOrderStyle``
         :raise: ``NullArgument`` -- ``style`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         pass
 
@@ -252,6 +312,9 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
 
         :return: ``true`` if a grade search order is available, ``false`` otherwise
         :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
@@ -262,6 +325,9 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :return: a grade search order
         :rtype: ``osid.grading.GradeSearchOrder``
         :raise: ``Unimplemented`` -- ``supports_level_search_order()`` is ``false``
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_level_search_order()`` is ``true``.*
 
         """
         return # osid.grading.GradeSearchOrder
@@ -281,12 +347,15 @@ class ProficiencySearchOrder(osid_search_orders.OsidRelationshipSearchOrder):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(proficiency_record_type)`` is ``false``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.learning.records.ProficiencySearchOrderRecord
 
 
 class ObjectiveBankSearchOrder(osid_search_orders.OsidCatalogSearchOrder):
     """An interface for specifying the ordering of search results."""
+
     def get_objective_bank_search_order_record(self, objective_bank_record_type):
         """Gets the objective bank search order record corresponding to the given objective bank record ``Type``.
 
@@ -299,6 +368,8 @@ class ObjectiveBankSearchOrder(osid_search_orders.OsidCatalogSearchOrder):
         :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(objective_bank_record_type)`` is ``false``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.records.ObjectiveBankSearchOrderRecord

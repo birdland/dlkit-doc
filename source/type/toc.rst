@@ -6,7 +6,6 @@ Type
 
    summary
    service_managers
-   no_catalog
    primitives
    managers
    objects

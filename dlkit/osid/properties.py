@@ -1,3 +1,4 @@
+
 from ..osid import objects as osid_objects
 
 
@@ -13,11 +14,15 @@ class Property:
     the typed interfaces.
 
     """
+
     def get_display_name(self):
         """The display name for this property.
 
         :return: the display name
         :rtype: ``osid.locale.DisplayText``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
@@ -30,6 +35,9 @@ class Property:
         :return: the display label
         :rtype: ``osid.locale.DisplayText``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.locale.DisplayText
 
@@ -40,6 +48,9 @@ class Property:
 
         :return: the description
         :rtype: ``osid.locale.DisplayText``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.locale.DisplayText
@@ -52,6 +63,9 @@ class Property:
         :return: the value
         :rtype: ``string``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # string
 
@@ -59,7 +73,8 @@ class Property:
 
 
 class PropertyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``PropertyList`` provides a means for accessing ``Property`` elements sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``PropertyList`` provides a means for accessing ``Property`` elements sequentially either one
+        at a time or many at a time.
 
     Examples: while (pl.hasNext()) { Property property =
     pl.getNextProperty(); }
@@ -70,15 +85,18 @@ class PropertyList(osid_objects.OsidList):
       }
 
 
-
     """
+
     def get_next_property(self):
         """Gets the next ``Property`` in this list.
 
-        :return: the next ``Property`` in this list. The ``has_next()`` method should be used to test that a next ``Property`` is available before calling this method.
+        :return: the next ``Property`` in this list. The ``has_next()`` method should be used to test that a next
+        ``Property`` is available before calling this method.
         :rtype: ``osid.Property``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Property
@@ -86,14 +104,18 @@ class PropertyList(osid_objects.OsidList):
     next_property = property(fget=get_next_property)
 
     def get_next_properties(self, n):
-        """Gets the next set of ``Property`` elements in this list which must be less than or equal to the number returned from ``available()``.
+        """Gets the next set of ``Property`` elements in this list which must be less than or equal to the number
+        returned from ``available()``.
 
         :param n: the number of ``Property`` elements requested which should be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Property`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Property`` elements.The length of the array is less than or equal to the number
+        specified.
         :rtype: ``osid.Property``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.Property

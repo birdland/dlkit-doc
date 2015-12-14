@@ -26,5 +26,3 @@ Type
 
    .. autoattribute:: Type.identifier
 
-
-

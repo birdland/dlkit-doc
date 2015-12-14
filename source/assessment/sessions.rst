@@ -1,317 +1,16 @@
 
-.. currentmodule:: dlkit.services.assessment
+.. currentmodule:: dlkit.assessment.sessions
+.. automodule:: dlkit.assessment.sessions
 
-Bank
-====
+Sessions
+========
 
 
-Bank
-----
+Assessment Session
+------------------
 
-.. autoclass:: Bank
+.. autoclass:: AssessmentSession
    :show-inheritance:
-
-   .. automethod:: Bank.get_bank_record
-
-
-
-Item Bank Methods
------------------
-
-   .. automethod:: ItemBankSession.can_lookup_item_bank_mappings
-
-   .. automethod:: ItemBankSession.use_comparative_bank_view
-
-   .. automethod:: ItemBankSession.use_plenary_bank_view
-
-   .. automethod:: ItemBankSession.get_item_ids_by_bank
-
-   .. automethod:: ItemBankSession.get_items_by_bank
-
-   .. automethod:: ItemBankSession.get_item_ids_by_banks
-
-   .. automethod:: ItemBankSession.get_items_by_banks
-
-   .. automethod:: ItemBankSession.get_bank_ids_by_item
-
-   .. automethod:: ItemBankSession.get_banks_by_item
-
-
-
-Item Bank Assignment Methods
-----------------------------
-
-   .. automethod:: ItemBankAssignmentSession.can_assign_items
-
-   .. automethod:: ItemBankAssignmentSession.can_assign_items_to_bank
-
-   .. automethod:: ItemBankAssignmentSession.get_assignable_bank_ids
-
-   .. automethod:: ItemBankAssignmentSession.get_assignable_bank_ids_for_item
-
-   .. automethod:: ItemBankAssignmentSession.assign_item_to_bank
-
-   .. automethod:: ItemBankAssignmentSession.unassign_item_from_bank
-
-   .. automethod:: ItemBankAssignmentSession.reassign_item_to_billing
-
-
-
-Assessment Bank Methods
------------------------
-
-   .. automethod:: AssessmentBankSession.can_lookup_assessment_bank_mappings
-
-   .. automethod:: AssessmentBankSession.use_comparative_bank_view
-
-   .. automethod:: AssessmentBankSession.use_plenary_bank_view
-
-   .. automethod:: AssessmentBankSession.get_assessment_ids_by_bank
-
-   .. automethod:: AssessmentBankSession.get_assessments_by_bank
-
-   .. automethod:: AssessmentBankSession.get_assessment_ids_by_banks
-
-   .. automethod:: AssessmentBankSession.get_assessments_by_banks
-
-   .. automethod:: AssessmentBankSession.get_bank_ids_by_assessment
-
-   .. automethod:: AssessmentBankSession.get_banks_by_assessment
-
-
-
-Assessment Bank Assignment Methods
-----------------------------------
-
-   .. automethod:: AssessmentBankAssignmentSession.can_assign_assessments
-
-   .. automethod:: AssessmentBankAssignmentSession.can_assign_assessments_to_bank
-
-   .. automethod:: AssessmentBankAssignmentSession.get_assignable_bank_ids
-
-   .. automethod:: AssessmentBankAssignmentSession.get_assignable_bank_ids_for_assessment
-
-   .. automethod:: AssessmentBankAssignmentSession.assign_assessment_to_bank
-
-   .. automethod:: AssessmentBankAssignmentSession.unassign_assessment_from_bank
-
-   .. automethod:: AssessmentBankAssignmentSession.reassign_assessment_to_billing
-
-
-
-Assessment Offered Bank Methods
--------------------------------
-
-   .. automethod:: AssessmentOfferedBankSession.can_lookup_assessment_offered_bank_mappings
-
-   .. automethod:: AssessmentOfferedBankSession.use_comparative_bank_view
-
-   .. automethod:: AssessmentOfferedBankSession.use_plenary_bank_view
-
-   .. automethod:: AssessmentOfferedBankSession.get_assessment_offered_ids_by_bank
-
-   .. automethod:: AssessmentOfferedBankSession.get_assessments_offered_by_bank
-
-   .. automethod:: AssessmentOfferedBankSession.get_assessment_offered_ids_by_banks
-
-   .. automethod:: AssessmentOfferedBankSession.get_assessments_offered_by_banks
-
-   .. automethod:: AssessmentOfferedBankSession.get_bank_ids_by_assessment_offered
-
-   .. automethod:: AssessmentOfferedBankSession.get_banks_by_assessment_offered
-
-
-
-Assessment Offered Bank Assignment Methods
-------------------------------------------
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.can_assign_assessments_offered
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.can_assign_assessments_offered_to_bank
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.get_assignable_bank_ids
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.get_assignable_bank_ids_for_assessment_offered
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.assign_assessment_offered_to_bank
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.unassign_assessment_offered_from_bank
-
-   .. automethod:: AssessmentOfferedBankAssignmentSession.reassign_assessment_offered_to_billing
-
-
-
-Assessment Taken Bank Methods
------------------------------
-
-   .. automethod:: AssessmentTakenBankSession.can_lookup_assessment_taken_bank_mappings
-
-   .. automethod:: AssessmentTakenBankSession.use_comparative_bank_view
-
-   .. automethod:: AssessmentTakenBankSession.use_plenary_bank_view
-
-   .. automethod:: AssessmentTakenBankSession.get_assessment_taken_ids_by_bank
-
-   .. automethod:: AssessmentTakenBankSession.get_assessments_taken_by_bank
-
-   .. automethod:: AssessmentTakenBankSession.get_assessment_taken_ids_by_banks
-
-   .. automethod:: AssessmentTakenBankSession.get_assessments_taken_by_banks
-
-   .. automethod:: AssessmentTakenBankSession.get_bank_ids_by_assessment_taken
-
-   .. automethod:: AssessmentTakenBankSession.get_banks_by_assessment_taken
-
-
-
-Assessment Taken Bank Assignment Methods
-----------------------------------------
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.can_assign_assessments_taken
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.can_assign_assessments_taken_to_bank
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.get_assignable_bank_ids
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.get_assignable_bank_ids_for_assessment_taken
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.assign_assessment_taken_to_bank
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.unassign_assessment_taken_from_bank
-
-   .. automethod:: AssessmentTakenBankAssignmentSession.reassign_assessment_taken_to_billing
-
-
-
-Bank Lookup Methods
--------------------
-
-   .. automethod:: BankLookupSession.can_lookup_banks
-
-   .. automethod:: BankLookupSession.use_comparative_bank_view
-
-   .. automethod:: BankLookupSession.use_plenary_bank_view
-
-   .. automethod:: BankLookupSession.get_bank
-
-   .. automethod:: BankLookupSession.get_banks_by_ids
-
-   .. automethod:: BankLookupSession.get_banks_by_genus_type
-
-   .. automethod:: BankLookupSession.get_banks_by_parent_genus_type
-
-   .. automethod:: BankLookupSession.get_banks_by_record_type
-
-   .. automethod:: BankLookupSession.get_banks_by_provider
-
-   .. autoattribute:: BankLookupSession.banks
-
-
-
-Bank Query Methods
-------------------
-
-   .. automethod:: BankQuerySession.can_search_banks
-
-   .. autoattribute:: BankQuerySession.bank_query
-
-   .. automethod:: BankQuerySession.get_banks_by_query
-
-
-
-Bank Admin Methods
-------------------
-
-   .. automethod:: BankAdminSession.can_create_banks
-
-   .. automethod:: BankAdminSession.can_create_bank_with_record_types
-
-   .. automethod:: BankAdminSession.get_bank_form_for_create
-
-   .. automethod:: BankAdminSession.create_bank
-
-   .. automethod:: BankAdminSession.can_update_banks
-
-   .. automethod:: BankAdminSession.get_bank_form_for_update
-
-   .. automethod:: BankAdminSession.update_bank
-
-   .. automethod:: BankAdminSession.can_delete_banks
-
-   .. automethod:: BankAdminSession.delete_bank
-
-   .. automethod:: BankAdminSession.can_manage_bank_aliases
-
-   .. automethod:: BankAdminSession.alias_bank
-
-
-
-Bank Hierarchy Methods
-----------------------
-
-   .. autoattribute:: BankHierarchySession.bank_hierarchy_id
-
-   .. autoattribute:: BankHierarchySession.bank_hierarchy
-
-   .. automethod:: BankHierarchySession.can_access_bank_hierarchy
-
-   .. automethod:: BankHierarchySession.use_comparative_bank_view
-
-   .. automethod:: BankHierarchySession.use_plenary_bank_view
-
-   .. autoattribute:: BankHierarchySession.root_bank_ids
-
-   .. autoattribute:: BankHierarchySession.root_banks
-
-   .. automethod:: BankHierarchySession.has_parent_banks
-
-   .. automethod:: BankHierarchySession.is_parent_of_bank
-
-   .. automethod:: BankHierarchySession.get_parent_bank_ids
-
-   .. automethod:: BankHierarchySession.get_parent_banks
-
-   .. automethod:: BankHierarchySession.is_ancestor_of_bank
-
-   .. automethod:: BankHierarchySession.has_child_banks
-
-   .. automethod:: BankHierarchySession.is_child_of_bank
-
-   .. automethod:: BankHierarchySession.get_child_bank_ids
-
-   .. automethod:: BankHierarchySession.get_child_banks
-
-   .. automethod:: BankHierarchySession.is_descendant_of_bank
-
-   .. automethod:: BankHierarchySession.get_bank_node_ids
-
-   .. automethod:: BankHierarchySession.get_bank_nodes
-
-
-
-Bank Hierarchy Design Methods
------------------------------
-
-   .. autoattribute:: BankHierarchyDesignSession.bank_hierarchy_id
-
-   .. autoattribute:: BankHierarchyDesignSession.bank_hierarchy
-
-   .. automethod:: BankHierarchyDesignSession.can_modify_bank_hierarchy
-
-   .. automethod:: BankHierarchyDesignSession.add_root_bank
-
-   .. automethod:: BankHierarchyDesignSession.remove_root_bank
-
-   .. automethod:: BankHierarchyDesignSession.add_child_bank
-
-   .. automethod:: BankHierarchyDesignSession.remove_child_bank
-
-   .. automethod:: BankHierarchyDesignSession.remove_child_banks
-
-
-
-Assessment Methods
-------------------
 
    .. autoattribute:: AssessmentSession.bank_id
 
@@ -399,10 +98,11 @@ Assessment Methods
 
    .. automethod:: AssessmentSession.finish_assessment
 
-
-
-Item Lookup Methods
+Item Lookup Session
 -------------------
+
+.. autoclass:: ItemLookupSession
+   :show-inheritance:
 
    .. autoattribute:: ItemLookupSession.bank_id
 
@@ -438,10 +138,11 @@ Item Lookup Methods
 
    .. autoattribute:: ItemLookupSession.items
 
-
-
-Item Query Methods
+Item Query Session
 ------------------
+
+.. autoclass:: ItemQuerySession
+   :show-inheritance:
 
    .. autoattribute:: ItemQuerySession.bank_id
 
@@ -457,10 +158,11 @@ Item Query Methods
 
    .. automethod:: ItemQuerySession.get_items_by_query
 
-
-
-Item Search Methods
+Item Search Session
 -------------------
+
+.. autoclass:: ItemSearchSession
+   :show-inheritance:
 
    .. autoattribute:: ItemSearchSession.item_search
 
@@ -470,10 +172,11 @@ Item Search Methods
 
    .. automethod:: ItemSearchSession.get_item_query_from_inspector
 
-
-
-Item Admin Methods
+Item Admin Session
 ------------------
+
+.. autoclass:: ItemAdminSession
+   :show-inheritance:
 
    .. autoattribute:: ItemAdminSession.bank_id
 
@@ -537,10 +240,11 @@ Item Admin Methods
 
    .. automethod:: ItemAdminSession.delete_answer
 
-
-
-Item Notification Methods
+Item Notification Session
 -------------------------
+
+.. autoclass:: ItemNotificationSession
+   :show-inheritance:
 
    .. autoattribute:: ItemNotificationSession.bank_id
 
@@ -568,10 +272,55 @@ Item Notification Methods
 
    .. automethod:: ItemNotificationSession.register_for_deleted_item
 
+Item Bank Session
+-----------------
 
+.. autoclass:: ItemBankSession
+   :show-inheritance:
 
-Assessment Lookup Methods
+   .. automethod:: ItemBankSession.can_lookup_item_bank_mappings
+
+   .. automethod:: ItemBankSession.use_comparative_bank_view
+
+   .. automethod:: ItemBankSession.use_plenary_bank_view
+
+   .. automethod:: ItemBankSession.get_item_ids_by_bank
+
+   .. automethod:: ItemBankSession.get_items_by_bank
+
+   .. automethod:: ItemBankSession.get_item_ids_by_banks
+
+   .. automethod:: ItemBankSession.get_items_by_banks
+
+   .. automethod:: ItemBankSession.get_bank_ids_by_item
+
+   .. automethod:: ItemBankSession.get_banks_by_item
+
+Item Bank Assignment Session
+----------------------------
+
+.. autoclass:: ItemBankAssignmentSession
+   :show-inheritance:
+
+   .. automethod:: ItemBankAssignmentSession.can_assign_items
+
+   .. automethod:: ItemBankAssignmentSession.can_assign_items_to_bank
+
+   .. automethod:: ItemBankAssignmentSession.get_assignable_bank_ids
+
+   .. automethod:: ItemBankAssignmentSession.get_assignable_bank_ids_for_item
+
+   .. automethod:: ItemBankAssignmentSession.assign_item_to_bank
+
+   .. automethod:: ItemBankAssignmentSession.unassign_item_from_bank
+
+   .. automethod:: ItemBankAssignmentSession.reassign_item_to_billing
+
+Assessment Lookup Session
 -------------------------
+
+.. autoclass:: AssessmentLookupSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentLookupSession.bank_id
 
@@ -599,10 +348,11 @@ Assessment Lookup Methods
 
    .. autoattribute:: AssessmentLookupSession.assessments
 
-
-
-Assessment Query Methods
+Assessment Query Session
 ------------------------
+
+.. autoclass:: AssessmentQuerySession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentQuerySession.bank_id
 
@@ -618,10 +368,11 @@ Assessment Query Methods
 
    .. automethod:: AssessmentQuerySession.get_assessments_by_query
 
-
-
-Assessment Admin Methods
+Assessment Admin Session
 ------------------------
+
+.. autoclass:: AssessmentAdminSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentAdminSession.bank_id
 
@@ -649,10 +400,55 @@ Assessment Admin Methods
 
    .. automethod:: AssessmentAdminSession.alias_assessment
 
+Assessment Bank Session
+-----------------------
 
+.. autoclass:: AssessmentBankSession
+   :show-inheritance:
 
-Assessment Basic Authoring Methods
+   .. automethod:: AssessmentBankSession.can_lookup_assessment_bank_mappings
+
+   .. automethod:: AssessmentBankSession.use_comparative_bank_view
+
+   .. automethod:: AssessmentBankSession.use_plenary_bank_view
+
+   .. automethod:: AssessmentBankSession.get_assessment_ids_by_bank
+
+   .. automethod:: AssessmentBankSession.get_assessments_by_bank
+
+   .. automethod:: AssessmentBankSession.get_assessment_ids_by_banks
+
+   .. automethod:: AssessmentBankSession.get_assessments_by_banks
+
+   .. automethod:: AssessmentBankSession.get_bank_ids_by_assessment
+
+   .. automethod:: AssessmentBankSession.get_banks_by_assessment
+
+Assessment Bank Assignment Session
 ----------------------------------
+
+.. autoclass:: AssessmentBankAssignmentSession
+   :show-inheritance:
+
+   .. automethod:: AssessmentBankAssignmentSession.can_assign_assessments
+
+   .. automethod:: AssessmentBankAssignmentSession.can_assign_assessments_to_bank
+
+   .. automethod:: AssessmentBankAssignmentSession.get_assignable_bank_ids
+
+   .. automethod:: AssessmentBankAssignmentSession.get_assignable_bank_ids_for_assessment
+
+   .. automethod:: AssessmentBankAssignmentSession.assign_assessment_to_bank
+
+   .. automethod:: AssessmentBankAssignmentSession.unassign_assessment_from_bank
+
+   .. automethod:: AssessmentBankAssignmentSession.reassign_assessment_to_billing
+
+Assessment Basic Authoring Session
+----------------------------------
+
+.. autoclass:: AssessmentBasicAuthoringSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentBasicAuthoringSession.bank_id
 
@@ -670,10 +466,11 @@ Assessment Basic Authoring Methods
 
    .. automethod:: AssessmentBasicAuthoringSession.order_items
 
-
-
-Assessment Offered Lookup Methods
+Assessment Offered Lookup Session
 ---------------------------------
+
+.. autoclass:: AssessmentOfferedLookupSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentOfferedLookupSession.bank_id
 
@@ -705,10 +502,11 @@ Assessment Offered Lookup Methods
 
    .. autoattribute:: AssessmentOfferedLookupSession.assessments_offered
 
-
-
-Assessment Offered Query Methods
+Assessment Offered Query Session
 --------------------------------
+
+.. autoclass:: AssessmentOfferedQuerySession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentOfferedQuerySession.bank_id
 
@@ -724,10 +522,11 @@ Assessment Offered Query Methods
 
    .. automethod:: AssessmentOfferedQuerySession.get_assessments_offered_by_query
 
-
-
-Assessment Offered Admin Methods
+Assessment Offered Admin Session
 --------------------------------
+
+.. autoclass:: AssessmentOfferedAdminSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentOfferedAdminSession.bank_id
 
@@ -755,10 +554,55 @@ Assessment Offered Admin Methods
 
    .. automethod:: AssessmentOfferedAdminSession.alias_assessment_offered
 
-
-
-Assessment Taken Lookup Methods
+Assessment Offered Bank Session
 -------------------------------
+
+.. autoclass:: AssessmentOfferedBankSession
+   :show-inheritance:
+
+   .. automethod:: AssessmentOfferedBankSession.can_lookup_assessment_offered_bank_mappings
+
+   .. automethod:: AssessmentOfferedBankSession.use_comparative_bank_view
+
+   .. automethod:: AssessmentOfferedBankSession.use_plenary_bank_view
+
+   .. automethod:: AssessmentOfferedBankSession.get_assessment_offered_ids_by_bank
+
+   .. automethod:: AssessmentOfferedBankSession.get_assessments_offered_by_bank
+
+   .. automethod:: AssessmentOfferedBankSession.get_assessment_offered_ids_by_banks
+
+   .. automethod:: AssessmentOfferedBankSession.get_assessments_offered_by_banks
+
+   .. automethod:: AssessmentOfferedBankSession.get_bank_ids_by_assessment_offered
+
+   .. automethod:: AssessmentOfferedBankSession.get_banks_by_assessment_offered
+
+Assessment Offered Bank Assignment Session
+------------------------------------------
+
+.. autoclass:: AssessmentOfferedBankAssignmentSession
+   :show-inheritance:
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.can_assign_assessments_offered
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.can_assign_assessments_offered_to_bank
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.get_assignable_bank_ids
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.get_assignable_bank_ids_for_assessment_offered
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.assign_assessment_offered_to_bank
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.unassign_assessment_offered_from_bank
+
+   .. automethod:: AssessmentOfferedBankAssignmentSession.reassign_assessment_offered_to_billing
+
+Assessment Taken Lookup Session
+-------------------------------
+
+.. autoclass:: AssessmentTakenLookupSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentTakenLookupSession.bank_id
 
@@ -808,10 +652,11 @@ Assessment Taken Lookup Methods
 
    .. autoattribute:: AssessmentTakenLookupSession.assessments_taken
 
-
-
-Assessment Taken Query Methods
+Assessment Taken Query Session
 ------------------------------
+
+.. autoclass:: AssessmentTakenQuerySession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentTakenQuerySession.bank_id
 
@@ -827,10 +672,11 @@ Assessment Taken Query Methods
 
    .. automethod:: AssessmentTakenQuerySession.get_assessments_taken_by_query
 
-
-
-Assessment Taken Admin Methods
+Assessment Taken Admin Session
 ------------------------------
+
+.. autoclass:: AssessmentTakenAdminSession
+   :show-inheritance:
 
    .. autoattribute:: AssessmentTakenAdminSession.bank_id
 
@@ -858,5 +704,179 @@ Assessment Taken Admin Methods
 
    .. automethod:: AssessmentTakenAdminSession.alias_assessment_taken
 
+Assessment Taken Bank Session
+-----------------------------
 
+.. autoclass:: AssessmentTakenBankSession
+   :show-inheritance:
+
+   .. automethod:: AssessmentTakenBankSession.can_lookup_assessment_taken_bank_mappings
+
+   .. automethod:: AssessmentTakenBankSession.use_comparative_bank_view
+
+   .. automethod:: AssessmentTakenBankSession.use_plenary_bank_view
+
+   .. automethod:: AssessmentTakenBankSession.get_assessment_taken_ids_by_bank
+
+   .. automethod:: AssessmentTakenBankSession.get_assessments_taken_by_bank
+
+   .. automethod:: AssessmentTakenBankSession.get_assessment_taken_ids_by_banks
+
+   .. automethod:: AssessmentTakenBankSession.get_assessments_taken_by_banks
+
+   .. automethod:: AssessmentTakenBankSession.get_bank_ids_by_assessment_taken
+
+   .. automethod:: AssessmentTakenBankSession.get_banks_by_assessment_taken
+
+Assessment Taken Bank Assignment Session
+----------------------------------------
+
+.. autoclass:: AssessmentTakenBankAssignmentSession
+   :show-inheritance:
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.can_assign_assessments_taken
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.can_assign_assessments_taken_to_bank
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.get_assignable_bank_ids
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.get_assignable_bank_ids_for_assessment_taken
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.assign_assessment_taken_to_bank
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.unassign_assessment_taken_from_bank
+
+   .. automethod:: AssessmentTakenBankAssignmentSession.reassign_assessment_taken_to_billing
+
+Bank Lookup Session
+-------------------
+
+.. autoclass:: BankLookupSession
+   :show-inheritance:
+
+   .. automethod:: BankLookupSession.can_lookup_banks
+
+   .. automethod:: BankLookupSession.use_comparative_bank_view
+
+   .. automethod:: BankLookupSession.use_plenary_bank_view
+
+   .. automethod:: BankLookupSession.get_bank
+
+   .. automethod:: BankLookupSession.get_banks_by_ids
+
+   .. automethod:: BankLookupSession.get_banks_by_genus_type
+
+   .. automethod:: BankLookupSession.get_banks_by_parent_genus_type
+
+   .. automethod:: BankLookupSession.get_banks_by_record_type
+
+   .. automethod:: BankLookupSession.get_banks_by_provider
+
+   .. autoattribute:: BankLookupSession.banks
+
+Bank Query Session
+------------------
+
+.. autoclass:: BankQuerySession
+   :show-inheritance:
+
+   .. automethod:: BankQuerySession.can_search_banks
+
+   .. autoattribute:: BankQuerySession.bank_query
+
+   .. automethod:: BankQuerySession.get_banks_by_query
+
+Bank Admin Session
+------------------
+
+.. autoclass:: BankAdminSession
+   :show-inheritance:
+
+   .. automethod:: BankAdminSession.can_create_banks
+
+   .. automethod:: BankAdminSession.can_create_bank_with_record_types
+
+   .. automethod:: BankAdminSession.get_bank_form_for_create
+
+   .. automethod:: BankAdminSession.create_bank
+
+   .. automethod:: BankAdminSession.can_update_banks
+
+   .. automethod:: BankAdminSession.get_bank_form_for_update
+
+   .. automethod:: BankAdminSession.update_bank
+
+   .. automethod:: BankAdminSession.can_delete_banks
+
+   .. automethod:: BankAdminSession.delete_bank
+
+   .. automethod:: BankAdminSession.can_manage_bank_aliases
+
+   .. automethod:: BankAdminSession.alias_bank
+
+Bank Hierarchy Session
+----------------------
+
+.. autoclass:: BankHierarchySession
+   :show-inheritance:
+
+   .. autoattribute:: BankHierarchySession.bank_hierarchy_id
+
+   .. autoattribute:: BankHierarchySession.bank_hierarchy
+
+   .. automethod:: BankHierarchySession.can_access_bank_hierarchy
+
+   .. automethod:: BankHierarchySession.use_comparative_bank_view
+
+   .. automethod:: BankHierarchySession.use_plenary_bank_view
+
+   .. autoattribute:: BankHierarchySession.root_bank_ids
+
+   .. autoattribute:: BankHierarchySession.root_banks
+
+   .. automethod:: BankHierarchySession.has_parent_banks
+
+   .. automethod:: BankHierarchySession.is_parent_of_bank
+
+   .. automethod:: BankHierarchySession.get_parent_bank_ids
+
+   .. automethod:: BankHierarchySession.get_parent_banks
+
+   .. automethod:: BankHierarchySession.is_ancestor_of_bank
+
+   .. automethod:: BankHierarchySession.has_child_banks
+
+   .. automethod:: BankHierarchySession.is_child_of_bank
+
+   .. automethod:: BankHierarchySession.get_child_bank_ids
+
+   .. automethod:: BankHierarchySession.get_child_banks
+
+   .. automethod:: BankHierarchySession.is_descendant_of_bank
+
+   .. automethod:: BankHierarchySession.get_bank_node_ids
+
+   .. automethod:: BankHierarchySession.get_bank_nodes
+
+Bank Hierarchy Design Session
+-----------------------------
+
+.. autoclass:: BankHierarchyDesignSession
+   :show-inheritance:
+
+   .. autoattribute:: BankHierarchyDesignSession.bank_hierarchy_id
+
+   .. autoattribute:: BankHierarchyDesignSession.bank_hierarchy
+
+   .. automethod:: BankHierarchyDesignSession.can_modify_bank_hierarchy
+
+   .. automethod:: BankHierarchyDesignSession.add_root_bank
+
+   .. automethod:: BankHierarchyDesignSession.remove_root_bank
+
+   .. automethod:: BankHierarchyDesignSession.add_child_bank
+
+   .. automethod:: BankHierarchyDesignSession.remove_child_bank
+
+   .. automethod:: BankHierarchyDesignSession.remove_child_banks
 

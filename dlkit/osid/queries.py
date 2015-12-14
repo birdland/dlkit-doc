@@ -39,9 +39,6 @@ class OsidQuery(osid_markers.Suppliable):
     locale appear in the objects.
 
     """
-    
-
-
 
     def get_string_match_types(self):
         """Gets the string matching types supported.
@@ -50,8 +47,10 @@ class OsidQuery(osid_markers.Suppliable):
         such as matching a word or including a wildcard or regular
         expression.
 
-        return: (osid.type.TypeList) - a list containing the supported
-                string match types
+        :return: a list containing the supported string match types
+        :rtype: ``osid.type.TypeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -59,20 +58,19 @@ class OsidQuery(osid_markers.Suppliable):
 
     string_match_types = property(fget=get_string_match_types)
 
-
     def supports_string_match_type(self, string_match_type):
         """Tests if the given string matching type is supported.
 
-        arg:    string_match_type (osid.type.Type): a ``Type``
-                indicating a string match type
-        return: (boolean) - ``true`` if the given Type is supported,
-                ``false`` otherwise
-        raise:  NullArgument - ``string_match_type`` is ``null``
+        :param string_match_type: a ``Type`` indicating a string match type
+        :type string_match_type: ``osid.type.Type``
+        :return: ``true`` if the given Type is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``string_match_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def match_keyword(self, keyword, string_match_type, match):
         """Adds a keyword to match.
@@ -82,26 +80,25 @@ class OsidQuery(osid_markers.Suppliable):
         this object such as the display name, description or any method
         defined in an interface implemented by this object.
 
-        arg:    keyword (string): keyword to match
-        arg:    string_match_type (osid.type.Type): the string match
-                type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  InvalidArgument - ``keyword`` is not of
-                ``string_match_type``
-        raise:  NullArgument - ``keyword`` or ``string_match_type`` is
-                ``null``
-        raise:  Unsupported -
-                ``supports_string_match_type(string_match_type)`` is
-                ``false``
+        :param keyword: keyword to match
+        :type keyword: ``string``
+        :param string_match_type: the string match type
+        :type string_match_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``keyword`` is not of ``string_match_type``
+        :raise: ``NullArgument`` -- ``keyword`` or ``string_match_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_keyword_terms(self):
         """Clears all keyword terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -110,20 +107,22 @@ class OsidQuery(osid_markers.Suppliable):
 
     keyword_terms = property(fdel=clear_keyword_terms)
 
-
     def match_any(self, match):
         """Matches any object.
 
-        arg:    match (boolean): ``true`` to match any object ``,``
-                ``false`` to match no objects
+        :param match: ``true`` to match any object ``,``  ``false`` to match no objects
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_any_terms(self):
         """Clears the match any terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -147,9 +146,6 @@ class OsidIdentifiableQuery(OsidQuery):
     matching all the given data (eg: AND) are returned.
 
     """
-    
-
-
 
     def match_id(self, id_, match):
         """Adds an ``Id`` to match.
@@ -157,18 +153,21 @@ class OsidIdentifiableQuery(OsidQuery):
         Multiple ``Ids`` can be added to perform a boolean ``OR`` among
         them.
 
-        arg:    id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``id`` is ``null``
+        :param id: ``Id`` to match
+        :type id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_id_terms(self):
         """Clears all ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -192,36 +191,37 @@ class OsidExtensibleQuery(OsidQuery, osid_markers.Extensible):
     matching all the given data (eg: AND) are returned.
 
     """
-    
-
-
 
     def match_record_type(self, record_type, match):
         """Sets a ``Type`` for querying objects having records implementing a given record type.
 
-        arg:    record_type (osid.type.Type): a record type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``record_type`` is ``null``
+        :param record_type: a record type
+        :type record_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_record(self, match):
         """Matches an object that has any record.
 
-        arg:    match (boolean): ``true`` to match any record, ``false``
-                to match objects with no records
+        :param match: ``true`` to match any record, ``false`` to match objects with no records
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_record_terms(self):
         """Clears all record ``Type`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -245,8 +245,6 @@ class OsidBrowsableQuery(OsidQuery):
     matching all the given data (eg: AND) are returned.
 
     """
-    
-
 
 
 
@@ -258,23 +256,23 @@ class OsidTemporalQuery(OsidQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_effective(self, match):
         """Match effective objects where the current date falls within the start and end dates inclusive.
 
-        arg:    match (boolean): ``true`` to match any effective,
-                ``false`` to match ineffective
+        :param match: ``true`` to match any effective, ``false`` to match ineffective
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_effective_terms(self):
         """Clears the effective query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -283,35 +281,39 @@ class OsidTemporalQuery(OsidQuery):
 
     effective_terms = property(fdel=clear_effective_terms)
 
-
     def match_start_date(self, start, end, match):
         """Matches temporals whose start date falls in between the given dates inclusive.
 
-        arg:    start (osid.calendaring.DateTime): start of date range
-        arg:    end (osid.calendaring.DateTime): end of date range
-        arg:    match (boolean): ``true`` if a positive match, ``false``
-                for a negative match
-        raise:  InvalidArgument - ``start`` is less than ``end``
-        raise:  NullArgument - ``start`` or ``end`` is ``null``
+        :param start: start of date range
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end of date range
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``start`` is less than ``end``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_start_date(self, match):
         """Matches temporals with any start date set.
 
-        arg:    match (boolean): ``true`` to match any start date,
-                ``false`` to match no start date
+        :param match: ``true`` to match any start date, ``false`` to match no start date
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_start_date_terms(self):
         """Clears the start date query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -320,35 +322,39 @@ class OsidTemporalQuery(OsidQuery):
 
     start_date_terms = property(fdel=clear_start_date_terms)
 
-
     def match_end_date(self, start, end, match):
         """Matches temporals whose effective end date falls in between the given dates inclusive.
 
-        arg:    start (osid.calendaring.DateTime): start of date range
-        arg:    end (osid.calendaring.DateTime): end of date range
-        arg:    match (boolean): ``true`` if a positive match, ``false``
-                for negative match
-        raise:  InvalidArgument - ``start`` is less than ``end``
-        raise:  NullArgument - ``start`` or ``end`` is ``null``
+        :param start: start of date range
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end of date range
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``start`` is less than ``end``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_end_date(self, match):
         """Matches temporals with any end date set.
 
-        arg:    match (boolean): ``true`` to match any end date,
-                ``false`` to match no start date
+        :param match: ``true`` to match any end date, ``false`` to match no start date
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_end_date_terms(self):
         """Clears the end date query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -357,24 +363,27 @@ class OsidTemporalQuery(OsidQuery):
 
     end_date_terms = property(fdel=clear_end_date_terms)
 
-
     def match_date(self, from_, to, match):
         """Matches temporals where the given date range falls entirely between the start and end dates inclusive.
 
-        arg:    from (osid.calendaring.DateTime): start date
-        arg:    to (osid.calendaring.DateTime): end date
-        arg:    match (boolean): ``true`` if a positive match, ``false``
-                for a negative match
-        raise:  InvalidArgument - ``from`` is less than ``to``
-        raise:  NullArgument - ``from`` or ``to`` is ``null``
+        :param from: start date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: end date
+        :type to: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``from`` is less than ``to``
+        :raise: ``NullArgument`` -- ``from`` or ``to`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_date_terms(self):
         """Clears the date query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -386,16 +395,12 @@ class OsidTemporalQuery(OsidQuery):
 
 class OsidSubjugateableQuery(OsidQuery):
     """The ``OsidSubjugateableQuery`` is used to assemble search queries for dependent objects."""
-    
-
 
 
 
 
 class OsidAggregateableQuery(OsidQuery):
     """The ``OsidAggregateableQuery`` is used to assemble search queries for assemblages."""
-    
-
 
 
 
@@ -407,24 +412,23 @@ class OsidContainableQuery(OsidQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_sequestered(self, match):
         """Match containables that are sequestered.
 
-        arg:    match (boolean): ``true`` to match any sequestered
-                containables, ``false`` to match non- sequestered
-                containables
+        :param match: ``true`` to match any sequestered containables, ``false`` to match non-sequestered containables
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_sequestered_terms(self):
         """Clears the sequestered query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -436,25 +440,25 @@ class OsidContainableQuery(OsidQuery):
 
 class OsidSourceableQuery(OsidQuery):
     """The ``OsidSourceableQuery`` is used to assemble search queries for sourceables."""
-    
-
-
 
     def match_provider_id(self, resource_id, match):
         """Match the ``Id`` of the provider resource.
 
-        arg:    resource_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``resource_id`` is ``null``
+        :param resource_id: ``Id`` to match
+        :type resource_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_provider_id_terms(self):
         """Clears all provider ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -463,49 +467,51 @@ class OsidSourceableQuery(OsidQuery):
 
     provider_id_terms = property(fdel=clear_provider_id_terms)
 
-
     def supports_provider_query(self):
         """Tests if a ``ResourceQuery`` for the provider is available.
 
-        return: (boolean) - ``true`` if a resource query is available,
-                ``false`` otherwise
+        :return: ``true`` if a resource query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_provider_query(self, match):
         """Gets the query for the provider.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.resource.ResourceQuery) - the provider query
-        raise:  Unimplemented - ``supports_provider_query()`` is
-                ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the provider query
+        :rtype: ``osid.resource.ResourceQuery``
+        :raise: ``Unimplemented`` -- ``supports_provider_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_provider_query()`` is ``true``.*
 
         """
         return # osid.resource.ResourceQuery
 
-
     def match_any_provider(self, match):
         """Match sourceables with a provider value.
 
-        arg:    match (boolean): ``true`` to match sourceables with any
-                provider, ``false`` to match sourceables with no
-                providers
+        :param match: ``true`` to match sourceables with any provider, ``false`` to match sourceables with no providers
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_provider_terms(self):
         """Clears all provider terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -514,22 +520,24 @@ class OsidSourceableQuery(OsidQuery):
 
     provider_terms = property(fdel=clear_provider_terms)
 
-
     def match_branding_id(self, asset_id, match):
         """Match the ``Id`` of an asset used for branding.
 
-        arg:    asset_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``asset_id`` is ``null``
+        :param asset_id: ``Id`` to match
+        :type asset_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_branding_id_terms(self):
         """Clears all asset ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -538,48 +546,51 @@ class OsidSourceableQuery(OsidQuery):
 
     branding_id_terms = property(fdel=clear_branding_id_terms)
 
-
     def supports_branding_query(self):
         """Tests if an ``AssetQuery`` for the branding is available.
 
-        return: (boolean) - ``true`` if a asset query is available,
-                ``false`` otherwise
+        :return: ``true`` if a asset query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_branding_query(self, match):
         """Gets the query for an asset.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.repository.AssetQuery) - the asset query
-        raise:  Unimplemented - ``supports_branding_query()`` is
-                ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the asset query
+        :rtype: ``osid.repository.AssetQuery``
+        :raise: ``Unimplemented`` -- ``supports_branding_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_branding_query()`` is ``true``.*
 
         """
         return # osid.repository.AssetQuery
 
-
     def match_any_branding(self, match):
         """Match sourceables with any branding.
 
-        arg:    match (boolean): ``true`` to match any asset, ``false``
-                to match no assets
+        :param match: ``true`` to match any asset, ``false`` to match no assets
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_branding_terms(self):
         """Clears all branding terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -588,44 +599,43 @@ class OsidSourceableQuery(OsidQuery):
 
     branding_terms = property(fdel=clear_branding_terms)
 
-
     def match_license(self, license_, string_match_type, match):
         """Adds a license to match.
 
         Multiple license matches can be added to perform a boolean
         ``OR`` among them.
 
-        arg:    license (string): a string to match
-        arg:    string_match_type (osid.type.Type): the string match
-                type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  InvalidArgument - ``license`` is not of
-                ``string_match_type``
-        raise:  NullArgument - ``license`` or ``string_match_type`` is
-                ``null``
-        raise:  Unsupported -
-                ``supports_string_match_type(string_match_type)`` is
-                ``false``
+        :param license: a string to match
+        :type license: ``string``
+        :param string_match_type: the string match type
+        :type string_match_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``license`` is not of ``string_match_type``
+        :raise: ``NullArgument`` -- ``license`` or ``string_match_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_license(self, match):
         """Matches any object with a license.
 
-        arg:    match (boolean): ``true`` to match any license,
-                ``false`` to match objects with no license
+        :param match: ``true`` to match any license, ``false`` to match objects with no license
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_license_terms(self):
         """Clears all license terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -637,8 +647,6 @@ class OsidSourceableQuery(OsidQuery):
 
 class OsidFederateableQuery(OsidQuery):
     """The ``OsidFederateableQuery`` is used to assemble search queries for federated objects."""
-    
-
 
 
 
@@ -650,23 +658,23 @@ class OsidOperableQuery(OsidQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_active(self, match):
         """Matches active.
 
-        arg:    match (boolean): ``true`` to match active, ``false`` to
-                match inactive
+        :param match: ``true`` to match active, ``false`` to match inactive
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_active_terms(self):
         """Clears the active query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -675,20 +683,22 @@ class OsidOperableQuery(OsidQuery):
 
     active_terms = property(fdel=clear_active_terms)
 
-
     def match_enabled(self, match):
         """Matches administratively enabled.
 
-        arg:    match (boolean): ``true`` to match administratively
-                enabled, ``false`` otherwise
+        :param match: ``true`` to match administratively enabled, ``false`` otherwise
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_enabled_terms(self):
         """Clears the administratively enabled query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -697,20 +707,22 @@ class OsidOperableQuery(OsidQuery):
 
     enabled_terms = property(fdel=clear_enabled_terms)
 
-
     def match_disabled(self, match):
         """Matches administratively disabled.
 
-        arg:    match (boolean): ``true`` to match administratively
-                disabled, ``false`` otherwise
+        :param match: ``true`` to match administratively disabled, ``false`` otherwise
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_disabled_terms(self):
         """Clears the administratively disabled query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -719,20 +731,22 @@ class OsidOperableQuery(OsidQuery):
 
     disabled_terms = property(fdel=clear_disabled_terms)
 
-
     def match_operational(self, match):
         """Matches operational operables.
 
-        arg:    match (boolean): ``true`` to match operational,
-                ``false`` to match not operational
+        :param match: ``true`` to match operational, ``false`` to match not operational
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_operational_terms(self):
         """Clears the operational query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -797,9 +811,6 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
 
     """
-    
-
-
 
     def match_display_name(self, display_name, string_match_type, match):
         """Adds a display name to match.
@@ -807,37 +818,37 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         Multiple display name matches can be added to perform a boolean
         ``OR`` among them.
 
-        arg:    display_name (string): display name to match
-        arg:    string_match_type (osid.type.Type): the string match
-                type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  InvalidArgument - ``display_name`` is not of
-                ``string_match_type``
-        raise:  NullArgument - ``display_name`` or ``string_match_type``
-                is ``null``
-        raise:  Unsupported -
-                ``supports_string_match_type(string_match_type)`` is
-                ``false``
+        :param display_name: display name to match
+        :type display_name: ``string``
+        :param string_match_type: the string match type
+        :type string_match_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``display_name`` is not of ``string_match_type``
+        :raise: ``NullArgument`` -- ``display_name`` or ``string_match_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_display_name(self, match):
         """Matches any object with a display name.
 
-        arg:    match (boolean): ``true`` to match any display name,
-                ``false`` to match objects with no display name
+        :param match: ``true`` to match any display name, ``false`` to match objects with no display name
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_display_name_terms(self):
         """Clears all display name terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -846,44 +857,43 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     display_name_terms = property(fdel=clear_display_name_terms)
 
-
     def match_description(self, description, string_match_type, match):
         """Adds a description name to match.
 
         Multiple description matches can be added to perform a boolean
         ``OR`` among them.
 
-        arg:    description (string): description to match
-        arg:    string_match_type (osid.type.Type): the string match
-                type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  InvalidArgument - ``description`` is not of
-                ``string_match_type``
-        raise:  NullArgument - ``description`` or ``string_match_type``
-                is ``null``
-        raise:  Unsupported -
-                ``supports_string_match_type(string_match_type)`` is
-                ``false``
+        :param description: description to match
+        :type description: ``string``
+        :param string_match_type: the string match type
+        :type string_match_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``description`` is not of ``string_match_type``
+        :raise: ``NullArgument`` -- ``description`` or ``string_match_type`` is ``null``
+        :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_description(self, match):
         """Matches a description that has any value.
 
-        arg:    match (boolean): ``true`` to match any description,
-                ``false`` to match descriptions with no values
+        :param match: ``true`` to match any description, ``false`` to match descriptions with no values
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_description_terms(self):
         """Clears all description terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -892,36 +902,39 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     description_terms = property(fdel=clear_description_terms)
 
-
     def match_genus_type(self, genus_type, match):
         """Sets a ``Type`` for querying objects of a given genus.
 
         A genus type matches if the specified type is the same genus as
         the object genus type.
 
-        arg:    genus_type (osid.type.Type): the object genus type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``genus_type`` is ``null``
+        :param genus_type: the object genus type
+        :type genus_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``genus_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_genus_type(self, match):
         """Matches an object that has any genus type.
 
-        arg:    match (boolean): ``true`` to match any genus type,
-                ``false`` to match objects with no genus type
+        :param match: ``true`` to match any genus type, ``false`` to match objects with no genus type
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_genus_type_terms(self):
         """Clears all genus type terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -930,7 +943,6 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     genus_type_terms = property(fdel=clear_genus_type_terms)
 
-
     def match_parent_genus_type(self, genus_type, match):
         """Sets a ``Type`` for querying objects of a given genus.
 
@@ -938,18 +950,21 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         the object or if the specified type is an ancestor of the object
         genus in a type hierarchy.
 
-        arg:    genus_type (osid.type.Type): the object genus type
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``genus_type`` is ``null``
+        :param genus_type: the object genus type
+        :type genus_type: ``osid.type.Type``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``genus_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_parent_genus_type_terms(self):
         """Clears all genus type terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -958,22 +973,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     parent_genus_type_terms = property(fdel=clear_parent_genus_type_terms)
 
-
     def match_subject_id(self, subject_id, match):
         """Matches an object with a relationship to the given subject.
 
-        arg:    subject_id (osid.id.Id): a subject ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``subject_id`` is ``null``
+        :param subject_id: a subject ``Id``
+        :type subject_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``subject_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_subject_id_terms(self):
         """Clears all subject ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -982,26 +999,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     subject_id_terms = property(fdel=clear_subject_id_terms)
 
-
     def supports_subject_query(self):
         """Tests if a ``SubjectQuery`` is available.
 
-        return: (boolean) - ``true`` if a subject query is available,
-                ``false`` otherwise
+        :return: ``true`` if a subject query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_subject_query(self):
         """Gets the query for a subject.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.ontology.SubjectQuery) - the subject query
-        raise:  Unimplemented - ``supports_subject_query()`` is
-                ``false``
+        :return: the subject query
+        :rtype: ``osid.ontology.SubjectQuery``
+        :raise: ``Unimplemented`` -- ``supports_subject_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_subject_query()`` is ``true``.*
 
@@ -1010,20 +1028,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     subject_query = property(fget=get_subject_query)
 
-
     def match_any_subject(self, match):
         """Matches an object that has any relationship to a ``Subject``.
 
-        arg:    match (boolean): ``true`` to match any subject,
-                ``false`` to match objects with no subjects
+        :param match: ``true`` to match any subject, ``false`` to match objects with no subjects
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_subject_terms(self):
         """Clears all subject terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1032,26 +1052,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     subject_terms = property(fdel=clear_subject_terms)
 
-
     def supports_subject_relevancy_query(self):
         """Tests if a ``RelevancyQuery`` is available to provide queries about the relationships to ``Subjects``.
 
-        return: (boolean) - ``true`` if a relevancy entry query is
-                available, ``false`` otherwise
+        :return: ``true`` if a relevancy entry query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_subject_relevancy_query(self):
         """Gets the query for a subject relevancy.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.ontology.RelevancyQuery) - the relevancy query
-        raise:  Unimplemented - ``supports_subject_relevancy_query()``
-                is ``false``
+        :return: the relevancy query
+        :rtype: ``osid.ontology.RelevancyQuery``
+        :raise: ``Unimplemented`` -- ``supports_subject_relevancy_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_subject_relevancy_query()`` is ``true``.*
 
@@ -1060,9 +1081,10 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     subject_relevancy_query = property(fget=get_subject_relevancy_query)
 
-
     def clear_subject_relevancy_terms(self):
         """Clears all subject relevancy terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1071,22 +1093,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     subject_relevancy_terms = property(fdel=clear_subject_relevancy_terms)
 
-
     def match_state_id(self, state_id, match):
         """Matches an object mapped to the given state.
 
-        arg:    state_id (osid.id.Id): a state ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``state_id`` is ``null``
+        :param state_id: a state ``Id``
+        :type state_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``state_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_state_id_terms(self):
         """Clears all state ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1095,25 +1119,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     state_id_terms = property(fdel=clear_state_id_terms)
 
-
     def supports_state_query(self):
         """Tests if a ``StateQuery`` is available to provide queries of processed objects.
 
-        return: (boolean) - ``true`` if a state query is available,
-                ``false`` otherwise
+        :return: ``true`` if a state query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_state_query(self):
         """Gets the query for a state.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.process.StateQuery) - the journal entry query
-        raise:  Unimplemented - ``supports_state_query()`` is ``false``
+        :return: the journal entry query
+        :rtype: ``osid.process.StateQuery``
+        :raise: ``Unimplemented`` -- ``supports_state_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_state_query()`` is ``true``.*
 
@@ -1122,20 +1148,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     state_query = property(fget=get_state_query)
 
-
     def match_any_state(self, match):
         """Matches an object that has any mapping to a ``State`` in the given ``Process``.
 
-        arg:    match (boolean): ``true`` to match any state, ``false``
-                to match objects with no states
+        :param match: ``true`` to match any state, ``false`` to match objects with no states
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_state_terms(self):
         """Clears all state terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1144,22 +1172,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     state_terms = property(fdel=clear_state_terms)
 
-
     def match_comment_id(self, comment_id, match):
         """Matches an object that has the given comment.
 
-        arg:    comment_id (osid.id.Id): a comment ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``comment_id`` is ``null``
+        :param comment_id: a comment ``Id``
+        :type comment_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``comment_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_comment_id_terms(self):
         """Clears all comment ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1168,26 +1198,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     comment_id_terms = property(fdel=clear_comment_id_terms)
 
-
     def supports_comment_query(self):
         """Tests if a ``CommentQuery`` is available.
 
-        return: (boolean) - ``true`` if a comment query is available,
-                ``false`` otherwise
+        :return: ``true`` if a comment query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_comment_query(self):
         """Gets the query for a comment.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.commenting.CommentQuery) - the comment query
-        raise:  Unimplemented - ``supports_comment_query()`` is
-                ``false``
+        :return: the comment query
+        :rtype: ``osid.commenting.CommentQuery``
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_comment_query()`` is ``true``.*
 
@@ -1196,20 +1227,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     comment_query = property(fget=get_comment_query)
 
-
     def match_any_comment(self, match):
         """Matches an object that has any ``Comment`` in the given ``Book``.
 
-        arg:    match (boolean): ``true`` to match any comment,
-                ``false`` to match objects with no comments
+        :param match: ``true`` to match any comment, ``false`` to match objects with no comments
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_comment_terms(self):
         """Clears all comment terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1218,22 +1251,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     comment_terms = property(fdel=clear_comment_terms)
 
-
     def match_journal_entry_id(self, journal_entry_id, match):
         """Matches an object that has the given journal entry.
 
-        arg:    journal_entry_id (osid.id.Id): a journal entry ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``journal_entry_id`` is ``null``
+        :param journal_entry_id: a journal entry ``Id``
+        :type journal_entry_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``journal_entry_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_journal_entry_id_terms(self):
         """Clears all journal entry ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1242,27 +1277,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     journal_entry_id_terms = property(fdel=clear_journal_entry_id_terms)
 
-
     def supports_journal_entry_query(self):
         """Tests if a ``JournalEntry`` is available to provide queries of journaled ``OsidObjects``.
 
-        return: (boolean) - ``true`` if a journal entry query is
-                available, ``false`` otherwise
+        :return: ``true`` if a journal entry query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_journal_entry_query(self):
         """Gets the query for a journal entry.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.journaling.JournalEntryQuery) - the journal entry
-                query
-        raise:  Unimplemented - ``supports_journal_entry_query()`` is
-                ``false``
+        :return: the journal entry query
+        :rtype: ``osid.journaling.JournalEntryQuery``
+        :raise: ``Unimplemented`` -- ``supports_journal_entry_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_journal_entry_query()`` is ``true``.*
 
@@ -1271,20 +1306,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     journal_entry_query = property(fget=get_journal_entry_query)
 
-
     def match_any_journal_entry(self, match):
         """Matches an object that has any ``JournalEntry`` in the given ``Journal``.
 
-        arg:    match (boolean): ``true`` to match any journal entry,
-                ``false`` to match objects with no journal entries
+        :param match: ``true`` to match any journal entry, ``false`` to match objects with no journal entries
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_journal_entry_terms(self):
         """Clears all journal entry terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1293,26 +1330,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     journal_entry_terms = property(fdel=clear_journal_entry_terms)
 
-
     def supports_statistic_query(self):
         """Tests if a ``StatisticQuery`` is available to provide statistical queries.
 
-        return: (boolean) - ``true`` if a statistic query is available,
-                ``false`` otherwise
+        :return: ``true`` if a statistic query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_statistic_query(self):
         """Gets the query for a statistic.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.metering.StatisticQuery) - the statistic query
-        raise:  Unimplemented - ``supports_statistic_query()`` is
-                ``false``
+        :return: the statistic query
+        :rtype: ``osid.metering.StatisticQuery``
+        :raise: ``Unimplemented`` -- ``supports_statistic_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_statistic_query()`` is ``true``.*
 
@@ -1321,20 +1359,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     statistic_query = property(fget=get_statistic_query)
 
-
     def match_any_statistic(self, match):
         """Matches an object that has any ``Statistic``.
 
-        arg:    match (boolean): ``true`` to match any statistic,
-                ``false`` to match objects with no statistics
+        :param match: ``true`` to match any statistic, ``false`` to match objects with no statistics
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_statistic_terms(self):
         """Clears all statistic terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1343,22 +1383,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     statistic_terms = property(fdel=clear_statistic_terms)
 
-
     def match_credit_id(self, credit_id, match):
         """Matches an object that has the given credit.
 
-        arg:    credit_id (osid.id.Id): a credit ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``credit_id`` is ``null``
+        :param credit_id: a credit ``Id``
+        :type credit_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``credit_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_credit_id_terms(self):
         """Clears all credit ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1367,25 +1409,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     credit_id_terms = property(fdel=clear_credit_id_terms)
 
-
     def supports_credit_query(self):
         """Tests if a ``CreditQuery`` is available to provide queries of related acknowledgements.
 
-        return: (boolean) - ``true`` if a credit query is available,
-                ``false`` otherwise
+        :return: ``true`` if a credit query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_credit_query(self):
         """Gets the query for an ackowledgement credit.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.acknowledgement.CreditQuery) - the credit query
-        raise:  Unimplemented - ``supports_credit_query()`` is ``false``
+        :return: the credit query
+        :rtype: ``osid.acknowledgement.CreditQuery``
+        :raise: ``Unimplemented`` -- ``supports_credit_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_credit_query()`` is ``true``.*
 
@@ -1394,20 +1438,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     credit_query = property(fget=get_credit_query)
 
-
     def match_any_credit(self, match):
         """Matches an object that has any ``Credit``.
 
-        arg:    match (boolean): ``true`` to match any credit, ``false``
-                to match objects with no credits
+        :param match: ``true`` to match any credit, ``false`` to match objects with no credits
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_credit_terms(self):
         """Clears all credit terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1416,22 +1462,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     credit_terms = property(fdel=clear_credit_terms)
 
-
     def match_relationship_id(self, relationship_id, match):
         """Matches an object that has the given relationship.
 
-        arg:    relationship_id (osid.id.Id): a relationship ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``relationship_id`` is ``null``
+        :param relationship_id: a relationship ``Id``
+        :type relationship_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``relationship_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_relationship_id_terms(self):
         """Clears all relationship ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1440,27 +1488,27 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     relationship_id_terms = property(fdel=clear_relationship_id_terms)
 
-
     def supports_relationship_query(self):
         """Tests if a ``RelationshipQuery`` is available.
 
-        return: (boolean) - ``true`` if a relationship query is
-                available, ``false`` otherwise
+        :return: ``true`` if a relationship query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_relationship_query(self):
         """Gets the query for relationship.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.relationship.RelationshipQuery) - the relationship
-                query
-        raise:  Unimplemented - ``supports_relationship_query()`` is
-                ``false``
+        :return: the relationship query
+        :rtype: ``osid.relationship.RelationshipQuery``
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_relationship_query()`` is ``true``.*
 
@@ -1469,20 +1517,22 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     relationship_query = property(fget=get_relationship_query)
 
-
     def match_any_relationship(self, match):
         """Matches an object that has any ``Relationship``.
 
-        arg:    match (boolean): ``true`` to match any relationship,
-                ``false`` to match objects with no relationships
+        :param match: ``true`` to match any relationship, ``false`` to match objects with no relationships
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_relationship_terms(self):
         """Clears all relationship terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1491,22 +1541,24 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
 
     relationship_terms = property(fdel=clear_relationship_terms)
 
-
     def match_relationship_peer_id(self, peer_id, match):
         """Matches an object that has a relationship to the given peer ``Id``.
 
-        arg:    peer_id (osid.id.Id): a relationship peer ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``peer_id`` is ``null``
+        :param peer_id: a relationship peer ``Id``
+        :type peer_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``peer_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_relationship_peer_id_terms(self):
         """Clears all relationship ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1523,25 +1575,25 @@ class OsidRelationshipQuery(OsidObjectQuery, OsidTemporalQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_end_reason_id(self, state_id, match):
         """Match the ``Id`` of the end reason state.
 
-        arg:    state_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``rule_id`` is ``null``
+        :param state_id: ``Id`` to match
+        :type state_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``rule_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_end_reason_id_terms(self):
         """Clears all state ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1550,48 +1602,51 @@ class OsidRelationshipQuery(OsidObjectQuery, OsidTemporalQuery):
 
     end_reason_id_terms = property(fdel=clear_end_reason_id_terms)
 
-
     def supports_end_reason_query(self):
         """Tests if a ``StateQuery`` for the end reason is available.
 
-        return: (boolean) - ``true`` if a end reason query is available,
-                ``false`` otherwise
+        :return: ``true`` if a end reason query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_end_reason_query(self, match):
         """Gets the query for the end reason state.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.process.StateQuery) - the state query
-        raise:  Unimplemented - ``supports_end_reason_query()`` is
-                ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the state query
+        :rtype: ``osid.process.StateQuery``
+        :raise: ``Unimplemented`` -- ``supports_end_reason_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_end_reason_query()`` is ``true``.*
 
         """
         return # osid.process.StateQuery
 
-
     def match_any_end_reason(self, match):
         """Match any end reason state.
 
-        arg:    match (boolean): ``true`` to match any state, ``false``
-                to match no state
+        :param match: ``true`` to match any state, ``false`` to match no state
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_end_reason_terms(self):
         """Clears all end reason state terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1603,8 +1658,6 @@ class OsidRelationshipQuery(OsidObjectQuery, OsidTemporalQuery):
 
 class OsidCatalogQuery(OsidObjectQuery, OsidSourceableQuery, OsidFederateableQuery):
     """The ``OsidCatalogQuery`` is used to assemble search queries for catalogs."""
-    
-
 
 
 
@@ -1616,25 +1669,25 @@ class OsidRuleQuery(OsidObjectQuery, OsidOperableQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_rule_id(self, rule_id, match):
         """Match the ``Id`` of the rule.
 
-        arg:    rule_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``rule_id`` is ``null``
+        :param rule_id: ``Id`` to match
+        :type rule_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``rule_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_rule_id_terms(self):
         """Clears all rule ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1643,47 +1696,51 @@ class OsidRuleQuery(OsidObjectQuery, OsidOperableQuery):
 
     rule_id_terms = property(fdel=clear_rule_id_terms)
 
-
     def supports_rule_query(self):
         """Tests if a ``RuleQuery`` for the rule is available.
 
-        return: (boolean) - ``true`` if a rule query is available,
-                ``false`` otherwise
+        :return: ``true`` if a rule query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_rule_query(self, match):
         """Gets the query for the rule.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.rules.RuleQuery) - the rule query
-        raise:  Unimplemented - ``supports_rule_query()`` is ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the rule query
+        :rtype: ``osid.rules.RuleQuery``
+        :raise: ``Unimplemented`` -- ``supports_rule_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_rule_query()`` is ``true``.*
 
         """
         return # osid.rules.RuleQuery
 
-
     def match_any_rule(self, match):
         """Match any associated rule.
 
-        arg:    match (boolean): ``true`` to match any rule, ``false``
-                to match no rules
+        :param match: ``true`` to match any rule, ``false`` to match no rules
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_rule_terms(self):
         """Clears all rule terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1700,25 +1757,25 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_schedule_id(self, schedule_id, match):
         """Match the ``Id`` of an associated schedule.
 
-        arg:    schedule_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``schedule_id`` is ``null``
+        :param schedule_id: ``Id`` to match
+        :type schedule_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``schedule_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_schedule_id_terms(self):
         """Clears all schedule ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1727,48 +1784,51 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     schedule_id_terms = property(fdel=clear_schedule_id_terms)
 
-
     def supports_schedule_query(self):
         """Tests if a ``ScheduleQuery`` for the rule is available.
 
-        return: (boolean) - ``true`` if a schedule query is available,
-                ``false`` otherwise
+        :return: ``true`` if a schedule query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_schedule_query(self, match):
         """Gets the query for the schedule.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.calendaring.ScheduleQuery) - the schedule query
-        raise:  Unimplemented - ``supports_schedule_query()`` is
-                ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the schedule query
+        :rtype: ``osid.calendaring.ScheduleQuery``
+        :raise: ``Unimplemented`` -- ``supports_schedule_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_schedule_query()`` is ``true``.*
 
         """
         return # osid.calendaring.ScheduleQuery
 
-
     def match_any_schedule(self, match):
         """Match any associated schedule.
 
-        arg:    match (boolean): ``true`` to match any schedule,
-                ``false`` to match no schedules
+        :param match: ``true`` to match any schedule, ``false`` to match no schedules
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_schedule_terms(self):
         """Clears all schedule terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1777,22 +1837,24 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     schedule_terms = property(fdel=clear_schedule_terms)
 
-
     def match_event_id(self, event_id, match):
         """Match the ``Id`` of an associated event.
 
-        arg:    event_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``event_id`` is ``null``
+        :param event_id: ``Id`` to match
+        :type event_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``event_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_event_id_terms(self):
         """Clears all event ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1801,47 +1863,51 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     event_id_terms = property(fdel=clear_event_id_terms)
 
-
     def supports_event_query(self):
         """Tests if a ``EventQuery`` for the rule is available.
 
-        return: (boolean) - ``true`` if an event query is available,
-                ``false`` otherwise
+        :return: ``true`` if an event query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_event_query(self, match):
         """Gets the query for the event.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.calendaring.EventQuery) - the event query
-        raise:  Unimplemented - ``supports_event_query()`` is ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the event query
+        :rtype: ``osid.calendaring.EventQuery``
+        :raise: ``Unimplemented`` -- ``supports_event_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_event_query()`` is ``true``.*
 
         """
         return # osid.calendaring.EventQuery
 
-
     def match_any_event(self, match):
         """Match any associated event.
 
-        arg:    match (boolean): ``true`` to match any event, ``false``
-                to match no events
+        :param match: ``true`` to match any event, ``false`` to match no events
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_event_terms(self):
         """Clears all recurirng event terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1850,22 +1916,24 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     event_terms = property(fdel=clear_event_terms)
 
-
     def match_cyclic_event_id(self, cyclic_event_id, match):
         """Sets the cyclic event ``Id`` for this query.
 
-        arg:    cyclic_event_id (osid.id.Id): the cyclic event ``Id``
-        arg:    match (boolean): ``true`` for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``cyclic_event_id`` is ``null``
+        :param cyclic_event_id: the cyclic event ``Id``
+        :type cyclic_event_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``cyclic_event_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_cyclic_event_id_terms(self):
         """Clears the cyclic event ``Id`` query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1874,27 +1942,27 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     cyclic_event_id_terms = property(fdel=clear_cyclic_event_id_terms)
 
-
     def supports_cyclic_event_query(self):
         """Tests if a ``CyclicEventQuery`` is available.
 
-        return: (boolean) - ``true`` if a cyclic event query is
-                available, ``false`` otherwise
+        :return: ``true`` if a cyclic event query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_cyclic_event_query(self):
         """Gets the query for a cyclic event.
 
         Multiple retrievals produce a nested ``OR`` term.
 
-        return: (osid.calendaring.cycle.CyclicEventQuery) - the cyclic
-                event query
-        raise:  Unimplemented - ``supports_cyclic_event_query()`` is
-                ``false``
+        :return: the cyclic event query
+        :rtype: ``osid.calendaring.cycle.CyclicEventQuery``
+        :raise: ``Unimplemented`` -- ``supports_cyclic_event_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_cyclic_event_query()`` is ``true``.*
 
@@ -1903,21 +1971,23 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     cyclic_event_query = property(fget=get_cyclic_event_query)
 
-
     def match_any_cyclic_event(self, match):
         """Matches any enabler with a cyclic event.
 
-        arg:    match (boolean): ``true`` to match any enablers with a
-                cyclic event, ``false`` to match enablers with no cyclic
-                events
+        :param match: ``true`` to match any enablers with a cyclic event, ``false`` to match enablers with no cyclic
+        events
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_cyclic_event_terms(self):
         """Clears the cyclic event query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1926,22 +1996,24 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     cyclic_event_terms = property(fdel=clear_cyclic_event_terms)
 
-
     def match_demographic_id(self, resource_id, match):
         """Match the ``Id`` of the demographic resource.
 
-        arg:    resource_id (osid.id.Id): ``Id`` to match
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        raise:  NullArgument - ``resource_id`` is ``null``
+        :param resource_id: ``Id`` to match
+        :type resource_id: ``osid.id.Id``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_demographic_id_terms(self):
         """Clears all resource ``Id`` terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -1950,48 +2022,51 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
 
     demographic_id_terms = property(fdel=clear_demographic_id_terms)
 
-
     def supports_demographic_query(self):
         """Tests if a ``ResourceQuery`` for the demographic is available.
 
-        return: (boolean) - ``true`` if a resource query is available,
-                ``false`` otherwise
+        :return: ``true`` if a resource query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_demographic_query(self, match):
         """Gets the query for the resource.
 
         Each retrieval performs a boolean ``OR``.
 
-        arg:    match (boolean): ``true`` if for a positive match,
-                ``false`` for a negative match
-        return: (osid.resource.ResourceQuery) - the resource query
-        raise:  Unimplemented - ``supports_resource_query()`` is
-                ``false``
+        :param match: ``true`` if for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :return: the resource query
+        :rtype: ``osid.resource.ResourceQuery``
+        :raise: ``Unimplemented`` -- ``supports_resource_query()`` is ``false``
+
         *compliance: optional -- This method must be implemented if
         ``supports_resource_query()`` is ``true``.*
 
         """
         return # osid.resource.ResourceQuery
 
-
     def match_any_demographic(self, match):
         """Match any associated resource.
 
-        arg:    match (boolean): ``true`` to match any demographic,
-                ``false`` to match no rules
+        :param match: ``true`` to match any demographic, ``false`` to match no rules
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_demographic_terms(self):
         """Clears all demographic terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -2008,8 +2083,6 @@ class OsidConstrainerQuery(OsidRuleQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
 
 
 
@@ -2021,8 +2094,6 @@ class OsidProcessorQuery(OsidRuleQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
 
 
 
@@ -2034,8 +2105,6 @@ class OsidGovernatorQuery(OsidObjectQuery, OsidOperableQuery, OsidSourceableQuer
     the same method produce a nested ``OR``.
 
     """
-    
-
 
 
 
@@ -2047,38 +2116,40 @@ class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
-
 
     def match_start_date(self, start, end, match):
         """Matches reports whose start date falls in between the given dates inclusive.
 
-        arg:    start (osid.calendaring.DateTime): start of date range
-        arg:    end (osid.calendaring.DateTime): end of date range
-        arg:    match (boolean): ``true`` if a positive match, ``false``
-                for a negative match
-        raise:  InvalidArgument - ``start`` is less than ``end``
-        raise:  NullArgument - ``start`` or ``end`` is ``null``
+        :param start: start of date range
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end of date range
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``start`` is less than ``end``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_start_date(self, match):
         """Matches reports with any start date set.
 
-        arg:    match (boolean): ``true`` to match any start date,
-                ``false`` to match no start date
+        :param match: ``true`` to match any start date, ``false`` to match no start date
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_start_date_terms(self):
         """Clears the start date query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -2087,35 +2158,39 @@ class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
 
     start_date_terms = property(fdel=clear_start_date_terms)
 
-
     def match_end_date(self, start, end, match):
         """Matches reports whose effective end date falls in between the given dates inclusive.
 
-        arg:    start (osid.calendaring.DateTime): start of date range
-        arg:    end (osid.calendaring.DateTime): end of date range
-        arg:    match (boolean): ``true`` if a positive match, ``false``
-                for negative match
-        raise:  InvalidArgument - ``start`` is less than ``end``
-        raise:  NullArgument - ``start`` or ``end`` is ``null``
+        :param start: start of date range
+        :type start: ``osid.calendaring.DateTime``
+        :param end: end of date range
+        :type end: ``osid.calendaring.DateTime``
+        :param match: ``true`` if a positive match, ``false`` for negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``start`` is less than ``end``
+        :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def match_any_end_date(self, match):
         """Matches reports with any end date set.
 
-        arg:    match (boolean): ``true`` to match any end date,
-                ``false`` to match no start date
+        :param match: ``true`` to match any end date, ``false`` to match no start date
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_end_date_terms(self):
         """Clears the end date query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -2124,20 +2199,22 @@ class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
 
     end_date_terms = property(fdel=clear_end_date_terms)
 
-
     def match_interpolated(self, match):
         """Match reports that are interpolated.
 
-        arg:    match (boolean): ``true`` to match any interpolated
-                reports, ``false`` to match non- interpolated reports
+        :param match: ``true`` to match any interpolated reports, ``false`` to match non-interpolated reports
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_interpolated_terms(self):
         """Clears the interpolated query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -2146,20 +2223,22 @@ class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
 
     interpolated_terms = property(fdel=clear_interpolated_terms)
 
-
     def match_extrapolated(self, match):
         """Match reports that are extrapolated.
 
-        arg:    match (boolean): ``true`` to match any extrapolated
-                reports, ``false`` to match non- extrapolated reports
+        :param match: ``true`` to match any extrapolated reports, ``false`` to match non-extrapolated reports
+        :type match: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_extrapolated_terms(self):
         """Clears the extrapolated query terms.
+
+
 
         *compliance: mandatory -- This method must be implemented.*
 
@@ -2176,8 +2255,6 @@ class OsidCapsuleQuery(OsidQuery):
     the same method produce a nested ``OR``.
 
     """
-    
-
 
 
 

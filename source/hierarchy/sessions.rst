@@ -1,22 +1,16 @@
 
-.. currentmodule:: dlkit.services.hierarchy
+.. currentmodule:: dlkit.hierarchy.sessions
+.. automodule:: dlkit.hierarchy.sessions
 
-Hierarchy
-=========
-
-
-Hierarchy
----------
-
-.. autoclass:: Hierarchy
-   :show-inheritance:
-
-   .. automethod:: Hierarchy.get_hierarchy_record
+Sessions
+========
 
 
-
-Hierarchy Traversal Methods
+Hierarchy Traversal Session
 ---------------------------
+
+.. autoclass:: HierarchyTraversalSession
+   :show-inheritance:
 
    .. autoattribute:: HierarchyTraversalSession.hierarchy_id
 
@@ -44,10 +38,11 @@ Hierarchy Traversal Methods
 
    .. automethod:: HierarchyTraversalSession.get_nodes
 
-
-
-Hierarchy Design Methods
+Hierarchy Design Session
 ------------------------
+
+.. autoclass:: HierarchyDesignSession
+   :show-inheritance:
 
    .. autoattribute:: HierarchyDesignSession.hierarchy_id
 
@@ -65,10 +60,11 @@ Hierarchy Design Methods
 
    .. automethod:: HierarchyDesignSession.remove_children
 
-
-
-Hierarchy Lookup Methods
+Hierarchy Lookup Session
 ------------------------
+
+.. autoclass:: HierarchyLookupSession
+   :show-inheritance:
 
    .. automethod:: HierarchyLookupSession.can_lookup_hierarchies
 
@@ -90,10 +86,11 @@ Hierarchy Lookup Methods
 
    .. autoattribute:: HierarchyLookupSession.hierarchies
 
-
-
-Hierarchy Admin Methods
+Hierarchy Admin Session
 -----------------------
+
+.. autoclass:: HierarchyAdminSession
+   :show-inheritance:
 
    .. automethod:: HierarchyAdminSession.can_create_hierarchies
 
@@ -116,6 +113,4 @@ Hierarchy Admin Methods
    .. automethod:: HierarchyAdminSession.can_manage_hierarchy_aliases
 
    .. automethod:: HierarchyAdminSession.alias_hierarchy
-
-
 

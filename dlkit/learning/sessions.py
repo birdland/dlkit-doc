@@ -4,15 +4,14 @@ from ..osid import sessions as osid_sessions
 
 class ObjectiveLookupSession(osid_sessions.OsidSession):
     """This session provides methods for retrieving ``Objective`` s."""
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -20,21 +19,20 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_lookup_objectives(self):
         """Tests if this user can perform ``Objective`` lookups.
@@ -45,13 +43,14 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer lookup
         operations to unauthorized users.
 
-        return: (boolean) - ``false`` if lookup methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -60,11 +59,12 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_view(self):
         """A complete view of the ``Objective`` returns is desired.
@@ -73,11 +73,12 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_federated_objective_bank_view(self):
         """Federates the view for methods in this session.
@@ -86,22 +87,24 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         which are children of this objective bank in the objective bank
         hierarchy.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_isolated_objective_bank_view(self):
         """Isolates the view for methods in this session.
 
         An isolated view restricts lookups to this objective bank only.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def get_objective(self, objective_id):
         """Gets the ``Objective`` specified by its ``Id``.
@@ -112,17 +115,19 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         duplicate ``Id`` was assigned to an ``Objective`` and retained
         for compatibility.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the ``Objective``
-        return: (osid.learning.Objective) - the objective
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: the objective
+        :rtype: ``osid.learning.Objective``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.Objective
-
 
     def get_objectives_by_ids(self, objective_ids):
         """Gets an ``ObjectiveList`` corresponding to the given ``IdList``.
@@ -135,19 +140,19 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         present the elements in any order including returning a unique
         set.
 
-        arg:    objective_ids (osid.id.IdList): the list of ``Ids`` to
-                retrieve
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NotFound - an ``Id was`` not found
-        raise:  NullArgument - ``objective_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_ids: the list of ``Ids`` to retrieve
+        :type objective_ids: ``osid.id.IdList``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``objective_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_objectives_by_genus_type(self, objective_genus_type):
         """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does not include
@@ -157,18 +162,18 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those objectives that are accessible through this session.
 
-        arg:    objective_genus_type (osid.type.Type): an objective
-                genus type
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NullArgument - ``objective_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_genus_type: an objective genus type
+        :type objective_genus_type: ``osid.type.Type``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NullArgument`` -- ``objective_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_objectives_by_parent_genus_type(self, objective_genus_type):
         """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include any additional
@@ -178,18 +183,18 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those objectives that are accessible through this session
 
-        arg:    objective_genus_type (osid.type.Type): an objective
-                genus type
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NullArgument - ``objective_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_genus_type: an objective genus type
+        :type objective_genus_type: ``osid.type.Type``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NullArgument`` -- ``objective_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_objectives_by_record_type(self, objective_record_type):
         """Gets an ``ObjectiveList`` containing the given objective record ``Type``.
@@ -198,18 +203,18 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those objectives that are accessible through this session.
 
-        arg:    objective_record_type (osid.type.Type): an objective
-                record type
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NullArgument - ``objective_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_record_type: an objective record type
+        :type objective_record_type: ``osid.type.Type``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NullArgument`` -- ``objective_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_objectives(self):
         """Gets all ``Objectives``.
@@ -218,9 +223,11 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those objectives that are accessible through this session.
 
-        return: (osid.learning.ObjectiveList) - an ``ObjectiveList``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: an ``ObjectiveList``
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -251,15 +258,14 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
     ``ObjectiveQuery``.
 
     """
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -267,21 +273,20 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_search_objectives(self):
         """Tests if this user can perform ``Objectives`` searches.
@@ -292,13 +297,14 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer search
         operations to unauthorized users.
 
-        return: (boolean) - ``false`` if search methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_federated_objective_bank_view(self):
         """Federates the view for methods in this session.
@@ -307,27 +313,32 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
         which are children of this objective bank in the objective bank
         hierarchy.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_isolated_objective_bank_view(self):
         """Isolates the view for methods in this session.
 
         An isolated view restricts searches to this objective bank only.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
 
-
     def get_objective_query(self):
         """Gets an objective query.
 
-        return: (osid.learning.ObjectiveQuery) - the objective query
+        :return: the objective query
+        :rtype: ``osid.learning.ObjectiveQuery``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -335,18 +346,18 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
 
     objective_query = property(fget=get_objective_query)
 
-
     def get_objectives_by_query(self, objective_query):
         """Gets a list of ``Objectives`` matching the given objective query.
 
-        arg:    objective_query (osid.learning.ObjectiveQuery): the
-                objective query
-        return: (osid.learning.ObjectiveList) - the returned
-                ``ObjectiveList``
-        raise:  NullArgument - ``objective_query`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``objective_query`` is not of this service
+        :param objective_query: the objective query
+        :type objective_query: ``osid.learning.ObjectiveQuery``
+        :return: the returned ``ObjectiveList``
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NullArgument`` -- ``objective_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_query`` is not of this service
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -388,15 +399,14 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
     external ``Id`` to an internally assigned Id.
 
     """
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -404,21 +414,20 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_create_objectives(self):
         """Tests if this user can create ``Objectives``.
@@ -429,13 +438,14 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer create
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Objective`` creation is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Objective`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def can_create_objective_with_record_types(self, objective_record_types):
         """Tests if this user can create a single ``Objective`` using the desired record types.
@@ -446,57 +456,55 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         Providing an empty array tests if an ``Objective`` can be
         created with no records.
 
-        arg:    objective_record_types (osid.type.Type[]): array of
-                objective record types
-        return: (boolean) - ``true`` if ``Objective`` creation using the
-                specified record ``Types`` is supported, ``false``
-                otherwise
-        raise:  NullArgument - ``objective_record_types`` is ``null``
+        :param objective_record_types: array of objective record types
+        :type objective_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is supported, ``false``
+        otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_record_types`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_objective_form_for_create(self, objective_record_types):
         """Gets the objective form for creating new objectives.
 
         A new form should be requested for each create transaction.
 
-        arg:    objective_record_types (osid.type.Type[]): array of
-                objective record types
-        return: (osid.learning.ObjectiveForm) - the objective form
-        raise:  NullArgument - ``objective_record_types`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - unable to get form for requested record
-                types
+        :param objective_record_types: array of objective record types
+        :type objective_record_types: ``osid.type.Type[]``
+        :return: the objective form
+        :rtype: ``osid.learning.ObjectiveForm``
+        :raise: ``NullArgument`` -- ``objective_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveForm
 
-
     def create_objective(self, objective_form):
         """Creates a new ``Objective``.
 
-        arg:    objective_form (osid.learning.ObjectiveForm): the form
-                for this ``Objective``
-        return: (osid.learning.Objective) - the new ``Objective``
-        raise:  IllegalState - ``objective_form`` already used in a
-                create transaction
-        raise:  InvalidArgument - one or more of the form elements is
-                invalid
-        raise:  NullArgument - ``objective_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``objective_form`` did not originate from
-                ``get_objective_form_for_create()``
+        :param objective_form: the form for this ``Objective``
+        :type objective_form: ``osid.learning.ObjectiveForm``
+        :return: the new ``Objective``
+        :rtype: ``osid.learning.Objective``
+        :raise: ``IllegalState`` -- ``objective_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``objective_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_create()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.Objective
-
 
     def can_update_objectives(self):
         """Tests if this user can update ``Objectives``.
@@ -507,13 +515,14 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         update operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if objective modification is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if objective modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_objective_form_for_update(self, objective_id):
         """Gets the objective form for updating an existing objective.
@@ -521,37 +530,36 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         A new objective form should be requested for each update
         transaction.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        return: (osid.learning.ObjectiveForm) - the objective form
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: the objective form
+        :rtype: ``osid.learning.ObjectiveForm``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveForm
 
-
     def update_objective(self, objective_form):
         """Updates an existing objective.
 
-        arg:    objective_form (osid.learning.ObjectiveForm): the form
-                containing the elements to be updated
-        raise:  IllegalState - ``objective_form`` already used in an
-                update transaction
-        raise:  InvalidArgument - the form contains an invalid value
-        raise:  NullArgument - ``objective_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``objective_form`` did not originate from
-                ``get_objective_form_for_update()``
+        :param objective_form: the form containing the elements to be updated
+        :type objective_form: ``osid.learning.ObjectiveForm``
+        :raise: ``IllegalState`` -- ``objective_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``objective_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_update()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_delete_objectives(self):
         """Tests if this user can delete ``Objectives``.
@@ -562,29 +570,29 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         delete operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Objective`` deletion is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Objective`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def delete_objective(self, objective_id):
         """Deletes the ``Objective`` identified by the given ``Id``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective`` to delete
-        raise:  NotFound - an ``Objective`` was not found identified by
-                the given ``Id``
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the ``Objective`` to delete
+        :type objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- an ``Objective`` was not found identified by the given ``Id``
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_manage_objective_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``Objectives``.
@@ -595,13 +603,14 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer alias
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Objective`` aliasing is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Objective`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def alias_objective(self, objective_id, alias_id):
         """Adds an ``Id`` to an ``Objective`` for the purpose of creating compatibility.
@@ -611,15 +620,16 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         ``Id``. If the alias is a pointer to another objective, it is
         reassigned to the given objective ``Id``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an
-                ``Objective``
-        arg:    alias_id (osid.id.Id): the alias ``Id``
-        raise:  AlreadyExists - ``alias_id`` is already assigned
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` or ``alias_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -653,15 +663,14 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
       * plenary view: provides a complete set or is an error condition
 
     """
-    
-
-
 
     def get_objective_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -669,21 +678,20 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
 
     objective_hierarchy_id = property(fget=get_objective_hierarchy_id)
 
-
     def get_objective_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     objective_hierarchy = property(fget=get_objective_hierarchy)
-
 
     def can_access_objective_hierarchy(self):
         """Tests if this user can perform hierarchy queries.
@@ -694,13 +702,14 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         as a hint to an an application that may not offer traversal
         functions to unauthorized users.
 
-        return: (boolean) - ``false`` if hierarchy traversal methods are
-                not authorized, ``true`` otherwise
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_view(self):
         """The returns from the objective methods may omit or translate elements based on this session, such as
@@ -709,11 +718,12 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_view(self):
         """A complete view of the ``Hierarchy`` returns is desired.
@@ -722,18 +732,21 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
 
-
     def get_root_objective_ids(self):
         """Gets the root objective ``Ids`` in this hierarchy.
 
-        return: (osid.id.IdList) - the root objective ``Ids``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the root objective ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -741,13 +754,14 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
 
     root_objective_ids = property(fget=get_root_objective_ids)
 
-
     def get_root_objectives(self):
         """Gets the root objective in this objective hierarchy.
 
-        return: (osid.learning.ObjectiveList) - the root objective
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the root objective
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
@@ -755,215 +769,233 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
 
     root_objectives = property(fget=get_root_objectives)
 
-
     def has_parent_objectives(self, objective_id):
         """Tests if the ``Objective`` has any parents.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (boolean) - ``true`` if the objective has parents,
-                ``false`` otherwise
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: ``true`` if the objective has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_parent_of_objective(self, id_, objective_id):
         """Tests if an ``Id`` is a direct parent of an objective.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (boolean) - ``true`` if this ``id`` is a parent of
-                ``objective_id,``  ``false`` otherwise
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``objective_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` not found return ``false``.
 
         """
         return # boolean
-
 
     def get_parent_objective_ids(self, objective_id):
         """Gets the parent ``Ids`` of the given objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (osid.id.IdList) - the parent ``Ids`` of the objective
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the objective
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
-
 
     def get_parent_objectives(self, objective_id):
         """Gets the parents of the given objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (osid.learning.ObjectiveList) - the parents of the
-                objective
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: the parents of the objective
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
 
-
     def is_ancestor_of_objective(self, id_, objective_id):
         """Tests if an ``Id`` is an ancestor of an objective.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (boolean) - ``true`` if this ``id`` is an ancestor of
-                ``objective_id,``  ``false`` otherwise
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` not found return ``false``.
 
         """
         return # boolean
-
 
     def has_child_objectives(self, objective_id):
         """Tests if an objective has any children.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (boolean) - ``true`` if the ``objective_id`` has
-                children, ``false`` otherwise
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: ``true`` if the ``objective_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def is_child_of_objective(self, id_, objective_id):
         """Tests if an objective is a direct child of another.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (boolean) - ``true`` if the ``id`` is a child of
-                ``objective_id,``  ``false`` otherwise
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``objective_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` not found return ``false``.
 
         """
         return # boolean
 
-
     def get_child_objective_ids(self, objective_id):
         """Gets the child ``Ids`` of the given objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` to query
-        return: (osid.id.IdList) - the children of the objective
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` to query
+        :type objective_id: ``osid.id.Id``
+        :return: the children of the objective
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def get_child_objectives(self, objective_id):
         """Gets the children of the given objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` to query
-        return: (osid.learning.ObjectiveList) - the children of the
-                objective
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` to query
+        :type objective_id: ``osid.id.Id``
+        :return: the children of the objective
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
 
-
     def is_descendant_of_objective(self, id_, objective_id):
         """Tests if an ``Id`` is a descendant of an objective.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        return: (boolean) - ``true`` if the ``id`` is a descendant of
-                the ``objective_id,`` ``false`` otherwise
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` is not found return ``false``.
 
         """
         return # boolean
 
-
     def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` to query
-        arg:    ancestor_levels (cardinal): the maximum number of
-                ancestor levels to include. A value of 0 returns no
-                parents in the node.
-        arg:    descendant_levels (cardinal): the maximum number of
-                descendant levels to include. A value of 0 returns no
-                children in the node.
-        arg:    include_siblings (boolean): ``true`` to include the
-                siblings of the given node, ``false`` to omit the
-                siblings
-        return: (osid.hierarchy.Node) - a catalog node
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` to query
+        :type objective_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+        node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+        in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a catalog node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Node
 
-
     def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` to query
-        arg:    ancestor_levels (cardinal): the maximum number of
-                ancestor levels to include. A value of 0 returns no
-                parents in the node.
-        arg:    descendant_levels (cardinal): the maximum number of
-                descendant levels to include. A value of 0 returns no
-                children in the node.
-        arg:    include_siblings (boolean): ``true`` to include the
-                siblings of the given node, ``false`` to omit the
-                siblings
-        return: (osid.learning.ObjectiveNode) - an objective node
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` to query
+        :type objective_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+        node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+        in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an objective node
+        :rtype: ``osid.learning.ObjectiveNode``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -976,15 +1008,14 @@ class ObjectiveHierarchyDesignSession(osid_sessions.OsidSession):
     Each node in the hierarchy is a unique ``Objective``.
 
     """
-    
-
-
 
     def get_objective_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -992,21 +1023,20 @@ class ObjectiveHierarchyDesignSession(osid_sessions.OsidSession):
 
     objective_hierarchy_id = property(fget=get_objective_hierarchy_id)
 
-
     def get_objective_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     objective_hierarchy = property(fget=get_objective_hierarchy)
-
 
     def can_modify_objective_hierarchy(self):
         """Tests if this user can change the hierarchy.
@@ -1017,85 +1047,91 @@ class ObjectiveHierarchyDesignSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer these
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if changing this hierarchy is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def add_root_objective(self, objective_id):
         """Adds a root objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        raise:  AlreadyExists - ``objective_id`` is already in hierarchy
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def remove_root_objective(self, objective_id):
         """Removes a root objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def add_child_objective(self, objective_id, child_id):
         """Adds a child to an objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        arg:    child_id (osid.id.Id): the ``Id`` of the new child
-        raise:  AlreadyExists - ``objective_id`` is already a parent of
-                ``child_id``
-        raise:  NotFound - ``objective_id`` or ``child_id`` not found
-        raise:  NullArgument - ``objective_id`` or ``child_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def remove_child_objective(self, objective_id, child_id):
         """Removes a child from an objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        arg:    child_id (osid.id.Id): the ``Id`` of the new child
-        raise:  NotFound - ``objective_id`` not a parent of ``child_id``
-        raise:  NullArgument - ``objective_id`` or ``child_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def remove_child_objectives(self, objective_id):
         """Removes all children from an objective.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of an objective
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of an objective
+        :type objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1104,15 +1140,14 @@ class ObjectiveHierarchyDesignSession(osid_sessions.OsidSession):
 
 class ObjectiveSequencingSession(osid_sessions.OsidSession):
     """This session provides methods to sequence the objectives in the objective hierarchy."""
-    
-
-
 
     def get_objective_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1120,21 +1155,20 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
 
     objective_hierarchy_id = property(fget=get_objective_hierarchy_id)
 
-
     def get_objective_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     objective_hierarchy = property(fget=get_objective_hierarchy)
-
 
     def can_sequence_objectives(self):
         """Tests if this user can sequence objectives.
@@ -1145,74 +1179,68 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer these
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if sequencing objectives is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if sequencing objectives is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def move_objective_ahead(self, parent_objective_id, reference_objective_id, objective_id):
         """Moves an objective ahead of a refrence objective under the given parent.
 
-        arg:    parent_objective_id (osid.id.Id): the ``Id`` of the
-                parent objective
-        arg:    reference_objective_id (osid.id.Id): the ``Id`` of the
-                objective
-        arg:    objective_id (osid.id.Id): the ``Id`` of the objective
-                to move ahead of ``reference_objective_id``
-        raise:  NotFound - ``parent_objective_id,
-                reference_objective_id,`` or ``objective_id`` not found,
-                or ``reference_objective_id`` or ``objective_id`` is not
-                a child of ``parent_objective_id``
-        raise:  NullArgument - ``parent_objective_id,
-                reference_objective_id,`` or ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param parent_objective_id: the ``Id`` of the parent objective
+        :type parent_objective_id: ``osid.id.Id``
+        :param reference_objective_id: the ``Id`` of the objective
+        :type reference_objective_id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of the objective to move ahead of ``reference_objective_id``
+        :type objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
+        ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def move_objective_behind(self, parent_objective_id, reference_objective_id, objective_id):
         """Moves an objective behind a refrence objective under the given parent.
 
-        arg:    parent_objective_id (osid.id.Id): the ``Id`` of the
-                parent objective
-        arg:    reference_objective_id (osid.id.Id): the ``Id`` of the
-                objective
-        arg:    objective_id (osid.id.Id): the ``Id`` of the objective
-                to move behind ``reference_objective_id``
-        raise:  NotFound - ``parent_objective_id,
-                reference_objective_id,`` or ``objective_id`` not found,
-                or ``reference_objective_id`` or ``objective_id`` is not
-                a child of ``parent_objective_id``
-        raise:  NullArgument - ``parent_objective_id,
-                reference_objective_id,`` or ``id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param parent_objective_id: the ``Id`` of the parent objective
+        :type parent_objective_id: ``osid.id.Id``
+        :param reference_objective_id: the ``Id`` of the objective
+        :type reference_objective_id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of the objective to move behind ``reference_objective_id``
+        :type objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
+        ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def sequence_objectives(self, parent_objective_id, objective_ids):
         """Sequences a set of objectives under a parent.
 
-        arg:    parent_objective_id (osid.id.Id): the ``Id`` of the
-                parent objective
-        arg:    objective_ids (osid.id.Id[]): the ``Id`` of the
-                objectives
-        raise:  NotFound - ``parent_id`` or an ``objective_id`` not
-                found, or an ``objective_id`` is not a child of
-                ``parent_objective_id``
-        raise:  NullArgument - ``paren_objectivet_id`` or
-                ``objective_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param parent_objective_id: the ``Id`` of the parent objective
+        :type parent_objective_id: ``osid.id.Id``
+        :param objective_ids: the ``Id`` of the objectives
+        :type objective_ids: ``osid.id.Id[]``
+        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an ``objective_id`` is not a child of
+        ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``paren_objectivet_id`` or ``objective_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1233,9 +1261,6 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
         condition
 
     """
-    
-
-
 
     def can_lookup_objective_objective_bank_mappings(self):
         """Tests if this user can perform lookups of objective/objective bank mappings.
@@ -1246,13 +1271,14 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         lookup operations to unauthorized users.
 
-        return: (boolean) - ``false`` if looking up mappings is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -1261,11 +1287,12 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``Objective`` and ``ObjectiveBank`` returns is desired.
@@ -1274,100 +1301,108 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
 
-
     def get_objective_ids_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Objective``  ``Ids`` associated with an ``ObjectiveBank``.
 
-        arg:    objective_bank_id (osid.id.Id): ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.id.IdList) - list of related objectives
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: list of related objectives
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
-
 
     def get_objectives_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Objectives`` associated with an ``ObjectiveBank``.
 
-        arg:    objective_bank_id (osid.id.Id): ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.learning.ObjectiveList) - list of related
-                objective ``Ids``
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: list of related objective ``Ids``
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_objective_ids_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Objective Ids`` corresponding to a list of ``ObjectiveBanks``.
 
-        arg:    objective_bank_ids (osid.id.IdList): list of objective
-                bank ``Ids``
-        return: (osid.id.IdList) - list of objective ``Ids``
-        raise:  NullArgument - ``objective_bank_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_ids: list of objective bank ``Ids``
+        :type objective_bank_ids: ``osid.id.IdList``
+        :return: list of objective ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``objective_bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def get_objectives_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Objectives`` corresponding to a list of ``ObjectiveBanks``.
 
-        arg:    objective_bank_ids (osid.id.IdList): list of objective
-                bank ``Ids``
-        return: (osid.learning.ObjectiveList) - list of objectives
-        raise:  NullArgument - ``objective_bank_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_ids: list of objective bank ``Ids``
+        :type objective_bank_ids: ``osid.id.IdList``
+        :return: list of objectives
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NullArgument`` -- ``objective_bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
 
-
     def get_objective_bank_ids_by_objective(self, objective_id):
         """Gets the list of ``ObjectiveBank``  ``Ids`` mapped to an ``Objective``.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of an ``Objective``
-        return: (osid.id.IdList) - list of objective bank ``Ids``
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of an ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: list of objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def get_objective_banks_by_objective(self, objective_id):
         """Gets the list of ``ObjectiveBanks`` mapped to an ``Objective``.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of an ``Objective``
-        return: (osid.learning.ObjectiveBankList) - list of objective
-                banks
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of an ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: list of objective banks
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1387,9 +1422,6 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
     ``Id`` ).
 
     """
-    
-
-
 
     def can_assign_objectives(self):
         """Tests if this user can alter objective/objective bank mappings.
@@ -1400,13 +1432,14 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
 
-        return: (boolean) - ``false`` if mapping is not authorized,
-                ``true`` otherwise
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def can_assign_objectives_to_objective_bank(self, objective_bank_id):
         """Tests if this user can alter objective/objective bank mappings.
@@ -1417,111 +1450,104 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        return: (boolean) - ``false`` if mapping is not authorized,
-                ``true`` otherwise
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_assignable_objective_bank_ids(self, objective_bank_id):
         """Gets a list of objective banks including and under the given objective bank node in which any objective can
         be assigned.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.id.IdList) - list of assignable objective bank
-                ``Ids``
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: list of assignable objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
-
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
         """Gets a list of objective banks including and under the given objective bank node in which a specific
         objective can be assigned.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        return: (osid.id.IdList) - list of assignable objective bank
-                ``Ids``
-        raise:  NullArgument - ``objective_id`` or ``objective_bank_id``
-                is ``null``
-        raise:  OperationFailed - unable to complete request
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: list of assignable objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def assign_objective_to_objective_bank(self, objective_id, objective_bank_id):
         """Adds an existing ``Objective`` to an ``ObjectiveBank``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        raise:  AlreadyExists - ``objective_id`` already mapped to
-                ``objective_bank_id``
-        raise:  NotFound - ``objective_id`` or ``objective_bank_id`` not
-                found
-        raise:  NullArgument - ``objective_id`` or ``objective_bank_id``
-                is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_id`` already mapped to ``objective_bank_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def unassign_objective_from_objective_bank(self, objective_id, objective_bank_id):
         """Removes an ``Objective`` from an ``ObjectiveBank``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        raise:  NotFound - ``objective_id`` or ``objective_bank_id`` not
-                found or ``objective_id`` not mapped to
-                ``objective_bank_id``
-        raise:  NullArgument - ``objective_id`` or ``objective_bank_id``
-                is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or ``objective_id`` not mapped to
+        ``objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
 
         Mappings to other ``ObjectiveBanks`` are unaffected.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        arg:    from_objective_bank_id (osid.id.Id): the ``Id`` of the
-                current ``ObjectiveBank``
-        arg:    to_objective_bank_id (osid.id.Id): the ``Id`` of the
-                destination ``ObjectiveBank``
-        raise:  NotFound - ``objective_id, from_objective_bank_id,`` or
-                ``to_objective_bank_id`` not found or ``objective_id``
-                not mapped to ``from_objective_bank_id``
-        raise:  NullArgument - ``objective_id, from_objective_bank_id,``
-                or ``to_objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param from_objective_bank_id: the ``Id`` of the current ``ObjectiveBank``
+        :type from_objective_bank_id: ``osid.id.Id``
+        :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
+        :type to_objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
+        ``objective_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1556,15 +1582,14 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
     cast of the ``Objective``.
 
     """
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1572,21 +1597,20 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_lookup_objective_prerequisites(self):
         """Tests if this user can perform ``Objective`` lookups.
@@ -1597,13 +1621,14 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer lookup
         operations to unauthorized users.
 
-        return: (boolean) - ``false`` if lookup methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -1612,11 +1637,12 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_view(self):
         """A complete view of the ``Objective`` returns is desired.
@@ -1625,11 +1651,12 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_federated_objective_bank_view(self):
         """Federates the view for methods in this session.
@@ -1638,22 +1665,24 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         which are children of this objective bank in the objective bank
         hierarchy.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_isolated_objective_bank_view(self):
         """Isolates the view for methods in this session.
 
         An isolated view restricts lookups to this objective bank only.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def get_requisite_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that are the immediate requisites for the given ``Objective``.
@@ -1664,18 +1693,19 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         omitted from the list and may present the elements in any order
         including returning a unique set.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the ``Objective``
-        return: (osid.learning.ObjectiveList) - the returned requisite
-                ``Objectives``
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: the returned requisite ``Objectives``
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_all_requisite_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that are the requisites for the given ``Objective`` including the requistes of
@@ -1687,18 +1717,19 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         omitted from the list and may present the elements in any order
         including returning a unique set.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the ``Objective``
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def get_dependent_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that require the given ``Objective``.
@@ -1709,18 +1740,19 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         omitted from the list and may present the elements in any order
         including returning a unique set.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the ``Objective``
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveList
-
 
     def is_objective_required(self, objective_id, required_objective_id):
         """Tests if an objective is required before proceeding with an objective.
@@ -1728,21 +1760,21 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         One objective may indirectly depend on another objective by way
         of one or more other objectives.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the dependent
-                ``Objective``
-        arg:    required_objective_id (osid.id.Id): ``Id`` of the
-                required ``Objective``
-        return: (boolean) - ``true`` if ``objective_id`` depends on
-                ``required_objective_id,`` ``false`` otherwise
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the dependent ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param required_objective_id: ``Id`` of the required ``Objective``
+        :type required_objective_id: ``osid.id.Id``
+        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_equivalent_objectives(self, objective_id):
         """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the purpose of requisites.
@@ -1754,13 +1786,15 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         omitted from the list and may present the elements in any order
         including returning a unique set.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the ``Objective``
-        return: (osid.learning.ObjectiveList) - the returned
-                ``Objective`` list
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: the returned ``Objective`` list
+        :rtype: ``osid.learning.ObjectiveList``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1778,15 +1812,14 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
     ``Id`` ).
 
     """
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1794,21 +1827,20 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_assign_requisites(self):
         """Tests if this user can manage objective requisites.
@@ -1819,91 +1851,82 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
 
-        return: (boolean) - ``false`` if mapping is not authorized,
-                ``true`` otherwise
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def assign_objective_requisite(self, objective_id, requisite_objective_id):
         """Creates a requirement dependency between two ``Objectives``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the dependent
-                ``Objective``
-        arg:    requisite_objective_id (osid.id.Id): the ``Id`` of the
-                required ``Objective``
-        raise:  AlreadyExists - ``objective_id`` already mapped to
-                ``requisite_objective_id``
-        raise:  NotFound - ``objective_id`` or
-                ``requisite_objective_id`` not found
-        raise:  NullArgument - ``objective_id`` or
-                ``requisite_objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the dependent ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param requisite_objective_id: the ``Id`` of the required ``Objective``
+        :type requisite_objective_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_id`` already mapped to ``requisite_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` or ``requisite_objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def unassign_objective_requisite(self, objective_id, requisite_objective_id):
         """Removes an ``Objective`` requisite from an ``Objective``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        arg:    requisite_objective_id (osid.id.Id): the ``Id`` of the
-                required ``Objective``
-        raise:  NotFound - ``objective_id`` or
-                ``requisite_objective_id`` not found or ``objective_id``
-                not mapped to ``requisite_objective_id``
-        raise:  NullArgument - ``objective_id`` or
-                ``requisite_objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param requisite_objective_id: the ``Id`` of the required ``Objective``
+        :type requisite_objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or ``objective_id`` not mapped
+        to ``requisite_objective_id``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``requisite_objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def assign_equivalent_objective(self, objective_id, equivalent_objective_id):
         """Makes an objective equivalent to another objective for the purposes of satisfying a requisite.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the principal
-                ``Objective``
-        arg:    equivalent_objective_id (osid.id.Id): the ``Id`` of the
-                equivalent ``Objective``
-        raise:  AlreadyExists - ``objective_id`` already mapped to
-                ``equiavelnt_objective_id``
-        raise:  NotFound - ``objective_id`` or
-                ``equivalent_objective_id`` not found
-        raise:  NullArgument - ``objective_id`` or
-                ``equivalent_objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the principal ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param equivalent_objective_id: the ``Id`` of the equivalent ``Objective``
+        :type equivalent_objective_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_id`` already mapped to ``equiavelnt_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` or ``equivalent_objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def unassign_equivalent_objective(self, objective_id, equivalent_objective_id):
         """Removes an ``Objective`` requisite from an ``Objective``.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the principal
-                ``Objective``
-        arg:    equivalent_objective_id (osid.id.Id): the ``Id`` of the
-                equivalent ``Objective``
-        raise:  NotFound - ``objective_id`` or
-                ``equivalent_objective_id`` not found or
-                ``objective_id`` is already equivalent to
-                ``equivalent_objective_id``
-        raise:  NullArgument - ``objective_id`` or
-                ``equivalent_objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: the ``Id`` of the principal ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param equivalent_objective_id: the ``Id`` of the equivalent ``Objective``
+        :type equivalent_objective_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or ``objective_id`` is already
+        equivalent to ``equivalent_objective_id``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``equivalent_objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1938,15 +1961,14 @@ class ActivityLookupSession(osid_sessions.OsidSession):
     cast of the ``Activity``.
 
     """
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -1954,21 +1976,20 @@ class ActivityLookupSession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_lookup_activities(self):
         """Tests if this user can perform ``Activity`` lookups.
@@ -1979,13 +2000,14 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer lookup
         operations to unauthorized users.
 
-        return: (boolean) - ``false`` if lookup methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_activity_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -1994,11 +2016,12 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_activity_view(self):
         """A complete view of the ``Activity`` returns is desired.
@@ -2007,11 +2030,12 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_federated_objective_bank_view(self):
         """Federates the view for methods in this session.
@@ -2020,22 +2044,24 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         which are children of this objective bank in the objective bank
         hierarchy.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_isolated_objective_bank_view(self):
         """Isolates the view for methods in this session.
 
         An isolated view restricts lookups to this objective bank only.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def get_activity(self, activity_id):
         """Gets the ``Activity`` specified by its ``Id``.
@@ -2046,17 +2072,19 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         duplicate ``Id`` was assigned to a ``Activity`` and retained for
         compatibility.
 
-        arg:    activity_id (osid.id.Id): ``Id`` of the ``Activity``
-        return: (osid.learning.Activity) - the activity
-        raise:  NotFound - ``activity_id`` not found
-        raise:  NullArgument - ``activity_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :return: the activity
+        :rtype: ``osid.learning.Activity``
+        :raise: ``NotFound`` -- ``activity_id`` not found
+        :raise: ``NullArgument`` -- ``activity_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.Activity
-
 
     def get_activities_by_ids(self, activity_ids):
         """Gets an ``ActivityList`` corresponding to the given ``IdList``.
@@ -2069,19 +2097,19 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         present the elements in any order including returning a unique
         set.
 
-        arg:    activity_ids (osid.id.IdList): the list of ``Ids`` to
-                retrieve
-        return: (osid.learning.ActivityList) - the returned ``Activity``
-                list
-        raise:  NotFound - an ``Id was`` not found
-        raise:  NullArgument - ``activity_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_ids: the list of ``Ids`` to retrieve
+        :type activity_ids: ``osid.id.IdList``
+        :return: the returned ``Activity`` list
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``activity_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_by_genus_type(self, activity_genus_type):
         """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does not include activities
@@ -2091,18 +2119,18 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those activities that are accessible through this session.
 
-        arg:    activity_genus_type (osid.type.Type): an activity genus
-                type
-        return: (osid.learning.ActivityList) - the returned ``Activity``
-                list
-        raise:  NullArgument - ``activity_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_genus_type: an activity genus type
+        :type activity_genus_type: ``osid.type.Type``
+        :return: the returned ``Activity`` list
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NullArgument`` -- ``activity_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_by_parent_genus_type(self, activity_genus_type):
         """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include any additional
@@ -2112,18 +2140,18 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those activities that are accessible through this session.
 
-        arg:    activity_genus_type (osid.type.Type): an activity genus
-                type
-        return: (osid.learning.ActivityList) - the returned ``Activity``
-                list
-        raise:  NullArgument - ``activity_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_genus_type: an activity genus type
+        :type activity_genus_type: ``osid.type.Type``
+        :return: the returned ``Activity`` list
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NullArgument`` -- ``activity_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_by_record_type(self, activity_record_type):
         """Gets a ``ActivityList`` containing the given activity record ``Type``.
@@ -2132,18 +2160,18 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those activities that are accessible through this session.
 
-        arg:    activity_record_type (osid.type.Type): an activity
-                record type
-        return: (osid.learning.ActivityList) - the returned ``Activity``
-                list
-        raise:  NullArgument - ``activity_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_record_type: an activity record type
+        :type activity_record_type: ``osid.type.Type``
+        :return: the returned ``Activity`` list
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NullArgument`` -- ``activity_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_for_objective(self, objective_id):
         """Gets the activities for the given objective.
@@ -2155,17 +2183,19 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         list and may present the elements in any order including
         returning a unique set.
 
-        arg:    objective_id (osid.id.Id): ``Id`` of the ``Objective``
-        return: (osid.learning.ActivityList) - list of enrollments
-        raise:  NotFound - ``objective_id`` not found
-        raise:  NullArgument - ``objective_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_id: ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :return: list of enrollments
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NotFound`` -- ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_for_objectives(self, objective_ids):
         """Gets the activities for the given objectives.
@@ -2178,18 +2208,19 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         omitted from the list and may present the elements in any order
         including returning a unique set.
 
-        arg:    objective_ids (osid.id.IdList): list of objective
-                ``Ids``
-        return: (osid.learning.ActivityList) - list of activities
-        raise:  NotFound - an ``objective_id`` not found
-        raise:  NullArgument - ``objective_id_list`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_ids: list of objective ``Ids``
+        :type objective_ids: ``osid.id.IdList``
+        :return: list of activities
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NotFound`` -- an ``objective_id`` not found
+        :raise: ``NullArgument`` -- ``objective_id_list`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_by_asset(self, asset_id):
         """Gets the activities for the given asset.
@@ -2201,17 +2232,19 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         list and may present the elements in any order including
         returning a unique set.
 
-        arg:    asset_id (osid.id.Id): ``Id`` of an ``Asset``
-        return: (osid.learning.ActivityList) - list of activities
-        raise:  NotFound - ``asset_id`` not found
-        raise:  NullArgument - ``asset_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param asset_id: ``Id`` of an ``Asset``
+        :type asset_id: ``osid.id.Id``
+        :return: list of activities
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NotFound`` -- ``asset_id`` not found
+        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities_by_assets(self, asset_ids):
         """Gets the activities for the given asset.
@@ -2223,17 +2256,19 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         list and may present the elements in any order including
         returning a unique set.
 
-        arg:    asset_ids (osid.id.IdList): ``Ids`` of ``Assets``
-        return: (osid.learning.ActivityList) - list of activities
-        raise:  NotFound - an ``asset_id`` not found
-        raise:  NullArgument - ``asset_id_list`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param asset_ids: ``Ids`` of ``Assets``
+        :type asset_ids: ``osid.id.IdList``
+        :return: list of activities
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NotFound`` -- an ``asset_id`` not found
+        :raise: ``NullArgument`` -- ``asset_id_list`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activities(self):
         """Gets all ``Activities``.
@@ -2242,9 +2277,11 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         or an error results. Otherwise, the returned list may contain
         only those activities that are accessible through this session.
 
-        return: (osid.learning.ActivityList) - a ``ActivityList``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: a ``ActivityList``
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -2288,15 +2325,14 @@ class ActivityAdminSession(osid_sessions.OsidSession):
     external ``Id`` to an internally assigned Id.
 
     """
-    
-
-
 
     def get_objective_bank_id(self):
         """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the ``ObjectiveBank Id`` associated with
-                this session
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -2304,21 +2340,20 @@ class ActivityAdminSession(osid_sessions.OsidSession):
 
     objective_bank_id = property(fget=get_objective_bank_id)
 
-
     def get_objective_bank(self):
         """Gets the ``ObjectiveBank`` associated with this session.
 
-        return: (osid.learning.ObjectiveBank) - the ``ObjectiveBank``
-                associated with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
 
     objective_bank = property(fget=get_objective_bank)
-
 
     def can_create_activities(self):
         """Tests if this user can create ``Activities``.
@@ -2329,13 +2364,14 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         create operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Activity`` creation is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Activity`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def can_create_activity_with_record_types(self, activity_record_types):
         """Tests if this user can create a single ``Activity`` using the desired record types.
@@ -2346,61 +2382,58 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         Providing an empty array tests if an ``Activity`` can be created
         with no records.
 
-        arg:    activity_record_types (osid.type.Type[]): array of
-                activity record types
-        return: (boolean) - ``true`` if ``Activity`` creation using the
-                specified record ``Types`` is supported, ``false``
-                otherwise
-        raise:  NullArgument - ``activity_record_types`` is ``null``
+        :param activity_record_types: array of activity record types
+        :type activity_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is supported, ``false``
+        otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``activity_record_types`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_activity_form_for_create(self, objective_id, activity_record_types):
         """Gets the activity form for creating new activities.
 
         A new form should be requested for each create transaction.
 
-        arg:    objective_id (osid.id.Id): the ``Id`` of the
-                ``Objective``
-        arg:    activity_record_types (osid.type.Type[]): array of
-                activity record types
-        return: (osid.learning.ActivityForm) - the activity form
-        raise:  NotFound - ``objective_id`` is not found
-        raise:  NullArgument - ``objective_id`` or
-                ``activity_record_types`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - unable to get form for requested record
-                types
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param activity_record_types: array of activity record types
+        :type activity_record_types: ``osid.type.Type[]``
+        :return: the activity form
+        :rtype: ``osid.learning.ActivityForm``
+        :raise: ``NotFound`` -- ``objective_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id`` or ``activity_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityForm
 
-
     def create_activity(self, activity_form):
         """Creates a new ``Activity``.
 
-        arg:    activity_form (osid.learning.ActivityForm): the form for
-                this ``Activity``
-        return: (osid.learning.Activity) - the new ``Activity``
-        raise:  IllegalState - ``activity_form`` already used in a
-                create transaction
-        raise:  InvalidArgument - one or more of the form elements is
-                invalid
-        raise:  NullArgument - ``activity_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``activity_form`` did not originate from
-                ``get_activity_form_for_create()``
+        :param activity_form: the form for this ``Activity``
+        :type activity_form: ``osid.learning.ActivityForm``
+        :return: the new ``Activity``
+        :rtype: ``osid.learning.Activity``
+        :raise: ``IllegalState`` -- ``activity_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``activity_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_create()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.Activity
-
 
     def can_update_activities(self):
         """Tests if this user can update ``Activities``.
@@ -2411,13 +2444,14 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         update operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if activity modification is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if activity modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_activity_form_for_update(self, activity_id):
         """Gets the activity form for updating an existing activity.
@@ -2425,36 +2459,36 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         A new activity form should be requested for each update
         transaction.
 
-        arg:    activity_id (osid.id.Id): the ``Id`` of the ``Activity``
-        return: (osid.learning.ActivityForm) - the activity form
-        raise:  NotFound - ``activity_id`` is not found
-        raise:  NullArgument - ``activity_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: the ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :return: the activity form
+        :rtype: ``osid.learning.ActivityForm``
+        :raise: ``NotFound`` -- ``activity_id`` is not found
+        :raise: ``NullArgument`` -- ``activity_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityForm
 
-
     def update_activity(self, activity_form):
         """Updates an existing activity,.
 
-        arg:    activity_form (osid.learning.ActivityForm): the form
-                containing the elements to be updated
-        raise:  IllegalState - ``activity_form`` already used in an
-                update transaction
-        raise:  InvalidArgument - the form contains an invalid value
-        raise:  NullArgument - ``activity_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``activity_form`` did not originate from
-                ``get_activity_form_for_update()``
+        :param activity_form: the form containing the elements to be updated
+        :type activity_form: ``osid.learning.ActivityForm``
+        :raise: ``IllegalState`` -- ``activity_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``activity_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_update()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_delete_activities(self):
         """Tests if this user can delete ``Activities``.
@@ -2465,29 +2499,29 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         delete operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Activity`` deletion is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Activity`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def delete_activity(self, activity_id):
         """Deletes the ``Activity`` identified by the given ``Id``.
 
-        arg:    activity_id (osid.id.Id): the ``Id`` of the ``Activity``
-                to delete
-        raise:  NotFound - an ``Activity`` was not found identified by
-                the given ``Id``
-        raise:  NullArgument - ``activity_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: the ``Id`` of the ``Activity`` to delete
+        :type activity_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- an ``Activity`` was not found identified by the given ``Id``
+        :raise: ``NullArgument`` -- ``activity_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_manage_activity_aliases(self):
         """Tests if this user can manage ``Id`` aliases for activities.
@@ -2498,13 +2532,14 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer alias
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``Activity`` aliasing is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if ``Activity`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def alias_activity(self, activity_id, alias_id):
         """Adds an ``Id`` to an ``Activity`` for the purpose of creating compatibility.
@@ -2514,14 +2549,16 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         ``Id``. If the alias is a pointer to another activity, it is
         reassigned to the given activity ``Id``.
 
-        arg:    activity_id (osid.id.Id): the ``Id`` of an ``Activity``
-        arg:    alias_id (osid.id.Id): the alias ``Id``
-        raise:  AlreadyExists - ``alias_id`` is already assigned
-        raise:  NotFound - ``activity_id`` not found
-        raise:  NullArgument - ``activity_id`` or ``alias_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: the ``Id`` of an ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``activity_id`` not found
+        :raise: ``NullArgument`` -- ``activity_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -2542,9 +2579,6 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
         condition
 
     """
-    
-
-
 
     def can_lookup_activity_objective_bank_mappings(self):
         """Tests if this user can perform lookups of activity/objective bank mappings.
@@ -2555,13 +2589,14 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         lookup operations to unauthorized users.
 
-        return: (boolean) - ``false`` if looking up mappings is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -2570,11 +2605,12 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``Activity`` and ``ObjectiveBank`` returns is desired.
@@ -2583,100 +2619,108 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
 
-
     def get_activity_ids_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Activity``  ``Ids`` associated with an ``ObjectiveBank``.
 
-        arg:    objective_bank_id (osid.id.Id): ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.id.IdList) - list of related activity ``Ids``
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: list of related activity ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
-
 
     def get_activities_by_objective_bank(self, objective_bank_id):
         """Gets the list of ``Activities`` associated with an ``ObjectiveBank``.
 
-        arg:    objective_bank_id (osid.id.Id): ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.learning.ActivityList) - list of related
-                activities
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: list of related activities
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityList
-
 
     def get_activity_ids_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Activity Ids`` corresponding to a list of ``ObjectiveBanks``.
 
-        arg:    objective_bank_ids (osid.id.IdList): list of objective
-                bank ``Ids``
-        return: (osid.id.IdList) - list of activity ``Ids``
-        raise:  NullArgument - ``objective_bank_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_ids: list of objective bank ``Ids``
+        :type objective_bank_ids: ``osid.id.IdList``
+        :return: list of activity ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``objective_bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def get_activities_by_objective_banks(self, objective_bank_ids):
         """Gets the list of ``Activities`` corresponding to a list of ``ObjectiveBanks``.
 
-        arg:    objective_bank_ids (osid.id.IdList): list of objective
-                bank ``Ids``
-        return: (osid.learning.ActivityList) - list of activities
-        raise:  NullArgument - ``objective_bank_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_ids: list of objective bank ``Ids``
+        :type objective_bank_ids: ``osid.id.IdList``
+        :return: list of activities
+        :rtype: ``osid.learning.ActivityList``
+        :raise: ``NullArgument`` -- ``objective_bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ActivityList
 
-
     def get_objective_bank_ids_by_activity(self, activity_id):
         """Gets the list of ``ObjectiveBank Ids`` mapped to a ``Activity``.
 
-        arg:    activity_id (osid.id.Id): ``Id`` of a ``Activity``
-        return: (osid.id.IdList) - list of objective bank ``Ids``
-        raise:  NotFound - ``activity_id`` is not found
-        raise:  NullArgument - ``activity_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: ``Id`` of a ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :return: list of objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``activity_id`` is not found
+        :raise: ``NullArgument`` -- ``activity_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def get_objective_banks_by_activity(self, activity_id):
         """Gets the list of ``ObjectiveBanks`` mapped to a ``Activity``.
 
-        arg:    activity_id (osid.id.Id): ``Id`` of a ``Activity``
-        return: (osid.learning.ObjectiveBankList) - list of objective
-                bank ``Ids``
-        raise:  NotFound - ``activity_id`` is not found
-        raise:  NullArgument - ``activity_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: ``Id`` of a ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :return: list of objective bank ``Ids``
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- ``activity_id`` is not found
+        :raise: ``NullArgument`` -- ``activity_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -2696,9 +2740,6 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
     ``Id`` ).
 
     """
-    
-
-
 
     def can_assign_activities(self):
         """Tests if this user can alter activity/objective bank mappings.
@@ -2709,13 +2750,14 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
 
-        return: (boolean) - ``false`` if mapping is not authorized,
-                ``true`` otherwise
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def can_assign_activities_to_objective_bank(self, objective_bank_id):
         """Tests if this user can alter activity/objective bank mappings.
@@ -2726,107 +2768,104 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         intended as a hint to an application that may opt not to offer
         assignment operations to unauthorized users.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        return: (boolean) - ``false`` if mapping is not authorized,
-                ``true`` otherwise
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_assignable_objective_bank_ids(self, objective_bank_id):
         """Gets a list of objective banks including and under the given objective bank node in which any activity can be
         assigned.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.id.IdList) - list of assignable objective bank
-                ``Ids``
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: list of assignable objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
-
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
         """Gets a list of objective banks including and under the given objective bank node in which a specific activity
         can be assigned.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        arg:    activity_id (osid.id.Id): the ``Id`` of the ``Activity``
-        return: (osid.id.IdList) - list of assignable objective bank
-                ``Ids``
-        raise:  NullArgument - ``activity_id`` or ``objective_bank_id``
-                is ``null``
-        raise:  OperationFailed - unable to complete request
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :param activity_id: the ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :return: list of assignable objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def assign_activity_to_objective_bank(self, activity_id, objective_bank_id):
         """Adds an existing ``Activity`` to a ``ObjectiveBank``.
 
-        arg:    activity_id (osid.id.Id): the ``Id`` of the ``Activity``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        raise:  AlreadyExists - ``activity_id`` already mapped to
-                ``objective_bank_id``
-        raise:  NotFound - ``activity_id`` or ``objective_bank_id`` not
-                found
-        raise:  NullArgument - ``activity_id`` or ``objective_bank_id``
-                is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: the ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``activity_id`` already mapped to ``objective_bank_id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def unassign_activity_from_objective_bank(self, activity_id, objective_bank_id):
         """Removes a ``Activity`` from a ``ObjectiveBank``.
 
-        arg:    activity_id (osid.id.Id): the ``Id`` of the ``Activity``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        raise:  NotFound - ``activity_id`` or ``objective_bank_id`` not
-                found or ``activity_id`` not mapped to
-                ``objective_bank_id``
-        raise:  NullArgument - ``activity_id`` or ``objective_bank_id``
-                is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: the ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to
+        ``objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
 
         Mappings to other ``ObjectiveBanks`` are unaffected.
 
-        arg:    activity_id (osid.id.Id): the ``Id`` of the ``Activity``
-        arg:    from_objective_bank_id (osid.id.Id): the ``Id`` of the
-                current ``ObjectiveBank``
-        arg:    to_objective_bank_id (osid.id.Id): the ``Id`` of the
-                destination ``ObjectiveBank``
-        raise:  NotFound - ``activity_id, from_objective_bank_id,`` or
-                ``to_objective_bank_id`` not found or ``activity_id``
-                not mapped to ``from_objective_bank_id``
-        raise:  NullArgument - ``activity_id, from_objective_bank_id,``
-                or ``to_objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param activity_id: the ``Id`` of the ``Activity``
+        :type activity_id: ``osid.id.Id``
+        :param from_objective_bank_id: the ``Id`` of the current ``ObjectiveBank``
+        :type from_objective_bank_id: ``osid.id.Id``
+        :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
+        :type to_objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
+        ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -2858,9 +2897,6 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
     cast of the ``ObjectiveBank``.
 
     """
-    
-
-
 
     def can_lookup_objective_banks(self):
         """Tests if this user can perform ``ObjectiveBank`` lookups.
@@ -2871,13 +2907,14 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         as a hint to an application that may opt not to offer lookup
         operations to unauthorized users.
 
-        return: (boolean) - ``false`` if lookup methods are not
-                authorized, ``true`` otherwise
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_bank_view(self):
         """The returns from the lookup methods may omit or translate elements based on this session, such as
@@ -2886,11 +2923,12 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``ObjectiveBank`` returns is desired.
@@ -2899,11 +2937,12 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def get_objective_bank(self, objective_bank_id):
         """Gets the ``ObjectiveBank`` specified by its ``Id``.
@@ -2914,18 +2953,19 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         duplicate ``Id`` was assigned to a ``ObjectiveBank`` and
         retained for compatility.
 
-        arg:    objective_bank_id (osid.id.Id): ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.learning.ObjectiveBank) - the objective bank
-        raise:  NotFound - ``objective_bank_id`` not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the objective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
-
 
     def get_objective_banks_by_ids(self, objective_bank_ids):
         """Gets a ``ObjectiveBankList`` corresponding to the given ``IdList``.
@@ -2938,19 +2978,19 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         list and may present the elements in any order including
         returning a unique set.
 
-        arg:    objective_bank_ids (osid.id.IdList): the list of ``Ids``
-                to retrieve
-        return: (osid.learning.ObjectiveBankList) - the returned
-                ``ObjectiveBank`` list
-        raise:  NotFound - an ``Id was`` not found
-        raise:  NullArgument - ``objective_bank_ids`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_ids: the list of ``Ids`` to retrieve
+        :type objective_bank_ids: ``osid.id.IdList``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
-
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
         """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include
@@ -2961,18 +3001,18 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         contain only those objective banks that are accessible through
         this session.
 
-        arg:    objective_bank_genus_type (osid.type.Type): an objective
-                bank genus type
-        return: (osid.learning.ObjectiveBankList) - the returned
-                ``ObjectiveBank`` list
-        raise:  NullArgument - ``objective_bank_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_genus_type: an objective bank genus type
+        :type objective_bank_genus_type: ``osid.type.Type``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
-
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
         """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any
@@ -2983,18 +3023,18 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         contain only those objective banks that are accessible through
         this session.
 
-        arg:    objective_bank_genus_type (osid.type.Type): an objective
-                bank genus type
-        return: (osid.learning.ObjectiveBankList) - the returned
-                ``ObjectiveBank`` list
-        raise:  NullArgument - ``objective_bank_genus_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_genus_type: an objective bank genus type
+        :type objective_bank_genus_type: ``osid.type.Type``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
-
 
     def get_objective_banks_by_record_type(self, objective_bank_record_type):
         """Gets a ``ObjectiveBankList`` containing the given objective bank record ``Type``.
@@ -3004,19 +3044,18 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         contain only those objective banks that are accessible through
         this session.
 
-        arg:    objective_bank_record_type (osid.type.Type): an
-                objective bank record type
-        return: (osid.learning.ObjectiveBankList) - the returned
-                ``ObjectiveBank`` list
-        raise:  NullArgument - ``objective_bank_record_type`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_record_type: an objective bank record type
+        :type objective_bank_record_type: ``osid.type.Type``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
-
 
     def get_objective_banks_by_provider(self, resource_id):
         """Gets a ``ObjectiveBankList`` for the given provider.
@@ -3026,17 +3065,18 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         contain only those objective banks that are accessible through
         this session.
 
-        arg:    resource_id (osid.id.Id): a resource ``Id``
-        return: (osid.learning.ObjectiveBankList) - the returned
-                ``ObjectiveBank`` list
-        raise:  NullArgument - ``resource_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``ObjectiveBank`` list
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
-
 
     def get_objective_banks(self):
         """Gets all ``ObjectiveBanks``.
@@ -3046,10 +3086,11 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         contain only those objective banks that are accessible through
         this session.
 
-        return: (osid.learning.ObjectiveBankList) - a
-                ``ObjectiveBankList``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: a ``ObjectiveBankList``
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -3092,9 +3133,6 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
     external ``Id`` to an internally assigned Id.
 
     """
-    
-
-
 
     def can_create_objective_banks(self):
         """Tests if this user can create ``ObjectiveBanks``.
@@ -3105,13 +3143,14 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may not wish to offer
         create operations to unauthorized users.
 
-        return: (boolean) - ``false`` if ``ObjectiveBank`` creation is
-                not authorized, ``true`` otherwise
+        :return: ``false`` if ``ObjectiveBank`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def can_create_objective_bank_with_record_types(self, objective_bank_record_types):
         """Tests if this user can create a single ``ObjectiveBank`` using the desired record types.
@@ -3122,61 +3161,55 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         ``ObjectiveBank``. Providing an empty array tests if an
         ``ObjectiveBank`` can be created with no records.
 
-        arg:    objective_bank_record_types (osid.type.Type[]): array of
-                objective bank record types
-        return: (boolean) - ``true`` if ``ObjectiveBank`` creation using
-                the specified ``Types`` is supported, ``false``
-                otherwise
-        raise:  NullArgument - ``objective_bank_record_types`` is
-                ``null``
+        :param objective_bank_record_types: array of objective bank record types
+        :type objective_bank_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_objective_bank_form_for_create(self, objective_bank_record_types):
         """Gets the objective bank form for creating new objective banks.
 
         A new form should be requested for each create transaction.
 
-        arg:    objective_bank_record_types (osid.type.Type[]): array of
-                objective bank record types
-        return: (osid.learning.ObjectiveBankForm) - the objective bank
-                form
-        raise:  NullArgument - ``objective_bank_record_types`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - unable to get form for requested record
-                types.
+        :param objective_bank_record_types: array of objective bank record types
+        :type objective_bank_record_types: ``osid.type.Type[]``
+        :return: the objective bank form
+        :rtype: ``osid.learning.ObjectiveBankForm``
+        :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types.
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankForm
 
-
     def create_objective_bank(self, objective_bank_form):
         """Creates a new ``ObjectiveBank``.
 
-        arg:    objective_bank_form (osid.learning.ObjectiveBankForm):
-                the form for this ``ObjectiveBank``
-        return: (osid.learning.ObjectiveBank) - the new
-                ``ObjectiveBank``
-        raise:  IllegalState - ``objective_bank_form`` already used in a
-                create transaction
-        raise:  InvalidArgument - one or more of the form elements is
-                invalid
-        raise:  NullArgument - ``objective_bank_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``objective_bank_form`` did not originate
-                from ``get_objective_bank_form_for_create()``
+        :param objective_bank_form: the form for this ``ObjectiveBank``
+        :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
+        :return: the new ``ObjectiveBank``
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``IllegalState`` -- ``objective_bank_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_bank_form`` did not originate from
+        ``get_objective_bank_form_for_create()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBank
-
 
     def can_update_objective_banks(self):
         """Tests if this user can update ``ObjectiveBanks``.
@@ -3187,13 +3220,14 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may not wish to offer
         update operations to unauthorized users.
 
-        return: (boolean) - ``false`` if ``ObjectiveBank`` modification
-                is not authorized, ``true`` otherwise
+        :return: ``false`` if ``ObjectiveBank`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def get_objective_bank_form_for_update(self, objective_bank_id):
         """Gets the objective bank form for updating an existing objective bank.
@@ -3201,38 +3235,36 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         A new objective bank form should be requested for each update
         transaction.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank``
-        return: (osid.learning.ObjectiveBankForm) - the objective bank
-                form
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the objective bank form
+        :rtype: ``osid.learning.ObjectiveBankForm``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankForm
 
-
     def update_objective_bank(self, objective_bank_form):
         """Updates an existing objective bank.
 
-        arg:    objective_bank_form (osid.learning.ObjectiveBankForm):
-                the form containing the elements to be updated
-        raise:  IllegalState - ``objective_bank_form`` already used in
-                an update transaction
-        raise:  InvalidArgument - the form contains an invalid value
-        raise:  NullArgument - ``objective_bank_form`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
-        raise:  Unsupported - ``objective_bank_form did not originate
-                from get_objective_bank_form_for_update()``
+        :param objective_bank_form: the form containing the elements to be updated
+        :type objective_bank_form: ``osid.learning.ObjectiveBankForm``
+        :raise: ``IllegalState`` -- ``objective_bank_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_delete_objective_banks(self):
         """Tests if this user can delete objective banks.
@@ -3243,28 +3275,29 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         intended as a hint to an application that may not wish to offer
         delete operations to unauthorized users.
 
-        return: (boolean) - ``false`` if ``ObjectiveBank`` deletion is
-                not authorized, ``true`` otherwise
+        :return: ``false`` if ``ObjectiveBank`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def delete_objective_bank(self, objective_bank_id):
         """Deletes an ``ObjectiveBank``.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of the
-                ``ObjectiveBank`` to remove
-        raise:  NotFound - ``objective_bank_id`` not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of the ``ObjectiveBank`` to remove
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def can_manage_objective_bank_aliases(self):
         """Tests if this user can manage ``Id`` aliases for ``ObjectiveBanks``.
@@ -3275,13 +3308,14 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer alias
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if ``ObjectiveBank`` aliasing is
-                not authorized, ``true`` otherwise
+        :return: ``false`` if ``ObjectiveBank`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def alias_objective_bank(self, objective_bank_id, alias_id):
         """Adds an ``Id`` to an ``ObjectiveBank`` for the purpose of creating compatibility.
@@ -3291,15 +3325,16 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         ``Id``. If the alias is a pointer to another objective bank, it
         is reassigned to the given objective bank ``Id``.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                ``ObjectiveBank``
-        arg:    alias_id (osid.id.Id): the alias ``Id``
-        raise:  AlreadyExists - ``alias_id`` is already assigned
-        raise:  NotFound - ``objective_bank_id`` not found
-        raise:  NullArgument - ``objective_bank_id`` or ``alias_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -3333,15 +3368,14 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
       * plenary view: provides a complete set or is an error condition
 
     """
-    
-
-
 
     def get_objective_bank_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -3349,21 +3383,20 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
 
     objective_bank_hierarchy_id = property(fget=get_objective_bank_hierarchy_id)
 
-
     def get_objective_bank_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     objective_bank_hierarchy = property(fget=get_objective_bank_hierarchy)
-
 
     def can_access_objective_bank_hierarchy(self):
         """Tests if this user can perform hierarchy queries.
@@ -3374,13 +3407,14 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         as a hint to an an application that may not offer traversal
         functions to unauthorized users.
 
-        return: (boolean) - ``false`` if hierarchy traversal methods are
-                not authorized, ``true`` otherwise
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def use_comparative_objective_bank_view(self):
         """The returns from the objective bank methods may omit or translate elements based on this session, such as
@@ -3389,11 +3423,12 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         This view is used when greater interoperability is desired at
         the expense of precision.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
-
 
     def use_plenary_objective_bank_view(self):
         """A complete view of the ``Hierarchy`` returns is desired.
@@ -3402,18 +3437,21 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         This view is used when greater precision is desired at the
         expense of interoperability.
 
+
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
         pass
 
-
     def get_root_objective_bank_ids(self):
         """Gets the root objective bank ``Ids`` in this hierarchy.
 
-        return: (osid.id.IdList) - the root objective bank ``Ids``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the root objective bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -3421,14 +3459,14 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
 
     root_objective_bank_ids = property(fget=get_root_objective_bank_ids)
 
-
     def get_root_objective_banks(self):
         """Gets the root objective banks in this objective bank hierarchy.
 
-        return: (osid.learning.ObjectiveBankList) - the root objective
-                banks
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the root objective banks
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method is must be implemented.*
 
         """
@@ -3436,229 +3474,233 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
 
     root_objective_banks = property(fget=get_root_objective_banks)
 
-
     def has_parent_objective_banks(self, objective_bank_id):
         """Tests if the ``ObjectiveBank`` has any parents.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (boolean) - ``true`` if the objective bank has parents,
-                ``false`` otherwise
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the objective bank has parents, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_parent_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is a direct parent of an objective bank.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (boolean) - ``true`` if this ``id`` is a parent of
-                ``objective_bank_id,``  ``false`` otherwise
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_bank_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` not found return ``false``.
 
         """
         return # boolean
-
 
     def get_parent_objective_bank_ids(self, objective_bank_id):
         """Gets the parent ``Ids`` of the given objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (osid.id.IdList) - the parent ``Ids`` of the objective
-                bank
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the objective bank
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
-
 
     def get_parent_objective_banks(self, objective_bank_id):
         """Gets the parents of the given objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (osid.learning.ObjectiveBankList) - the parents of the
-                objective bank
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the parents of the objective bank
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
 
-
     def is_ancestor_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is an ancestor of an objective bank.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (boolean) - ``true`` if this ``id`` is an ancestor of
-                ``objective_bank_id,`` ``false`` otherwise
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_bank_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` not found return ``false``.
 
         """
         return # boolean
-
 
     def has_child_objective_banks(self, objective_bank_id):
         """Tests if an objective bank has any children.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (boolean) - ``true`` if the ``objective_bank_id`` has
-                children, ``false`` otherwise
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``objective_bank_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def is_child_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an objective bank is a direct child of another.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (boolean) - ``true`` if the ``id`` is a child of
-                ``objective_bank_id,``  ``false`` otherwise
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_bank_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` not found return ``false``.
 
         """
         return # boolean
 
-
     def get_child_objective_bank_ids(self, objective_bank_id):
         """Gets the child ``Ids`` of the given objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` to query
-        return: (osid.id.IdList) - the children of the objective bank
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the children of the objective bank
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.id.IdList
 
-
     def get_child_objective_banks(self, objective_bank_id):
         """Gets the children of the given objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` to query
-        return: (osid.learning.ObjectiveBankList) - the children of the
-                objective bank
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the children of the objective bank
+        :rtype: ``osid.learning.ObjectiveBankList``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.learning.ObjectiveBankList
 
-
     def is_descendant_of_objective_bank(self, id_, objective_bank_id):
         """Tests if an ``Id`` is a descendant of an objective bank.
 
-        arg:    id (osid.id.Id): an ``Id``
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        return: (boolean) - ``true`` if the ``id`` is a descendant of
-                the ``objective_bank_id,`` ``false`` otherwise
-        raise:  NotFound - ``objective_bank_id`` is not found
-        raise:  NullArgument - ``id`` or ``objective_bank_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: If ``id`` is not found return ``false``.
 
         """
         return # boolean
 
-
     def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` to query
-        arg:    ancestor_levels (cardinal): the maximum number of
-                ancestor levels to include. A value of 0 returns no
-                parents in the node.
-        arg:    descendant_levels (cardinal): the maximum number of
-                descendant levels to include. A value of 0 returns no
-                children in the node.
-        arg:    include_siblings (boolean): ``true`` to include the
-                siblings of the given node, ``false`` to omit the
-                siblings
-        return: (osid.hierarchy.Node) - a catalog node
-        raise:  NotFound - ``objective_bank_id`` not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+        node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+        in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a catalog node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Node
 
-
     def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` to query
-        arg:    ancestor_levels (cardinal): the maximum number of
-                ancestor levels to include. A value of 0 returns no
-                parents in the node.
-        arg:    descendant_levels (cardinal): the maximum number of
-                descendant levels to include. A value of 0 returns no
-                children in the node.
-        arg:    include_siblings (boolean): ``true`` to include the
-                siblings of the given node, ``false`` to omit the
-                siblings
-        return: (osid.learning.ObjectiveBankNode) - an objective bank
-                node
-        raise:  NotFound - ``objective_bank_id`` not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` to query
+        :type objective_bank_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+        node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+        in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: an objective bank node
+        :rtype: ``osid.learning.ObjectiveBankNode``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -3671,15 +3713,14 @@ class ObjectiveBankHierarchyDesignSession(osid_sessions.OsidSession):
     Each node in the hierarchy is a unique ``ObjectiveBank``.
 
     """
-    
-
-
 
     def get_objective_bank_hierarchy_id(self):
         """Gets the hierarchy ``Id`` associated with this session.
 
-        return: (osid.id.Id) - the hierarchy ``Id`` associated with this
-                session
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -3687,21 +3728,20 @@ class ObjectiveBankHierarchyDesignSession(osid_sessions.OsidSession):
 
     objective_bank_hierarchy_id = property(fget=get_objective_bank_hierarchy_id)
 
-
     def get_objective_bank_hierarchy(self):
         """Gets the hierarchy associated with this session.
 
-        return: (osid.hierarchy.Hierarchy) - the hierarchy associated
-                with this session
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.hierarchy.Hierarchy
 
     objective_bank_hierarchy = property(fget=get_objective_bank_hierarchy)
-
 
     def can_modify_objective_bank_hierarchy(self):
         """Tests if this user can change the hierarchy.
@@ -3712,93 +3752,91 @@ class ObjectiveBankHierarchyDesignSession(osid_sessions.OsidSession):
         hint to an application that may opt not to offer these
         operations to an unauthorized user.
 
-        return: (boolean) - ``false`` if changing this hierarchy is not
-                authorized, ``true`` otherwise
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def add_root_objective_bank(self, objective_bank_id):
         """Adds a root objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        raise:  AlreadyExists - ``objective_bank_id`` is already in
-                hierarchy
-        raise:  NotFound - ``objective_bank_id`` not found
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_bank_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def remove_root_objective_bank(self, objective_bank_id):
         """Removes a root objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        raise:  NotFound - ``objective_bank_id`` is not a root
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` is not a root
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def add_child_objective_bank(self, objective_bank_id, child_id):
         """Adds a child to an objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        arg:    child_id (osid.id.Id): the ``Id`` of the new child
-        raise:  AlreadyExists - ``objective_bank_id`` is already a
-                parent of ``child_id``
-        raise:  NotFound - ``objective_bank_id`` or ``child_id`` not
-                found
-        raise:  NullArgument - ``objective_bank_id`` or ``child_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``objective_bank_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
-
 
     def remove_child_objective_bank(self, objective_bank_id, child_id):
         """Removes a child from an objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        arg:    child_id (osid.id.Id): the ``Id`` of the child
-        raise:  NotFound - ``objective_bank_id`` not a parent of
-                ``child_id``
-        raise:  NullArgument - ``objective_bank_id`` or ``child_id`` is
-                ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def remove_child_objective_banks(self, objective_bank_id):
         """Removes all children from an objective bank.
 
-        arg:    objective_bank_id (osid.id.Id): the ``Id`` of an
-                objective bank
-        raise:  NotFound - ``objective_bank_id`` not in hierarchy
-        raise:  NullArgument - ``objective_bank_id`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  PermissionDenied - authorization failure
+        :param objective_bank_id: the ``Id`` of an objective bank
+        :type objective_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not in hierarchy
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

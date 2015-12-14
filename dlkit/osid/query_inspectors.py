@@ -1,3 +1,4 @@
+
 from ..osid import markers as osid_markers
 
 
@@ -10,11 +11,15 @@ class OsidQueryInspector:
     modification in the search sessions.
 
     """
+
     def get_keyword_terms(self):
         """Gets the keyword query terms.
 
         :return: the keyword string terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -26,6 +31,9 @@ class OsidQueryInspector:
 
         :return: the any terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -42,11 +50,15 @@ class OsidIdentifiableQueryInspector(OsidQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_id_terms(self):
         """Gets the ``Id`` query terms.
 
         :return: the ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -63,11 +75,15 @@ class OsidExtensibleQueryInspector(OsidQueryInspector, osid_markers.Extensible):
     modification in the search sessions.
 
     """
+
     def get_record_type_terms(self):
         """Gets the record type query terms.
 
         :return: the record type terms
         :rtype: ``osid.search.terms.TypeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.TypeTerm
@@ -87,6 +103,7 @@ class OsidBrowsableQueryInspector(OsidQueryInspector):
 
 
 
+
 class OsidTemporalQueryInspector(OsidQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -96,11 +113,15 @@ class OsidTemporalQueryInspector(OsidQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_effective_terms(self):
         """Gets the effective query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -113,6 +134,9 @@ class OsidTemporalQueryInspector(OsidQueryInspector):
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -124,6 +148,9 @@ class OsidTemporalQueryInspector(OsidQueryInspector):
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -134,6 +161,9 @@ class OsidTemporalQueryInspector(OsidQueryInspector):
 
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DateTimeRangeTerm
@@ -153,6 +183,7 @@ class OsidSubjugateableQueryInspector(OsidQueryInspector):
 
 
 
+
 class OsidAggregateableQueryInspector(OsidQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -165,6 +196,7 @@ class OsidAggregateableQueryInspector(OsidQueryInspector):
 
 
 
+
 class OsidContainableQueryInspector(OsidQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -174,11 +206,15 @@ class OsidContainableQueryInspector(OsidQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_sequestered_terms(self):
         """Gets the sequestered query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -195,11 +231,15 @@ class OsidSourceableQueryInspector(OsidQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_provider_id_terms(self):
         """Gets the provider ``Id`` query terms.
 
         :return: the provider ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -212,6 +252,9 @@ class OsidSourceableQueryInspector(OsidQueryInspector):
         :return: the provider terms
         :rtype: ``osid.resource.ResourceQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.resource.ResourceQueryInspector
 
@@ -222,6 +265,9 @@ class OsidSourceableQueryInspector(OsidQueryInspector):
 
         :return: the asset ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -234,6 +280,9 @@ class OsidSourceableQueryInspector(OsidQueryInspector):
         :return: the branding terms
         :rtype: ``osid.repository.AssetQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.repository.AssetQueryInspector
 
@@ -244,6 +293,9 @@ class OsidSourceableQueryInspector(OsidQueryInspector):
 
         :return: the license terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -263,6 +315,7 @@ class OsidFederateableQueryInspector(OsidQueryInspector):
 
 
 
+
 class OsidOperableQueryInspector(OsidQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -272,11 +325,15 @@ class OsidOperableQueryInspector(OsidQueryInspector):
     modification in the search sessions.
 
     """
+
     def get_active_terms(self):
         """Gets the active query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -289,6 +346,9 @@ class OsidOperableQueryInspector(OsidQueryInspector):
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -300,6 +360,9 @@ class OsidOperableQueryInspector(OsidQueryInspector):
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -310,6 +373,9 @@ class OsidOperableQueryInspector(OsidQueryInspector):
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -326,11 +392,15 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
     modification in the search sessions.
 
     """
+
     def get_display_name_terms(self):
         """Gets the display name query terms.
 
         :return: the display name terms
         :rtype: ``osid.search.terms.StringTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.StringTerm
@@ -343,6 +413,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the description terms
         :rtype: ``osid.search.terms.StringTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.StringTerm
 
@@ -353,6 +426,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the genus type terms
         :rtype: ``osid.search.terms.TypeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.TypeTerm
@@ -365,6 +441,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the parent genus type terms
         :rtype: ``osid.search.terms.TypeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.TypeTerm
 
@@ -375,6 +454,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the subject ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -387,6 +469,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the subject query terms
         :rtype: ``osid.ontology.SubjectQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.ontology.SubjectQueryInspector
 
@@ -397,6 +482,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the subject relevancy query terms
         :rtype: ``osid.ontology.RelevancyQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.ontology.RelevancyQueryInspector
@@ -409,6 +497,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the state ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -419,6 +510,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the state query terms
         :rtype: ``osid.process.StateQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.process.StateQueryInspector
@@ -431,6 +525,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the comment ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -441,6 +538,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the comment query terms
         :rtype: ``osid.commenting.CommentQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.commenting.CommentQueryInspector
@@ -453,6 +553,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the journal entry ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -463,6 +566,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the journal entry query terms
         :rtype: ``osid.journaling.JournalEntryQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.journaling.JournalEntryQueryInspector
@@ -475,6 +581,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the statistic query terms
         :rtype: ``osid.metering.StatisticQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.metering.StatisticQueryInspector
 
@@ -485,6 +594,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the credit ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -497,6 +609,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the credit query terms
         :rtype: ``osid.acknowledgement.CreditQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.acknowledgement.CreditQueryInspector
 
@@ -507,6 +622,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the relationship ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -519,6 +637,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
         :return: the relationship query terms
         :rtype: ``osid.relationship.RelationshipQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.relationship.RelationshipQueryInspector
 
@@ -529,6 +650,9 @@ class OsidObjectQueryInspector(OsidIdentifiableQueryInspector, OsidExtensibleQue
 
         :return: the relationship peer ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -545,11 +669,15 @@ class OsidRelationshipQueryInspector(OsidObjectQueryInspector, OsidTemporalQuery
     modification in the search sessions.
 
     """
+
     def get_end_reason_id_terms(self):
         """Gets the end reaosn state ``Id`` query terms.
 
         :return: the state ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -561,6 +689,9 @@ class OsidRelationshipQueryInspector(OsidObjectQueryInspector, OsidTemporalQuery
 
         :return: the state query terms
         :rtype: ``osid.process.StateQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.process.StateQueryInspector
@@ -580,6 +711,7 @@ class OsidCatalogQueryInspector(OsidObjectQueryInspector, OsidSourceableQueryIns
 
 
 
+
 class OsidRuleQueryInspector(OsidObjectQueryInspector, OsidOperableQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -589,11 +721,15 @@ class OsidRuleQueryInspector(OsidObjectQueryInspector, OsidOperableQueryInspecto
     modification in the search sessions.
 
     """
+
     def get_rule_id_terms(self):
         """Gets the rule ``Id`` query terms.
 
         :return: the rule ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -605,6 +741,9 @@ class OsidRuleQueryInspector(OsidObjectQueryInspector, OsidOperableQueryInspecto
 
         :return: the rule query terms
         :rtype: ``osid.rules.RuleQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.rules.RuleQueryInspector
@@ -621,11 +760,15 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
     modification in the search sessions.
 
     """
+
     def get_schedule_id_terms(self):
         """Gets the effective schedule ``Id`` query terms.
 
         :return: the effecive schedule ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -638,6 +781,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
         :return: the query terms
         :rtype: ``osid.calendaring.ScheduleQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.calendaring.ScheduleQueryInspector
 
@@ -648,6 +794,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
 
         :return: the effecive recurring event ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -660,6 +809,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
         :return: the query terms
         :rtype: ``osid.calendaring.EventQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.calendaring.EventQueryInspector
 
@@ -670,6 +822,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
 
         :return: the query terms
         :rtype: ``osid.search.terms.IdTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.IdTerm
@@ -682,6 +837,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
         :return: the query terms
         :rtype: ``osid.calendaring.cycle.CyclicEventQueryInspector``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.calendaring.cycle.CyclicEventQueryInspector
 
@@ -693,6 +851,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
         :return: the resource ``Id`` terms
         :rtype: ``osid.search.terms.IdTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.IdTerm
 
@@ -703,6 +864,9 @@ class OsidEnablerQueryInspector(OsidRuleQueryInspector, OsidTemporalQueryInspect
 
         :return: the resource query terms
         :rtype: ``osid.resource.ResourceQueryInspector``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.resource.ResourceQueryInspector
@@ -722,6 +886,7 @@ class OsidConstrainerQueryInspector(OsidRuleQueryInspector):
 
 
 
+
 class OsidProcessorQueryInspector(OsidRuleQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -731,6 +896,7 @@ class OsidProcessorQueryInspector(OsidRuleQueryInspector):
     modification in the search sessions.
 
     """
+
 
 
 
@@ -746,6 +912,7 @@ class OsidGovernatorQueryInspector(OsidObjectQueryInspector, OsidOperableQueryIn
 
 
 
+
 class OsidCompendiumQueryInspector(OsidObjectQueryInspector, OsidSubjugateableQueryInspector):
     """The query inspectors provide a means of accessing the match terms of a query.
 
@@ -755,11 +922,15 @@ class OsidCompendiumQueryInspector(OsidObjectQueryInspector, OsidSubjugateableQu
     modification in the search sessions.
 
     """
+
     def get_start_date_terms(self):
         """Gets the start date query terms.
 
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.DateTimeRangeTerm
@@ -772,6 +943,9 @@ class OsidCompendiumQueryInspector(OsidObjectQueryInspector, OsidSubjugateableQu
         :return: the query terms
         :rtype: ``osid.search.terms.DateTimeRangeTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.DateTimeRangeTerm
 
@@ -783,6 +957,9 @@ class OsidCompendiumQueryInspector(OsidObjectQueryInspector, OsidSubjugateableQu
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.search.terms.BooleanTerm
 
@@ -793,6 +970,9 @@ class OsidCompendiumQueryInspector(OsidObjectQueryInspector, OsidSubjugateableQu
 
         :return: the query terms
         :rtype: ``osid.search.terms.BooleanTerm``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.search.terms.BooleanTerm
@@ -809,6 +989,7 @@ class OsidCapsuleQueryInspector(OsidQueryInspector):
     modification in the search sessions.
 
     """
+
 
 
 

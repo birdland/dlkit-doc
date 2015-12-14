@@ -18,22 +18,20 @@ class Resource(osid_objects.OsidObject):
     one of the group sessions available in this OSID.
 
     """
-    
-
-
 
     def is_group(self):
         """Tests if this resource is a group.
 
         A resource that is a group can be used in the group sessions.
 
-        return: (boolean) - ``true`` if this resource is a group,
-                ``false`` otherwise
+        :return: ``true`` if this resource is a group, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def is_demographic(self):
         """Tests if this resource is a demographic.
@@ -41,30 +39,34 @@ class Resource(osid_objects.OsidObject):
         A resource that is a demographic can be used in the demographic
         service and the group sessions.
 
-        return: (boolean) - ``true`` if this resource is a demographic,
-                ``false`` otherwise
+        :return: ``true`` if this resource is a demographic, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
-
 
     def has_avatar(self):
         """Tests if this resource has an avatar.
 
-        return: (boolean) - ``true`` if this resource has an avatar,
-                ``false`` otherwise
+        :return: ``true`` if this resource has an avatar, ``false`` otherwise
+        :rtype: ``boolean``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # boolean
 
-
     def get_avatar_id(self):
         """Gets the asset ``Id``.
 
-        return: (osid.id.Id) - the asset ``Id``
-        raise:  IllegalState - ``has_avatar()`` is ``false``
+        :return: the asset ``Id``
+        :rtype: ``osid.id.Id``
+        :raise: ``IllegalState`` -- ``has_avatar()`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -72,20 +74,20 @@ class Resource(osid_objects.OsidObject):
 
     avatar_id = property(fget=get_avatar_id)
 
-
     def get_avatar(self):
         """Gets the asset.
 
-        return: (osid.repository.Asset) - the asset
-        raise:  IllegalState - ``has_avatar()`` is ``false``
-        raise:  OperationFailed - unable to complete request
+        :return: the asset
+        :rtype: ``osid.repository.Asset``
+        :raise: ``IllegalState`` -- ``has_avatar()`` is ``false``
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.repository.Asset
 
     avatar = property(fget=get_avatar)
-
 
     def get_resource_record(self, resource_record_type):
         """Gets the resource record corresponding to the given ``Resource`` record ``Type``.
@@ -96,14 +98,14 @@ class Resource(osid_objects.OsidObject):
         parents in a ``Type`` hierarchy where
         ``has_record_type(resource_record_type)`` is ``true`` .
 
-        arg:    resource_record_type (osid.type.Type): the resource
-                record type
-        return: (osid.resource.records.ResourceRecord) - the resource
-                record
-        raise:  NullArgument - ``resource_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(resource_record_type)``
-                is ``false``
+        :param resource_record_type: the resource record type
+        :type resource_record_type: ``osid.type.Type``
+        :return: the resource record
+        :rtype: ``osid.resource.records.ResourceRecord``
+        :raise: ``NullArgument`` -- ``resource_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(resource_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -123,14 +125,14 @@ class ResourceForm(osid_objects.OsidObjectForm):
     if it is possible to convert a resource to a group and vice-versa.
 
     """
-    
-
-
 
     def get_group_metadata(self):
         """Gets the metadata for a group.
 
-        return: (osid.Metadata) - metadata for the group
+        :return: metadata for the group
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -138,25 +140,24 @@ class ResourceForm(osid_objects.OsidObjectForm):
 
     group_metadata = property(fget=get_group_metadata)
 
-
     def set_group(self, group):
         """Sets the resource as a group.
 
-        arg:    group (boolean): ``true`` if this resource is a group,
-                ``false`` otherwise
-        raise:  InvalidArgument - ``group`` is invalid
-        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        :param group: ``true`` if this resource is a group, ``false`` otherwise
+        :type group: ``boolean``
+        :raise: ``InvalidArgument`` -- ``group`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_group(self):
         """Clears the group designation.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -164,11 +165,13 @@ class ResourceForm(osid_objects.OsidObjectForm):
 
     group = property(fset=set_group, fdel=clear_group)
 
-
     def get_avatar_metadata(self):
         """Gets the metadata for an asset.
 
-        return: (osid.Metadata) - metadata for the asset
+        :return: metadata for the asset
+        :rtype: ``osid.Metadata``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -176,24 +179,24 @@ class ResourceForm(osid_objects.OsidObjectForm):
 
     avatar_metadata = property(fget=get_avatar_metadata)
 
-
     def set_avatar(self, asset_id):
         """Sets the avatar asset.
 
-        arg:    asset_id (osid.id.Id): an asset ``Id``
-        raise:  InvalidArgument - ``asset_id`` is invalid
-        raise:  NoAccess - ``Metadata.isReadOnly()`` is ``true``
+        :param asset_id: an asset ``Id``
+        :type asset_id: ``osid.id.Id``
+        :raise: ``InvalidArgument`` -- ``asset_id`` is invalid
+        :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
         pass
 
-
     def clear_avatar(self):
         """Clears the asset.
 
-        raise:  NoAccess - ``Metadata.isRequired()`` or
-                ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -201,18 +204,17 @@ class ResourceForm(osid_objects.OsidObjectForm):
 
     avatar = property(fset=set_avatar, fdel=clear_avatar)
 
-
     def get_resource_form_record(self, resource_record_type):
         """Gets the ``ResourceFormRecord`` corresponding to the given ``Resource`` record ``Type``.
 
-        arg:    resource_record_type (osid.type.Type): the resource
-                record type
-        return: (osid.resource.records.ResourceFormRecord) - the
-                resource form record
-        raise:  NullArgument - ``resource_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(resource_record_type)``
-                is ``false``
+        :param resource_record_type: the resource record type
+        :type resource_record_type: ``osid.type.Type``
+        :return: the resource form record
+        :rtype: ``osid.resource.records.ResourceFormRecord``
+        :raise: ``NullArgument`` -- ``resource_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(resource_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -233,19 +235,16 @@ class ResourceList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_resource(self):
         """Gets the next ``Resource`` in this list.
 
-        return: (osid.resource.Resource) - the next ``Resource`` in this
-                list. The ``has_next()`` method should be used to test
-                that a next ``Resource`` is available before calling
-                this method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``Resource`` in this list. The ``has_next()`` method should be used to test that a next
+        ``Resource`` is available before calling this method.
+        :rtype: ``osid.resource.Resource``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -253,19 +252,18 @@ class ResourceList(osid_objects.OsidList):
 
     next_resource = property(fget=get_next_resource)
 
-
     def get_next_resources(self, n):
         """Gets the next set of ``Resources`` in this list which must be less than or equal to the return from
         ``available()``.
 
-        arg:    n (cardinal): the number of ``Resource`` elements
-                requested which must be less than or equal to
-                ``available()``
-        return: (osid.resource.Resource) - an array of ``Resource``
-                elements.The length of the array is less than or equal
-                to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``Resource`` elements requested which must be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``Resource`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.resource.Resource``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -280,15 +278,14 @@ class ResourceNode(osid_objects.OsidNode):
     ``BinHierarchySession``.
 
     """
-    
-
-
 
     def get_resource(self):
         """Gets the ``Resource`` at this node.
 
-        return: (osid.resource.Resource) - the resource represented by
-                this node
+        :return: the resource represented by this node
+        :rtype: ``osid.resource.Resource``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -296,12 +293,13 @@ class ResourceNode(osid_objects.OsidNode):
 
     resource = property(fget=get_resource)
 
-
     def get_parent_resource_nodes(self):
         """Gets the parents of this resource.
 
-        return: (osid.resource.ResourceNodeList) - the parents of the
-                resource
+        :return: the parents of the resource
+        :rtype: ``osid.resource.ResourceNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -309,12 +307,13 @@ class ResourceNode(osid_objects.OsidNode):
 
     parent_resource_nodes = property(fget=get_parent_resource_nodes)
 
-
     def get_child_resource_nodes(self):
         """Gets the children of this resource.
 
-        return: (osid.resource.ResourceNodeList) - the children of this
-                resource
+        :return: the children of this resource
+        :rtype: ``osid.resource.ResourceNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -337,19 +336,16 @@ class ResourceNodeList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_resource_node(self):
         """Gets the next ``ResourceNode`` in this list.
 
-        return: (osid.resource.ResourceNode) - the next ``ResourceNode``
-                in this list. The ``has_next()`` method should be used
-                to test that a next ``ResourceNode`` is available before
-                calling this method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``ResourceNode`` in this list. The ``has_next()`` method should be used to test that a next
+        ``ResourceNode`` is available before calling this method.
+        :rtype: ``osid.resource.ResourceNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -357,19 +353,18 @@ class ResourceNodeList(osid_objects.OsidList):
 
     next_resource_node = property(fget=get_next_resource_node)
 
-
     def get_next_resource_nodes(self, n):
         """Gets the next set of ``ResourceNode`` elements in this list which must be less than or equal to the return
         from ``available()``.
 
-        arg:    n (cardinal): the number of ``ResourceNode`` elements
-                requested which must be less than or equal to
-                ``available()``
-        return: (osid.resource.ResourceNode) - an array of
-                ``ResourceNode`` elements.The length of the array is
-                less than or equal to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``ResourceNode`` elements requested which must be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``ResourceNode`` elements.The length of the array is less than or equal to the number
+        specified.
+        :rtype: ``osid.resource.ResourceNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -378,9 +373,6 @@ class ResourceNodeList(osid_objects.OsidList):
 
 class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """An inventory defines a collection of resources."""
-    
-
-
 
     def get_bin_record(self, bin_record_type):
         """Gets the bin record corresponding to the given ``Bin`` record ``Type``.
@@ -391,12 +383,14 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         ``Type`` hierarchy where ``has_record_type(bin_record_type)`` is
         ``true`` .
 
-        arg:    bin_record_type (osid.type.Type): the bin record type
-        return: (osid.resource.records.BinRecord) - the bin record
-        raise:  NullArgument - ``bin_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(bin_record_type)`` is
-                ``false``
+        :param bin_record_type: the bin record type
+        :type bin_record_type: ``osid.type.Type``
+        :return: the bin record
+        :rtype: ``osid.resource.records.BinRecord``
+        :raise: ``NullArgument`` -- ``bin_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(bin_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -412,20 +406,18 @@ class BinForm(osid_objects.OsidCatalogForm):
     provide display hints or data constraints.
 
     """
-    
-
-
 
     def get_bin_form_record(self, bin_record_type):
         """Gets the ``BinFormRecord`` corresponding to the given bin record ``Type``.
 
-        arg:    bin_record_type (osid.type.Type): the bin record type
-        return: (osid.resource.records.BinFormRecord) - the bin form
-                record
-        raise:  NullArgument - ``bin_record_type`` is ``null``
-        raise:  OperationFailed - unable to complete request
-        raise:  Unsupported - ``has_record_type(bin_record_type)`` is
-                ``false``
+        :param bin_record_type: the bin record type
+        :type bin_record_type: ``osid.type.Type``
+        :return: the bin form record
+        :rtype: ``osid.resource.records.BinFormRecord``
+        :raise: ``NullArgument`` -- ``bin_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(bin_record_type)`` is ``false``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -445,18 +437,16 @@ class BinList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_bin(self):
         """Gets the next ``Bin`` in this list.
 
-        return: (osid.resource.Bin) - the next ``Bin`` in this list. The
-                ``has_next()`` method should be used to test that a next
-                ``Bin`` is available before calling this method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``Bin`` in this list. The ``has_next()`` method should be used to test that a next ``Bin`` is
+        available before calling this method.
+        :rtype: ``osid.resource.Bin``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -464,18 +454,17 @@ class BinList(osid_objects.OsidList):
 
     next_bin = property(fget=get_next_bin)
 
-
     def get_next_bins(self, n):
         """Gets the next set of ``Bin`` elements in this list which must be less than or equal to the return from
         ``available()``.
 
-        arg:    n (cardinal): the number of ``Bin`` elements requested
-                which must be less than or equal to ``available()``
-        return: (osid.resource.Bin) - an array of ``Bin`` elements.The
-                length of the array is less than or equal to the number
-                specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``Bin`` elements requested which must be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``Bin`` elements.The length of the array is less than or equal to the number specified.
+        :rtype: ``osid.resource.Bin``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -490,14 +479,14 @@ class BinNode(osid_objects.OsidNode):
     ``BinHierarchySession``.
 
     """
-    
-
-
 
     def get_bin(self):
         """Gets the ``Bin`` at this node.
 
-        return: (osid.resource.Bin) - the bin represented by this node
+        :return: the bin represented by this node
+        :rtype: ``osid.resource.Bin``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -505,11 +494,13 @@ class BinNode(osid_objects.OsidNode):
 
     bin = property(fget=get_bin)
 
-
     def get_parent_bin_nodes(self):
         """Gets the parents of this bin.
 
-        return: (osid.resource.BinNodeList) - the parents of the ``id``
+        :return: the parents of the ``id``
+        :rtype: ``osid.resource.BinNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -517,11 +508,13 @@ class BinNode(osid_objects.OsidNode):
 
     parent_bin_nodes = property(fget=get_parent_bin_nodes)
 
-
     def get_child_bin_nodes(self):
         """Gets the children of this bin.
 
-        return: (osid.resource.BinNodeList) - the children of this bin
+        :return: the children of this bin
+        :rtype: ``osid.resource.BinNodeList``
+
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -544,19 +537,16 @@ class BinNodeList(osid_objects.OsidList):
 
 
     """
-    
-
-
 
     def get_next_bin_node(self):
         """Gets the next ``BinNode`` in this list.
 
-        return: (osid.resource.BinNode) - the next ``BinNode`` in this
-                list. The ``has_next()`` method should be used to test
-                that a next ``BinNode`` is available before calling this
-                method.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :return: the next ``BinNode`` in this list. The ``has_next()`` method should be used to test that a next
+        ``BinNode`` is available before calling this method.
+        :rtype: ``osid.resource.BinNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """
@@ -564,19 +554,17 @@ class BinNodeList(osid_objects.OsidList):
 
     next_bin_node = property(fget=get_next_bin_node)
 
-
     def get_next_bin_nodes(self, n):
         """Gets the next set of ``BinNode`` elements in this list which must be less than or equal to the return from
         ``available()``.
 
-        arg:    n (cardinal): the number of ``BinNode`` elements
-                requested which must be less than or equal to
-                ``available()``
-        return: (osid.resource.BinNode) - an array of ``BinNode``
-                elements.The length of the array is less than or equal
-                to the number specified.
-        raise:  IllegalState - no more elements available in this list
-        raise:  OperationFailed - unable to complete request
+        :param n: the number of ``BinNode`` elements requested which must be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``BinNode`` elements.The length of the array is less than or equal to the number specified.
+        :rtype: ``osid.resource.BinNode``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

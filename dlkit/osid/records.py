@@ -10,9 +10,6 @@ class OsidRecord:
     interface specification is identified with a ``Type``.
 
     """
-    
-
-
 
     def implements_record_type(self, record_type):
         """Tests if the given type is implemented by this record.
@@ -22,10 +19,12 @@ class OsidRecord:
         specifies a record that is a parent interface of the interface
         specified by ``getType()``.
 
-        arg:    record_type (osid.type.Type): a type
-        return: (boolean) - ``true`` if the given record ``Type`` is
-                implemented by this record, ``false`` otherwise
-        raise:  NullArgument - ``record_type`` is ``null``
+        :param record_type: a type
+        :type record_type: ``osid.type.Type``
+        :return: ``true`` if the given record ``Type`` is implemented by this record, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``record_type`` is ``null``
+
         *compliance: mandatory -- This method must be implemented.*
 
         """

@@ -9,8 +9,6 @@ class ProxyRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
@@ -22,8 +20,6 @@ class ProxyConditionRecord(osid_records.OsidRecord):
     underlying object.
 
     """
-    
-
 
 
 
