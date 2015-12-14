@@ -102,7 +102,7 @@ Sourceable
 
    .. autoattribute:: Sourceable.branding
 
-   .. autoattribute:: Sourceable.license
+   .. autoattribute:: Sourceable.license_
 
 Federateable
 ------------

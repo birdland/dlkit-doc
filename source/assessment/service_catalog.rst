@@ -365,7 +365,7 @@ Assessment Basic Authoring Methods
 
    .. automethod:: Bank.can_author_assessments
 
-   .. automethod:: Bank.get_items
+   .. automethod:: Bank.get_assessment_items
 
    .. automethod:: Bank.add_item
 

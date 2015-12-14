@@ -456,7 +456,7 @@ Assessment Basic Authoring Session
 
    .. automethod:: AssessmentBasicAuthoringSession.can_author_assessments
 
-   .. automethod:: AssessmentBasicAuthoringSession.get_items
+   .. automethod:: AssessmentBasicAuthoringSession.get_assessment_items
 
    .. automethod:: AssessmentBasicAuthoringSession.add_item
 

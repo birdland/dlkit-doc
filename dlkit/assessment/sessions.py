@@ -3604,7 +3604,7 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_assessment_items(self, assessment_id):
+    def get_items(self, assessment_id):
         """Gets the items in sequence from an assessment.
 
         :param assessment_id: the ``Id`` of the ``Assessment``
