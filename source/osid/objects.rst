@@ -232,7 +232,7 @@ Osid Sourceable Form
 
    .. autoattribute:: OsidSourceableForm.license_metadata
 
-   .. autoattribute:: OsidSourceableForm.license
+   .. autoattribute:: OsidSourceableForm.license_
 
 Osid Federateable Form
 ----------------------

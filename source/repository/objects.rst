@@ -72,7 +72,7 @@ Asset Form
 
    .. autoattribute:: AssetForm.copyright_metadata
 
-   .. autoattribute:: AssetForm.copyright
+   .. autoattribute:: AssetForm.copyright_
 
    .. autoattribute:: AssetForm.copyright_registration_metadata
 
