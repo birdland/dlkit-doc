@@ -8,11 +8,14 @@ class HierarchySearch(osid_searches.OsidSearch):
     def search_among_hierarchies(self, hierarchy_ids):
         """Execute this search using a given list of hierarchies.
 
+
         :param hierarchy_ids: list of hierarchies
         :type hierarchy_ids: ``osid.id.IdList``
         :raise: ``NullArgument`` -- ``hierarchy_ids`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -20,12 +23,15 @@ class HierarchySearch(osid_searches.OsidSearch):
     def order_hierarchy_results(self, hierarchy_search_order):
         """Specify an ordering to the search results.
 
+
         :param hierarchy_search_order: hierarchy search order
         :type hierarchy_search_order: ``osid.hierarchy.HierarchySearchOrder``
         :raise: ``NullArgument`` -- ``hierarchy_search_order`` is ``null``
         :raise: ``Unsupported`` -- ``hierarchy_search_order`` is not of this service
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -33,8 +39,10 @@ class HierarchySearch(osid_searches.OsidSearch):
     def get_hierarchy_search_record(self, hierarchy_search_record_type):
         """Gets the hierarchy search record corresponding to the given hierarchy search record ``Type``.
 
+
         This method is used to retrieve an object implementing the
         requested record.
+
 
         :param hierarchy_search_record_type: a hierarchy search record type
         :type hierarchy_search_record_type: ``osid.type.Type``
@@ -44,7 +52,9 @@ class HierarchySearch(osid_searches.OsidSearch):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(hierarchy_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.hierarchy.records.HierarchySearchRecord
@@ -56,11 +66,14 @@ class HierarchySearchResults(osid_searches.OsidSearchResults):
     def get_hierarchies(self):
         """Gets the hierarchy list resulting from the search.
 
+
         :return: the hierarchy list
         :rtype: ``osid.hierarchy.HierarchyList``
         :raise: ``IllegalState`` -- the hierarchy list was already retrieved
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.hierarchy.HierarchyList
@@ -70,11 +83,15 @@ class HierarchySearchResults(osid_searches.OsidSearchResults):
     def get_hierarchy_query_inspector(self):
         """Gets the inspector for the query to examine the terms used in the search.
 
+
         :return: the hierarchy query inspector
         :rtype: ``osid.hierarchy.HierarchyQueryInspector``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.hierarchy.HierarchyQueryInspector
@@ -84,8 +101,10 @@ class HierarchySearchResults(osid_searches.OsidSearchResults):
     def get_hierarchy_search_results_record(self, hierarchy_search_record_type):
         """Gets the hierarchy search results record corresponding to the given hierarchy search record ``Type``.
 
+
         This method is used to retrieve an object implementing the
         requested record.
+
 
         :param hierarchy_search_record_type: a hierarchy search record type
         :type hierarchy_search_record_type: ``osid.type.Type``
@@ -95,7 +114,9 @@ class HierarchySearchResults(osid_searches.OsidSearchResults):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(hierarchy_search_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.hierarchy.records.HierarchySearchResultsRecord

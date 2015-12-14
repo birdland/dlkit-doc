@@ -5,13 +5,16 @@ from ..osid import queries as osid_queries
 class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery):
     """This is the query for searching gradings.
 
+
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
+
 
     """
 
     def match_grade_system_id(self, grade_system_id, match):
         """Sets the grade system ``Id`` for this query.
+
 
         :param grade_system_id: a grade system ``Id``
         :type grade_system_id: ``osid.id.Id``
@@ -19,7 +22,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -29,7 +34,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -39,11 +48,15 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def supports_grade_system_query(self):
         """Tests if a ``GradeSystemQuery`` is available for querying grade systems.
 
+
         :return: ``true`` if a grade system query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -51,14 +64,18 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def get_grade_system_query(self):
         """Gets the query for a grade system.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade system query
         :rtype: ``osid.grading.GradeSystemQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_system_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeSystemQuery
@@ -70,7 +87,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -80,6 +101,7 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_input_score_start_range(self, start, end, match):
         """Matches grades with the start input score inclusive.
 
+
         :param start: start of range
         :type start: ``decimal``
         :param end: end of range
@@ -88,7 +110,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``start`` is greater than ``end``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -98,7 +122,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -108,6 +136,7 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_input_score_end_range(self, start, end, match):
         """Matches grades with the end input score inclusive.
 
+
         :param start: start of range
         :type start: ``decimal``
         :param end: end of range
@@ -116,7 +145,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``start`` is greater than ``end``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -126,7 +157,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -136,6 +171,7 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_input_score(self, start, end, match):
         """Matches grades with the input score range contained within the given range inclusive.
 
+
         :param start: start of range
         :type start: ``decimal``
         :param end: end of range
@@ -144,7 +180,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``start`` is greater than ``end``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -154,7 +192,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -164,6 +206,7 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_output_score(self, start, end, match):
         """Matches grades with the output score contained within the given range inclusive.
 
+
         :param start: start of range
         :type start: ``decimal``
         :param end: end of range
@@ -172,7 +215,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``start`` is greater than ``end``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -182,7 +227,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -192,13 +241,16 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_grade_entry_id(self, grade_entry_id, match):
         """Sets the grade entry ``Id`` for this query.
 
+
         :param grade_entry_id: a grade entry ``Id``
         :type grade_entry_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_entry_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -208,7 +260,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -218,11 +274,15 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def supports_grade_entry_query(self):
         """Tests if a ``GradeEntryQuery`` is available for querying grade entries.
 
+
         :return: ``true`` if a grade entry query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -230,14 +290,18 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def get_grade_entry_query(self):
         """Gets the query for a grade entry.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade entry query
         :rtype: ``osid.grading.GradeEntryQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_entry_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeEntryQuery
@@ -247,12 +311,16 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_any_grade_entry(self, match):
         """Matches grades that are assigned to any grade entry.
 
+
         :param match: ``true`` to match grades used in any grade entry, ``false`` to match grades that are not used in
         any grade entries
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -262,7 +330,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -272,13 +344,16 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def match_gradebook_id(self, gradebook_id, match):
         """Sets the gradebook ``Id`` for this query.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -288,7 +363,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -298,11 +377,15 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def supports_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available.
 
+
         :return: ``true`` if a gradebook query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -310,14 +393,18 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def get_gradebook_query(self):
         """Gets the query for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -329,7 +416,11 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -339,7 +430,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
     def get_grade_query_record(self, grade_record_type):
         """Gets the grade query record corresponding to the given ``Grade`` record ``Type``.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :param grade_record_type: a grade record type
         :type grade_record_type: ``osid.type.Type``
@@ -349,7 +442,9 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.grading.records.GradeQueryRecord
@@ -358,19 +453,25 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
 class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery):
     """This is the query for searching grade systems.
 
+
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
+
 
     """
 
     def match_based_on_grades(self, match):
         """Matches grade systems based on grades.
 
+
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -380,7 +481,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -390,13 +495,16 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_grade_id(self, grade_id, match):
         """Sets the grade ``Id`` for this query.
 
+
         :param grade_id: a grade ``Id``
         :type grade_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -406,7 +514,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -416,11 +528,15 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def supports_grade_query(self):
         """Tests if a ``GradeQuery`` is available for querying grades.
 
+
         :return: ``true`` if a grade query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -428,14 +544,18 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def get_grade_query(self):
         """Gets the query for a grade.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade query
         :rtype: ``osid.grading.GradeQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeQuery
@@ -445,11 +565,15 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_any_grade(self, match):
         """Matches grade systems with any grade.
 
+
         :param match: ``true`` to match grade systems with any grade, ``false`` to match systems with no grade
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -459,7 +583,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -469,6 +597,7 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_lowest_numeric_score(self, start, end, match):
         """Matches grade systems whose low end score falls in the specified range inclusive.
 
+
         :param start: low end of range
         :type start: ``decimal``
         :param end: high end of range
@@ -478,7 +607,9 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -488,7 +619,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -498,6 +633,7 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_numeric_score_increment(self, start, end, match):
         """Matches grade systems numeric score increment is between the specified range inclusive.
 
+
         :param start: low end of range
         :type start: ``decimal``
         :param end: high end of range
@@ -507,7 +643,9 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -517,7 +655,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -526,6 +668,7 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
     def match_highest_numeric_score(self, start, end, match):
         """Matches grade systems whose high end score falls in the specified range inclusive.
+
 
         :param start: low end of range
         :type start: ``decimal``
@@ -536,7 +679,9 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -546,7 +691,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -556,13 +705,16 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_gradebook_column_id(self, gradebook_column_id, match):
         """Sets the gradebook column ``Id`` for this query.
 
+
         :param gradebook_column_id: a gradebook column ``Id``
         :type gradebook_column_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -572,7 +724,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -582,11 +738,15 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def supports_gradebook_column_query(self):
         """Tests if a ``GradebookColumnQuery`` is available.
 
+
         :return: ``true`` if a gradebook column query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -594,14 +754,18 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def get_gradebook_column_query(self):
         """Gets the query for a gradebook column.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook column query
         :rtype: ``osid.grading.GradebookColumnQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookColumnQuery
@@ -611,12 +775,16 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_any_gradebook_column(self, match):
         """Matches grade systems assigned to any gradebook column.
 
+
         :param match: ``true`` to match grade systems mapped to any column, ``false`` to match systems mapped to no
         columns
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -626,7 +794,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -636,13 +808,16 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def match_gradebook_id(self, gradebook_id, match):
         """Sets the gradebook ``Id`` for this query.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -652,7 +827,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -662,11 +841,15 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def supports_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available.
 
+
         :return: ``true`` if a gradebook query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -674,14 +857,18 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def get_gradebook_query(self):
         """Gets the query for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -693,7 +880,11 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -703,7 +894,9 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     def get_grade_system_query_record(self, grade_system_record_type):
         """Gets the grade system query record corresponding to the given ``GradeSystem`` record ``Type``.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :param grade_system_record_type: a grade system record type
         :type grade_system_record_type: ``osid.type.Type``
@@ -713,7 +906,9 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_system_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.grading.records.GradeSystemQueryRecord
@@ -722,13 +917,16 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
 class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     """This is the query for searching grade entries.
 
+
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
+
 
     """
 
     def match_gradebook_column_id(self, gradebook_column_id, match):
         """Sets the gradebook column ``Id`` for this query.
+
 
         :param gradebook_column_id: a gradebook column ``Id``
         :type gradebook_column_id: ``osid.id.Id``
@@ -736,7 +934,9 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -746,7 +946,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -756,11 +960,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_gradebook_column_query(self):
         """Tests if a ``GradebookColumnQuery`` is available for querying creators.
 
+
         :return: ``true`` if a gradebook column query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -768,14 +976,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_gradebook_column_query(self):
         """Gets the query for a gradebook column.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook column query
         :rtype: ``osid.grading.GradebookColumnQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookColumnQuery
@@ -787,7 +999,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -797,13 +1013,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_key_resource_id(self, resource_id, match):
         """Sets the key resource ``Id`` for this query.
 
+
         :param resource_id: a resource ``Id``
         :type resource_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``resource_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -813,7 +1032,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -823,11 +1046,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_key_resource_query(self):
         """Tests if a ``ResourceQUery`` is available for querying key resources.
 
+
         :return: ``true`` if a resource query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -835,14 +1062,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_key_resource_query(self):
         """Gets the query for a key resource.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the resource query
         :rtype: ``osid.resource.ResourceQuery``
         :raise: ``Unimplemented`` -- ``supports_key_resource_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_key_resource_query()`` is ``true``.*
+
 
         """
         return # osid.resource.ResourceQuery
@@ -852,12 +1083,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_any_key_resource(self, match):
         """Matches grade entries with any key resource.
 
+
         :param match: ``true`` to match grade entries with any key resource, ``false`` to match entries with no key
         resource
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -867,7 +1102,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -877,11 +1116,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_derived(self, match):
         """Matches derived grade entries.
 
+
         :param match: ``true`` to match derived grade entries , ``false`` to match manual entries
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -891,7 +1134,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -901,13 +1148,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_overridden_grade_entry_id(self, grade_entry_id, match):
         """Sets the grade entry ``Id`` for an overridden calculated grade entry.
 
+
         :param grade_entry_id: a grade entry ``Id``
         :type grade_entry_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_entry_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -917,7 +1167,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -927,11 +1181,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_overridden_grade_entry_query(self):
         """Tests if a ``GradeEntry`` is available for querying overridden calculated grade entries.
 
+
         :return: ``true`` if a grade entry query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -939,14 +1197,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_overridden_grade_entry_query(self):
         """Gets the query for an overridden derived grade entry.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade entry query
         :rtype: ``osid.grading.GradeEntryQuery``
         :raise: ``Unimplemented`` -- ``supports_overridden_grade_entry_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_overridden_grade_entry_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeEntryQuery
@@ -956,12 +1218,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_any_overridden_grade_entry(self, match):
         """Matches grade entries overriding any calculated grade entry.
 
+
         :param match: ``true`` to match grade entries overriding any grade entry, ``false`` to match entries not
         overriding any entry
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -971,7 +1237,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -981,12 +1251,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_ignored_for_calculations(self, match):
         """Matches grade entries ignored for calculations.
 
+
         :param match: ``true`` to match grade entries ignored for calculations, ``false`` to match entries used in
         calculations
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -996,7 +1270,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1006,13 +1284,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_grade_id(self, grade_id, match):
         """Sets the grade ``Id`` for this query.
 
+
         :param grade_id: a grade ``Id``
         :type grade_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1022,7 +1303,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1032,11 +1317,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_grade_query(self):
         """Tests if a ``GradeQuery`` is available for querying grades.
 
+
         :return: ``true`` if a grade query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1044,14 +1333,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_grade_query(self):
         """Gets the query for a grade.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade query
         :rtype: ``osid.grading.GradeQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeQuery
@@ -1061,11 +1354,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_any_grade(self, match):
         """Matches grade entries with any grade.
 
+
         :param match: ``true`` to match grade entries with any grade, ``false`` to match entries with no grade
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1075,7 +1372,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1085,6 +1386,7 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_score(self, start, end, match):
         """Matches grade entries which score is between the specified score inclusive.
 
+
         :param start: start of range
         :type start: ``decimal``
         :param end: end of range
@@ -1093,7 +1395,9 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1101,11 +1405,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_any_score(self, match):
         """Matches grade entries with any score.
 
+
         :param match: ``true`` to match grade entries with any score, ``false`` to match entries with no score
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1115,7 +1423,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1125,6 +1437,7 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_time_graded(self, start, end, match):
         """Matches grade entries which graded time is between the specified times inclusive.
 
+
         :param start: start of range
         :type start: ``osid.calendaring.DateTime``
         :param end: end of range
@@ -1133,7 +1446,9 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1143,7 +1458,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1153,13 +1472,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_grader_id(self, resource_id, match):
         """Sets the agent ``Id`` for this query.
 
+
         :param resource_id: a resource ``Id``
         :type resource_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``resource_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1169,7 +1491,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1179,11 +1505,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_grader_query(self):
         """Tests if a ``ResourceQuery`` is available for querying graders.
 
+
         :return: ``true`` if a resource query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1191,14 +1521,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_grader_query(self):
         """Gets the query for an agent.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the resource query
         :rtype: ``osid.resource.ResourceQuery``
         :raise: ``Unimplemented`` -- ``supports_resource_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_resource_query()`` is ``true``.*
+
 
         """
         return # osid.resource.ResourceQuery
@@ -1208,11 +1542,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_any_grader(self, match):
         """Matches grade entries with any grader.
 
+
         :param match: ``true`` to match grade entries with any grader, ``false`` to match entries with no grader
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1222,7 +1560,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1232,13 +1574,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_grading_agent_id(self, agent_id, match):
         """Sets the grading agent ``Id`` for this query.
 
+
         :param agent_id: an agent ``Id``
         :type agent_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``agent_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1248,7 +1593,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1258,11 +1607,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_grading_agent_query(self):
         """Tests if an ``AgentQuery`` is available for querying grading agents.
 
+
         :return: ``true`` if an agent query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1270,14 +1623,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_grading_agent_query(self):
         """Gets the query for an agent.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the agent query
         :rtype: ``osid.authentication.AgentQuery``
         :raise: ``Unimplemented`` -- ``supports_grading_agent_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grading_agent_query()`` is ``true``.*
+
 
         """
         return # osid.authentication.AgentQuery
@@ -1287,12 +1644,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_any_grading_agent(self, match):
         """Matches grade entries with any grading agent.
 
+
         :param match: ``true`` to match grade entries with any grading agent, ``false`` to match entries with no grading
         agent
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1302,7 +1663,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1312,13 +1677,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def match_gradebook_id(self, gradebook_id, match):
         """Sets the gradebook ``Id`` for this query.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1328,7 +1696,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1338,11 +1710,15 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def supports_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available for querying resources.
 
+
         :return: ``true`` if a gradebook query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1350,14 +1726,18 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_gradebook_query(self):
         """Gets the query for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -1369,7 +1749,11 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1379,7 +1763,9 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     def get_grade_entry_query_record(self, grade_entry_record_type):
         """Gets the grade entry query record corresponding to the given ``GradeEntry`` record ``Type``.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :param grade_entry_record_type: a grade entry record type
         :type grade_entry_record_type: ``osid.type.Type``
@@ -1389,7 +1775,9 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(grade_entry_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.grading.records.GradeEntryQueryRecord
@@ -1398,13 +1786,16 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
 class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     """This is the query for searching gradings.
 
+
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
+
 
     """
 
     def match_grade_system_id(self, grade_system_id, match):
         """Sets the grade system ``Id`` for this query.
+
 
         :param grade_system_id: a grade system ``Id``
         :type grade_system_id: ``osid.id.Id``
@@ -1412,7 +1803,9 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1422,7 +1815,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1432,11 +1829,15 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def supports_grade_system_query(self):
         """Tests if a ``GradeSystemQuery`` is available for querying grade systems.
 
+
         :return: ``true`` if a grade system query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1444,14 +1845,18 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def get_grade_system_query(self):
         """Gets the query for a grade system.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade system query
         :rtype: ``osid.grading.GradeSystemQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_system_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeSystemQuery
@@ -1461,11 +1866,15 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def match_any_grade_system(self, match):
         """Matches gradebook columns with any grade system assigned.
 
+
         :param match: ``true`` to match columns with any grade system, ``false`` to match columns with no grade system
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1475,7 +1884,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1485,13 +1898,16 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def match_grade_entry_id(self, grade_entry_id, match):
         """Sets the grade entry ``Id`` for this query.
 
+
         :param grade_entry_id: a grade entry ``Id``
         :type grade_entry_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_entry_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1501,7 +1917,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1511,11 +1931,15 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def supports_grade_entry_query(self):
         """Tests if a ``GradeEntryQuery`` is available for querying grade entries.
 
+
         :return: ``true`` if a grade entry query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1523,14 +1947,18 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def get_grade_entry_query(self):
         """Gets the query for a grade entry.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade entry query
         :rtype: ``osid.grading.GradeEntryQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_entry_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeEntryQuery
@@ -1540,11 +1968,15 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def match_any_grade_entry(self, match):
         """Matches gradebook columns with any grade entry assigned.
 
+
         :param match: ``true`` to match columns with any grade entry, ``false`` to match columns with no grade entries
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1554,7 +1986,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1564,11 +2000,15 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def supports_gradebook_column_summary_query(self):
         """Tests if a ``GradebookColumnSummaryQuery`` is available for querying grade systems.
 
+
         :return: ``true`` if a gradebook column summary query interface is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1576,14 +2016,18 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def get_gradebook_column_summary_query(self):
         """Gets the query interface for a gradebook column summary.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook column summary query
         :rtype: ``osid.grading.GradebookColumnSummaryQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_summary_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_summary_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookColumnSummaryQuery
@@ -1595,7 +2039,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1605,13 +2053,16 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def match_gradebook_id(self, gradebook_id, match):
         """Sets the gradebook ``Id`` for this query.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1621,7 +2072,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1631,11 +2086,15 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def supports_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available for querying grade systems.
 
+
         :return: ``true`` if a gradebook query interface is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1643,14 +2102,18 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def get_gradebook_query(self):
         """Gets the query interface for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -1662,7 +2125,11 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1672,7 +2139,9 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     def get_gradebook_column_query_record(self, gradebook_column_record_type):
         """Gets the gradebook column query record corresponding to the given ``GradebookColumn`` record ``Type``.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :param gradebook_column_record_type: a gradebook column record type
         :type gradebook_column_record_type: ``osid.type.Type``
@@ -1682,7 +2151,9 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.grading.records.GradebookColumnQueryRecord
@@ -1691,13 +2162,16 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
 class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     """This is the query for searching gradebook column summaries.
 
+
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
+
 
     """
 
     def match_gradebook_column_id(self, gradebook_column_id, match):
         """Sets the gradebook column ``Id`` for this query.
+
 
         :param gradebook_column_id: a gradeboo column ``Id``
         :type gradebook_column_id: ``osid.id.Id``
@@ -1705,7 +2179,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1715,7 +2191,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1725,11 +2205,15 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def supports_gradebook_column_query(self):
         """Tests if a ``GradebookColumnQuery`` is available for querying gradebook column.
 
+
         :return: ``true`` if a gradebook column query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -1737,14 +2221,18 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def get_gradebook_column_query(self):
         """Gets the query for a gradebook column.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook column query
         :rtype: ``osid.grading.GradebookColumnQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookColumnQuery
@@ -1754,12 +2242,16 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_any_gradebook_column(self, match):
         """Matches gradebook column derivations with any gradebookc olumn.
 
+
         :param match: ``true`` to match gradebook column derivations with any gradebook column, ``false`` to match
         gradebook column derivations with no gradebook columns
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1769,7 +2261,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1779,6 +2275,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_mean(self, low, high, match):
         """Matches a mean between the given values inclusive.
 
+
         :param low: low end of range
         :type low: ``decimal``
         :param high: high end of range
@@ -1787,7 +2284,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``low`` is greater than ``high``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1797,7 +2296,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1807,13 +2310,17 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_minimum_mean(self, value, match):
         """Matches a mean greater than or equal to the given value.
 
+
         :param value: minimum value
         :type value: ``decimal``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1823,7 +2330,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1833,6 +2344,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_median(self, low, high, match):
         """Matches a median between the given values inclusive.
 
+
         :param low: low end of range
         :type low: ``decimal``
         :param high: high end of range
@@ -1841,7 +2353,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``low`` is greater than ``high``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1851,7 +2365,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1861,13 +2379,17 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_minimum_median(self, value, match):
         """Matches a median greater than or equal to the given value.
 
+
         :param value: minimum value
         :type value: ``decimal``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1877,7 +2399,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1887,6 +2413,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_mode(self, low, high, match):
         """Matches a mode between the given values inclusive.
 
+
         :param low: low end of range
         :type low: ``decimal``
         :param high: high end of range
@@ -1895,7 +2422,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``low`` is greater than ``high``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1905,7 +2434,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1915,13 +2448,17 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_minimum_mode(self, value, match):
         """Matches a mode greater than or equal to the given value.
 
+
         :param value: minimum value
         :type value: ``decimal``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1931,7 +2468,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1941,6 +2482,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_rms(self, low, high, match):
         """Matches a root mean square between the given values inclusive.
 
+
         :param low: low end of range
         :type low: ``decimal``
         :param high: high end of range
@@ -1949,7 +2491,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``low`` is greater than ``high``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1959,7 +2503,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1969,13 +2517,17 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_minimum_rms(self, value, match):
         """Matches a root mean square greater than or equal to the given value.
 
+
         :param value: minimum value
         :type value: ``decimal``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1985,7 +2537,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -1995,6 +2551,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_standard_deviation(self, low, high, match):
         """Matches a standard deviation mean square between the given values inclusive.
 
+
         :param low: low end of range
         :type low: ``decimal``
         :param high: high end of range
@@ -2003,7 +2560,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``low`` is greater than ``high``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2013,7 +2572,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2023,13 +2586,17 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_minimum_standard_deviation(self, value, match):
         """Matches a standard deviation greater than or equal to the given value.
 
+
         :param value: minimum value
         :type value: ``decimal``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2039,7 +2606,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2049,6 +2620,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_sum(self, low, high, match):
         """Matches a sum mean square between the given values inclusive.
 
+
         :param low: low end of range
         :type low: ``decimal``
         :param high: high end of range
@@ -2057,7 +2629,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``low`` is greater than ``high``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2067,7 +2641,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2077,13 +2655,17 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_minimum_sum(self, value, match):
         """Matches a sum greater than or equal to the given value.
 
+
         :param value: minimum value
         :type value: ``decimal``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2093,7 +2675,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2103,13 +2689,16 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def match_gradebook_id(self, gradebook_id, match):
         """Sets the gradebook ``Id`` for this query.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2119,7 +2708,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2129,11 +2722,15 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def supports_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available.
 
+
         :return: ``true`` if a gradebook query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -2141,14 +2738,18 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     def get_gradebook_query(self):
         """Gets the query for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -2160,7 +2761,11 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2171,7 +2776,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         """Gets the gradebook column summary query record corresponding to the given ``GradebookColumnSummary`` record
         ``Type``.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :param gradebook_column_summary_record_type: a gradebook column summary record type
         :type gradebook_column_summary_record_type: ``osid.type.Type``
@@ -2181,7 +2788,9 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.grading.records.GradebookColumnSummaryQueryRecord
@@ -2190,13 +2799,16 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
 class GradebookQuery(osid_queries.OsidCatalogQuery):
     """This is the query for searching gradebooks.
 
+
     Each method specifies an ``AND`` term while multiple invocations of
     the same method produce a nested ``OR``.
+
 
     """
 
     def match_grade_system_id(self, grade_system_id, match):
         """Sets the grade system ``Id`` for this query.
+
 
         :param grade_system_id: a grade system ``Id``
         :type grade_system_id: ``osid.id.Id``
@@ -2204,7 +2816,9 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2214,7 +2828,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2224,11 +2842,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def supports_grade_system_query(self):
         """Tests if a ``GradeSystemQuery`` is available.
 
+
         :return: ``true`` if a grade system query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -2236,14 +2858,18 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def get_grade_system_query(self):
         """Gets the query for a grade system.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade system query
         :rtype: ``osid.grading.GradeSystemQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_system_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeSystemQuery
@@ -2253,12 +2879,16 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_any_grade_system(self, match):
         """Matches gradebooks that have any grade system.
 
+
         :param match: ``true`` to match gradebooks with any grade system, ``false`` to match gradebooks with no grade
         system
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2268,7 +2898,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2278,13 +2912,16 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_grade_entry_id(self, grade_entry_id, match):
         """Sets the grade entry ``Id`` for this query.
 
+
         :param grade_entry_id: a grade entry ``Id``
         :type grade_entry_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_entry_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2294,7 +2931,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2304,11 +2945,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def supports_grade_entry_query(self):
         """Tests if a ``GradeEntryQuery`` is available.
 
+
         :return: ``true`` if a grade entry query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -2316,14 +2961,18 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def get_grade_entry_query(self):
         """Gets the query for a grade entry.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the grade entry query
         :rtype: ``osid.grading.GradeEntryQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_grade_entry_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradeEntryQuery
@@ -2333,12 +2982,16 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_any_grade_entry(self, match):
         """Matches gradebooks that have any grade entry.
 
+
         :param match: ``true`` to match gradebooks with any grade entry, ``false`` to match gradebooks with no grade
         entry
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2348,7 +3001,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2358,13 +3015,16 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_gradebook_column_id(self, gradebook_column_id, match):
         """Sets the gradebook column ``Id`` for this query.
 
+
         :param gradebook_column_id: a gradebook column ``Id``
         :type gradebook_column_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2374,7 +3034,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2384,11 +3048,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def supports_gradebook_column_query(self):
         """Tests if a ``GradebookColumnQuery`` is available.
 
+
         :return: ``true`` if a gradebook column query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -2396,14 +3064,18 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def get_gradebook_column_query(self):
         """Gets the query for a gradebook column.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook column query
         :rtype: ``osid.grading.GradebookColumnQuery``
         :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_gradebook_column_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookColumnQuery
@@ -2413,11 +3085,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_any_gradebook_column(self, match):
         """Matches gradebooks that have any column.
 
+
         :param match: ``true`` to match gradebooks with any column, ``false`` to match gradebooks with no column
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2427,7 +3103,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2438,13 +3118,16 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Sets the gradebook ``Id`` for this query to match gradebooks that have the specified gradebook as an
         ancestor.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2454,7 +3137,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2464,11 +3151,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def supports_ancestor_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available.
 
+
         :return: ``true`` if a gradebook query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -2476,14 +3167,18 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def get_ancestor_gradebook_query(self):
         """Gets the query for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_ancestor_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_ancestor_gradebook_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -2493,11 +3188,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_any_ancestor_gradebook(self, match):
         """Matches gradebook with any ancestor.
 
+
         :param match: ``true`` to match gradebooks with any ancestor, ``false`` to match root gradebooks
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2507,7 +3206,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2518,13 +3221,16 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Sets the gradebook ``Id`` for this query to match gradebooks that have the specified gradebook as a
         descendant.
 
+
         :param gradebook_id: a gradebook ``Id``
         :type gradebook_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2534,7 +3240,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2544,11 +3254,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def supports_descendant_gradebook_query(self):
         """Tests if a ``GradebookQuery`` is available.
 
+
         :return: ``true`` if a gradebook query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -2556,14 +3270,18 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def get_descendant_gradebook_query(self):
         """Gets the query for a gradebook.
 
+
         Multiple retrievals produce a nested ``OR`` term.
+
 
         :return: the gradebook query
         :rtype: ``osid.grading.GradebookQuery``
         :raise: ``Unimplemented`` -- ``supports_descendant_gradebook_query()`` is ``false``
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_descendant_gradebook_query()`` is ``true``.*
+
 
         """
         return # osid.grading.GradebookQuery
@@ -2573,11 +3291,15 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def match_any_descendant_gradebook(self, match):
         """Matches gradebook with any descendant.
 
+
         :param match: ``true`` to match gradebooks with any descendant, ``false`` to match leaf gradebooks
         :type match: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2587,7 +3309,11 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
 
 
 
+
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -2597,7 +3323,9 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     def get_gradebook_query_record(self, gradebook_record_type):
         """Gets the gradebook query record corresponding to the given ``Gradebook`` record ``Type``.
 
+
         Multiple record retrievals produce a nested ``OR`` term.
+
 
         :param gradebook_record_type: a gradebook record type
         :type gradebook_record_type: ``osid.type.Type``
@@ -2607,7 +3335,9 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(gradebook_record_type)`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.grading.records.GradebookQueryRecord

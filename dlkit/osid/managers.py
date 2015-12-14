@@ -5,26 +5,33 @@ from ..osid import markers as osid_markers
 class OsidProfile(osid_markers.Sourceable):
     """The ``OsidProfile`` defines the interoperability areas of an OSID.
 
+
     An ``OsidProfile`` is implemented by an ``OsidManager``. The top
     level ``OsidProfile`` tests for version compatibility. Each OSID
     extends this interface to include its own interoperability
     definitions within its managers.
+
 
     """
 
     def get_id(self):
         """Gets an identifier for this service implementation.
 
+
         The identifier is unique among services but multiple
         instantiations of the same service use the same ``Id``. This
         identifier is the same identifier used in managing OSID
         installations.
 
+
         :return: the ``Id``
         :rtype: ``osid.id.Id``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.id.Id
@@ -36,11 +43,15 @@ class OsidProfile(osid_markers.Sourceable):
     def get_display_name(self):
         """Gets a display name for this service implementation.
 
+
         :return: a display name
         :rtype: ``osid.locale.DisplayText``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.locale.DisplayText
@@ -50,11 +61,15 @@ class OsidProfile(osid_markers.Sourceable):
     def get_description(self):
         """Gets a description of this service implementation.
 
+
         :return: a description
         :rtype: ``osid.locale.DisplayText``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.locale.DisplayText
@@ -64,11 +79,15 @@ class OsidProfile(osid_markers.Sourceable):
     def get_version(self):
         """Gets the version of this service implementation.
 
+
         :return: the service implementation version
         :rtype: ``osid.installation.Version``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.installation.Version
@@ -78,11 +97,15 @@ class OsidProfile(osid_markers.Sourceable):
     def get_release_date(self):
         """Gets the date this service implementation was released.
 
+
         :return: the release date
         :rtype: ``osid.calendaring.DateTime``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.calendaring.DateTime
@@ -92,15 +115,19 @@ class OsidProfile(osid_markers.Sourceable):
     def supports_osid_version(self, version):
         """Test for support of an OSID specification version.
 
+
         :param version: the specification version to test
         :type version: ``osid.installation.Version``
         :return: ``true`` if this manager supports the given OSID version, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: An implementation may support multiple
         versions of an OSID.
+
 
         """
         return # boolean
@@ -108,11 +135,15 @@ class OsidProfile(osid_markers.Sourceable):
     def get_locales(self):
         """Gets the locales supported in this service.
 
+
         :return: list of locales supported
         :rtype: ``osid.locale.LocaleList``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.locale.LocaleList
@@ -122,11 +153,15 @@ class OsidProfile(osid_markers.Sourceable):
     def supports_journal_rollback(self):
         """Test for support of a journaling rollback service.
 
+
         :return: ``true`` if this manager supports the journal rollback, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -134,11 +169,15 @@ class OsidProfile(osid_markers.Sourceable):
     def supports_journal_branching(self):
         """Test for support of a journal branching service.
 
+
         :return: ``true`` if this manager supports the journal branching, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -146,11 +185,14 @@ class OsidProfile(osid_markers.Sourceable):
     def get_branch_id(self):
         """Gets the ``Branch Id`` representing this service branch.
 
+
         :return: the branch ``Id``
         :rtype: ``osid.id.Id``
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.id.Id
@@ -160,12 +202,15 @@ class OsidProfile(osid_markers.Sourceable):
     def get_branch(self):
         """Gets this service branch.
 
+
         :return: the service branch
         :rtype: ``osid.journaling.Branch``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.journaling.Branch
@@ -175,13 +220,18 @@ class OsidProfile(osid_markers.Sourceable):
     def get_proxy_record_types(self):
         """Gets the proxy record ``Types`` supported in this service.
 
+
         If no proxy manager is available, an empty list is returned.
+
 
         :return: list of proxy record types supported
         :rtype: ``osid.type.TypeList``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.type.TypeList
@@ -191,13 +241,16 @@ class OsidProfile(osid_markers.Sourceable):
     def supports_proxy_record_type(self, proxy_record_type):
         """Test for support of a proxy type.
 
+
         :param proxy_record_type: a proxy record type
         :type proxy_record_type: ``osid.type.Type``
         :return: ``true`` if this service supports the given proxy record type, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``proxy_record_type`` is ``null``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -205,6 +258,7 @@ class OsidProfile(osid_markers.Sourceable):
 
 class OsidManager(OsidProfile):
     """The ``OsidManager`` is the top level interface for all OSID managers.
+
 
     An OSID manager is instantiated through the ``OsidRuntimeManager``
     and represents an instance of a service. An OSID manager is
@@ -216,12 +270,15 @@ class OsidManager(OsidProfile):
     single processing threads. The ``OsidManager`` defines methods in
     common throughout all OSID managers which implement this interface.
 
+
     """
 
     def initialize(self, runtime):
         """Initializes this manager.
 
+
         A manager is initialized once at the time of creation.
+
 
         :param runtime: the runtime environment
         :type runtime: ``osid.OsidRuntimeManager``
@@ -229,6 +286,7 @@ class OsidManager(OsidProfile):
         :raise: ``IllegalState`` -- this manager has already been initialized by the ``OsidRuntime``
         :raise: ``NullArgument`` -- ``runtime`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
+
 
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: In addition to loading its runtime
@@ -239,11 +297,13 @@ class OsidManager(OsidProfile):
         interoperability, providers should not honor a second call to
         ``initialize()`` and must set an ``IllegalState`` error.
 
+
         """
         pass
 
     def rollback_service(self, rollback_time):
         """Rolls back this service to a point in time.
+
 
         :param rollback_time: the requested time
         :type rollback_time: ``timestamp``
@@ -253,13 +313,16 @@ class OsidManager(OsidProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unimplemented`` -- ``supports_journal_rollback()`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.journaling.JournalEntry
 
     def change_branch(self, branch_id):
         """Changes the service branch.
+
 
         :param branch_id: the new service branch
         :type branch_id: ``osid.id.Id``
@@ -269,7 +332,9 @@ class OsidManager(OsidProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -278,11 +343,15 @@ class OsidManager(OsidProfile):
 class OsidProxyManager(OsidProfile):
     """The ``OsidProxyManager`` is the top level interface for all OSID proxy managers.
 
+
     A proxy manager accepts parameters to pass through end-user
     authentication credentials and other necessary request parameters in
     a server environment. Native applications should use an
     ``OsidManager`` to maintain a higher degree of interoperability by
     avoiding this coupling.
+
+
+
 
     An OSID proxy manager is instantiated through the
     ``OsidRuntimeManager`` and represents an instance of a service. An
@@ -296,12 +365,15 @@ class OsidProxyManager(OsidProfile):
     in common throughout all OSID managers which implement this
     interface.
 
+
     """
 
     def initialize(self, runtime):
         """Initializes this manager.
 
+
         A manager is initialized once at the time of creation.
+
 
         :param runtime: the runtime environment
         :type runtime: ``osid.OsidRuntimeManager``
@@ -309,6 +381,7 @@ class OsidProxyManager(OsidProfile):
         :raise: ``IllegalState`` -- this manager has already been initialized by the ``OsidRuntime``
         :raise: ``NullArgument`` -- ``runtime`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
+
 
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: In addition to loading its runtime
@@ -319,11 +392,13 @@ class OsidProxyManager(OsidProfile):
         interoperability, providers should not honor a second call to
         ``initialize()`` and must set an ``IllegalState`` error.
 
+
         """
         pass
 
     def rollback_service(self, rollback_time, proxy):
         """Rolls back this service to a point in time.
+
 
         :param rollback_time: the requested time
         :type rollback_time: ``timestamp``
@@ -336,13 +411,16 @@ class OsidProxyManager(OsidProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unimplemented`` -- ``supports_journal_rollback()`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # osid.journaling.JournalEntry
 
     def change_branch(self, branch_id, proxy):
         """Changes the service branch.
+
 
         :param branch_id: the new service branch
         :type branch_id: ``osid.id.Id``
@@ -354,7 +432,9 @@ class OsidProxyManager(OsidProfile):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unimplemented`` -- ``supports_journal_branching()`` is ``false``
 
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         pass
@@ -366,11 +446,15 @@ class OsidRuntimeProfile(OsidProfile):
     def supports_configuration(self):
         """Tests if a configuration service is provided within this runtime environment.
 
+
         :return: ``true`` if a configuration service is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
+
+
         *compliance: mandatory -- This method must be implemented.*
+
 
         """
         return # boolean
@@ -383,11 +467,13 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
     def get_manager(self, osid, impl_class_name, version):
         """Finds, loads and instantiates providers of OSID managers.
 
+
         Providers must conform to an OsidManager interface. The
         interfaces are defined in the OSID enumeration. For all OSID
         requests, an instance of ``OsidManager`` that implements the
         ``OsidManager`` interface is returned. In bindings where
         permitted, this can be safely cast into the requested manager.
+
 
         :param osid: represents the OSID
         :type osid: ``osid.OSID``
@@ -403,6 +489,7 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``impl_class_name`` does not support the requested OSID
 
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: After finding and instantiating the
         requested ``OsidManager,`` providers must invoke
@@ -413,17 +500,20 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         for the configuration such as the identity of the service being
         instantiated.
 
+
         """
         return # osid.OsidManager
 
     def get_proxy_manager(self, osid, implementation, version):
         """Finds, loads and instantiates providers of OSID managers.
 
+
         Providers must conform to an ``OsidManager`` interface. The
         interfaces are defined in the OSID enumeration. For all OSID
         requests, an instance of ``OsidManager`` that implements the
         ``OsidManager`` interface is returned. In bindings where
         permitted, this can be safely cast into the requested manager.
+
 
         :param osid: represents the OSID
         :type osid: ``osid.OSID``
@@ -439,6 +529,7 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``implementation`` does not support the requested OSID
 
+
         *compliance: mandatory -- This method must be implemented.*
         *implementation notes*: After finding and instantiating the
         requested ``OsidManager,`` providers must invoke
@@ -449,11 +540,13 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         for the configuration such as the identity of the service being
         instantiated.
 
+
         """
         return # osid.OsidProxyManager
 
     def get_configuration(self):
         """Gets the current configuration in the runtime environment.
+
 
         :return: a configuration
         :rtype: ``osid.configuration.ValueLookupSession``
@@ -461,8 +554,10 @@ class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
         :raise: ``PermissionDenied`` -- an authorization failure occured
         :raise: ``Unimplemented`` -- a configuration service is not supported
 
+
         *compliance: optional -- This method must be implemented if
         ``supports_configuration()`` is ``true``.*
+
 
         """
         return # osid.configuration.ValueLookupSession
