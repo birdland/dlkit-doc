@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.relationship.records
-.. automodule:: dlkit.relationship.records
 
 Records
 =======
@@ -9,64 +7,128 @@ Records
 Relationship Record
 -------------------
 
-.. autoclass:: RelationshipRecord
-   :show-inheritance:
+.. py:class:: RelationshipRecord(abc_relationship_records.RelationshipRecord, osid_records.OsidRecord)
+    A record for a ``Relationship``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Relationship Query Record
 -------------------------
 
-.. autoclass:: RelationshipQueryRecord
-   :show-inheritance:
+.. py:class:: RelationshipQueryRecord(abc_relationship_records.RelationshipQueryRecord, osid_records.OsidRecord)
+    A record for a ``RelationshipQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Relationship Form Record
 ------------------------
 
-.. autoclass:: RelationshipFormRecord
-   :show-inheritance:
+.. py:class:: RelationshipFormRecord(abc_relationship_records.RelationshipFormRecord, osid_records.OsidRecord)
+    A record for a ``RelationshipForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Relationship Search Record
 --------------------------
 
-.. autoclass:: RelationshipSearchRecord
-   :show-inheritance:
+.. py:class:: RelationshipSearchRecord(abc_relationship_records.RelationshipSearchRecord, osid_records.OsidRecord)
+    A record for a ``RelationshipSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Family Record
 -------------
 
-.. autoclass:: FamilyRecord
-   :show-inheritance:
+.. py:class:: FamilyRecord(abc_relationship_records.FamilyRecord, osid_records.OsidRecord)
+    A record for a ``Family``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Family Query Record
 -------------------
 
-.. autoclass:: FamilyQueryRecord
-   :show-inheritance:
+.. py:class:: FamilyQueryRecord(abc_relationship_records.FamilyQueryRecord, osid_records.OsidRecord)
+    A record for a ``FamilyQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Family Form Record
 ------------------
 
-.. autoclass:: FamilyFormRecord
-   :show-inheritance:
+.. py:class:: FamilyFormRecord(abc_relationship_records.FamilyFormRecord, osid_records.OsidRecord)
+    A record for a ``FamilyForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Family Search Record
 --------------------
 
-.. autoclass:: FamilySearchRecord
-   :show-inheritance:
+.. py:class:: FamilySearchRecord(abc_relationship_records.FamilySearchRecord, osid_records.OsidRecord)
+    A record for a ``FamilySearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 

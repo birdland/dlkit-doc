@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.repository.records
-.. automodule:: dlkit.repository.records
 
 Records
 =======
@@ -9,120 +7,240 @@ Records
 Asset Record
 ------------
 
-.. autoclass:: AssetRecord
-   :show-inheritance:
+.. py:class:: AssetRecord(abc_repository_records.AssetRecord, osid_records.OsidRecord)
+    A record for an ``Asset``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Asset Query Record
 ------------------
 
-.. autoclass:: AssetQueryRecord
-   :show-inheritance:
+.. py:class:: AssetQueryRecord(abc_repository_records.AssetQueryRecord, osid_records.OsidRecord)
+    A record for an ``AssetQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Asset Form Record
 -----------------
 
-.. autoclass:: AssetFormRecord
-   :show-inheritance:
+.. py:class:: AssetFormRecord(abc_repository_records.AssetFormRecord, osid_records.OsidRecord)
+    A record for an ``AssetForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Asset Search Record
 -------------------
 
-.. autoclass:: AssetSearchRecord
-   :show-inheritance:
+.. py:class:: AssetSearchRecord(abc_repository_records.AssetSearchRecord, osid_records.OsidRecord)
+    A record for an ``AssetSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Asset Content Record
 --------------------
 
-.. autoclass:: AssetContentRecord
-   :show-inheritance:
+.. py:class:: AssetContentRecord(abc_repository_records.AssetContentRecord, osid_records.OsidRecord)
+    A record for an ``AssetContent``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Asset Content Query Record
 --------------------------
 
-.. autoclass:: AssetContentQueryRecord
-   :show-inheritance:
+.. py:class:: AssetContentQueryRecord(abc_repository_records.AssetContentQueryRecord, osid_records.OsidRecord)
+    A record for an ``AssetContentQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Asset Content Form Record
 -------------------------
 
-.. autoclass:: AssetContentFormRecord
-   :show-inheritance:
+.. py:class:: AssetContentFormRecord(abc_repository_records.AssetContentFormRecord, osid_records.OsidRecord)
+    A record for an ``AssetForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Composition Record
 ------------------
 
-.. autoclass:: CompositionRecord
-   :show-inheritance:
+.. py:class:: CompositionRecord(abc_repository_records.CompositionRecord, osid_records.OsidRecord)
+    A record for a ``Composition``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Composition Query Record
 ------------------------
 
-.. autoclass:: CompositionQueryRecord
-   :show-inheritance:
+.. py:class:: CompositionQueryRecord(abc_repository_records.CompositionQueryRecord, osid_records.OsidRecord)
+    A record for a ``CompositionQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Composition Form Record
 -----------------------
 
-.. autoclass:: CompositionFormRecord
-   :show-inheritance:
+.. py:class:: CompositionFormRecord(abc_repository_records.CompositionFormRecord, osid_records.OsidRecord)
+    A record for a ``CompositionForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Composition Search Record
 -------------------------
 
-.. autoclass:: CompositionSearchRecord
-   :show-inheritance:
+.. py:class:: CompositionSearchRecord(abc_repository_records.CompositionSearchRecord, osid_records.OsidRecord)
+    A record for a ``CompositionSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Repository Record
 -----------------
 
-.. autoclass:: RepositoryRecord
-   :show-inheritance:
+.. py:class:: RepositoryRecord(abc_repository_records.RepositoryRecord, osid_records.OsidRecord)
+    A record for a ``Repository``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Repository Query Record
 -----------------------
 
-.. autoclass:: RepositoryQueryRecord
-   :show-inheritance:
+.. py:class:: RepositoryQueryRecord(abc_repository_records.RepositoryQueryRecord, osid_records.OsidRecord)
+    A record for a ``RepositoryQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Repository Form Record
 ----------------------
 
-.. autoclass:: RepositoryFormRecord
-   :show-inheritance:
+.. py:class:: RepositoryFormRecord(abc_repository_records.RepositoryFormRecord, osid_records.OsidRecord)
+    A record for a ``RepositoryForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Repository Search Record
 ------------------------
 
-.. autoclass:: RepositorySearchRecord
-   :show-inheritance:
+.. py:class:: RepositorySearchRecord(abc_repository_records.RepositorySearchRecord, osid_records.OsidRecord)
+    A record for a ``RepositorySearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 

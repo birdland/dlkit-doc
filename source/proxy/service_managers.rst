@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.services.proxy
-.. automodule:: dlkit.services.proxy
 
 Service Managers
 ================
@@ -9,38 +7,123 @@ Service Managers
 Proxy Manager
 -------------
 
-.. autoclass:: ProxyManager
-   :show-inheritance:
+.. py:class:: ProxyManager(osid_managers.OsidManager, ProxyProfile, proxy_managers.ProxyManager)
+    The proxy manager provides access to proxy sessions and provides interoperability tests for
+        various
+    aspects of this service.
 
-   .. autoattribute:: ProxyManager.proxy_session
+
+    The sessions included in this manager are:
+
+
+
+
+      * ``ProxySession:`` a session to acquire proxy interfaces
+
+
+
+
+
+    .. py:method:: get_proxy_session():
+        :noindex:
+
+
+    .. py:attribute:: proxy_session
+        :noindex:
+
 
 
 
 Proxy Methods
 -------------
 
-   .. autoattribute:: ProxyManager.proxy_condition
+    .. py:method:: get_proxy_condition():
+        Gets a proxy condition for acquiring a proxy.
 
-   .. automethod:: ProxyManager.get_proxy
+        A new proxy condition should be acquired for each proxy request.
+
+        :return: (osid.proxy.ProxyCondition) - a proxy condiiton
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+
+
+    .. py:attribute:: proxy_condition
+
+
+    .. py:method:: get_proxy(input_):
+        Gets a proxy.
+
+        :arg:    input (osid.proxy.ProxyCondition): a proxy condition
+        :return: (osid.proxy.Proxy) - a proxy
+        :raises:  NullArgument - ``input`` is ``null``
+        :raises:  OperationFailed - unable to complete request
+        :raises:  PermissionDenied - authorization failure
+        :raises:  Unsupported - ``input`` is not of this service
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+
 
 
 
 Proxy Proxy Manager
 -------------------
 
-.. autoclass:: ProxyProxyManager
-   :show-inheritance:
+.. py:class:: ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile, proxy_managers.ProxyProxyManager)
+    The proxy proxy manager provides access to proxy sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
-   .. automethod:: ProxyProxyManager.get_proxy_session
+
+    Methods in this manager support the passing of a ``Proxy``. The
+    sessions included in this manager are:
+
+
+
+
+      * ``ProxySession:`` a session to acquire proxies
+
+
+
+
+
+    .. py:method:: get_proxy_session(proxy):
+        :noindex:
+
 
 
 
 Proxy Methods
 -------------
 
-   .. autoattribute:: ProxyProxyManager.proxy_condition
+    .. py:method:: get_proxy_condition():
+        Gets a proxy condition for acquiring a proxy.
 
-   .. automethod:: ProxyProxyManager.get_proxy
+        A new proxy condition should be acquired for each proxy request.
+
+        :return: (osid.proxy.ProxyCondition) - a proxy condiiton
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+
+
+    .. py:attribute:: proxy_condition
+
+
+    .. py:method:: get_proxy(input_):
+        Gets a proxy.
+
+        :arg:    input (osid.proxy.ProxyCondition): a proxy condition
+        :return: (osid.proxy.Proxy) - a proxy
+        :raises:  NullArgument - ``input`` is ``null``
+        :raises:  OperationFailed - unable to complete request
+        :raises:  PermissionDenied - authorization failure
+        :raises:  Unsupported - ``input`` is not of this service
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+
 
 
 

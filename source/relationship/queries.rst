@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.relationship.queries
-.. automodule:: dlkit.relationship.queries
 
 Queries
 =======
@@ -9,74 +7,212 @@ Queries
 Relationship Query
 ------------------
 
-.. autoclass:: RelationshipQuery
-   :show-inheritance:
+.. py:class:: RelationshipQuery(abc_relationship_queries.RelationshipQuery, osid_queries.OsidRelationshipQuery)
+    This is the query for searching relationships.
 
-   .. automethod:: RelationshipQuery.match_source_id
 
-   .. autoattribute:: RelationshipQuery.source_id_terms
+    Each method match specifies an ``AND`` term while multiple
+    invocations of the same method produce a nested ``OR``.
 
-   .. automethod:: RelationshipQuery.match_destination_id
 
-   .. autoattribute:: RelationshipQuery.destination_id_terms
 
-   .. automethod:: RelationshipQuery.match_same_peer_id
 
-   .. autoattribute:: RelationshipQuery.same_peer_id_terms
 
-   .. automethod:: RelationshipQuery.match_family_id
+    .. py:method:: match_source_id(peer, match):
+        :noindex:
 
-   .. autoattribute:: RelationshipQuery.family_id_terms
 
-   .. automethod:: RelationshipQuery.supports_family_query
+    .. py:method:: clear_source_id_terms():
+        :noindex:
 
-   .. autoattribute:: RelationshipQuery.family_query
 
-   .. autoattribute:: RelationshipQuery.family_terms
+    .. py:attribute:: source_id_terms
+        :noindex:
 
-   .. automethod:: RelationshipQuery.get_relationship_query_record
+
+    .. py:method:: match_destination_id(peer, match):
+        :noindex:
+
+
+    .. py:method:: clear_destination_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: destination_id_terms
+        :noindex:
+
+
+    .. py:method:: match_same_peer_id(match):
+        :noindex:
+
+
+    .. py:method:: clear_same_peer_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: same_peer_id_terms
+        :noindex:
+
+
+    .. py:method:: match_family_id(family_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_family_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: family_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_family_query():
+        :noindex:
+
+
+    .. py:method:: get_family_query():
+        :noindex:
+
+
+    .. py:attribute:: family_query
+        :noindex:
+
+
+    .. py:method:: clear_family_terms():
+        :noindex:
+
+
+    .. py:attribute:: family_terms
+        :noindex:
+
+
+    .. py:method:: get_relationship_query_record(relationship_record_type):
+        :noindex:
+
 
 Family Query
 ------------
 
-.. autoclass:: FamilyQuery
-   :show-inheritance:
+.. py:class:: FamilyQuery(abc_relationship_queries.FamilyQuery, osid_queries.OsidCatalogQuery)
+    This is the query interface for searching for families.
 
-   .. automethod:: FamilyQuery.match_relationship_id
 
-   .. autoattribute:: FamilyQuery.relationship_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: FamilyQuery.supports_relationship_query
 
-   .. autoattribute:: FamilyQuery.relationship_query
 
-   .. automethod:: FamilyQuery.match_any_relationship
 
-   .. autoattribute:: FamilyQuery.relationship_terms
 
-   .. automethod:: FamilyQuery.match_ancestor_family_id
+    .. py:method:: match_relationship_id(relationship_id, match):
+        :noindex:
 
-   .. autoattribute:: FamilyQuery.ancestor_family_id_terms
 
-   .. automethod:: FamilyQuery.supports_ancestor_family_query
+    .. py:method:: clear_relationship_id_terms():
+        :noindex:
 
-   .. autoattribute:: FamilyQuery.ancestor_family_query
 
-   .. automethod:: FamilyQuery.match_any_ancestor_family
+    .. py:attribute:: relationship_id_terms
+        :noindex:
 
-   .. autoattribute:: FamilyQuery.ancestor_family_terms
 
-   .. automethod:: FamilyQuery.match_descendant_family_id
+    .. py:method:: supports_relationship_query():
+        :noindex:
 
-   .. autoattribute:: FamilyQuery.descendant_family_id_terms
 
-   .. automethod:: FamilyQuery.supports_descendant_family_query
+    .. py:method:: get_relationship_query():
+        :noindex:
 
-   .. autoattribute:: FamilyQuery.descendant_family_query
 
-   .. automethod:: FamilyQuery.match_any_descendant_family
+    .. py:attribute:: relationship_query
+        :noindex:
 
-   .. autoattribute:: FamilyQuery.descendant_family_terms
 
-   .. automethod:: FamilyQuery.get_family_query_record
+    .. py:method:: match_any_relationship(match):
+        :noindex:
+
+
+    .. py:method:: clear_relationship_terms():
+        :noindex:
+
+
+    .. py:attribute:: relationship_terms
+        :noindex:
+
+
+    .. py:method:: match_ancestor_family_id(family_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_family_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_family_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_ancestor_family_query():
+        :noindex:
+
+
+    .. py:method:: get_ancestor_family_query():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_family_query
+        :noindex:
+
+
+    .. py:method:: match_any_ancestor_family(match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_family_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_family_terms
+        :noindex:
+
+
+    .. py:method:: match_descendant_family_id(family_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_family_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_family_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_descendant_family_query():
+        :noindex:
+
+
+    .. py:method:: get_descendant_family_query():
+        :noindex:
+
+
+    .. py:attribute:: descendant_family_query
+        :noindex:
+
+
+    .. py:method:: match_any_descendant_family(match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_family_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_family_terms
+        :noindex:
+
+
+    .. py:method:: get_family_query_record(family_record_type):
+        :noindex:
+
 

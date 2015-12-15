@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.relationship.managers
-.. automodule:: dlkit.relationship.managers
 
 Managers
 ========
@@ -9,158 +7,378 @@ Managers
 Relationship Profile
 --------------------
 
-.. autoclass:: RelationshipProfile
-   :show-inheritance:
+.. py:class:: RelationshipProfile(osid_managers.OsidProfile, relationship_managers.RelationshipProfile)
+    The relationship profile describes the interoperability among relationship services.
 
-   .. automethod:: RelationshipProfile.supports_visible_federation
+    .. py:method:: supports_visible_federation():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_lookup
 
-   .. automethod:: RelationshipProfile.supports_relationship_query
+    .. py:method:: supports_relationship_lookup():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_search
 
-   .. automethod:: RelationshipProfile.supports_relationship_admin
+    .. py:method:: supports_relationship_query():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_notification
 
-   .. automethod:: RelationshipProfile.supports_relationship_family
+    .. py:method:: supports_relationship_search():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_family_assignment
 
-   .. automethod:: RelationshipProfile.supports_relationship_smart_family
+    .. py:method:: supports_relationship_admin():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_family_lookup
 
-   .. automethod:: RelationshipProfile.supports_family_query
+    .. py:method:: supports_relationship_notification():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_family_search
 
-   .. automethod:: RelationshipProfile.supports_family_admin
+    .. py:method:: supports_relationship_family():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_family_notification
 
-   .. automethod:: RelationshipProfile.supports_family_hierarchy
+    .. py:method:: supports_relationship_family_assignment():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_family_hierarchy_design
 
-   .. automethod:: RelationshipProfile.supports_relationship_batch
+    .. py:method:: supports_relationship_smart_family():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_rules
 
-   .. autoattribute:: RelationshipProfile.relationship_record_types
+    .. py:method:: supports_family_lookup():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_record_type
 
-   .. autoattribute:: RelationshipProfile.relationship_search_record_types
+    .. py:method:: supports_family_query():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_relationship_search_record_type
 
-   .. autoattribute:: RelationshipProfile.family_record_types
+    .. py:method:: supports_family_search():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_family_record_type
 
-   .. autoattribute:: RelationshipProfile.family_search_record_types
+    .. py:method:: supports_family_admin():
+        :noindex:
 
-   .. automethod:: RelationshipProfile.supports_family_search_record_type
+
+    .. py:method:: supports_family_notification():
+        :noindex:
+
+
+    .. py:method:: supports_family_hierarchy():
+        :noindex:
+
+
+    .. py:method:: supports_family_hierarchy_design():
+        :noindex:
+
+
+    .. py:method:: supports_relationship_batch():
+        :noindex:
+
+
+    .. py:method:: supports_relationship_rules():
+        :noindex:
+
+
+    .. py:method:: get_relationship_record_types():
+        :noindex:
+
+
+    .. py:attribute:: relationship_record_types
+        :noindex:
+
+
+    .. py:method:: supports_relationship_record_type(relationship_record_type):
+        :noindex:
+
+
+    .. py:method:: get_relationship_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: relationship_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_relationship_search_record_type(relationship_search_record_type):
+        :noindex:
+
+
+    .. py:method:: get_family_record_types():
+        :noindex:
+
+
+    .. py:attribute:: family_record_types
+        :noindex:
+
+
+    .. py:method:: supports_family_record_type(family_record_type):
+        :noindex:
+
+
+    .. py:method:: get_family_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: family_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_family_search_record_type(family_search_record_type):
+        :noindex:
+
 
 Relationship Manager
 --------------------
 
-.. autoclass:: RelationshipManager
-   :show-inheritance:
+.. py:class:: RelationshipManager(osid_managers.OsidManager, RelationshipProfile, relationship_managers.RelationshipManager)
+        :noindex:
 
-   .. autoattribute:: RelationshipManager.relationship_lookup_session
+    .. py:method:: get_relationship_lookup_session():
+        :noindex:
 
-   .. automethod:: RelationshipManager.get_relationship_lookup_session_for_family
 
-   .. autoattribute:: RelationshipManager.relationship_query_session
+    .. py:attribute:: relationship_lookup_session
+        :noindex:
 
-   .. automethod:: RelationshipManager.get_relationship_query_session_for_family
 
-   .. autoattribute:: RelationshipManager.relationship_search_session
+    .. py:method:: get_relationship_lookup_session_for_family(family_id):
+        :noindex:
 
-   .. automethod:: RelationshipManager.get_relationship_search_session_for_family
 
-   .. autoattribute:: RelationshipManager.relationship_admin_session
+    .. py:method:: get_relationship_query_session():
+        :noindex:
 
-   .. automethod:: RelationshipManager.get_relationship_admin_session_for_family
 
-   .. automethod:: RelationshipManager.get_relationship_notification_session
+    .. py:attribute:: relationship_query_session
+        :noindex:
 
-   .. automethod:: RelationshipManager.get_relationship_notification_session_for_family
 
-   .. autoattribute:: RelationshipManager.relationship_family_session
+    .. py:method:: get_relationship_query_session_for_family(family_id):
+        :noindex:
 
-   .. autoattribute:: RelationshipManager.relationship_family_assignment_session
 
-   .. automethod:: RelationshipManager.get_relationship_smart_family_session
+    .. py:method:: get_relationship_search_session():
+        :noindex:
 
-   .. autoattribute:: RelationshipManager.family_lookup_session
 
-   .. autoattribute:: RelationshipManager.family_query_session
+    .. py:attribute:: relationship_search_session
+        :noindex:
 
-   .. autoattribute:: RelationshipManager.family_search_session
 
-   .. autoattribute:: RelationshipManager.family_admin_session
+    .. py:method:: get_relationship_search_session_for_family(family_id):
+        :noindex:
 
-   .. automethod:: RelationshipManager.get_family_notification_session
 
-   .. autoattribute:: RelationshipManager.family_hierarchy_session
+    .. py:method:: get_relationship_admin_session():
+        :noindex:
 
-   .. autoattribute:: RelationshipManager.family_hierarchy_design_session
 
-   .. autoattribute:: RelationshipManager.relationship_batch_manager
+    .. py:attribute:: relationship_admin_session
+        :noindex:
 
-   .. autoattribute:: RelationshipManager.relationship_rules_manager
+
+    .. py:method:: get_relationship_admin_session_for_family(family_id):
+        :noindex:
+
+
+    .. py:method:: get_relationship_notification_session(relationship_receiver):
+        :noindex:
+
+
+    .. py:method:: get_relationship_notification_session_for_family(relationship_receiver, family_id):
+        :noindex:
+
+
+    .. py:method:: get_relationship_family_session():
+        :noindex:
+
+
+    .. py:attribute:: relationship_family_session
+        :noindex:
+
+
+    .. py:method:: get_relationship_family_assignment_session():
+        :noindex:
+
+
+    .. py:attribute:: relationship_family_assignment_session
+        :noindex:
+
+
+    .. py:method:: get_relationship_smart_family_session(family_id):
+        :noindex:
+
+
+    .. py:method:: get_family_lookup_session():
+        :noindex:
+
+
+    .. py:attribute:: family_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_family_query_session():
+        :noindex:
+
+
+    .. py:attribute:: family_query_session
+        :noindex:
+
+
+    .. py:method:: get_family_search_session():
+        :noindex:
+
+
+    .. py:attribute:: family_search_session
+        :noindex:
+
+
+    .. py:method:: get_family_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: family_admin_session
+        :noindex:
+
+
+    .. py:method:: get_family_notification_session(family_receiver):
+        :noindex:
+
+
+    .. py:method:: get_family_hierarchy_session():
+        :noindex:
+
+
+    .. py:attribute:: family_hierarchy_session
+        :noindex:
+
+
+    .. py:method:: get_family_hierarchy_design_session():
+        :noindex:
+
+
+    .. py:attribute:: family_hierarchy_design_session
+        :noindex:
+
+
+    .. py:method:: get_relationship_batch_manager():
+        :noindex:
+
+
+    .. py:attribute:: relationship_batch_manager
+        :noindex:
+
+
+    .. py:method:: get_relationship_rules_manager():
+        :noindex:
+
+
+    .. py:attribute:: relationship_rules_manager
+        :noindex:
+
 
 Relationship Proxy Manager
 --------------------------
 
-.. autoclass:: RelationshipProxyManager
-   :show-inheritance:
+.. py:class:: RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile, relationship_managers.RelationshipProxyManager)
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_lookup_session
+    .. py:method:: get_relationship_lookup_session(proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_lookup_session_for_family
 
-   .. automethod:: RelationshipProxyManager.get_relationship_query_session
+    .. py:method:: get_relationship_lookup_session_for_family(family_id, proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_query_session_for_family
 
-   .. automethod:: RelationshipProxyManager.get_relationship_search_session
+    .. py:method:: get_relationship_query_session(proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_search_session_for_family
 
-   .. automethod:: RelationshipProxyManager.get_relationship_admin_session
+    .. py:method:: get_relationship_query_session_for_family(family_id, proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_admin_session_for_family
 
-   .. automethod:: RelationshipProxyManager.get_relationship_notification_session
+    .. py:method:: get_relationship_search_session(proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_notification_session_for_family
 
-   .. automethod:: RelationshipProxyManager.get_relationship_family_session
+    .. py:method:: get_relationship_search_session_for_family(family_id, proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_relationship_family_assignment_session
 
-   .. automethod:: RelationshipProxyManager.get_relationship_smart_family_session
+    .. py:method:: get_relationship_admin_session(proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_family_lookup_session
 
-   .. automethod:: RelationshipProxyManager.get_family_query_session
+    .. py:method:: get_relationship_admin_session_for_family(family_id, proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_family_search_session
 
-   .. automethod:: RelationshipProxyManager.get_family_admin_session
+    .. py:method:: get_relationship_notification_session(relationship_receiver, proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_family_notification_session
 
-   .. automethod:: RelationshipProxyManager.get_family_hierarchy_session
+    .. py:method:: get_relationship_notification_session_for_family(relationship_receiver, family_id, proxy):
+        :noindex:
 
-   .. automethod:: RelationshipProxyManager.get_family_hierarchy_design_session
 
-   .. autoattribute:: RelationshipProxyManager.relationship_batch_proxy_manager
+    .. py:method:: get_relationship_family_session(proxy):
+        :noindex:
 
-   .. autoattribute:: RelationshipProxyManager.relationship_rules_proxy_manager
+
+    .. py:method:: get_relationship_family_assignment_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_relationship_smart_family_session(family_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_lookup_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_query_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_search_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_admin_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_notification_session(family_receiver, proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_hierarchy_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_family_hierarchy_design_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_relationship_batch_proxy_manager():
+        :noindex:
+
+
+    .. py:attribute:: relationship_batch_proxy_manager
+        :noindex:
+
+
+    .. py:method:: get_relationship_rules_proxy_manager():
+        :noindex:
+
+
+    .. py:attribute:: relationship_rules_proxy_manager
+        :noindex:
+
 

@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.resource.queries
-.. automodule:: dlkit.resource.queries
 
 Queries
 =======
@@ -9,118 +7,344 @@ Queries
 Resource Query
 --------------
 
-.. autoclass:: ResourceQuery
-   :show-inheritance:
+.. py:class:: ResourceQuery(abc_resource_queries.ResourceQuery, osid_queries.OsidObjectQuery)
+    This is the query for searching resources.
 
-   .. automethod:: ResourceQuery.match_group
 
-   .. autoattribute:: ResourceQuery.group_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: ResourceQuery.match_demographic
 
-   .. autoattribute:: ResourceQuery.demographic_terms
 
-   .. automethod:: ResourceQuery.match_containing_group_id
 
-   .. autoattribute:: ResourceQuery.containing_group_id_terms
 
-   .. automethod:: ResourceQuery.supports_containing_group_query
+    .. py:method:: match_group(match):
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.containing_group_query
 
-   .. automethod:: ResourceQuery.match_any_containing_group
+    .. py:method:: clear_group_terms():
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.containing_group_terms
 
-   .. automethod:: ResourceQuery.match_avatar_id
+    .. py:attribute:: group_terms
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.avatar_id_terms
 
-   .. automethod:: ResourceQuery.supports_avatar_query
+    .. py:method:: match_demographic(match):
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.avatar_query
 
-   .. automethod:: ResourceQuery.match_any_avatar
+    .. py:method:: clear_demographic_terms():
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.avatar_terms
 
-   .. automethod:: ResourceQuery.match_agent_id
+    .. py:attribute:: demographic_terms
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.agent_id_terms
 
-   .. automethod:: ResourceQuery.supports_agent_query
+    .. py:method:: match_containing_group_id(resource_id, match):
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.agent_query
 
-   .. automethod:: ResourceQuery.match_any_agent
+    .. py:method:: clear_containing_group_id_terms():
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.agent_terms
 
-   .. automethod:: ResourceQuery.match_resource_relationship_id
+    .. py:attribute:: containing_group_id_terms
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.resource_relationship_id_terms
 
-   .. automethod:: ResourceQuery.supports_resource_relationship_query
+    .. py:method:: supports_containing_group_query():
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.resource_relationship_query
 
-   .. automethod:: ResourceQuery.match_any_resource_relationship
+    .. py:method:: get_containing_group_query():
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.resource_relationship_terms
 
-   .. automethod:: ResourceQuery.match_bin_id
+    .. py:attribute:: containing_group_query
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.bin_id_terms
 
-   .. automethod:: ResourceQuery.supports_bin_query
+    .. py:method:: match_any_containing_group(match):
+        :noindex:
 
-   .. autoattribute:: ResourceQuery.bin_query
 
-   .. autoattribute:: ResourceQuery.bin_terms
+    .. py:method:: clear_containing_group_terms():
+        :noindex:
 
-   .. automethod:: ResourceQuery.get_resource_query_record
+
+    .. py:attribute:: containing_group_terms
+        :noindex:
+
+
+    .. py:method:: match_avatar_id(asset_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_avatar_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: avatar_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_avatar_query():
+        :noindex:
+
+
+    .. py:method:: get_avatar_query():
+        :noindex:
+
+
+    .. py:attribute:: avatar_query
+        :noindex:
+
+
+    .. py:method:: match_any_avatar(match):
+        :noindex:
+
+
+    .. py:method:: clear_avatar_terms():
+        :noindex:
+
+
+    .. py:attribute:: avatar_terms
+        :noindex:
+
+
+    .. py:method:: match_agent_id(agent_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_agent_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: agent_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_agent_query():
+        :noindex:
+
+
+    .. py:method:: get_agent_query():
+        :noindex:
+
+
+    .. py:attribute:: agent_query
+        :noindex:
+
+
+    .. py:method:: match_any_agent(match):
+        :noindex:
+
+
+    .. py:method:: clear_agent_terms():
+        :noindex:
+
+
+    .. py:attribute:: agent_terms
+        :noindex:
+
+
+    .. py:method:: match_resource_relationship_id(resource_relationship_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_resource_relationship_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: resource_relationship_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_resource_relationship_query():
+        :noindex:
+
+
+    .. py:method:: get_resource_relationship_query():
+        :noindex:
+
+
+    .. py:attribute:: resource_relationship_query
+        :noindex:
+
+
+    .. py:method:: match_any_resource_relationship(match):
+        :noindex:
+
+
+    .. py:method:: clear_resource_relationship_terms():
+        :noindex:
+
+
+    .. py:attribute:: resource_relationship_terms
+        :noindex:
+
+
+    .. py:method:: match_bin_id(bin_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_bin_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: bin_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_bin_query():
+        :noindex:
+
+
+    .. py:method:: get_bin_query():
+        :noindex:
+
+
+    .. py:attribute:: bin_query
+        :noindex:
+
+
+    .. py:method:: clear_bin_terms():
+        :noindex:
+
+
+    .. py:attribute:: bin_terms
+        :noindex:
+
+
+    .. py:method:: get_resource_query_record(resource_record_type):
+        :noindex:
+
 
 Bin Query
 ---------
 
-.. autoclass:: BinQuery
-   :show-inheritance:
+.. py:class:: BinQuery(abc_resource_queries.BinQuery, osid_queries.OsidCatalogQuery)
+    This is the query for searching bins.
 
-   .. automethod:: BinQuery.match_resource_id
 
-   .. autoattribute:: BinQuery.resource_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: BinQuery.supports_resource_query
 
-   .. autoattribute:: BinQuery.resource_query
 
-   .. automethod:: BinQuery.match_any_resource
 
-   .. autoattribute:: BinQuery.resource_terms
 
-   .. automethod:: BinQuery.match_ancestor_bin_id
+    .. py:method:: match_resource_id(resource_id, match):
+        :noindex:
 
-   .. autoattribute:: BinQuery.ancestor_bin_id_terms
 
-   .. automethod:: BinQuery.supports_ancestor_bin_query
+    .. py:method:: clear_resource_id_terms():
+        :noindex:
 
-   .. autoattribute:: BinQuery.ancestor_bin_query
 
-   .. automethod:: BinQuery.match_any_ancestor_bin
+    .. py:attribute:: resource_id_terms
+        :noindex:
 
-   .. autoattribute:: BinQuery.ancestor_bin_terms
 
-   .. automethod:: BinQuery.match_descendant_bin_id
+    .. py:method:: supports_resource_query():
+        :noindex:
 
-   .. autoattribute:: BinQuery.descendant_bin_id_terms
 
-   .. automethod:: BinQuery.supports_descendant_bin_query
+    .. py:method:: get_resource_query():
+        :noindex:
 
-   .. autoattribute:: BinQuery.descendant_bin_query
 
-   .. automethod:: BinQuery.match_any_descendant_bin
+    .. py:attribute:: resource_query
+        :noindex:
 
-   .. autoattribute:: BinQuery.descendant_bin_terms
 
-   .. automethod:: BinQuery.get_bin_query_record
+    .. py:method:: match_any_resource(match):
+        :noindex:
+
+
+    .. py:method:: clear_resource_terms():
+        :noindex:
+
+
+    .. py:attribute:: resource_terms
+        :noindex:
+
+
+    .. py:method:: match_ancestor_bin_id(binid, match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_bin_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_bin_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_ancestor_bin_query():
+        :noindex:
+
+
+    .. py:method:: get_ancestor_bin_query():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_bin_query
+        :noindex:
+
+
+    .. py:method:: match_any_ancestor_bin(match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_bin_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_bin_terms
+        :noindex:
+
+
+    .. py:method:: match_descendant_bin_id(binid, match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_bin_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_bin_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_descendant_bin_query():
+        :noindex:
+
+
+    .. py:method:: get_descendant_bin_query():
+        :noindex:
+
+
+    .. py:attribute:: descendant_bin_query
+        :noindex:
+
+
+    .. py:method:: match_any_descendant_bin(match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_bin_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_bin_terms
+        :noindex:
+
+
+    .. py:method:: get_bin_query_record(bin_record_type):
+        :noindex:
+
 

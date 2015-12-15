@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.hierarchy.managers
-.. automodule:: dlkit.hierarchy.managers
 
 Managers
 ========
@@ -9,98 +7,214 @@ Managers
 Hierarchy Profile
 -----------------
 
-.. autoclass:: HierarchyProfile
-   :show-inheritance:
+.. py:class:: HierarchyProfile(osid_managers.OsidProfile, hierarchy_managers.HierarchyProfile)
+    The hierarchy profile describes the interoperability among hierarchy services.
 
-   .. automethod:: HierarchyProfile.supports_visible_federation
+    .. py:method:: supports_visible_federation():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_traversal
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_design
+    .. py:method:: supports_hierarchy_traversal():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_sequencing
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_structure_notification
+    .. py:method:: supports_hierarchy_design():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_lookup
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_query
+    .. py:method:: supports_hierarchy_sequencing():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_search
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_admin
+    .. py:method:: supports_hierarchy_structure_notification():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_notification
 
-   .. autoattribute:: HierarchyProfile.hierarchy_record_types
+    .. py:method:: supports_hierarchy_lookup():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_record_type
 
-   .. autoattribute:: HierarchyProfile.hierarchy_search_record_types
+    .. py:method:: supports_hierarchy_query():
+        :noindex:
 
-   .. automethod:: HierarchyProfile.supports_hierarchy_search_record_type
+
+    .. py:method:: supports_hierarchy_search():
+        :noindex:
+
+
+    .. py:method:: supports_hierarchy_admin():
+        :noindex:
+
+
+    .. py:method:: supports_hierarchy_notification():
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_record_types():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_record_types
+        :noindex:
+
+
+    .. py:method:: supports_hierarchy_record_type(hierarchy_record_type):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_hierarchy_search_record_type(hierarchy_search_record_type):
+        :noindex:
+
 
 Hierarchy Manager
 -----------------
 
-.. autoclass:: HierarchyManager
-   :show-inheritance:
+.. py:class:: HierarchyManager(osid_managers.OsidManager, HierarchyProfile, hierarchy_managers.HierarchyManager)
+        :noindex:
 
-   .. autoattribute:: HierarchyManager.hierarchy_traversal_session
+    .. py:method:: get_hierarchy_traversal_session():
+        :noindex:
 
-   .. automethod:: HierarchyManager.get_hierarchy_traversal_session_for_hierarchy
 
-   .. autoattribute:: HierarchyManager.hierarchy_design_session
+    .. py:attribute:: hierarchy_traversal_session
+        :noindex:
 
-   .. automethod:: HierarchyManager.get_hierarchy_design_session_for_hierarchy
 
-   .. autoattribute:: HierarchyManager.hierarchy_sequencing_session
+    .. py:method:: get_hierarchy_traversal_session_for_hierarchy(hierarchy_id):
+        :noindex:
 
-   .. automethod:: HierarchyManager.get_hierarchy_sequencing_session_for_hierarchy
 
-   .. automethod:: HierarchyManager.get_hierarchy_structure_notification_session
+    .. py:method:: get_hierarchy_design_session():
+        :noindex:
 
-   .. automethod:: HierarchyManager.get_hierarchy_structure_notification_session_for_hierarchy
 
-   .. autoattribute:: HierarchyManager.hierarchy_lookup_session
+    .. py:attribute:: hierarchy_design_session
+        :noindex:
 
-   .. autoattribute:: HierarchyManager.hierarchy_query_session
 
-   .. autoattribute:: HierarchyManager.hierarchy_search_session
+    .. py:method:: get_hierarchy_design_session_for_hierarchy(hierarchy_id):
+        :noindex:
 
-   .. autoattribute:: HierarchyManager.hierarchy_admin_session
 
-   .. automethod:: HierarchyManager.get_hierarchy_notification_session
+    .. py:method:: get_hierarchy_sequencing_session():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_sequencing_session
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_sequencing_session_for_hierarchy(hierarchy_id):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_structure_notification_session(hierarchy_structure_receiver):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_structure_notification_session_for_hierarchy(hierarchy_structure_receiver, hierarchy_id):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_lookup_session():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_query_session():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_query_session
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_search_session():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_search_session
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_admin_session
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_notification_session(hierarchy_receiver):
+        :noindex:
+
 
 Hierarchy Proxy Manager
 -----------------------
 
-.. autoclass:: HierarchyProxyManager
-   :show-inheritance:
+.. py:class:: HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile, hierarchy_managers.HierarchyProxyManager)
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_traversal_session
+    .. py:method:: get_hierarchy_traversal_session(proxy):
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_traversal_session_for_hierarchy
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_design_session
+    .. py:method:: get_hierarchy_traversal_session_for_hierarchy(hierarchy_id, proxy):
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_design_session_for_hierarchy
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_sequencing_session
+    .. py:method:: get_hierarchy_design_session(proxy):
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_sequencing_session_for_hierarchy
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_structure_notification_session
+    .. py:method:: get_hierarchy_design_session_for_hierarchy(hierarchy_id, proxy):
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_structure_notification_session_for_hierarchy
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_lookup_session
+    .. py:method:: get_hierarchy_sequencing_session(proxy):
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_query_session
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_search_session
+    .. py:method:: get_hierarchy_sequencing_session_for_hierarchy(hierarchy_id, proxy):
+        :noindex:
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_admin_session
 
-   .. automethod:: HierarchyProxyManager.get_hierarchy_notification_session
+    .. py:method:: get_hierarchy_structure_notification_session(hierarchy_structure_receiver, proxy):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_structure_notification_session_for_hierarchy(hierarchy_structure_receiver, hierarchy_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_lookup_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_query_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_search_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_admin_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_notification_session(hierarchy_receiver, proxy):
+        :noindex:
+
 

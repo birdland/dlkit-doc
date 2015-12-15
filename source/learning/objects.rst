@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.learning.objects
-.. automodule:: dlkit.learning.objects
 
 Objects
 =======
@@ -9,186 +7,640 @@ Objects
 Objective
 ---------
 
-.. autoclass:: Objective
-   :show-inheritance:
+.. py:class:: Objective(abc_learning_objects.Objective, osid_objects.OsidObject, osid_markers.Federateable)
+    An ``Objective`` is a statable learning objective.
 
-   .. automethod:: Objective.has_assessment
+    .. py:method:: has_assessment():
+        :noindex:
 
-   .. autoattribute:: Objective.assessment_id
 
-   .. autoattribute:: Objective.assessment
+    .. py:method:: get_assessment_id():
+        :noindex:
 
-   .. automethod:: Objective.has_knowledge_category
 
-   .. autoattribute:: Objective.knowledge_category_id
+    .. py:attribute:: assessment_id
+        :noindex:
 
-   .. autoattribute:: Objective.knowledge_category
 
-   .. automethod:: Objective.has_cognitive_process
+    .. py:method:: get_assessment():
+        :noindex:
 
-   .. autoattribute:: Objective.cognitive_process_id
 
-   .. autoattribute:: Objective.cognitive_process
+    .. py:attribute:: assessment
+        :noindex:
 
-   .. automethod:: Objective.get_objective_record
+
+    .. py:method:: has_knowledge_category():
+        :noindex:
+
+
+    .. py:method:: get_knowledge_category_id():
+        :noindex:
+
+
+    .. py:attribute:: knowledge_category_id
+        :noindex:
+
+
+    .. py:method:: get_knowledge_category():
+        :noindex:
+
+
+    .. py:attribute:: knowledge_category
+        :noindex:
+
+
+    .. py:method:: has_cognitive_process():
+        :noindex:
+
+
+    .. py:method:: get_cognitive_process_id():
+        :noindex:
+
+
+    .. py:attribute:: cognitive_process_id
+        :noindex:
+
+
+    .. py:method:: get_cognitive_process():
+        :noindex:
+
+
+    .. py:attribute:: cognitive_process
+        :noindex:
+
+
+    .. py:method:: get_objective_record(objective_record_type):
+        :noindex:
+
 
 Objective Form
 --------------
 
-.. autoclass:: ObjectiveForm
-   :show-inheritance:
+.. py:class:: ObjectiveForm(abc_learning_objects.ObjectiveForm, osid_objects.OsidObjectForm, osid_objects.OsidFederateableForm)
+    This is the form for creating and updating ``Objectives``.
 
-   .. autoattribute:: ObjectiveForm.assessment_metadata
 
-   .. autoattribute:: ObjectiveForm.assessment
+    Like all ``OsidForm`` objects, various data elements may be set here
+    for use in the create and update methods in the
+    ``ObjectiveAdminSession``. For each data element that may be set,
+    metadata may be examined to provide display hints or data
+    constraints.
 
-   .. autoattribute:: ObjectiveForm.knowledge_category_metadata
 
-   .. autoattribute:: ObjectiveForm.knowledge_category
 
-   .. autoattribute:: ObjectiveForm.cognitive_process_metadata
 
-   .. autoattribute:: ObjectiveForm.cognitive_process
 
-   .. automethod:: ObjectiveForm.get_objective_form_record
+    .. py:method:: get_assessment_metadata():
+        :noindex:
+
+
+    .. py:attribute:: assessment_metadata
+        :noindex:
+
+
+    .. py:method:: set_assessment(assessment_id):
+        :noindex:
+
+
+    .. py:method:: clear_assessment():
+        :noindex:
+
+
+    .. py:attribute:: assessment
+        :noindex:
+
+
+    .. py:method:: get_knowledge_category_metadata():
+        :noindex:
+
+
+    .. py:attribute:: knowledge_category_metadata
+        :noindex:
+
+
+    .. py:method:: set_knowledge_category(grade_id):
+        :noindex:
+
+
+    .. py:method:: clear_knowledge_category():
+        :noindex:
+
+
+    .. py:attribute:: knowledge_category
+        :noindex:
+
+
+    .. py:method:: get_cognitive_process_metadata():
+        :noindex:
+
+
+    .. py:attribute:: cognitive_process_metadata
+        :noindex:
+
+
+    .. py:method:: set_cognitive_process(grade_id):
+        :noindex:
+
+
+    .. py:method:: clear_cognitive_process():
+        :noindex:
+
+
+    .. py:attribute:: cognitive_process
+        :noindex:
+
+
+    .. py:method:: get_objective_form_record(objective_record_type):
+        :noindex:
+
 
 Objective List
 --------------
 
-.. autoclass:: ObjectiveList
-   :show-inheritance:
+.. py:class:: ObjectiveList(abc_learning_objects.ObjectiveList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``ObjectiveList`` provides a means for accessing ``Objective`` elements
+    sequentially either one at a time or many at a time.
 
-   .. autoattribute:: ObjectiveList.next_objective
 
-   .. automethod:: ObjectiveList.get_next_objectives
+    Examples: while (ol.hasNext()) { Objective objective =
+    ol.getNextObjective(); }
+
+
+
+
+    or
+      while (ol.hasNext()) {
+           Objective[] objectives = ol.getNextObjectives(ol.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_objective():
+        :noindex:
+
+
+    .. py:attribute:: next_objective
+        :noindex:
+
+
+    .. py:method:: get_next_objectives(n):
+        :noindex:
+
 
 Objective Node
 --------------
 
-.. autoclass:: ObjectiveNode
-   :show-inheritance:
+.. py:class:: ObjectiveNode(abc_learning_objects.ObjectiveNode, osid_objects.OsidNode)
+    This interface is a container for a partial hierarchy retrieval.
 
-   .. autoattribute:: ObjectiveNode.objective
 
-   .. autoattribute:: ObjectiveNode.parent_objective_nodes
+    The number of hierarchy levels traversable through this interface
+    depend on the number of levels requested in the
+    ``ObjectiveHierarchySession``.
 
-   .. autoattribute:: ObjectiveNode.child_objective_nodes
+
+
+
+
+    .. py:method:: get_objective():
+        :noindex:
+
+
+    .. py:attribute:: objective
+        :noindex:
+
+
+    .. py:method:: get_parent_objective_nodes():
+        :noindex:
+
+
+    .. py:attribute:: parent_objective_nodes
+        :noindex:
+
+
+    .. py:method:: get_child_objective_nodes():
+        :noindex:
+
+
+    .. py:attribute:: child_objective_nodes
+        :noindex:
+
 
 Objective Node List
 -------------------
 
-.. autoclass:: ObjectiveNodeList
-   :show-inheritance:
+.. py:class:: ObjectiveNodeList(abc_learning_objects.ObjectiveNodeList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``ObjectiveNodeList`` provides a means for accessing ``ObjectiveNode``
+    elements sequentially either one at a time or many at a time.
 
-   .. autoattribute:: ObjectiveNodeList.next_objective_node
 
-   .. automethod:: ObjectiveNodeList.get_next_objective_nodes
+    Examples: while (onl.hasNext()) { ObjectiveNode node =
+    onl.getNextObjectiveNode(); }
+
+
+
+
+    or
+      while (onl.hasNext()) {
+           ObjectiveNode[] nodes = onl.getNextObjectiveNodes(onl.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_objective_node():
+        :noindex:
+
+
+    .. py:attribute:: next_objective_node
+        :noindex:
+
+
+    .. py:method:: get_next_objective_nodes(n):
+        :noindex:
+
 
 Activity
 --------
 
-.. autoclass:: Activity
-   :show-inheritance:
+.. py:class:: Activity(abc_learning_objects.Activity, osid_objects.OsidObject, osid_markers.Subjugateable)
+    An ``Activity`` represents learning material or other learning activities to meet an objective.
 
-   .. autoattribute:: Activity.objective_id
 
-   .. autoattribute:: Activity.objective
+    An Activity has may relate to a set of ``Asssts`` for self learning,
+    recommended ``Courses`` to take, or a learning ``Assessment``. The
+    learning ``Assessment`` differs from the ``Objective``
+    ``Assessment`` in that the latter used to test for proficiency in
+    the ``Objective``.
 
-   .. automethod:: Activity.is_asset_based_activity
 
-   .. autoattribute:: Activity.asset_ids
 
-   .. autoattribute:: Activity.assets
 
-   .. automethod:: Activity.is_course_based_activity
+    Generally, an ``Activity`` should focus on one of assets, courses,
+    assessments, or some other specific activity related to the
+    objective described or related in the ``ActivityRecord``.
 
-   .. autoattribute:: Activity.course_ids
 
-   .. autoattribute:: Activity.courses
 
-   .. automethod:: Activity.is_assessment_based_activity
 
-   .. autoattribute:: Activity.assessment_ids
 
-   .. autoattribute:: Activity.assessments
+    .. py:method:: get_objective_id():
+        :noindex:
 
-   .. automethod:: Activity.get_activity_record
+
+    .. py:attribute:: objective_id
+        :noindex:
+
+
+    .. py:method:: get_objective():
+        :noindex:
+
+
+    .. py:attribute:: objective
+        :noindex:
+
+
+    .. py:method:: is_asset_based_activity():
+        :noindex:
+
+
+    .. py:method:: get_asset_ids():
+        :noindex:
+
+
+    .. py:attribute:: asset_ids
+        :noindex:
+
+
+    .. py:method:: get_assets():
+        :noindex:
+
+
+    .. py:attribute:: assets
+        :noindex:
+
+
+    .. py:method:: is_course_based_activity():
+        :noindex:
+
+
+    .. py:method:: get_course_ids():
+        :noindex:
+
+
+    .. py:attribute:: course_ids
+        :noindex:
+
+
+    .. py:method:: get_courses():
+        :noindex:
+
+
+    .. py:attribute:: courses
+        :noindex:
+
+
+    .. py:method:: is_assessment_based_activity():
+        :noindex:
+
+
+    .. py:method:: get_assessment_ids():
+        :noindex:
+
+
+    .. py:attribute:: assessment_ids
+        :noindex:
+
+
+    .. py:method:: get_assessments():
+        :noindex:
+
+
+    .. py:attribute:: assessments
+        :noindex:
+
+
+    .. py:method:: get_activity_record(activity_record_type):
+        :noindex:
+
 
 Activity Form
 -------------
 
-.. autoclass:: ActivityForm
-   :show-inheritance:
+.. py:class:: ActivityForm(abc_learning_objects.ActivityForm, osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm)
+    This is the form for creating and updating ``Activities``.
 
-   .. autoattribute:: ActivityForm.assets_metadata
 
-   .. autoattribute:: ActivityForm.assets
+    Like all ``OsidForm`` objects, various data elements may be set here
+    for use in the create and update methods in the
+    ``ActivityAdminSession``. For each data element that may be set,
+    metadata may be examined to provide display hints or data
+    constraints.
 
-   .. autoattribute:: ActivityForm.courses_metadata
 
-   .. autoattribute:: ActivityForm.courses
 
-   .. autoattribute:: ActivityForm.assessments_metadata
 
-   .. autoattribute:: ActivityForm.assessments
 
-   .. automethod:: ActivityForm.get_activity_form_record
+    .. py:method:: get_assets_metadata():
+        :noindex:
+
+
+    .. py:attribute:: assets_metadata
+        :noindex:
+
+
+    .. py:method:: set_assets(asset_ids):
+        :noindex:
+
+
+    .. py:method:: clear_assets():
+        :noindex:
+
+
+    .. py:attribute:: assets
+        :noindex:
+
+
+    .. py:method:: get_courses_metadata():
+        :noindex:
+
+
+    .. py:attribute:: courses_metadata
+        :noindex:
+
+
+    .. py:method:: set_courses(course_ids):
+        :noindex:
+
+
+    .. py:method:: clear_courses():
+        :noindex:
+
+
+    .. py:attribute:: courses
+        :noindex:
+
+
+    .. py:method:: get_assessments_metadata():
+        :noindex:
+
+
+    .. py:attribute:: assessments_metadata
+        :noindex:
+
+
+    .. py:method:: set_assessments(assessment_ids):
+        :noindex:
+
+
+    .. py:method:: clear_assessments():
+        :noindex:
+
+
+    .. py:attribute:: assessments
+        :noindex:
+
+
+    .. py:method:: get_activity_form_record(activity_record_type):
+        :noindex:
+
 
 Activity List
 -------------
 
-.. autoclass:: ActivityList
-   :show-inheritance:
+.. py:class:: ActivityList(abc_learning_objects.ActivityList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``ActivityList`` provides a means for accessing ``Activity`` elements
+    sequentially either one at a time or many at a time.
 
-   .. autoattribute:: ActivityList.next_activity
 
-   .. automethod:: ActivityList.get_next_activities
+    Examples: while (al.hasNext()) { Activity activity =
+    al.getNextActivity(); }
+
+
+
+
+    or
+      while (al.hasNext()) {
+           Activity[] activities = al.getNextActivities(al.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_activity():
+        :noindex:
+
+
+    .. py:attribute:: next_activity
+        :noindex:
+
+
+    .. py:method:: get_next_activities(n):
+        :noindex:
+
 
 Objective Bank
 --------------
 
-.. autoclass:: ObjectiveBank
-   :show-inheritance:
+.. py:class:: ObjectiveBank(abc_learning_objects.ObjectiveBank, osid_objects.OsidCatalog)
+        :noindex:
 
-   .. automethod:: ObjectiveBank.get_objective_bank_record
+    .. py:method:: get_objective_bank_record(objective_bank_record_type):
+        :noindex:
+
 
 Objective Bank Form
 -------------------
 
-.. autoclass:: ObjectiveBankForm
-   :show-inheritance:
+.. py:class:: ObjectiveBankForm(abc_learning_objects.ObjectiveBankForm, osid_objects.OsidCatalogForm)
+    This is the form for creating and updating objective banks.
 
-   .. automethod:: ObjectiveBankForm.get_objective_bank_form_record
+
+    Like all ``OsidForm`` objects, various data elements may be set here
+    for use in the create and update methods in the
+    ``ObjectiveBankAdminSession``. For each data element that may be
+    set, metadata may be examined to provide display hints or data
+    constraints.
+
+
+
+
+
+    .. py:method:: get_objective_bank_form_record(objective_bank_record_type):
+        :noindex:
+
 
 Objective Bank List
 -------------------
 
-.. autoclass:: ObjectiveBankList
-   :show-inheritance:
+.. py:class:: ObjectiveBankList(abc_learning_objects.ObjectiveBankList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``ObjectiveBankList`` provides a means for accessing ``ObjectiveBank``
+    elements sequentially either one at a time or many at a time.
 
-   .. autoattribute:: ObjectiveBankList.next_objective_bank
 
-   .. automethod:: ObjectiveBankList.get_next_objective_banks
+    Examples: while (obl.hasNext()) { ObjectiveBank objectiveBanks =
+    obl.getNextObjectiveBank(); }
+
+
+
+
+    or
+      while (obl.hasNext()) {
+           ObjectiveBank[] objectivBanks = obl.getNextObjectiveBanks(obl.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_objective_bank():
+        :noindex:
+
+
+    .. py:attribute:: next_objective_bank
+        :noindex:
+
+
+    .. py:method:: get_next_objective_banks(n):
+        :noindex:
+
 
 Objective Bank Node
 -------------------
 
-.. autoclass:: ObjectiveBankNode
-   :show-inheritance:
+.. py:class:: ObjectiveBankNode(abc_learning_objects.ObjectiveBankNode, osid_objects.OsidNode)
+    This interface is a container for a partial hierarchy retrieval.
 
-   .. autoattribute:: ObjectiveBankNode.objective_bank
 
-   .. autoattribute:: ObjectiveBankNode.parent_objective_bank_nodes
+    The number of hierarchy levels traversable through this interface
+    depend on the number of levels requested in the
+    ``ObjectiveBankHierarchySession``.
 
-   .. autoattribute:: ObjectiveBankNode.child_objective_bank_nodes
+
+
+
+
+    .. py:method:: get_objective_bank():
+        :noindex:
+
+
+    .. py:attribute:: objective_bank
+        :noindex:
+
+
+    .. py:method:: get_parent_objective_bank_nodes():
+        :noindex:
+
+
+    .. py:attribute:: parent_objective_bank_nodes
+        :noindex:
+
+
+    .. py:method:: get_child_objective_bank_nodes():
+        :noindex:
+
+
+    .. py:attribute:: child_objective_bank_nodes
+        :noindex:
+
 
 Objective Bank Node List
 ------------------------
 
-.. autoclass:: ObjectiveBankNodeList
-   :show-inheritance:
+.. py:class:: ObjectiveBankNodeList(abc_learning_objects.ObjectiveBankNodeList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``ObjectiveBankNodeList`` provides a means for accessing
+    ``ObjectiveBankNode`` elements sequentially either one at a time or many at a time.
 
-   .. autoattribute:: ObjectiveBankNodeList.next_objective_bank_node
 
-   .. automethod:: ObjectiveBankNodeList.get_next_objective_bank_nodes
+    Examples: while (obnl.hasNext()) { ObjectiveBankNode node bank =
+    obnl.getNextObjectiveBankNode(); }
+
+
+
+
+    or
+      while (obnl.hasNext()) {
+           ObjectiveBankNode[] nodes = obnl.getNextObjectiveBankNodes(obnl.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_objective_bank_node():
+        :noindex:
+
+
+    .. py:attribute:: next_objective_bank_node
+        :noindex:
+
+
+    .. py:method:: get_next_objective_bank_nodes(n):
+        :noindex:
+
 

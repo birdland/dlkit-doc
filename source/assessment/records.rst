@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.assessment.records
-.. automodule:: dlkit.assessment.records
 
 Records
 =======
@@ -9,224 +7,448 @@ Records
 Question Record
 ---------------
 
-.. autoclass:: QuestionRecord
-   :show-inheritance:
+.. py:class:: QuestionRecord(abc_assessment_records.QuestionRecord, osid_records.OsidRecord)
+    A record for a ``Question``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Question Query Record
 ---------------------
 
-.. autoclass:: QuestionQueryRecord
-   :show-inheritance:
+.. py:class:: QuestionQueryRecord(abc_assessment_records.QuestionQueryRecord, osid_records.OsidRecord)
+    A record for a ``QuestionQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Question Form Record
 --------------------
 
-.. autoclass:: QuestionFormRecord
-   :show-inheritance:
+.. py:class:: QuestionFormRecord(abc_assessment_records.QuestionFormRecord, osid_records.OsidRecord)
+    A record for a ``QuestionForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Answer Record
 -------------
 
-.. autoclass:: AnswerRecord
-   :show-inheritance:
+.. py:class:: AnswerRecord(abc_assessment_records.AnswerRecord, osid_records.OsidRecord)
+    A record for an ``Answer``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Answer Query Record
 -------------------
 
-.. autoclass:: AnswerQueryRecord
-   :show-inheritance:
+.. py:class:: AnswerQueryRecord(abc_assessment_records.AnswerQueryRecord, osid_records.OsidRecord)
+    A record for an ``AnswerQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Answer Form Record
 ------------------
 
-.. autoclass:: AnswerFormRecord
-   :show-inheritance:
+.. py:class:: AnswerFormRecord(abc_assessment_records.AnswerFormRecord, osid_records.OsidRecord)
+    A record for an ``AnswerForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Item Record
 -----------
 
-.. autoclass:: ItemRecord
-   :show-inheritance:
+.. py:class:: ItemRecord(abc_assessment_records.ItemRecord, osid_records.OsidRecord)
+    A record for an ``Item``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Item Query Record
 -----------------
 
-.. autoclass:: ItemQueryRecord
-   :show-inheritance:
+.. py:class:: ItemQueryRecord(abc_assessment_records.ItemQueryRecord, osid_records.OsidRecord)
+    A record for an ``ItemQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Item Form Record
 ----------------
 
-.. autoclass:: ItemFormRecord
-   :show-inheritance:
+.. py:class:: ItemFormRecord(abc_assessment_records.ItemFormRecord, osid_records.OsidRecord)
+    A record for an ``ItemForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Item Search Record
 ------------------
 
-.. autoclass:: ItemSearchRecord
-   :show-inheritance:
+.. py:class:: ItemSearchRecord(abc_assessment_records.ItemSearchRecord, osid_records.OsidRecord)
+    A record for an ``ItemSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Record
 -----------------
 
-.. autoclass:: AssessmentRecord
-   :show-inheritance:
+.. py:class:: AssessmentRecord(abc_assessment_records.AssessmentRecord, osid_records.OsidRecord)
+    A record for an ``Assessment``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Query Record
 -----------------------
 
-.. autoclass:: AssessmentQueryRecord
-   :show-inheritance:
+.. py:class:: AssessmentQueryRecord(abc_assessment_records.AssessmentQueryRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Form Record
 ----------------------
 
-.. autoclass:: AssessmentFormRecord
-   :show-inheritance:
+.. py:class:: AssessmentFormRecord(abc_assessment_records.AssessmentFormRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Search Record
 ------------------------
 
-.. autoclass:: AssessmentSearchRecord
-   :show-inheritance:
+.. py:class:: AssessmentSearchRecord(abc_assessment_records.AssessmentSearchRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Offered Record
 -------------------------
 
-.. autoclass:: AssessmentOfferedRecord
-   :show-inheritance:
+.. py:class:: AssessmentOfferedRecord(abc_assessment_records.AssessmentOfferedRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentOffered``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Offered Query Record
 -------------------------------
 
-.. autoclass:: AssessmentOfferedQueryRecord
-   :show-inheritance:
+.. py:class:: AssessmentOfferedQueryRecord(abc_assessment_records.AssessmentOfferedQueryRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentOfferedQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Offered Form Record
 ------------------------------
 
-.. autoclass:: AssessmentOfferedFormRecord
-   :show-inheritance:
+.. py:class:: AssessmentOfferedFormRecord(abc_assessment_records.AssessmentOfferedFormRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentOfferedForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Offered Search Record
 --------------------------------
 
-.. autoclass:: AssessmentOfferedSearchRecord
-   :show-inheritance:
+.. py:class:: AssessmentOfferedSearchRecord(abc_assessment_records.AssessmentOfferedSearchRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentOfferedSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Taken Record
 -----------------------
 
-.. autoclass:: AssessmentTakenRecord
-   :show-inheritance:
+.. py:class:: AssessmentTakenRecord(abc_assessment_records.AssessmentTakenRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentTaken``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Taken Query Record
 -----------------------------
 
-.. autoclass:: AssessmentTakenQueryRecord
-   :show-inheritance:
+.. py:class:: AssessmentTakenQueryRecord(abc_assessment_records.AssessmentTakenQueryRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentTakenQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Taken Form Record
 ----------------------------
 
-.. autoclass:: AssessmentTakenFormRecord
-   :show-inheritance:
+.. py:class:: AssessmentTakenFormRecord(abc_assessment_records.AssessmentTakenFormRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentTakenForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Taken Search Record
 ------------------------------
 
-.. autoclass:: AssessmentTakenSearchRecord
-   :show-inheritance:
+.. py:class:: AssessmentTakenSearchRecord(abc_assessment_records.AssessmentTakenSearchRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentTakenSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Assessment Section Record
 -------------------------
 
-.. autoclass:: AssessmentSectionRecord
-   :show-inheritance:
+.. py:class:: AssessmentSectionRecord(abc_assessment_records.AssessmentSectionRecord, osid_records.OsidRecord)
+    A record for an ``AssessmentSection``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Bank Record
 -----------
 
-.. autoclass:: BankRecord
-   :show-inheritance:
+.. py:class:: BankRecord(abc_assessment_records.BankRecord, osid_records.OsidRecord)
+    A record for a ``Bank``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Bank Query Record
 -----------------
 
-.. autoclass:: BankQueryRecord
-   :show-inheritance:
+.. py:class:: BankQueryRecord(abc_assessment_records.BankQueryRecord, osid_records.OsidRecord)
+    A record for a ``BankQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Bank Form Record
 ----------------
 
-.. autoclass:: BankFormRecord
-   :show-inheritance:
+.. py:class:: BankFormRecord(abc_assessment_records.BankFormRecord, osid_records.OsidRecord)
+    A record for a ``BankForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Bank Search Record
 ------------------
 
-.. autoclass:: BankSearchRecord
-   :show-inheritance:
+.. py:class:: BankSearchRecord(abc_assessment_records.BankSearchRecord, osid_records.OsidRecord)
+    A record for a ``BankSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Response Record
 ---------------
 
-.. autoclass:: ResponseRecord
-   :show-inheritance:
+.. py:class:: ResponseRecord(abc_assessment_records.ResponseRecord, osid_records.OsidRecord)
+    A record for a ``Response``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 

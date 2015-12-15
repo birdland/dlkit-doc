@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.osid.managers
-.. automodule:: dlkit.osid.managers
 
 Managers
 ========
@@ -9,76 +7,217 @@ Managers
 Osid Profile
 ------------
 
-.. autoclass:: OsidProfile
-   :show-inheritance:
+.. py:class:: OsidProfile(abc_osid_managers.OsidProfile, osid_markers.Sourceable)
+    The ``OsidProfile`` defines the interoperability areas of an OSID.
 
-   .. autoattribute:: OsidProfile.ident
 
-   .. autoattribute:: OsidProfile.display_name
+    An ``OsidProfile`` is implemented by an ``OsidManager``. The top
+    level ``OsidProfile`` tests for version compatibility. Each OSID
+    extends this interface to include its own interoperability
+    definitions within its managers.
 
-   .. autoattribute:: OsidProfile.description
 
-   .. autoattribute:: OsidProfile.version
 
-   .. autoattribute:: OsidProfile.release_date
 
-   .. automethod:: OsidProfile.supports_osid_version
 
-   .. autoattribute:: OsidProfile.locales
+    .. py:method:: get_id():
+        :noindex:
 
-   .. automethod:: OsidProfile.supports_journal_rollback
 
-   .. automethod:: OsidProfile.supports_journal_branching
+    .. py:attribute:: id_
+        :noindex:
 
-   .. autoattribute:: OsidProfile.branch_id
 
-   .. autoattribute:: OsidProfile.branch
+    .. py:attribute:: ident
+        :noindex:
 
-   .. autoattribute:: OsidProfile.proxy_record_types
 
-   .. automethod:: OsidProfile.supports_proxy_record_type
+    .. py:method:: get_display_name():
+        :noindex:
+
+
+    .. py:attribute:: display_name
+        :noindex:
+
+
+    .. py:method:: get_description():
+        :noindex:
+
+
+    .. py:attribute:: description
+        :noindex:
+
+
+    .. py:method:: get_version():
+        :noindex:
+
+
+    .. py:attribute:: version
+        :noindex:
+
+
+    .. py:method:: get_release_date():
+        :noindex:
+
+
+    .. py:attribute:: release_date
+        :noindex:
+
+
+    .. py:method:: supports_osid_version(version):
+        :noindex:
+
+
+    .. py:method:: get_locales():
+        :noindex:
+
+
+    .. py:attribute:: locales
+        :noindex:
+
+
+    .. py:method:: supports_journal_rollback():
+        :noindex:
+
+
+    .. py:method:: supports_journal_branching():
+        :noindex:
+
+
+    .. py:method:: get_branch_id():
+        :noindex:
+
+
+    .. py:attribute:: branch_id
+        :noindex:
+
+
+    .. py:method:: get_branch():
+        :noindex:
+
+
+    .. py:attribute:: branch
+        :noindex:
+
+
+    .. py:method:: get_proxy_record_types():
+        :noindex:
+
+
+    .. py:attribute:: proxy_record_types
+        :noindex:
+
+
+    .. py:method:: supports_proxy_record_type(proxy_record_type):
+        :noindex:
+
 
 Osid Manager
 ------------
 
-.. autoclass:: OsidManager
-   :show-inheritance:
+.. py:class:: OsidManager(abc_osid_managers.OsidManager, OsidProfile)
+    The ``OsidManager`` is the top level interface for all OSID managers.
 
-   .. automethod:: OsidManager.initialize
 
-   .. automethod:: OsidManager.rollback_service
+    An OSID manager is instantiated through the ``OsidRuntimeManager``
+    and represents an instance of a service. An OSID manager is
+    responsible for implementing a profile for a service and creating
+    sessions that, in general, correspond to the profile. An application
+    need only create a single ``OsidManager`` per service and
+    implementors must ensure the ``OsidManager`` is thread-safe ````.
+    The ``OsidSessions`` spawned from an OSID manager are dedicated to
+    single processing threads. The ``OsidManager`` defines methods in
+    common throughout all OSID managers which implement this interface.
 
-   .. automethod:: OsidManager.change_branch
+
+
+
+
+    .. py:method:: initialize(runtime):
+        :noindex:
+
+
+    .. py:method:: rollback_service(rollback_time):
+        :noindex:
+
+
+    .. py:method:: change_branch(branch_id):
+        :noindex:
+
 
 Osid Proxy Manager
 ------------------
 
-.. autoclass:: OsidProxyManager
-   :show-inheritance:
+.. py:class:: OsidProxyManager(abc_osid_managers.OsidProxyManager, OsidProfile)
+    The ``OsidProxyManager`` is the top level interface for all OSID proxy managers.
 
-   .. automethod:: OsidProxyManager.initialize
 
-   .. automethod:: OsidProxyManager.rollback_service
+    A proxy manager accepts parameters to pass through end-user
+    authentication credentials and other necessary request parameters in
+    a server environment. Native applications should use an
+    ``OsidManager`` to maintain a higher degree of interoperability by
+    avoiding this coupling.
 
-   .. automethod:: OsidProxyManager.change_branch
+
+
+
+    An OSID proxy manager is instantiated through the
+    ``OsidRuntimeManager`` and represents an instance of a service. An
+    OSID manager is responsible for defining clusters of
+    interoperability within a service and creating sessions that
+    generally correspond to these clusters, An application need only
+    create a single ``OsidProxyManager`` per service and implementors
+    must ensure the ``OsidProxyManager`` is thread-safe ````. The
+    ``OsidSessions`` spawned from an OSID manager are dedicated to
+    single processing threads. The ``OsidProxyManager`` defines methods
+    in common throughout all OSID managers which implement this
+    interface.
+
+
+
+
+
+    .. py:method:: initialize(runtime):
+        :noindex:
+
+
+    .. py:method:: rollback_service(rollback_time, proxy):
+        :noindex:
+
+
+    .. py:method:: change_branch(branch_id, proxy):
+        :noindex:
+
 
 Osid Runtime Profile
 --------------------
 
-.. autoclass:: OsidRuntimeProfile
-   :show-inheritance:
+.. py:class:: OsidRuntimeProfile(abc_osid_managers.OsidRuntimeProfile, OsidProfile)
+    The ``OsidRuntimeProfile`` defines the service aspects of the OSID runtime service.
 
-   .. automethod:: OsidRuntimeProfile.supports_configuration
+    .. py:method:: supports_configuration():
+        :noindex:
+
 
 Osid Runtime Manager
 --------------------
 
-.. autoclass:: OsidRuntimeManager
-   :show-inheritance:
+.. py:class:: OsidRuntimeManager(abc_osid_managers.OsidRuntimeManager, OsidManager, OsidRuntimeProfile)
+        :noindex:
 
-   .. automethod:: OsidRuntimeManager.get_manager
+    .. py:method:: get_manager(osid, impl_class_name, version):
+        :noindex:
 
-   .. automethod:: OsidRuntimeManager.get_proxy_manager
 
-   .. autoattribute:: OsidRuntimeManager.configuration
+    .. py:method:: get_proxy_manager(osid, implementation, version):
+        :noindex:
+
+
+    .. py:method:: get_configuration():
+        :noindex:
+
+
+    .. py:attribute:: configuration
+        :noindex:
+
 

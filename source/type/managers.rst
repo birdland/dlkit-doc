@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.type.managers
-.. automodule:: dlkit.type.managers
 
 Managers
 ========
@@ -9,30 +7,50 @@ Managers
 Type Profile
 ------------
 
-.. autoclass:: TypeProfile
-   :show-inheritance:
+.. py:class:: TypeProfile(osid_managers.OsidProfile, type_managers.TypeProfile)
+    The ``TypeProfile`` describes the interoperability among type services.
 
-   .. automethod:: TypeProfile.supports_type_lookup
+    .. py:method:: supports_type_lookup():
+        :noindex:
 
-   .. automethod:: TypeProfile.supports_type_admin
+
+    .. py:method:: supports_type_admin():
+        :noindex:
+
 
 Type Manager
 ------------
 
-.. autoclass:: TypeManager
-   :show-inheritance:
+.. py:class:: TypeManager(osid_managers.OsidManager, TypeProfile, type_managers.TypeManager)
+        :noindex:
 
-   .. autoattribute:: TypeManager.type_lookup_session
+    .. py:method:: get_type_lookup_session():
+        :noindex:
 
-   .. autoattribute:: TypeManager.type_admin_session
+
+    .. py:attribute:: type_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_type_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: type_admin_session
+        :noindex:
+
 
 Type Proxy Manager
 ------------------
 
-.. autoclass:: TypeProxyManager
-   :show-inheritance:
+.. py:class:: TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile, type_managers.TypeProxyManager)
+        :noindex:
 
-   .. automethod:: TypeProxyManager.get_type_lookup_session
+    .. py:method:: get_type_lookup_session(proxy):
+        :noindex:
 
-   .. automethod:: TypeProxyManager.get_type_admin_session
+
+    .. py:method:: get_type_admin_session(proxy):
+        :noindex:
+
 

@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.osid.queries
-.. automodule:: dlkit.osid.queries
 
 Queries
 =======
@@ -9,440 +7,1274 @@ Queries
 Osid Query
 ----------
 
-.. autoclass:: OsidQuery
-   :show-inheritance:
+.. py:class:: OsidQuery(abc_osid_queries.OsidQuery, osid_markers.Suppliable)
+    The ``OsidQuery`` is used to assemble search queries.
 
-   .. autoattribute:: OsidQuery.string_match_types
 
-   .. automethod:: OsidQuery.supports_string_match_type
+    An ``OsidQuery`` is available from an ``OsidQuerySession`` and
+    defines methods to match objects. Once the desired parameters are
+    set, the ``OsidQuery`` is given to the designated search method. The
+    same ``OsidQuery`` returned from the session must be used in the
+    search as the provider may utilize implementation-specific data
+    wiithin the object.
 
-   .. automethod:: OsidQuery.match_keyword
 
-   .. autoattribute:: OsidQuery.keyword_terms
 
-   .. automethod:: OsidQuery.match_any
 
-   .. autoattribute:: OsidQuery.any_terms
+    If multiple data elements are set in this interface, the results
+    matching all the given data (eg: AND) are returned.
+
+
+
+
+    Any match method inside an ``OsidQuery`` may be invoked multiple
+    times. In the case of a match method, each invocation adds an
+    element to an ``OR`` expression. Any of these terms may also be
+    negated through the ``match`` flag.
+      OsidQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR
+          OsidQuery.matchDescription)}
+
+
+
+
+
+
+
+
+
+
+
+
+    ``OsidObjects`` allow for the definition of an additonal records and
+    the ``OsidQuery`` parallels this mechanism. An interface type of an
+    ``OsidObject`` record must also define the corresponding
+    ``OsidQuery`` record which is available through query interfaces.
+    Multiple requests of these typed interfaces may return the same
+    underlying object and thus it is only useful to request once.
+
+
+
+
+    An ``OsidQuery`` may be used to query for set or unset values using
+    the "match any" methods. A field that has not bee explicitly
+    assigned may default to a value. If multiple language translations
+    exist and the query session is placed in a non-default locale,
+    fields that have not been explicitly assigned in the non-default
+    locale are considered unset even if the values from the default
+    locale appear in the objects.
+
+
+
+
+
+    .. py:method:: get_string_match_types():
+        :noindex:
+
+
+    .. py:attribute:: string_match_types
+        :noindex:
+
+
+    .. py:method:: supports_string_match_type(string_match_type):
+        :noindex:
+
+
+    .. py:method:: match_keyword(keyword, string_match_type=DEFAULT_STRING_MATCH_TYPE, match=True):
+        :noindex:
+
+
+    .. py:method:: clear_keyword_terms():
+        :noindex:
+
+
+    .. py:attribute:: keyword_terms
+        :noindex:
+
+
+    .. py:method:: match_any(match):
+        :noindex:
+
+
+    .. py:method:: clear_any_terms():
+        :noindex:
+
+
+    .. py:attribute:: any_terms
+        :noindex:
+
 
 Osid Identifiable Query
 -----------------------
 
-.. autoclass:: OsidIdentifiableQuery
-   :show-inheritance:
+.. py:class:: OsidIdentifiableQuery(abc_osid_queries.OsidIdentifiableQuery, OsidQuery)
+    The ``OsidIdentiableQuery`` is used to assemble search queries for ``Identifiable`` objects.
 
-   .. automethod:: OsidIdentifiableQuery.match_id
 
-   .. autoattribute:: OsidIdentifiableQuery.id_terms
+    An ``OsidIdentifiableQuery`` is available from an
+    ``OsidQuerySession`` and defines methods to match objects. Once the
+    desired parameters are set, the ``OsidIdentifiableQuery`` is given
+    to the designated search method. The same ``OsidIdentifiableQuery``
+    returned from the session must be used in the search as the provider
+    may utilize implementation-specific data wiithin the object.
+
+
+
+
+    If multiple data elements are set in this interface, the results
+    matching all the given data (eg: AND) are returned.
+
+
+
+
+
+    .. py:method:: match_id(id_, match):
+        :noindex:
+
+
+    .. py:method:: clear_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: id_terms
+        :noindex:
+
 
 Osid Extensible Query
 ---------------------
 
-.. autoclass:: OsidExtensibleQuery
-   :show-inheritance:
+.. py:class:: OsidExtensibleQuery(abc_osid_queries.OsidExtensibleQuery, OsidQuery, osid_markers.Extensible)
+    The ``OsidExtensibleQuery`` is used to assemble search queries for ``Extensible`` objects.
 
-   .. automethod:: OsidExtensibleQuery.match_record_type
 
-   .. automethod:: OsidExtensibleQuery.match_any_record
+    An ``OsidExtensibleQuery`` is available from an ``OsidQuerySession``
+    and defines methods to match objects. Once the desired parameters
+    are set, the ``OsidExtensibleQuery`` is given to the designated
+    search method. The same ``OsidExtensibleQuery`` returned from the
+    session must be used in the search as the provider may utilize
+    implementation-specific data wiithin the object.
 
-   .. autoattribute:: OsidExtensibleQuery.record_terms
+
+
+
+    If multiple data elements are set in this interface, the results
+    matching all the given data (eg: AND) are returned.
+
+
+
+
+
+    .. py:method:: match_record_type(record_type, match):
+        :noindex:
+
+
+    .. py:method:: match_any_record(match):
+        :noindex:
+
+
+    .. py:method:: clear_record_terms():
+        :noindex:
+
+
+    .. py:attribute:: record_terms
+        :noindex:
+
 
 Osid Browsable Query
 --------------------
 
-.. autoclass:: OsidBrowsableQuery
-   :show-inheritance:
+.. py:class:: OsidBrowsableQuery(abc_osid_queries.OsidBrowsableQuery, OsidQuery)
+    The ``OsidBrowsableQuery`` is used to assemble search queries for ``Browsable`` objects.
+
+
+    An ``OsidBrowsableQuery`` is available from an ``OsidQuerySession``
+    and defines methods to match objects. Once the desired parameters
+    are set, the ``OsidBrowsableQuery`` is given to the designated
+    search method. The same ``OsidBrowsableQuery`` returned from the
+    session must be used in the search as the provider may utilize
+    implementation-specific data wiithin the object.
+
+
+
+
+    If multiple data elements are set in this interface, the results
+    matching all the given data (eg: AND) are returned.
+
+
+
+
 
 
 
 Osid Temporal Query
 -------------------
 
-.. autoclass:: OsidTemporalQuery
-   :show-inheritance:
+.. py:class:: OsidTemporalQuery(abc_osid_queries.OsidTemporalQuery, OsidQuery)
+    This is the query interface for searching temporal objects.
 
-   .. automethod:: OsidTemporalQuery.match_effective
 
-   .. autoattribute:: OsidTemporalQuery.effective_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: OsidTemporalQuery.match_start_date
 
-   .. automethod:: OsidTemporalQuery.match_any_start_date
 
-   .. autoattribute:: OsidTemporalQuery.start_date_terms
 
-   .. automethod:: OsidTemporalQuery.match_end_date
 
-   .. automethod:: OsidTemporalQuery.match_any_end_date
+    .. py:method:: match_effective(match):
+        :noindex:
 
-   .. autoattribute:: OsidTemporalQuery.end_date_terms
 
-   .. automethod:: OsidTemporalQuery.match_date
+    .. py:method:: clear_effective_terms():
+        :noindex:
 
-   .. autoattribute:: OsidTemporalQuery.date_terms
+
+    .. py:attribute:: effective_terms
+        :noindex:
+
+
+    .. py:method:: match_start_date(start, end, match):
+        :noindex:
+
+
+    .. py:method:: match_any_start_date(match):
+        :noindex:
+
+
+    .. py:method:: clear_start_date_terms():
+        :noindex:
+
+
+    .. py:attribute:: start_date_terms
+        :noindex:
+
+
+    .. py:method:: match_end_date(start, end, match):
+        :noindex:
+
+
+    .. py:method:: match_any_end_date(match):
+        :noindex:
+
+
+    .. py:method:: clear_end_date_terms():
+        :noindex:
+
+
+    .. py:attribute:: end_date_terms
+        :noindex:
+
+
+    .. py:method:: match_date(from_, to, match):
+        :noindex:
+
+
+    .. py:method:: clear_date_terms():
+        :noindex:
+
+
+    .. py:attribute:: date_terms
+        :noindex:
+
 
 Osid Subjugateable Query
 ------------------------
 
-.. autoclass:: OsidSubjugateableQuery
-   :show-inheritance:
+.. py:class:: OsidSubjugateableQuery(abc_osid_queries.OsidSubjugateableQuery, OsidQuery)
+    The ``OsidSubjugateableQuery`` is used to assemble search queries for dependent objects.
 
 
 
 Osid Aggregateable Query
 ------------------------
 
-.. autoclass:: OsidAggregateableQuery
-   :show-inheritance:
+.. py:class:: OsidAggregateableQuery(abc_osid_queries.OsidAggregateableQuery, OsidQuery)
+    The ``OsidAggregateableQuery`` is used to assemble search queries for assemblages.
 
 
 
 Osid Containable Query
 ----------------------
 
-.. autoclass:: OsidContainableQuery
-   :show-inheritance:
+.. py:class:: OsidContainableQuery(abc_osid_queries.OsidContainableQuery, OsidQuery)
+    This is the query interface for searching containers.
 
-   .. automethod:: OsidContainableQuery.match_sequestered
 
-   .. autoattribute:: OsidContainableQuery.sequestered_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
+
+
+
+
+
+    .. py:method:: match_sequestered(match):
+        :noindex:
+
+
+    .. py:method:: clear_sequestered_terms():
+        :noindex:
+
+
+    .. py:attribute:: sequestered_terms
+        :noindex:
+
 
 Osid Sourceable Query
 ---------------------
 
-.. autoclass:: OsidSourceableQuery
-   :show-inheritance:
+.. py:class:: OsidSourceableQuery(abc_osid_queries.OsidSourceableQuery, OsidQuery)
+    The ``OsidSourceableQuery`` is used to assemble search queries for sourceables.
 
-   .. automethod:: OsidSourceableQuery.match_provider_id
+    .. py:method:: match_provider_id(resource_id, match):
+        :noindex:
 
-   .. autoattribute:: OsidSourceableQuery.provider_id_terms
 
-   .. automethod:: OsidSourceableQuery.supports_provider_query
+    .. py:method:: clear_provider_id_terms():
+        :noindex:
 
-   .. automethod:: OsidSourceableQuery.get_provider_query
 
-   .. automethod:: OsidSourceableQuery.match_any_provider
+    .. py:attribute:: provider_id_terms
+        :noindex:
 
-   .. autoattribute:: OsidSourceableQuery.provider_terms
 
-   .. automethod:: OsidSourceableQuery.match_branding_id
+    .. py:method:: supports_provider_query():
+        :noindex:
 
-   .. autoattribute:: OsidSourceableQuery.branding_id_terms
 
-   .. automethod:: OsidSourceableQuery.supports_branding_query
+    .. py:method:: get_provider_query(match):
+        :noindex:
 
-   .. automethod:: OsidSourceableQuery.get_branding_query
 
-   .. automethod:: OsidSourceableQuery.match_any_branding
+    .. py:method:: match_any_provider(match):
+        :noindex:
 
-   .. autoattribute:: OsidSourceableQuery.branding_terms
 
-   .. automethod:: OsidSourceableQuery.match_license
+    .. py:method:: clear_provider_terms():
+        :noindex:
 
-   .. automethod:: OsidSourceableQuery.match_any_license
 
-   .. autoattribute:: OsidSourceableQuery.license_terms
+    .. py:attribute:: provider_terms
+        :noindex:
+
+
+    .. py:method:: match_branding_id(asset_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_branding_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: branding_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_branding_query():
+        :noindex:
+
+
+    .. py:method:: get_branding_query(match):
+        :noindex:
+
+
+    .. py:method:: match_any_branding(match):
+        :noindex:
+
+
+    .. py:method:: clear_branding_terms():
+        :noindex:
+
+
+    .. py:attribute:: branding_terms
+        :noindex:
+
+
+    .. py:method:: match_license(license_, string_match_type, match):
+        :noindex:
+
+
+    .. py:method:: match_any_license(match):
+        :noindex:
+
+
+    .. py:method:: clear_license_terms():
+        :noindex:
+
+
+    .. py:attribute:: license_terms
+        :noindex:
+
 
 Osid Federateable Query
 -----------------------
 
-.. autoclass:: OsidFederateableQuery
-   :show-inheritance:
+.. py:class:: OsidFederateableQuery(abc_osid_queries.OsidFederateableQuery, OsidQuery)
+    The ``OsidFederateableQuery`` is used to assemble search queries for federated objects.
 
 
 
 Osid Operable Query
 -------------------
 
-.. autoclass:: OsidOperableQuery
-   :show-inheritance:
+.. py:class:: OsidOperableQuery(abc_osid_queries.OsidOperableQuery, OsidQuery)
+    This is the query interface for searching operables.
 
-   .. automethod:: OsidOperableQuery.match_active
 
-   .. autoattribute:: OsidOperableQuery.active_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: OsidOperableQuery.match_enabled
 
-   .. autoattribute:: OsidOperableQuery.enabled_terms
 
-   .. automethod:: OsidOperableQuery.match_disabled
 
-   .. autoattribute:: OsidOperableQuery.disabled_terms
 
-   .. automethod:: OsidOperableQuery.match_operational
+    .. py:method:: match_active(match):
+        :noindex:
 
-   .. autoattribute:: OsidOperableQuery.operational_terms
+
+    .. py:method:: clear_active_terms():
+        :noindex:
+
+
+    .. py:attribute:: active_terms
+        :noindex:
+
+
+    .. py:method:: match_enabled(match):
+        :noindex:
+
+
+    .. py:method:: clear_enabled_terms():
+        :noindex:
+
+
+    .. py:attribute:: enabled_terms
+        :noindex:
+
+
+    .. py:method:: match_disabled(match):
+        :noindex:
+
+
+    .. py:method:: clear_disabled_terms():
+        :noindex:
+
+
+    .. py:attribute:: disabled_terms
+        :noindex:
+
+
+    .. py:method:: match_operational(match):
+        :noindex:
+
+
+    .. py:method:: clear_operational_terms():
+        :noindex:
+
+
+    .. py:attribute:: operational_terms
+        :noindex:
+
 
 Osid Object Query
 -----------------
 
-.. autoclass:: OsidObjectQuery
-   :show-inheritance:
+.. py:class:: OsidObjectQuery(abc_osid_queries.OsidObjectQuery, OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQuery)
+    The ``OsidObjectQuery`` is used to assemble search queries.
 
-   .. automethod:: OsidObjectQuery.match_display_name
 
-   .. automethod:: OsidObjectQuery.match_any_display_name
+    An ``OsidObjectQuery`` is available from an ``OsidSession`` and
+    defines methods to query for an ``OsidObject`` that includes setting
+    a display name and a description. Once the desired parameters are
+    set, the ``OsidQuery`` is given to the designated search method. The
+    same ``OsidQuery`` returned from the session must be used in the
+    search as the provider may utilize implementation-specific data
+    wiithin the object.
 
-   .. autoattribute:: OsidObjectQuery.display_name_terms
 
-   .. automethod:: OsidObjectQuery.match_description
 
-   .. automethod:: OsidObjectQuery.match_any_description
 
-   .. autoattribute:: OsidObjectQuery.description_terms
+    If multiple data elements are set in this interface, the results
+    matching all the given data (eg: AND) are returned.
 
-   .. automethod:: OsidObjectQuery.match_genus_type
 
-   .. automethod:: OsidObjectQuery.match_any_genus_type
 
-   .. autoattribute:: OsidObjectQuery.genus_type_terms
 
-   .. automethod:: OsidObjectQuery.match_parent_genus_type
+    Any match method inside an ``OsidObjectQuery`` may be invoked
+    multiple times. In the case of a match method, each invocation adds
+    an element to an ``OR`` expression. Any of these terms may also be
+    negated through the ``match`` flag.
+      OsidObjectQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR
+          OsidObjectQuery.matchDescription)}
 
-   .. autoattribute:: OsidObjectQuery.parent_genus_type_terms
 
-   .. automethod:: OsidObjectQuery.match_subject_id
 
-   .. autoattribute:: OsidObjectQuery.subject_id_terms
 
-   .. automethod:: OsidObjectQuery.supports_subject_query
 
-   .. autoattribute:: OsidObjectQuery.subject_query
 
-   .. automethod:: OsidObjectQuery.match_any_subject
 
-   .. autoattribute:: OsidObjectQuery.subject_terms
 
-   .. automethod:: OsidObjectQuery.supports_subject_relevancy_query
 
-   .. autoattribute:: OsidObjectQuery.subject_relevancy_query
 
-   .. autoattribute:: OsidObjectQuery.subject_relevancy_terms
 
-   .. automethod:: OsidObjectQuery.match_state_id
 
-   .. autoattribute:: OsidObjectQuery.state_id_terms
+    ``OsidObjects`` allow for the definition of an additonal records and
+    the ``OsidQuery`` parallels this mechanism. An interface type of an
+    ``OsidObject`` record must also define the corresponding
+    ``OsidQuery`` record which is available through query interfaces.
+    Multiple requests of these typed interfaces may return the same
+    underlying object and thus it is only useful to request once.
 
-   .. automethod:: OsidObjectQuery.supports_state_query
 
-   .. autoattribute:: OsidObjectQuery.state_query
 
-   .. automethod:: OsidObjectQuery.match_any_state
 
-   .. autoattribute:: OsidObjectQuery.state_terms
+    String searches are described using a string search ``Type`` that
+    indicates the type of regular expression or wildcarding encoding.
+    Compatibility with a strings search ``Type`` can be tested within
+    this interface.
 
-   .. automethod:: OsidObjectQuery.match_comment_id
 
-   .. autoattribute:: OsidObjectQuery.comment_id_terms
 
-   .. automethod:: OsidObjectQuery.supports_comment_query
 
-   .. autoattribute:: OsidObjectQuery.comment_query
+    As with all aspects of OSIDs, nulls cannot be used. Separate tests
+    are available for querying for unset values except for required
+    fields.
 
-   .. automethod:: OsidObjectQuery.match_any_comment
 
-   .. autoattribute:: OsidObjectQuery.comment_terms
 
-   .. automethod:: OsidObjectQuery.match_journal_entry_id
 
-   .. autoattribute:: OsidObjectQuery.journal_entry_id_terms
+    An example to find all objects whose name starts with "Fred" or
+    whose name starts with "Barney", but the word "dinosaur" does not
+    appear in the description and not the color is not purple.
+    ``ColorQuery`` is a record of the object that defines a color.
+      ObjectObjectQuery query;
+      query = session.getObjectQuery();
+      query.matchDisplayName("Fred*", wildcardStringMatchType, true);
+      query.matchDisplayName("Barney*", wildcardStringMatchType, true);
+      query.matchDescriptionMatch("dinosaur", wordStringMatchType, false);
 
-   .. automethod:: OsidObjectQuery.supports_journal_entry_query
 
-   .. autoattribute:: OsidObjectQuery.journal_entry_query
 
-   .. automethod:: OsidObjectQuery.match_any_journal_entry
 
-   .. autoattribute:: OsidObjectQuery.journal_entry_terms
+      ColorQuery recordQuery;
+      recordQuery = query.getObjectRecord(colorRecordType);
+      recordQuery.matchColor("purple", false);
+      ObjectList list = session.getObjectsByQuery(query);
 
-   .. automethod:: OsidObjectQuery.supports_statistic_query
 
-   .. autoattribute:: OsidObjectQuery.statistic_query
 
-   .. automethod:: OsidObjectQuery.match_any_statistic
 
-   .. autoattribute:: OsidObjectQuery.statistic_terms
 
-   .. automethod:: OsidObjectQuery.match_credit_id
 
-   .. autoattribute:: OsidObjectQuery.credit_id_terms
 
-   .. automethod:: OsidObjectQuery.supports_credit_query
 
-   .. autoattribute:: OsidObjectQuery.credit_query
 
-   .. automethod:: OsidObjectQuery.match_any_credit
+    .. py:method:: match_display_name(display_name, string_match_type=DEFAULT_STRING_MATCH_TYPE, match=True):
+        :noindex:
 
-   .. autoattribute:: OsidObjectQuery.credit_terms
 
-   .. automethod:: OsidObjectQuery.match_relationship_id
+    .. py:method:: match_any_display_name(match):
+        :noindex:
 
-   .. autoattribute:: OsidObjectQuery.relationship_id_terms
 
-   .. automethod:: OsidObjectQuery.supports_relationship_query
+    .. py:method:: clear_display_name_terms():
+        :noindex:
 
-   .. autoattribute:: OsidObjectQuery.relationship_query
 
-   .. automethod:: OsidObjectQuery.match_any_relationship
+    .. py:attribute:: display_name_terms
+        :noindex:
 
-   .. autoattribute:: OsidObjectQuery.relationship_terms
 
-   .. automethod:: OsidObjectQuery.match_relationship_peer_id
+    .. py:method:: match_description(description, string_match_type=DEFAULT_STRING_MATCH_TYPE, match=True):
+        :noindex:
 
-   .. autoattribute:: OsidObjectQuery.relationship_peer_id_terms
+
+    .. py:method:: match_any_description(match):
+        :noindex:
+
+
+    .. py:method:: clear_description_terms():
+        :noindex:
+
+
+    .. py:attribute:: description_terms
+        :noindex:
+
+
+    .. py:method:: match_genus_type(genus_type, match):
+        :noindex:
+
+
+    .. py:method:: match_any_genus_type(match):
+        :noindex:
+
+
+    .. py:method:: clear_genus_type_terms():
+        :noindex:
+
+
+    .. py:attribute:: genus_type_terms
+        :noindex:
+
+
+    .. py:method:: match_parent_genus_type(genus_type, match):
+        :noindex:
+
+
+    .. py:method:: clear_parent_genus_type_terms():
+        :noindex:
+
+
+    .. py:attribute:: parent_genus_type_terms
+        :noindex:
+
+
+    .. py:method:: match_subject_id(subject_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_subject_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: subject_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_subject_query():
+        :noindex:
+
+
+    .. py:method:: get_subject_query():
+        :noindex:
+
+
+    .. py:attribute:: subject_query
+        :noindex:
+
+
+    .. py:method:: match_any_subject(match):
+        :noindex:
+
+
+    .. py:method:: clear_subject_terms():
+        :noindex:
+
+
+    .. py:attribute:: subject_terms
+        :noindex:
+
+
+    .. py:method:: supports_subject_relevancy_query():
+        :noindex:
+
+
+    .. py:method:: get_subject_relevancy_query():
+        :noindex:
+
+
+    .. py:attribute:: subject_relevancy_query
+        :noindex:
+
+
+    .. py:method:: clear_subject_relevancy_terms():
+        :noindex:
+
+
+    .. py:attribute:: subject_relevancy_terms
+        :noindex:
+
+
+    .. py:method:: match_state_id(state_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_state_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: state_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_state_query():
+        :noindex:
+
+
+    .. py:method:: get_state_query():
+        :noindex:
+
+
+    .. py:attribute:: state_query
+        :noindex:
+
+
+    .. py:method:: match_any_state(match):
+        :noindex:
+
+
+    .. py:method:: clear_state_terms():
+        :noindex:
+
+
+    .. py:attribute:: state_terms
+        :noindex:
+
+
+    .. py:method:: match_comment_id(comment_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_comment_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: comment_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_comment_query():
+        :noindex:
+
+
+    .. py:method:: get_comment_query():
+        :noindex:
+
+
+    .. py:attribute:: comment_query
+        :noindex:
+
+
+    .. py:method:: match_any_comment(match):
+        :noindex:
+
+
+    .. py:method:: clear_comment_terms():
+        :noindex:
+
+
+    .. py:attribute:: comment_terms
+        :noindex:
+
+
+    .. py:method:: match_journal_entry_id(journal_entry_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_journal_entry_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: journal_entry_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_journal_entry_query():
+        :noindex:
+
+
+    .. py:method:: get_journal_entry_query():
+        :noindex:
+
+
+    .. py:attribute:: journal_entry_query
+        :noindex:
+
+
+    .. py:method:: match_any_journal_entry(match):
+        :noindex:
+
+
+    .. py:method:: clear_journal_entry_terms():
+        :noindex:
+
+
+    .. py:attribute:: journal_entry_terms
+        :noindex:
+
+
+    .. py:method:: supports_statistic_query():
+        :noindex:
+
+
+    .. py:method:: get_statistic_query():
+        :noindex:
+
+
+    .. py:attribute:: statistic_query
+        :noindex:
+
+
+    .. py:method:: match_any_statistic(match):
+        :noindex:
+
+
+    .. py:method:: clear_statistic_terms():
+        :noindex:
+
+
+    .. py:attribute:: statistic_terms
+        :noindex:
+
+
+    .. py:method:: match_credit_id(credit_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_credit_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: credit_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_credit_query():
+        :noindex:
+
+
+    .. py:method:: get_credit_query():
+        :noindex:
+
+
+    .. py:attribute:: credit_query
+        :noindex:
+
+
+    .. py:method:: match_any_credit(match):
+        :noindex:
+
+
+    .. py:method:: clear_credit_terms():
+        :noindex:
+
+
+    .. py:attribute:: credit_terms
+        :noindex:
+
+
+    .. py:method:: match_relationship_id(relationship_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_relationship_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: relationship_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_relationship_query():
+        :noindex:
+
+
+    .. py:method:: get_relationship_query():
+        :noindex:
+
+
+    .. py:attribute:: relationship_query
+        :noindex:
+
+
+    .. py:method:: match_any_relationship(match):
+        :noindex:
+
+
+    .. py:method:: clear_relationship_terms():
+        :noindex:
+
+
+    .. py:attribute:: relationship_terms
+        :noindex:
+
+
+    .. py:method:: match_relationship_peer_id(peer_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_relationship_peer_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: relationship_peer_id_terms
+        :noindex:
+
 
 Osid Relationship Query
 -----------------------
 
-.. autoclass:: OsidRelationshipQuery
-   :show-inheritance:
+.. py:class:: OsidRelationshipQuery(abc_osid_queries.OsidRelationshipQuery, OsidObjectQuery, OsidTemporalQuery)
+    This is the query interface for searching relationships.
 
-   .. automethod:: OsidRelationshipQuery.match_end_reason_id
 
-   .. autoattribute:: OsidRelationshipQuery.end_reason_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: OsidRelationshipQuery.supports_end_reason_query
 
-   .. automethod:: OsidRelationshipQuery.get_end_reason_query
 
-   .. automethod:: OsidRelationshipQuery.match_any_end_reason
 
-   .. autoattribute:: OsidRelationshipQuery.end_reason_terms
+
+    .. py:method:: match_end_reason_id(state_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_end_reason_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: end_reason_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_end_reason_query():
+        :noindex:
+
+
+    .. py:method:: get_end_reason_query(match):
+        :noindex:
+
+
+    .. py:method:: match_any_end_reason(match):
+        :noindex:
+
+
+    .. py:method:: clear_end_reason_terms():
+        :noindex:
+
+
+    .. py:attribute:: end_reason_terms
+        :noindex:
+
 
 Osid Catalog Query
 ------------------
 
-.. autoclass:: OsidCatalogQuery
-   :show-inheritance:
+.. py:class:: OsidCatalogQuery(abc_osid_queries.OsidCatalogQuery, OsidObjectQuery, OsidSourceableQuery, OsidFederateableQuery)
+    The ``OsidCatalogQuery`` is used to assemble search queries for catalogs.
 
 
 
 Osid Rule Query
 ---------------
 
-.. autoclass:: OsidRuleQuery
-   :show-inheritance:
+.. py:class:: OsidRuleQuery(abc_osid_queries.OsidRuleQuery, OsidObjectQuery, OsidOperableQuery)
+    This is the query interface for searching rules.
 
-   .. automethod:: OsidRuleQuery.match_rule_id
 
-   .. autoattribute:: OsidRuleQuery.rule_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: OsidRuleQuery.supports_rule_query
 
-   .. automethod:: OsidRuleQuery.get_rule_query
 
-   .. automethod:: OsidRuleQuery.match_any_rule
 
-   .. autoattribute:: OsidRuleQuery.rule_terms
+
+    .. py:method:: match_rule_id(rule_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_rule_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: rule_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_rule_query():
+        :noindex:
+
+
+    .. py:method:: get_rule_query(match):
+        :noindex:
+
+
+    .. py:method:: match_any_rule(match):
+        :noindex:
+
+
+    .. py:method:: clear_rule_terms():
+        :noindex:
+
+
+    .. py:attribute:: rule_terms
+        :noindex:
+
 
 Osid Enabler Query
 ------------------
 
-.. autoclass:: OsidEnablerQuery
-   :show-inheritance:
+.. py:class:: OsidEnablerQuery(abc_osid_queries.OsidEnablerQuery, OsidRuleQuery, OsidTemporalQuery)
+    This is the query interface for searching enablers.
 
-   .. automethod:: OsidEnablerQuery.match_schedule_id
 
-   .. autoattribute:: OsidEnablerQuery.schedule_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: OsidEnablerQuery.supports_schedule_query
 
-   .. automethod:: OsidEnablerQuery.get_schedule_query
 
-   .. automethod:: OsidEnablerQuery.match_any_schedule
 
-   .. autoattribute:: OsidEnablerQuery.schedule_terms
 
-   .. automethod:: OsidEnablerQuery.match_event_id
+    .. py:method:: match_schedule_id(schedule_id, match):
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.event_id_terms
 
-   .. automethod:: OsidEnablerQuery.supports_event_query
+    .. py:method:: clear_schedule_id_terms():
+        :noindex:
 
-   .. automethod:: OsidEnablerQuery.get_event_query
 
-   .. automethod:: OsidEnablerQuery.match_any_event
+    .. py:attribute:: schedule_id_terms
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.event_terms
 
-   .. automethod:: OsidEnablerQuery.match_cyclic_event_id
+    .. py:method:: supports_schedule_query():
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.cyclic_event_id_terms
 
-   .. automethod:: OsidEnablerQuery.supports_cyclic_event_query
+    .. py:method:: get_schedule_query(match):
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.cyclic_event_query
 
-   .. automethod:: OsidEnablerQuery.match_any_cyclic_event
+    .. py:method:: match_any_schedule(match):
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.cyclic_event_terms
 
-   .. automethod:: OsidEnablerQuery.match_demographic_id
+    .. py:method:: clear_schedule_terms():
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.demographic_id_terms
 
-   .. automethod:: OsidEnablerQuery.supports_demographic_query
+    .. py:attribute:: schedule_terms
+        :noindex:
 
-   .. automethod:: OsidEnablerQuery.get_demographic_query
 
-   .. automethod:: OsidEnablerQuery.match_any_demographic
+    .. py:method:: match_event_id(event_id, match):
+        :noindex:
 
-   .. autoattribute:: OsidEnablerQuery.demographic_terms
+
+    .. py:method:: clear_event_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: event_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_event_query():
+        :noindex:
+
+
+    .. py:method:: get_event_query(match):
+        :noindex:
+
+
+    .. py:method:: match_any_event(match):
+        :noindex:
+
+
+    .. py:method:: clear_event_terms():
+        :noindex:
+
+
+    .. py:attribute:: event_terms
+        :noindex:
+
+
+    .. py:method:: match_cyclic_event_id(cyclic_event_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_cyclic_event_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: cyclic_event_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_cyclic_event_query():
+        :noindex:
+
+
+    .. py:method:: get_cyclic_event_query():
+        :noindex:
+
+
+    .. py:attribute:: cyclic_event_query
+        :noindex:
+
+
+    .. py:method:: match_any_cyclic_event(match):
+        :noindex:
+
+
+    .. py:method:: clear_cyclic_event_terms():
+        :noindex:
+
+
+    .. py:attribute:: cyclic_event_terms
+        :noindex:
+
+
+    .. py:method:: match_demographic_id(resource_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_demographic_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: demographic_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_demographic_query():
+        :noindex:
+
+
+    .. py:method:: get_demographic_query(match):
+        :noindex:
+
+
+    .. py:method:: match_any_demographic(match):
+        :noindex:
+
+
+    .. py:method:: clear_demographic_terms():
+        :noindex:
+
+
+    .. py:attribute:: demographic_terms
+        :noindex:
+
 
 Osid Constrainer Query
 ----------------------
 
-.. autoclass:: OsidConstrainerQuery
-   :show-inheritance:
+.. py:class:: OsidConstrainerQuery(abc_osid_queries.OsidConstrainerQuery, OsidRuleQuery)
+    This is the query interface for searching constrainers.
+
+
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
+
+
+
+
 
 
 
 Osid Processor Query
 --------------------
 
-.. autoclass:: OsidProcessorQuery
-   :show-inheritance:
+.. py:class:: OsidProcessorQuery(abc_osid_queries.OsidProcessorQuery, OsidRuleQuery)
+    This is the query interface for searching processors.
+
+
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
+
+
+
+
 
 
 
 Osid Governator Query
 ---------------------
 
-.. autoclass:: OsidGovernatorQuery
-   :show-inheritance:
+.. py:class:: OsidGovernatorQuery(abc_osid_queries.OsidGovernatorQuery, OsidObjectQuery, OsidOperableQuery, OsidSourceableQuery)
+    This is the query interface for searching governers.
+
+
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
+
+
+
+
 
 
 
 Osid Compendium Query
 ---------------------
 
-.. autoclass:: OsidCompendiumQuery
-   :show-inheritance:
+.. py:class:: OsidCompendiumQuery(abc_osid_queries.OsidCompendiumQuery, OsidObjectQuery, OsidSubjugateableQuery)
+    This is the query interface for searching reports.
 
-   .. automethod:: OsidCompendiumQuery.match_start_date
 
-   .. automethod:: OsidCompendiumQuery.match_any_start_date
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. autoattribute:: OsidCompendiumQuery.start_date_terms
 
-   .. automethod:: OsidCompendiumQuery.match_end_date
 
-   .. automethod:: OsidCompendiumQuery.match_any_end_date
 
-   .. autoattribute:: OsidCompendiumQuery.end_date_terms
 
-   .. automethod:: OsidCompendiumQuery.match_interpolated
+    .. py:method:: match_start_date(start, end, match):
+        :noindex:
 
-   .. autoattribute:: OsidCompendiumQuery.interpolated_terms
 
-   .. automethod:: OsidCompendiumQuery.match_extrapolated
+    .. py:method:: match_any_start_date(match):
+        :noindex:
 
-   .. autoattribute:: OsidCompendiumQuery.extrapolated_terms
+
+    .. py:method:: clear_start_date_terms():
+        :noindex:
+
+
+    .. py:attribute:: start_date_terms
+        :noindex:
+
+
+    .. py:method:: match_end_date(start, end, match):
+        :noindex:
+
+
+    .. py:method:: match_any_end_date(match):
+        :noindex:
+
+
+    .. py:method:: clear_end_date_terms():
+        :noindex:
+
+
+    .. py:attribute:: end_date_terms
+        :noindex:
+
+
+    .. py:method:: match_interpolated(match):
+        :noindex:
+
+
+    .. py:method:: clear_interpolated_terms():
+        :noindex:
+
+
+    .. py:attribute:: interpolated_terms
+        :noindex:
+
+
+    .. py:method:: match_extrapolated(match):
+        :noindex:
+
+
+    .. py:method:: clear_extrapolated_terms():
+        :noindex:
+
+
+    .. py:attribute:: extrapolated_terms
+        :noindex:
+
 
 Osid Capsule Query
 ------------------
 
-.. autoclass:: OsidCapsuleQuery
-   :show-inheritance:
+.. py:class:: OsidCapsuleQuery(abc_osid_queries.OsidCapsuleQuery, OsidQuery)
+    This is the query interface for searching capsulating interfaces.
+
+
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
+
+
+
+
 
 
 

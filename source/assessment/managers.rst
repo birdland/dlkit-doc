@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.assessment.managers
-.. automodule:: dlkit.assessment.managers
 
 Managers
 ========
@@ -9,430 +7,1038 @@ Managers
 Assessment Profile
 ------------------
 
-.. autoclass:: AssessmentProfile
-   :show-inheritance:
+.. py:class:: AssessmentProfile(osid_managers.OsidProfile, assessment_managers.AssessmentProfile)
+    The ``AssessmentProfile`` describes the interoperability among assessment services.
 
-   .. automethod:: AssessmentProfile.supports_visible_federation
+    .. py:method:: supports_visible_federation():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_my_assessment_taken
 
-   .. automethod:: AssessmentProfile.supports_assessment
+    .. py:method:: supports_my_assessment_taken():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_results
 
-   .. automethod:: AssessmentProfile.supports_item_lookup
+    .. py:method:: supports_assessment():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_item_query
 
-   .. automethod:: AssessmentProfile.supports_item_search
+    .. py:method:: supports_assessment_results():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_item_admin
 
-   .. automethod:: AssessmentProfile.supports_item_notification
+    .. py:method:: supports_item_lookup():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_item_bank
 
-   .. automethod:: AssessmentProfile.supports_item_bank_assignment
+    .. py:method:: supports_item_query():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_item_smart_bank
 
-   .. automethod:: AssessmentProfile.supports_assessment_lookup
+    .. py:method:: supports_item_search():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_query
 
-   .. automethod:: AssessmentProfile.supports_assessment_search
+    .. py:method:: supports_item_admin():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_admin
 
-   .. automethod:: AssessmentProfile.supports_assessment_notification
+    .. py:method:: supports_item_notification():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_bank
 
-   .. automethod:: AssessmentProfile.supports_assessment_bank_assignment
+    .. py:method:: supports_item_bank():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_smart_bank
 
-   .. automethod:: AssessmentProfile.supports_assessment_basic_authoring
+    .. py:method:: supports_item_bank_assignment():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_lookup
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_query
+    .. py:method:: supports_item_smart_bank():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_search
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_admin
+    .. py:method:: supports_assessment_lookup():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_notification
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_bank
+    .. py:method:: supports_assessment_query():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_bank_assignment
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_smart_bank
+    .. py:method:: supports_assessment_search():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_lookup
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_query
+    .. py:method:: supports_assessment_admin():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_search
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_admin
+    .. py:method:: supports_assessment_notification():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_notification
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_bank
+    .. py:method:: supports_assessment_bank():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_bank_assignment
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_smart_bank
+    .. py:method:: supports_assessment_bank_assignment():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_bank_lookup
 
-   .. automethod:: AssessmentProfile.supports_bank_query
+    .. py:method:: supports_assessment_smart_bank():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_bank_search
 
-   .. automethod:: AssessmentProfile.supports_bank_admin
+    .. py:method:: supports_assessment_basic_authoring():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_bank_notification
 
-   .. automethod:: AssessmentProfile.supports_bank_hierarchy
+    .. py:method:: supports_assessment_offered_lookup():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_bank_hierarchy_design
 
-   .. automethod:: AssessmentProfile.supports_assessment_authoring
+    .. py:method:: supports_assessment_offered_query():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_batch
 
-   .. autoattribute:: AssessmentProfile.item_record_types
+    .. py:method:: supports_assessment_offered_search():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_item_record_type
 
-   .. autoattribute:: AssessmentProfile.item_search_record_types
+    .. py:method:: supports_assessment_offered_admin():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_item_search_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_record_types
+    .. py:method:: supports_assessment_offered_notification():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_search_record_types
+    .. py:method:: supports_assessment_offered_bank():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_search_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_offered_record_types
+    .. py:method:: supports_assessment_offered_bank_assignment():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_offered_search_record_types
+    .. py:method:: supports_assessment_offered_smart_bank():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_offered_search_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_taken_record_types
+    .. py:method:: supports_assessment_taken_lookup():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_taken_search_record_types
+    .. py:method:: supports_assessment_taken_query():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_taken_search_record_type
 
-   .. autoattribute:: AssessmentProfile.assessment_section_record_types
+    .. py:method:: supports_assessment_taken_search():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_assessment_section_record_type
 
-   .. autoattribute:: AssessmentProfile.bank_record_types
+    .. py:method:: supports_assessment_taken_admin():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_bank_record_type
 
-   .. autoattribute:: AssessmentProfile.bank_search_record_types
+    .. py:method:: supports_assessment_taken_notification():
+        :noindex:
 
-   .. automethod:: AssessmentProfile.supports_bank_search_record_type
+
+    .. py:method:: supports_assessment_taken_bank():
+        :noindex:
+
+
+    .. py:method:: supports_assessment_taken_bank_assignment():
+        :noindex:
+
+
+    .. py:method:: supports_assessment_taken_smart_bank():
+        :noindex:
+
+
+    .. py:method:: supports_bank_lookup():
+        :noindex:
+
+
+    .. py:method:: supports_bank_query():
+        :noindex:
+
+
+    .. py:method:: supports_bank_search():
+        :noindex:
+
+
+    .. py:method:: supports_bank_admin():
+        :noindex:
+
+
+    .. py:method:: supports_bank_notification():
+        :noindex:
+
+
+    .. py:method:: supports_bank_hierarchy():
+        :noindex:
+
+
+    .. py:method:: supports_bank_hierarchy_design():
+        :noindex:
+
+
+    .. py:method:: supports_assessment_authoring():
+        :noindex:
+
+
+    .. py:method:: supports_assessment_batch():
+        :noindex:
+
+
+    .. py:method:: get_item_record_types():
+        :noindex:
+
+
+    .. py:attribute:: item_record_types
+        :noindex:
+
+
+    .. py:method:: supports_item_record_type(item_record_type):
+        :noindex:
+
+
+    .. py:method:: get_item_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: item_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_item_search_record_type(item_search_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_record_type(assessment_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_search_record_type(assessment_search_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_offered_record_type(assessment_offered_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_offered_search_record_type(assessment_offered_search_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_taken_record_type(assessment_taken_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_taken_search_record_type(assessment_taken_search_record_type):
+        :noindex:
+
+
+    .. py:method:: get_assessment_section_record_types():
+        :noindex:
+
+
+    .. py:attribute:: assessment_section_record_types
+        :noindex:
+
+
+    .. py:method:: supports_assessment_section_record_type(assessment_section_record_type):
+        :noindex:
+
+
+    .. py:method:: get_bank_record_types():
+        :noindex:
+
+
+    .. py:attribute:: bank_record_types
+        :noindex:
+
+
+    .. py:method:: supports_bank_record_type(bank_record_type):
+        :noindex:
+
+
+    .. py:method:: get_bank_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: bank_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_bank_search_record_type(bank_search_record_type):
+        :noindex:
+
 
 Assessment Manager
 ------------------
 
-.. autoclass:: AssessmentManager
-   :show-inheritance:
+.. py:class:: AssessmentManager(osid_managers.OsidManager, AssessmentProfile, assessment_managers.AssessmentManager)
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.my_assessment_taken_session
+    .. py:method:: get_my_assessment_taken_session():
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_my_assessment_taken_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_session
+    .. py:attribute:: my_assessment_taken_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_results_session
+    .. py:method:: get_my_assessment_taken_session_for_bank(bank_id):
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_results_session_for_bank
 
-   .. autoattribute:: AssessmentManager.item_lookup_session
+    .. py:method:: get_assessment_session():
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_item_lookup_session_for_bank
 
-   .. autoattribute:: AssessmentManager.item_query_session
+    .. py:attribute:: assessment_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_item_query_session_for_bank
 
-   .. autoattribute:: AssessmentManager.item_search_session
+    .. py:method:: get_assessment_session_for_bank(bank_id):
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_item_search_session_for_bank
 
-   .. autoattribute:: AssessmentManager.item_admin_session
+    .. py:method:: get_assessment_results_session():
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_item_admin_session_for_bank
 
-   .. automethod:: AssessmentManager.get_item_notification_session
+    .. py:attribute:: assessment_results_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_item_notification_session_for_bank
 
-   .. autoattribute:: AssessmentManager.item_bank_session
+    .. py:method:: get_assessment_results_session_for_bank(bank_id):
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.item_bank_assignment_session
 
-   .. automethod:: AssessmentManager.get_item_smart_bank_session
+    .. py:method:: get_item_lookup_session():
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_lookup_session
 
-   .. automethod:: AssessmentManager.get_assessment_lookup_session_for_bank
+    .. py:attribute:: item_lookup_session
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_query_session
 
-   .. automethod:: AssessmentManager.get_assessment_query_session_for_bank
+    .. py:method:: get_item_lookup_session_for_bank(bank_id):
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_search_session
 
-   .. automethod:: AssessmentManager.get_assessment_search_session_for_bank
+    .. py:method:: get_item_query_session():
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_admin_session
 
-   .. automethod:: AssessmentManager.get_assessment_admin_session_for_bank
+    .. py:attribute:: item_query_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_notification_session
 
-   .. automethod:: AssessmentManager.get_assessment_notification_session_for_bank
+    .. py:method:: get_item_query_session_for_bank(bank_id):
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_bank_session
 
-   .. autoattribute:: AssessmentManager.assessment_bank_assignment_session
+    .. py:method:: get_item_search_session():
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_smart_bank_session
 
-   .. autoattribute:: AssessmentManager.assessment_basic_authoring_session
+    .. py:attribute:: item_search_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_basic_authoring_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_offered_lookup_session
+    .. py:method:: get_item_search_session_for_bank(bank_id):
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_offered_lookup_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_offered_query_session
+    .. py:method:: get_item_admin_session():
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_offered_query_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_offered_search_session
+    .. py:attribute:: item_admin_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_offered_search_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_offered_admin_session
+    .. py:method:: get_item_admin_session_for_bank(bank_id):
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_offered_admin_session_for_bank
 
-   .. automethod:: AssessmentManager.get_assessment_offered_notification_session
+    .. py:method:: get_item_notification_session(item_receiver):
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_offered_notification_session_for_bank
 
-   .. autoattribute:: AssessmentManager.assessment_offered_bank_session
+    .. py:method:: get_item_notification_session_for_bank(item_receiver, bank_id):
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_offered_bank_assignment_session
 
-   .. automethod:: AssessmentManager.get_assessment_offered_smart_bank_session
+    .. py:method:: get_item_bank_session():
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_taken_lookup_session
 
-   .. automethod:: AssessmentManager.get_assessment_taken_lookup_session_for_bank
+    .. py:attribute:: item_bank_session
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_taken_query_session
 
-   .. automethod:: AssessmentManager.get_assessment_taken_query_session_for_bank
+    .. py:method:: get_item_bank_assignment_session():
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_taken_search_session
 
-   .. automethod:: AssessmentManager.get_assessment_taken_search_session_for_bank
+    .. py:attribute:: item_bank_assignment_session
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_taken_admin_session
 
-   .. automethod:: AssessmentManager.get_assessment_taken_admin_session_for_bank
+    .. py:method:: get_item_smart_bank_session(bank_id):
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_taken_notification_session
 
-   .. automethod:: AssessmentManager.get_assessment_taken_notification_session_for_bank
+    .. py:method:: get_assessment_lookup_session():
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_taken_bank_session
 
-   .. autoattribute:: AssessmentManager.assessment_taken_bank_assignment_session
+    .. py:attribute:: assessment_lookup_session
+        :noindex:
 
-   .. automethod:: AssessmentManager.get_assessment_taken_smart_bank_session
 
-   .. autoattribute:: AssessmentManager.bank_lookup_session
+    .. py:method:: get_assessment_lookup_session_for_bank(bank_id):
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.bank_query_session
 
-   .. autoattribute:: AssessmentManager.bank_search_session
+    .. py:method:: get_assessment_query_session():
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.bank_admin_session
 
-   .. automethod:: AssessmentManager.get_bank_notification_session
+    .. py:attribute:: assessment_query_session
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.bank_hierarchy_session
 
-   .. autoattribute:: AssessmentManager.bank_hierarchy_design_session
+    .. py:method:: get_assessment_query_session_for_bank(bank_id):
+        :noindex:
 
-   .. autoattribute:: AssessmentManager.assessment_authoring_manager
 
-   .. autoattribute:: AssessmentManager.assessment_batch_manager
+    .. py:method:: get_assessment_search_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_search_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_search_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_admin_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_admin_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_notification_session(assessment_receiver):
+        :noindex:
+
+
+    .. py:method:: get_assessment_notification_session_for_bank(assessment_receiver, bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_bank_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_bank_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_bank_assignment_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_bank_assignment_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_smart_bank_session(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_basic_authoring_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_basic_authoring_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_basic_authoring_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_lookup_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_lookup_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_query_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_search_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_admin_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_admin_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_notification_session(assessment_offered_receiver):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_notification_session_for_bank(assessment_offered_receiver, bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_bank_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_bank_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_bank_assignment_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_bank_assignment_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_smart_bank_session(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_lookup_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_lookup_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_query_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_search_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_admin_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_admin_session_for_bank(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_notification_session(assessment_taken_receiver):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_notification_session_for_bank(assessment_taken_receiver, bank_id):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_bank_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_bank_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_bank_assignment_session():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_bank_assignment_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_smart_bank_session(bank_id):
+        :noindex:
+
+
+    .. py:method:: get_bank_lookup_session():
+        :noindex:
+
+
+    .. py:attribute:: bank_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_bank_query_session():
+        :noindex:
+
+
+    .. py:attribute:: bank_query_session
+        :noindex:
+
+
+    .. py:method:: get_bank_search_session():
+        :noindex:
+
+
+    .. py:attribute:: bank_search_session
+        :noindex:
+
+
+    .. py:method:: get_bank_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: bank_admin_session
+        :noindex:
+
+
+    .. py:method:: get_bank_notification_session(bankreceiver):
+        :noindex:
+
+
+    .. py:method:: get_bank_hierarchy_session():
+        :noindex:
+
+
+    .. py:attribute:: bank_hierarchy_session
+        :noindex:
+
+
+    .. py:method:: get_bank_hierarchy_design_session():
+        :noindex:
+
+
+    .. py:attribute:: bank_hierarchy_design_session
+        :noindex:
+
+
+    .. py:method:: get_assessment_authoring_manager():
+        :noindex:
+
+
+    .. py:attribute:: assessment_authoring_manager
+        :noindex:
+
+
+    .. py:method:: get_assessment_batch_manager():
+        :noindex:
+
+
+    .. py:attribute:: assessment_batch_manager
+        :noindex:
+
 
 Assessment Proxy Manager
 ------------------------
 
-.. autoclass:: AssessmentProxyManager
-   :show-inheritance:
+.. py:class:: AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile, assessment_managers.AssessmentProxyManager)
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_my_assessment_taken_session
+    .. py:method:: get_my_assessment_taken_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_my_assessment_taken_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_session
+    .. py:method:: get_my_assessment_taken_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_results_session
+    .. py:method:: get_assessment_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_results_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_item_lookup_session
+    .. py:method:: get_assessment_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_item_lookup_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_item_query_session
+    .. py:method:: get_assessment_results_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_item_query_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_item_search_session
+    .. py:method:: get_assessment_results_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_item_search_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_item_admin_session
+    .. py:method:: get_item_lookup_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_item_admin_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_item_notification_session
+    .. py:method:: get_item_lookup_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_item_notification_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_item_bank_session
+    .. py:method:: get_item_query_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_item_bank_assignment_session
 
-   .. automethod:: AssessmentProxyManager.get_item_smart_bank_session
+    .. py:method:: get_item_query_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_lookup_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_lookup_session_for_bank
+    .. py:method:: get_item_search_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_query_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_query_session_for_bank
+    .. py:method:: get_item_search_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_search_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_search_session_for_bank
+    .. py:method:: get_item_admin_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_admin_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_admin_session_for_bank
+    .. py:method:: get_item_admin_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_notification_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_notification_session_for_bank
+    .. py:method:: get_item_notification_session(item_receiver, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_bank_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_bank_assignment_session
+    .. py:method:: get_item_notification_session_for_bank(item_receiver, bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_smart_bank_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_basic_authoring_session
+    .. py:method:: get_item_bank_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_basic_authoring_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_lookup_session
+    .. py:method:: get_item_bank_assignment_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_lookup_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_query_session
+    .. py:method:: get_item_smart_bank_session(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_query_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_search_session
+    .. py:method:: get_assessment_lookup_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_search_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_admin_session
+    .. py:method:: get_assessment_lookup_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_admin_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_notification_session
+    .. py:method:: get_assessment_query_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_notification_session_for_bank
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_bank_session
+    .. py:method:: get_assessment_query_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_bank_assignment_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_offered_smart_bank_session
+    .. py:method:: get_assessment_search_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_lookup_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_lookup_session_for_bank
+    .. py:method:: get_assessment_search_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_query_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_query_session_for_bank
+    .. py:method:: get_assessment_admin_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_search_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_search_session_for_bank
+    .. py:method:: get_assessment_admin_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_admin_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_admin_session_for_bank
+    .. py:method:: get_assessment_notification_session(assessment_receiver, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_notification_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_notification_session_for_bank
+    .. py:method:: get_assessment_notification_session_for_bank(assessment_receiver, bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_bank_session
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_bank_assignment_session
+    .. py:method:: get_assessment_bank_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_assessment_taken_smart_bank_session
 
-   .. automethod:: AssessmentProxyManager.get_bank_lookup_session
+    .. py:method:: get_assessment_bank_assignment_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_bank_query_session
 
-   .. automethod:: AssessmentProxyManager.get_bank_search_session
+    .. py:method:: get_assessment_smart_bank_session(bank_id, proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_bank_admin_session
 
-   .. automethod:: AssessmentProxyManager.get_bank_notification_session
+    .. py:method:: get_assessment_basic_authoring_session(proxy):
+        :noindex:
 
-   .. automethod:: AssessmentProxyManager.get_bank_hierarchy_session
 
-   .. automethod:: AssessmentProxyManager.get_bank_hierarchy_design_session
+    .. py:method:: get_assessment_basic_authoring_session_for_bank(bank_id, proxy):
+        :noindex:
 
-   .. autoattribute:: AssessmentProxyManager.assessment_authoring_proxy_manager
 
-   .. autoattribute:: AssessmentProxyManager.assessment_batch_proxy_manager
+    .. py:method:: get_assessment_offered_lookup_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_lookup_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_admin_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_admin_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_notification_session(assessment_offered_receiver, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_notification_session_for_bank(assessment_offered_receiver, bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_bank_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_bank_assignment_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_smart_bank_session(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_lookup_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_lookup_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_admin_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_admin_session_for_bank(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_notification_session(assessment_taken_receiver, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_notification_session_for_bank(assessment_taken_receiver, bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_bank_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_bank_assignment_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_smart_bank_session(bank_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_lookup_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_query_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_search_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_admin_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_notification_session(bank_receiver, proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_hierarchy_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_bank_hierarchy_design_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_assessment_authoring_proxy_manager():
+        :noindex:
+
+
+    .. py:attribute:: assessment_authoring_proxy_manager
+        :noindex:
+
+
+    .. py:method:: get_assessment_batch_proxy_manager():
+        :noindex:
+
+
+    .. py:attribute:: assessment_batch_proxy_manager
+        :noindex:
+
 

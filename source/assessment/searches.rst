@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.assessment.searches
-.. automodule:: dlkit.assessment.searches
 
 Searches
 ========
@@ -9,120 +7,220 @@ Searches
 Item Search
 -----------
 
-.. autoclass:: ItemSearch
-   :show-inheritance:
+.. py:class:: ItemSearch(abc_assessment_searches.ItemSearch, osid_searches.OsidSearch)
+    ``ItemSearch`` defines the interface for specifying item search options.
 
-   .. automethod:: ItemSearch.search_among_items
+    .. py:method:: search_among_items(item_ids):
+        :noindex:
 
-   .. automethod:: ItemSearch.order_item_results
 
-   .. automethod:: ItemSearch.get_item_search_record
+    .. py:method:: order_item_results(item_search_order):
+        :noindex:
+
+
+    .. py:method:: get_item_search_record(item_search_record_type):
+        :noindex:
+
 
 Item Search Results
 -------------------
 
-.. autoclass:: ItemSearchResults
-   :show-inheritance:
+.. py:class:: ItemSearchResults(abc_assessment_searches.ItemSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: ItemSearchResults.items
+    .. py:method:: get_items():
+        :noindex:
 
-   .. autoattribute:: ItemSearchResults.item_query_inspector
 
-   .. automethod:: ItemSearchResults.get_item_search_results_record
+    .. py:attribute:: items
+        :noindex:
+
+
+    .. py:method:: get_item_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: item_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_item_search_results_record(item_search_record_type):
+        :noindex:
+
 
 Assessment Search
 -----------------
 
-.. autoclass:: AssessmentSearch
-   :show-inheritance:
+.. py:class:: AssessmentSearch(abc_assessment_searches.AssessmentSearch, osid_searches.OsidSearch)
+    ``AssessmentSearch`` defines the interface for specifying assessment search options.
 
-   .. automethod:: AssessmentSearch.search_among_assessments
+    .. py:method:: search_among_assessments(assessment_ids):
+        :noindex:
 
-   .. automethod:: AssessmentSearch.order_assessment_results
 
-   .. automethod:: AssessmentSearch.get_assessment_search_record
+    .. py:method:: order_assessment_results(assessment_search_order):
+        :noindex:
+
+
+    .. py:method:: get_assessment_search_record(assessment_search_record_type):
+        :noindex:
+
 
 Assessment Search Results
 -------------------------
 
-.. autoclass:: AssessmentSearchResults
-   :show-inheritance:
+.. py:class:: AssessmentSearchResults(abc_assessment_searches.AssessmentSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: AssessmentSearchResults.assessments
+    .. py:method:: get_assessments():
+        :noindex:
 
-   .. autoattribute:: AssessmentSearchResults.assessment_query_inspector
 
-   .. automethod:: AssessmentSearchResults.get_assessment_search_results_record
+    .. py:attribute:: assessments
+        :noindex:
+
+
+    .. py:method:: get_assessment_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: assessment_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_assessment_search_results_record(assessment_search_record_type):
+        :noindex:
+
 
 Assessment Offered Search
 -------------------------
 
-.. autoclass:: AssessmentOfferedSearch
-   :show-inheritance:
+.. py:class:: AssessmentOfferedSearch(abc_assessment_searches.AssessmentOfferedSearch, osid_searches.OsidSearch)
+    ``AssessmentOfferedSearch`` defines the interface for specifying assessment search options.
 
-   .. automethod:: AssessmentOfferedSearch.search_among_assessments_offered
+    .. py:method:: search_among_assessments_offered(assessment_offrered_ids):
+        :noindex:
 
-   .. automethod:: AssessmentOfferedSearch.order_assessment_offered_results
 
-   .. automethod:: AssessmentOfferedSearch.get_assessment_offered_search_record
+    .. py:method:: order_assessment_offered_results(assessment_offered_search_order):
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_record(assessment_offered_search_record_type):
+        :noindex:
+
 
 Assessment Offered Search Results
 ---------------------------------
 
-.. autoclass:: AssessmentOfferedSearchResults
-   :show-inheritance:
+.. py:class:: AssessmentOfferedSearchResults(abc_assessment_searches.AssessmentOfferedSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: AssessmentOfferedSearchResults.assessments_offered
+    .. py:method:: get_assessments_offered():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedSearchResults.assessment_offered_query_inspector
 
-   .. automethod:: AssessmentOfferedSearchResults.get_assessment_offered_search_results_record
+    .. py:attribute:: assessments_offered
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_search_results_record(assessment_offered_search_record_type):
+        :noindex:
+
 
 Assessment Taken Search
 -----------------------
 
-.. autoclass:: AssessmentTakenSearch
-   :show-inheritance:
+.. py:class:: AssessmentTakenSearch(abc_assessment_searches.AssessmentTakenSearch, osid_searches.OsidSearch)
+    ``AssessmentTakenSearch`` defines the interface for specifying assessment search options.
 
-   .. automethod:: AssessmentTakenSearch.search_among_assessments_taken
+    .. py:method:: search_among_assessments_taken(assessment_taken_ids):
+        :noindex:
 
-   .. automethod:: AssessmentTakenSearch.order_assessment_taken_results
 
-   .. automethod:: AssessmentTakenSearch.get_assessment_taken_search_record
+    .. py:method:: order_assessment_taken_results(assessment_taken_search_order):
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_record(assessment_taken_search_record_type):
+        :noindex:
+
 
 Assessment Taken Search Results
 -------------------------------
 
-.. autoclass:: AssessmentTakenSearchResults
-   :show-inheritance:
+.. py:class:: AssessmentTakenSearchResults(abc_assessment_searches.AssessmentTakenSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: AssessmentTakenSearchResults.assessments_taken
+    .. py:method:: get_assessments_taken():
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenSearchResults.assessment_taken_query_inspector
 
-   .. automethod:: AssessmentTakenSearchResults.get_assessment_taken_search_results_record
+    .. py:attribute:: assessments_taken
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_search_results_record(assessment_taken_search_record_type):
+        :noindex:
+
 
 Bank Search
 -----------
 
-.. autoclass:: BankSearch
-   :show-inheritance:
+.. py:class:: BankSearch(abc_assessment_searches.BankSearch, osid_searches.OsidSearch)
+    The interface for governing bank searches.
 
-   .. automethod:: BankSearch.search_among_banks
+    .. py:method:: search_among_banks(bank_ids):
+        :noindex:
 
-   .. automethod:: BankSearch.order_bank_results
 
-   .. automethod:: BankSearch.get_bank_search_record
+    .. py:method:: order_bank_results(bank_search_order):
+        :noindex:
+
+
+    .. py:method:: get_bank_search_record(bank_search_record_type):
+        :noindex:
+
 
 Bank Search Results
 -------------------
 
-.. autoclass:: BankSearchResults
-   :show-inheritance:
+.. py:class:: BankSearchResults(abc_assessment_searches.BankSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: BankSearchResults.banks
+    .. py:method:: get_banks():
+        :noindex:
 
-   .. autoattribute:: BankSearchResults.bank_query_inspector
 
-   .. automethod:: BankSearchResults.get_bank_search_results_record
+    .. py:attribute:: banks
+        :noindex:
+
+
+    .. py:method:: get_bank_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: bank_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_bank_search_results_record(bank_search_record_type):
+        :noindex:
+
 

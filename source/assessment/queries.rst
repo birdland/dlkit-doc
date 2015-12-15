@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.assessment.queries
-.. automodule:: dlkit.assessment.queries
 
 Queries
 =======
@@ -9,454 +7,1315 @@ Queries
 Question Query
 --------------
 
-.. autoclass:: QuestionQuery
-   :show-inheritance:
+.. py:class:: QuestionQuery(abc_assessment_queries.QuestionQuery, osid_queries.OsidObjectQuery)
+    This is the query for searching questions.
 
-   .. automethod:: QuestionQuery.get_question_query_record
+
+    Each method match request produces an ``AND`` term while multiple
+    invocations of a method produces a nested ``OR``.
+
+
+
+
+
+    .. py:method:: get_question_query_record(question_record_type):
+        :noindex:
+
 
 Answer Query
 ------------
 
-.. autoclass:: AnswerQuery
-   :show-inheritance:
+.. py:class:: AnswerQuery(abc_assessment_queries.AnswerQuery, osid_queries.OsidObjectQuery)
+    This is the query for searching answers.
 
-   .. automethod:: AnswerQuery.get_answer_query_record
+
+    Each method match request produces an ``AND`` term while multiple
+    invocations of a method produces a nested ``OR``.
+
+
+
+
+
+    .. py:method:: get_answer_query_record(answer_record_type):
+        :noindex:
+
 
 Item Query
 ----------
 
-.. autoclass:: ItemQuery
-   :show-inheritance:
+.. py:class:: ItemQuery(abc_assessment_queries.ItemQuery, osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery)
+    This is the query for searching items.
 
-   .. automethod:: ItemQuery.match_learning_objective_id
 
-   .. autoattribute:: ItemQuery.learning_objective_id_terms
+    Each method match request produces an ``AND`` term while multiple
+    invocations of a method produces a nested ``OR``.
 
-   .. automethod:: ItemQuery.supports_learning_objective_query
 
-   .. autoattribute:: ItemQuery.learning_objective_query
 
-   .. automethod:: ItemQuery.match_any_learning_objective
 
-   .. autoattribute:: ItemQuery.learning_objective_terms
 
-   .. automethod:: ItemQuery.match_question_id
+    .. py:method:: match_learning_objective_id(objective_id, match):
+        :noindex:
 
-   .. autoattribute:: ItemQuery.question_id_terms
 
-   .. automethod:: ItemQuery.supports_question_query
+    .. py:method:: clear_learning_objective_id_terms():
+        :noindex:
 
-   .. autoattribute:: ItemQuery.question_query
 
-   .. automethod:: ItemQuery.match_any_question
+    .. py:attribute:: learning_objective_id_terms
+        :noindex:
 
-   .. autoattribute:: ItemQuery.question_terms
 
-   .. automethod:: ItemQuery.match_answer_id
+    .. py:method:: supports_learning_objective_query():
+        :noindex:
 
-   .. autoattribute:: ItemQuery.answer_id_terms
 
-   .. automethod:: ItemQuery.supports_answer_query
+    .. py:method:: get_learning_objective_query():
+        :noindex:
 
-   .. autoattribute:: ItemQuery.answer_query
 
-   .. automethod:: ItemQuery.match_any_answer
+    .. py:attribute:: learning_objective_query
+        :noindex:
 
-   .. autoattribute:: ItemQuery.answer_terms
 
-   .. automethod:: ItemQuery.match_assessment_id
+    .. py:method:: match_any_learning_objective(match):
+        :noindex:
 
-   .. autoattribute:: ItemQuery.assessment_id_terms
 
-   .. automethod:: ItemQuery.supports_assessment_query
+    .. py:method:: clear_learning_objective_terms():
+        :noindex:
 
-   .. autoattribute:: ItemQuery.assessment_query
 
-   .. automethod:: ItemQuery.match_any_assessment
+    .. py:attribute:: learning_objective_terms
+        :noindex:
 
-   .. autoattribute:: ItemQuery.assessment_terms
 
-   .. automethod:: ItemQuery.match_bank_id
+    .. py:method:: match_question_id(question_id, match):
+        :noindex:
 
-   .. autoattribute:: ItemQuery.bank_id_terms
 
-   .. automethod:: ItemQuery.supports_bank_query
+    .. py:method:: clear_question_id_terms():
+        :noindex:
 
-   .. autoattribute:: ItemQuery.bank_query
 
-   .. autoattribute:: ItemQuery.bank_terms
+    .. py:attribute:: question_id_terms
+        :noindex:
 
-   .. automethod:: ItemQuery.get_item_query_record
+
+    .. py:method:: supports_question_query():
+        :noindex:
+
+
+    .. py:method:: get_question_query():
+        :noindex:
+
+
+    .. py:attribute:: question_query
+        :noindex:
+
+
+    .. py:method:: match_any_question(match):
+        :noindex:
+
+
+    .. py:method:: clear_question_terms():
+        :noindex:
+
+
+    .. py:attribute:: question_terms
+        :noindex:
+
+
+    .. py:method:: match_answer_id(answer_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_answer_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: answer_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_answer_query():
+        :noindex:
+
+
+    .. py:method:: get_answer_query():
+        :noindex:
+
+
+    .. py:attribute:: answer_query
+        :noindex:
+
+
+    .. py:method:: match_any_answer(match):
+        :noindex:
+
+
+    .. py:method:: clear_answer_terms():
+        :noindex:
+
+
+    .. py:attribute:: answer_terms
+        :noindex:
+
+
+    .. py:method:: match_assessment_id(assessment_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_assessment_query():
+        :noindex:
+
+
+    .. py:method:: get_assessment_query():
+        :noindex:
+
+
+    .. py:attribute:: assessment_query
+        :noindex:
+
+
+    .. py:method:: match_any_assessment(match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_terms
+        :noindex:
+
+
+    .. py:method:: match_bank_id(bank_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_bank_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_bank_query():
+        :noindex:
+
+
+    .. py:method:: get_bank_query():
+        :noindex:
+
+
+    .. py:attribute:: bank_query
+        :noindex:
+
+
+    .. py:method:: clear_bank_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_terms
+        :noindex:
+
+
+    .. py:method:: get_item_query_record(item_record_type):
+        :noindex:
+
 
 Assessment Query
 ----------------
 
-.. autoclass:: AssessmentQuery
-   :show-inheritance:
+.. py:class:: AssessmentQuery(abc_assessment_queries.AssessmentQuery, osid_queries.OsidObjectQuery)
+    This is the query for searching assessments.
 
-   .. automethod:: AssessmentQuery.match_level_id
 
-   .. autoattribute:: AssessmentQuery.level_id_terms
+    Each method match request produces an ``AND`` term while multiple
+    invocations of a method produces a nested ``OR``.
 
-   .. automethod:: AssessmentQuery.supports_level_query
 
-   .. autoattribute:: AssessmentQuery.level_query
 
-   .. automethod:: AssessmentQuery.match_any_level
 
-   .. autoattribute:: AssessmentQuery.level_terms
 
-   .. automethod:: AssessmentQuery.match_rubric_id
+    .. py:method:: match_level_id(grade_id, match):
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.rubric_id_terms
 
-   .. automethod:: AssessmentQuery.supports_rubric_query
+    .. py:method:: clear_level_id_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.rubric_query
 
-   .. automethod:: AssessmentQuery.match_any_rubric
+    .. py:attribute:: level_id_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.rubric_terms
 
-   .. automethod:: AssessmentQuery.match_item_id
+    .. py:method:: supports_level_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.item_id_terms
 
-   .. automethod:: AssessmentQuery.supports_item_query
+    .. py:method:: get_level_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.item_query
 
-   .. automethod:: AssessmentQuery.match_any_item
+    .. py:attribute:: level_query
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.item_terms
 
-   .. automethod:: AssessmentQuery.match_assessment_offered_id
+    .. py:method:: match_any_level(match):
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.assessment_offered_id_terms
 
-   .. automethod:: AssessmentQuery.supports_assessment_offered_query
+    .. py:method:: clear_level_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.assessment_offered_query
 
-   .. automethod:: AssessmentQuery.match_any_assessment_offered
+    .. py:attribute:: level_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.assessment_offered_terms
 
-   .. automethod:: AssessmentQuery.match_assessment_taken_id
+    .. py:method:: match_rubric_id(assessment_id, match):
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.assessment_taken_id_terms
 
-   .. automethod:: AssessmentQuery.supports_assessment_taken_query
+    .. py:method:: clear_rubric_id_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.assessment_taken_query
 
-   .. automethod:: AssessmentQuery.match_any_assessment_taken
+    .. py:attribute:: rubric_id_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.assessment_taken_terms
 
-   .. automethod:: AssessmentQuery.match_bank_id
+    .. py:method:: supports_rubric_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.bank_id_terms
 
-   .. automethod:: AssessmentQuery.supports_bank_query
+    .. py:method:: get_rubric_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentQuery.bank_query
 
-   .. autoattribute:: AssessmentQuery.bank_terms
+    .. py:attribute:: rubric_query
+        :noindex:
 
-   .. automethod:: AssessmentQuery.get_assessment_query_record
+
+    .. py:method:: match_any_rubric(match):
+        :noindex:
+
+
+    .. py:method:: clear_rubric_terms():
+        :noindex:
+
+
+    .. py:attribute:: rubric_terms
+        :noindex:
+
+
+    .. py:method:: match_item_id(item_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_item_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: item_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_item_query():
+        :noindex:
+
+
+    .. py:method:: get_item_query():
+        :noindex:
+
+
+    .. py:attribute:: item_query
+        :noindex:
+
+
+    .. py:method:: match_any_item(match):
+        :noindex:
+
+
+    .. py:method:: clear_item_terms():
+        :noindex:
+
+
+    .. py:attribute:: item_terms
+        :noindex:
+
+
+    .. py:method:: match_assessment_offered_id(assessment_offered_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_offered_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_assessment_offered_query():
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_query
+        :noindex:
+
+
+    .. py:method:: match_any_assessment_offered(match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_offered_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_terms
+        :noindex:
+
+
+    .. py:method:: match_assessment_taken_id(assessment_taken_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_taken_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_assessment_taken_query():
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_query
+        :noindex:
+
+
+    .. py:method:: match_any_assessment_taken(match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_taken_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_terms
+        :noindex:
+
+
+    .. py:method:: match_bank_id(bank_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_bank_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_bank_query():
+        :noindex:
+
+
+    .. py:method:: get_bank_query():
+        :noindex:
+
+
+    .. py:attribute:: bank_query
+        :noindex:
+
+
+    .. py:method:: clear_bank_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_terms
+        :noindex:
+
+
+    .. py:method:: get_assessment_query_record(assessment_record_type):
+        :noindex:
+
 
 Assessment Offered Query
 ------------------------
 
-.. autoclass:: AssessmentOfferedQuery
-   :show-inheritance:
+.. py:class:: AssessmentOfferedQuery(abc_assessment_queries.AssessmentOfferedQuery, osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery)
+    This is the query for searching assessments.
 
-   .. automethod:: AssessmentOfferedQuery.match_assessment_id
 
-   .. autoattribute:: AssessmentOfferedQuery.assessment_id_terms
+    Each method match request produces an ``AND`` term while multiple
+    invocations of a method produces a nested ``OR``.
 
-   .. automethod:: AssessmentOfferedQuery.supports_assessment_query
 
-   .. autoattribute:: AssessmentOfferedQuery.assessment_query
 
-   .. autoattribute:: AssessmentOfferedQuery.assessment_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_level_id
 
-   .. autoattribute:: AssessmentOfferedQuery.level_id_terms
+    .. py:method:: match_assessment_id(assessment_id, match):
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.supports_level_query
 
-   .. autoattribute:: AssessmentOfferedQuery.level_query
+    .. py:method:: clear_assessment_id_terms():
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.match_any_level
 
-   .. autoattribute:: AssessmentOfferedQuery.level_terms
+    .. py:attribute:: assessment_id_terms
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.match_items_sequential
 
-   .. autoattribute:: AssessmentOfferedQuery.items_sequential_terms
+    .. py:method:: supports_assessment_query():
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.match_items_shuffled
 
-   .. autoattribute:: AssessmentOfferedQuery.items_shuffled_terms
+    .. py:method:: get_assessment_query():
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.match_start_time
 
-   .. automethod:: AssessmentOfferedQuery.match_any_start_time
+    .. py:attribute:: assessment_query
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.start_time_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_deadline
+    .. py:method:: clear_assessment_terms():
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.match_any_deadline
 
-   .. autoattribute:: AssessmentOfferedQuery.deadline_terms
+    .. py:attribute:: assessment_terms
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.match_duration
 
-   .. automethod:: AssessmentOfferedQuery.match_any_duration
+    .. py:method:: match_level_id(grade_id, match):
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.duration_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_score_system_id
+    .. py:method:: clear_level_id_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.score_system_id_terms
 
-   .. automethod:: AssessmentOfferedQuery.supports_score_system_query
+    .. py:attribute:: level_id_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.score_system_query
 
-   .. automethod:: AssessmentOfferedQuery.match_any_score_system
+    .. py:method:: supports_level_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.score_system_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_grade_system_id
+    .. py:method:: get_level_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.grade_system_id_terms
 
-   .. automethod:: AssessmentOfferedQuery.supports_grade_system_query
+    .. py:attribute:: level_query
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.grade_system_query
 
-   .. automethod:: AssessmentOfferedQuery.match_any_grade_system
+    .. py:method:: match_any_level(match):
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.grade_system_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_rubric_id
+    .. py:method:: clear_level_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.rubric_id_terms
 
-   .. automethod:: AssessmentOfferedQuery.supports_rubric_query
+    .. py:attribute:: level_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.rubric_query
 
-   .. automethod:: AssessmentOfferedQuery.match_any_rubric
+    .. py:method:: match_items_sequential(match):
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.rubric_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_assessment_taken_id
+    .. py:method:: clear_items_sequential_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.assessment_taken_id_terms
 
-   .. automethod:: AssessmentOfferedQuery.supports_assessment_taken_query
+    .. py:attribute:: items_sequential_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.assessment_taken_query
 
-   .. automethod:: AssessmentOfferedQuery.match_any_assessment_taken
+    .. py:method:: match_items_shuffled(match):
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.assessment_taken_terms
 
-   .. automethod:: AssessmentOfferedQuery.match_bank_id
+    .. py:method:: clear_items_shuffled_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.bank_id_terms
 
-   .. automethod:: AssessmentOfferedQuery.supports_bank_query
+    .. py:attribute:: items_shuffled_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentOfferedQuery.bank_query
 
-   .. autoattribute:: AssessmentOfferedQuery.bank_terms
+    .. py:method:: match_start_time(start, end, match):
+        :noindex:
 
-   .. automethod:: AssessmentOfferedQuery.get_assessment_offered_query_record
+
+    .. py:method:: match_any_start_time(match):
+        :noindex:
+
+
+    .. py:method:: clear_start_time_terms():
+        :noindex:
+
+
+    .. py:attribute:: start_time_terms
+        :noindex:
+
+
+    .. py:method:: match_deadline(start, end, match):
+        :noindex:
+
+
+    .. py:method:: match_any_deadline(match):
+        :noindex:
+
+
+    .. py:method:: clear_deadline_terms():
+        :noindex:
+
+
+    .. py:attribute:: deadline_terms
+        :noindex:
+
+
+    .. py:method:: match_duration(low, high, match):
+        :noindex:
+
+
+    .. py:method:: match_any_duration(match):
+        :noindex:
+
+
+    .. py:method:: clear_duration_terms():
+        :noindex:
+
+
+    .. py:attribute:: duration_terms
+        :noindex:
+
+
+    .. py:method:: match_score_system_id(grade_system_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_score_system_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: score_system_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_score_system_query():
+        :noindex:
+
+
+    .. py:method:: get_score_system_query():
+        :noindex:
+
+
+    .. py:attribute:: score_system_query
+        :noindex:
+
+
+    .. py:method:: match_any_score_system(match):
+        :noindex:
+
+
+    .. py:method:: clear_score_system_terms():
+        :noindex:
+
+
+    .. py:attribute:: score_system_terms
+        :noindex:
+
+
+    .. py:method:: match_grade_system_id(grade_system_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_grade_system_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: grade_system_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_grade_system_query():
+        :noindex:
+
+
+    .. py:method:: get_grade_system_query():
+        :noindex:
+
+
+    .. py:attribute:: grade_system_query
+        :noindex:
+
+
+    .. py:method:: match_any_grade_system(match):
+        :noindex:
+
+
+    .. py:method:: clear_grade_system_terms():
+        :noindex:
+
+
+    .. py:attribute:: grade_system_terms
+        :noindex:
+
+
+    .. py:method:: match_rubric_id(assessment_offered_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_rubric_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: rubric_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_rubric_query():
+        :noindex:
+
+
+    .. py:method:: get_rubric_query():
+        :noindex:
+
+
+    .. py:attribute:: rubric_query
+        :noindex:
+
+
+    .. py:method:: match_any_rubric(match):
+        :noindex:
+
+
+    .. py:method:: clear_rubric_terms():
+        :noindex:
+
+
+    .. py:attribute:: rubric_terms
+        :noindex:
+
+
+    .. py:method:: match_assessment_taken_id(assessment_taken_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_taken_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_assessment_taken_query():
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_query
+        :noindex:
+
+
+    .. py:method:: match_any_assessment_taken(match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_taken_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_taken_terms
+        :noindex:
+
+
+    .. py:method:: match_bank_id(bank_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_bank_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_bank_query():
+        :noindex:
+
+
+    .. py:method:: get_bank_query():
+        :noindex:
+
+
+    .. py:attribute:: bank_query
+        :noindex:
+
+
+    .. py:method:: clear_bank_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_terms
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query_record(assessment_offered_record_type):
+        :noindex:
+
 
 Assessment Taken Query
 ----------------------
 
-.. autoclass:: AssessmentTakenQuery
-   :show-inheritance:
+.. py:class:: AssessmentTakenQuery(abc_assessment_queries.AssessmentTakenQuery, osid_queries.OsidObjectQuery)
+    This is the query for searching assessments.
 
-   .. automethod:: AssessmentTakenQuery.match_assessment_offered_id
 
-   .. autoattribute:: AssessmentTakenQuery.assessment_offered_id_terms
+    Each method match request produces an ``AND`` term while multiple
+    invocations of a method produces a nested ``OR``.
 
-   .. automethod:: AssessmentTakenQuery.supports_assessment_offered_query
 
-   .. autoattribute:: AssessmentTakenQuery.assessment_offered_query
 
-   .. autoattribute:: AssessmentTakenQuery.assessment_offered_terms
 
-   .. automethod:: AssessmentTakenQuery.match_taker_id
 
-   .. autoattribute:: AssessmentTakenQuery.taker_id_terms
+    .. py:method:: match_assessment_offered_id(assessment_offered_id, match):
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.supports_taker_query
 
-   .. autoattribute:: AssessmentTakenQuery.taker_query
+    .. py:method:: clear_assessment_offered_id_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.taker_terms
 
-   .. automethod:: AssessmentTakenQuery.match_taking_agent_id
+    .. py:attribute:: assessment_offered_id_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.taking_agent_id_terms
 
-   .. automethod:: AssessmentTakenQuery.supports_taking_agent_query
+    .. py:method:: supports_assessment_offered_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.taking_agent_query
 
-   .. autoattribute:: AssessmentTakenQuery.taking_agent_terms
+    .. py:method:: get_assessment_offered_query():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_actual_start_time
 
-   .. automethod:: AssessmentTakenQuery.match_any_actual_start_time
+    .. py:attribute:: assessment_offered_query
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.actual_start_time_terms
 
-   .. automethod:: AssessmentTakenQuery.match_completion_time
+    .. py:method:: clear_assessment_offered_terms():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_any_completion_time
 
-   .. autoattribute:: AssessmentTakenQuery.completion_time_terms
+    .. py:attribute:: assessment_offered_terms
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_time_spent
 
-   .. autoattribute:: AssessmentTakenQuery.time_spent_terms
+    .. py:method:: match_taker_id(resource_id, match):
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_score_system_id
 
-   .. autoattribute:: AssessmentTakenQuery.score_system_id_terms
+    .. py:method:: clear_taker_id_terms():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.supports_score_system_query
 
-   .. autoattribute:: AssessmentTakenQuery.score_system_query
+    .. py:attribute:: taker_id_terms
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_any_score_system
 
-   .. autoattribute:: AssessmentTakenQuery.score_system_terms
+    .. py:method:: supports_taker_query():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_score
 
-   .. automethod:: AssessmentTakenQuery.match_any_score
+    .. py:method:: get_taker_query():
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.score_terms
 
-   .. automethod:: AssessmentTakenQuery.match_grade_id
+    .. py:attribute:: taker_query
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.grade_id_terms
 
-   .. automethod:: AssessmentTakenQuery.supports_grade_query
+    .. py:method:: clear_taker_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.grade_query
 
-   .. automethod:: AssessmentTakenQuery.match_any_grade
+    .. py:attribute:: taker_terms
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.grade_terms
 
-   .. automethod:: AssessmentTakenQuery.match_feedback
+    .. py:method:: match_taking_agent_id(agent_id, match):
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_any_feedback
 
-   .. autoattribute:: AssessmentTakenQuery.feedback_terms
+    .. py:method:: clear_taking_agent_id_terms():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_rubric_id
 
-   .. autoattribute:: AssessmentTakenQuery.rubric_id_terms
+    .. py:attribute:: taking_agent_id_terms
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.supports_rubric_query
 
-   .. autoattribute:: AssessmentTakenQuery.rubric_query
+    .. py:method:: supports_taking_agent_query():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_any_rubric
 
-   .. autoattribute:: AssessmentTakenQuery.rubric_terms
+    .. py:method:: get_taking_agent_query():
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.match_bank_id
 
-   .. autoattribute:: AssessmentTakenQuery.bank_id_terms
+    .. py:attribute:: taking_agent_query
+        :noindex:
 
-   .. automethod:: AssessmentTakenQuery.supports_bank_query
 
-   .. autoattribute:: AssessmentTakenQuery.bank_query
+    .. py:method:: clear_taking_agent_terms():
+        :noindex:
 
-   .. autoattribute:: AssessmentTakenQuery.bank_terms
 
-   .. automethod:: AssessmentTakenQuery.get_assessment_taken_query_record
+    .. py:attribute:: taking_agent_terms
+        :noindex:
+
+
+    .. py:method:: match_actual_start_time(start, end, match):
+        :noindex:
+
+
+    .. py:method:: match_any_actual_start_time(match):
+        :noindex:
+
+
+    .. py:method:: clear_actual_start_time_terms():
+        :noindex:
+
+
+    .. py:attribute:: actual_start_time_terms
+        :noindex:
+
+
+    .. py:method:: match_completion_time(start, end, match):
+        :noindex:
+
+
+    .. py:method:: match_any_completion_time(match):
+        :noindex:
+
+
+    .. py:method:: clear_completion_time_terms():
+        :noindex:
+
+
+    .. py:attribute:: completion_time_terms
+        :noindex:
+
+
+    .. py:method:: match_time_spent(low, high, match):
+        :noindex:
+
+
+    .. py:method:: clear_time_spent_terms():
+        :noindex:
+
+
+    .. py:attribute:: time_spent_terms
+        :noindex:
+
+
+    .. py:method:: match_score_system_id(grade_system_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_score_system_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: score_system_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_score_system_query():
+        :noindex:
+
+
+    .. py:method:: get_score_system_query():
+        :noindex:
+
+
+    .. py:attribute:: score_system_query
+        :noindex:
+
+
+    .. py:method:: match_any_score_system(match):
+        :noindex:
+
+
+    .. py:method:: clear_score_system_terms():
+        :noindex:
+
+
+    .. py:attribute:: score_system_terms
+        :noindex:
+
+
+    .. py:method:: match_score(low, high, match):
+        :noindex:
+
+
+    .. py:method:: match_any_score(match):
+        :noindex:
+
+
+    .. py:method:: clear_score_terms():
+        :noindex:
+
+
+    .. py:attribute:: score_terms
+        :noindex:
+
+
+    .. py:method:: match_grade_id(grade_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_grade_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: grade_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_grade_query():
+        :noindex:
+
+
+    .. py:method:: get_grade_query():
+        :noindex:
+
+
+    .. py:attribute:: grade_query
+        :noindex:
+
+
+    .. py:method:: match_any_grade(match):
+        :noindex:
+
+
+    .. py:method:: clear_grade_terms():
+        :noindex:
+
+
+    .. py:attribute:: grade_terms
+        :noindex:
+
+
+    .. py:method:: match_feedback(comments, string_match_type, match):
+        :noindex:
+
+
+    .. py:method:: match_any_feedback(match):
+        :noindex:
+
+
+    .. py:method:: clear_feedback_terms():
+        :noindex:
+
+
+    .. py:attribute:: feedback_terms
+        :noindex:
+
+
+    .. py:method:: match_rubric_id(assessment_taken_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_rubric_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: rubric_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_rubric_query():
+        :noindex:
+
+
+    .. py:method:: get_rubric_query():
+        :noindex:
+
+
+    .. py:attribute:: rubric_query
+        :noindex:
+
+
+    .. py:method:: match_any_rubric(match):
+        :noindex:
+
+
+    .. py:method:: clear_rubric_terms():
+        :noindex:
+
+
+    .. py:attribute:: rubric_terms
+        :noindex:
+
+
+    .. py:method:: match_bank_id(bank_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_bank_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_bank_query():
+        :noindex:
+
+
+    .. py:method:: get_bank_query():
+        :noindex:
+
+
+    .. py:attribute:: bank_query
+        :noindex:
+
+
+    .. py:method:: clear_bank_terms():
+        :noindex:
+
+
+    .. py:attribute:: bank_terms
+        :noindex:
+
+
+    .. py:method:: get_assessment_taken_query_record(assessment_taken_record_type):
+        :noindex:
+
 
 Bank Query
 ----------
 
-.. autoclass:: BankQuery
-   :show-inheritance:
+.. py:class:: BankQuery(abc_assessment_queries.BankQuery, osid_queries.OsidCatalogQuery)
+    This is the query for searching banks Each method specifies an ``AND`` term while multiple
+    invocations of the same method produce a nested ``OR``.
 
-   .. automethod:: BankQuery.match_item_id
+    .. py:method:: match_item_id(item_id, match):
+        :noindex:
 
-   .. autoattribute:: BankQuery.item_id_terms
 
-   .. automethod:: BankQuery.supports_item_query
+    .. py:method:: clear_item_id_terms():
+        :noindex:
 
-   .. autoattribute:: BankQuery.item_query
 
-   .. automethod:: BankQuery.match_any_item
+    .. py:attribute:: item_id_terms
+        :noindex:
 
-   .. autoattribute:: BankQuery.item_terms
 
-   .. automethod:: BankQuery.match_assessment_id
+    .. py:method:: supports_item_query():
+        :noindex:
 
-   .. autoattribute:: BankQuery.assessment_id_terms
 
-   .. automethod:: BankQuery.supports_assessment_query
+    .. py:method:: get_item_query():
+        :noindex:
 
-   .. autoattribute:: BankQuery.assessment_query
 
-   .. automethod:: BankQuery.match_any_assessment
+    .. py:attribute:: item_query
+        :noindex:
 
-   .. autoattribute:: BankQuery.assessment_terms
 
-   .. automethod:: BankQuery.match_assessment_offered_id
+    .. py:method:: match_any_item(match):
+        :noindex:
 
-   .. autoattribute:: BankQuery.assessment_offered_id_terms
 
-   .. automethod:: BankQuery.supports_assessment_offered_query
+    .. py:method:: clear_item_terms():
+        :noindex:
 
-   .. autoattribute:: BankQuery.assessment_offered_query
 
-   .. automethod:: BankQuery.match_any_assessment_offered
+    .. py:attribute:: item_terms
+        :noindex:
 
-   .. autoattribute:: BankQuery.assessment_offered_terms
 
-   .. automethod:: BankQuery.match_ancestor_bank_id
+    .. py:method:: match_assessment_id(assessment_id, match):
+        :noindex:
 
-   .. autoattribute:: BankQuery.ancestor_bank_id_terms
 
-   .. automethod:: BankQuery.supports_ancestor_bank_query
+    .. py:method:: clear_assessment_id_terms():
+        :noindex:
 
-   .. autoattribute:: BankQuery.ancestor_bank_query
 
-   .. automethod:: BankQuery.match_any_ancestor_bank
+    .. py:attribute:: assessment_id_terms
+        :noindex:
 
-   .. autoattribute:: BankQuery.ancestor_bank_terms
 
-   .. automethod:: BankQuery.match_descendant_bank_id
+    .. py:method:: supports_assessment_query():
+        :noindex:
 
-   .. autoattribute:: BankQuery.descendant_bank_id_terms
 
-   .. automethod:: BankQuery.supports_descendant_bank_query
+    .. py:method:: get_assessment_query():
+        :noindex:
 
-   .. autoattribute:: BankQuery.descendant_bank_query
 
-   .. automethod:: BankQuery.match_any_descendant_bank
+    .. py:attribute:: assessment_query
+        :noindex:
 
-   .. autoattribute:: BankQuery.descendant_bank_terms
 
-   .. automethod:: BankQuery.get_bank_query_record
+    .. py:method:: match_any_assessment(match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_terms
+        :noindex:
+
+
+    .. py:method:: match_assessment_offered_id(assessment_offered_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_offered_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_assessment_offered_query():
+        :noindex:
+
+
+    .. py:method:: get_assessment_offered_query():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_query
+        :noindex:
+
+
+    .. py:method:: match_any_assessment_offered(match):
+        :noindex:
+
+
+    .. py:method:: clear_assessment_offered_terms():
+        :noindex:
+
+
+    .. py:attribute:: assessment_offered_terms
+        :noindex:
+
+
+    .. py:method:: match_ancestor_bank_id(bank_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_bank_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_bank_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_ancestor_bank_query():
+        :noindex:
+
+
+    .. py:method:: get_ancestor_bank_query():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_bank_query
+        :noindex:
+
+
+    .. py:method:: match_any_ancestor_bank(match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_bank_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_bank_terms
+        :noindex:
+
+
+    .. py:method:: match_descendant_bank_id(bank_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_bank_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_bank_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_descendant_bank_query():
+        :noindex:
+
+
+    .. py:method:: get_descendant_bank_query():
+        :noindex:
+
+
+    .. py:attribute:: descendant_bank_query
+        :noindex:
+
+
+    .. py:method:: match_any_descendant_bank(match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_bank_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_bank_terms
+        :noindex:
+
+
+    .. py:method:: get_bank_query_record(bank_record_type):
+        :noindex:
+
 

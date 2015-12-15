@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.commenting.queries
-.. automodule:: dlkit.commenting.queries
 
 Queries
 =======
@@ -9,104 +7,304 @@ Queries
 Comment Query
 -------------
 
-.. autoclass:: CommentQuery
-   :show-inheritance:
+.. py:class:: CommentQuery(abc_commenting_queries.CommentQuery, osid_queries.OsidRelationshipQuery)
+    This is the query for searching comments.
 
-   .. automethod:: CommentQuery.match_reference_id
 
-   .. autoattribute:: CommentQuery.reference_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: CommentQuery.match_commentor_id
 
-   .. autoattribute:: CommentQuery.commentor_id_terms
 
-   .. automethod:: CommentQuery.supports_commentor_query
 
-   .. autoattribute:: CommentQuery.commentor_query
 
-   .. autoattribute:: CommentQuery.commentor_terms
+    .. py:method:: match_reference_id(source_id, match):
+        :noindex:
 
-   .. automethod:: CommentQuery.match_commenting_agent_id
 
-   .. autoattribute:: CommentQuery.commenting_agent_id_terms
+    .. py:method:: clear_reference_id_terms():
+        :noindex:
 
-   .. automethod:: CommentQuery.supports_commenting_agent_query
 
-   .. autoattribute:: CommentQuery.commenting_agent_query
+    .. py:attribute:: reference_id_terms
+        :noindex:
 
-   .. autoattribute:: CommentQuery.commenting_agent_terms
 
-   .. automethod:: CommentQuery.match_text
+    .. py:method:: match_commentor_id(resource_id, match):
+        :noindex:
 
-   .. automethod:: CommentQuery.match_any_text
 
-   .. autoattribute:: CommentQuery.text_terms
+    .. py:method:: clear_commentor_id_terms():
+        :noindex:
 
-   .. automethod:: CommentQuery.match_rating_id
 
-   .. autoattribute:: CommentQuery.rating_id_terms
+    .. py:attribute:: commentor_id_terms
+        :noindex:
 
-   .. automethod:: CommentQuery.supports_rating_query
 
-   .. autoattribute:: CommentQuery.rating_query
+    .. py:method:: supports_commentor_query():
+        :noindex:
 
-   .. automethod:: CommentQuery.match_any_rating
 
-   .. autoattribute:: CommentQuery.rating_terms
+    .. py:method:: get_commentor_query():
+        :noindex:
 
-   .. automethod:: CommentQuery.match_book_id
 
-   .. autoattribute:: CommentQuery.book_id_terms
+    .. py:attribute:: commentor_query
+        :noindex:
 
-   .. automethod:: CommentQuery.supports_book_query
 
-   .. autoattribute:: CommentQuery.book_query
+    .. py:method:: clear_commentor_terms():
+        :noindex:
 
-   .. autoattribute:: CommentQuery.book_terms
 
-   .. automethod:: CommentQuery.get_comment_query_record
+    .. py:attribute:: commentor_terms
+        :noindex:
+
+
+    .. py:method:: match_commenting_agent_id(agent_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_commenting_agent_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: commenting_agent_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_commenting_agent_query():
+        :noindex:
+
+
+    .. py:method:: get_commenting_agent_query():
+        :noindex:
+
+
+    .. py:attribute:: commenting_agent_query
+        :noindex:
+
+
+    .. py:method:: clear_commenting_agent_terms():
+        :noindex:
+
+
+    .. py:attribute:: commenting_agent_terms
+        :noindex:
+
+
+    .. py:method:: match_text(text, string_match_type, match):
+        :noindex:
+
+
+    .. py:method:: match_any_text(match):
+        :noindex:
+
+
+    .. py:method:: clear_text_terms():
+        :noindex:
+
+
+    .. py:attribute:: text_terms
+        :noindex:
+
+
+    .. py:method:: match_rating_id(grade_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_rating_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: rating_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_rating_query():
+        :noindex:
+
+
+    .. py:method:: get_rating_query():
+        :noindex:
+
+
+    .. py:attribute:: rating_query
+        :noindex:
+
+
+    .. py:method:: match_any_rating(match):
+        :noindex:
+
+
+    .. py:method:: clear_rating_terms():
+        :noindex:
+
+
+    .. py:attribute:: rating_terms
+        :noindex:
+
+
+    .. py:method:: match_book_id(book_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_book_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: book_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_book_query():
+        :noindex:
+
+
+    .. py:method:: get_book_query():
+        :noindex:
+
+
+    .. py:attribute:: book_query
+        :noindex:
+
+
+    .. py:method:: clear_book_terms():
+        :noindex:
+
+
+    .. py:attribute:: book_terms
+        :noindex:
+
+
+    .. py:method:: get_comment_query_record(comment_record_type):
+        :noindex:
+
 
 Book Query
 ----------
 
-.. autoclass:: BookQuery
-   :show-inheritance:
+.. py:class:: BookQuery(abc_commenting_queries.BookQuery, osid_queries.OsidCatalogQuery)
+    This is the query for searching books.
 
-   .. automethod:: BookQuery.match_comment_id
 
-   .. autoattribute:: BookQuery.comment_id_terms
+    Each method specifies an ``AND`` term while multiple invocations of
+    the same method produce a nested ``OR``.
 
-   .. automethod:: BookQuery.supports_comment_query
 
-   .. autoattribute:: BookQuery.comment_query
 
-   .. automethod:: BookQuery.match_any_comment
 
-   .. autoattribute:: BookQuery.comment_terms
 
-   .. automethod:: BookQuery.match_ancestor_book_id
+    .. py:method:: match_comment_id(comment_id, match):
+        :noindex:
 
-   .. autoattribute:: BookQuery.ancestor_book_id_terms
 
-   .. automethod:: BookQuery.supports_ancestor_book_query
+    .. py:method:: clear_comment_id_terms():
+        :noindex:
 
-   .. autoattribute:: BookQuery.ancestor_book_query
 
-   .. automethod:: BookQuery.match_any_ancestor_book
+    .. py:attribute:: comment_id_terms
+        :noindex:
 
-   .. autoattribute:: BookQuery.ancestor_book_terms
 
-   .. automethod:: BookQuery.match_descendant_book_id
+    .. py:method:: supports_comment_query():
+        :noindex:
 
-   .. autoattribute:: BookQuery.descendant_book_id_terms
 
-   .. automethod:: BookQuery.supports_descendant_book_query
+    .. py:method:: get_comment_query():
+        :noindex:
 
-   .. autoattribute:: BookQuery.descendant_book_query
 
-   .. automethod:: BookQuery.match_any_descendant_book
+    .. py:attribute:: comment_query
+        :noindex:
 
-   .. autoattribute:: BookQuery.descendant_book_terms
 
-   .. automethod:: BookQuery.get_book_query_record
+    .. py:method:: match_any_comment(match):
+        :noindex:
+
+
+    .. py:method:: clear_comment_terms():
+        :noindex:
+
+
+    .. py:attribute:: comment_terms
+        :noindex:
+
+
+    .. py:method:: match_ancestor_book_id(book_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_book_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_book_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_ancestor_book_query():
+        :noindex:
+
+
+    .. py:method:: get_ancestor_book_query():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_book_query
+        :noindex:
+
+
+    .. py:method:: match_any_ancestor_book(match):
+        :noindex:
+
+
+    .. py:method:: clear_ancestor_book_terms():
+        :noindex:
+
+
+    .. py:attribute:: ancestor_book_terms
+        :noindex:
+
+
+    .. py:method:: match_descendant_book_id(book_id, match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_book_id_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_book_id_terms
+        :noindex:
+
+
+    .. py:method:: supports_descendant_book_query():
+        :noindex:
+
+
+    .. py:method:: get_descendant_book_query():
+        :noindex:
+
+
+    .. py:attribute:: descendant_book_query
+        :noindex:
+
+
+    .. py:method:: match_any_descendant_book(match):
+        :noindex:
+
+
+    .. py:method:: clear_descendant_book_terms():
+        :noindex:
+
+
+    .. py:attribute:: descendant_book_terms
+        :noindex:
+
+
+    .. py:method:: get_book_query_record(book_record_type):
+        :noindex:
+
 

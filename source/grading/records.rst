@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.grading.records
-.. automodule:: dlkit.grading.records
 
 Records
 =======
@@ -9,168 +7,336 @@ Records
 Grade Record
 ------------
 
-.. autoclass:: GradeRecord
-   :show-inheritance:
+.. py:class:: GradeRecord(abc_grading_records.GradeRecord, osid_records.OsidRecord)
+    A record for a ``Grade``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade Query Record
 ------------------
 
-.. autoclass:: GradeQueryRecord
-   :show-inheritance:
+.. py:class:: GradeQueryRecord(abc_grading_records.GradeQueryRecord, osid_records.OsidRecord)
+    A record for a ``GradeQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade Form Record
 -----------------
 
-.. autoclass:: GradeFormRecord
-   :show-inheritance:
+.. py:class:: GradeFormRecord(abc_grading_records.GradeFormRecord, osid_records.OsidRecord)
+    A record for a ``GradeForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade System Record
 -------------------
 
-.. autoclass:: GradeSystemRecord
-   :show-inheritance:
+.. py:class:: GradeSystemRecord(abc_grading_records.GradeSystemRecord, osid_records.OsidRecord)
+    A record for a ``GradeSystem``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade System Query Record
 -------------------------
 
-.. autoclass:: GradeSystemQueryRecord
-   :show-inheritance:
+.. py:class:: GradeSystemQueryRecord(abc_grading_records.GradeSystemQueryRecord, osid_records.OsidRecord)
+    A record for a ``GradeSystemQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade System Form Record
 ------------------------
 
-.. autoclass:: GradeSystemFormRecord
-   :show-inheritance:
+.. py:class:: GradeSystemFormRecord(abc_grading_records.GradeSystemFormRecord, osid_records.OsidRecord)
+    A record for a ``GradeSystemForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade System Search Record
 --------------------------
 
-.. autoclass:: GradeSystemSearchRecord
-   :show-inheritance:
+.. py:class:: GradeSystemSearchRecord(abc_grading_records.GradeSystemSearchRecord, osid_records.OsidRecord)
+    A record for a ``GradeSystemSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade Entry Record
 ------------------
 
-.. autoclass:: GradeEntryRecord
-   :show-inheritance:
+.. py:class:: GradeEntryRecord(abc_grading_records.GradeEntryRecord, osid_records.OsidRecord)
+    A record for a ``GradeEntry``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade Entry Query Record
 ------------------------
 
-.. autoclass:: GradeEntryQueryRecord
-   :show-inheritance:
+.. py:class:: GradeEntryQueryRecord(abc_grading_records.GradeEntryQueryRecord, osid_records.OsidRecord)
+    A record for a ``GradeEntryQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade Entry Form Record
 -----------------------
 
-.. autoclass:: GradeEntryFormRecord
-   :show-inheritance:
+.. py:class:: GradeEntryFormRecord(abc_grading_records.GradeEntryFormRecord, osid_records.OsidRecord)
+    A record for a ``GradeEntryForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Grade Entry Search Record
 -------------------------
 
-.. autoclass:: GradeEntrySearchRecord
-   :show-inheritance:
+.. py:class:: GradeEntrySearchRecord(abc_grading_records.GradeEntrySearchRecord, osid_records.OsidRecord)
+    A record for a ``GradeEntrySearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Column Record
 -----------------------
 
-.. autoclass:: GradebookColumnRecord
-   :show-inheritance:
+.. py:class:: GradebookColumnRecord(abc_grading_records.GradebookColumnRecord, osid_records.OsidRecord)
+    A record for a ``GradebookColumn``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Column Query Record
 -----------------------------
 
-.. autoclass:: GradebookColumnQueryRecord
-   :show-inheritance:
+.. py:class:: GradebookColumnQueryRecord(abc_grading_records.GradebookColumnQueryRecord, osid_records.OsidRecord)
+    A record for a ``GradebookColumnQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Column Form Record
 ----------------------------
 
-.. autoclass:: GradebookColumnFormRecord
-   :show-inheritance:
+.. py:class:: GradebookColumnFormRecord(abc_grading_records.GradebookColumnFormRecord, osid_records.OsidRecord)
+    A record for a ``GradebookColumnForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Column Search Record
 ------------------------------
 
-.. autoclass:: GradebookColumnSearchRecord
-   :show-inheritance:
+.. py:class:: GradebookColumnSearchRecord(abc_grading_records.GradebookColumnSearchRecord, osid_records.OsidRecord)
+    A record for a ``GradebookColumnSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Column Summary Record
 -------------------------------
 
-.. autoclass:: GradebookColumnSummaryRecord
-   :show-inheritance:
+.. py:class:: GradebookColumnSummaryRecord(abc_grading_records.GradebookColumnSummaryRecord, osid_records.OsidRecord)
+    A record for a ``GradebookColumnSummary``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Column Summary Query Record
 -------------------------------------
 
-.. autoclass:: GradebookColumnSummaryQueryRecord
-   :show-inheritance:
+.. py:class:: GradebookColumnSummaryQueryRecord(abc_grading_records.GradebookColumnSummaryQueryRecord, osid_records.OsidRecord)
+    A record for a ``GradebookColumnSummaryQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Record
 ----------------
 
-.. autoclass:: GradebookRecord
-   :show-inheritance:
+.. py:class:: GradebookRecord(abc_grading_records.GradebookRecord, osid_records.OsidRecord)
+    A record for a ``Gradebook``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Query Record
 ----------------------
 
-.. autoclass:: GradebookQueryRecord
-   :show-inheritance:
+.. py:class:: GradebookQueryRecord(abc_grading_records.GradebookQueryRecord, osid_records.OsidRecord)
+    A record for a ``GradebookQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Form Record
 ---------------------
 
-.. autoclass:: GradebookFormRecord
-   :show-inheritance:
+.. py:class:: GradebookFormRecord(abc_grading_records.GradebookFormRecord, osid_records.OsidRecord)
+    A record for a ``GradebookForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 
 Gradebook Search Record
 -----------------------
 
-.. autoclass:: GradebookSearchRecord
-   :show-inheritance:
+.. py:class:: GradebookSearchRecord(abc_grading_records.GradebookSearchRecord, osid_records.OsidRecord)
+    A record for a ``GradebookSearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+
+
 
 
 

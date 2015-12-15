@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.grading.searches
-.. automodule:: dlkit.grading.searches
 
 Searches
 ========
@@ -9,96 +7,176 @@ Searches
 Grade System Search
 -------------------
 
-.. autoclass:: GradeSystemSearch
-   :show-inheritance:
+.. py:class:: GradeSystemSearch(abc_grading_searches.GradeSystemSearch, osid_searches.OsidSearch)
+    The interface for governing grade system searches.
 
-   .. automethod:: GradeSystemSearch.search_among_grade_systems
+    .. py:method:: search_among_grade_systems(grade_system_ids):
+        :noindex:
 
-   .. automethod:: GradeSystemSearch.order_grade_system_results
 
-   .. automethod:: GradeSystemSearch.get_grade_system_search_record
+    .. py:method:: order_grade_system_results(grade_system_search_order):
+        :noindex:
+
+
+    .. py:method:: get_grade_system_search_record(grade_system_search_record_type):
+        :noindex:
+
 
 Grade System Search Results
 ---------------------------
 
-.. autoclass:: GradeSystemSearchResults
-   :show-inheritance:
+.. py:class:: GradeSystemSearchResults(abc_grading_searches.GradeSystemSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: GradeSystemSearchResults.grade_systems
+    .. py:method:: get_grade_systems():
+        :noindex:
 
-   .. autoattribute:: GradeSystemSearchResults.grade_system_query_inspector
 
-   .. automethod:: GradeSystemSearchResults.get_grade_system_search_results_record
+    .. py:attribute:: grade_systems
+        :noindex:
+
+
+    .. py:method:: get_grade_system_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: grade_system_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_grade_system_search_results_record(grade_system_search_record_type):
+        :noindex:
+
 
 Grade Entry Search
 ------------------
 
-.. autoclass:: GradeEntrySearch
-   :show-inheritance:
+.. py:class:: GradeEntrySearch(abc_grading_searches.GradeEntrySearch, osid_searches.OsidSearch)
+    ``GradeEntrySearch`` defines the interface for specifying package search options.
 
-   .. automethod:: GradeEntrySearch.search_among_grade_entries
+    .. py:method:: search_among_grade_entries(grade_entry_ids):
+        :noindex:
 
-   .. automethod:: GradeEntrySearch.order_grade_entry_results
 
-   .. automethod:: GradeEntrySearch.get_grade_entry_search_record
+    .. py:method:: order_grade_entry_results(grade_entry_search_order):
+        :noindex:
+
+
+    .. py:method:: get_grade_entry_search_record(grade_entry_search_record_type):
+        :noindex:
+
 
 Grade Entry Search Results
 --------------------------
 
-.. autoclass:: GradeEntrySearchResults
-   :show-inheritance:
+.. py:class:: GradeEntrySearchResults(abc_grading_searches.GradeEntrySearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: GradeEntrySearchResults.grade_entries
+    .. py:method:: get_grade_entries():
+        :noindex:
 
-   .. autoattribute:: GradeEntrySearchResults.grade_entry_query_inspector
 
-   .. automethod:: GradeEntrySearchResults.get_grade_entry_search_results_record
+    .. py:attribute:: grade_entries
+        :noindex:
+
+
+    .. py:method:: get_grade_entry_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: grade_entry_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_grade_entry_search_results_record(grade_entry_search_record_type):
+        :noindex:
+
 
 Gradebook Column Search
 -----------------------
 
-.. autoclass:: GradebookColumnSearch
-   :show-inheritance:
+.. py:class:: GradebookColumnSearch(abc_grading_searches.GradebookColumnSearch, osid_searches.OsidSearch)
+    ``GradebookColumnSearch`` defines the interface for specifying grading search options.
 
-   .. automethod:: GradebookColumnSearch.search_among_gradebook_columns
+    .. py:method:: search_among_gradebook_columns(gradebook_column_ids):
+        :noindex:
 
-   .. automethod:: GradebookColumnSearch.order_gradebook_column_results
 
-   .. automethod:: GradebookColumnSearch.get_gradebook_column_search_record
+    .. py:method:: order_gradebook_column_results(gradebook_column_search_order):
+        :noindex:
+
+
+    .. py:method:: get_gradebook_column_search_record(gradebook_column_search_record_type):
+        :noindex:
+
 
 Gradebook Column Search Results
 -------------------------------
 
-.. autoclass:: GradebookColumnSearchResults
-   :show-inheritance:
+.. py:class:: GradebookColumnSearchResults(abc_grading_searches.GradebookColumnSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: GradebookColumnSearchResults.gradebook_columns
+    .. py:method:: get_gradebook_columns():
+        :noindex:
 
-   .. autoattribute:: GradebookColumnSearchResults.gradebook_column_query_inspector
 
-   .. automethod:: GradebookColumnSearchResults.get_gradebook_column_search_results_record
+    .. py:attribute:: gradebook_columns
+        :noindex:
+
+
+    .. py:method:: get_gradebook_column_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: gradebook_column_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_gradebook_column_search_results_record(gradebook_column_search_record_type):
+        :noindex:
+
 
 Gradebook Search
 ----------------
 
-.. autoclass:: GradebookSearch
-   :show-inheritance:
+.. py:class:: GradebookSearch(abc_grading_searches.GradebookSearch, osid_searches.OsidSearch)
+    The interface for governing gradebook searches.
 
-   .. automethod:: GradebookSearch.search_among_gradebooks
+    .. py:method:: search_among_gradebooks(gradebook_ids):
+        :noindex:
 
-   .. automethod:: GradebookSearch.order_gradebook_results
 
-   .. automethod:: GradebookSearch.get_gradebook_search_record
+    .. py:method:: order_gradebook_results(gradebook_search_order):
+        :noindex:
+
+
+    .. py:method:: get_gradebook_search_record(gradebook_search_record_type):
+        :noindex:
+
 
 Gradebook Search Results
 ------------------------
 
-.. autoclass:: GradebookSearchResults
-   :show-inheritance:
+.. py:class:: GradebookSearchResults(abc_grading_searches.GradebookSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: GradebookSearchResults.gradebooks
+    .. py:method:: get_gradebooks():
+        :noindex:
 
-   .. autoattribute:: GradebookSearchResults.gradebook_query_inspector
 
-   .. automethod:: GradebookSearchResults.get_gradebook_search_results_record
+    .. py:attribute:: gradebooks
+        :noindex:
+
+
+    .. py:method:: get_gradebook_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: gradebook_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_gradebook_search_results_record(gradebook_search_record_type):
+        :noindex:
+
 

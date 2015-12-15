@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.osid.search_orders
-.. automodule:: dlkit.osid.search_orders
 
 Search Orders
 =============
@@ -9,232 +7,398 @@ Search Orders
 Osid Search Order
 -----------------
 
-.. autoclass:: OsidSearchOrder
-   :show-inheritance:
+.. py:class:: OsidSearchOrder(abc_osid_search_orders.OsidSearchOrder, osid_markers.Suppliable)
+    ``OsidSearchOrder`` specifies preferred ordering of search results.
+
+
+    An ``OsidSearchOrder`` is available from an search session and
+    supplied to an ``OsidSearch`` interface. OsidSearch os =
+    session.getObjectSearch(); os.limitResultSet(1, 25); OsidSearchOrder
+    order = session.getObjectSearchOrder(); order.orderByDisplayName();
+    os.orderResults(order); OsidQuery queru; query =
+    session.getObjectQuery(); query.addDescriptionMatch("*food*",
+    wildcardStringMatchType, true); ObjectSearchResults results =
+    session.getObjectsBySearch(query, os); ObjectList list =
+    results.getObjectList();
+
+
+
+
 
 
 
 Osid Identifiable Search Order
 ------------------------------
 
-.. autoclass:: OsidIdentifiableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidIdentifiableSearchOrder(abc_osid_search_orders.OsidIdentifiableSearchOrder, OsidSearchOrder)
+    ``OsidIdentifiableSearchOrder`` specifies preferred ordering of search results.
 
-   .. automethod:: OsidIdentifiableSearchOrder.order_by_id
+
+    An ``OsidSearchOrder`` is available from an search session and
+    supplied to an ``OsidSearch``.
+
+
+
+
+
+    .. py:method:: order_by_id(style):
+        :noindex:
+
 
 Osid Extensible Search Order
 ----------------------------
 
-.. autoclass:: OsidExtensibleSearchOrder
-   :show-inheritance:
+.. py:class:: OsidExtensibleSearchOrder(abc_osid_search_orders.OsidExtensibleSearchOrder, OsidSearchOrder, osid_markers.Extensible)
+    ``OsidExtensibleSearchOrder`` specifies preferred ordering of search results.
+
+
+    An ``OsidSearchOrder`` is available from an search session and
+    supplied to an ``OsidSearch``.
+
+
+
+
 
 
 
 Osid Browsable Search Order
 ---------------------------
 
-.. autoclass:: OsidBrowsableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidBrowsableSearchOrder(abc_osid_search_orders.OsidBrowsableSearchOrder, OsidSearchOrder)
+    ``OsidBrowsableSearchOrder`` specifies preferred ordering of search results.
+
+
+    An ``OsidSearchOrder`` is available from an search session and
+    supplied to an ``OsidSearch``.
+
+
+
+
 
 
 
 Osid Temporal Search Order
 --------------------------
 
-.. autoclass:: OsidTemporalSearchOrder
-   :show-inheritance:
+.. py:class:: OsidTemporalSearchOrder(abc_osid_search_orders.OsidTemporalSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidTemporalSearchOrder.order_by_effective
+    .. py:method:: order_by_effective(style):
+        :noindex:
 
-   .. automethod:: OsidTemporalSearchOrder.order_by_start_date
 
-   .. automethod:: OsidTemporalSearchOrder.order_by_end_date
+    .. py:method:: order_by_start_date(style):
+        :noindex:
+
+
+    .. py:method:: order_by_end_date(style):
+        :noindex:
+
 
 Osid Subjugateable Search Order
 -------------------------------
 
-.. autoclass:: OsidSubjugateableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidSubjugateableSearchOrder(abc_osid_search_orders.OsidSubjugateableSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of dependent object search results.
 
 
 
 Osid Aggregateable Search Order
 -------------------------------
 
-.. autoclass:: OsidAggregateableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidAggregateableSearchOrder(abc_osid_search_orders.OsidAggregateableSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of assemblage search results.
 
 
 
 Osid Containable Search Order
 -----------------------------
 
-.. autoclass:: OsidContainableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidContainableSearchOrder(abc_osid_search_orders.OsidContainableSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidContainableSearchOrder.order_by_sequestered
+    .. py:method:: order_by_sequestered(style):
+        :noindex:
+
 
 Osid Sourceable Search Order
 ----------------------------
 
-.. autoclass:: OsidSourceableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidSourceableSearchOrder(abc_osid_search_orders.OsidSourceableSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidSourceableSearchOrder.order_by_provider
+    .. py:method:: order_by_provider(style):
+        :noindex:
 
-   .. automethod:: OsidSourceableSearchOrder.supports_provider_search_order
 
-   .. autoattribute:: OsidSourceableSearchOrder.provider_search_order
+    .. py:method:: supports_provider_search_order():
+        :noindex:
+
+
+    .. py:method:: get_provider_search_order():
+        :noindex:
+
+
+    .. py:attribute:: provider_search_order
+        :noindex:
+
 
 Osid Federateable Search Order
 ------------------------------
 
-.. autoclass:: OsidFederateableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidFederateableSearchOrder(abc_osid_search_orders.OsidFederateableSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of search results.
 
 
 
 Osid Operable Search Order
 --------------------------
 
-.. autoclass:: OsidOperableSearchOrder
-   :show-inheritance:
+.. py:class:: OsidOperableSearchOrder(abc_osid_search_orders.OsidOperableSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidOperableSearchOrder.order_by_active
+    .. py:method:: order_by_active(style):
+        :noindex:
 
-   .. automethod:: OsidOperableSearchOrder.order_by_enabled
 
-   .. automethod:: OsidOperableSearchOrder.order_by_disabled
+    .. py:method:: order_by_enabled(style):
+        :noindex:
 
-   .. automethod:: OsidOperableSearchOrder.order_by_operational
+
+    .. py:method:: order_by_disabled(style):
+        :noindex:
+
+
+    .. py:method:: order_by_operational(style):
+        :noindex:
+
 
 Osid Object Search Order
 ------------------------
 
-.. autoclass:: OsidObjectSearchOrder
-   :show-inheritance:
+.. py:class:: OsidObjectSearchOrder(abc_osid_search_orders.OsidObjectSearchOrder, OsidIdentifiableSearchOrder, OsidExtensibleSearchOrder, OsidBrowsableSearchOrder)
+    ``OsidObjectSearchOrder`` specifies preferred ordering of search results.
 
-   .. automethod:: OsidObjectSearchOrder.order_by_display_name
 
-   .. automethod:: OsidObjectSearchOrder.order_by_description
+    An ``OsidSearchOrder`` is available from an search session and
+    supplied to an ``OsidSearch``. OsidObjectSearch os =
+    session.getObjectSearch(); os.limitResultSet(1, 25);
+    OsidObjectSearchOrder order = session.getObjectSearchOrder();
+    order.orderByDisplayName(); os.orderResults(order); OsidObjectQuery
+    query; query = session.getObjectQuery();
+    query.addDescriptionMatch("*food*", wildcardStringMatchType, true);
+    ObjectSearchResults results = session.getObjectsBySearch(query, os);
+    ObjectList list = results.getObjectList();
 
-   .. automethod:: OsidObjectSearchOrder.order_by_genus_type
 
-   .. automethod:: OsidObjectSearchOrder.order_by_state
 
-   .. automethod:: OsidObjectSearchOrder.order_by_cumulative_rating
 
-   .. automethod:: OsidObjectSearchOrder.order_by_statistic
 
-   .. automethod:: OsidObjectSearchOrder.order_by_create_time
+    .. py:method:: order_by_display_name(style):
+        :noindex:
 
-   .. automethod:: OsidObjectSearchOrder.order_by_last_modified_time
+
+    .. py:method:: order_by_description(style):
+        :noindex:
+
+
+    .. py:method:: order_by_genus_type(style):
+        :noindex:
+
+
+    .. py:method:: order_by_state(process_id, style):
+        :noindex:
+
+
+    .. py:method:: order_by_cumulative_rating(book_id, style):
+        :noindex:
+
+
+    .. py:method:: order_by_statistic(meter_id, style):
+        :noindex:
+
+
+    .. py:method:: order_by_create_time(style):
+        :noindex:
+
+
+    .. py:method:: order_by_last_modified_time(style):
+        :noindex:
+
 
 Osid Relationship Search Order
 ------------------------------
 
-.. autoclass:: OsidRelationshipSearchOrder
-   :show-inheritance:
+.. py:class:: OsidRelationshipSearchOrder(abc_osid_search_orders.OsidRelationshipSearchOrder, OsidObjectSearchOrder, OsidTemporalSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidRelationshipSearchOrder.order_by_end_reason
+    .. py:method:: order_by_end_reason(style):
+        :noindex:
 
-   .. automethod:: OsidRelationshipSearchOrder.supports_end_reason_search_order
 
-   .. autoattribute:: OsidRelationshipSearchOrder.end_reason_search_order
+    .. py:method:: supports_end_reason_search_order():
+        :noindex:
+
+
+    .. py:method:: get_end_reason_search_order():
+        :noindex:
+
+
+    .. py:attribute:: end_reason_search_order
+        :noindex:
+
 
 Osid Catalog Search Order
 -------------------------
 
-.. autoclass:: OsidCatalogSearchOrder
-   :show-inheritance:
+.. py:class:: OsidCatalogSearchOrder(abc_osid_search_orders.OsidCatalogSearchOrder, OsidObjectSearchOrder, OsidSourceableSearchOrder, OsidFederateableSearchOrder)
+    An interface for specifying the ordering of catalog search results.
 
 
 
 Osid Rule Search Order
 ----------------------
 
-.. autoclass:: OsidRuleSearchOrder
-   :show-inheritance:
+.. py:class:: OsidRuleSearchOrder(abc_osid_search_orders.OsidRuleSearchOrder, OsidObjectSearchOrder, OsidOperableSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidRuleSearchOrder.order_by_rule
+    .. py:method:: order_by_rule(style):
+        :noindex:
 
-   .. automethod:: OsidRuleSearchOrder.supports_rule_search_order
 
-   .. autoattribute:: OsidRuleSearchOrder.rule_search_order
+    .. py:method:: supports_rule_search_order():
+        :noindex:
+
+
+    .. py:method:: get_rule_search_order():
+        :noindex:
+
+
+    .. py:attribute:: rule_search_order
+        :noindex:
+
 
 Osid Enabler Search Order
 -------------------------
 
-.. autoclass:: OsidEnablerSearchOrder
-   :show-inheritance:
+.. py:class:: OsidEnablerSearchOrder(abc_osid_search_orders.OsidEnablerSearchOrder, OsidRuleSearchOrder, OsidTemporalSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidEnablerSearchOrder.order_by_schedule
+    .. py:method:: order_by_schedule(style):
+        :noindex:
 
-   .. automethod:: OsidEnablerSearchOrder.supports_schedule_search_order
 
-   .. autoattribute:: OsidEnablerSearchOrder.schedule_search_order
+    .. py:method:: supports_schedule_search_order():
+        :noindex:
 
-   .. automethod:: OsidEnablerSearchOrder.order_by_event
 
-   .. automethod:: OsidEnablerSearchOrder.supports_event_search_order
+    .. py:method:: get_schedule_search_order():
+        :noindex:
 
-   .. autoattribute:: OsidEnablerSearchOrder.event_search_order
 
-   .. automethod:: OsidEnablerSearchOrder.order_by_cyclic_event
+    .. py:attribute:: schedule_search_order
+        :noindex:
 
-   .. automethod:: OsidEnablerSearchOrder.supports_cyclic_event_search_order
 
-   .. autoattribute:: OsidEnablerSearchOrder.cyclic_event_search_order
+    .. py:method:: order_by_event(style):
+        :noindex:
 
-   .. automethod:: OsidEnablerSearchOrder.order_by_demographic
 
-   .. automethod:: OsidEnablerSearchOrder.supports_demographic_search_order
+    .. py:method:: supports_event_search_order():
+        :noindex:
 
-   .. autoattribute:: OsidEnablerSearchOrder.demographic_search_order
+
+    .. py:method:: get_event_search_order():
+        :noindex:
+
+
+    .. py:attribute:: event_search_order
+        :noindex:
+
+
+    .. py:method:: order_by_cyclic_event(style):
+        :noindex:
+
+
+    .. py:method:: supports_cyclic_event_search_order():
+        :noindex:
+
+
+    .. py:method:: get_cyclic_event_search_order():
+        :noindex:
+
+
+    .. py:attribute:: cyclic_event_search_order
+        :noindex:
+
+
+    .. py:method:: order_by_demographic(style):
+        :noindex:
+
+
+    .. py:method:: supports_demographic_search_order():
+        :noindex:
+
+
+    .. py:method:: get_demographic_search_order():
+        :noindex:
+
+
+    .. py:attribute:: demographic_search_order
+        :noindex:
+
 
 Osid Constrainer Search Order
 -----------------------------
 
-.. autoclass:: OsidConstrainerSearchOrder
-   :show-inheritance:
+.. py:class:: OsidConstrainerSearchOrder(abc_osid_search_orders.OsidConstrainerSearchOrder, OsidRuleSearchOrder)
+    An interface for specifying the ordering of search results.
 
 
 
 Osid Processor Search Order
 ---------------------------
 
-.. autoclass:: OsidProcessorSearchOrder
-   :show-inheritance:
+.. py:class:: OsidProcessorSearchOrder(abc_osid_search_orders.OsidProcessorSearchOrder, OsidRuleSearchOrder)
+    An interface for specifying the ordering of search results.
 
 
 
 Osid Governator Search Order
 ----------------------------
 
-.. autoclass:: OsidGovernatorSearchOrder
-   :show-inheritance:
+.. py:class:: OsidGovernatorSearchOrder(abc_osid_search_orders.OsidGovernatorSearchOrder, OsidObjectSearchOrder, OsidOperableSearchOrder, OsidSourceableSearchOrder)
+    An interface for specifying the ordering of search results.
 
 
 
 Osid Compendium Search Order
 ----------------------------
 
-.. autoclass:: OsidCompendiumSearchOrder
-   :show-inheritance:
+.. py:class:: OsidCompendiumSearchOrder(abc_osid_search_orders.OsidCompendiumSearchOrder, OsidObjectSearchOrder, OsidSubjugateableSearchOrder)
+    An interface for specifying the ordering of search results.
 
-   .. automethod:: OsidCompendiumSearchOrder.order_by_start_date
+    .. py:method:: order_by_start_date(style):
+        :noindex:
 
-   .. automethod:: OsidCompendiumSearchOrder.order_by_end_date
 
-   .. automethod:: OsidCompendiumSearchOrder.order_by_interpolated
+    .. py:method:: order_by_end_date(style):
+        :noindex:
 
-   .. automethod:: OsidCompendiumSearchOrder.order_by_extrapolated
+
+    .. py:method:: order_by_interpolated(style):
+        :noindex:
+
+
+    .. py:method:: order_by_extrapolated(style):
+        :noindex:
+
 
 Osid Capsule Search Order
 -------------------------
 
-.. autoclass:: OsidCapsuleSearchOrder
-   :show-inheritance:
+.. py:class:: OsidCapsuleSearchOrder(abc_osid_search_orders.OsidCapsuleSearchOrder, OsidSearchOrder)
+    An interface for specifying the ordering of search results.
 
 
 

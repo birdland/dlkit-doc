@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.hierarchy.searches
-.. automodule:: dlkit.hierarchy.searches
 
 Searches
 ========
@@ -9,24 +7,44 @@ Searches
 Hierarchy Search
 ----------------
 
-.. autoclass:: HierarchySearch
-   :show-inheritance:
+.. py:class:: HierarchySearch(abc_hierarchy_searches.HierarchySearch, osid_searches.OsidSearch)
+    ``HierarchySearch`` defines the interface for specifying hierarchy search options.
 
-   .. automethod:: HierarchySearch.search_among_hierarchies
+    .. py:method:: search_among_hierarchies(hierarchy_ids):
+        :noindex:
 
-   .. automethod:: HierarchySearch.order_hierarchy_results
 
-   .. automethod:: HierarchySearch.get_hierarchy_search_record
+    .. py:method:: order_hierarchy_results(hierarchy_search_order):
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_search_record(hierarchy_search_record_type):
+        :noindex:
+
 
 Hierarchy Search Results
 ------------------------
 
-.. autoclass:: HierarchySearchResults
-   :show-inheritance:
+.. py:class:: HierarchySearchResults(abc_hierarchy_searches.HierarchySearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: HierarchySearchResults.hierarchies
+    .. py:method:: get_hierarchies():
+        :noindex:
 
-   .. autoattribute:: HierarchySearchResults.hierarchy_query_inspector
 
-   .. automethod:: HierarchySearchResults.get_hierarchy_search_results_record
+    .. py:attribute:: hierarchies
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: hierarchy_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_hierarchy_search_results_record(hierarchy_search_record_type):
+        :noindex:
+
 

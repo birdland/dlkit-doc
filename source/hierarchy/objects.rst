@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.hierarchy.objects
-.. automodule:: dlkit.hierarchy.objects
 
 Objects
 =======
@@ -9,46 +7,139 @@ Objects
 Hierarchy
 ---------
 
-.. autoclass:: Hierarchy
-   :show-inheritance:
+.. py:class:: Hierarchy(abc_hierarchy_objects.Hierarchy, osid_objects.OsidCatalog)
+        :noindex:
 
-   .. automethod:: Hierarchy.get_hierarchy_record
+    .. py:method:: get_hierarchy_record(hierarchy_record_type):
+        :noindex:
+
 
 Hierarchy Form
 --------------
 
-.. autoclass:: HierarchyForm
-   :show-inheritance:
+.. py:class:: HierarchyForm(abc_hierarchy_objects.HierarchyForm, osid_objects.OsidCatalogForm)
+    This is the form for creating and updating ``Hierarchy`` objects.
 
-   .. automethod:: HierarchyForm.get_hierarchy_form_record
+
+    Like all ``OsidForm`` objects, various data elements may be set here
+    for use in the create and update methods in the
+    ``HierarchyAdminSession``. For each data element that may be set,
+    metadata may be examined to provide display hints or data
+    constraints.
+
+
+
+
+
+    .. py:method:: get_hierarchy_form_record(hierarchy_record_type):
+        :noindex:
+
 
 Hierarchy List
 --------------
 
-.. autoclass:: HierarchyList
-   :show-inheritance:
+.. py:class:: HierarchyList(abc_hierarchy_objects.HierarchyList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``HierarchyList`` provides a means for accessing ``Id`` elements
+    sequentially either one at a time or many at a time.
 
-   .. autoattribute:: HierarchyList.next_hierarchy
 
-   .. automethod:: HierarchyList.get_next_hierarchies
+    Examples: while (hl.hasNext()) { Hierarchy hierarchy =
+    hl.getNextHierarchy(); }
+
+
+
+
+    or
+      while (hl.hasNext()) {
+           Hierarchy[] hierarchies = hl.getNextHierarchies(hl.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_hierarchy():
+        :noindex:
+
+
+    .. py:attribute:: next_hierarchy
+        :noindex:
+
+
+    .. py:method:: get_next_hierarchies(n):
+        :noindex:
+
 
 Node
 ----
 
-.. autoclass:: Node
-   :show-inheritance:
+.. py:class:: Node(abc_hierarchy_objects.Node, osid_objects.OsidNode)
+    This interface is a container for a partial hierarchy retrieval.
 
-   .. autoattribute:: Node.parents
 
-   .. autoattribute:: Node.children
+    The number of hierarchy levels traversable through this interface
+    depend on the number of levels requested in the hierarchy traversal
+    session.
+
+
+
+
+
+    .. py:method:: get_parents():
+        :noindex:
+
+
+    .. py:attribute:: parents
+        :noindex:
+
+
+    .. py:method:: get_children():
+        :noindex:
+
+
+    .. py:attribute:: children
+        :noindex:
+
 
 Node List
 ---------
 
-.. autoclass:: NodeList
-   :show-inheritance:
+.. py:class:: NodeList(abc_hierarchy_objects.NodeList, osid_objects.OsidList)
+    Like all ``OsidLists,`` ``NodeList`` provides a means for accessing ``Id`` elements sequentially
+    either one at a time or many at a time.
 
-   .. autoattribute:: NodeList.next_node
 
-   .. automethod:: NodeList.get_next_nodes
+    Examples: while (nl.hasNext()) { Node node = nl.getNextNode(); }
+
+
+
+
+    or
+      while (nl.hasNext()) {
+           Node[] nodes = nl.getNextNodes(nl.available());
+      }
+
+
+
+
+
+
+
+
+
+    .. py:method:: get_next_node():
+        :noindex:
+
+
+    .. py:attribute:: next_node
+        :noindex:
+
+
+    .. py:method:: get_next_nodes(n):
+        :noindex:
+
 

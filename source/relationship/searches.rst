@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.relationship.searches
-.. automodule:: dlkit.relationship.searches
 
 Searches
 ========
@@ -9,48 +7,90 @@ Searches
 Relationship Search
 -------------------
 
-.. autoclass:: RelationshipSearch
-   :show-inheritance:
+.. py:class:: RelationshipSearch(abc_relationship_searches.RelationshipSearch, osid_searches.OsidSearch)
+    The search interface for governing relationship searches.
 
-   .. automethod:: RelationshipSearch.search_among_relationships
+    .. py:method:: search_among_relationships(relationship_ids):
+        :noindex:
 
-   .. automethod:: RelationshipSearch.order_relationship_results
 
-   .. automethod:: RelationshipSearch.get_relationship_search_record
+    .. py:method:: order_relationship_results(relationship_search_order):
+        :noindex:
+
+
+    .. py:method:: get_relationship_search_record(relationship_search_record_type):
+        :noindex:
+
 
 Relationship Search Results
 ---------------------------
 
-.. autoclass:: RelationshipSearchResults
-   :show-inheritance:
+.. py:class:: RelationshipSearchResults(abc_relationship_searches.RelationshipSearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search.
 
-   .. autoattribute:: RelationshipSearchResults.relationships
+    .. py:method:: get_relationships():
+        :noindex:
 
-   .. autoattribute:: RelationshipSearchResults.relationship_query_inspector
 
-   .. automethod:: RelationshipSearchResults.get_relationship_search_results_record
+    .. py:attribute:: relationships
+        :noindex:
+
+
+    .. py:method:: get_relationship_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: relationship_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_relationship_search_results_record(relationship_search_record_type):
+        :noindex:
+
 
 Family Search
 -------------
 
-.. autoclass:: FamilySearch
-   :show-inheritance:
+.. py:class:: FamilySearch(abc_relationship_searches.FamilySearch, osid_searches.OsidSearch)
+    The search interface for governing family searches.
 
-   .. automethod:: FamilySearch.search_among_families
+    .. py:method:: search_among_families(family_ids):
+        :noindex:
 
-   .. automethod:: FamilySearch.order_family_results
 
-   .. automethod:: FamilySearch.get_family_search_record
+    .. py:method:: order_family_results(family_search_order):
+        :noindex:
+
+
+    .. py:method:: get_family_search_record(family_search_record_type):
+        :noindex:
+
 
 Family Search Results
 ---------------------
 
-.. autoclass:: FamilySearchResults
-   :show-inheritance:
+.. py:class:: FamilySearchResults(abc_relationship_searches.FamilySearchResults, osid_searches.OsidSearchResults)
+    This interface provides a means to capture results of a search and is used as a vehicle to
+        perform a
+    search within a previous result set.
 
-   .. autoattribute:: FamilySearchResults.families
+    .. py:method:: get_families():
+        :noindex:
 
-   .. autoattribute:: FamilySearchResults.family_query_inspector
 
-   .. automethod:: FamilySearchResults.get_family_search_results_record
+    .. py:attribute:: families
+        :noindex:
+
+
+    .. py:method:: get_family_query_inspector():
+        :noindex:
+
+
+    .. py:attribute:: family_query_inspector
+        :noindex:
+
+
+    .. py:method:: get_family_search_results_record(family_search_record_type):
+        :noindex:
+
 

@@ -1,6 +1,4 @@
 
-.. currentmodule:: dlkit.commenting.managers
-.. automodule:: dlkit.commenting.managers
 
 Managers
 ========
@@ -9,162 +7,382 @@ Managers
 Commenting Profile
 ------------------
 
-.. autoclass:: CommentingProfile
-   :show-inheritance:
+.. py:class:: CommentingProfile(osid_managers.OsidProfile, commenting_managers.CommentingProfile)
+    The commenting profile describes the interoperability among commenting services.
 
-   .. automethod:: CommentingProfile.supports_visible_federation
+    .. py:method:: supports_visible_federation():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_lookup
 
-   .. automethod:: CommentingProfile.supports_rating_lookup
+    .. py:method:: supports_comment_lookup():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_query
 
-   .. automethod:: CommentingProfile.supports_comment_search
+    .. py:method:: supports_rating_lookup():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_admin
 
-   .. automethod:: CommentingProfile.supports_comment_notification
+    .. py:method:: supports_comment_query():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_book
 
-   .. automethod:: CommentingProfile.supports_comment_book_assignment
+    .. py:method:: supports_comment_search():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_smart_book
 
-   .. automethod:: CommentingProfile.supports_book_lookup
+    .. py:method:: supports_comment_admin():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_book_query
 
-   .. automethod:: CommentingProfile.supports_book_search
+    .. py:method:: supports_comment_notification():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_book_admin
 
-   .. automethod:: CommentingProfile.supports_book_notification
+    .. py:method:: supports_comment_book():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_book_hierarchy
 
-   .. automethod:: CommentingProfile.supports_book_hierarchy_design
+    .. py:method:: supports_comment_book_assignment():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_commenting_batch
 
-   .. autoattribute:: CommentingProfile.comment_record_types
+    .. py:method:: supports_comment_smart_book():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_record_type
 
-   .. autoattribute:: CommentingProfile.comment_search_record_types
+    .. py:method:: supports_book_lookup():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_comment_search_record_type
 
-   .. autoattribute:: CommentingProfile.book_record_types
+    .. py:method:: supports_book_query():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_book_record_type
 
-   .. autoattribute:: CommentingProfile.book_search_record_types
+    .. py:method:: supports_book_search():
+        :noindex:
 
-   .. automethod:: CommentingProfile.supports_book_search_record_type
+
+    .. py:method:: supports_book_admin():
+        :noindex:
+
+
+    .. py:method:: supports_book_notification():
+        :noindex:
+
+
+    .. py:method:: supports_book_hierarchy():
+        :noindex:
+
+
+    .. py:method:: supports_book_hierarchy_design():
+        :noindex:
+
+
+    .. py:method:: supports_commenting_batch():
+        :noindex:
+
+
+    .. py:method:: get_comment_record_types():
+        :noindex:
+
+
+    .. py:attribute:: comment_record_types
+        :noindex:
+
+
+    .. py:method:: supports_comment_record_type(comment_record_type):
+        :noindex:
+
+
+    .. py:method:: get_comment_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: comment_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_comment_search_record_type(comment_search_record_type):
+        :noindex:
+
+
+    .. py:method:: get_book_record_types():
+        :noindex:
+
+
+    .. py:attribute:: book_record_types
+        :noindex:
+
+
+    .. py:method:: supports_book_record_type(book_record_type):
+        :noindex:
+
+
+    .. py:method:: get_book_search_record_types():
+        :noindex:
+
+
+    .. py:attribute:: book_search_record_types
+        :noindex:
+
+
+    .. py:method:: supports_book_search_record_type(book_search_record_type):
+        :noindex:
+
 
 Commenting Manager
 ------------------
 
-.. autoclass:: CommentingManager
-   :show-inheritance:
+.. py:class:: CommentingManager(osid_managers.OsidManager, CommentingProfile, commenting_managers.CommentingManager)
+        :noindex:
 
-   .. autoattribute:: CommentingManager.comment_lookup_session
+    .. py:method:: get_comment_lookup_session():
+        :noindex:
 
-   .. automethod:: CommentingManager.get_comment_lookup_session_for_book
 
-   .. autoattribute:: CommentingManager.rating_lookup_session
+    .. py:attribute:: comment_lookup_session
+        :noindex:
 
-   .. automethod:: CommentingManager.get_rating_lookup_session_for_book
 
-   .. autoattribute:: CommentingManager.comment_query_session
+    .. py:method:: get_comment_lookup_session_for_book(book_id):
+        :noindex:
 
-   .. automethod:: CommentingManager.get_comment_query_session_for_book
 
-   .. autoattribute:: CommentingManager.comment_search_session
+    .. py:method:: get_rating_lookup_session():
+        :noindex:
 
-   .. automethod:: CommentingManager.get_comment_search_session_for_book
 
-   .. autoattribute:: CommentingManager.comment_admin_session
+    .. py:attribute:: rating_lookup_session
+        :noindex:
 
-   .. automethod:: CommentingManager.get_comment_admin_session_for_book
 
-   .. automethod:: CommentingManager.get_comment_notification_session
+    .. py:method:: get_rating_lookup_session_for_book(book_id):
+        :noindex:
 
-   .. automethod:: CommentingManager.get_comment_notification_session_for_book
 
-   .. autoattribute:: CommentingManager.comment_book_session
+    .. py:method:: get_comment_query_session():
+        :noindex:
 
-   .. autoattribute:: CommentingManager.comment_book_assignment_session
 
-   .. automethod:: CommentingManager.get_comment_smart_book_session
+    .. py:attribute:: comment_query_session
+        :noindex:
 
-   .. autoattribute:: CommentingManager.book_lookup_session
 
-   .. autoattribute:: CommentingManager.book_query_session
+    .. py:method:: get_comment_query_session_for_book(book_id):
+        :noindex:
 
-   .. autoattribute:: CommentingManager.book_search_session
 
-   .. autoattribute:: CommentingManager.book_admin_session
+    .. py:method:: get_comment_search_session():
+        :noindex:
 
-   .. automethod:: CommentingManager.get_book_notification_session
 
-   .. autoattribute:: CommentingManager.book_hierarchy_session
+    .. py:attribute:: comment_search_session
+        :noindex:
 
-   .. autoattribute:: CommentingManager.book_hierarchy_design_session
 
-   .. autoattribute:: CommentingManager.commenting_batch_manager
+    .. py:method:: get_comment_search_session_for_book(book_id):
+        :noindex:
+
+
+    .. py:method:: get_comment_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: comment_admin_session
+        :noindex:
+
+
+    .. py:method:: get_comment_admin_session_for_book(book_id):
+        :noindex:
+
+
+    .. py:method:: get_comment_notification_session(comment_receiver):
+        :noindex:
+
+
+    .. py:method:: get_comment_notification_session_for_book(comment_receiver, book_id):
+        :noindex:
+
+
+    .. py:method:: get_comment_book_session():
+        :noindex:
+
+
+    .. py:attribute:: comment_book_session
+        :noindex:
+
+
+    .. py:method:: get_comment_book_assignment_session():
+        :noindex:
+
+
+    .. py:attribute:: comment_book_assignment_session
+        :noindex:
+
+
+    .. py:method:: get_comment_smart_book_session(book_id):
+        :noindex:
+
+
+    .. py:method:: get_book_lookup_session():
+        :noindex:
+
+
+    .. py:attribute:: book_lookup_session
+        :noindex:
+
+
+    .. py:method:: get_book_query_session():
+        :noindex:
+
+
+    .. py:attribute:: book_query_session
+        :noindex:
+
+
+    .. py:method:: get_book_search_session():
+        :noindex:
+
+
+    .. py:attribute:: book_search_session
+        :noindex:
+
+
+    .. py:method:: get_book_admin_session():
+        :noindex:
+
+
+    .. py:attribute:: book_admin_session
+        :noindex:
+
+
+    .. py:method:: get_book_notification_session(book_receiver):
+        :noindex:
+
+
+    .. py:method:: get_book_hierarchy_session():
+        :noindex:
+
+
+    .. py:attribute:: book_hierarchy_session
+        :noindex:
+
+
+    .. py:method:: get_book_hierarchy_design_session():
+        :noindex:
+
+
+    .. py:attribute:: book_hierarchy_design_session
+        :noindex:
+
+
+    .. py:method:: get_commenting_batch_manager():
+        :noindex:
+
+
+    .. py:attribute:: commenting_batch_manager
+        :noindex:
+
 
 Commenting Proxy Manager
 ------------------------
 
-.. autoclass:: CommentingProxyManager
-   :show-inheritance:
+.. py:class:: CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile, commenting_managers.CommentingProxyManager)
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_lookup_session
+    .. py:method:: get_comment_lookup_session(proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_lookup_session_for_book
 
-   .. automethod:: CommentingProxyManager.get_rating_lookup_session
+    .. py:method:: get_comment_lookup_session_for_book(book_id, proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_rating_lookup_session_for_book
 
-   .. automethod:: CommentingProxyManager.get_comment_query_session
+    .. py:method:: get_rating_lookup_session(proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_query_session_for_book
 
-   .. automethod:: CommentingProxyManager.get_comment_search_session
+    .. py:method:: get_rating_lookup_session_for_book(book_id, proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_search_session_for_book
 
-   .. automethod:: CommentingProxyManager.get_comment_admin_session
+    .. py:method:: get_comment_query_session(proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_admin_session_for_book
 
-   .. automethod:: CommentingProxyManager.get_comment_notification_session
+    .. py:method:: get_comment_query_session_for_book(book_id, proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_notification_session_for_book
 
-   .. automethod:: CommentingProxyManager.get_comment_book_session
+    .. py:method:: get_comment_search_session(proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_comment_book_assignment_session
 
-   .. automethod:: CommentingProxyManager.get_comment_smart_book_session
+    .. py:method:: get_comment_search_session_for_book(book_id, proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_book_lookup_session
 
-   .. automethod:: CommentingProxyManager.get_book_query_session
+    .. py:method:: get_comment_admin_session(proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_book_search_session
 
-   .. automethod:: CommentingProxyManager.get_book_admin_session
+    .. py:method:: get_comment_admin_session_for_book(book_id, proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_book_notification_session
 
-   .. automethod:: CommentingProxyManager.get_book_hierarchy_session
+    .. py:method:: get_comment_notification_session(comment_receiver, proxy):
+        :noindex:
 
-   .. automethod:: CommentingProxyManager.get_book_hierarchy_design_session
 
-   .. autoattribute:: CommentingProxyManager.commenting_batch_proxy_manager
+    .. py:method:: get_comment_notification_session_for_book(comment_receiver, book_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_comment_book_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_comment_book_assignment_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_comment_smart_book_session(book_id, proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_lookup_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_query_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_search_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_admin_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_notification_session(book_receiver, proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_hierarchy_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_book_hierarchy_design_session(proxy):
+        :noindex:
+
+
+    .. py:method:: get_commenting_batch_proxy_manager():
+        :noindex:
+
+
+    .. py:attribute:: commenting_batch_proxy_manager
+        :noindex:
+
 
