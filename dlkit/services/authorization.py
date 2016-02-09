@@ -1,1178 +1,1018 @@
-# -*- coding: utf-8 -*-
-"""Authorization Open Service Interface Definitions
-authorization version 3.0.0
-
-The Authorization OSID manages and queries authorizations.
-
-Authorizations
-
-An ``Authorization`` is an ``OsidRelationship`` that defines who can do
-what to what. The grammar of an authorization incluides the subject or
-the actor (who), the action or verb (do what), and the object or context
-(to what). All three of these components must exist in an authorization
-for it to have any explicit meaning. An ``Authorization`` is a mapping
-among these three components.
-
-  * ``Agent:`` the actor (eg: tom@coppeto.org)
-  * ``Function:`` the action (eg: create purchase order)
-  * ``Qualifier:`` the object or context within a Function (eg: on
-    account 1967)
-
-
-This tuple in essence defines a role. "Instructor" is not a role and is
-not suitable for making an authorization decision. "Instructs Physics
-101", both the function and qualifier, defines the complete role (within
-the context of a particular college) that can be used for an
-authorization decision.
-
-The basic service of the Authorization OSID is to provide a means for
-asking whether a given ``Agent`` is authorized to perform a ``Function``
-with a ``Qualifier,`` in other words, if such a mapping exists. The
-Agent will generally be obtained from an Authentication service and the
-``Function`` and ``Qualifier`` generally known to the consuming
-application (a server process needing to protect some resource).
-
-Example
-  Authentication auth = authNValidationSession.authenticate(creds);
-  
-  AuthorizationSession session = authZManager.getAuthorizationSession();
-  boolean authorized = session.isAuthorized(auth.getAgentId(), functionId, qualifierId);
+"""DLKit Services implementations of authorization service."""
+# pylint: disable=no-init
+#     osid specification includes some 'marker' interfaces.
+# pylint: disable=too-many-ancestors
+#     number of ancestors defined in spec.
+# pylint: disable=too-few-public-methods,too-many-public-methods
+#     number of methods defined in spec. Worse yet, these are aggregates.
+# pylint: disable=invalid-name
+#     method and class names defined in spec.
+# pylint: disable=no-self-use,unused-argument
+#     to catch unimplemented methods.
+# pylint: disable=super-init-not-called
+#     it just isn't.
 
 
 
-The rest of the Authorization OSID is concerned with managing
-authorizations.
-
-Explicit/Implicit Authorizations
-
-Authorizations can be explcit or implcit. Explicit authorizations are
-managed while implcit authorizations are derived from ``Resources,``
-``Function`` and ``Qualifier`` hierrachies. Examples of implcit
-authorizations:
-
-  * The Authorization OSID can accept a ``Resource`` in lieu of an
-    ``Agent`` as the actor so a Person, Group or Organization may be
-    used to specify an authorization. In this case, the explicit
-    authorization is the one containing the ``Resource`` and an implicit
-    authorization exists for each ``Agent.``
-  * ``Qualifiers`` only exist as Hierarchy Nodes since the Authorization
-    OSID does not manage the objects used as qualifiers but may manage
-    directly, or have access to, a Hierarchy service to obtain the
-    identity and relationship among these objects. An explicit
-    authorization for a given ``Qualifier`` creates an implcit
-    authorization for every child of that ``Qualifier.``
-
-
-The Authorization OSID manages ``Functions`` directly through its owned
-defined sessions and exposes actors via the Resource OSID.
-``Qualifiers`` are only exposed through the Hierarchy service as the
-Authorization service doesn't have anything to say about the objects
-represented by the ``Qualifiers``.
-
-Vault Cataloging
-
-``Authorizations, Functions`` and ``Qualifiers`` may be organized into
-one or many ``Vaults``. This serves to categorize authorizatiion data
-for the purpose of browsing or auditing. ``Vaults`` are hierarchical
-where each node includes all the authorization data of its children. A
-single root node will make available all known authorizations and is a
-reasonable choice for a default ``Vault`` for a non-federated aware
-consumer. A federated authorization scheme is one in which ``Vaults``
-are available for selection.
-
-Notifications
-
-Certain consumers may wish to be notified of changes within the service.
-Authorization supports notifications via
-``AuthorizatioNotificationSession,``  ``FunctionNotificationSession``
-and ``VaultNotificationSession``.
-  if (manager.supportsAuthorizationNotification()) {
-      AuthorizationNotificationSession ans = manager.getAuthorizationNotificationSession(receiver);           
-      ans.registerForDeletedAuthorizations();
-  }
-  
-  AuthorizationReceiver receiver {
-      newAuthorization(Authorization a) {print("authorization created");}
-      deletedAuthorization(Authorization a) {print("authorization removed");}
-  }
+from . import osid
+from ..abstract_osid.authorization import objects as abc_authorization_objects
+from .osid_errors import Unimplemented, IllegalState
+from dlkit.manager_impls.authorization import managers as authorization_managers
 
 
 
-Sub Packages
+DEFAULT = 0
+COMPARATIVE = 0
+PLENARY = 1
+FEDERATED = 0
+ISOLATED = 1
+AUTOMATIC = 0
+MANDATORY = 1
+DISABLED = -1
 
-The Authorization OSID includes an Authorization Rules OSID for managing
-the effectiveness of ``Authorizations``.
 
-"""
-from ..osid import managers as osid_managers
-from ..osid import sessions as osid_sessions
+class AuthorizationProfile(osid.OsidProfile, authorization_managers.AuthorizationProfile):
+    """AuthorizationProfile convenience adapter including related Session methods."""
 
 
-class AuthorizationProfile(osid_managers.OsidProfile):
+    def __init__(self):
+        self._provider_manager = None
+    def supports_authorization(self):
+        """Pass through to provider supports_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.supports_resource_lookup
+        return self._provider_manager.supports_authorization()
+
+    def supports_authorization_lookup(self):
+        """Pass through to provider supports_authorization_lookup"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.supports_resource_lookup
+        return self._provider_manager.supports_authorization_lookup()
+
+    def supports_authorization_admin(self):
+        """Pass through to provider supports_authorization_admin"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.supports_resource_lookup
+        return self._provider_manager.supports_authorization_admin()
+
+    def supports_vault_lookup(self):
+        """Pass through to provider supports_vault_lookup"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.supports_resource_lookup
+        return self._provider_manager.supports_vault_lookup()
+
+    def supports_vault_admin(self):
+        """Pass through to provider supports_vault_admin"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.supports_resource_lookup
+        return self._provider_manager.supports_vault_admin()
 
     def get_authorization_record_types(self):
-        """Gets the supported ``Authorization`` record types.
-
-        :return: a list containing the supported authorization record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_authorization_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_authorization_record_types()
 
     authorization_record_types = property(fget=get_authorization_record_types)
 
     def get_authorization_search_record_types(self):
-        """Gets the supported ``Authorization`` search record types.
-
-        :return: a list containing the supported authorization search record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_authorization_search_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_authorization_search_record_types()
 
     authorization_search_record_types = property(fget=get_authorization_search_record_types)
 
     def get_function_record_types(self):
-        """Gets the supported ``Function`` record types.
-
-        :return: a list containing the supported ``Function`` record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_function_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_function_record_types()
 
     function_record_types = property(fget=get_function_record_types)
 
     def get_function_search_record_types(self):
-        """Gets the supported ``Function`` search record types.
-
-        :return: a list containing the supported ``Function`` search record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_function_search_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_function_search_record_types()
 
     function_search_record_types = property(fget=get_function_search_record_types)
 
     def get_qualifier_record_types(self):
-        """Gets the supported ``Qualifier`` record types.
-
-        :return: a list containing the supported ``Qualifier`` record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_qualifier_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_qualifier_record_types()
 
     qualifier_record_types = property(fget=get_qualifier_record_types)
 
     def get_qualifier_search_record_types(self):
-        """Gets the supported ``Qualifier`` search record types.
-
-        :return: a list containing the supported ``Qualifier`` search record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_qualifier_search_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_qualifier_search_record_types()
 
     qualifier_search_record_types = property(fget=get_qualifier_search_record_types)
 
     def get_vault_record_types(self):
-        """Gets the supported ``Vault`` record types.
-
-        :return: a list containing the supported ``Vault`` record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_vault_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_vault_record_types()
 
     vault_record_types = property(fget=get_vault_record_types)
 
     def get_vault_search_record_types(self):
-        """Gets the supported vault search record types.
-
-        :return: a list containing the supported ``Vault`` search record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_vault_search_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_vault_search_record_types()
 
     vault_search_record_types = property(fget=get_vault_search_record_types)
 
     def get_authorization_condition_record_types(self):
-        """Gets the supported ``AuthorizationCondition`` record types.
-
-        :return: a list containing the supported ``AuthorizationCondition`` record types
-        :rtype: ``osid.type.TypeList``
-
-        """
-        return # osid.type.TypeList
+        """Pass through to provider get_authorization_condition_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProfile.get_resource_record_types
+        return self._provider_manager.get_authorization_condition_record_types()
 
     authorization_condition_record_types = property(fget=get_authorization_condition_record_types)
 
 
+class AuthorizationManager(osid.OsidManager, osid.OsidSession, AuthorizationProfile, authorization_managers.AuthorizationManager):
+    """AuthorizationManager convenience adapter including related Session methods."""
 
-class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession, AuthorizationProfile):
 
-    def get_authorization_batch_manager(self):
-        """Gets an ``AuthorizationBatchManager``.
+    def __init__(self, proxy=None):
+        self._runtime = None
+        self._provider_manager = None
+        self._provider_sessions = dict()
+        self._session_management = AUTOMATIC
+        self._vault_view = DEFAULT
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
 
-        :return: an ``AuthorizationBatchManager``
-        :rtype: ``osid.authorization.batch.AuthorizationBatchManager``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_authorization_batch() is false``
 
-        """
-        return # osid.authorization.batch.AuthorizationBatchManager
+    # def _get_view(self, view):
+    #     """Gets the currently set view"""
+    #     if view in self._views:
+    #         return self._views[view]
+    #     else:
+    #         self._views[view] = DEFAULT
+    #         return DEFAULT
+
+
+    def _set_vault_view(self, session):
+        """Sets the underlying vault view to match current view"""
+        if self._vault_view == COMPARATIVE:
+            try:
+                session.use_comparative_vault_view()
+            except AttributeError:
+                pass
+        else:
+            try:
+                session.use_plenary_vault_view()
+            except AttributeError:
+                pass
+
+
+    def _get_provider_session(self, session_name, proxy=None):
+        """Gets the session for the provider"""
+        if self._proxy is None:
+            self._proxy = proxy
+        if session_name in self._provider_sessions:
+            return self._provider_sessions[session_name]
+        else:
+            session = self._instantiate_session('get_' + session_name, self._proxy)
+            self._set_vault_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[session_name] = session
+            return session
+
+
+    def _instantiate_session(self, method_name, proxy=None, *args, **kwargs):
+        """Instantiates a provider session"""
+        session_class = getattr(self._provider_manager, method_name)
+        if proxy is None:
+            return session_class(*args, **kwargs)
+        else:
+            return session_class(proxy=proxy, *args, **kwargs)
+
+
+    def initialize(self, runtime):
+        """OSID Manager initialize"""
+        from .primitives import Id
+        if self._runtime is not None:
+            raise IllegalState('Manager has already been initialized')
+        self._runtime = runtime
+        config = runtime.get_configuration()
+        parameter_id = Id('parameter:authorizationProviderImpl@dlkit_service')
+        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
+        if self._proxy is None:
+            # need to add version argument
+            self._provider_manager = runtime.get_manager('AUTHORIZATION', provider_impl)
+        else:
+            # need to add version argument
+            self._provider_manager = runtime.get_proxy_manager('AUTHORIZATION', provider_impl)
+
+
+    def close_sessions(self):
+        """Close all sessions, unless session management is set to MANDATORY"""
+        if self._session_management != MANDATORY:
+            self._provider_sessions = dict()
+
+
+    def use_automatic_session_management(self):
+        """Session state will be saved unless closed by consumers"""
+        self._session_management = AUTOMATIC
+
+
+    def use_mandatory_session_management(self):
+        """Session state will be saved and can not be closed by consumers"""
+        self._session_management = MANDATORY
+
+
+    def disable_session_management(self):
+        """Session state will never be saved"""
+        self._session_management = DISABLED
+        self.close_sessions()
+    def get_authorization_session(self, *args, **kwargs):
+        """Pass through to provider get_authorization_session"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_catalog_template
+        session = self._instantiate_session(method_name='get_authorization_session', proxy=self._proxy, *args, **kwargs)
+        return Vault(
+            self._provider_manager,
+            session.get_vault(),
+            self._proxy, authorization_session=session)
+
+    authorization_session = property(fget=get_authorization_session)
+
+    def get_authorization_session_for_vault(self, *args, **kwargs):
+        """Pass through to provider get_authorization_session_for_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_for_bin_catalog_template
+        if self._proxy:
+            session = self._provider_manager.get_authorization_session_for_vault(proxy=self._proxy, *args, **kwargs)
+        else:
+            session = self._provider_manager.get_authorization_session_for_vault(*args, **kwargs)
+        return Vault(
+            self._provider_manager,
+            self.get_vault(*args, **kwargs),
+            self._proxy,
+            authorization_session=session)
+
+    def get_authorization_lookup_session(self, *args, **kwargs):
+        """Pass through to provider get_authorization_lookup_session"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_catalog_template
+        session = self._instantiate_session(method_name='get_authorization_lookup_session', proxy=self._proxy, *args, **kwargs)
+        return Vault(
+            self._provider_manager,
+            session.get_vault(),
+            self._proxy, authorization_lookup_session=session)
+
+    authorization_lookup_session = property(fget=get_authorization_lookup_session)
+
+    def get_authorization_lookup_session_for_vault(self, *args, **kwargs):
+        """Pass through to provider get_authorization_lookup_session_for_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_for_bin_catalog_template
+        if self._proxy:
+            session = self._provider_manager.get_authorization_lookup_session_for_vault(proxy=self._proxy, *args, **kwargs)
+        else:
+            session = self._provider_manager.get_authorization_lookup_session_for_vault(*args, **kwargs)
+        return Vault(
+            self._provider_manager,
+            self.get_vault(*args, **kwargs),
+            self._proxy,
+            authorization_lookup_session=session)
+
+    def get_authorization_admin_session(self, *args, **kwargs):
+        """Pass through to provider get_authorization_admin_session"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_catalog_template
+        session = self._instantiate_session(method_name='get_authorization_admin_session', proxy=self._proxy, *args, **kwargs)
+        return Vault(
+            self._provider_manager,
+            session.get_vault(),
+            self._proxy, authorization_admin_session=session)
+
+    authorization_admin_session = property(fget=get_authorization_admin_session)
+
+    def get_authorization_admin_session_for_vault(self, *args, **kwargs):
+        """Pass through to provider get_authorization_admin_session_for_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_for_bin_catalog_template
+        if self._proxy:
+            session = self._provider_manager.get_authorization_admin_session_for_vault(proxy=self._proxy, *args, **kwargs)
+        else:
+            session = self._provider_manager.get_authorization_admin_session_for_vault(*args, **kwargs)
+        return Vault(
+            self._provider_manager,
+            self.get_vault(*args, **kwargs),
+            self._proxy,
+            authorization_admin_session=session)
+
+    def get_vault_lookup_session(self, *args, **kwargs):
+        """Pass through to provider get_vault_lookup_session"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_manager_template
+        if self._session_management != DISABLED:
+            self._get_provider_session('vault_lookup_session', *args, **kwargs)
+        return self
+
+    vault_lookup_session = property(fget=get_vault_lookup_session)
+
+    def get_vault_admin_session(self, *args, **kwargs):
+        """Pass through to provider get_vault_admin_session"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceManager.get_resource_lookup_session_manager_template
+        if self._session_management != DISABLED:
+            self._get_provider_session('vault_admin_session', *args, **kwargs)
+        return self
+
+    vault_admin_session = property(fget=get_vault_admin_session)
+
+    def get_authorization_batch_manager(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
     authorization_batch_manager = property(fget=get_authorization_batch_manager)
 
-    def get_authorization_rules_manager(self):
-        """Gets an ``AuthorizationRulesManager``.
-
-        :return: an ``AuthorizationRulesManager``
-        :rtype: ``osid.authorization.rules.AuthorizationRulesManager``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_authorization_rules() is false``
-
-        """
-        return # osid.authorization.rules.AuthorizationRulesManager
+    def get_authorization_rules_manager(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
     authorization_rules_manager = property(fget=get_authorization_rules_manager)
-
-
 ##
 # The following methods are from osid.authorization.VaultLookupSession
 
     def can_lookup_vaults(self):
-        """Tests if this user can perform ``Vault`` lookups.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known all methods in this
-        session will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer lookup
-        operations to unauthorized users.
-
-        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
+        """Pass through to provider VaultLookupSession.can_lookup_vaults"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.can_lookup_resources_template
+        return self._get_provider_session('vault_lookup_session').can_lookup_vaults()
 
     def use_comparative_vault_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as authorization, and not result in an error.
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-        """
-        pass
+        """Pass through to provider VaultLookupSession.use_comparative_vault_view"""
+        self._vault_view = COMPARATIVE
+        for session in self._provider_sessions:
+            try:
+                self._provider_sessions[session].use_comparative_vault_view()
+            except AttributeError:
+                pass
 
     def use_plenary_vault_view(self):
-        """A complete view of the ``Vault`` returns is desired.
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
+        """Pass through to provider VaultLookupSession.use_plenary_vault_view"""
+        self._vault_view = PLENARY
+        for session in self._provider_sessions:
+            try:
+                self._provider_sessions[session].use_plenary_vault_view()
+            except AttributeError:
+                pass
 
+    def get_vault(self, *args, **kwargs):
+        """Pass through to provider VaultLookupSession.get_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bin
+        return Vault(self._provider_manager, self._get_provider_session('vault_lookup_session').get_vault(*args, **kwargs), self._proxy)
 
+    def get_vaults_by_ids(self, *args, **kwargs):
+        """Pass through to provider VaultLookupSession.get_vaults_by_ids"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bins_by_ids
+        catalogs = self._get_provider_session('vault_lookup_session').get_vaults_by_ids(*args, **kwargs)
+        cat_list = []
+        for cat in catalogs:
+            cat_list.append(Vault(self._provider_manager, cat, self._proxy))
+        return VaultList(cat_list)
 
-        """
-        pass
+    def get_vaults_by_genus_type(self, *args, **kwargs):
+        """Pass through to provider VaultLookupSession.get_vaults_by_genus_type"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bins_by_genus_type
+        catalogs = self._get_provider_session('vault_lookup_session').get_vaults_by_genus_type(*args, **kwargs)
+        cat_list = []
+        for cat in catalogs:
+            cat_list.append(Vault(self._provider_manager, cat, self._proxy))
+        return VaultList(cat_list)
 
-    def get_vaults_by_ids(self, vault_ids):
-        """Gets a ``VaultList`` corresponding to the given ``IdList``.
-        In plenary mode, the returned list contains all of the vaults
-        specified in the ``Id`` list, in the order of the list,
-        including duplicates, or an error results if an ``Id`` in the
-        supplied list is not found or inaccessible. Otherwise,
-        inaccessible ``Vault`` objects may be omitted from the list and
-        may present the elements in any order including returning a
-        unique set.
+    def get_vaults_by_parent_genus_type(self, *args, **kwargs):
+        """Pass through to provider VaultLookupSession.get_vaults_by_parent_genus_type"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bins_by_parent_genus_type
+        catalogs = self._get_provider_session('vault_lookup_session').get_vaults_by_parent_genus_type(*args, **kwargs)
+        cat_list = []
+        for cat in catalogs:
+            cat_list.append(Vault(self._provider_manager, cat, self._proxy))
+        return VaultList(cat_list)
 
-        :param vault_ids: the list of ``Ids`` to retrieve
-        :type vault_ids: ``osid.id.IdList``
-        :return: the returned ``Vault`` list
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NotFound`` -- an ``Id was`` not found
-        :raise: ``NullArgument`` -- ``vault_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_vaults_by_record_type(self, *args, **kwargs):
+        """Pass through to provider VaultLookupSession.get_vaults_by_record_type"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bins_by_record_type
+        catalogs = self._get_provider_session('vault_lookup_session').get_vaults_by_record_type(*args, **kwargs)
+        cat_list = []
+        for cat in catalogs:
+            cat_list.append(Vault(self._provider_manager, cat, self._proxy))
+        return VaultList(cat_list)
 
-        """
-        return # osid.authorization.VaultList
-
-    def get_vaults_by_genus_type(self, vault_genus_type):
-        """Gets a ``VaultList`` corresponding to the given vault genus ``Type`` which does not include vaults of types derived from the specified ``Type``.
-        In plenary mode, the returned list contains all known vaults or
-        an error results. Otherwise, the returned list may contain only
-        those vaults that are accessible through this session.
-
-        :param vault_genus_type: a vault genus type
-        :type vault_genus_type: ``osid.type.Type``
-        :return: the returned ``Vault`` list
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NullArgument`` -- ``vault_genus_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
-
-    def get_vaults_by_parent_genus_type(self, vault_genus_type):
-        """Gets a ``VaultList`` corresponding to the given vault genus ``Type`` and include any additional vaults with genus types derived from the specified ``Type``.
-        In plenary mode, the returned list contains all known vaults or
-        an error results. Otherwise, the returned list may contain only
-        those vaults that are accessible through this session.
-
-        :param vault_genus_type: a vault genus type
-        :type vault_genus_type: ``osid.type.Type``
-        :return: the returned ``Vault`` list
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NullArgument`` -- ``vault_genus_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
-
-    def get_vaults_by_record_type(self, vault_record_type):
-        """Gets a ``VaultList`` containing the given vault record ``Type``.
-        In plenary mode, the returned list contains all known vaults or
-        an error results. Otherwise, the returned list may contain only
-        those vaults that are accessible through this session.
-
-        :param vault_record_type: a vault record type
-        :type vault_record_type: ``osid.type.Type``
-        :return: the returned ``Vault`` list
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NullArgument`` -- ``vault_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
-
-    def get_vaults_by_provider(self, resource_id):
-        """Gets a ``VaultList`` from the given provider ````.
-        In plenary mode, the returned list contains all known vaults or
-        an error results. Otherwise, the returned list may contain only
-        those vaults that are accessible through this session.
-
-        :param resource_id: a resource ``Id``
-        :type resource_id: ``osid.id.Id``
-        :return: the returned ``Vault`` list
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
+    def get_vaults_by_provider(self, *args, **kwargs):
+        """Pass through to provider VaultLookupSession.get_vaults_by_provider"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bins_by_provider
+        catalogs = self._get_provider_session('vault_lookup_session').get_vaults_by_provider(*args, **kwargs)
+        cat_list = []
+        for cat in catalogs:
+            cat_list.append(Vault(self._provider_manager, cat, self._proxy))
+        return VaultList(cat_list)
 
     def get_vaults(self):
-        """Gets all ``Vaults``.
-        In plenary mode, the returned list contains all known vaults or
-        an error results. Otherwise, the returned list may contain only
-        those vaults that are accessible through this session.
-
-        :return: a ``VaultList``
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
+        """Pass through to provider VaultLookupSession.get_vaults"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinLookupSession.get_bins_template
+        catalogs = self._get_provider_session('vault_lookup_session').get_vaults()
+        cat_list = []
+        for cat in catalogs:
+            cat_list.append(Vault(self._provider_manager, cat, self._proxy))
+        return VaultList(cat_list)
 
     vaults = property(fget=get_vaults)
-
-
-##
-# The following methods are from osid.authorization.VaultQuerySession
-
-    def can_search_vaults(self):
-        """Tests if this user can perform ``Vault`` searches.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known all methods in this
-        session will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer search
-        operations to unauthorized users.
-
-        :return: ``false`` if search methods are not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def get_vault_query(self):
-        """Gets a vault query.
-
-        :return: a vault query
-        :rtype: ``osid.authorization.VaultQuery``
-
-        """
-        return # osid.authorization.VaultQuery
-
-    vault_query = property(fget=get_vault_query)
-
-    def get_vaults_by_query(self, vault_query):
-        """Gets a list of ``Vault`` objects matching the given search.
-
-        :param vault_query: the vault query
-        :type vault_query: ``osid.authorization.VaultQuery``
-        :return: the returned ``VaultList``
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NullArgument`` -- ``vault_query`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``vault_query`` is not of this service
-
-        """
-        return # osid.authorization.VaultList
-
-
-##
-# The following methods are from osid.authorization.VaultSearchSession
-
-    def get_vault_search(self):
-        """Gets a vault search.
-
-        :return: a vault search
-        :rtype: ``osid.authorization.VaultSearch``
-
-        """
-        return # osid.authorization.VaultSearch
-
-    vault_search = property(fget=get_vault_search)
-
-    def get_vault_search_order(self):
-        """Gets a vault search order.
-        The ``VaultSearchOrder`` is supplied to a ``VaultSearch`` to
-        specify the ordering of results.
-
-        :return: the vault search order
-        :rtype: ``osid.authorization.VaultSearchOrder``
-
-        """
-        return # osid.authorization.VaultSearchOrder
-
-    vault_search_order = property(fget=get_vault_search_order)
-
-    def get_vaults_by_search(self, vault_query, vault_search):
-        """Gets the search results matching the given search query using the given search.
-
-        :param vault_query: the vault query
-        :type vault_query: ``osid.authorization.VaultQuery``
-        :param vault_search: the vault search
-        :type vault_search: ``osid.authorization.VaultSearch``
-        :return: the search results
-        :rtype: ``osid.authorization.VaultSearchResults``
-        :raise: ``NullArgument`` -- ``vault_query`` or ``vault_search`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``vault_query`` or ``vault_search`` is not of this service
-
-        """
-        return # osid.authorization.VaultSearchResults
-
-    def get_vault_query_from_inspector(self, vault_query_inspector):
-        """Gets a vault query from an inspector.
-        The inspector is available from a ``VaultSearchResults``.
-
-        :param vault_query_inspector: a vault query inspector
-        :type vault_query_inspector: ``osid.authorization.VaultQueryInspector``
-        :return: the vault query
-        :rtype: ``osid.authorization.VaultQuery``
-        :raise: ``NullArgument`` -- ``vault_query_inspector`` is ``null``
-        :raise: ``Unsupported`` -- ``vault_query_inspector`` is not of this service
-
-        """
-        return # osid.authorization.VaultQuery
 
 
 ##
 # The following methods are from osid.authorization.VaultAdminSession
 
     def can_create_vaults(self):
-        """Tests if this user can create ``Vaults``.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known creating a ``Vault``
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may not wish to offer create
-        operations to unauthorized users.
+        """Pass through to provider VaultAdminSession.can_create_vaults"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resources
+        return self._get_provider_session('vault_admin_session').can_create_vaults()
 
-        :return: ``false`` if ``Vault`` creation is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
+    def can_create_vault_with_record_types(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.can_create_vault_with_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resource_with_record_types
+        return self._get_provider_session('vault_admin_session').can_create_vault_with_record_types(*args, **kwargs)
 
-        """
-        return # boolean
+    def get_vault_form_for_create(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.get_vault_form_for_create"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.get_bin_form_for_create
+        return self._get_provider_session('vault_admin_session').get_vault_form_for_create(*args, **kwargs)
 
-    def can_create_vault_with_record_types(self, vault_record_types):
-        """Tests if this user can create a single ``Vault`` using the desired record types.
-        While ``AuthorizationManager.getVaultRecordTypes()`` can be used
-        to examine which records are supported, this method tests which
-        record(s) are required for creating a specific ``Vault``.
-        Providing an empty array tests if a ``Vault`` can be created
-        with no records.
-
-        :param vault_record_types: array of vault record types
-        :type vault_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Vault`` creation using the specified ``Types`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``vault_record_types`` is ``null``
-
-        """
-        return # boolean
-
-    def get_vault_form_for_create(self, vault_record_types):
-        """Gets the vault form for creating new vaults.
-        A new form should be requested for each create transaction.
-
-        :param vault_record_types: array of vault record types
-        :type vault_record_types: ``osid.type.Type[]``
-        :return: the vault form
-        :rtype: ``osid.authorization.VaultForm``
-        :raise: ``NullArgument`` -- ``vault_record_types`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- unable to get form qith requested record types
-
-        """
-        return # osid.authorization.VaultForm
-
-    def create_vault(self, vault_form):
-        """Creates a new ``Vault``.
-
-        :param vault_form: the form for this ``Vault``
-        :type vault_form: ``osid.authorization.VaultForm``
-        :return: the new ``Vault``
-        :rtype: ``osid.authorization.Vault``
-        :raise: ``IllegalState`` -- ``vault_form`` already used in a create transaction
-        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
-        :raise: ``NullArgument`` -- ``vault_form`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``vault_form`` did not originate from ``get_vault_form_for_create()``
-
-        """
-        return # osid.authorization.Vault
+    def create_vault(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.create_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.create_bin
+        return Vault(self._provider_manager, self._get_provider_session('vault_admin_session').create_vault(*args, **kwargs), self._proxy)
 
     def can_update_vaults(self):
-        """Tests if this user can update ``Vaults``.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known updating a ``Vault``
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may not wish to offer update
-        operations to unauthorized users.
+        """Pass through to provider VaultAdminSession.can_update_vaults"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resources
+        return self._get_provider_session('vault_admin_session').can_update_vaults()
 
-        :return: ``false`` if ``Vault`` modification is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
+    def get_vault_form_for_update(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.get_vault_form_for_update"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.get_bin_form_for_update
+        return self._get_provider_session('vault_admin_session').get_vault_form_for_update(*args, **kwargs)
 
-        """
-        return # boolean
+    def get_vault_form(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.get_vault_form_for_update"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.get_bin_form_for_update_template
+        # This method might be a bit sketchy. Time will tell.
+        if isinstance(args[-1], list) or 'vault_record_types' in kwargs:
+            return self.get_vault_form_for_create(*args, **kwargs)
+        else:
+            return self.get_vault_form_for_update(*args, **kwargs)
 
-    def get_vault_form_for_update(self, vault_id):
-        """Gets the vault form for updating an existing vault.
-        A new vault form should be requested for each update
-        transaction.
+    def update_vault(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.update_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.update_bin
+        # OSID spec does not require returning updated catalog
+        return Vault(self._provider_manager, self._get_provider_session('vault_admin_session').update_vault(*args, **kwargs), self._proxy)
 
-        :param vault_id: the ``Id`` of the ``Vault``
-        :type vault_id: ``osid.id.Id``
-        :return: the vault form
-        :rtype: ``osid.authorization.VaultForm``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultForm
-
-    def update_vault(self, vault_form):
-        """Updates an existing vault.
-
-        :param vault_form: the form containing the elements to be updated
-        :type vault_form: ``osid.authorization.VaultForm``
-        :raise: ``IllegalState`` -- ``vault_form`` already used in an update transaction
-        :raise: ``InvalidArgument`` -- the form contains an invalid value
-        :raise: ``NullArgument`` -- ``vault_form`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``vault_form`` did not originate from ``get_vault_form_for_update()``
-
-        """
-        pass
+    def save_vault(self, vault_form, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.update_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.update_bin
+        if vault_form.is_for_update():
+            return self.update_vault(vault_form, *args, **kwargs)
+        else:
+            return self.create_vault(vault_form, *args, **kwargs)
 
     def can_delete_vaults(self):
-        """Tests if this user can delete vaults.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known deleting a ``Vault``
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may not wish to offer delete
-        operations to unauthorized users.
+        """Pass through to provider VaultAdminSession.can_delete_vaults"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resources
+        return self._get_provider_session('vault_admin_session').can_delete_vaults()
 
-        :return: ``false`` if ``Vault`` deletion is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def delete_vault(self, vault_id):
-        """Deletes a ``Vault``.
-
-        :param vault_id: the ``Id`` of the ``Vault`` to remove
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``vault_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
+    def delete_vault(self, *args, **kwargs):
+        """Pass through to provider VaultAdminSession.delete_vault"""
+        # Implemented from kitosid template for -
+        # osid.resource.BinAdminSession.delete_bin
+        self._get_provider_session('vault_admin_session').delete_vault(*args, **kwargs)
 
     def can_manage_vault_aliases(self):
-        """Tests if this user can manage ``Id`` aliases for ``Vaults``.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known changing an alias
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may opt not to offer alias
-        operations to an unauthorized user.
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
-        :return: ``false`` if ``Vault`` aliasing is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
+    def alias_vault(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        """
-        return # boolean
 
-    def alias_vault(self, vault_id, alias_id):
-        """Adds an ``Id`` to a ``Vault`` for the purpose of creating compatibility.
-        The primary ``Id`` of the ``Vault`` is determined by the
-        provider. The new ``Id`` performs as an alias to the primary
-        ``Id``. If the alias is a pointer to another vault it is
-        reassigned to the given vault ``Id``.
 
-        :param vault_id: the ``Id`` of a ``Vault``
-        :type vault_id: ``osid.id.Id``
-        :param alias_id: the alias ``Id``
-        :type alias_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
-        :raise: ``NotFound`` -- ``vault_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` or ``alias_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
 
-        """
-        pass
+class AuthorizationProxyManager(osid.OsidProxyManager, AuthorizationProfile, authorization_managers.AuthorizationProxyManager):
+    """AuthorizationProxyManager convenience adapter including related Session methods."""
+
+    def get_authorization_session(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def get_authorization_session_for_vault(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def get_authorization_lookup_session(self, *args, **kwargs):
+        """Sends control to Manager"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProxyManager.get_resource_lookup_session_template
+        return AuthorizationManager.get_authorization_lookup_session(*args, **kwargs)
+
+    def get_authorization_lookup_session_for_vault(self, *args, **kwargs):
+        """Sends control to Manager"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceProxyManager.get_resource_lookup_session_for_bin_template
+        return AuthorizationManager.get_authorization_lookup_session_for_vault(*args, **kwargs)
+
+    def get_authorization_admin_session(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def get_authorization_admin_session_for_vault(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def get_vault_lookup_session(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def get_vault_admin_session(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def get_authorization_batch_proxy_manager(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
+
+    authorization_batch_proxy_manager = property(fget=get_authorization_batch_proxy_manager)
+
+    def get_authorization_rules_proxy_manager(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
+
+    authorization_rules_proxy_manager = property(fget=get_authorization_rules_proxy_manager)
+
+
+class Vault(abc_authorization_objects.Vault, osid.OsidSession, osid.OsidCatalog):
+    """Vault convenience adapter including related Session methods."""
+
+
+    # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
+    def __init__(self, provider_manager, catalog, proxy, **kwargs):
+        self._provider_manager = provider_manager
+        self._catalog = catalog
+        osid.OsidObject.__init__(self, self._catalog) # This is to initialize self._object
+        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
+        self._catalog_id = catalog.get_id()
+        self._provider_sessions = kwargs
+        self._session_management = AUTOMATIC
+        self._vault_view = DEFAULT
+        self._object_views = dict()
+
+
+    def _set_vault_view(self, session):
+        """Sets the underlying vault view to match current view"""
+        if self._vault_view == FEDERATED:
+            try:
+                session.use_federated_vault_view()
+            except AttributeError:
+                pass
+        else:
+            try:
+                session.use_isolated_vault_view()
+            except AttributeError:
+                pass
+
+
+    def _set_object_view(self, session):
+        """Sets the underlying object views to match current view"""
+        for obj_name in self._object_views:
+            if self._object_views[obj_name] == PLENARY:
+                try:
+                    getattr(session, 'use_plenary_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_comparative_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+
+    def _get_provider_session(self, session_name):
+        """Returns the requested provider session."""
+        if session_name in self._provider_sessions:
+            return self._provider_sessions[session_name]
+        else:
+            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_vault')
+            if self._proxy is None:
+                session = session_class(self._catalog.get_id())
+            else:
+                session = session_class(self._catalog.get_id(), self._proxy)
+            self._set_vault_view(session)
+            self._set_object_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[session_name] = session
+            return session
+
+
+    def get_vault_id(self):
+        """Gets the Id of this vault."""
+        return self._catalog_id
+
+
+    def get_vault(self):
+        """Strange little method to assure conformance for inherited Sessions."""
+        return self
+
+
+    def get_objective_hierarchy_id(self):
+        """WHAT am I doing here?"""
+        return self._catalog_id
+
+
+    def get_objective_hierarchy(self):
+        """WHAT am I doing here?"""
+        return self
+
+
+    def __getattr__(self, name):
+        if '_catalog' in self.__dict__:
+            try:
+                return self._catalog[name]
+            except AttributeError:
+                pass
+        raise AttributeError
+
+
+    def close_sessions(self):
+        """Close all sessions currently being managed by this Manager to save memory."""
+        if self._session_management != MANDATORY:
+            self._provider_sessions = dict()
+        raise IllegalState()
+
+
+    def use_automatic_session_management(self):
+        """Session state will be saved until closed by consumers."""
+        self._session_management = AUTOMATIC
+
+
+    def use_mandatory_session_management(self):
+        """Session state will always be saved and can not be closed by consumers."""
+        # Session state will be saved and can not be closed by consumers
+        self._session_management = MANDATORY
+
+
+    def disable_session_management(self):
+        """Session state will never be saved."""
+        self._session_management = DISABLED
+        self.close_sessions()
+    def get_vault_record(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+##
+# The following methods are from osid.authorization.AuthorizationSession
+
+    def can_access_authorizations(self):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
+
+    def is_authorized(self, *args, **kwargs):
+        """Pass through to provider AuthorizationSession.is_authorized"""
+        return self._get_provider_session('authorization_session').is_authorized(*args, **kwargs)
+
+    def get_authorization_condition(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def is_authorized_on_condition(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
 
 ##
-# The following methods are from osid.authorization.VaultNotificationSession
+# The following methods are from osid.authorization.AuthorizationLookupSession
 
-    def can_register_for_vault_notifications(self):
-        """Tests if this user can register for ``Vault`` notifications.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known all methods in this
-        session will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer
-        notification operations.
+    def can_lookup_authorizations(self):
+        """Pass through to provider AuthorizationLookupSession.can_lookup_authorizations"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.can_lookup_resources_template
+        return self._get_provider_session('authorization_lookup_session').can_lookup_authorizations()
 
-        :return: ``false`` if notification methods are not authorized, ``true`` otherwise
-        :rtype: ``boolean``
+    def use_comparative_authorization_view(self):
+        """Pass through to provider AuthorizationLookupSession.use_comparative_authorization_view"""
+        self._object_views['authorization'] = COMPARATIVE
+        for session in self._provider_sessions:
+            try:
+                self._provider_sessions[session].use_comparative_authorization_view()
+            except AttributeError:
+                pass
 
-        """
-        return # boolean
+    def use_plenary_authorization_view(self):
+        """Pass through to provider AuthorizationLookupSession.use_plenary_authorization_view"""
+        self._object_views['authorization'] = PLENARY
+        for session in self._provider_sessions:
+            try:
+                self._provider_sessions[session].use_plenary_authorization_view()
+            except AttributeError:
+                pass
 
-    def reliable_vault_notifications(self):
-        """Reliable notifications are desired.
-        In reliable mode, notifications are to be acknowledged using
-        ``acknowledge_vault_notification()`` .
+    def use_federated_vault_view(self):
+        """Pass through to provider AuthorizationLookupSession.use_federated_vault_view"""
+        self._vault_view = FEDERATED
+        for session in self._provider_sessions:
+            try:
+                self._provider_sessions[session].use_federated_vault_view()
+            except AttributeError:
+                pass
 
+    def use_isolated_vault_view(self):
+        """Pass through to provider AuthorizationLookupSession.use_isolated_vault_view"""
+        self._vault_view = ISOLATED
+        for session in self._provider_sessions:
+            try:
+                self._provider_sessions[session].use_isolated_vault_view()
+            except AttributeError:
+                pass
 
+    def use_effective_authorization_view(self):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
-        """
-        pass
+    def use_any_effective_authorization_view(self):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
-    def unreliable_vault_notifications(self):
-        """Unreliable notifications are desired.
-        In unreliable mode, notifications do not need to be
-        acknowledged.
+    def use_implicit_authorization_view(self):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
+    def use_explicit_authorization_view(self):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
 
+    def get_authorization(self, *args, **kwargs):
+        """Pass through to provider AuthorizationLookupSession.get_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.get_resource_template
+        return self._get_provider_session('authorization_lookup_session').get_authorization(*args, **kwargs)
 
-        """
-        pass
+    def get_authorizations_by_ids(self, *args, **kwargs):
+        """Pass through to provider AuthorizationLookupSession.get_authorizations_by_ids"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.get_resources_by_ids_template
+        return self._get_provider_session('authorization_lookup_session').get_authorizations_by_ids(*args, **kwargs)
 
-    def acknowledge_vault_notification(self, notification_id):
-        """Acknowledge a vault notification.
+    def get_authorizations_by_genus_type(self, *args, **kwargs):
+        """Pass through to provider AuthorizationLookupSession.get_authorizations_by_genus_type"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.get_resources_by_genus_type_template
+        return self._get_provider_session('authorization_lookup_session').get_authorizations_by_genus_type(*args, **kwargs)
 
-        :param notification_id: the ``Id`` of the notification
-        :type notification_id: ``osid.id.Id``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_authorizations_by_parent_genus_type(self, *args, **kwargs):
+        """Pass through to provider AuthorizationLookupSession.get_authorizations_by_parent_genus_type"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.get_resources_by_parent_genus_type_template
+        return self._get_provider_session('authorization_lookup_session').get_authorizations_by_parent_genus_type(*args, **kwargs)
 
-        """
-        pass
+    def get_authorizations_by_record_type(self, *args, **kwargs):
+        """Pass through to provider AuthorizationLookupSession.get_authorizations_by_record_type"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.get_resources_by_record_type_template
+        return self._get_provider_session('authorization_lookup_session').get_authorizations_by_record_type(*args, **kwargs)
 
-    def register_for_new_vaults(self):
-        """Register for notifications of new vaults.
-        ``VaultReceiver.newVaults()`` is invoked when a new ``Vault`` is
-        created.
+    def get_authorizations_on_date(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_authorizations_for_resource(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        """
-        pass
+    def get_authorizations_for_resource_on_date(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def register_for_changed_vaults(self):
-        """Registers for notification of updated vaults.
-        ``VaultReceiver.changedVaults()`` is invoked when a vault is
-        changed.
+    def get_authorizations_for_agent(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_authorizations_for_agent_on_date(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        """
-        pass
+    def get_authorizations_for_function(self, *args, **kwargs):
+        """Pass through to provider AuthorizationLookupSession.get_authorizations_for_function"""
+        # Implemented from kitosid template for -
+        # osid.resource.ActivityLookupSession.get_activities_for_objective
+        return self._get_provider_session('authorization_lookup_session').get_authorizations_for_function(*args, **kwargs)
 
-    def register_for_changed_vault(self, vault_id):
-        """Registers for notification of an updated vault.
-        ``VaultReceiver.changedVaults()`` is invoked when the specified
-        vault is changed.
+    def get_authorizations_for_function_on_date(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        :param vault_id: the Id of the vault to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_authorizations_for_resource_and_function(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        """
-        pass
+    def get_authorizations_for_resource_and_function_on_date(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def register_for_deleted_vaults(self):
-        """Registers for notification of deleted vaults.
-        ``VaultReceiver.deletedVaults()`` is invoked when a vault is
-        deleted.
+    def get_authorizations_for_agent_and_function(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_authorizations_for_agent_and_function_on_date(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        """
-        pass
+    def get_authorizations_by_qualifier(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def register_for_deleted_vault(self, vault_id):
-        """Registers for notification of a deleted vault.
-        ``VaultReceiver.deletedVaults()`` is invoked when the specified
-        vault is deleted.
+    def get_explicit_authorization(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-        :param vault_id: the Id of the vault to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id is null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
+    def get_authorizations(self):
+        """Pass through to provider AuthorizationLookupSession.get_authorizations"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceLookupSession.get_resources_template
+        return self._get_provider_session('authorization_lookup_session').get_authorizations()
 
-        """
-        pass
-
-    def register_for_changed_vault_hierarchy(self):
-        """Registers for notification of an updated vault hierarchy structure.
-        ``VaultReceiver.changedChildOfVaults()`` is invoked when a node
-        experiences a change in its children.
-
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_changed_vault_hierarchy_for_ancestors(self, vault_id):
-        """Registers for notification of an updated vault hierarchy structure.
-        ``VaultReceiver.changedChildOfVaults()`` is invoked when the
-        specified node or any of its ancestors experiences a change in
-        its children.
-
-        :param vault_id: the ``Id`` of the ``Vault`` node to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def register_for_changed_vault_hierarchy_for_descendants(self, vault_id):
-        """Registers for notification of an updated vault hierarchy structure.
-        ``VaultReceiver.changedChildOfVaults()`` is invoked when the
-        specified node or any of its descendants experiences a change in
-        its children.
-
-        :param vault_id: the ``Id`` of the ``Vault`` node to monitor
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
+    authorizations = property(fget=get_authorizations)
 
 
 ##
-# The following methods are from osid.authorization.VaultHierarchySession
-
-    def get_vault_hierarchy_id(self):
-        """Gets the hierarchy ``Id`` associated with this session.
-
-        :return: the hierarchy ``Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-        """
-        return # osid.id.Id
-
-    vault_hierarchy_id = property(fget=get_vault_hierarchy_id)
-
-    def get_vault_hierarchy(self):
-        """Gets the hierarchy associated with this session.
-
-        :return: the hierarchy associated with this session
-        :rtype: ``osid.hierarchy.Hierarchy``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.hierarchy.Hierarchy
-
-    vault_hierarchy = property(fget=get_vault_hierarchy)
-
-    def can_access_vault_hierarchy(self):
-        """Tests if this user can perform hierarchy queries.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known all methods in this
-        session will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer lookup
-        operations.
-
-        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def get_root_vault_ids(self):
-        """Gets the root vault ``Ids`` in this hierarchy.
-
-        :return: the root vault ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.id.IdList
-
-    root_vault_ids = property(fget=get_root_vault_ids)
-
-    def get_root_vaults(self):
-        """Gets the root vaults in this vault hierarchy.
-
-        :return: the root vaults
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
-
-    root_vaults = property(fget=get_root_vaults)
-
-    def has_parent_vaults(self, vault_id):
-        """Tests if the ``Vault`` has any parents.
-
-        :param vault_id: a vault ``Id``
-        :type vault_id: ``osid.id.Id``
-        :return: ``true`` if the vault has parents, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # boolean
-
-    def is_parent_of_vault(self, id_, vault_id):
-        """Tests if an ``Id`` is a direct parent of a vault.
-
-        :param id: an ``Id``
-        :type id: ``osid.id.Id``
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is a parent of ``vault_id,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``id`` or ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # boolean
-
-    def get_parent_vault_ids(self, vault_id):
-        """Gets the parent ``Ids`` of the given vault.
-
-        :param vault_id: a vault ``Id``
-        :type vault_id: ``osid.id.Id``
-        :return: the parent ``Ids`` of the vault
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.id.IdList
-
-    def get_parent_vaults(self, vault_id):
-        """Gets the parents of the given vault.
-
-        :param vault_id: a vault ``Id``
-        :type vault_id: ``osid.id.Id``
-        :return: the parents of the vault
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
-
-    def is_ancestor_of_vault(self, id_, vault_id):
-        """Tests if an ``Id`` is an ancestor of a vault.
-
-        :param id: an ``Id``
-        :type id: ``osid.id.Id``
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is an ancestor of ``vault_id,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` or ``id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # boolean
-
-    def has_child_vaults(self, vault_id):
-        """Tests if a vault has any children.
-
-        :param vault_id: a ``vault_id``
-        :type vault_id: ``osid.id.Id``
-        :return: ``true`` if the ``vault_id`` has children, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # boolean
-
-    def is_child_of_vault(self, id_, vault_id):
-        """Tests if a vault is a direct child of another.
-
-        :param id: an ``Id``
-        :type id: ``osid.id.Id``
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a child of ``vault_id,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``vault_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` or ``id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # boolean
-
-    def get_child_vault_ids(self, vault_id):
-        """Gets the child ``Ids`` of the given vault.
-
-        :param vault_id: the ``Id`` to query
-        :type vault_id: ``osid.id.Id``
-        :return: the children of the vault
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.id.IdList
-
-    def get_child_vaults(self, vault_id):
-        """Gets the children of the given vault.
-
-        :param vault_id: the ``Id`` to query
-        :type vault_id: ``osid.id.Id``
-        :return: the children of the vault
-        :rtype: ``osid.authorization.VaultList``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultList
-
-    def is_descendant_of_vault(self, id_, vault_id):
-        """Tests if an ``Id`` is a descendant of a vault.
-
-        :param id: an ``Id``
-        :type id: ``osid.id.Id``
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``vault_id,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``vault_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` or ``id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # boolean
-
-    def get_vault_node_ids(self, vault_id, ancestor_levels, descendant_levels, include_siblings):
-        """Gets a portion of the hierarchy for the given vault.
-
-        :param vault_id: the ``Id`` to query
-        :type vault_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
-        :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
-        :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
-        :type include_siblings: ``boolean``
-        :return: a vault node
-        :rtype: ``osid.hierarchy.Node``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.hierarchy.Node
-
-    def get_vault_nodes(self, vault_id, ancestor_levels, descendant_levels, include_siblings):
-        """Gets a portion of the hierarchy for the given vault.
-
-        :param vault_id: the ``Id`` to query
-        :type vault_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the node.
-        :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children in the node.
-        :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
-        :type include_siblings: ``boolean``
-        :return: a vault node
-        :rtype: ``osid.authorization.VaultNode``
-        :raise: ``NotFound`` -- ``vault_id`` is not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        return # osid.authorization.VaultNode
-
-
-##
-# The following methods are from osid.authorization.VaultHierarchyDesignSession
-
-    def can_modify_vault_hierarchy(self):
-        """Tests if this user can change the hierarchy.
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known performing any update
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may opt not to offer these
-        operations to an unauthorized user.
-
-        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-        """
-        return # boolean
-
-    def add_root_vault(self, vault_id):
-        """Adds a root vault.
-
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``vault_id`` is already in hierarchy
-        :raise: ``NotFound`` -- ``vault_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def remove_root_vault(self, vault_id):
-        """Removes a root vault from this hierarchy.
-
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``vault_id`` not a parent of ``child_id``
-        :raise: ``NullArgument`` -- ``vault_id`` or ``child_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def add_child_vault(self, vault_id, child_id):
-        """Adds a child to a vault.
-
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :param child_id: the ``Id`` of the new child
-        :type child_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``vault_id`` is already a parent of ``child_id``
-        :raise: ``NotFound`` -- ``vault_id`` or ``child_id`` not found
-        :raise: ``NullArgument`` -- ``vault_id`` or ``child_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def remove_child_vault(self, vault_id, child_id):
-        """Removes a child from a vault.
-
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :param child_id: the ``Id`` of the child
-        :type child_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``vault_id`` not parent of ``child_id``
-        :raise: ``NullArgument`` -- ``vault_id`` or ``child_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-    def remove_child_vaults(self, vault_id):
-        """Removes all children from a vault.
-
-        :param vault_id: the ``Id`` of a vault
-        :type vault_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``vault_id`` is not in hierarchy
-        :raise: ``NullArgument`` -- ``vault_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-        """
-        pass
-
-
-
-class Vaults(AuthorizationManager):
-    pass
+# The following methods are from osid.authorization.AuthorizationAdminSession
+
+    def can_create_authorizations(self):
+        """Pass through to provider AuthorizationAdminSession.can_create_authorizations"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resources
+        return self._get_provider_session('authorization_admin_session').can_create_authorizations()
+
+    def can_create_authorization_with_record_types(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.can_create_authorization_with_record_types"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resource_with_record_types
+        return self._get_provider_session('authorization_admin_session').can_create_authorization_with_record_types(*args, **kwargs)
+
+    def get_authorization_form_for_create_for_agent(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.get_authorization_form_for_create_for_agent"""
+        return self._get_provider_session('authorization_admin_session').get_authorization_form_for_create_for_agent(*args, **kwargs)
+
+    def get_authorization_form_for_create_for_resource(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.get_authorization_form_for_create_for_resource"""
+        return self._get_provider_session('authorization_admin_session').get_authorization_form_for_create_for_resource(*args, **kwargs)
+
+    def get_authorization_form_for_create_for_resource_and_trust(self, *args, **kwargs):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+    def create_authorization(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.create_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.create_resource
+        return self._get_provider_session('authorization_admin_session').create_authorization(*args, **kwargs)
+
+    def can_update_authorizations(self):
+        """Pass through to provider AuthorizationAdminSession.can_update_authorizations"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resources
+        return self._get_provider_session('authorization_admin_session').can_update_authorizations()
+
+    def get_authorization_form_for_update(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.get_authorization_form_for_update"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.get_resource_form_for_update
+        return self._get_provider_session('authorization_admin_session').get_authorization_form_for_update(*args, **kwargs)
+
+    def get_authorization_form(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.get_authorization_form_for_update"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.get_resource_form_for_update
+        # This method might be a bit sketchy. Time will tell.
+        if isinstance(args[-1], list) or 'authorization_record_types' in kwargs:
+            return self.get_authorization_form_for_create(*args, **kwargs)
+        else:
+            return self.get_authorization_form_for_update(*args, **kwargs)
+
+    def duplicate_authorization(self, authorization_id):
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.get_resource_form_for_update
+        return self._get_provider_session('authorization_admin_session').duplicate_authorization(authorization_id)
+
+    def update_authorization(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.update_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.update_resource
+        # Note: The OSID spec does not require returning updated object
+        return self._get_provider_session('authorization_admin_session').update_authorization(*args, **kwargs)
+
+    def save_authorization(self, authorization_form, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.update_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.update_resource
+        if authorization_form.is_for_update():
+            return self.update_authorization(authorization_form, *args, **kwargs)
+        else:
+            return self.create_authorization(authorization_form, *args, **kwargs)
+
+    def can_delete_authorizations(self):
+        """Pass through to provider AuthorizationAdminSession.can_delete_authorizations"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.can_create_resources
+        return self._get_provider_session('authorization_admin_session').can_delete_authorizations()
+
+    def delete_authorization(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.delete_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.delete_resource
+        self._get_provider_session('authorization_admin_session').delete_authorization(*args, **kwargs)
+
+    def can_manage_authorization_aliases(self):
+        """Pass through to provider unimplemented"""
+        raise Unimplemented('Unimplemented in dlkit.services')
+
+    def alias_authorization(self, *args, **kwargs):
+        """Pass through to provider AuthorizationAdminSession.alias_authorization"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceAdminSession.alias_resources
+        self._get_provider_session('authorization_admin_session').alias_authorization(*args, **kwargs)
+
+
+
+
+class VaultList(abc_authorization_objects.VaultList, osid.OsidList):
+    """VaultList convenience adapter including related Session methods."""
+
+    def get_next_vault(self):
+        """Gets next object"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceList.get_next_resource
+        try:
+            next_item = self.next()
+        except StopIteration:
+            raise IllegalState('no more elements available in this list')
+        else:
+            return next_item
+
+    def next(self):
+        """next method for enumerator"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceList.get_next_resource
+        next_item = osid.OsidList.next(self)
+        return next_item
+
+    next_vault = property(fget=get_next_vault)
+
+    def get_next_vaults(self, n):
+        """gets next n objects from list"""
+        # Implemented from kitosid template for -
+        # osid.resource.ResourceList.get_next_resources
+        if n > self.available():
+            # !!! This is not quite as specified (see method docs) !!!
+            raise IllegalState('not enough elements available in this list')
+        else:
+            next_list = []
+            i = 0
+            while i < n:
+                try:
+                    next_list.append(self.next())
+                except StopIteration:
+                    break
+                i += 1
+            return next_list
 
 
