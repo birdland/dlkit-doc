@@ -242,7 +242,8 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
         """Matches a comment that has any text assigned.
 
 
-        :param match: ``true`` to match comments with any text, ``false`` to match comments with no text
+        :param match: ``true`` to match comments with any text, ``false`` to match comments with no
+            text
         :type match: ``boolean``
 
 
@@ -344,7 +345,8 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
         """Matches books with any rating.
 
 
-        :param match: ``true`` to match comments with any rating, ``false`` to match comments with no ratings
+        :param match: ``true`` to match comments with any rating, ``false`` to match comments with
+            no ratings
         :type match: ``boolean``
 
 
@@ -562,7 +564,8 @@ class BookQuery(osid_queries.OsidCatalogQuery):
         """Matches books with any comment.
 
 
-        :param match: ``true`` to match books with any comment, ``false`` to match books with no comments
+        :param match: ``true`` to match books with any comment, ``false`` to match books with no
+            comments
         :type match: ``boolean``
 
 
@@ -591,7 +594,8 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     comment_terms = property(fdel=clear_comment_terms)
 
     def match_ancestor_book_id(self, book_id, match):
-        """Sets the book ``Id`` for this query to match books that have the specified book as an ancestor.
+        """Sets the book ``Id`` for this query to match books that have the specified book as an
+            ancestor.
 
 
         :param book_id: a book ``Id``
@@ -693,7 +697,8 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     ancestor_book_terms = property(fdel=clear_ancestor_book_terms)
 
     def match_descendant_book_id(self, book_id, match):
-        """Sets the book ``Id`` for this query to match books that have the specified book as a descendant.
+        """Sets the book ``Id`` for this query to match books that have the specified book as a
+            descendant.
 
 
         :param book_id: a book ``Id``

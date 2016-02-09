@@ -37,7 +37,8 @@ class RelationshipSearch(osid_searches.OsidSearch):
         pass
 
     def get_relationship_search_record(self, relationship_search_record_type):
-        """Gets the relationship search record corresponding to the given relationship search record ``Type``.
+        """Gets the relationship search record corresponding to the given relationship search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -100,7 +101,8 @@ class RelationshipSearchResults(osid_searches.OsidSearchResults):
     relationship_query_inspector = property(fget=get_relationship_query_inspector)
 
     def get_relationship_search_results_record(self, relationship_search_record_type):
-        """Gets the relationship search results record corresponding to the given relationship search record ``Type``.
+        """Gets the relationship search results record corresponding to the given relationship
+            search record ``Type``.
 
 
         This method must be used to retrieve an object implementing the
@@ -185,9 +187,9 @@ class FamilySearch(osid_searches.OsidSearch):
 
 
 class FamilySearchResults(osid_searches.OsidSearchResults):
-    """This interface provides a means to capture results of a search and is used as a vehicle to perform a search
-        within a
-        previous result set."""
+    """This interface provides a means to capture results of a search and is used as a vehicle to
+        perform a
+    search within a previous result set."""
 
     def get_families(self):
         """Gets the family list resulting from a search.
@@ -225,7 +227,8 @@ class FamilySearchResults(osid_searches.OsidSearchResults):
     family_query_inspector = property(fget=get_family_query_inspector)
 
     def get_family_search_results_record(self, family_search_record_type):
-        """Gets the family search results record corresponding to the given family search record Type.
+        """Gets the family search results record corresponding to the given family search record
+            Type.
 
 
         This method is used to retrieve an object implementing the

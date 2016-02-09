@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.resource.objects
+.. automodule:: dlkit.resource.objects
 
 Objects
 =======
@@ -7,243 +9,68 @@ Objects
 Resource
 --------
 
-.. py:class:: Resource(abc_resource_objects.Resource, osid_objects.OsidObject)
-    A ``Resource`` represents an arbitrary entity.
+.. autoclass:: Resource
+   :show-inheritance:
 
+   .. automethod:: Resource.is_group
 
-    Resources are used to define an object to accompany an OSID ``Id``
-    used in other OSIDs. A resource may be used to represent a meeting
-    room in the Scheduling OSID, or a student in the Course OSID.
+   .. automethod:: Resource.is_demographic
 
+   .. automethod:: Resource.has_avatar
 
+   .. autoattribute:: Resource.avatar_id
 
+   .. autoattribute:: Resource.avatar
 
-    A ``Resource`` may also represent a group or organization. A
-    provider may present such a group in an opaque manner through a
-    single resource definition, or the provider may expose the resource
-    collection for examination or manipulation. If such a resource
-    collection is visible, ``is_group()`` is ``true`` and can be used in
-    one of the group sessions available in this OSID.
-
-
-
-
-
-    .. py:method:: is_group():
-        :noindex:
-
-
-    .. py:method:: is_demographic():
-        :noindex:
-
-
-    .. py:method:: has_avatar():
-        :noindex:
-
-
-    .. py:method:: get_avatar_id():
-        :noindex:
-
-
-    .. py:attribute:: avatar_id
-        :noindex:
-
-
-    .. py:method:: get_avatar():
-        :noindex:
-
-
-    .. py:attribute:: avatar
-        :noindex:
-
-
-    .. py:method:: get_resource_record(resource_record_type):
-        :noindex:
-
+   .. automethod:: Resource.get_resource_record
 
 Resource Form
 -------------
 
-.. py:class:: ResourceForm(abc_resource_objects.ResourceForm, osid_objects.OsidObjectForm)
-    This is the form for creating and updating ``Resources``.
+.. autoclass:: ResourceForm
+   :show-inheritance:
 
+   .. autoattribute:: ResourceForm.group_metadata
 
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the
-    ``ResourceAdminSession``. For each data element that may be set,
-    metadata may be examined to provide display hints or data
-    constraints.
+   .. autoattribute:: ResourceForm.group
 
+   .. autoattribute:: ResourceForm.avatar_metadata
 
+   .. autoattribute:: ResourceForm.avatar
 
-
-    Resources can be designated as a group. The group metadata indicates
-    if it is possible to convert a resource to a group and vice-versa.
-
-
-
-
-
-    .. py:method:: get_group_metadata():
-        :noindex:
-
-
-    .. py:attribute:: group_metadata
-        :noindex:
-
-
-    .. py:method:: set_group(group):
-        :noindex:
-
-
-    .. py:method:: clear_group():
-        :noindex:
-
-
-    .. py:attribute:: group
-        :noindex:
-
-
-    .. py:method:: get_avatar_metadata():
-        :noindex:
-
-
-    .. py:attribute:: avatar_metadata
-        :noindex:
-
-
-    .. py:method:: set_avatar(asset_id):
-        :noindex:
-
-
-    .. py:method:: clear_avatar():
-        :noindex:
-
-
-    .. py:attribute:: avatar
-        :noindex:
-
-
-    .. py:method:: get_resource_form_record(resource_record_type):
-        :noindex:
-
+   .. automethod:: ResourceForm.get_resource_form_record
 
 Resource List
 -------------
 
-.. py:class:: ResourceList(abc_resource_objects.ResourceList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``ResourceList`` provides a means for accessing ``Resource`` elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: ResourceList
+   :show-inheritance:
 
+   .. autoattribute:: ResourceList.next_resource
 
-    Examples: while (rl.hasNext()) { Resource resource =
-    rl.getNextResource(); }
-
-
-
-
-    or
-      while (rl.hasNext()) {
-           Resource[] resources = rl.getNextResources(rl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_resource():
-        :noindex:
-
-
-    .. py:attribute:: next_resource
-        :noindex:
-
-
-    .. py:method:: get_next_resources(n):
-        :noindex:
-
+   .. automethod:: ResourceList.get_next_resources
 
 Resource Node
 -------------
 
-.. py:class:: ResourceNode(abc_resource_objects.ResourceNode, osid_objects.OsidNode)
-    This interface is a container for a partial hierarchy retrieval.
+.. autoclass:: ResourceNode
+   :show-inheritance:
 
+   .. autoattribute:: ResourceNode.resource
 
-    The number of hierarchy levels traversable through this interface
-    depend on the number of levels requested in the
-    ``BinHierarchySession``.
+   .. autoattribute:: ResourceNode.parent_resource_nodes
 
-
-
-
-
-    .. py:method:: get_resource():
-        :noindex:
-
-
-    .. py:attribute:: resource
-        :noindex:
-
-
-    .. py:method:: get_parent_resource_nodes():
-        :noindex:
-
-
-    .. py:attribute:: parent_resource_nodes
-        :noindex:
-
-
-    .. py:method:: get_child_resource_nodes():
-        :noindex:
-
-
-    .. py:attribute:: child_resource_nodes
-        :noindex:
-
+   .. autoattribute:: ResourceNode.child_resource_nodes
 
 Resource Node List
 ------------------
 
-.. py:class:: ResourceNodeList(abc_resource_objects.ResourceNodeList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``ResourceNodeList`` provides a means for accessing ``ResourceNode``
-    elements sequentially either one at a time or many at a time.
+.. autoclass:: ResourceNodeList
+   :show-inheritance:
 
+   .. autoattribute:: ResourceNodeList.next_resource_node
 
-    Examples: while (rnl.hasNext()) { ResourceNode node =
-    rnl.getNextResourceNode(); }
-
-
-
-
-    or
-      while rnl.hasNext()) {
-           ResourceNode[] nodes = rnl.getNextResourceNodes(rnl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_resource_node():
-        :noindex:
-
-
-    .. py:attribute:: next_resource_node
-        :noindex:
-
-
-    .. py:method:: get_next_resource_nodes(n):
-        :noindex:
-
+   .. automethod:: ResourceNodeList.get_next_resource_nodes
 
 Bin
 ---
@@ -251,143 +78,45 @@ Bin
 .. py:class:: Bin(abc_resource_objects.Bin, osid_objects.OsidCatalog)
         :noindex:
 
-    .. py:method:: get_bin_record(bin_record_type):
-        :noindex:
-
+   .. automethod:: Bin.get_bin_record
 
 Bin Form
 --------
 
-.. py:class:: BinForm(abc_resource_objects.BinForm, osid_objects.OsidCatalogForm)
-    This is the form for creating and updating bins.
+.. autoclass:: BinForm
+   :show-inheritance:
 
-
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the ``BinAdminSession``.
-    For each data element that may be set, metadata may be examined to
-    provide display hints or data constraints.
-
-
-
-
-
-    .. py:method:: get_bin_form_record(bin_record_type):
-        :noindex:
-
+   .. automethod:: BinForm.get_bin_form_record
 
 Bin List
 --------
 
-.. py:class:: BinList(abc_resource_objects.BinList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``BinList`` provides a means for accessing ``Bin`` elements sequentially
-    either one at a time or many at a time.
+.. autoclass:: BinList
+   :show-inheritance:
 
+   .. autoattribute:: BinList.next_bin
 
-    Examples: while (bl.hasNext()) { Bin bin = bl.getNextBin(); }
-
-
-
-
-    or
-      while (bl.hasNext()) {
-           Bin[] bins = bl.getNextBins(bl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_bin():
-        :noindex:
-
-
-    .. py:attribute:: next_bin
-        :noindex:
-
-
-    .. py:method:: get_next_bins(n):
-        :noindex:
-
+   .. automethod:: BinList.get_next_bins
 
 Bin Node
 --------
 
-.. py:class:: BinNode(abc_resource_objects.BinNode, osid_objects.OsidNode)
-    This interface is a container for a partial hierarchy retrieval.
+.. autoclass:: BinNode
+   :show-inheritance:
 
+   .. autoattribute:: BinNode.bin
 
-    The number of hierarchy levels traversable through this interface
-    depend on the number of levels requested in the
-    ``BinHierarchySession``.
+   .. autoattribute:: BinNode.parent_bin_nodes
 
-
-
-
-
-    .. py:method:: get_bin():
-        :noindex:
-
-
-    .. py:attribute:: bin
-        :noindex:
-
-
-    .. py:method:: get_parent_bin_nodes():
-        :noindex:
-
-
-    .. py:attribute:: parent_bin_nodes
-        :noindex:
-
-
-    .. py:method:: get_child_bin_nodes():
-        :noindex:
-
-
-    .. py:attribute:: child_bin_nodes
-        :noindex:
-
+   .. autoattribute:: BinNode.child_bin_nodes
 
 Bin Node List
 -------------
 
-.. py:class:: BinNodeList(abc_resource_objects.BinNodeList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``BinNodeList`` provides a means for accessing ``BinNode`` elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: BinNodeList
+   :show-inheritance:
 
+   .. autoattribute:: BinNodeList.next_bin_node
 
-    Examples: while (bnl.hasNext()) { BinNode node =
-    bnl.getNextBinNode(); }
-
-
-
-
-    or
-      while (bnl.hasNext()) {
-           BinNode[] nodes = bnl.getNextBinNodes(bnl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_bin_node():
-        :noindex:
-
-
-    .. py:attribute:: next_bin_node
-        :noindex:
-
-
-    .. py:method:: get_next_bin_nodes(n):
-        :noindex:
-
+   .. automethod:: BinNodeList.get_next_bin_nodes
 

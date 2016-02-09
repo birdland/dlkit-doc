@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.osid.metadata
+.. automodule:: dlkit.osid.metadata
 
 Metadata
 ========
@@ -7,849 +9,236 @@ Metadata
 Metadata
 --------
 
-.. py:class:: Metadata(abc_osid_metadata.Metadata)
-    The ``Metadata`` interface defines a set of methods describing a the syntax and rules for
-        creating
-    and updating a data element inside an ``OsidForm``.
+.. autoclass:: Metadata
+   :show-inheritance:
 
+   .. autoattribute:: Metadata.element_id
 
-    This interface provides a means to retrieve special restrictions
-    placed upon data elements such as sizes and ranges that may vary
-    from provider to provider or from object to object.
+   .. autoattribute:: Metadata.element_label
 
+   .. autoattribute:: Metadata.instructions
 
+   .. autoattribute:: Metadata.syntax
 
+   .. automethod:: Metadata.is_array
 
+   .. automethod:: Metadata.is_required
 
-    .. py:method:: get_element_id():
-        :noindex:
+   .. automethod:: Metadata.is_read_only
 
+   .. automethod:: Metadata.is_linked
 
-    .. py:attribute:: element_id
-        :noindex:
+   .. automethod:: Metadata.is_value_known
 
+   .. automethod:: Metadata.has_value
 
-    .. py:method:: get_element_label():
-        :noindex:
+   .. autoattribute:: Metadata.units
 
+   .. autoattribute:: Metadata.minimum_elements
 
-    .. py:attribute:: element_label
-        :noindex:
+   .. autoattribute:: Metadata.maximum_elements
 
+   .. autoattribute:: Metadata.minimum_cardinal
 
-    .. py:method:: get_instructions():
-        :noindex:
+   .. autoattribute:: Metadata.maximum_cardinal
 
+   .. autoattribute:: Metadata.cardinal_set
 
-    .. py:attribute:: instructions
-        :noindex:
+   .. autoattribute:: Metadata.default_cardinal_values
 
+   .. autoattribute:: Metadata.existing_cardinal_values
 
-    .. py:method:: get_syntax():
-        :noindex:
+   .. autoattribute:: Metadata.coordinate_types
 
+   .. automethod:: Metadata.supports_coordinate_type
 
-    .. py:attribute:: syntax
-        :noindex:
+   .. automethod:: Metadata.get_axes_for_coordinate_type
 
+   .. automethod:: Metadata.get_minimum_coordinate_values
 
-    .. py:method:: is_array():
-        :noindex:
+   .. automethod:: Metadata.get_maximum_coordinate_values
 
+   .. autoattribute:: Metadata.coordinate_set
 
-    .. py:method:: is_required():
-        :noindex:
+   .. autoattribute:: Metadata.default_coordinate_values
 
+   .. autoattribute:: Metadata.existing_coordinate_values
 
-    .. py:method:: is_read_only():
-        :noindex:
+   .. autoattribute:: Metadata.currency_types
 
+   .. automethod:: Metadata.supports_currency_type
 
-    .. py:method:: is_linked():
-        :noindex:
+   .. autoattribute:: Metadata.minimum_currency
 
+   .. autoattribute:: Metadata.maximum_currency
 
-    .. py:method:: is_value_known():
-        :noindex:
+   .. autoattribute:: Metadata.currency_set
 
+   .. autoattribute:: Metadata.default_currency_values
 
-    .. py:method:: has_value():
-        :noindex:
+   .. autoattribute:: Metadata.existing_currency_values
 
+   .. autoattribute:: Metadata.date_time_resolution
 
-    .. py:method:: get_units():
-        :noindex:
+   .. autoattribute:: Metadata.calendar_types
 
+   .. automethod:: Metadata.supports_calendar_type
 
-    .. py:attribute:: units
-        :noindex:
+   .. autoattribute:: Metadata.time_types
 
+   .. automethod:: Metadata.supports_time_type
 
-    .. py:method:: get_minimum_elements():
-        :noindex:
+   .. autoattribute:: Metadata.minimum_date_time
 
+   .. autoattribute:: Metadata.maximum_date_time
 
-    .. py:attribute:: minimum_elements
-        :noindex:
+   .. autoattribute:: Metadata.date_time_set
 
+   .. autoattribute:: Metadata.default_date_time_values
 
-    .. py:method:: get_maximum_elements():
-        :noindex:
+   .. autoattribute:: Metadata.existing_date_time_values
 
+   .. autoattribute:: Metadata.decimal_scale
 
-    .. py:attribute:: maximum_elements
-        :noindex:
+   .. autoattribute:: Metadata.minimum_decimal
 
+   .. autoattribute:: Metadata.maximum_decimal
 
-    .. py:method:: get_minimum_cardinal():
-        :noindex:
+   .. autoattribute:: Metadata.decimal_set
 
+   .. autoattribute:: Metadata.default_decimal_values
 
-    .. py:attribute:: minimum_cardinal
-        :noindex:
+   .. autoattribute:: Metadata.existing_decimal_values
 
+   .. autoattribute:: Metadata.distance_resolution
 
-    .. py:method:: get_maximum_cardinal():
-        :noindex:
+   .. autoattribute:: Metadata.minimum_distance
 
+   .. autoattribute:: Metadata.maximum_distance
 
-    .. py:attribute:: maximum_cardinal
-        :noindex:
+   .. autoattribute:: Metadata.distance_set
 
+   .. autoattribute:: Metadata.default_distance_values
 
-    .. py:method:: get_cardinal_set():
-        :noindex:
+   .. autoattribute:: Metadata.existing_distance_values
 
+   .. autoattribute:: Metadata.minimum_duration
 
-    .. py:attribute:: cardinal_set
-        :noindex:
+   .. autoattribute:: Metadata.maximum_duration
 
+   .. autoattribute:: Metadata.duration_set
 
-    .. py:method:: get_default_cardinal_values():
-        :noindex:
+   .. autoattribute:: Metadata.default_duration_values
 
+   .. autoattribute:: Metadata.existing_duration_values
 
-    .. py:attribute:: default_cardinal_values
-        :noindex:
+   .. autoattribute:: Metadata.heading_types
 
+   .. automethod:: Metadata.supports_heading_type
 
-    .. py:method:: get_existing_cardinal_values():
-        :noindex:
+   .. automethod:: Metadata.get_axes_for_heading_type
 
+   .. automethod:: Metadata.get_minimum_heading_values
 
-    .. py:attribute:: existing_cardinal_values
-        :noindex:
+   .. automethod:: Metadata.get_maximum_heading_values
 
+   .. autoattribute:: Metadata.heading_set
 
-    .. py:method:: get_coordinate_types():
-        :noindex:
+   .. autoattribute:: Metadata.default_heading_values
 
+   .. autoattribute:: Metadata.existing_heading_values
 
-    .. py:attribute:: coordinate_types
-        :noindex:
+   .. autoattribute:: Metadata.id_set
 
+   .. autoattribute:: Metadata.default_id_values
 
-    .. py:method:: supports_coordinate_type(coordinate_type):
-        :noindex:
+   .. autoattribute:: Metadata.existing_id_values
 
+   .. autoattribute:: Metadata.minimum_integer
 
-    .. py:method:: get_axes_for_coordinate_type(coordinate_type):
-        :noindex:
+   .. autoattribute:: Metadata.maximum_integer
 
+   .. autoattribute:: Metadata.integer_set
 
-    .. py:method:: get_minimum_coordinate_values(coordinate_type):
-        :noindex:
+   .. autoattribute:: Metadata.default_integer_values
 
+   .. autoattribute:: Metadata.existing_integer_values
 
-    .. py:method:: get_maximum_coordinate_values(coordinate_type):
-        :noindex:
+   .. autoattribute:: Metadata.object_types
 
+   .. automethod:: Metadata.supports_object_type
 
-    .. py:method:: get_coordinate_set():
-        :noindex:
+   .. autoattribute:: Metadata.object_set
 
+   .. autoattribute:: Metadata.default_object_values
 
-    .. py:attribute:: coordinate_set
-        :noindex:
+   .. autoattribute:: Metadata.existing_object_values
 
+   .. autoattribute:: Metadata.spatial_unit_record_types
 
-    .. py:method:: get_default_coordinate_values():
-        :noindex:
+   .. automethod:: Metadata.supports_spatial_unit_record_type
 
+   .. autoattribute:: Metadata.spatial_unit_set
 
-    .. py:attribute:: default_coordinate_values
-        :noindex:
+   .. autoattribute:: Metadata.default_spatial_unit_values
 
+   .. autoattribute:: Metadata.existing_spatial_unit_values
 
-    .. py:method:: get_existing_coordinate_values():
-        :noindex:
+   .. autoattribute:: Metadata.minimum_speed
 
+   .. autoattribute:: Metadata.maximum_speed
 
-    .. py:attribute:: existing_coordinate_values
-        :noindex:
+   .. autoattribute:: Metadata.speed_set
 
+   .. autoattribute:: Metadata.default_speed_values
 
-    .. py:method:: get_currency_types():
-        :noindex:
+   .. autoattribute:: Metadata.existing_speed_values
 
+   .. autoattribute:: Metadata.minimum_string_length
 
-    .. py:attribute:: currency_types
-        :noindex:
+   .. autoattribute:: Metadata.maximum_string_length
 
+   .. autoattribute:: Metadata.string_match_types
 
-    .. py:method:: supports_currency_type(currency_type):
-        :noindex:
+   .. automethod:: Metadata.supports_string_match_type
 
+   .. automethod:: Metadata.get_string_expression
 
-    .. py:method:: get_minimum_currency():
-        :noindex:
+   .. autoattribute:: Metadata.string_format_types
 
+   .. autoattribute:: Metadata.string_set
 
-    .. py:attribute:: minimum_currency
-        :noindex:
+   .. autoattribute:: Metadata.default_string_values
 
+   .. autoattribute:: Metadata.existing_string_values
 
-    .. py:method:: get_maximum_currency():
-        :noindex:
+   .. autoattribute:: Metadata.minimum_time
 
+   .. autoattribute:: Metadata.maximum_time
 
-    .. py:attribute:: maximum_currency
-        :noindex:
+   .. autoattribute:: Metadata.time_set
 
+   .. autoattribute:: Metadata.default_time_values
 
-    .. py:method:: get_currency_set():
-        :noindex:
+   .. autoattribute:: Metadata.existing_time_values
 
+   .. autoattribute:: Metadata.type_set
 
-    .. py:attribute:: currency_set
-        :noindex:
+   .. autoattribute:: Metadata.default_type_values
 
+   .. autoattribute:: Metadata.existing_type_values
 
-    .. py:method:: get_default_currency_values():
-        :noindex:
+   .. autoattribute:: Metadata.version_types
 
+   .. automethod:: Metadata.supports_version_type
 
-    .. py:attribute:: default_currency_values
-        :noindex:
+   .. autoattribute:: Metadata.minimum_version
 
+   .. autoattribute:: Metadata.maximum_version
 
-    .. py:method:: get_existing_currency_values():
-        :noindex:
+   .. autoattribute:: Metadata.version_set
 
+   .. autoattribute:: Metadata.default_version_values
 
-    .. py:attribute:: existing_currency_values
-        :noindex:
-
-
-    .. py:method:: get_date_time_resolution():
-        :noindex:
-
-
-    .. py:attribute:: date_time_resolution
-        :noindex:
-
-
-    .. py:method:: get_calendar_types():
-        :noindex:
-
-
-    .. py:attribute:: calendar_types
-        :noindex:
-
-
-    .. py:method:: supports_calendar_type(calendar_type):
-        :noindex:
-
-
-    .. py:method:: get_time_types():
-        :noindex:
-
-
-    .. py:attribute:: time_types
-        :noindex:
-
-
-    .. py:method:: supports_time_type(time_type):
-        :noindex:
-
-
-    .. py:method:: get_minimum_date_time():
-        :noindex:
-
-
-    .. py:attribute:: minimum_date_time
-        :noindex:
-
-
-    .. py:method:: get_maximum_date_time():
-        :noindex:
-
-
-    .. py:attribute:: maximum_date_time
-        :noindex:
-
-
-    .. py:method:: get_date_time_set():
-        :noindex:
-
-
-    .. py:attribute:: date_time_set
-        :noindex:
-
-
-    .. py:method:: get_default_date_time_values():
-        :noindex:
-
-
-    .. py:attribute:: default_date_time_values
-        :noindex:
-
-
-    .. py:method:: get_existing_date_time_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_date_time_values
-        :noindex:
-
-
-    .. py:method:: get_decimal_scale():
-        :noindex:
-
-
-    .. py:attribute:: decimal_scale
-        :noindex:
-
-
-    .. py:method:: get_minimum_decimal():
-        :noindex:
-
-
-    .. py:attribute:: minimum_decimal
-        :noindex:
-
-
-    .. py:method:: get_maximum_decimal():
-        :noindex:
-
-
-    .. py:attribute:: maximum_decimal
-        :noindex:
-
-
-    .. py:method:: get_decimal_set():
-        :noindex:
-
-
-    .. py:attribute:: decimal_set
-        :noindex:
-
-
-    .. py:method:: get_default_decimal_values():
-        :noindex:
-
-
-    .. py:attribute:: default_decimal_values
-        :noindex:
-
-
-    .. py:method:: get_existing_decimal_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_decimal_values
-        :noindex:
-
-
-    .. py:method:: get_distance_resolution():
-        :noindex:
-
-
-    .. py:attribute:: distance_resolution
-        :noindex:
-
-
-    .. py:method:: get_minimum_distance():
-        :noindex:
-
-
-    .. py:attribute:: minimum_distance
-        :noindex:
-
-
-    .. py:method:: get_maximum_distance():
-        :noindex:
-
-
-    .. py:attribute:: maximum_distance
-        :noindex:
-
-
-    .. py:method:: get_distance_set():
-        :noindex:
-
-
-    .. py:attribute:: distance_set
-        :noindex:
-
-
-    .. py:method:: get_default_distance_values():
-        :noindex:
-
-
-    .. py:attribute:: default_distance_values
-        :noindex:
-
-
-    .. py:method:: get_existing_distance_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_distance_values
-        :noindex:
-
-
-    .. py:method:: get_minimum_duration():
-        :noindex:
-
-
-    .. py:attribute:: minimum_duration
-        :noindex:
-
-
-    .. py:method:: get_maximum_duration():
-        :noindex:
-
-
-    .. py:attribute:: maximum_duration
-        :noindex:
-
-
-    .. py:method:: get_duration_set():
-        :noindex:
-
-
-    .. py:attribute:: duration_set
-        :noindex:
-
-
-    .. py:method:: get_default_duration_values():
-        :noindex:
-
-
-    .. py:attribute:: default_duration_values
-        :noindex:
-
-
-    .. py:method:: get_existing_duration_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_duration_values
-        :noindex:
-
-
-    .. py:method:: get_heading_types():
-        :noindex:
-
-
-    .. py:attribute:: heading_types
-        :noindex:
-
-
-    .. py:method:: supports_heading_type(heading_type):
-        :noindex:
-
-
-    .. py:method:: get_axes_for_heading_type(heading_type):
-        :noindex:
-
-
-    .. py:method:: get_minimum_heading_values(heading_type):
-        :noindex:
-
-
-    .. py:method:: get_maximum_heading_values(heading_type):
-        :noindex:
-
-
-    .. py:method:: get_heading_set():
-        :noindex:
-
-
-    .. py:attribute:: heading_set
-        :noindex:
-
-
-    .. py:method:: get_default_heading_values():
-        :noindex:
-
-
-    .. py:attribute:: default_heading_values
-        :noindex:
-
-
-    .. py:method:: get_existing_heading_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_heading_values
-        :noindex:
-
-
-    .. py:method:: get_id_set():
-        :noindex:
-
-
-    .. py:attribute:: id_set
-        :noindex:
-
-
-    .. py:method:: get_default_id_values():
-        :noindex:
-
-
-    .. py:attribute:: default_id_values
-        :noindex:
-
-
-    .. py:method:: get_existing_id_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_id_values
-        :noindex:
-
-
-    .. py:method:: get_minimum_integer():
-        :noindex:
-
-
-    .. py:attribute:: minimum_integer
-        :noindex:
-
-
-    .. py:method:: get_maximum_integer():
-        :noindex:
-
-
-    .. py:attribute:: maximum_integer
-        :noindex:
-
-
-    .. py:method:: get_integer_set():
-        :noindex:
-
-
-    .. py:attribute:: integer_set
-        :noindex:
-
-
-    .. py:method:: get_default_integer_values():
-        :noindex:
-
-
-    .. py:attribute:: default_integer_values
-        :noindex:
-
-
-    .. py:method:: get_existing_integer_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_integer_values
-        :noindex:
-
-
-    .. py:method:: get_object_types():
-        :noindex:
-
-
-    .. py:attribute:: object_types
-        :noindex:
-
-
-    .. py:method:: supports_object_type(object_type):
-        :noindex:
-
-
-    .. py:method:: get_object_set():
-        :noindex:
-
-
-    .. py:attribute:: object_set
-        :noindex:
-
-
-    .. py:method:: get_default_object_values():
-        :noindex:
-
-
-    .. py:attribute:: default_object_values
-        :noindex:
-
-
-    .. py:method:: get_existing_object_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_object_values
-        :noindex:
-
-
-    .. py:method:: get_spatial_unit_record_types():
-        :noindex:
-
-
-    .. py:attribute:: spatial_unit_record_types
-        :noindex:
-
-
-    .. py:method:: supports_spatial_unit_record_type(spatial_unit_record_type):
-        :noindex:
-
-
-    .. py:method:: get_spatial_unit_set():
-        :noindex:
-
-
-    .. py:attribute:: spatial_unit_set
-        :noindex:
-
-
-    .. py:method:: get_default_spatial_unit_values():
-        :noindex:
-
-
-    .. py:attribute:: default_spatial_unit_values
-        :noindex:
-
-
-    .. py:method:: get_existing_spatial_unit_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_spatial_unit_values
-        :noindex:
-
-
-    .. py:method:: get_minimum_speed():
-        :noindex:
-
-
-    .. py:attribute:: minimum_speed
-        :noindex:
-
-
-    .. py:method:: get_maximum_speed():
-        :noindex:
-
-
-    .. py:attribute:: maximum_speed
-        :noindex:
-
-
-    .. py:method:: get_speed_set():
-        :noindex:
-
-
-    .. py:attribute:: speed_set
-        :noindex:
-
-
-    .. py:method:: get_default_speed_values():
-        :noindex:
-
-
-    .. py:attribute:: default_speed_values
-        :noindex:
-
-
-    .. py:method:: get_existing_speed_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_speed_values
-        :noindex:
-
-
-    .. py:method:: get_minimum_string_length():
-        :noindex:
-
-
-    .. py:attribute:: minimum_string_length
-        :noindex:
-
-
-    .. py:method:: get_maximum_string_length():
-        :noindex:
-
-
-    .. py:attribute:: maximum_string_length
-        :noindex:
-
-
-    .. py:method:: get_string_match_types():
-        :noindex:
-
-
-    .. py:attribute:: string_match_types
-        :noindex:
-
-
-    .. py:method:: supports_string_match_type(string_match_type):
-        :noindex:
-
-
-    .. py:method:: get_string_expression(string_match_type):
-        :noindex:
-
-
-    .. py:method:: get_string_format_types():
-        :noindex:
-
-
-    .. py:attribute:: string_format_types
-        :noindex:
-
-
-    .. py:method:: get_string_set():
-        :noindex:
-
-
-    .. py:attribute:: string_set
-        :noindex:
-
-
-    .. py:method:: get_default_string_values():
-        :noindex:
-
-
-    .. py:attribute:: default_string_values
-        :noindex:
-
-
-    .. py:method:: get_existing_string_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_string_values
-        :noindex:
-
-
-    .. py:method:: get_minimum_time():
-        :noindex:
-
-
-    .. py:attribute:: minimum_time
-        :noindex:
-
-
-    .. py:method:: get_maximum_time():
-        :noindex:
-
-
-    .. py:attribute:: maximum_time
-        :noindex:
-
-
-    .. py:method:: get_time_set():
-        :noindex:
-
-
-    .. py:attribute:: time_set
-        :noindex:
-
-
-    .. py:method:: get_default_time_values():
-        :noindex:
-
-
-    .. py:attribute:: default_time_values
-        :noindex:
-
-
-    .. py:method:: get_existing_time_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_time_values
-        :noindex:
-
-
-    .. py:method:: get_type_set():
-        :noindex:
-
-
-    .. py:attribute:: type_set
-        :noindex:
-
-
-    .. py:method:: get_default_type_values():
-        :noindex:
-
-
-    .. py:attribute:: default_type_values
-        :noindex:
-
-
-    .. py:method:: get_existing_type_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_type_values
-        :noindex:
-
-
-    .. py:method:: get_version_types():
-        :noindex:
-
-
-    .. py:attribute:: version_types
-        :noindex:
-
-
-    .. py:method:: supports_version_type(version_type):
-        :noindex:
-
-
-    .. py:method:: get_minimum_version():
-        :noindex:
-
-
-    .. py:attribute:: minimum_version
-        :noindex:
-
-
-    .. py:method:: get_maximum_version():
-        :noindex:
-
-
-    .. py:attribute:: maximum_version
-        :noindex:
-
-
-    .. py:method:: get_version_set():
-        :noindex:
-
-
-    .. py:attribute:: version_set
-        :noindex:
-
-
-    .. py:method:: get_default_version_values():
-        :noindex:
-
-
-    .. py:attribute:: default_version_values
-        :noindex:
-
-
-    .. py:method:: get_existing_version_values():
-        :noindex:
-
-
-    .. py:attribute:: existing_version_values
-        :noindex:
-
+   .. autoattribute:: Metadata.existing_version_values
 

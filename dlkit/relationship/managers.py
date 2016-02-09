@@ -362,7 +362,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         """Tests if the given ``Relationship`` search record type is supported.
 
 
-        :param relationship_search_record_type: a ``Type`` indicating a ``Relationship`` search record type
+        :param relationship_search_record_type: a ``Type`` indicating a ``Relationship`` search
+            record type
         :type relationship_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given search record type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -447,8 +448,9 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
 
 class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-        aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides
+        interoperability
+    tests for various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -508,7 +510,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_lookup_session = property(fget=get_relationship_lookup_session)
 
     def get_relationship_lookup_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship lookup service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship lookup service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -518,8 +521,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -550,7 +553,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_query_session = property(fget=get_relationship_query_session)
 
     def get_relationship_query_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship query service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship query service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -560,7 +564,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -591,7 +596,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_search_session = property(fget=get_relationship_search_session)
 
     def get_relationship_search_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship search service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship search service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the ``Family``
@@ -601,8 +607,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no family found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -633,7 +639,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_admin_session = property(fget=get_relationship_admin_session)
 
     def get_relationship_admin_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship administration service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship administration service for the
+            given family.
 
 
         :param family_id: the ``Id`` of the ``Family``
@@ -643,7 +650,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no family found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -675,7 +683,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # osid.relationship.RelationshipNotificationSession
 
     def get_relationship_notification_session_for_family(self, relationship_receiver, family_id):
-        """Gets the ``OsidSession`` associated with the relationship notification service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship notification service for the
+            given family.
 
 
         :param relationship_receiver: the receiver
@@ -687,8 +696,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no family found by the given ``Id``
         :raise: ``NullArgument`` -- ``relationship_receiver`` or ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -932,8 +941,9 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
 
 class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-        aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides
+        interoperability
+    tests for various aspects of this service.
 
 
     Methods in this manager support the passing of a Proxy. The sessions
@@ -995,7 +1005,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipLookupSession
 
     def get_relationship_lookup_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship lookup service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship lookup service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -1007,8 +1018,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1040,7 +1051,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipQuerySession
 
     def get_relationship_query_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship query service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship query service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -1052,7 +1064,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1084,7 +1097,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipSearchSession
 
     def get_relationship_search_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship search service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship search service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -1096,8 +1110,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1129,7 +1143,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipAdminSession
 
     def get_relationship_admin_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship administration service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship administration service for the
+            given family.
 
 
         :param family_id: the ``Id`` of the family
@@ -1141,7 +1156,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1174,8 +1190,10 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         """
         return # osid.relationship.RelationshipNotificationSession
 
-    def get_relationship_notification_session_for_family(self, relationship_receiver, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship notification service for the given family.
+    def get_relationship_notification_session_for_family(self, relationship_receiver, family_id,
+        proxy):
+        """Gets the ``OsidSession`` associated with the relationship notification service for the
+            given family.
 
 
         :param relationship_receiver: the receiver
@@ -1189,8 +1207,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``relationship_receiver, family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if

@@ -152,8 +152,8 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
         """Matches an item with any objective.
 
 
-        :param match: ``true`` to match items with any learning objective, ``false`` to match items with no learning
-        objectives
+        :param match: ``true`` to match items with any learning objective, ``false`` to match items
+            with no learning objectives
         :type match: ``boolean``
 
 
@@ -255,7 +255,8 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
         """Matches an item with any question.
 
 
-        :param match: ``true`` to match items with any question, ``false`` to match items with no questions
+        :param match: ``true`` to match items with any question, ``false`` to match items with no
+            questions
         :type match: ``boolean``
 
 
@@ -357,7 +358,8 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
         """Matches an item with any answer.
 
 
-        :param match: ``true`` to match items with any answer, ``false`` to match items with no answers
+        :param match: ``true`` to match items with any answer, ``false`` to match items with no
+            answers
         :type match: ``boolean``
 
 
@@ -459,7 +461,8 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
         """Matches an item with any assessment.
 
 
-        :param match: ``true`` to match items with any assessment, ``false`` to match items with no assessments
+        :param match: ``true`` to match items with any assessment, ``false`` to match items with no
+            assessments
         :type match: ``boolean``
 
 
@@ -680,7 +683,8 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         """Matches an assessment that has any level assigned.
 
 
-        :param match: ``true`` to match assessments with any level, ``false`` to match assessments with no level
+        :param match: ``true`` to match assessments with any level, ``false`` to match assessments
+            with no level
         :type match: ``boolean``
 
 
@@ -782,7 +786,8 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         """Matches an assessment that has any rubric assessment assigned.
 
 
-        :param match: ``true`` to match assessments with any rubric, ``false`` to match assessments with no rubric
+        :param match: ``true`` to match assessments with any rubric, ``false`` to match assessments
+            with no rubric
         :type match: ``boolean``
 
 
@@ -884,7 +889,8 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         """Matches an assessment that has any item.
 
 
-        :param match: ``true`` to match assessments with any item, ``false`` to match assessments with no items
+        :param match: ``true`` to match assessments with any item, ``false`` to match assessments
+            with no items
         :type match: ``boolean``
 
 
@@ -986,7 +992,8 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         """Matches an assessment that has any offering.
 
 
-        :param match: ``true`` to match assessments with any offering, ``false`` to match assessments with no offerings
+        :param match: ``true`` to match assessments with any offering, ``false`` to match
+            assessments with no offerings
         :type match: ``boolean``
 
 
@@ -1088,8 +1095,8 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         """Matches an assessment that has any taken version.
 
 
-        :param match: ``true`` to match assessments with any taken assessments, ``false`` to match assessments with no
-        taken assessments
+        :param match: ``true`` to match assessments with any taken assessments, ``false`` to match
+            assessments with no taken assessments
         :type match: ``boolean``
 
 
@@ -1204,7 +1211,8 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     bank_terms = property(fdel=clear_bank_terms)
 
     def get_assessment_query_record(self, assessment_record_type):
-        """Gets the assessment query record corresponding to the given ``Assessment`` record ``Type``.
+        """Gets the assessment query record corresponding to the given ``Assessment`` record
+            ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -1396,7 +1404,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches an assessment offered that has any level assigned.
 
 
-        :param match: ``true`` to match offerings with any level, ``false`` to match offerings with no levsls
+        :param match: ``true`` to match offerings with any level, ``false`` to match offerings with
+            no levsls
         :type match: ``boolean``
 
 
@@ -1511,7 +1520,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches offerings that has any start time assigned.
 
 
-        :param match: ``true`` to match offerings with any start time, ``false`` to match offerings with no start time
+        :param match: ``true`` to match offerings with any start time, ``false`` to match offerings
+            with no start time
         :type match: ``boolean``
 
 
@@ -1563,7 +1573,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches offerings that have any deadline assigned.
 
 
-        :param match: ``true`` to match offerings with any deadline, ``false`` to match offerings with no deadline
+        :param match: ``true`` to match offerings with any deadline, ``false`` to match offerings
+            with no deadline
         :type match: ``boolean``
 
 
@@ -1615,7 +1626,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches offerings that have any duration assigned.
 
 
-        :param match: ``true`` to match offerings with any duration, ``false`` to match offerings with no duration
+        :param match: ``true`` to match offerings with any duration, ``false`` to match offerings
+            with no duration
         :type match: ``boolean``
 
 
@@ -1717,8 +1729,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches taken assessments that have any grade system assigned.
 
 
-        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade
-        system
+        :param match: ``true`` to match assessments with any grade system, ``false`` to match
+            assessments with no grade system
         :type match: ``boolean``
 
 
@@ -1820,8 +1832,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches taken assessments that have any grade system assigned.
 
 
-        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade
-        system
+        :param match: ``true`` to match assessments with any grade system, ``false`` to match
+            assessments with no grade system
         :type match: ``boolean``
 
 
@@ -1923,8 +1935,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches an assessment offered that has any rubric assessment assigned.
 
 
-        :param match: ``true`` to match assessments offered with any rubric, ``false`` to match assessments offered with
-        no rubric
+        :param match: ``true`` to match assessments offered with any rubric, ``false`` to match
+            assessments offered with no rubric
         :type match: ``boolean``
 
 
@@ -2026,8 +2038,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         """Matches offerings that have any taken assessment version.
 
 
-        :param match: ``true`` to match offerings with any taken assessment, ``false`` to match offerings with no
-        assessmen taken
+        :param match: ``true`` to match offerings with any taken assessment, ``false`` to match
+            offerings with no assessmen taken
         :type match: ``boolean``
 
 
@@ -2142,7 +2154,8 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     bank_terms = property(fdel=clear_bank_terms)
 
     def get_assessment_offered_query_record(self, assessment_offered_record_type):
-        """Gets the assessment offered query record corresponding to the given ``AssessmentOffered`` record ``Type``.
+        """Gets the assessment offered query record corresponding to the given ``AssessmentOffered``
+            record ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -2456,8 +2469,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches taken assessments taken that have begun.
 
 
-        :param match: ``true`` to match assessments taken started, ``false`` to match assessments taken that have not
-        begun
+        :param match: ``true`` to match assessments taken started, ``false`` to match assessments
+            taken that have not begun
         :type match: ``boolean``
 
 
@@ -2509,8 +2522,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches taken assessments taken that have completed.
 
 
-        :param match: ``true`` to match assessments taken completed, ``false`` to match assessments taken that are
-        incomplete
+        :param match: ``true`` to match assessments taken completed, ``false`` to match assessments
+            taken that are incomplete
         :type match: ``boolean``
 
 
@@ -2648,8 +2661,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches taken assessments that have any grade system assigned.
 
 
-        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade
-        system
+        :param match: ``true`` to match assessments with any grade system, ``false`` to match
+            assessments with no grade system
         :type match: ``boolean``
 
 
@@ -2700,7 +2713,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches taken assessments that have any score assigned.
 
 
-        :param match: ``true`` to match assessments with any score, ``false`` to match assessments with no score
+        :param match: ``true`` to match assessments with any score, ``false`` to match assessments
+            with no score
         :type match: ``boolean``
 
 
@@ -2802,7 +2816,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches taken assessments that have any grade assigned.
 
 
-        :param match: ``true`` to match assessments with any grade, ``false`` to match assessments with no grade
+        :param match: ``true`` to match assessments with any grade, ``false`` to match assessments
+            with no grade
         :type match: ``boolean``
 
 
@@ -2855,7 +2870,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches taken assessments that have any comments.
 
 
-        :param match: ``true`` to match assessments with any comments, ``false`` to match assessments with no comments
+        :param match: ``true`` to match assessments with any comments, ``false`` to match
+            assessments with no comments
         :type match: ``boolean``
 
 
@@ -2957,8 +2973,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         """Matches an assessment taken that has any rubric assessment assigned.
 
 
-        :param match: ``true`` to match assessments taken with any rubric, ``false`` to match assessments taken with no
-        rubric
+        :param match: ``true`` to match assessments taken with any rubric, ``false`` to match
+            assessments taken with no rubric
         :type match: ``boolean``
 
 
@@ -3073,7 +3089,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     bank_terms = property(fdel=clear_bank_terms)
 
     def get_assessment_taken_query_record(self, assessment_taken_record_type):
-        """Gets the assessment taken query record corresponding to the given ``AssessmentTaken`` record ``Type``.
+        """Gets the assessment taken query record corresponding to the given ``AssessmentTaken``
+            record ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -3096,9 +3113,8 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 class BankQuery(osid_queries.OsidCatalogQuery):
-    """This is the query for searching banks Each method specifies an ``AND`` term while multiple invocations of the
-        same
-        method produce a nested ``OR``."""
+    """This is the query for searching banks Each method specifies an ``AND`` term while multiple
+    invocations of the same method produce a nested ``OR``."""
 
     def match_item_id(self, item_id, match):
         """Sets the item ``Id`` for this query.
@@ -3174,7 +3190,8 @@ class BankQuery(osid_queries.OsidCatalogQuery):
         """Matches assessment banks that have any item assigned.
 
 
-        :param match: ``true`` to match banks with any item, ``false`` to match assessments with no item
+        :param match: ``true`` to match banks with any item, ``false`` to match assessments with no
+            item
         :type match: ``boolean``
 
 
@@ -3276,7 +3293,8 @@ class BankQuery(osid_queries.OsidCatalogQuery):
         """Matches assessment banks that have any assessment assigned.
 
 
-        :param match: ``true`` to match banks with any assessment, ``false`` to match banks with no assessment
+        :param match: ``true`` to match banks with any assessment, ``false`` to match banks with no
+            assessment
         :type match: ``boolean``
 
 
@@ -3378,7 +3396,8 @@ class BankQuery(osid_queries.OsidCatalogQuery):
         """Matches assessment banks that have any assessment offering assigned.
 
 
-        :param match: ``true`` to match banks with any assessment offering, ``false`` to match banks with no offering
+        :param match: ``true`` to match banks with any assessment offering, ``false`` to match banks
+            with no offering
         :type match: ``boolean``
 
 
@@ -3582,7 +3601,8 @@ class BankQuery(osid_queries.OsidCatalogQuery):
         """Matches a bank that has any descendant.
 
 
-        :param match: ``true`` to match banks with any descendant banks, ``false`` to match leaf banks
+        :param match: ``true`` to match banks with any descendant banks, ``false`` to match leaf
+            banks
         :type match: ``boolean``
 
 

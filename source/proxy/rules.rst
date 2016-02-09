@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.proxy.rules
+.. automodule:: dlkit.proxy.rules
 
 Rules
 =====
@@ -7,161 +9,56 @@ Rules
 Proxy
 -----
 
-.. py:class:: Proxy(abc_proxy_rules.Proxy, osid_rules.OsidResult)
-    A ``Proxy`` is used to transfer external information from an application server into an OSID
-    Provider.
+.. autoclass:: Proxy
+   :show-inheritance:
 
-    .. py:method:: has_authentication():
-        :noindex:
+   .. automethod:: Proxy.has_authentication
 
+   .. autoattribute:: Proxy.authentication
 
-    .. py:method:: get_authentication():
-        :noindex:
+   .. automethod:: Proxy.has_effective_agent
 
+   .. autoattribute:: Proxy.effective_agent_id
 
-    .. py:attribute:: authentication
-        :noindex:
+   .. autoattribute:: Proxy.effective_agent
 
+   .. automethod:: Proxy.has_effective_date
 
-    .. py:method:: has_effective_agent():
-        :noindex:
+   .. autoattribute:: Proxy.effective_date
 
+   .. autoattribute:: Proxy.effective_clock_rate
 
-    .. py:method:: get_effective_agent_id():
-        :noindex:
+   .. autoattribute:: Proxy.locale
 
+   .. automethod:: Proxy.has_format_type
 
-    .. py:attribute:: effective_agent_id
-        :noindex:
+   .. autoattribute:: Proxy.format_type
 
-
-    .. py:method:: get_effective_agent():
-        :noindex:
-
-
-    .. py:attribute:: effective_agent
-        :noindex:
-
-
-    .. py:method:: has_effective_date():
-        :noindex:
-
-
-    .. py:method:: get_effective_date():
-        :noindex:
-
-
-    .. py:attribute:: effective_date
-        :noindex:
-
-
-    .. py:method:: get_effective_clock_rate():
-        :noindex:
-
-
-    .. py:attribute:: effective_clock_rate
-        :noindex:
-
-
-    .. py:method:: get_locale():
-        :noindex:
-
-
-    .. py:attribute:: locale
-        :noindex:
-
-
-    .. py:method:: has_format_type():
-        :noindex:
-
-
-    .. py:method:: get_format_type():
-        :noindex:
-
-
-    .. py:attribute:: format_type
-        :noindex:
-
-
-    .. py:method:: get_proxy_record(proxy_record_type):
-        :noindex:
-
+   .. automethod:: Proxy.get_proxy_record
 
 Proxy Condition
 ---------------
 
-.. py:class:: ProxyCondition(abc_proxy_rules.ProxyCondition, osid_rules.OsidCondition)
-    A ``ProxyCondition`` is used to transfer external information into a proxy.
+.. autoclass:: ProxyCondition
+   :show-inheritance:
 
-    .. py:method:: set_effective_agent_id(agent_id):
-        :noindex:
+   .. autoattribute:: ProxyCondition.effective_agent_id
 
+   .. automethod:: ProxyCondition.set_effective_date
 
-    .. py:attribute:: effective_agent_id
-        :noindex:
+   .. autoattribute:: ProxyCondition.language_type
 
+   .. autoattribute:: ProxyCondition.script_type
 
-    .. py:method:: set_effective_date(date, rate):
-        :noindex:
+   .. autoattribute:: ProxyCondition.calendar_type
 
+   .. autoattribute:: ProxyCondition.time_type
 
-    .. py:method:: set_language_type(language_type):
-        :noindex:
+   .. autoattribute:: ProxyCondition.currency_type
 
+   .. autoattribute:: ProxyCondition.unit_system_type
 
-    .. py:attribute:: language_type
-        :noindex:
+   .. autoattribute:: ProxyCondition.format_type
 
-
-    .. py:method:: set_script_type(script_type):
-        :noindex:
-
-
-    .. py:attribute:: script_type
-        :noindex:
-
-
-    .. py:method:: set_calendar_type(calendar_type):
-        :noindex:
-
-
-    .. py:attribute:: calendar_type
-        :noindex:
-
-
-    .. py:method:: set_time_type(time_type):
-        :noindex:
-
-
-    .. py:attribute:: time_type
-        :noindex:
-
-
-    .. py:method:: set_currency_type(currency_type):
-        :noindex:
-
-
-    .. py:attribute:: currency_type
-        :noindex:
-
-
-    .. py:method:: set_unit_system_type(unit_system_type):
-        :noindex:
-
-
-    .. py:attribute:: unit_system_type
-        :noindex:
-
-
-    .. py:method:: set_format_type(format_type):
-        :noindex:
-
-
-    .. py:attribute:: format_type
-        :noindex:
-
-
-    .. py:method:: get_proxy_condition_record(proxy_condition_type):
-        :noindex:
-
+   .. automethod:: ProxyCondition.get_proxy_condition_record
 

@@ -65,9 +65,9 @@ class QuestionForm(osid_objects.OsidObjectForm):
 
 
 class QuestionList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``QuestionList`` provides a means for accessing ``Question`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``QuestionList`` provides a means for accessing ``Question``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (ql.hasNext()) { Question question =
@@ -92,8 +92,8 @@ class QuestionList(osid_objects.OsidList):
         """Gets the next ``Question`` in this list.
 
 
-        :return: the next ``Question`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Question`` is available before calling this method.
+        :return: the next ``Question`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Question`` is available before calling this method.
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -108,14 +108,15 @@ class QuestionList(osid_objects.OsidList):
     next_question = property(fget=get_next_question)
 
     def get_next_questions(self, n):
-        """Gets the next set of ``Question`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``Question`` elements in this list which must be less than or equal
+            to the number returned from ``available()``.
 
 
-        :param n: the number of ``Question`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``Question`` elements requested which should be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Question`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Question`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -189,9 +190,8 @@ class AnswerForm(osid_objects.OsidObjectForm):
 
 
 class AnswerList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AnswerList`` provides a means for accessing ``Answer`` elements sequentially either
-        one at a
-        time or many at a time.
+    """Like all ``OsidLists,``  ``AnswerList`` provides a means for accessing ``Answer`` elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (al.hasNext()) { Answer answer = al.getNextAnswer();
@@ -216,8 +216,8 @@ class AnswerList(osid_objects.OsidList):
         """Gets the next ``Answer`` in this list.
 
 
-        :return: the next ``Answer`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Answer`` is available before calling this method.
+        :return: the next ``Answer`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Answer`` is available before calling this method.
         :rtype: ``osid.assessment.Answer``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -232,13 +232,15 @@ class AnswerList(osid_objects.OsidList):
     next_answer = property(fget=get_next_answer)
 
     def get_next_answers(self, n):
-        """Gets the next set of ``Answer`` elements in this list which must be less than or equal to the number returned
-        from ``available()``.
+        """Gets the next set of ``Answer`` elements in this list which must be less than or equal to
+            the number returned from ``available()``.
 
 
-        :param n: the number of ``Answer`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``Answer`` elements requested which should be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Answer`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Answer`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.assessment.Answer``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -484,9 +486,9 @@ class ItemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm):
 
 
 class ItemList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ItemList`` provides a means for accessing ``Item`` elements sequentially either one at
-        a time
-        or many at a time.
+    """Like all ``OsidLists,``  ``ItemList`` provides a means for accessing ``Item`` elements
+        sequentially
+    either one at a time or many at a time.
 
 
     Examples: while (il.hasNext()) { Item item = il.getNextItem(); }
@@ -510,8 +512,8 @@ class ItemList(osid_objects.OsidList):
         """Gets the next ``Item`` in this list.
 
 
-        :return: the next ``Item`` in this list. The ``has_next()`` method should be used to test that a next ``Item``
-        is available before calling this method.
+        :return: the next ``Item`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Item`` is available before calling this method.
         :rtype: ``osid.assessment.Item``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -526,13 +528,15 @@ class ItemList(osid_objects.OsidList):
     next_item = property(fget=get_next_item)
 
     def get_next_items(self, n):
-        """Gets the next set of ``Item`` elements in this list which must be less than or equal to the number returned
-        from ``available()``.
+        """Gets the next set of ``Item`` elements in this list which must be less than or equal to
+            the number returned from ``available()``.
 
 
-        :param n: the number of ``Item`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``Item`` elements requested which should be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Item`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Item`` elements.The length of the array is less than or equal to the
+            number specified.
         :rtype: ``osid.assessment.Item``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -809,9 +813,9 @@ class AssessmentForm(osid_objects.OsidObjectForm):
 
 
 class AssessmentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentList`` provides a means for accessing ``Assessment`` elements sequentially
-        either
-        one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentList`` provides a means for accessing ``Assessment``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (al.hasNext()) { Assessment assessment =
@@ -836,8 +840,8 @@ class AssessmentList(osid_objects.OsidList):
         """Gets the next ``Assessment`` in this list.
 
 
-        :return: the next ``Assessment`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Assessment`` is available before calling this method.
+        :return: the next ``Assessment`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Assessment`` is available before calling this method.
         :rtype: ``osid.assessment.Assessment``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -852,14 +856,15 @@ class AssessmentList(osid_objects.OsidList):
     next_assessment = property(fget=get_next_assessment)
 
     def get_next_assessments(self, n):
-        """Gets the next set of ``Assessment`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``Assessment`` elements in this list which must be less than or
+            equal to the number returned from ``available()``.
 
 
-        :param n: the number of ``Assessment`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``Assessment`` elements requested which should be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Assessment`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Assessment`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.assessment.Assessment``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -956,7 +961,8 @@ class AssessmentOffered(osid_objects.OsidObject, osid_markers.Subjugateable):
         """Tests if the items or parts in this assessment are taken sequentially.
 
 
-        :return: ``true`` if the items are taken sequentially, ``false`` if the items can be skipped and revisited
+        :return: ``true`` if the items are taken sequentially, ``false`` if the items can be skipped
+            and revisited
         :rtype: ``boolean``
 
 
@@ -1237,7 +1243,8 @@ class AssessmentOffered(osid_objects.OsidObject, osid_markers.Subjugateable):
     rubric = property(fget=get_rubric)
 
     def get_assessment_offered_record(self, assessment_taken_record_type):
-        """Gets the assessment offered record corresponding to the given ``AssessmentOffered`` record ``Type``.
+        """Gets the assessment offered record corresponding to the given ``AssessmentOffered``
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -1348,8 +1355,8 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         """Sets the items sequential flag.
 
 
-        :param sequential: ``true`` if the items are taken sequentially, ``false`` if the items can be skipped and
-        revisited
+        :param sequential: ``true`` if the items are taken sequentially, ``false`` if the items can
+            be skipped and revisited
         :type sequential: ``boolean``
         :raise: ``InvalidArgument`` -- ``sequential`` is invalid
         :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
@@ -1402,7 +1409,8 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
         rules.
 
 
-        :param shuffle: ``true`` if the items are shuffled, ``false`` if the items appear in the designated order
+        :param shuffle: ``true`` if the items are shuffled, ``false`` if the items appear in the
+            designated order
         :type shuffle: ``boolean``
         :raise: ``InvalidArgument`` -- ``shuffle`` is invalid
         :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
@@ -1675,7 +1683,8 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
     grade_system = property(fset=set_grade_system, fdel=clear_grade_system)
 
     def get_assessment_offered_form_record(self, assessment_offered_record_type):
-        """Gets the ``AssessmentOfferedFormRecord`` corresponding to the given assessment record ``Type``.
+        """Gets the ``AssessmentOfferedFormRecord`` corresponding to the given assessment record
+            ``Type``.
 
 
         :param assessment_offered_record_type: the assessment offered record type
@@ -1695,8 +1704,8 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
 
 
 class AssessmentOfferedList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentOfferedList`` provides a means for accessing ``AssessmentTaken`` elements
-        sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentOfferedList`` provides a means for accessing
+    ``AssessmentTaken`` elements sequentially either one at a time or many at a time.
 
 
     Examples: while (aol.hasNext()) { AssessmentOffered assessment =
@@ -1721,8 +1730,8 @@ class AssessmentOfferedList(osid_objects.OsidList):
         """Gets the next ``AssessmentOffered`` in this list.
 
 
-        :return: the next ``AssessmentOffered`` in this list. The ``has_next()`` method should be used to test that a
-        next ``AssessmentOffered`` is available before calling this method.
+        :return: the next ``AssessmentOffered`` in this list. The ``has_next()`` method should be
+            used to test that a next ``AssessmentOffered`` is available before calling this method.
         :rtype: ``osid.assessment.AssessmentOffered``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1737,15 +1746,15 @@ class AssessmentOfferedList(osid_objects.OsidList):
     next_assessment_offered = property(fget=get_next_assessment_offered)
 
     def get_next_assessments_offered(self, n):
-        """Gets the next set of ``AssessmentOffered`` elements in this list which must be less than or equal to the
-        number returned from ``available()``.
+        """Gets the next set of ``AssessmentOffered`` elements in this list which must be less than
+            or equal to the number returned from ``available()``.
 
 
-        :param n: the number of ``AssessmentOffered`` elements requested which should be less than or equal to
-        ``available()``
+        :param n: the number of ``AssessmentOffered`` elements requested which should be less than
+            or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``AssessmentOffered`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``AssessmentOffered`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.assessment.AssessmentOffered``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2157,7 +2166,8 @@ class AssessmentTaken(osid_objects.OsidObject):
     rubric = property(fget=get_rubric)
 
     def get_assessment_taken_record(self, assessment_taken_record_type):
-        """Gets the assessment taken record corresponding to the given ``AssessmentTaken`` record ``Type``.
+        """Gets the assessment taken record corresponding to the given ``AssessmentTaken`` record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -2197,7 +2207,8 @@ class AssessmentTakenForm(osid_objects.OsidObjectForm):
     """
 
     def get_taker_metadata(self):
-        """Gets the metadata for a resource to manually set which resource will be taking the assessment.
+        """Gets the metadata for a resource to manually set which resource will be taking the
+            assessment.
 
 
         :return: metadata for the resource
@@ -2246,7 +2257,8 @@ class AssessmentTakenForm(osid_objects.OsidObjectForm):
     taker = property(fset=set_taker, fdel=clear_taker)
 
     def get_assessment_taken_form_record(self, assessment_taken_record_type):
-        """Gets the ``AssessmentTakenFormRecord`` corresponding to the given assessment taken record ``Type``.
+        """Gets the ``AssessmentTakenFormRecord`` corresponding to the given assessment taken record
+            ``Type``.
 
 
         :param assessment_taken_record_type: the assessment taken record type
@@ -2266,8 +2278,9 @@ class AssessmentTakenForm(osid_objects.OsidObjectForm):
 
 
 class AssessmentTakenList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentTakenList`` provides a means for accessing ``AssessmentTaken`` elements
-        sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentTakenList`` provides a means for accessing
+        ``AssessmentTaken``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (atl.hasNext()) { AssessmentTaken assessment =
@@ -2292,8 +2305,8 @@ class AssessmentTakenList(osid_objects.OsidList):
         """Gets the next ``AssessmentTaken`` in this list.
 
 
-        :return: the next ``AssessmentTaken`` in this list. The ``has_next()`` method should be used to test that a next
-        ``AssessmentTaken`` is available before calling this method.
+        :return: the next ``AssessmentTaken`` in this list. The ``has_next()`` method should be used
+            to test that a next ``AssessmentTaken`` is available before calling this method.
         :rtype: ``osid.assessment.AssessmentTaken``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2308,15 +2321,15 @@ class AssessmentTakenList(osid_objects.OsidList):
     next_assessment_taken = property(fget=get_next_assessment_taken)
 
     def get_next_assessments_taken(self, n):
-        """Gets the next set of ``AssessmentTaken`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``AssessmentTaken`` elements in this list which must be less than or
+            equal to the number returned from ``available()``.
 
 
-        :param n: the number of ``AssessmentTaken`` elements requested which should be less than or equal to
-        ``available()``
+        :param n: the number of ``AssessmentTaken`` elements requested which should be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``AssessmentTaken`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``AssessmentTaken`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.assessment.AssessmentTaken``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2412,7 +2425,8 @@ class AssessmentSection(osid_objects.OsidObject):
         """Tests if the items or parts in this section are taken sequentially.
 
 
-        :return: ``true`` if the items are taken sequentially, ``false`` if the items can be skipped and revisited
+        :return: ``true`` if the items are taken sequentially, ``false`` if the items can be skipped
+            and revisited
         :rtype: ``boolean``
 
 
@@ -2441,7 +2455,8 @@ class AssessmentSection(osid_objects.OsidObject):
         return # boolean
 
     def get_assessment_section_record(self, assessment_section_record_type):
-        """Gets the assessment section record corresponding to the given ``AssessmentSection`` record ``Type``.
+        """Gets the assessment section record corresponding to the given ``AssessmentSection``
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -2469,8 +2484,8 @@ class AssessmentSection(osid_objects.OsidObject):
 
 
 class AssessmentSectionList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentSectionList`` provides a means for accessing ``AssessmentSection`` elements
-        sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentSectionList`` provides a means for accessing
+    ``AssessmentSection`` elements sequentially either one at a time or many at a time.
 
 
     Examples: while (asl.hasNext()) { AssessmentSection section =
@@ -2495,8 +2510,8 @@ class AssessmentSectionList(osid_objects.OsidList):
         """Gets the next ``AssessmentSection`` in this list.
 
 
-        :return: the next ``AssessmentSection`` in this list. The ``has_next()`` method should be used to test that a
-        next ``AssessmentSection`` is available before calling this method.
+        :return: the next ``AssessmentSection`` in this list. The ``has_next()`` method should be
+            used to test that a next ``AssessmentSection`` is available before calling this method.
         :rtype: ``osid.assessment.AssessmentSection``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2511,15 +2526,15 @@ class AssessmentSectionList(osid_objects.OsidList):
     next_assessment_section = property(fget=get_next_assessment_section)
 
     def get_next_assessment_sections(self, n):
-        """Gets the next set of ``AssessmentSection`` elements in this list which must be less than or equal to the
-        number returned from ``available()``.
+        """Gets the next set of ``AssessmentSection`` elements in this list which must be less than
+            or equal to the number returned from ``available()``.
 
 
-        :param n: the number of ``AssessmentSection`` elements requested which should be less than or equal to
-        ``available()``
+        :param n: the number of ``AssessmentSection`` elements requested which should be less than
+            or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``AssessmentSection`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``AssessmentSection`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.assessment.AssessmentSection``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2596,9 +2611,9 @@ class BankForm(osid_objects.OsidCatalogForm):
 
 
 class BankList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BankList`` provides a means for accessing ``Bank`` elements sequentially either one at
-        a time
-        or many at a time.
+    """Like all ``OsidLists,``  ``BankList`` provides a means for accessing ``Bank`` elements
+        sequentially
+    either one at a time or many at a time.
 
 
     Examples: while (bl.hasNext()) { Bank bank = bl.getNextBank(); }
@@ -2622,8 +2637,8 @@ class BankList(osid_objects.OsidList):
         """Gets the next ``Bank`` in this list.
 
 
-        :return: the next ``Bank`` in this list. The ``has_next()`` method should be used to test that a next ``Bank``
-        is available before calling this method.
+        :return: the next ``Bank`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Bank`` is available before calling this method.
         :rtype: ``osid.assessment.Bank``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2638,13 +2653,15 @@ class BankList(osid_objects.OsidList):
     next_bank = property(fget=get_next_bank)
 
     def get_next_banks(self, n):
-        """Gets the next set of ``Bank`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Bank`` elements in this list which must be less than or equal to
+            the return from ``available()``.
 
 
-        :param n: the number of ``Bank`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Bank`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Bank`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Bank`` elements.The length of the array is less than or equal to the
+            number specified.
         :rtype: ``osid.assessment.Bank``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2724,9 +2741,9 @@ class BankNode(osid_objects.OsidNode):
 
 
 class BankNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BankNodeList`` provides a means for accessing ``BankNode`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``BankNodeList`` provides a means for accessing ``BankNode``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (bnl.hasNext()) { BankNode node =
@@ -2751,8 +2768,8 @@ class BankNodeList(osid_objects.OsidList):
         """Gets the next ``BankNode`` in this list.
 
 
-        :return: the next ``BankNode`` in this list. The ``has_next()`` method should be used to test that a next
-        ``BankNode`` is available before calling this method.
+        :return: the next ``BankNode`` in this list. The ``has_next()`` method should be used to
+            test that a next ``BankNode`` is available before calling this method.
         :rtype: ``osid.assessment.BankNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2767,14 +2784,15 @@ class BankNodeList(osid_objects.OsidList):
     next_bank_node = property(fget=get_next_bank_node)
 
     def get_next_bank_nodes(self, n):
-        """Gets the next set of ``BankNode`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``BankNode`` elements in this list which must be less than or equal
+            to the return from ``available()``.
 
 
-        :param n: the number of ``BankNode`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``BankNode`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``BanklNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``BanklNode`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.assessment.BankNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2788,9 +2806,9 @@ class BankNodeList(osid_objects.OsidList):
 
 
 class ResponseList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ResponseList`` provides a means for accessing ``Response`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``ResponseList`` provides a means for accessing ``Response``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (rl.hasNext()) { Response response =
@@ -2815,8 +2833,8 @@ class ResponseList(osid_objects.OsidList):
         """Gets the next ``Response`` in this list.
 
 
-        :return: the next ``Response`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Response`` is available before calling this method.
+        :return: the next ``Response`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Response`` is available before calling this method.
         :rtype: ``osid.assessment.Response``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2831,14 +2849,15 @@ class ResponseList(osid_objects.OsidList):
     next_response = property(fget=get_next_response)
 
     def get_next_responses(self, n):
-        """Gets the next set of ``Response`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Response`` elements in this list which must be less than or equal
+            to the return from ``available()``.
 
 
-        :param n: the number of ``Response`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Response`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Response`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Response`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.assessment.Response``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

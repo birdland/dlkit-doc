@@ -3,7 +3,8 @@ from ..osid import rules as osid_rules
 
 
 class Proxy(osid_rules.OsidResult):
-    """A ``Proxy`` is used to transfer external information from an application server into an OSID Provider."""
+    """A ``Proxy`` is used to transfer external information from an application server into an OSID
+    Provider."""
 
     def has_authentication(self):
         """Tests if an authentication is available.
@@ -243,7 +244,8 @@ class ProxyCondition(osid_rules.OsidCondition):
 
         :param date: a date
         :type date: ``timestamp``
-        :param rate: the rate at which the clock should tick from the given effective date. 0 is a clock that is fixed
+        :param rate: the rate at which the clock should tick from the given effective date. 0 is a
+            clock that is fixed
         :type rate: ``decimal``
         :raise: ``NullArgument`` -- ``date`` is ``null``
 

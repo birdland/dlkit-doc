@@ -6,11 +6,8 @@ Osid
 
    summary
    service_managers
-   managers
-   sessions
+   no_catalog
    objects
-   search_orders
-   searches
    markers
    queries
    metadata

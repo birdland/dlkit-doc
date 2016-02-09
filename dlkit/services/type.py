@@ -184,7 +184,8 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def __init__(self):
         import settings
         import importlib
-        provider_module = importlib.import_module(settings.TYPE_PROVIDER_MANAGER_PATH, settings.ANCHOR_PATH)
+        provider_module = importlib.import_module(settings.TYPE_PROVIDER_MANAGER_PATH,
+            settings.ANCHOR_PATH)
         provider_manager_class = getattr(provider_module, 'TypeManager')
         self._provider_manager = provider_manager_class()
         self._provider_sessions = dict()

@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.grading.queries
+.. automodule:: dlkit.grading.queries
 
 Queries
 =======
@@ -7,1220 +9,414 @@ Queries
 Grade Query
 -----------
 
-.. py:class:: GradeQuery(abc_grading_queries.GradeQuery, osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery)
-    This is the query for searching gradings.
+.. autoclass:: GradeQuery
+   :show-inheritance:
 
+   .. automethod:: GradeQuery.match_grade_system_id
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: GradeQuery.grade_system_id_terms
 
+   .. automethod:: GradeQuery.supports_grade_system_query
 
+   .. autoattribute:: GradeQuery.grade_system_query
 
+   .. autoattribute:: GradeQuery.grade_system_terms
 
+   .. automethod:: GradeQuery.match_input_score_start_range
 
-    .. py:method:: match_grade_system_id(grade_system_id, match):
-        :noindex:
+   .. autoattribute:: GradeQuery.input_score_start_range_terms
 
+   .. automethod:: GradeQuery.match_input_score_end_range
 
-    .. py:method:: clear_grade_system_id_terms():
-        :noindex:
+   .. autoattribute:: GradeQuery.input_score_end_range_terms
 
+   .. automethod:: GradeQuery.match_input_score
 
-    .. py:attribute:: grade_system_id_terms
-        :noindex:
+   .. autoattribute:: GradeQuery.input_score_terms
 
+   .. automethod:: GradeQuery.match_output_score
 
-    .. py:method:: supports_grade_system_query():
-        :noindex:
+   .. autoattribute:: GradeQuery.output_score_terms
 
+   .. automethod:: GradeQuery.match_grade_entry_id
 
-    .. py:method:: get_grade_system_query():
-        :noindex:
+   .. autoattribute:: GradeQuery.grade_entry_id_terms
 
+   .. automethod:: GradeQuery.supports_grade_entry_query
 
-    .. py:attribute:: grade_system_query
-        :noindex:
+   .. autoattribute:: GradeQuery.grade_entry_query
 
+   .. automethod:: GradeQuery.match_any_grade_entry
 
-    .. py:method:: clear_grade_system_terms():
-        :noindex:
+   .. autoattribute:: GradeQuery.grade_entry_terms
 
+   .. automethod:: GradeQuery.match_gradebook_id
 
-    .. py:attribute:: grade_system_terms
-        :noindex:
+   .. autoattribute:: GradeQuery.gradebook_id_terms
 
+   .. automethod:: GradeQuery.supports_gradebook_query
 
-    .. py:method:: match_input_score_start_range(start, end, match):
-        :noindex:
+   .. autoattribute:: GradeQuery.gradebook_query
 
+   .. autoattribute:: GradeQuery.gradebook_terms
 
-    .. py:method:: clear_input_score_start_range_terms():
-        :noindex:
-
-
-    .. py:attribute:: input_score_start_range_terms
-        :noindex:
-
-
-    .. py:method:: match_input_score_end_range(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_input_score_end_range_terms():
-        :noindex:
-
-
-    .. py:attribute:: input_score_end_range_terms
-        :noindex:
-
-
-    .. py:method:: match_input_score(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_input_score_terms():
-        :noindex:
-
-
-    .. py:attribute:: input_score_terms
-        :noindex:
-
-
-    .. py:method:: match_output_score(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_output_score_terms():
-        :noindex:
-
-
-    .. py:attribute:: output_score_terms
-        :noindex:
-
-
-    .. py:method:: match_grade_entry_id(grade_entry_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_entry_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_grade_entry_query():
-        :noindex:
-
-
-    .. py:method:: get_grade_entry_query():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_query
-        :noindex:
-
-
-    .. py:method:: match_any_grade_entry(match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_entry_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_query
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_terms
-        :noindex:
-
-
-    .. py:method:: get_grade_query_record(grade_record_type):
-        :noindex:
-
+   .. automethod:: GradeQuery.get_grade_query_record
 
 Grade System Query
 ------------------
 
-.. py:class:: GradeSystemQuery(abc_grading_queries.GradeSystemQuery, osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery)
-    This is the query for searching grade systems.
+.. autoclass:: GradeSystemQuery
+   :show-inheritance:
 
+   .. automethod:: GradeSystemQuery.match_based_on_grades
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: GradeSystemQuery.based_on_grades_terms
 
+   .. automethod:: GradeSystemQuery.match_grade_id
 
+   .. autoattribute:: GradeSystemQuery.grade_id_terms
 
+   .. automethod:: GradeSystemQuery.supports_grade_query
 
+   .. autoattribute:: GradeSystemQuery.grade_query
 
-    .. py:method:: match_based_on_grades(match):
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_any_grade
 
+   .. autoattribute:: GradeSystemQuery.grade_terms
 
-    .. py:method:: clear_based_on_grades_terms():
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_lowest_numeric_score
 
+   .. autoattribute:: GradeSystemQuery.lowest_numeric_score_terms
 
-    .. py:attribute:: based_on_grades_terms
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_numeric_score_increment
 
+   .. autoattribute:: GradeSystemQuery.numeric_score_increment_terms
 
-    .. py:method:: match_grade_id(grade_id, match):
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_highest_numeric_score
 
+   .. autoattribute:: GradeSystemQuery.highest_numeric_score_terms
 
-    .. py:method:: clear_grade_id_terms():
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_gradebook_column_id
 
+   .. autoattribute:: GradeSystemQuery.gradebook_column_id_terms
 
-    .. py:attribute:: grade_id_terms
-        :noindex:
+   .. automethod:: GradeSystemQuery.supports_gradebook_column_query
 
+   .. autoattribute:: GradeSystemQuery.gradebook_column_query
 
-    .. py:method:: supports_grade_query():
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_any_gradebook_column
 
+   .. autoattribute:: GradeSystemQuery.gradebook_column_terms
 
-    .. py:method:: get_grade_query():
-        :noindex:
+   .. automethod:: GradeSystemQuery.match_gradebook_id
 
+   .. autoattribute:: GradeSystemQuery.gradebook_id_terms
 
-    .. py:attribute:: grade_query
-        :noindex:
+   .. automethod:: GradeSystemQuery.supports_gradebook_query
 
+   .. autoattribute:: GradeSystemQuery.gradebook_query
 
-    .. py:method:: match_any_grade(match):
-        :noindex:
+   .. autoattribute:: GradeSystemQuery.gradebook_terms
 
-
-    .. py:method:: clear_grade_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_terms
-        :noindex:
-
-
-    .. py:method:: match_lowest_numeric_score(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_lowest_numeric_score_terms():
-        :noindex:
-
-
-    .. py:attribute:: lowest_numeric_score_terms
-        :noindex:
-
-
-    .. py:method:: match_numeric_score_increment(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_numeric_score_increment_terms():
-        :noindex:
-
-
-    .. py:attribute:: numeric_score_increment_terms
-        :noindex:
-
-
-    .. py:method:: match_highest_numeric_score(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_highest_numeric_score_terms():
-        :noindex:
-
-
-    .. py:attribute:: highest_numeric_score_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_column_id(gradebook_column_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_column_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_column_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_column_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_query
-        :noindex:
-
-
-    .. py:method:: match_any_gradebook_column(match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_column_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_query
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_terms
-        :noindex:
-
-
-    .. py:method:: get_grade_system_query_record(grade_system_record_type):
-        :noindex:
-
+   .. automethod:: GradeSystemQuery.get_grade_system_query_record
 
 Grade Entry Query
 -----------------
 
-.. py:class:: GradeEntryQuery(abc_grading_queries.GradeEntryQuery, osid_queries.OsidRelationshipQuery)
-    This is the query for searching grade entries.
+.. autoclass:: GradeEntryQuery
+   :show-inheritance:
 
+   .. automethod:: GradeEntryQuery.match_gradebook_column_id
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: GradeEntryQuery.gradebook_column_id_terms
 
+   .. automethod:: GradeEntryQuery.supports_gradebook_column_query
 
+   .. autoattribute:: GradeEntryQuery.gradebook_column_query
 
+   .. autoattribute:: GradeEntryQuery.gradebook_column_terms
 
+   .. automethod:: GradeEntryQuery.match_key_resource_id
 
-    .. py:method:: match_gradebook_column_id(gradebook_column_id, match):
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.key_resource_id_terms
 
+   .. automethod:: GradeEntryQuery.supports_key_resource_query
 
-    .. py:method:: clear_gradebook_column_id_terms():
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.key_resource_query
 
+   .. automethod:: GradeEntryQuery.match_any_key_resource
 
-    .. py:attribute:: gradebook_column_id_terms
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.key_resource_terms
 
+   .. automethod:: GradeEntryQuery.match_derived
 
-    .. py:method:: supports_gradebook_column_query():
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.derived_terms
 
+   .. automethod:: GradeEntryQuery.match_overridden_grade_entry_id
 
-    .. py:method:: get_gradebook_column_query():
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.overridden_grade_entry_id_terms
 
+   .. automethod:: GradeEntryQuery.supports_overridden_grade_entry_query
 
-    .. py:attribute:: gradebook_column_query
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.overridden_grade_entry_query
 
+   .. automethod:: GradeEntryQuery.match_any_overridden_grade_entry
 
-    .. py:method:: clear_gradebook_column_terms():
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.overridden_grade_entry_terms
 
+   .. automethod:: GradeEntryQuery.match_ignored_for_calculations
 
-    .. py:attribute:: gradebook_column_terms
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.ignored_for_calculations_terms
 
+   .. automethod:: GradeEntryQuery.match_grade_id
 
-    .. py:method:: match_key_resource_id(resource_id, match):
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.grade_id_terms
 
+   .. automethod:: GradeEntryQuery.supports_grade_query
 
-    .. py:method:: clear_key_resource_id_terms():
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.grade_query
 
+   .. automethod:: GradeEntryQuery.match_any_grade
 
-    .. py:attribute:: key_resource_id_terms
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.grade_terms
 
+   .. automethod:: GradeEntryQuery.match_score
 
-    .. py:method:: supports_key_resource_query():
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_any_score
 
+   .. autoattribute:: GradeEntryQuery.score_terms
 
-    .. py:method:: get_key_resource_query():
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_time_graded
 
+   .. autoattribute:: GradeEntryQuery.time_graded_terms
 
-    .. py:attribute:: key_resource_query
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_grader_id
 
+   .. autoattribute:: GradeEntryQuery.grader_id_terms
 
-    .. py:method:: match_any_key_resource(match):
-        :noindex:
+   .. automethod:: GradeEntryQuery.supports_grader_query
 
+   .. autoattribute:: GradeEntryQuery.grader_query
 
-    .. py:method:: clear_key_resource_terms():
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_any_grader
 
+   .. autoattribute:: GradeEntryQuery.grader_terms
 
-    .. py:attribute:: key_resource_terms
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_grading_agent_id
 
+   .. autoattribute:: GradeEntryQuery.grading_agent_id_terms
 
-    .. py:method:: match_derived(match):
-        :noindex:
+   .. automethod:: GradeEntryQuery.supports_grading_agent_query
 
+   .. autoattribute:: GradeEntryQuery.grading_agent_query
 
-    .. py:method:: clear_derived_terms():
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_any_grading_agent
 
+   .. autoattribute:: GradeEntryQuery.grading_agent_terms
 
-    .. py:attribute:: derived_terms
-        :noindex:
+   .. automethod:: GradeEntryQuery.match_gradebook_id
 
+   .. autoattribute:: GradeEntryQuery.gradebook_id_terms
 
-    .. py:method:: match_overridden_grade_entry_id(grade_entry_id, match):
-        :noindex:
+   .. automethod:: GradeEntryQuery.supports_gradebook_query
 
+   .. autoattribute:: GradeEntryQuery.gradebook_query
 
-    .. py:method:: clear_overridden_grade_entry_id_terms():
-        :noindex:
+   .. autoattribute:: GradeEntryQuery.gradebook_terms
 
-
-    .. py:attribute:: overridden_grade_entry_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_overridden_grade_entry_query():
-        :noindex:
-
-
-    .. py:method:: get_overridden_grade_entry_query():
-        :noindex:
-
-
-    .. py:attribute:: overridden_grade_entry_query
-        :noindex:
-
-
-    .. py:method:: match_any_overridden_grade_entry(match):
-        :noindex:
-
-
-    .. py:method:: clear_overridden_grade_entry_terms():
-        :noindex:
-
-
-    .. py:attribute:: overridden_grade_entry_terms
-        :noindex:
-
-
-    .. py:method:: match_ignored_for_calculations(match):
-        :noindex:
-
-
-    .. py:method:: clear_ignored_for_calculations_terms():
-        :noindex:
-
-
-    .. py:attribute:: ignored_for_calculations_terms
-        :noindex:
-
-
-    .. py:method:: match_grade_id(grade_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_grade_query():
-        :noindex:
-
-
-    .. py:method:: get_grade_query():
-        :noindex:
-
-
-    .. py:attribute:: grade_query
-        :noindex:
-
-
-    .. py:method:: match_any_grade(match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_terms
-        :noindex:
-
-
-    .. py:method:: match_score(start, end, match):
-        :noindex:
-
-
-    .. py:method:: match_any_score(match):
-        :noindex:
-
-
-    .. py:method:: clear_score_terms():
-        :noindex:
-
-
-    .. py:attribute:: score_terms
-        :noindex:
-
-
-    .. py:method:: match_time_graded(start, end, match):
-        :noindex:
-
-
-    .. py:method:: clear_time_graded_terms():
-        :noindex:
-
-
-    .. py:attribute:: time_graded_terms
-        :noindex:
-
-
-    .. py:method:: match_grader_id(resource_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_grader_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: grader_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_grader_query():
-        :noindex:
-
-
-    .. py:method:: get_grader_query():
-        :noindex:
-
-
-    .. py:attribute:: grader_query
-        :noindex:
-
-
-    .. py:method:: match_any_grader(match):
-        :noindex:
-
-
-    .. py:method:: clear_grader_terms():
-        :noindex:
-
-
-    .. py:attribute:: grader_terms
-        :noindex:
-
-
-    .. py:method:: match_grading_agent_id(agent_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_grading_agent_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: grading_agent_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_grading_agent_query():
-        :noindex:
-
-
-    .. py:method:: get_grading_agent_query():
-        :noindex:
-
-
-    .. py:attribute:: grading_agent_query
-        :noindex:
-
-
-    .. py:method:: match_any_grading_agent(match):
-        :noindex:
-
-
-    .. py:method:: clear_grading_agent_terms():
-        :noindex:
-
-
-    .. py:attribute:: grading_agent_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_query
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_terms
-        :noindex:
-
-
-    .. py:method:: get_grade_entry_query_record(grade_entry_record_type):
-        :noindex:
-
+   .. automethod:: GradeEntryQuery.get_grade_entry_query_record
 
 Gradebook Column Query
 ----------------------
 
-.. py:class:: GradebookColumnQuery(abc_grading_queries.GradebookColumnQuery, osid_queries.OsidObjectQuery)
-    This is the query for searching gradings.
+.. autoclass:: GradebookColumnQuery
+   :show-inheritance:
 
+   .. automethod:: GradebookColumnQuery.match_grade_system_id
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: GradebookColumnQuery.grade_system_id_terms
 
+   .. automethod:: GradebookColumnQuery.supports_grade_system_query
 
+   .. autoattribute:: GradebookColumnQuery.grade_system_query
 
+   .. automethod:: GradebookColumnQuery.match_any_grade_system
 
+   .. autoattribute:: GradebookColumnQuery.grade_system_terms
 
-    .. py:method:: match_grade_system_id(grade_system_id, match):
-        :noindex:
+   .. automethod:: GradebookColumnQuery.match_grade_entry_id
 
+   .. autoattribute:: GradebookColumnQuery.grade_entry_id_terms
 
-    .. py:method:: clear_grade_system_id_terms():
-        :noindex:
+   .. automethod:: GradebookColumnQuery.supports_grade_entry_query
 
+   .. autoattribute:: GradebookColumnQuery.grade_entry_query
 
-    .. py:attribute:: grade_system_id_terms
-        :noindex:
+   .. automethod:: GradebookColumnQuery.match_any_grade_entry
 
+   .. autoattribute:: GradebookColumnQuery.grade_entry_terms
 
-    .. py:method:: supports_grade_system_query():
-        :noindex:
+   .. automethod:: GradebookColumnQuery.supports_gradebook_column_summary_query
 
+   .. autoattribute:: GradebookColumnQuery.gradebook_column_summary_query
 
-    .. py:method:: get_grade_system_query():
-        :noindex:
+   .. autoattribute:: GradebookColumnQuery.gradebook_column_summary_terms
 
+   .. automethod:: GradebookColumnQuery.match_gradebook_id
 
-    .. py:attribute:: grade_system_query
-        :noindex:
+   .. autoattribute:: GradebookColumnQuery.gradebook_id_terms
 
+   .. automethod:: GradebookColumnQuery.supports_gradebook_query
 
-    .. py:method:: match_any_grade_system(match):
-        :noindex:
+   .. autoattribute:: GradebookColumnQuery.gradebook_query
 
+   .. autoattribute:: GradebookColumnQuery.gradebook_terms
 
-    .. py:method:: clear_grade_system_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_system_terms
-        :noindex:
-
-
-    .. py:method:: match_grade_entry_id(grade_entry_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_entry_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_grade_entry_query():
-        :noindex:
-
-
-    .. py:method:: get_grade_entry_query():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_query
-        :noindex:
-
-
-    .. py:method:: match_any_grade_entry(match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_entry_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_column_summary_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_column_summary_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_summary_query
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_column_summary_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_summary_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_query
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_terms
-        :noindex:
-
-
-    .. py:method:: get_gradebook_column_query_record(gradebook_column_record_type):
-        :noindex:
-
+   .. automethod:: GradebookColumnQuery.get_gradebook_column_query_record
 
 Gradebook Column Summary Query
 ------------------------------
 
-.. py:class:: GradebookColumnSummaryQuery(abc_grading_queries.GradebookColumnSummaryQuery, osid_queries.OsidRuleQuery)
-    This is the query for searching gradebook column summaries.
+.. autoclass:: GradebookColumnSummaryQuery
+   :show-inheritance:
 
+   .. automethod:: GradebookColumnSummaryQuery.match_gradebook_column_id
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: GradebookColumnSummaryQuery.gradebook_column_id_terms
 
+   .. automethod:: GradebookColumnSummaryQuery.supports_gradebook_column_query
 
+   .. autoattribute:: GradebookColumnSummaryQuery.gradebook_column_query
 
+   .. automethod:: GradebookColumnSummaryQuery.match_any_gradebook_column
 
+   .. autoattribute:: GradebookColumnSummaryQuery.gradebook_column_terms
 
-    .. py:method:: match_gradebook_column_id(gradebook_column_id, match):
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_mean
 
+   .. autoattribute:: GradebookColumnSummaryQuery.mean_terms
 
-    .. py:method:: clear_gradebook_column_id_terms():
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_minimum_mean
 
+   .. autoattribute:: GradebookColumnSummaryQuery.minimum_mean_terms
 
-    .. py:attribute:: gradebook_column_id_terms
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_median
 
+   .. autoattribute:: GradebookColumnSummaryQuery.median_terms
 
-    .. py:method:: supports_gradebook_column_query():
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_minimum_median
 
+   .. autoattribute:: GradebookColumnSummaryQuery.minimum_median_terms
 
-    .. py:method:: get_gradebook_column_query():
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_mode
 
+   .. autoattribute:: GradebookColumnSummaryQuery.mode_terms
 
-    .. py:attribute:: gradebook_column_query
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_minimum_mode
 
+   .. autoattribute:: GradebookColumnSummaryQuery.minimum_mode_terms
 
-    .. py:method:: match_any_gradebook_column(match):
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_rms
 
+   .. autoattribute:: GradebookColumnSummaryQuery.rms_terms
 
-    .. py:method:: clear_gradebook_column_terms():
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_minimum_rms
 
+   .. autoattribute:: GradebookColumnSummaryQuery.minimum_rms_terms
 
-    .. py:attribute:: gradebook_column_terms
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_standard_deviation
 
+   .. autoattribute:: GradebookColumnSummaryQuery.standard_deviation_terms
 
-    .. py:method:: match_mean(low, high, match):
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_minimum_standard_deviation
 
+   .. autoattribute:: GradebookColumnSummaryQuery.minimum_standard_deviation_terms
 
-    .. py:method:: clear_mean_terms():
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_sum
 
+   .. autoattribute:: GradebookColumnSummaryQuery.sum_terms
 
-    .. py:attribute:: mean_terms
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_minimum_sum
 
+   .. autoattribute:: GradebookColumnSummaryQuery.minimum_sum_terms
 
-    .. py:method:: match_minimum_mean(value, match):
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.match_gradebook_id
 
+   .. autoattribute:: GradebookColumnSummaryQuery.gradebook_id_terms
 
-    .. py:method:: clear_minimum_mean_terms():
-        :noindex:
+   .. automethod:: GradebookColumnSummaryQuery.supports_gradebook_query
 
+   .. autoattribute:: GradebookColumnSummaryQuery.gradebook_query
 
-    .. py:attribute:: minimum_mean_terms
-        :noindex:
+   .. autoattribute:: GradebookColumnSummaryQuery.gradebook_terms
 
-
-    .. py:method:: match_median(low, high, match):
-        :noindex:
-
-
-    .. py:method:: clear_median_terms():
-        :noindex:
-
-
-    .. py:attribute:: median_terms
-        :noindex:
-
-
-    .. py:method:: match_minimum_median(value, match):
-        :noindex:
-
-
-    .. py:method:: clear_minimum_median_terms():
-        :noindex:
-
-
-    .. py:attribute:: minimum_median_terms
-        :noindex:
-
-
-    .. py:method:: match_mode(low, high, match):
-        :noindex:
-
-
-    .. py:method:: clear_mode_terms():
-        :noindex:
-
-
-    .. py:attribute:: mode_terms
-        :noindex:
-
-
-    .. py:method:: match_minimum_mode(value, match):
-        :noindex:
-
-
-    .. py:method:: clear_minimum_mode_terms():
-        :noindex:
-
-
-    .. py:attribute:: minimum_mode_terms
-        :noindex:
-
-
-    .. py:method:: match_rms(low, high, match):
-        :noindex:
-
-
-    .. py:method:: clear_rms_terms():
-        :noindex:
-
-
-    .. py:attribute:: rms_terms
-        :noindex:
-
-
-    .. py:method:: match_minimum_rms(value, match):
-        :noindex:
-
-
-    .. py:method:: clear_minimum_rms_terms():
-        :noindex:
-
-
-    .. py:attribute:: minimum_rms_terms
-        :noindex:
-
-
-    .. py:method:: match_standard_deviation(low, high, match):
-        :noindex:
-
-
-    .. py:method:: clear_standard_deviation_terms():
-        :noindex:
-
-
-    .. py:attribute:: standard_deviation_terms
-        :noindex:
-
-
-    .. py:method:: match_minimum_standard_deviation(value, match):
-        :noindex:
-
-
-    .. py:method:: clear_minimum_standard_deviation_terms():
-        :noindex:
-
-
-    .. py:attribute:: minimum_standard_deviation_terms
-        :noindex:
-
-
-    .. py:method:: match_sum(low, high, match):
-        :noindex:
-
-
-    .. py:method:: clear_sum_terms():
-        :noindex:
-
-
-    .. py:attribute:: sum_terms
-        :noindex:
-
-
-    .. py:method:: match_minimum_sum(value, match):
-        :noindex:
-
-
-    .. py:method:: clear_minimum_sum_terms():
-        :noindex:
-
-
-    .. py:attribute:: minimum_sum_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_query
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_terms
-        :noindex:
-
-
-    .. py:method:: get_gradebook_column_summary_query_record(gradebook_column_summary_record_type):
-        :noindex:
-
+   .. automethod:: GradebookColumnSummaryQuery.get_gradebook_column_summary_query_record
 
 Gradebook Query
 ---------------
 
-.. py:class:: GradebookQuery(abc_grading_queries.GradebookQuery, osid_queries.OsidCatalogQuery)
-    This is the query for searching gradebooks.
+.. autoclass:: GradebookQuery
+   :show-inheritance:
 
+   .. automethod:: GradebookQuery.match_grade_system_id
 
-    Each method specifies an ``AND`` term while multiple invocations of
-    the same method produce a nested ``OR``.
+   .. autoattribute:: GradebookQuery.grade_system_id_terms
 
+   .. automethod:: GradebookQuery.supports_grade_system_query
 
+   .. autoattribute:: GradebookQuery.grade_system_query
 
+   .. automethod:: GradebookQuery.match_any_grade_system
 
+   .. autoattribute:: GradebookQuery.grade_system_terms
 
-    .. py:method:: match_grade_system_id(grade_system_id, match):
-        :noindex:
+   .. automethod:: GradebookQuery.match_grade_entry_id
 
+   .. autoattribute:: GradebookQuery.grade_entry_id_terms
 
-    .. py:method:: clear_grade_system_id_terms():
-        :noindex:
+   .. automethod:: GradebookQuery.supports_grade_entry_query
 
+   .. autoattribute:: GradebookQuery.grade_entry_query
 
-    .. py:attribute:: grade_system_id_terms
-        :noindex:
+   .. automethod:: GradebookQuery.match_any_grade_entry
 
+   .. autoattribute:: GradebookQuery.grade_entry_terms
 
-    .. py:method:: supports_grade_system_query():
-        :noindex:
+   .. automethod:: GradebookQuery.match_gradebook_column_id
 
+   .. autoattribute:: GradebookQuery.gradebook_column_id_terms
 
-    .. py:method:: get_grade_system_query():
-        :noindex:
+   .. automethod:: GradebookQuery.supports_gradebook_column_query
 
+   .. autoattribute:: GradebookQuery.gradebook_column_query
 
-    .. py:attribute:: grade_system_query
-        :noindex:
+   .. automethod:: GradebookQuery.match_any_gradebook_column
 
+   .. autoattribute:: GradebookQuery.gradebook_column_terms
 
-    .. py:method:: match_any_grade_system(match):
-        :noindex:
+   .. automethod:: GradebookQuery.match_ancestor_gradebook_id
 
+   .. autoattribute:: GradebookQuery.ancestor_gradebook_id_terms
 
-    .. py:method:: clear_grade_system_terms():
-        :noindex:
+   .. automethod:: GradebookQuery.supports_ancestor_gradebook_query
 
+   .. autoattribute:: GradebookQuery.ancestor_gradebook_query
 
-    .. py:attribute:: grade_system_terms
-        :noindex:
+   .. automethod:: GradebookQuery.match_any_ancestor_gradebook
 
+   .. autoattribute:: GradebookQuery.ancestor_gradebook_terms
 
-    .. py:method:: match_grade_entry_id(grade_entry_id, match):
-        :noindex:
+   .. automethod:: GradebookQuery.match_descendant_gradebook_id
 
+   .. autoattribute:: GradebookQuery.descendant_gradebook_id_terms
 
-    .. py:method:: clear_grade_entry_id_terms():
-        :noindex:
+   .. automethod:: GradebookQuery.supports_descendant_gradebook_query
 
+   .. autoattribute:: GradebookQuery.descendant_gradebook_query
 
-    .. py:attribute:: grade_entry_id_terms
-        :noindex:
+   .. automethod:: GradebookQuery.match_any_descendant_gradebook
 
+   .. autoattribute:: GradebookQuery.descendant_gradebook_terms
 
-    .. py:method:: supports_grade_entry_query():
-        :noindex:
-
-
-    .. py:method:: get_grade_entry_query():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_query
-        :noindex:
-
-
-    .. py:method:: match_any_grade_entry(match):
-        :noindex:
-
-
-    .. py:method:: clear_grade_entry_terms():
-        :noindex:
-
-
-    .. py:attribute:: grade_entry_terms
-        :noindex:
-
-
-    .. py:method:: match_gradebook_column_id(gradebook_column_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_column_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_gradebook_column_query():
-        :noindex:
-
-
-    .. py:method:: get_gradebook_column_query():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_query
-        :noindex:
-
-
-    .. py:method:: match_any_gradebook_column(match):
-        :noindex:
-
-
-    .. py:method:: clear_gradebook_column_terms():
-        :noindex:
-
-
-    .. py:attribute:: gradebook_column_terms
-        :noindex:
-
-
-    .. py:method:: match_ancestor_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_ancestor_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_ancestor_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_gradebook_query
-        :noindex:
-
-
-    .. py:method:: match_any_ancestor_gradebook(match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_gradebook_terms
-        :noindex:
-
-
-    .. py:method:: match_descendant_gradebook_id(gradebook_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_gradebook_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_gradebook_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_descendant_gradebook_query():
-        :noindex:
-
-
-    .. py:method:: get_descendant_gradebook_query():
-        :noindex:
-
-
-    .. py:attribute:: descendant_gradebook_query
-        :noindex:
-
-
-    .. py:method:: match_any_descendant_gradebook(match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_gradebook_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_gradebook_terms
-        :noindex:
-
-
-    .. py:method:: get_gradebook_query_record(gradebook_record_type):
-        :noindex:
-
+   .. automethod:: GradebookQuery.get_gradebook_query_record
 

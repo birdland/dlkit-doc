@@ -37,7 +37,8 @@ class HierarchySearch(osid_searches.OsidSearch):
         pass
 
     def get_hierarchy_search_record(self, hierarchy_search_record_type):
-        """Gets the hierarchy search record corresponding to the given hierarchy search record ``Type``.
+        """Gets the hierarchy search record corresponding to the given hierarchy search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -99,7 +100,8 @@ class HierarchySearchResults(osid_searches.OsidSearchResults):
     hierarchy_query_inspector = property(fget=get_hierarchy_query_inspector)
 
     def get_hierarchy_search_results_record(self, hierarchy_search_record_type):
-        """Gets the hierarchy search results record corresponding to the given hierarchy search record ``Type``.
+        """Gets the hierarchy search results record corresponding to the given hierarchy search
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the

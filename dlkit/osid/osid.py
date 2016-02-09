@@ -225,7 +225,8 @@ class Browsable:
 
 
 class Suppliable:
-    """A marker interface for OSID Provider-owned objects used to supply input from an OSID Consumer."""
+    """A marker interface for OSID Provider-owned objects used to supply input from an OSID
+        Consumer."""
     pass
 
 
@@ -306,10 +307,10 @@ class Subjugateable:
 
 
 class Aggregateable:
-    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the definition is based on an
-        included
-        set of other ``OsidObjects`` which are directly accessible and do not exist outside the context of the parent
-        object.
+    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the
+        definition is
+    based on an included set of other ``OsidObjects`` which are directly accessible and do not exist
+    outside the context of the parent object.
 
 
     ``Aggregateables`` allow for an ``OsidObject`` to stand alone
@@ -341,16 +342,16 @@ class Aggregateable:
 
 
 class Containable:
-    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself
-        directly accessible without knowledge of the originating service."""
+    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive
+    composition of itself directly accessible without knowledge of the originating service."""
 
     def is_sequestered(self):
-        """Tests if this ``Containable`` is sequestered in that it should not appear outside of its aggregated
-        composition.
+        """Tests if this ``Containable`` is sequestered in that it should not appear outside of its
+            aggregated composition.
 
 
-        :return: ``true`` if this containable is sequestered, ``false`` if this containable may appear outside its
-        aggregate
+        :return: ``true`` if this containable is sequestered, ``false`` if this containable may
+            appear outside its aggregate
         :rtype: ``boolean``
 
 
@@ -471,7 +472,9 @@ class Sourceable:
 
 
 class Federateable:
-    """``Federateable`` is used to indicate an ``OsidObject`` can be federated using the OSID Hierarchy pattern.
+    """``Federateable`` is used to indicate an ``OsidObject`` can be federated using the OSID
+        Hierarchy
+    pattern.
 
 
     An OSID federation of ``OsidObjects`` is where it is inferred from
@@ -560,7 +563,8 @@ class Operable:
         return ``false``.
 
 
-        :return: ``true`` if this operable is enabled, ``false`` if the active status is determined by other rules
+        :return: ``true`` if this operable is enabled, ``false`` if the active status is determined
+            by other rules
         :rtype: ``boolean``
 
 
@@ -581,7 +585,8 @@ class Operable:
         ``is_enabled()`` must return ``false``.
 
 
-        :return: ``true`` if this operable is disabled, ``false`` if the active status is determined by other rules
+        :return: ``true`` if this operable is disabled, ``false`` if the active status is determined
+            by other rules
         :rtype: ``boolean``
 
 
@@ -1220,7 +1225,8 @@ class OsidSession:
     effective_agent = property(fget=get_effective_agent)
 
     def get_date(self):
-        """Gets the service date which may be the current date or the effective date in which this session exists.
+        """Gets the service date which may be the current date or the effective date in which this
+            session exists.
 
 
         :return: the service date
@@ -1419,8 +1425,8 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
 
 
     def get_display_name(self):
-        """Gets the preferred display name associated with this instance of this OSID object appropriate for display to
-        the user.
+        """Gets the preferred display name associated with this instance of this OSID object
+            appropriate for display to the user.
 
 
         :return: the display name
@@ -1629,7 +1635,8 @@ class OsidList:
         """Tests if there are more elements in this list.
 
 
-        :return: ``true`` if more elements are available in this list, ``false`` if the end of the list has been reached
+        :return: ``true`` if more elements are available in this list, ``false`` if the end of the
+            list has been reached
         :rtype: ``boolean``
 
 
@@ -1725,8 +1732,9 @@ class OsidRuntimeProfile(OsidProfile):
 
 
 class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
-    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required for running OSID
-        implementations such as search paths and configurations."""
+    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required
+        for
+    running OSID implementations such as search paths and configurations."""
 
     def get_manager(self, osid, impl_class_name, version):
         """Finds, loads and instantiates providers of OSID managers.

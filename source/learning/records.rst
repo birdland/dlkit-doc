@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.learning.records
+.. automodule:: dlkit.learning.records
 
 Records
 =======
@@ -7,192 +9,128 @@ Records
 Objective Record
 ----------------
 
-.. py:class:: ObjectiveRecord(abc_learning_records.ObjectiveRecord, osid_records.OsidRecord)
-    A record for an ``Objective``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveRecord
+   :show-inheritance:
 
 
 
 Objective Query Record
 ----------------------
 
-.. py:class:: ObjectiveQueryRecord(abc_learning_records.ObjectiveQueryRecord, osid_records.OsidRecord)
-    A record for an ``ObjectiveQuery``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveQueryRecord
+   :show-inheritance:
 
 
 
 Objective Form Record
 ---------------------
 
-.. py:class:: ObjectiveFormRecord(abc_learning_records.ObjectiveFormRecord, osid_records.OsidRecord)
-    A record for an ``ObjectiveForm``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveFormRecord
+   :show-inheritance:
 
 
 
 Objective Search Record
 -----------------------
 
-.. py:class:: ObjectiveSearchRecord(abc_learning_records.ObjectiveSearchRecord, osid_records.OsidRecord)
-    A record for an ``ObjectiveSearch``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveSearchRecord
+   :show-inheritance:
 
 
 
 Activity Record
 ---------------
 
-.. py:class:: ActivityRecord(abc_learning_records.ActivityRecord, osid_records.OsidRecord)
-    A record for a ``Activity``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ActivityRecord
+   :show-inheritance:
 
 
 
 Activity Query Record
 ---------------------
 
-.. py:class:: ActivityQueryRecord(abc_learning_records.ActivityQueryRecord, osid_records.OsidRecord)
-    A record for an ``ActivityQuery``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ActivityQueryRecord
+   :show-inheritance:
 
 
 
 Activity Form Record
 --------------------
 
-.. py:class:: ActivityFormRecord(abc_learning_records.ActivityFormRecord, osid_records.OsidRecord)
-    A record for a ``ActivityForm``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ActivityFormRecord
+   :show-inheritance:
 
 
 
 Activity Search Record
 ----------------------
 
-.. py:class:: ActivitySearchRecord(abc_learning_records.ActivitySearchRecord, osid_records.OsidRecord)
-    A record for an ``ActivitySearch``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
+.. autoclass:: ActivitySearchRecord
+   :show-inheritance:
 
 
 
+Proficiency Record
+------------------
 
+.. autoclass:: ProficiencyRecord
+   :show-inheritance:
+
+
+
+Proficiency Query Record
+------------------------
+
+.. autoclass:: ProficiencyQueryRecord
+   :show-inheritance:
+
+
+
+Proficiency Form Record
+-----------------------
+
+.. autoclass:: ProficiencyFormRecord
+   :show-inheritance:
+
+
+
+Proficiency Search Record
+-------------------------
+
+.. autoclass:: ProficiencySearchRecord
+   :show-inheritance:
 
 
 
 Objective Bank Record
 ---------------------
 
-.. py:class:: ObjectiveBankRecord(abc_learning_records.ObjectiveBankRecord, osid_records.OsidRecord)
-    A record for a ``ObjectiveBank``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveBankRecord
+   :show-inheritance:
 
 
 
 Objective Bank Query Record
 ---------------------------
 
-.. py:class:: ObjectiveBankQueryRecord(abc_learning_records.ObjectiveBankQueryRecord, osid_records.OsidRecord)
-    A record for an ``ObjectiveBankQuery``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveBankQueryRecord
+   :show-inheritance:
 
 
 
 Objective Bank Form Record
 --------------------------
 
-.. py:class:: ObjectiveBankFormRecord(abc_learning_records.ObjectiveBankFormRecord, osid_records.OsidRecord)
-    A record for a ``ObjectiveBankForm``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveBankFormRecord
+   :show-inheritance:
 
 
 
 Objective Bank Search Record
 ----------------------------
 
-.. py:class:: ObjectiveBankSearchRecord(abc_learning_records.ObjectiveBankSearchRecord, osid_records.OsidRecord)
-    A record for a ``ObjectiveBankSearch``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ObjectiveBankSearchRecord
+   :show-inheritance:
 
 
 

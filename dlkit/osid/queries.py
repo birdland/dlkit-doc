@@ -26,7 +26,8 @@ class OsidQuery(osid_markers.Suppliable):
     times. In the case of a match method, each invocation adds an
     element to an ``OR`` expression. Any of these terms may also be
     negated through the ``match`` flag.
-      OsidQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR OsidQuery.matchDescription)}
+      OsidQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR
+          OsidQuery.matchDescription)}
 
 
 
@@ -338,7 +339,8 @@ class OsidTemporalQuery(OsidQuery):
     """
 
     def match_effective(self, match):
-        """Match effective objects where the current date falls within the start and end dates inclusive.
+        """Match effective objects where the current date falls within the start and end dates
+            inclusive.
 
 
         :param match: ``true`` to match any effective, ``false`` to match ineffective
@@ -474,7 +476,8 @@ class OsidTemporalQuery(OsidQuery):
     end_date_terms = property(fdel=clear_end_date_terms)
 
     def match_date(self, from_, to, match):
-        """Matches temporals where the given date range falls entirely between the start and end dates inclusive.
+        """Matches temporals where the given date range falls entirely between the start and end
+            dates inclusive.
 
 
         :param from: start date
@@ -536,7 +539,8 @@ class OsidContainableQuery(OsidQuery):
         """Match containables that are sequestered.
 
 
-        :param match: ``true`` to match any sequestered containables, ``false`` to match non-sequestered containables
+        :param match: ``true`` to match any sequestered containables, ``false`` to match non-
+            sequestered containables
         :type match: ``boolean``
 
 
@@ -642,7 +646,8 @@ class OsidSourceableQuery(OsidQuery):
         """Match sourceables with a provider value.
 
 
-        :param match: ``true`` to match sourceables with any provider, ``false`` to match sourceables with no providers
+        :param match: ``true`` to match sourceables with any provider, ``false`` to match
+            sourceables with no providers
         :type match: ``boolean``
 
 
@@ -1000,7 +1005,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
     multiple times. In the case of a match method, each invocation adds
     an element to an ``OR`` expression. Any of these terms may also be
     negated through the ``match`` flag.
-      OsidObjectQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR OsidObjectQuery.matchDescription)}
+      OsidObjectQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR
+          OsidObjectQuery.matchDescription)}
 
 
 
@@ -1092,7 +1098,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         """Matches any object with a display name.
 
 
-        :param match: ``true`` to match any display name, ``false`` to match objects with no display name
+        :param match: ``true`` to match any display name, ``false`` to match objects with no display
+            name
         :type match: ``boolean``
 
 
@@ -1149,7 +1156,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         """Matches a description that has any value.
 
 
-        :param match: ``true`` to match any description, ``false`` to match descriptions with no values
+        :param match: ``true`` to match any description, ``false`` to match descriptions with no
+            values
         :type match: ``boolean``
 
 
@@ -1202,7 +1210,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         """Matches an object that has any genus type.
 
 
-        :param match: ``true`` to match any genus type, ``false`` to match objects with no genus type
+        :param match: ``true`` to match any genus type, ``false`` to match objects with no genus
+            type
         :type match: ``boolean``
 
 
@@ -1371,7 +1380,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
     subject_terms = property(fdel=clear_subject_terms)
 
     def supports_subject_relevancy_query(self):
-        """Tests if a ``RelevancyQuery`` is available to provide queries about the relationships to ``Subjects``.
+        """Tests if a ``RelevancyQuery`` is available to provide queries about the relationships to
+            ``Subjects``.
 
 
         :return: ``true`` if a relevancy entry query is available, ``false`` otherwise
@@ -1701,7 +1711,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         """Matches an object that has any ``JournalEntry`` in the given ``Journal``.
 
 
-        :param match: ``true`` to match any journal entry, ``false`` to match objects with no journal entries
+        :param match: ``true`` to match any journal entry, ``false`` to match objects with no
+            journal entries
         :type match: ``boolean``
 
 
@@ -1974,7 +1985,8 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
         """Matches an object that has any ``Relationship``.
 
 
-        :param match: ``true`` to match any relationship, ``false`` to match objects with no relationships
+        :param match: ``true`` to match any relationship, ``false`` to match objects with no
+            relationships
         :type match: ``boolean``
 
 
@@ -2556,8 +2568,8 @@ class OsidEnablerQuery(OsidRuleQuery, OsidTemporalQuery):
         """Matches any enabler with a cyclic event.
 
 
-        :param match: ``true`` to match any enablers with a cyclic event, ``false`` to match enablers with no cyclic
-        events
+        :param match: ``true`` to match any enablers with a cyclic event, ``false`` to match
+            enablers with no cyclic events
         :type match: ``boolean``
 
 
@@ -2845,7 +2857,8 @@ class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
         """Match reports that are interpolated.
 
 
-        :param match: ``true`` to match any interpolated reports, ``false`` to match non-interpolated reports
+        :param match: ``true`` to match any interpolated reports, ``false`` to match non-
+            interpolated reports
         :type match: ``boolean``
 
 
@@ -2877,7 +2890,8 @@ class OsidCompendiumQuery(OsidObjectQuery, OsidSubjugateableQuery):
         """Match reports that are extrapolated.
 
 
-        :param match: ``true`` to match any extrapolated reports, ``false`` to match non-extrapolated reports
+        :param match: ``true`` to match any extrapolated reports, ``false`` to match non-
+            extrapolated reports
         :type match: ``boolean``
 
 

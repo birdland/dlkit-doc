@@ -65,8 +65,8 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -195,8 +195,8 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_objectives_by_genus_type(self, objective_genus_type):
-        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does not include
-        objectives of genus types derived from the specified ``Type``.
+        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does
+            not include objectives of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objectives
@@ -220,8 +220,8 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_objectives_by_parent_genus_type(self, objective_genus_type):
-        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include any additional
-        objective with genus types derived from the specified ``Type``.
+        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include
+            any additional objective with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objectives
@@ -585,8 +585,8 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
 
         :param objective_record_types: array of objective record types
         :type objective_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_record_types`` is ``null``
 
@@ -633,7 +633,8 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_create()``
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from
+            ``get_objective_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -700,7 +701,8 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from
+            ``get_objective_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -900,8 +902,8 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the objective methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the objective methods may omit or translate elements based on this
+            session, such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1170,7 +1172,8 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_id: the ``Id`` of an objective
         :type objective_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false`` otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
@@ -1185,19 +1188,21 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
 
         :param objective_id: the ``Id`` to query
         :type objective_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -1213,19 +1218,21 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
 
         :param objective_id: the ``Id`` to query
         :type objective_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective node
         :rtype: ``osid.learning.ObjectiveNode``
@@ -1479,9 +1486,11 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         :type reference_objective_id: ``osid.id.Id``
         :param objective_id: the ``Id`` of the objective to move ahead of ``reference_objective_id``
         :type objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
-            ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
-        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id``
+            not found, or ``reference_objective_id`` or ``objective_id`` is not a child of
+            ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1502,9 +1511,11 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         :type reference_objective_id: ``osid.id.Id``
         :param objective_id: the ``Id`` of the objective to move behind ``reference_objective_id``
         :type objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
-            ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
-        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id``
+            not found, or ``reference_objective_id`` or ``objective_id`` is not a child of
+            ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1523,8 +1534,8 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         :type parent_objective_id: ``osid.id.Id``
         :param objective_ids: the ``Id`` of the objectives
         :type objective_ids: ``osid.id.Id[]``
-        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an ``objective_id`` is not a child of
-            ``parent_objective_id``
+        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an
+            ``objective_id`` is not a child of ``parent_objective_id``
         :raise: ``NullArgument`` -- ``paren_objectivet_id`` or ``objective_ids`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1584,8 +1595,8 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1807,8 +1818,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any objective can
-        be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1826,8 +1837,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific
-        objective can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1875,8 +1886,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or ``objective_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or
+            ``objective_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1888,7 +1899,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
-    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
 
 
@@ -1901,9 +1913,11 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``objective_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` not found or ``objective_id`` not mapped to
+            ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2018,8 +2032,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2092,7 +2106,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         pass
 
     def get_requisite_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are the immediate requisites for the given ``Objective``.
+        """Gets a list of ``Objectives`` that are the immediate requisites for the given
+            ``Objective``.
 
 
         In plenary mode, the returned list contains all of the immediate
@@ -2119,8 +2134,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_all_requisite_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are the requisites for the given ``Objective`` including the requistes of
-        the requisites, and so on.
+        """Gets a list of ``Objectives`` that are the requisites for the given ``Objective``
+            including the requistes of the requisites, and so on.
 
 
         In plenary mode, the returned list contains all of the immediate
@@ -2185,7 +2200,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param required_objective_id: ``Id`` of the required ``Objective``
         :type required_objective_id: ``osid.id.Id``
-        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false`` otherwise
+        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` not found
         :raise: ``NullArgument`` -- ``objective_id`` is ``null``
@@ -2200,7 +2216,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_equivalent_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the purpose of requisites.
+        """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the
+            purpose of requisites.
 
 
         An equivalent objective can satisfy the given objective. In
@@ -2333,8 +2350,8 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param requisite_objective_id: the ``Id`` of the required ``Objective``
         :type requisite_objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or ``objective_id`` not mapped
-            to ``requisite_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or
+            ``objective_id`` not mapped to ``requisite_objective_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``requisite_objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2347,7 +2364,8 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         pass
 
     def assign_equivalent_objective(self, objective_id, equivalent_objective_id):
-        """Makes an objective equivalent to another objective for the purposes of satisfying a requisite.
+        """Makes an objective equivalent to another objective for the purposes of satisfying a
+            requisite.
 
 
         :param objective_id: the ``Id`` of the principal ``Objective``
@@ -2375,8 +2393,8 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param equivalent_objective_id: the ``Id`` of the equivalent ``Objective``
         :type equivalent_objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or ``objective_id`` is already
-            equivalent to ``equivalent_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or
+            ``objective_id`` is already equivalent to ``equivalent_objective_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``equivalent_objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2492,8 +2510,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_activity_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2622,8 +2640,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ActivityList
 
     def get_activities_by_genus_type(self, activity_genus_type):
-        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does not include activities
-        of genus types derived from the specified ``Type``.
+        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does
+            not include activities of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known activities
@@ -2647,8 +2665,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ActivityList
 
     def get_activities_by_parent_genus_type(self, activity_genus_type):
-        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include any additional
-        activity with genus types derived from the specified ``Type``.
+        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include
+            any additional activity with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known activities
@@ -2954,8 +2972,8 @@ class ActivityAdminSession(osid_sessions.OsidSession):
 
         :param activity_record_types: array of activity record types
         :type activity_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``activity_record_types`` is ``null``
 
@@ -3005,7 +3023,8 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_create()``
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from
+            ``get_activity_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3072,7 +3091,8 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_update()``
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from
+            ``get_activity_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3220,8 +3240,8 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3443,8 +3463,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any activity can be
-        assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3462,8 +3482,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific activity
-        can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3511,8 +3531,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type activity_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or
+            ``activity_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3524,7 +3544,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
-    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
 
 
@@ -3537,9 +3558,10 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``activity_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id``
+            not found or ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3618,8 +3640,8 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3712,8 +3734,8 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include
-        objective banks of types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type``
+            which does not include objective banks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -3738,8 +3760,9 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any
-        additional objective banks with genus types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and
+            include any additional objective banks with genus types derived from the specified
+            ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -3923,7 +3946,8 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
 
         :param objective_bank_record_types: array of objective bank record types
         :type objective_bank_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
@@ -4038,7 +4062,8 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from
+            get_objective_bank_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4238,8 +4263,8 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the objective bank methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the objective bank methods may omit or translate elements based on this
+            session, such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4402,7 +4427,8 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -4508,7 +4534,8 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -4523,19 +4550,21 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -4551,19 +4580,21 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective bank node
         :rtype: ``osid.learning.ObjectiveBankNode``

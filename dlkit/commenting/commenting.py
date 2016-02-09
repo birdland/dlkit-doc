@@ -230,7 +230,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # boolean
 
     def supports_book_admin(self):
-        """Tests for the availability of a book administrative service for creating and deleting books.
+        """Tests for the availability of a book administrative service for creating and deleting
+            books.
 
 
         :return: ``true`` if book administration is available, ``false`` otherwise
@@ -478,8 +479,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -571,8 +572,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # osid.commenting.BookList
 
     def get_books_by_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
-        types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include
+            books of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -596,8 +597,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # osid.commenting.BookList
 
     def get_books_by_parent_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
-        genus types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any
+            additional books with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -731,7 +732,8 @@ class CommentingProfile(osid_managers.OsidProfile):
 
         :param book_record_types: array of book record types
         :type book_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
 
@@ -778,7 +780,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from
+            ``get_book_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -844,7 +847,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from
+            ``get_book_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -854,7 +858,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         pass
 
     def can_delete_books(self):
-        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful
+            authorization.
 
 
         A return of false indicates that it is known deleting a ``Book``
@@ -1007,8 +1012,8 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the book methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the book methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1304,13 +1309,14 @@ class CommentingProfile(osid_managers.OsidProfile):
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.hierarchy.Node``
@@ -1332,13 +1338,14 @@ class CommentingProfile(osid_managers.OsidProfile):
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.commenting.BookNode``
@@ -1517,9 +1524,9 @@ class CommentingProfile(osid_managers.OsidProfile):
 
 
 class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
-        aspects of
-        this service.
+    """The commenting manager provides access to commenting sessions and provides interoperability
+        tests
+    for various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -1572,7 +1579,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         self._provider_sessions = dict()
         self._session_management = AUTOMATIC
         self._book_view = DEFAULT
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
 
 
     # def _get_view(self, view):
@@ -1690,7 +1698,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1731,7 +1740,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1772,7 +1782,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1813,7 +1824,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1844,7 +1856,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
     comment_admin_session = property(fget=get_comment_admin_session)
 
     def get_comment_admin_session_for_book(self, book_id):
-        """Gets the ``OsidSession`` associated with the comment administration service for the given book.
+        """Gets the ``OsidSession`` associated with the comment administration service for the given
+            book.
 
 
         :param book_id: the ``Id`` of the ``Book``
@@ -1854,7 +1867,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1886,7 +1900,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         return # osid.commenting.CommentNotificationSession
 
     def get_comment_notification_session_for_book(self, comment_receiver, book_id):
-        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
+        """Gets the ``OsidSession`` associated with the comment notification service for the given
+            book.
 
 
         :param comment_receiver: the receiver
@@ -1898,8 +1913,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``comment_receiver`` or ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2148,8 +2163,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2241,8 +2256,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         return # osid.commenting.BookList
 
     def get_books_by_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
-        types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include
+            books of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -2266,8 +2281,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         return # osid.commenting.BookList
 
     def get_books_by_parent_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
-        genus types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any
+            additional books with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -2401,7 +2416,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
         :param book_record_types: array of book record types
         :type book_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
 
@@ -2448,7 +2464,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from
+            ``get_book_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2514,7 +2531,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from
+            ``get_book_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2524,7 +2542,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         pass
 
     def can_delete_books(self):
-        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful
+            authorization.
 
 
         A return of false indicates that it is known deleting a ``Book``
@@ -2677,8 +2696,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the book methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the book methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2974,13 +2993,14 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.hierarchy.Node``
@@ -3002,13 +3022,14 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.commenting.BookNode``
@@ -3187,9 +3208,9 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
 class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
-        aspects of
-        this service.
+    """The commenting manager provides access to commenting sessions and provides interoperability
+        tests
+    for various aspects of this service.
 
 
     Methods in this manager accept a ``Proxy`` for passing information
@@ -3270,7 +3291,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3314,7 +3336,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3358,7 +3381,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3402,7 +3426,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3434,7 +3459,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # osid.commenting.CommentAdminSession
 
     def get_comment_admin_session_for_book(self, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the comment administration service for the given book.
+        """Gets the ``OsidSession`` associated with the comment administration service for the given
+            book.
 
 
         :param book_id: the ``Id`` of the ``Book``
@@ -3446,7 +3472,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3480,7 +3507,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # osid.commenting.CommentNotificationSession
 
     def get_comment_notification_session_for_book(self, comment_receiver, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
+        """Gets the ``OsidSession`` associated with the comment notification service for the given
+            book.
 
 
         :param comment_receiver: the receiver
@@ -3494,8 +3522,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``comment_receiver, book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3756,8 +3784,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3849,8 +3877,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # osid.commenting.BookList
 
     def get_books_by_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
-        types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include
+            books of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -3874,8 +3902,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # osid.commenting.BookList
 
     def get_books_by_parent_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
-        genus types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any
+            additional books with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -4009,7 +4037,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
         :param book_record_types: array of book record types
         :type book_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
 
@@ -4056,7 +4085,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from
+            ``get_book_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4122,7 +4152,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from
+            ``get_book_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4132,7 +4163,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         pass
 
     def can_delete_books(self):
-        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful
+            authorization.
 
 
         A return of false indicates that it is known deleting a ``Book``
@@ -4285,8 +4317,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the book methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the book methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4582,13 +4614,14 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.hierarchy.Node``
@@ -4610,13 +4643,14 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.commenting.BookNode``
@@ -5005,8 +5039,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_comment_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -5146,8 +5180,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_by_genus_type(self, comment_genus_type):
-        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` which does not include comments of
-        genus types derived from the specified ``Type``.
+        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` which does not
+            include comments of genus types derived from the specified ``Type``.
 
 
         :param comment_genus_type: a comment genus type
@@ -5166,8 +5200,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_by_parent_genus_type(self, comment_genus_type):
-        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` and include any additional comments
-        with genus types derived from the specified ``Type``.
+        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` and include any
+            additional comments with genus types derived from the specified ``Type``.
 
 
         :param comment_genus_type: a comment genus type
@@ -5205,8 +5239,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_on_date(self, from_, to):
-        """Gets a ``CommentList`` effective during the entire given date range inclusive but not confined to the date
-        range.
+        """Gets a ``CommentList`` effective during the entire given date range inclusive but not
+            confined to the date range.
 
 
         :param from: starting date
@@ -5228,8 +5262,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_on_date(self, comment_genus_type, from_, to):
-        """Gets a ``CommentList`` of a given genus type and effective during the entire given date range inclusive but
-        not confined to the date range.
+        """Gets a ``CommentList`` of a given genus type and effective during the entire given date
+            range inclusive but not confined to the date range.
 
 
         :param comment_genus_type: a comment genus type
@@ -5272,8 +5306,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_for_commentor_on_date(self, resource_id, from_, to):
-        """Gets a list of all comments corresponding to a resource ``Id`` and effective during the entire given date
-        range inclusive but not confined to the date range.
+        """Gets a list of all comments corresponding to a resource ``Id`` and effective during the
+            entire given date range inclusive but not confined to the date range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -5317,9 +5351,11 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_commentor_on_date(self, resource_id, comment_genus_type, from_, to):
-        """Gets a list of all comments of the given genus type corresponding to a resource ``Id`` and effective during
-        the entire given date range inclusive but not confined to the date range.
+    def get_comments_by_genus_type_for_commentor_on_date(self, resource_id, comment_genus_type,
+        from_, to):
+        """Gets a list of all comments of the given genus type corresponding to a resource ``Id``
+            and effective during the entire given date range inclusive but not confined to the date
+            range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -5364,8 +5400,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_for_reference_on_date(self, reference_id, from_, to):
-        """Gets a list of all comments corresponding to a reference ``Id`` and effective during the entire given date
-        range inclusive but not confined to the date range.
+        """Gets a list of all comments corresponding to a reference ``Id`` and effective during the
+            entire given date range inclusive but not confined to the date range.
 
 
         :param reference_id: a reference ``Id``
@@ -5409,9 +5445,11 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_reference_on_date(self, reference_id, comment_genus_type, from_, to):
-        """Gets a list of all comments of the given genus type corresponding to a reference ``Id`` and effective during
-        the entire given date range inclusive but not confined to the date range.
+    def get_comments_by_genus_type_for_reference_on_date(self, reference_id, comment_genus_type,
+        from_, to):
+        """Gets a list of all comments of the given genus type corresponding to a reference ``Id``
+            and effective during the entire given date range inclusive but not confined to the date
+            range.
 
 
         :param reference_id: a reference ``Id``
@@ -5425,7 +5463,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the returned ``CommentList``
         :rtype: ``osid.commenting.CommentList``
         :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
-        :raise: ``NullArgument`` -- ``reference_id, comment_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``reference_id, comment_genus_type, from,`` or ``to`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5457,9 +5496,11 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_for_commentor_and_reference_on_date(self, resource_id, reference_id, from_, to):
-        """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire
-        given date range inclusive but not confined to the date range.
+    def get_comments_for_commentor_and_reference_on_date(self, resource_id, reference_id, from_,
+        to):
+        """Gets a list of all comments corresponding to a resource and reference ``Id`` and
+            effective during the entire given date range inclusive but not confined to the date
+            range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -5484,8 +5525,10 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_commentor_and_reference(self, resource_id, reference_id, comment_genus_type):
-        """Gets a list of comments of the given genus type corresponding to a resource and reference ``Id``.
+    def get_comments_by_genus_type_for_commentor_and_reference(self, resource_id, reference_id,
+        comment_genus_type):
+        """Gets a list of comments of the given genus type corresponding to a resource and reference
+            ``Id``.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -5496,7 +5539,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type comment_genus_type: ``osid.type.Type``
         :return: the returned ``CommentList``
         :rtype: ``osid.commenting.CommentList``
-        :raise: ``NullArgument`` -- ``resource_id, reference_id`` or ``comment_genus_type`` is ``null``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id`` or ``comment_genus_type`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5507,10 +5551,11 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, resource_id, reference_id,
-        comment_genus_type, from_, to):
-        """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire
-        given date range inclusive but not confined to the date range.
+    def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, resource_id,
+        reference_id, comment_genus_type, from_, to):
+        """Gets a list of all comments corresponding to a resource and reference ``Id`` and
+            effective during the entire given date range inclusive but not confined to the date
+            range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -5526,7 +5571,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the returned ``CommentList``
         :rtype: ``osid.commenting.CommentList``
         :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
-        :raise: ``NullArgument`` -- ``resource_id, reference_id, comment_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id, comment_genus_type, from,`` or
+            ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5767,7 +5813,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param comment_record_types: array of comment record types
         :type comment_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Comment`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Comment`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``comment_record_types`` is ``null``
 
@@ -5816,7 +5863,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``comment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_create()``
+        :raise: ``Unsupported`` -- ``comment_form`` did not originate from
+            ``get_comment_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5883,7 +5931,8 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``comment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_update()``
+        :raise: ``Unsupported`` -- ``comment_form`` did not originate from
+            ``get_comment_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5987,9 +6036,9 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class BookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at
-        a time
-        or many at a time.
+    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements
+        sequentially
+    either one at a time or many at a time.
 
 
     Examples: while (bl.hasNext()) { Book book = bl.getNextBook(); }
@@ -6013,8 +6062,8 @@ class BookList(osid_objects.OsidList):
         """Gets the next ``Book`` in this list.
 
 
-        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test that a next ``Book``
-        is available before calling this method.
+        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Book`` is available before calling this method.
         :rtype: ``osid.commenting.Book``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6036,9 +6085,11 @@ class BookList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Book`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Book`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Book`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Book`` elements.The length of the array is less than or equal to the
+            number specified.
         :rtype: ``osid.commenting.Book``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

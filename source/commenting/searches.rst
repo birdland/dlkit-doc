@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.commenting.searches
+.. automodule:: dlkit.commenting.searches
 
 Searches
 ========
@@ -7,88 +9,48 @@ Searches
 Comment Search
 --------------
 
-.. py:class:: CommentSearch(abc_commenting_searches.CommentSearch, osid_searches.OsidSearch)
-    The search interface for governing comment searches.
+.. autoclass:: CommentSearch
+   :show-inheritance:
 
-    .. py:method:: search_among_comments(comment_ids):
-        :noindex:
+   .. automethod:: CommentSearch.search_among_comments
 
+   .. automethod:: CommentSearch.order_comment_results
 
-    .. py:method:: order_comment_results(comment_search_order):
-        :noindex:
-
-
-    .. py:method:: get_comment_search_record(comment_search_record_type):
-        :noindex:
-
+   .. automethod:: CommentSearch.get_comment_search_record
 
 Comment Search Results
 ----------------------
 
-.. py:class:: CommentSearchResults(abc_commenting_searches.CommentSearchResults, osid_searches.OsidSearchResults)
-    This interface provides a means to capture results of a search.
+.. autoclass:: CommentSearchResults
+   :show-inheritance:
 
-    .. py:method:: get_comments():
-        :noindex:
+   .. autoattribute:: CommentSearchResults.comments
 
+   .. autoattribute:: CommentSearchResults.comment_query_inspector
 
-    .. py:attribute:: comments
-        :noindex:
-
-
-    .. py:method:: get_comment_query_inspector():
-        :noindex:
-
-
-    .. py:attribute:: comment_query_inspector
-        :noindex:
-
-
-    .. py:method:: get_comment_search_results_record(comment_search_record_type):
-        :noindex:
-
+   .. automethod:: CommentSearchResults.get_comment_search_results_record
 
 Book Search
 -----------
 
-.. py:class:: BookSearch(abc_commenting_searches.BookSearch, osid_searches.OsidSearch)
-    The search interface for governing book searches.
+.. autoclass:: BookSearch
+   :show-inheritance:
 
-    .. py:method:: search_among_books(book_ids):
-        :noindex:
+   .. automethod:: BookSearch.search_among_books
 
+   .. automethod:: BookSearch.order_book_results
 
-    .. py:method:: order_book_results(book_search_order):
-        :noindex:
-
-
-    .. py:method:: get_book_search_record(book_search_record_type):
-        :noindex:
-
+   .. automethod:: BookSearch.get_book_search_record
 
 Book Search Results
 -------------------
 
-.. py:class:: BookSearchResults(abc_commenting_searches.BookSearchResults, osid_searches.OsidSearchResults)
-    This interface provides a means to capture results of a search.
+.. autoclass:: BookSearchResults
+   :show-inheritance:
 
-    .. py:method:: get_books():
-        :noindex:
+   .. autoattribute:: BookSearchResults.books
 
+   .. autoattribute:: BookSearchResults.book_query_inspector
 
-    .. py:attribute:: books
-        :noindex:
-
-
-    .. py:method:: get_book_query_inspector():
-        :noindex:
-
-
-    .. py:attribute:: book_query_inspector
-        :noindex:
-
-
-    .. py:method:: get_book_search_results_record(book_search_record_type):
-        :noindex:
-
+   .. automethod:: BookSearchResults.get_book_search_results_record
 

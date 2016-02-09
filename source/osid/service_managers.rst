@@ -1,32 +1,54 @@
 
+.. currentmodule:: dlkit.services.osid
+.. automodule:: dlkit.services.osid
 
 Service Managers
 ================
 
 
+Osid Manager
+------------
+
+.. autoclass:: OsidManager
+   :show-inheritance:
+
+   .. automethod:: OsidManager.initialize
+
+   .. automethod:: OsidManager.rollback_service
+
+   .. automethod:: OsidManager.change_branch
+
+Osid Proxy Manager
+------------------
+
+.. autoclass:: OsidProxyManager
+   :show-inheritance:
+
+   .. automethod:: OsidProxyManager.initialize
+
+   .. automethod:: OsidProxyManager.rollback_service
+
+   .. automethod:: OsidProxyManager.change_branch
+
+Osid Runtime Profile
+--------------------
+
+.. autoclass:: OsidRuntimeProfile
+   :show-inheritance:
+
+   .. automethod:: OsidRuntimeProfile.supports_configuration
+
 Osid Runtime Manager
 --------------------
 
-.. py:class:: OsidRuntimeManager(abc_osid_managers.OsidRuntimeManager, OsidManager, OsidRuntimeProfile)
-    The ``OsidRuntimeManager`` represents and OSID platform and contains the information required
-        for
-    running OSID implementations such as search paths and configurations.
+.. autoclass:: OsidRuntimeManager
+   :show-inheritance:
 
-    .. py:method:: get_manager(osid, impl_class_name, version):
-        :noindex:
+   .. automethod:: OsidRuntimeManager.get_manager
 
+   .. automethod:: OsidRuntimeManager.get_proxy_manager
 
-    .. py:method:: get_proxy_manager(osid, implementation, version):
-        :noindex:
-
-
-    .. py:method:: get_configuration():
-        :noindex:
-
-
-    .. py:attribute:: configuration
-        :noindex:
-
+   .. autoattribute:: OsidRuntimeManager.configuration
 
 
 

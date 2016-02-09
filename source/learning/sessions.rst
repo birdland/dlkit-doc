@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.learning.sessions
+.. automodule:: dlkit.learning.sessions
 
 Sessions
 ========
@@ -7,1496 +9,620 @@ Sessions
 Objective Lookup Session
 ------------------------
 
-.. py:class:: ObjectiveLookupSession(abc_learning_sessions.ObjectiveLookupSession, osid_sessions.OsidSession)
-    This session provides methods for retrieving ``Objective`` s.
+.. autoclass:: ObjectiveLookupSession
+   :show-inheritance:
 
-    .. py:method:: get_objective_bank_id():
-        :noindex:
+   .. autoattribute:: ObjectiveLookupSession.objective_bank_id
 
+   .. autoattribute:: ObjectiveLookupSession.objective_bank
 
-    .. py:attribute:: objective_bank_id
-        :noindex:
+   .. automethod:: ObjectiveLookupSession.can_lookup_objectives
 
+   .. automethod:: ObjectiveLookupSession.use_comparative_objective_view
 
-    .. py:method:: get_objective_bank():
-        :noindex:
+   .. automethod:: ObjectiveLookupSession.use_plenary_objective_view
 
+   .. automethod:: ObjectiveLookupSession.use_federated_objective_bank_view
 
-    .. py:attribute:: objective_bank
-        :noindex:
+   .. automethod:: ObjectiveLookupSession.use_isolated_objective_bank_view
 
+   .. automethod:: ObjectiveLookupSession.get_objective
 
-    .. py:method:: can_lookup_objectives():
-        :noindex:
+   .. automethod:: ObjectiveLookupSession.get_objectives_by_ids
 
+   .. automethod:: ObjectiveLookupSession.get_objectives_by_genus_type
 
-    .. py:method:: use_comparative_objective_view():
-        :noindex:
+   .. automethod:: ObjectiveLookupSession.get_objectives_by_parent_genus_type
 
+   .. automethod:: ObjectiveLookupSession.get_objectives_by_record_type
 
-    .. py:method:: use_plenary_objective_view():
-        :noindex:
-
-
-    .. py:method:: use_federated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_ids(objective_ids):
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_genus_type(objective_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_parent_genus_type(objective_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_record_type(objective_record_type):
-        :noindex:
-
-
-    .. py:method:: get_objectives():
-        :noindex:
-
-
-    .. py:attribute:: objectives
-        :noindex:
-
+   .. autoattribute:: ObjectiveLookupSession.objectives
 
 Objective Query Session
 -----------------------
 
-.. py:class:: ObjectiveQuerySession(abc_learning_sessions.ObjectiveQuerySession, osid_sessions.OsidSession)
-    This session provides methods for searching ``Objective`` objects.
+.. autoclass:: ObjectiveQuerySession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveQuerySession.objective_bank_id
 
-    The search query is constructed using the ``ObjectiveQuery``. The
-    objective record ``Type`` also specifies the record for the
-    objective query.
+   .. autoattribute:: ObjectiveQuerySession.objective_bank
 
+   .. automethod:: ObjectiveQuerySession.can_search_objectives
 
+   .. automethod:: ObjectiveQuerySession.use_federated_objective_bank_view
 
+   .. automethod:: ObjectiveQuerySession.use_isolated_objective_bank_view
 
-    This session defines views that offer differing behaviors for
-    searching.
+   .. autoattribute:: ObjectiveQuerySession.objective_query
 
-
-
-
-      * federated objective bank view: searches include objectives in
-        objective banks of which this objective bank is a ancestor in
-        the objective bank hierarchy
-      * isolated objective bank view: searches are restricted to
-        objectives in this objective bank
-
-
-
-
-
-
-
-
-    Objectives may have a query record indicated by their respective
-    record types. The query record is accessed via the
-    ``ObjectiveQuery``.
-
-
-
-
-
-    .. py:method:: get_objective_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank
-        :noindex:
-
-
-    .. py:method:: can_search_objectives():
-        :noindex:
-
-
-    .. py:method:: use_federated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_objective_query():
-        :noindex:
-
-
-    .. py:attribute:: objective_query
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_query(objective_query):
-        :noindex:
-
+   .. automethod:: ObjectiveQuerySession.get_objectives_by_query
 
 Objective Admin Session
 -----------------------
 
-.. py:class:: ObjectiveAdminSession(abc_learning_sessions.ObjectiveAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``Objectives``.
+.. autoclass:: ObjectiveAdminSession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveAdminSession.objective_bank_id
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. autoattribute:: ObjectiveAdminSession.objective_bank
 
+   .. automethod:: ObjectiveAdminSession.can_create_objectives
 
+   .. automethod:: ObjectiveAdminSession.can_create_objective_with_record_types
 
+   .. automethod:: ObjectiveAdminSession.get_objective_form_for_create
 
-    Create and update operations differ in their usage. To create an
-    ``Objective,`` a ``ObjectiveForm`` is requested using
-    ``get_objective_form_for_create()`` specifying the desired record
-    ``Types`` or none if no record ``Types`` are needed. The returned
-    ``ObjectiveForm`` will indicate that it is to be used with a create
-    operation and can be used to examine metdata or validate data prior
-    to creation. Once the ``ObjectiveForm`` is submiited to a create
-    operation, it cannot be reused with another create operation unless
-    the first operation was unsuccessful. Each ``ObjectiveForm``
-    corresponds to an attempted transaction.
+   .. automethod:: ObjectiveAdminSession.create_objective
 
+   .. automethod:: ObjectiveAdminSession.can_update_objectives
 
+   .. automethod:: ObjectiveAdminSession.get_objective_form_for_update
 
+   .. automethod:: ObjectiveAdminSession.update_objective
 
-    For updates, ``ObjectiveForms`` are requested to the ``Objective``
-    ``Id`` that is to be updated using ``getObjectiveFormForUpdate()``.
-    Similarly, the ``ObjectiveForm`` has metadata about the data that
-    can be updated and it can perform validation before submitting the
-    update. The ``ObjectiveForm`` can only be used once for a successful
-    update and cannot be reused.
+   .. automethod:: ObjectiveAdminSession.can_delete_objectives
 
+   .. automethod:: ObjectiveAdminSession.delete_objective
 
+   .. automethod:: ObjectiveAdminSession.can_manage_objective_aliases
 
-
-    The delete operations delete ``Objectives``. To unmap an
-    ``Objective`` from the current ``ObjectiveBank,`` the
-    ``ObjectiveObjectiveBankAssignmentSession`` should be used. These
-    delete operations attempt to remove the ``Objective`` itself thus
-    removing it from all known ``ObjectiveBank`` catalogs.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: get_objective_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank
-        :noindex:
-
-
-    .. py:method:: can_create_objectives():
-        :noindex:
-
-
-    .. py:method:: can_create_objective_with_record_types(objective_record_types):
-        :noindex:
-
-
-    .. py:method:: get_objective_form_for_create(objective_record_types):
-        :noindex:
-
-
-    .. py:method:: create_objective(objective_form):
-        :noindex:
-
-
-    .. py:method:: can_update_objectives():
-        :noindex:
-
-
-    .. py:method:: get_objective_form_for_update(objective_id):
-        :noindex:
-
-
-    .. py:method:: update_objective(objective_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_objectives():
-        :noindex:
-
-
-    .. py:method:: delete_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_objective_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_objective(objective_id, alias_id):
-        :noindex:
-
+   .. automethod:: ObjectiveAdminSession.alias_objective
 
 Objective Hierarchy Session
 ---------------------------
 
-.. py:class:: ObjectiveHierarchySession(abc_learning_sessions.ObjectiveHierarchySession, osid_sessions.OsidSession)
-    This session defines methods for traversing a hierarchy of ``Objective`` objects.
+.. autoclass:: ObjectiveHierarchySession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveHierarchySession.objective_hierarchy_id
 
-    Each node in the hierarchy is a unique ``Objective that contains its
-    child objectives``. The hierarchy may be traversed recursively to
-    establish the tree structure through ``get_parent_objectives()`` and
-    ``getChildObjectives()``. To relate these ``Ids`` to another OSID,
-    ``get_objective_nodes()`` can be used for retrievals that can be
-    used for bulk lookups in other OSIDs. Any ``Objective`` available in
-    the Learning OSID is known to this hierarchy but does not appear in
-    the hierarchy traversal until added as a root node or a child of
-    another node.
+   .. autoattribute:: ObjectiveHierarchySession.objective_hierarchy
 
+   .. automethod:: ObjectiveHierarchySession.can_access_objective_hierarchy
 
+   .. automethod:: ObjectiveHierarchySession.use_comparative_objective_view
 
+   .. automethod:: ObjectiveHierarchySession.use_plenary_objective_view
 
-    A user may not be authorized to traverse the entire hierarchy. Parts
-    of the hierarchy may be made invisible through omission from the
-    returns of ``get_parent_objectives()`` or ``get_child_objectives()``
-    in lieu of a ``PermissionDenied`` error that may disrupt the
-    traversal through authorized pathways.
+   .. autoattribute:: ObjectiveHierarchySession.root_objective_ids
 
+   .. autoattribute:: ObjectiveHierarchySession.root_objectives
 
+   .. automethod:: ObjectiveHierarchySession.has_parent_objectives
 
+   .. automethod:: ObjectiveHierarchySession.is_parent_of_objective
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: ObjectiveHierarchySession.get_parent_objective_ids
 
+   .. automethod:: ObjectiveHierarchySession.get_parent_objectives
 
+   .. automethod:: ObjectiveHierarchySession.is_ancestor_of_objective
 
+   .. automethod:: ObjectiveHierarchySession.has_child_objectives
 
-      * comparative view: objective elements may be silently omitted or
-        re-ordered
-      * plenary view: provides a complete set or is an error condition
+   .. automethod:: ObjectiveHierarchySession.is_child_of_objective
 
+   .. automethod:: ObjectiveHierarchySession.get_child_objective_ids
 
+   .. automethod:: ObjectiveHierarchySession.get_child_objectives
 
+   .. automethod:: ObjectiveHierarchySession.is_descendant_of_objective
 
+   .. automethod:: ObjectiveHierarchySession.get_objective_node_ids
 
-    .. py:method:: get_objective_hierarchy_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_hierarchy_id
-        :noindex:
-
-
-    .. py:method:: get_objective_hierarchy():
-        :noindex:
-
-
-    .. py:attribute:: objective_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_access_objective_hierarchy():
-        :noindex:
-
-
-    .. py:method:: use_comparative_objective_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_objective_view():
-        :noindex:
-
-
-    .. py:method:: get_root_objective_ids():
-        :noindex:
-
-
-    .. py:attribute:: root_objective_ids
-        :noindex:
-
-
-    .. py:method:: get_root_objectives():
-        :noindex:
-
-
-    .. py:attribute:: root_objectives
-        :noindex:
-
-
-    .. py:method:: has_parent_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: is_parent_of_objective(id_, objective_id):
-        :noindex:
-
-
-    .. py:method:: get_parent_objective_ids(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_parent_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: is_ancestor_of_objective(id_, objective_id):
-        :noindex:
-
-
-    .. py:method:: has_child_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: is_child_of_objective(id_, objective_id):
-        :noindex:
-
-
-    .. py:method:: get_child_objective_ids(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_child_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: is_descendant_of_objective(id_, objective_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_node_ids(objective_id, ancestor_levels, descendant_levels, include_siblings):
-        :noindex:
-
-
-    .. py:method:: get_objective_nodes(objective_id, ancestor_levels, descendant_levels, include_siblings):
-        :noindex:
-
+   .. automethod:: ObjectiveHierarchySession.get_objective_nodes
 
 Objective Hierarchy Design Session
 ----------------------------------
 
-.. py:class:: ObjectiveHierarchyDesignSession(abc_learning_sessions.ObjectiveHierarchyDesignSession, osid_sessions.OsidSession)
-    This session defines methods for managing a hierarchy of ``Objective`` objects.
+.. autoclass:: ObjectiveHierarchyDesignSession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveHierarchyDesignSession.objective_hierarchy_id
 
-    Each node in the hierarchy is a unique ``Objective``.
+   .. autoattribute:: ObjectiveHierarchyDesignSession.objective_hierarchy
 
+   .. automethod:: ObjectiveHierarchyDesignSession.can_modify_objective_hierarchy
 
+   .. automethod:: ObjectiveHierarchyDesignSession.add_root_objective
 
+   .. automethod:: ObjectiveHierarchyDesignSession.remove_root_objective
 
+   .. automethod:: ObjectiveHierarchyDesignSession.add_child_objective
 
-    .. py:method:: get_objective_hierarchy_id():
-        :noindex:
+   .. automethod:: ObjectiveHierarchyDesignSession.remove_child_objective
 
-
-    .. py:attribute:: objective_hierarchy_id
-        :noindex:
-
-
-    .. py:method:: get_objective_hierarchy():
-        :noindex:
-
-
-    .. py:attribute:: objective_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_modify_objective_hierarchy():
-        :noindex:
-
-
-    .. py:method:: add_root_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: remove_root_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: add_child_objective(objective_id, child_id):
-        :noindex:
-
-
-    .. py:method:: remove_child_objective(objective_id, child_id):
-        :noindex:
-
-
-    .. py:method:: remove_child_objectives(objective_id):
-        :noindex:
-
+   .. automethod:: ObjectiveHierarchyDesignSession.remove_child_objectives
 
 Objective Sequencing Session
 ----------------------------
 
-.. py:class:: ObjectiveSequencingSession(abc_learning_sessions.ObjectiveSequencingSession, osid_sessions.OsidSession)
-    This session provides methods to sequence the objectives in the objective hierarchy.
+.. autoclass:: ObjectiveSequencingSession
+   :show-inheritance:
 
-    .. py:method:: get_objective_hierarchy_id():
-        :noindex:
+   .. autoattribute:: ObjectiveSequencingSession.objective_hierarchy_id
 
+   .. autoattribute:: ObjectiveSequencingSession.objective_hierarchy
 
-    .. py:attribute:: objective_hierarchy_id
-        :noindex:
+   .. automethod:: ObjectiveSequencingSession.can_sequence_objectives
 
+   .. automethod:: ObjectiveSequencingSession.move_objective_ahead
 
-    .. py:method:: get_objective_hierarchy():
-        :noindex:
+   .. automethod:: ObjectiveSequencingSession.move_objective_behind
 
-
-    .. py:attribute:: objective_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_sequence_objectives():
-        :noindex:
-
-
-    .. py:method:: move_objective_ahead(parent_objective_id, reference_objective_id, objective_id):
-        :noindex:
-
-
-    .. py:method:: move_objective_behind(parent_objective_id, reference_objective_id, objective_id):
-        :noindex:
-
-
-    .. py:method:: sequence_objectives(parent_objective_id, objective_ids):
-        :noindex:
-
+   .. automethod:: ObjectiveSequencingSession.sequence_objectives
 
 Objective Objective Bank Session
 --------------------------------
 
-.. py:class:: ObjectiveObjectiveBankSession(abc_learning_sessions.ObjectiveObjectiveBankSession, osid_sessions.OsidSession)
-    This session provides methods to retrieve ``Objective`` to ``ObjectiveBank`` mappings.
+.. autoclass:: ObjectiveObjectiveBankSession
+   :show-inheritance:
 
+   .. automethod:: ObjectiveObjectiveBankSession.can_lookup_objective_objective_bank_mappings
 
-    An ``Objective`` may appear in multiple ``ObjectiveBanks``. Each
-    ``ObjectiveBank`` may have its own authorizations governing who is
-    allowed to look at it.
+   .. automethod:: ObjectiveObjectiveBankSession.use_comparative_objective_bank_view
 
+   .. automethod:: ObjectiveObjectiveBankSession.use_plenary_objective_bank_view
 
+   .. automethod:: ObjectiveObjectiveBankSession.get_objective_ids_by_objective_bank
 
+   .. automethod:: ObjectiveObjectiveBankSession.get_objectives_by_objective_bank
 
-    This lookup session defines two views:
+   .. automethod:: ObjectiveObjectiveBankSession.get_objective_ids_by_objective_banks
 
+   .. automethod:: ObjectiveObjectiveBankSession.get_objectives_by_objective_banks
 
+   .. automethod:: ObjectiveObjectiveBankSession.get_objective_bank_ids_by_objective
 
-
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete result set or is an error
-        condition
-
-
-
-
-
-    .. py:method:: can_lookup_objective_objective_bank_mappings():
-        :noindex:
-
-
-    .. py:method:: use_comparative_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_objective_ids_by_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_ids_by_objective_banks(objective_bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_objectives_by_objective_banks(objective_bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_ids_by_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_objective(objective_id):
-        :noindex:
-
+   .. automethod:: ObjectiveObjectiveBankSession.get_objective_banks_by_objective
 
 Objective Objective Bank Assignment Session
 -------------------------------------------
 
-.. py:class:: ObjectiveObjectiveBankAssignmentSession(abc_learning_sessions.ObjectiveObjectiveBankAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to re-assign ``Objectives`` to ``ObjectiveBanks``.
+.. autoclass:: ObjectiveObjectiveBankAssignmentSession
+   :show-inheritance:
 
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.can_assign_objectives
 
-    An ``Objective`` may map to multiple ``ObjectiveBanks`` and removing
-    the last reference to an ``Objective`` is the equivalent of deleting
-    it. Each ``ObjectiveBank`` may have its own authorizations governing
-    who is allowed to operate on it.
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.can_assign_objectives_to_objective_bank
 
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.get_assignable_objective_bank_ids
 
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.get_assignable_objective_bank_ids_for_objective
 
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.assign_objective_to_objective_bank
 
-    Moving or adding a reference of an ``Objective`` to another
-    ``ObjectiveBank`` is not a copy operation (eg: does not change its
-    ``Id`` ).
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.unassign_objective_from_objective_bank
 
-
-
-
-
-    .. py:method:: can_assign_objectives():
-        :noindex:
-
-
-    .. py:method:: can_assign_objectives_to_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_objective_bank_ids(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_objective_bank_ids_for_objective(objective_bank_id, objective_id):
-        :noindex:
-
-
-    .. py:method:: assign_objective_to_objective_bank(objective_id, objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: unassign_objective_from_objective_bank(objective_id, objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: reassign_proficiency_to_objective_bank(objective_id, from_objective_bank_id, to_objective_bank_id):
-        :noindex:
-
+   .. automethod:: ObjectiveObjectiveBankAssignmentSession.reassign_proficiency_to_objective_bank
 
 Objective Requisite Session
 ---------------------------
 
-.. py:class:: ObjectiveRequisiteSession(abc_learning_sessions.ObjectiveRequisiteSession, osid_sessions.OsidSession)
-    This session provides methods for retrieving objective requisites.
+.. autoclass:: ObjectiveRequisiteSession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveRequisiteSession.objective_bank_id
 
-    A requisite is a set of ``Objectives`` that should be achieved
-    before another ``Objective`` is attempted.
+   .. autoattribute:: ObjectiveRequisiteSession.objective_bank
 
+   .. automethod:: ObjectiveRequisiteSession.can_lookup_objective_prerequisites
 
+   .. automethod:: ObjectiveRequisiteSession.use_comparative_objective_view
 
+   .. automethod:: ObjectiveRequisiteSession.use_plenary_objective_view
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: ObjectiveRequisiteSession.use_federated_objective_bank_view
 
+   .. automethod:: ObjectiveRequisiteSession.use_isolated_objective_bank_view
 
+   .. automethod:: ObjectiveRequisiteSession.get_requisite_objectives
 
+   .. automethod:: ObjectiveRequisiteSession.get_all_requisite_objectives
 
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete set or is an error condition
-      * isolated objective bank view: All objective methods in this
-        session operate, retrieve and pertain to objectives defined
-        explicitly in the current objective bank. Using an isolated view
-        is useful for managing objectives with the
-        ``ObjectiveAdminSession.``
-      * federated objective bank view: All objective methods in this
-        session operate, retrieve and pertain to all objectives defined
-        in this objective bank and any other objective banks implicitly
-        available in this objective bank through objective bank
-        inheritence.
+   .. automethod:: ObjectiveRequisiteSession.get_dependent_objectives
 
+   .. automethod:: ObjectiveRequisiteSession.is_objective_required
 
-
-
-
-
-
-
-    Objectives may have an additional records indicated by their
-    respective record types. The record may not be accessed through a
-    cast of the ``Objective``.
-
-
-
-
-
-    .. py:method:: get_objective_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank
-        :noindex:
-
-
-    .. py:method:: can_lookup_objective_prerequisites():
-        :noindex:
-
-
-    .. py:method:: use_comparative_objective_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_objective_view():
-        :noindex:
-
-
-    .. py:method:: use_federated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_requisite_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_all_requisite_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_dependent_objectives(objective_id):
-        :noindex:
-
-
-    .. py:method:: is_objective_required(objective_id, required_objective_id):
-        :noindex:
-
-
-    .. py:method:: get_equivalent_objectives(objective_id):
-        :noindex:
-
+   .. automethod:: ObjectiveRequisiteSession.get_equivalent_objectives
 
 Objective Requisite Assignment Session
 --------------------------------------
 
-.. py:class:: ObjectiveRequisiteAssignmentSession(abc_learning_sessions.ObjectiveRequisiteAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to manage requisites.
+.. autoclass:: ObjectiveRequisiteAssignmentSession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveRequisiteAssignmentSession.objective_bank_id
 
-    Each ``ObjectiveBank`` may have its own authorizations governing who
-    is allowed to operate on it.
+   .. autoattribute:: ObjectiveRequisiteAssignmentSession.objective_bank
 
+   .. automethod:: ObjectiveRequisiteAssignmentSession.can_assign_requisites
 
+   .. automethod:: ObjectiveRequisiteAssignmentSession.assign_objective_requisite
 
+   .. automethod:: ObjectiveRequisiteAssignmentSession.unassign_objective_requisite
 
-    Moving or adding a reference of an ``Objective`` to another
-    ``ObjectiveBank`` is not a copy operation (eg: does not change its
-    ``Id`` ).
+   .. automethod:: ObjectiveRequisiteAssignmentSession.assign_equivalent_objective
 
-
-
-
-
-    .. py:method:: get_objective_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank
-        :noindex:
-
-
-    .. py:method:: can_assign_requisites():
-        :noindex:
-
-
-    .. py:method:: assign_objective_requisite(objective_id, requisite_objective_id):
-        :noindex:
-
-
-    .. py:method:: unassign_objective_requisite(objective_id, requisite_objective_id):
-        :noindex:
-
-
-    .. py:method:: assign_equivalent_objective(objective_id, equivalent_objective_id):
-        :noindex:
-
-
-    .. py:method:: unassign_equivalent_objective(objective_id, equivalent_objective_id):
-        :noindex:
-
+   .. automethod:: ObjectiveRequisiteAssignmentSession.unassign_equivalent_objective
 
 Activity Lookup Session
 -----------------------
 
-.. py:class:: ActivityLookupSession(abc_learning_sessions.ActivityLookupSession, osid_sessions.OsidSession)
-    This session provides methods for retrieving ``Activity`` objects.
+.. autoclass:: ActivityLookupSession
+   :show-inheritance:
 
+   .. autoattribute:: ActivityLookupSession.objective_bank_id
 
-    The ``Activity`` represents something to perform in order to achieve
-    a learning objective.
+   .. autoattribute:: ActivityLookupSession.objective_bank
 
+   .. automethod:: ActivityLookupSession.can_lookup_activities
 
+   .. automethod:: ActivityLookupSession.use_comparative_activity_view
 
+   .. automethod:: ActivityLookupSession.use_plenary_activity_view
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: ActivityLookupSession.use_federated_objective_bank_view
 
+   .. automethod:: ActivityLookupSession.use_isolated_objective_bank_view
 
+   .. automethod:: ActivityLookupSession.get_activity
 
+   .. automethod:: ActivityLookupSession.get_activities_by_ids
 
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete set or is an error condition
-      * isolated objective bank view: All activity methods in this
-        session operate, retrieve and pertain to activities defined
-        explicitly in the current objective bank. Using an isolated view
-        is useful for managing activities with the
-        ``ActivityAdminSession.``
-      * federated objective bank view: All activity methods in this
-        session operate, retrieve and pertain to all activities defined
-        in this objective bank and any other objective banks implicitly
-        available in this objective bank through objective bank
-        inheritence.
+   .. automethod:: ActivityLookupSession.get_activities_by_genus_type
 
+   .. automethod:: ActivityLookupSession.get_activities_by_parent_genus_type
 
+   .. automethod:: ActivityLookupSession.get_activities_by_record_type
 
+   .. automethod:: ActivityLookupSession.get_activities_for_objective
 
+   .. automethod:: ActivityLookupSession.get_activities_for_objectives
 
+   .. automethod:: ActivityLookupSession.get_activities_by_asset
 
+   .. automethod:: ActivityLookupSession.get_activities_by_assets
 
-
-    Activities may have an additional records indicated by their
-    respective record types. The record may not be accessed through a
-    cast of the ``Activity``.
-
-
-
-
-
-    .. py:method:: get_objective_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank
-        :noindex:
-
-
-    .. py:method:: can_lookup_activities():
-        :noindex:
-
-
-    .. py:method:: use_comparative_activity_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_activity_view():
-        :noindex:
-
-
-    .. py:method:: use_federated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_activity(activity_id):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_ids(activity_ids):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_genus_type(activity_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_parent_genus_type(activity_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_record_type(activity_record_type):
-        :noindex:
-
-
-    .. py:method:: get_activities_for_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_activities_for_objectives(objective_ids):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_asset(asset_id):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_assets(asset_ids):
-        :noindex:
-
-
-    .. py:method:: get_activities():
-        :noindex:
-
-
-    .. py:attribute:: activities
-        :noindex:
-
+   .. autoattribute:: ActivityLookupSession.activities
 
 Activity Admin Session
 ----------------------
 
-.. py:class:: ActivityAdminSession(abc_learning_sessions.ActivityAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``Activities``.
+.. autoclass:: ActivityAdminSession
+   :show-inheritance:
 
+   .. autoattribute:: ActivityAdminSession.objective_bank_id
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. autoattribute:: ActivityAdminSession.objective_bank
 
+   .. automethod:: ActivityAdminSession.can_create_activities
 
+   .. automethod:: ActivityAdminSession.can_create_activity_with_record_types
 
+   .. automethod:: ActivityAdminSession.get_activity_form_for_create
 
-    Create and update operations differ in their usage. To create an
-    ``Activity,`` an ``ActivityForm`` is requested using
-    ``get_activity_form_for_create()`` specifying the desired objective
-    and record ``Types`` or none if no record ``Types`` are needed. The
-    returned ``ActivityForm`` will indicate that it is to be used with a
-    create operation and can be used to examine metdata or validate data
-    prior to creation. Once the ``ActivityForm`` is submiited to a
-    create operation, it cannot be reused with another create operation
-    unless the first operation was unsuccessful. Each ``ActivityForm``
-    corresponds to an attempted transaction.
+   .. automethod:: ActivityAdminSession.create_activity
 
+   .. automethod:: ActivityAdminSession.can_update_activities
 
+   .. automethod:: ActivityAdminSession.get_activity_form_for_update
 
+   .. automethod:: ActivityAdminSession.update_activity
 
-    For updates, ``ActivityForms`` are requested to the ``Activity``
-    ``Id`` that is to be updated using ``getActivityFormForUpdate()``.
-    Similarly, the ``ActivityForm`` has metadata about the data that can
-    be updated and it can perform validation before submitting the
-    update. The ``ActivityForm`` can only be used once for a successful
-    update and cannot be reused.
+   .. automethod:: ActivityAdminSession.can_delete_activities
 
+   .. automethod:: ActivityAdminSession.delete_activity
 
+   .. automethod:: ActivityAdminSession.can_manage_activity_aliases
 
-
-    The delete operations delete ``Activities``. To unmap an
-    ``Activity`` from the current ``ObjectiveBank,`` the
-    ``ActivityObjectiveBankAssignmentSession`` should be used. These
-    delete operations attempt to remove the ``Activity`` itself thus
-    removing it from all known ``ObjectiveBank`` catalogs.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: get_objective_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank
-        :noindex:
-
-
-    .. py:method:: can_create_activities():
-        :noindex:
-
-
-    .. py:method:: can_create_activity_with_record_types(activity_record_types):
-        :noindex:
-
-
-    .. py:method:: get_activity_form_for_create(objective_id, activity_record_types):
-        :noindex:
-
-
-    .. py:method:: create_activity(activity_form):
-        :noindex:
-
-
-    .. py:method:: can_update_activities():
-        :noindex:
-
-
-    .. py:method:: get_activity_form_for_update(activity_id):
-        :noindex:
-
-
-    .. py:method:: update_activity(activity_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_activities():
-        :noindex:
-
-
-    .. py:method:: delete_activity(activity_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_activity_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_activity(activity_id, alias_id):
-        :noindex:
-
+   .. automethod:: ActivityAdminSession.alias_activity
 
 Activity Objective Bank Session
 -------------------------------
 
-.. py:class:: ActivityObjectiveBankSession(abc_learning_sessions.ActivityObjectiveBankSession, osid_sessions.OsidSession)
-    This session provides methods to retrieve ``Activity`` to ``ObjectiveBank`` mappings.
+.. autoclass:: ActivityObjectiveBankSession
+   :show-inheritance:
 
+   .. automethod:: ActivityObjectiveBankSession.can_lookup_activity_objective_bank_mappings
 
-    An ``Activity`` may appear in multiple ``ObjectiveBanks``. Each
-    ``ObjectiveBank`` may have its own authorizations governing who is
-    allowed to look at it.
+   .. automethod:: ActivityObjectiveBankSession.use_comparative_objective_bank_view
 
+   .. automethod:: ActivityObjectiveBankSession.use_plenary_objective_bank_view
 
+   .. automethod:: ActivityObjectiveBankSession.get_activity_ids_by_objective_bank
 
+   .. automethod:: ActivityObjectiveBankSession.get_activities_by_objective_bank
 
-    This lookup session defines two views:
+   .. automethod:: ActivityObjectiveBankSession.get_activity_ids_by_objective_banks
 
+   .. automethod:: ActivityObjectiveBankSession.get_activities_by_objective_banks
 
+   .. automethod:: ActivityObjectiveBankSession.get_objective_bank_ids_by_activity
 
-
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete result set or is an error
-        condition
-
-
-
-
-
-    .. py:method:: can_lookup_activity_objective_bank_mappings():
-        :noindex:
-
-
-    .. py:method:: use_comparative_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_activity_ids_by_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_activity_ids_by_objective_banks(objective_bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_activities_by_objective_banks(objective_bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_ids_by_activity(activity_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_activity(activity_id):
-        :noindex:
-
+   .. automethod:: ActivityObjectiveBankSession.get_objective_banks_by_activity
 
 Activity Objective Bank Assignment Session
 ------------------------------------------
 
-.. py:class:: ActivityObjectiveBankAssignmentSession(abc_learning_sessions.ActivityObjectiveBankAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to re-assign ``Activities`` to ``ObjectiveBanks``.
+.. autoclass:: ActivityObjectiveBankAssignmentSession
+   :show-inheritance:
 
+   .. automethod:: ActivityObjectiveBankAssignmentSession.can_assign_activities
 
-    An ``Activity`` may map to multiple ``ObjectiveBanks`` and removing
-    the last reference to a ``Activity`` is the equivalent of deleting
-    it. Each ``ObjectiveBank`` may have its own authorizations governing
-    who is allowed to operate on it.
+   .. automethod:: ActivityObjectiveBankAssignmentSession.can_assign_activities_to_objective_bank
 
+   .. automethod:: ActivityObjectiveBankAssignmentSession.get_assignable_objective_bank_ids
 
+   .. automethod:: ActivityObjectiveBankAssignmentSession.get_assignable_objective_bank_ids_for_activity
 
+   .. automethod:: ActivityObjectiveBankAssignmentSession.assign_activity_to_objective_bank
 
-    Moving or adding a reference of an ``Activity`` to another
-    ``ObjectiveBank`` is not a copy operation (eg: does not change its
-    ``Id`` ).
+   .. automethod:: ActivityObjectiveBankAssignmentSession.unassign_activity_from_objective_bank
 
+   .. automethod:: ActivityObjectiveBankAssignmentSession.reassign_activity_to_objective_bank
 
+Proficiency Lookup Session
+--------------------------
 
+.. autoclass:: ProficiencyLookupSession
+   :show-inheritance:
 
+   .. autoattribute:: ProficiencyLookupSession.objective_bank_id
 
-    .. py:method:: can_assign_activities():
-        :noindex:
+   .. autoattribute:: ProficiencyLookupSession.objective_bank
 
+   .. automethod:: ProficiencyLookupSession.can_lookup_proficiencies
 
-    .. py:method:: can_assign_activities_to_objective_bank(objective_bank_id):
-        :noindex:
+   .. automethod:: ProficiencyLookupSession.use_comparative_proficiency_view
 
+   .. automethod:: ProficiencyLookupSession.use_plenary_proficiency_view
 
-    .. py:method:: get_assignable_objective_bank_ids(objective_bank_id):
-        :noindex:
+   .. automethod:: ProficiencyLookupSession.use_federated_objective_bank_view
 
+   .. automethod:: ProficiencyLookupSession.use_isolated_objective_bank_view
 
-    .. py:method:: get_assignable_objective_bank_ids_for_activity(objective_bank_id, activity_id):
-        :noindex:
+   .. automethod:: ProficiencyLookupSession.use_effective_proficiency_view
 
+   .. automethod:: ProficiencyLookupSession.use_any_effective_proficiency_view
 
-    .. py:method:: assign_activity_to_objective_bank(activity_id, objective_bank_id):
-        :noindex:
+   .. automethod:: ProficiencyLookupSession.get_proficiency
 
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_ids
 
-    .. py:method:: unassign_activity_from_objective_bank(activity_id, objective_bank_id):
-        :noindex:
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type
 
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_parent_genus_type
 
-    .. py:method:: reassign_activity_to_objective_bank(activity_id, from_objective_bank_id, to_objective_bank_id):
-        :noindex:
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_record_type
 
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_objective
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_objective_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_for_objective
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_for_objective_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_objectives
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_resource
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_resource_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_for_resource
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_for_resource_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_resources
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_objective_and_resource
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_for_objective_and_resource_on_date
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_for_objective_and_resource
+
+   .. automethod:: ProficiencyLookupSession.get_proficiencies_by_genus_type_for_objective_and_resource_on_date
+
+   .. autoattribute:: ProficiencyLookupSession.proficiencies
+
+Proficiency Query Session
+-------------------------
+
+.. autoclass:: ProficiencyQuerySession
+   :show-inheritance:
+
+   .. autoattribute:: ProficiencyQuerySession.objective_bank_id
+
+   .. autoattribute:: ProficiencyQuerySession.objective_bank
+
+   .. automethod:: ProficiencyQuerySession.can_search_proficiencies
+
+   .. automethod:: ProficiencyQuerySession.use_federated_objective_bank_view
+
+   .. automethod:: ProficiencyQuerySession.use_isolated_objective_bank_view
+
+   .. autoattribute:: ProficiencyQuerySession.proficiency_query
+
+   .. automethod:: ProficiencyQuerySession.get_proficiencies_by_query
+
+Proficiency Admin Session
+-------------------------
+
+.. autoclass:: ProficiencyAdminSession
+   :show-inheritance:
+
+   .. autoattribute:: ProficiencyAdminSession.objective_bank_id
+
+   .. autoattribute:: ProficiencyAdminSession.objective_bank
+
+   .. automethod:: ProficiencyAdminSession.can_create_proficiencies
+
+   .. automethod:: ProficiencyAdminSession.can_create_proficiency_with_record_types
+
+   .. automethod:: ProficiencyAdminSession.get_proficiency_form_for_create
+
+   .. automethod:: ProficiencyAdminSession.create_proficiency
+
+   .. automethod:: ProficiencyAdminSession.can_update_proficiencies
+
+   .. automethod:: ProficiencyAdminSession.get_proficiency_form_for_update
+
+   .. automethod:: ProficiencyAdminSession.update_proficiency
+
+   .. automethod:: ProficiencyAdminSession.can_delete_proficiencies
+
+   .. automethod:: ProficiencyAdminSession.delete_proficiency
+
+   .. automethod:: ProficiencyAdminSession.delete_proficiencies
+
+   .. automethod:: ProficiencyAdminSession.can_manage_proficiency_aliases
+
+   .. automethod:: ProficiencyAdminSession.alias_proficiency
 
 Objective Bank Lookup Session
 -----------------------------
 
-.. py:class:: ObjectiveBankLookupSession(abc_learning_sessions.ObjectiveBankLookupSession, osid_sessions.OsidSession)
-    This session provides methods for retrieving ``ObjectiveBank`` objects.
+.. autoclass:: ObjectiveBankLookupSession
+   :show-inheritance:
 
+   .. automethod:: ObjectiveBankLookupSession.can_lookup_objective_banks
 
-    The ``ObjectiveBank`` represents a collection of ``Objectives
-    Activities`` , and ``Proficiencies``.
+   .. automethod:: ObjectiveBankLookupSession.use_comparative_objective_bank_view
 
+   .. automethod:: ObjectiveBankLookupSession.use_plenary_objective_bank_view
 
+   .. automethod:: ObjectiveBankLookupSession.get_objective_bank
 
+   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_ids
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_genus_type
 
+   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_parent_genus_type
 
+   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_record_type
 
+   .. automethod:: ObjectiveBankLookupSession.get_objective_banks_by_provider
 
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete set or is an error condition
-
-
-
-
-
-
-
-
-    Generally, the comparative view should be used for most applications
-    as it permits operation even if there is data that cannot be
-    accessed. For example, a browsing application may only need to
-    examine the ``ObjectiveBanks`` it can access, without breaking
-    execution. However, an administrative application may require all
-    ``ObjectiveBank`` elements to be available.
-
-
-
-
-    ``ObjectiveBanks`` may have an additional records indicated by their
-    respective record types. The record may not be accessed through a
-    cast of the ``ObjectiveBank``.
-
-
-
-
-
-    .. py:method:: can_lookup_objective_banks():
-        :noindex:
-
-
-    .. py:method:: use_comparative_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_ids(objective_bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_genus_type(objective_bank_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_parent_genus_type(objective_bank_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_record_type(objective_bank_record_type):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks_by_provider(resource_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_banks():
-        :noindex:
-
-
-    .. py:attribute:: objective_banks
-        :noindex:
-
+   .. autoattribute:: ObjectiveBankLookupSession.objective_banks
 
 Objective Bank Admin Session
 ----------------------------
 
-.. py:class:: ObjectiveBankAdminSession(abc_learning_sessions.ObjectiveBankAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``ObjectiveBanks``.
+.. autoclass:: ObjectiveBankAdminSession
+   :show-inheritance:
 
+   .. automethod:: ObjectiveBankAdminSession.can_create_objective_banks
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. automethod:: ObjectiveBankAdminSession.can_create_objective_bank_with_record_types
 
+   .. automethod:: ObjectiveBankAdminSession.get_objective_bank_form_for_create
 
+   .. automethod:: ObjectiveBankAdminSession.create_objective_bank
 
+   .. automethod:: ObjectiveBankAdminSession.can_update_objective_banks
 
-    Create and update operations differ in their usage. To create an
-    ``ObjectiveBank,`` an ``ObjectiveBankForm`` is requested using
-    ``get_objective_bank_form_for_create()`` specifying the desired
-    record ``Types`` or none if no record ``Types`` are needed. The
-    returned ``ObjectiveBankForm`` will indicate that it is to be used
-    with a create operation and can be used to examine metdata or
-    validate data prior to creation. Once the ``ObjectiveBankForm`` is
-    submiited to a create operation, it cannot be reused with another
-    create operation unless the first operation was unsuccessful. Each
-    ``ObjectiveBankForm`` corresponds to an attempted transaction.
+   .. automethod:: ObjectiveBankAdminSession.get_objective_bank_form_for_update
 
+   .. automethod:: ObjectiveBankAdminSession.update_objective_bank
 
+   .. automethod:: ObjectiveBankAdminSession.can_delete_objective_banks
 
+   .. automethod:: ObjectiveBankAdminSession.delete_objective_bank
 
-    For updates, ``ObjectiveBankForms`` are requested to the
-    ``ObjectiveBank``  ``Id`` that is to be updated using
-    ``getObjectiveBankFormForUpdate()``. Similarly, the
-    ``ObjectiveBankForm`` has metadata about the data that can be
-    updated and it can perform validation before submitting the update.
-    The ``ObjectiveBankForm`` can only be used once for a successful
-    update and cannot be reused.
+   .. automethod:: ObjectiveBankAdminSession.can_manage_objective_bank_aliases
 
-
-
-
-    The delete operations delete ``ObjectiveBanks``. It is safer to
-    remove all mappings to the ``ObjectiveBank`` catalogs before
-    deletion.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: can_create_objective_banks():
-        :noindex:
-
-
-    .. py:method:: can_create_objective_bank_with_record_types(objective_bank_record_types):
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_form_for_create(objective_bank_record_types):
-        :noindex:
-
-
-    .. py:method:: create_objective_bank(objective_bank_form):
-        :noindex:
-
-
-    .. py:method:: can_update_objective_banks():
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_form_for_update(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: update_objective_bank(objective_bank_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_objective_banks():
-        :noindex:
-
-
-    .. py:method:: delete_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_objective_bank_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_objective_bank(objective_bank_id, alias_id):
-        :noindex:
-
+   .. automethod:: ObjectiveBankAdminSession.alias_objective_bank
 
 Objective Bank Hierarchy Session
 --------------------------------
 
-.. py:class:: ObjectiveBankHierarchySession(abc_learning_sessions.ObjectiveBankHierarchySession, osid_sessions.OsidSession)
-    This session defines methods for traversing a hierarchy of ``ObjectiveBank`` objects.
+.. autoclass:: ObjectiveBankHierarchySession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveBankHierarchySession.objective_bank_hierarchy_id
 
-    Each node in the hierarchy is a unique ``ObjectiveBank``. The
-    hierarchy may be traversed recursively to establish the tree
-    structure through ``get_parent_objective_banks()`` and
-    ``getChildObjectiveBanks()``. To relate these ``Ids`` to another
-    OSID, ``get_objective_bank_nodes()`` can be used for retrievals that
-    can be used for bulk lookups in other OSIDs. Any ``ObjectiveBank``
-    available in the ObjectiveBanking OSID is known to this hierarchy
-    but does not appear in the hierarchy traversal until added as a root
-    node or a child of another node.
+   .. autoattribute:: ObjectiveBankHierarchySession.objective_bank_hierarchy
 
+   .. automethod:: ObjectiveBankHierarchySession.can_access_objective_bank_hierarchy
 
+   .. automethod:: ObjectiveBankHierarchySession.use_comparative_objective_bank_view
 
+   .. automethod:: ObjectiveBankHierarchySession.use_plenary_objective_bank_view
 
-    A user may not be authorized to traverse the entire hierarchy. Parts
-    of the hierarchy may be made invisible through omission from the
-    returns of ``get_parent_objective_banks()`` or
-    ``get_child_objective_banks()`` in lieu of a ``PermissionDenied``
-    error that may disrupt the traversal through authorized pathways.
+   .. autoattribute:: ObjectiveBankHierarchySession.root_objective_bank_ids
 
+   .. autoattribute:: ObjectiveBankHierarchySession.root_objective_banks
 
+   .. automethod:: ObjectiveBankHierarchySession.has_parent_objective_banks
 
+   .. automethod:: ObjectiveBankHierarchySession.is_parent_of_objective_bank
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: ObjectiveBankHierarchySession.get_parent_objective_bank_ids
 
+   .. automethod:: ObjectiveBankHierarchySession.get_parent_objective_banks
 
+   .. automethod:: ObjectiveBankHierarchySession.is_ancestor_of_objective_bank
 
+   .. automethod:: ObjectiveBankHierarchySession.has_child_objective_banks
 
-      * comparative view: objective bank elements may be silently
-        omitted or re-ordered
-      * plenary view: provides a complete set or is an error condition
+   .. automethod:: ObjectiveBankHierarchySession.is_child_of_objective_bank
 
+   .. automethod:: ObjectiveBankHierarchySession.get_child_objective_bank_ids
 
+   .. automethod:: ObjectiveBankHierarchySession.get_child_objective_banks
 
+   .. automethod:: ObjectiveBankHierarchySession.is_descendant_of_objective_bank
 
+   .. automethod:: ObjectiveBankHierarchySession.get_objective_bank_node_ids
 
-    .. py:method:: get_objective_bank_hierarchy_id():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_hierarchy_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_hierarchy():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_access_objective_bank_hierarchy():
-        :noindex:
-
-
-    .. py:method:: use_comparative_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_objective_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_root_objective_bank_ids():
-        :noindex:
-
-
-    .. py:attribute:: root_objective_bank_ids
-        :noindex:
-
-
-    .. py:method:: get_root_objective_banks():
-        :noindex:
-
-
-    .. py:attribute:: root_objective_banks
-        :noindex:
-
-
-    .. py:method:: has_parent_objective_banks(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: is_parent_of_objective_bank(id_, objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_parent_objective_bank_ids(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_parent_objective_banks(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: is_ancestor_of_objective_bank(id_, objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: has_child_objective_banks(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: is_child_of_objective_bank(id_, objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_child_objective_bank_ids(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_child_objective_banks(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: is_descendant_of_objective_bank(id_, objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_node_ids(objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_nodes(objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
-        :noindex:
-
+   .. automethod:: ObjectiveBankHierarchySession.get_objective_bank_nodes
 
 Objective Bank Hierarchy Design Session
 ---------------------------------------
 
-.. py:class:: ObjectiveBankHierarchyDesignSession(abc_learning_sessions.ObjectiveBankHierarchyDesignSession, osid_sessions.OsidSession)
-    This session defines methods for managing a hierarchy of ``ObjectiveBank`` objects.
+.. autoclass:: ObjectiveBankHierarchyDesignSession
+   :show-inheritance:
 
+   .. autoattribute:: ObjectiveBankHierarchyDesignSession.objective_bank_hierarchy_id
 
-    Each node in the hierarchy is a unique ``ObjectiveBank``.
+   .. autoattribute:: ObjectiveBankHierarchyDesignSession.objective_bank_hierarchy
 
+   .. automethod:: ObjectiveBankHierarchyDesignSession.can_modify_objective_bank_hierarchy
 
+   .. automethod:: ObjectiveBankHierarchyDesignSession.add_root_objective_bank
 
+   .. automethod:: ObjectiveBankHierarchyDesignSession.remove_root_objective_bank
 
+   .. automethod:: ObjectiveBankHierarchyDesignSession.add_child_objective_bank
 
-    .. py:method:: get_objective_bank_hierarchy_id():
-        :noindex:
+   .. automethod:: ObjectiveBankHierarchyDesignSession.remove_child_objective_bank
 
-
-    .. py:attribute:: objective_bank_hierarchy_id
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_hierarchy():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_modify_objective_bank_hierarchy():
-        :noindex:
-
-
-    .. py:method:: add_root_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: remove_root_objective_bank(objective_bank_id):
-        :noindex:
-
-
-    .. py:method:: add_child_objective_bank(objective_bank_id, child_id):
-        :noindex:
-
-
-    .. py:method:: remove_child_objective_bank(objective_bank_id, child_id):
-        :noindex:
-
-
-    .. py:method:: remove_child_objective_banks(objective_bank_id):
-        :noindex:
-
+   .. automethod:: ObjectiveBankHierarchyDesignSession.remove_child_objective_banks
 

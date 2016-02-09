@@ -172,7 +172,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if an objective to objective bank lookup session is available.
 
 
-        :return: ``true`` if objective objective bank lookup session is supported, ``false`` otherwise
+        :return: ``true`` if objective objective bank lookup session is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -236,7 +237,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if an objective requisite assignment service is supported.
 
 
-        :return: ``true`` if objective requisite assignment service is supported, ``false`` otherwise
+        :return: ``true`` if objective requisite assignment service is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -336,7 +338,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if an activity to objective bank lookup session is available.
 
 
-        :return: ``true`` if activity objective bank lookup session is supported, ``false`` otherwise
+        :return: ``true`` if activity objective bank lookup session is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -464,7 +467,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if a proficiency objective bank mapping lookup service is supported.
 
 
-        :return: ``true`` if a proficiency objective bank lookup service is supported, ``false`` otherwise
+        :return: ``true`` if a proficiency objective bank lookup service is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -480,7 +484,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if a proficiency objective bank mapping service is supported.
 
 
-        :return: ``true`` if proficiency to objective bank mapping service is supported, ``false`` otherwise
+        :return: ``true`` if proficiency to objective bank mapping service is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -729,7 +734,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if the given ``Objective`` search record type is supported.
 
 
-        :param objective_search_record_type: a ``Type`` indicating an ``Objective`` search record type
+        :param objective_search_record_type: a ``Type`` indicating an ``Objective`` search record
+            type
         :type objective_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -906,7 +912,8 @@ class LearningProfile(osid_managers.OsidProfile):
 
         :param objective_bank_record_type: a ``Type`` indicating an ``ObjectiveBank`` type
         :type objective_bank_record_type: ``osid.type.Type``
-        :return: ``true`` if the given objective bank record ``Type`` is supported, ``false`` otherwise
+        :return: ``true`` if the given objective bank record ``Type`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
 
@@ -939,7 +946,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if the given objective bank search record type is supported.
 
 
-        :param objective_bank_search_record_type: a ``Type`` indicating an ``ObjectiveBank`` search record type
+        :param objective_bank_search_record_type: a ``Type`` indicating an ``ObjectiveBank`` search
+            record type
         :type objective_bank_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -978,8 +986,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1185,8 +1193,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any objective can
-        be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1204,8 +1212,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific
-        objective can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1253,8 +1261,8 @@ class LearningProfile(osid_managers.OsidProfile):
         :type objective_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or ``objective_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or
+            ``objective_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1266,7 +1274,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """
         pass
 
-    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
 
 
@@ -1279,9 +1288,11 @@ class LearningProfile(osid_managers.OsidProfile):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``objective_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` not found or ``objective_id`` not mapped to
+            ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1320,8 +1331,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1527,8 +1538,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any activity can be
-        assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1546,8 +1557,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific activity
-        can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1595,8 +1606,8 @@ class LearningProfile(osid_managers.OsidProfile):
         :type activity_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or
+            ``activity_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1608,7 +1619,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """
         pass
 
-    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
 
 
@@ -1621,9 +1633,10 @@ class LearningProfile(osid_managers.OsidProfile):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``activity_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id``
+            not found or ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1662,8 +1675,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1756,8 +1769,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include
-        objective banks of types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type``
+            which does not include objective banks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -1782,8 +1795,9 @@ class LearningProfile(osid_managers.OsidProfile):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any
-        additional objective banks with genus types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and
+            include any additional objective banks with genus types derived from the specified
+            ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -1921,7 +1935,8 @@ class LearningProfile(osid_managers.OsidProfile):
 
         :param objective_bank_record_types: array of objective bank record types
         :type objective_bank_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
@@ -2036,7 +2051,8 @@ class LearningProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from
+            get_objective_bank_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2200,8 +2216,8 @@ class LearningProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the objective bank methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the objective bank methods may omit or translate elements based on this
+            session, such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2364,7 +2380,8 @@ class LearningProfile(osid_managers.OsidProfile):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -2470,7 +2487,8 @@ class LearningProfile(osid_managers.OsidProfile):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -2485,19 +2503,21 @@ class LearningProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -2513,19 +2533,21 @@ class LearningProfile(osid_managers.OsidProfile):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective bank node
         :rtype: ``osid.learning.ObjectiveBankNode``
@@ -2704,9 +2726,9 @@ class LearningProfile(osid_managers.OsidProfile):
 
 
 class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, LearningProfile):
-    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects
-        of
-        this service.
+    """The learning manager provides access to learning sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -2806,7 +2828,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         self._provider_sessions = dict()
         self._session_management = AUTOMATIC
         self._objective_bank_view = DEFAULT
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
 
 
     # def _get_view(self, view):
@@ -2914,7 +2937,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_lookup_session = property(fget=get_objective_lookup_session)
 
     def get_objective_lookup_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2924,7 +2948,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2955,7 +2980,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_query_session = property(fget=get_objective_query_session)
 
     def get_objective_query_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2965,7 +2991,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2996,7 +3023,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_search_session = property(fget=get_objective_search_session)
 
     def get_objective_search_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3006,7 +3034,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3037,7 +3066,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_admin_session = property(fget=get_objective_admin_session)
 
     def get_objective_admin_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3047,7 +3077,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3078,8 +3109,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.learning.ObjectiveNotificationSession
 
-    def get_objective_notification_session_for_objective_bank(self, objective_receiver, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective notification service for the given objective bank.
+    def get_objective_notification_session_for_objective_bank(self, objective_receiver,
+        objective_bank_id):
+        """Gets the ``OsidSession`` associated with the objective notification service for the given
+            objective bank.
 
 
         :param objective_receiver: the objective receiver
@@ -3091,8 +3124,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_receiver`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3123,8 +3156,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_hierarchy_session = property(fget=get_objective_hierarchy_session)
 
     def get_objective_hierarchy_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for the given objective
-        bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for
+            the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3134,8 +3167,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3166,7 +3199,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_hierarchy_design_session = property(fget=get_objective_hierarchy_design_session)
 
     def get_objective_hierarchy_design_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3176,8 +3210,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3208,7 +3242,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_sequencing_session = property(fget=get_objective_sequencing_session)
 
     def get_objective_sequencing_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3218,8 +3253,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3309,7 +3344,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_requisite_session = property(fget=get_objective_requisite_session)
 
     def get_objective_requisite_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3319,8 +3355,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3351,7 +3387,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_requisite_assignment_session = property(fget=get_objective_requisite_assignment_session)
 
     def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3361,8 +3398,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3393,7 +3430,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_lookup_session = property(fget=get_activity_lookup_session)
 
     def get_activity_lookup_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3403,7 +3441,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3434,7 +3473,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_query_session = property(fget=get_activity_query_session)
 
     def get_activity_query_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3444,7 +3484,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3475,7 +3516,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_search_session = property(fget=get_activity_search_session)
 
     def get_activity_search_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3485,7 +3527,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3516,7 +3559,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_admin_session = property(fget=get_activity_admin_session)
 
     def get_activity_admin_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3526,7 +3570,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3557,8 +3602,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.learning.ActivityNotificationSession
 
-    def get_activity_notification_session_for_objective_bank(self, activity_receiver, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity notification service for the given objective bank.
+    def get_activity_notification_session_for_objective_bank(self, activity_receiver,
+        objective_bank_id):
+        """Gets the ``OsidSession`` associated with the activity notification service for the given
+            objective bank.
 
 
         :param activity_receiver: the activity receiver
@@ -3570,8 +3617,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``activity_receiver`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3661,7 +3708,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_lookup_session = property(fget=get_proficiency_lookup_session)
 
     def get_proficiency_lookup_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -3671,7 +3719,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3702,7 +3751,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_query_session = property(fget=get_proficiency_query_session)
 
     def get_proficiency_query_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -3712,7 +3762,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3743,7 +3794,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_search_session = property(fget=get_proficiency_search_session)
 
     def get_proficiency_search_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3753,7 +3805,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3784,7 +3837,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_admin_session = property(fget=get_proficiency_admin_session)
 
     def get_proficiency_admin_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency administration service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency administration service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3794,7 +3848,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3825,8 +3880,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.learning.ProficiencyNotificationSession
 
-    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency notification service for the given objective bank.
+    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver,
+        objective_bank_id):
+        """Gets the ``OsidSession`` associated with the proficiency notification service for the
+            given objective bank.
 
 
         :param proficiency_receiver: the notification callback
@@ -3838,8 +3895,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``proficiency_receiver`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3876,7 +3933,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :return: a ``ProficiencyObjectiveBankAssignmentSession``
         :rtype: ``osid.learning.ProficiencyObjectiveBankAssignmentSession``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3930,7 +3988,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     my_learning_path_session = property(fget=get_my_learning_path_session)
 
     def get_my_learning_path_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the my learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the my learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3940,7 +3999,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3971,7 +4031,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     learning_path_session = property(fget=get_learning_path_session)
 
     def get_learning_path_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3981,7 +4042,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4069,7 +4131,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_bank_admin_session = property(fget=get_objective_bank_admin_session)
 
     def get_objective_bank_notification_session(self, objective_bank_receiver):
-        """Gets the notification session for notifications pertaining to objective bank service changes.
+        """Gets the notification session for notifications pertaining to objective bank service
+            changes.
 
 
         :param objective_bank_receiver: the objective bank receiver
@@ -4171,8 +4234,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4378,8 +4441,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any objective can
-        be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -4397,8 +4460,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific
-        objective can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -4446,8 +4509,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :type objective_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or ``objective_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or
+            ``objective_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4459,7 +4522,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         pass
 
-    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
 
 
@@ -4472,9 +4536,11 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``objective_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` not found or ``objective_id`` not mapped to
+            ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -4513,8 +4579,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4720,8 +4786,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any activity can be
-        assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -4739,8 +4805,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific activity
-        can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -4788,8 +4854,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :type activity_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or
+            ``activity_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4801,7 +4867,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         pass
 
-    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
 
 
@@ -4814,9 +4881,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``activity_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id``
+            not found or ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -4855,8 +4923,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4949,8 +5017,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include
-        objective banks of types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type``
+            which does not include objective banks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -4975,8 +5043,9 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any
-        additional objective banks with genus types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and
+            include any additional objective banks with genus types derived from the specified
+            ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -5114,7 +5183,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
         :param objective_bank_record_types: array of objective bank record types
         :type objective_bank_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
@@ -5229,7 +5299,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from
+            get_objective_bank_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5393,8 +5464,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the objective bank methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the objective bank methods may omit or translate elements based on this
+            session, such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -5557,7 +5628,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -5663,7 +5735,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -5678,19 +5751,21 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # boolean
 
-    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -5706,19 +5781,21 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.hierarchy.Node
 
-    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective bank node
         :rtype: ``osid.learning.ObjectiveBankNode``
@@ -5897,9 +5974,9 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
 class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
-    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects
-        of
-        this service.
+    """The learning manager provides access to learning sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager support the passing of a ``Proxy``. The
@@ -6014,7 +6091,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveLookupSession
 
     def get_objective_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6026,7 +6104,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6058,7 +6137,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveQuerySession
 
     def get_objective_query_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6070,7 +6150,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6102,7 +6183,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveSearchSession
 
     def get_objective_search_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6114,7 +6196,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6146,7 +6229,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveAdminSession
 
     def get_objective_admin_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6158,7 +6242,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6191,8 +6276,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ObjectiveNotificationSession
 
-    def get_objective_notification_session_for_objective_bank(self, objective_receiver, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective notification service for the given objective bank.
+    def get_objective_notification_session_for_objective_bank(self, objective_receiver,
+        objective_bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the objective notification service for the given
+            objective bank.
 
 
         :param objective_receiver: the objective receiver
@@ -6204,10 +6291,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :return: ``an _objective_notification_session``
         :rtype: ``osid.learning.ObjectiveNotificationSession``
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
-        :raise: ``NullArgument`` -- ``objective_receiver, objective_bank_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``objective_receiver, objective_bank_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6239,8 +6327,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveHierarchySession
 
     def get_objective_hierarchy_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for the given objective
-        bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for
+            the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6252,8 +6340,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6285,7 +6373,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveHierarchyDesignSession
 
     def get_objective_hierarchy_design_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6297,8 +6386,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6330,7 +6419,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveSequencingSession
 
     def get_objective_sequencing_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6342,8 +6432,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6438,7 +6528,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveRequisiteSession
 
     def get_objective_requisite_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6450,8 +6541,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6482,8 +6573,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ObjectiveRequisiteAssignmentSession
 
-    def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+    def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id,
+        proxy):
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6495,8 +6588,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6528,7 +6621,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivityLookupSession
 
     def get_activity_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6540,7 +6634,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6572,7 +6667,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivityQuerySession
 
     def get_activity_query_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6584,7 +6680,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6616,7 +6713,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivitySearchSession
 
     def get_activity_search_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6628,7 +6726,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6660,7 +6759,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivityAdminSession
 
     def get_activity_admin_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -6672,7 +6772,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6705,8 +6806,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ActivityNotificationSession
 
-    def get_activity_notification_session_for_objective_bank(self, activity_receiver, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity notification service for the given objective bank.
+    def get_activity_notification_session_for_objective_bank(self, activity_receiver,
+        objective_bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the activity notification service for the given
+            objective bank.
 
 
         :param activity_receiver: the activity receiver
@@ -6718,10 +6821,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :return: ``an _activity_notification_session``
         :rtype: ``osid.learning.ActivityNotificationSession``
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
-        :raise: ``NullArgument`` -- ``activity_receiver, objective_bank_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``activity_receiver, objective_bank_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6816,7 +6920,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencyLookupSession
 
     def get_proficiency_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -6828,7 +6933,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6860,7 +6966,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencyQuerySession
 
     def get_proficiency_query_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -6872,7 +6979,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6904,7 +7012,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencySearchSession
 
     def get_proficiency_search_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -6916,7 +7025,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6948,7 +7058,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencyAdminSession
 
     def get_proficiency_admin_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency administration service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency administration service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -6960,7 +7071,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6993,8 +7105,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ProficiencyNotificationSession
 
-    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency notification service for the given objective bank.
+    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver,
+        objective_bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the proficiency notification service for the
+            given objective bank.
 
 
         :param proficiency_receiver: the notification callback
@@ -7006,10 +7120,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :return: a ``ProficiencyNotificationSession``
         :rtype: ``osid.learning.ProficiencyNotificationSession``
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
-        :raise: ``NullArgument`` -- ``proficiency_receiver, objective_bank_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``proficiency_receiver, objective_bank_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7050,7 +7165,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``osid.learning.ProficiencyObjectiveBankAssignmentSession``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7105,7 +7221,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.MyLearningPathSession
 
     def get_my_learning_path_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the my learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the my learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -7117,7 +7234,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7149,7 +7267,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.LearningPathSession
 
     def get_learning_path_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -7161,7 +7280,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7253,7 +7373,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveBankAdminSession
 
     def get_objective_bank_notification_session(self, objective_bank_receiver, proxy):
-        """Gets the notification session for notifications pertaining to objective bank service changes.
+        """Gets the notification session for notifications pertaining to objective bank service
+            changes.
 
 
         :param objective_bank_receiver: the objective bank receiver
@@ -7359,8 +7480,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -7566,8 +7687,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any objective can
-        be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -7585,8 +7706,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific
-        objective can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -7634,8 +7755,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :type objective_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or ``objective_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or
+            ``objective_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -7647,7 +7768,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         pass
 
-    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
 
 
@@ -7660,9 +7782,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``objective_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` not found or ``objective_id`` not mapped to
+            ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -7701,8 +7825,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -7908,8 +8032,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which any activity can be
-        assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            any activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -7927,8 +8051,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
-        """Gets a list of objective banks including and under the given objective bank node in which a specific activity
-        can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which
+            a specific activity can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -7976,8 +8100,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :type activity_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to
-            ``objective_bank_id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or
+            ``activity_id`` not mapped to ``objective_bank_id``
         :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -7989,7 +8113,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         pass
 
-    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
+    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id,
+        to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
 
 
@@ -8002,9 +8127,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
-            ``activity_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id``
+            not found or ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or
+            ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -8043,8 +8169,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -8137,8 +8263,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include
-        objective banks of types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type``
+            which does not include objective banks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -8163,8 +8289,9 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any
-        additional objective banks with genus types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and
+            include any additional objective banks with genus types derived from the specified
+            ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -8302,7 +8429,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
 
         :param objective_bank_record_types: array of objective bank record types
         :type objective_bank_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
@@ -8417,7 +8545,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from
+            get_objective_bank_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -8581,8 +8710,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the objective bank methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the objective bank methods may omit or translate elements based on this
+            session, such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -8745,7 +8874,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -8851,7 +8981,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -8866,19 +8997,21 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # boolean
 
-    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -8894,19 +9027,21 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective bank node
         :rtype: ``osid.learning.ObjectiveBankNode``
@@ -9135,7 +9270,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         if session_name in self._provider_sessions:
             return self._provider_sessions[session_name]
         else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_objective_bank')
+            session_class = getattr(self._provider_manager, 'get_' + session_name +
+                '_for_objective_bank')
             if self._proxy is None:
                 session = session_class(self._catalog.get_id())
             else:
@@ -9201,7 +9337,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
     def get_objective_bank_record(self, objective_bank_record_type):
-        """Gets the objective bank record corresponding to the given ``ObjectiveBank`` record ``Type``.
+        """Gets the objective bank record corresponding to the given ``ObjectiveBank`` record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -9288,8 +9425,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -9418,8 +9555,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_objectives_by_genus_type(self, objective_genus_type):
-        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does not include
-        objectives of genus types derived from the specified ``Type``.
+        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does
+            not include objectives of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objectives
@@ -9443,8 +9580,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_objectives_by_parent_genus_type(self, objective_genus_type):
-        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include any additional
-        objective with genus types derived from the specified ``Type``.
+        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include
+            any additional objective with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objectives
@@ -9727,8 +9864,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param objective_record_types: array of objective record types
         :type objective_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_record_types`` is ``null``
 
@@ -9775,7 +9912,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_create()``
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from
+            ``get_objective_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9842,7 +9980,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from
+            ``get_objective_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -10006,8 +10145,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the objective methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the objective methods may omit or translate elements based on this
+            session, such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10276,7 +10415,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_id: the ``Id`` of an objective
         :type objective_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false`` otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
@@ -10291,19 +10431,21 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
 
         :param objective_id: the ``Id`` to query
         :type objective_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -10319,19 +10461,21 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
+    def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels,
+        include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
 
         :param objective_id: the ``Id`` to query
         :type objective_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective node
         :rtype: ``osid.learning.ObjectiveNode``
@@ -10579,9 +10723,11 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type reference_objective_id: ``osid.id.Id``
         :param objective_id: the ``Id`` of the objective to move ahead of ``reference_objective_id``
         :type objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
-            ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
-        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id``
+            not found, or ``reference_objective_id`` or ``objective_id`` is not a child of
+            ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -10602,9 +10748,11 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type reference_objective_id: ``osid.id.Id``
         :param objective_id: the ``Id`` of the objective to move behind ``reference_objective_id``
         :type objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
-            ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
-        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id``
+            not found, or ``reference_objective_id`` or ``objective_id`` is not a child of
+            ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -10623,8 +10771,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type parent_objective_id: ``osid.id.Id``
         :param objective_ids: the ``Id`` of the objectives
         :type objective_ids: ``osid.id.Id[]``
-        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an ``objective_id`` is not a child of
-            ``parent_objective_id``
+        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an
+            ``objective_id`` is not a child of ``parent_objective_id``
         :raise: ``NullArgument`` -- ``paren_objectivet_id`` or ``objective_ids`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -10700,8 +10848,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10774,7 +10922,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
     def get_requisite_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are the immediate requisites for the given ``Objective``.
+        """Gets a list of ``Objectives`` that are the immediate requisites for the given
+            ``Objective``.
 
 
         In plenary mode, the returned list contains all of the immediate
@@ -10801,8 +10950,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_all_requisite_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are the requisites for the given ``Objective`` including the requistes of
-        the requisites, and so on.
+        """Gets a list of ``Objectives`` that are the requisites for the given ``Objective``
+            including the requistes of the requisites, and so on.
 
 
         In plenary mode, the returned list contains all of the immediate
@@ -10867,7 +11016,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param required_objective_id: ``Id`` of the required ``Objective``
         :type required_objective_id: ``osid.id.Id``
-        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false`` otherwise
+        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` not found
         :raise: ``NullArgument`` -- ``objective_id`` is ``null``
@@ -10882,7 +11032,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def get_equivalent_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the purpose of requisites.
+        """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the
+            purpose of requisites.
 
 
         An equivalent objective can satisfy the given objective. In
@@ -11001,8 +11152,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param requisite_objective_id: the ``Id`` of the required ``Objective``
         :type requisite_objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or ``objective_id`` not mapped
-            to ``requisite_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or
+            ``objective_id`` not mapped to ``requisite_objective_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``requisite_objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -11015,7 +11166,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
     def assign_equivalent_objective(self, objective_id, equivalent_objective_id):
-        """Makes an objective equivalent to another objective for the purposes of satisfying a requisite.
+        """Makes an objective equivalent to another objective for the purposes of satisfying a
+            requisite.
 
 
         :param objective_id: the ``Id`` of the principal ``Objective``
@@ -11043,8 +11195,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param equivalent_objective_id: the ``Id`` of the equivalent ``Objective``
         :type equivalent_objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or ``objective_id`` is already
-            equivalent to ``equivalent_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or
+            ``objective_id`` is already equivalent to ``equivalent_objective_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``equivalent_objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -11120,8 +11272,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_activity_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -11250,8 +11402,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.learning.ActivityList
 
     def get_activities_by_genus_type(self, activity_genus_type):
-        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does not include activities
-        of genus types derived from the specified ``Type``.
+        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does
+            not include activities of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known activities
@@ -11275,8 +11427,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.learning.ActivityList
 
     def get_activities_by_parent_genus_type(self, activity_genus_type):
-        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include any additional
-        activity with genus types derived from the specified ``Type``.
+        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include
+            any additional activity with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known activities
@@ -11535,8 +11687,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param activity_record_types: array of activity record types
         :type activity_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``activity_record_types`` is ``null``
 
@@ -11586,7 +11738,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_create()``
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from
+            ``get_activity_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -11653,7 +11806,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_update()``
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from
+            ``get_activity_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -11757,9 +11911,9 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class ObjectiveBankList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveBankList`` provides a means for accessing ``ObjectiveBank`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveBankList`` provides a means for accessing
+        ``ObjectiveBank``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (obl.hasNext()) { ObjectiveBank objectiveBanks =
@@ -11784,8 +11938,8 @@ class ObjectiveBankList(osid_objects.OsidList):
         """Gets the next ``ObjectiveBank`` in this list.
 
 
-        :return: the next ``ObjectiveBank`` in this list. The ``has_next()`` method should be used to test that a next
-        ``ObjectiveBank`` is available before calling this method.
+        :return: the next ``ObjectiveBank`` in this list. The ``has_next()`` method should be used
+            to test that a next ``ObjectiveBank`` is available before calling this method.
         :rtype: ``osid.learning.ObjectiveBank``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -11800,14 +11954,15 @@ class ObjectiveBankList(osid_objects.OsidList):
     next_objective_bank = property(fget=get_next_objective_bank)
 
     def get_next_objective_banks(self, n):
-        """Gets the next set of ``ObjectiveBank`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``ObjectiveBank`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``ObjectiveBank`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``ObjectiveBank`` elements requested which must be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``ObjectiveBank`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``ObjectiveBank`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.learning.ObjectiveBank``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

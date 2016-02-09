@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.repository.queries
+.. automodule:: dlkit.repository.queries
 
 Queries
 =======
@@ -7,801 +9,282 @@ Queries
 Asset Query
 -----------
 
-.. py:class:: AssetQuery(abc_repository_queries.AssetQuery, osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery, osid_queries.OsidSourceableQuery)
-    This is the query for searching assets.
+.. autoclass:: AssetQuery
+   :show-inheritance:
 
+   .. automethod:: AssetQuery.match_title
 
-    Each method specifies an ``AND`` term while multiple invocations of
-    the same method produce a nested ``OR``. The query record is
-    identified by the ``Asset Type``.
+   .. automethod:: AssetQuery.match_any_title
 
+   .. autoattribute:: AssetQuery.title_terms
 
+   .. automethod:: AssetQuery.match_public_domain
 
+   .. automethod:: AssetQuery.match_any_public_domain
 
+   .. autoattribute:: AssetQuery.public_domain_terms
 
-    .. py:method:: match_title(title, string_match_type, match):
-        :noindex:
+   .. automethod:: AssetQuery.match_copyright
 
+   .. automethod:: AssetQuery.match_any_copyright
 
-    .. py:method:: match_any_title(match):
-        :noindex:
+   .. autoattribute:: AssetQuery.copyright_terms
 
+   .. automethod:: AssetQuery.match_copyright_registration
 
-    .. py:method:: clear_title_terms():
-        :noindex:
+   .. automethod:: AssetQuery.match_any_copyright_registration
 
+   .. autoattribute:: AssetQuery.copyright_registration_terms
 
-    .. py:attribute:: title_terms
-        :noindex:
+   .. automethod:: AssetQuery.match_distribute_verbatim
 
+   .. autoattribute:: AssetQuery.distribute_verbatim_terms
 
-    .. py:method:: match_public_domain(public_domain):
-        :noindex:
+   .. automethod:: AssetQuery.match_distribute_alterations
 
+   .. autoattribute:: AssetQuery.distribute_alterations_terms
 
-    .. py:method:: match_any_public_domain(match):
-        :noindex:
+   .. automethod:: AssetQuery.match_distribute_compositions
 
+   .. autoattribute:: AssetQuery.distribute_compositions_terms
 
-    .. py:method:: clear_public_domain_terms():
-        :noindex:
+   .. automethod:: AssetQuery.match_source_id
 
+   .. autoattribute:: AssetQuery.source_id_terms
 
-    .. py:attribute:: public_domain_terms
-        :noindex:
+   .. automethod:: AssetQuery.supports_source_query
 
+   .. autoattribute:: AssetQuery.source_query
 
-    .. py:method:: match_copyright(copyright_, string_match_type, match):
-        :noindex:
+   .. automethod:: AssetQuery.match_any_source
 
+   .. autoattribute:: AssetQuery.source_terms
 
-    .. py:method:: match_any_copyright(match):
-        :noindex:
+   .. automethod:: AssetQuery.match_created_date
 
+   .. automethod:: AssetQuery.match_any_created_date
 
-    .. py:method:: clear_copyright_terms():
-        :noindex:
+   .. autoattribute:: AssetQuery.created_date_terms
 
+   .. automethod:: AssetQuery.match_published
 
-    .. py:attribute:: copyright_terms
-        :noindex:
+   .. autoattribute:: AssetQuery.published_terms
 
+   .. automethod:: AssetQuery.match_published_date
 
-    .. py:method:: match_copyright_registration(registration, string_match_type, match):
-        :noindex:
+   .. automethod:: AssetQuery.match_any_published_date
 
+   .. autoattribute:: AssetQuery.published_date_terms
 
-    .. py:method:: match_any_copyright_registration(match):
-        :noindex:
+   .. automethod:: AssetQuery.match_principal_credit_string
 
+   .. automethod:: AssetQuery.match_any_principal_credit_string
 
-    .. py:method:: clear_copyright_registration_terms():
-        :noindex:
+   .. autoattribute:: AssetQuery.principal_credit_string_terms
 
+   .. automethod:: AssetQuery.match_temporal_coverage
 
-    .. py:attribute:: copyright_registration_terms
-        :noindex:
+   .. automethod:: AssetQuery.match_any_temporal_coverage
 
+   .. autoattribute:: AssetQuery.temporal_coverage_terms
 
-    .. py:method:: match_distribute_verbatim(distributable):
-        :noindex:
+   .. automethod:: AssetQuery.match_location_id
 
+   .. autoattribute:: AssetQuery.location_id_terms
 
-    .. py:method:: clear_distribute_verbatim_terms():
-        :noindex:
+   .. automethod:: AssetQuery.supports_location_query
 
+   .. autoattribute:: AssetQuery.location_query
 
-    .. py:attribute:: distribute_verbatim_terms
-        :noindex:
+   .. automethod:: AssetQuery.match_any_location
 
+   .. autoattribute:: AssetQuery.location_terms
 
-    .. py:method:: match_distribute_alterations(alterable):
-        :noindex:
+   .. automethod:: AssetQuery.match_spatial_coverage
 
+   .. autoattribute:: AssetQuery.spatial_coverage_terms
 
-    .. py:method:: clear_distribute_alterations_terms():
-        :noindex:
+   .. automethod:: AssetQuery.match_spatial_coverage_overlap
 
+   .. automethod:: AssetQuery.match_any_spatial_coverage
 
-    .. py:attribute:: distribute_alterations_terms
-        :noindex:
+   .. autoattribute:: AssetQuery.spatial_coverage_overlap_terms
 
+   .. automethod:: AssetQuery.match_asset_content_id
 
-    .. py:method:: match_distribute_compositions(composable):
-        :noindex:
+   .. autoattribute:: AssetQuery.asset_content_id_terms
 
+   .. automethod:: AssetQuery.supports_asset_content_query
 
-    .. py:method:: clear_distribute_compositions_terms():
-        :noindex:
+   .. autoattribute:: AssetQuery.asset_content_query
 
+   .. automethod:: AssetQuery.match_any_asset_content
 
-    .. py:attribute:: distribute_compositions_terms
-        :noindex:
+   .. autoattribute:: AssetQuery.asset_content_terms
 
+   .. automethod:: AssetQuery.match_composition_id
 
-    .. py:method:: match_source_id(source_id, match):
-        :noindex:
+   .. autoattribute:: AssetQuery.composition_id_terms
 
+   .. automethod:: AssetQuery.supports_composition_query
 
-    .. py:method:: clear_source_id_terms():
-        :noindex:
+   .. autoattribute:: AssetQuery.composition_query
 
+   .. automethod:: AssetQuery.match_any_composition
 
-    .. py:attribute:: source_id_terms
-        :noindex:
+   .. autoattribute:: AssetQuery.composition_terms
 
+   .. automethod:: AssetQuery.match_repository_id
 
-    .. py:method:: supports_source_query():
-        :noindex:
+   .. autoattribute:: AssetQuery.repository_id_terms
 
+   .. automethod:: AssetQuery.supports_repository_query
 
-    .. py:method:: get_source_query():
-        :noindex:
+   .. autoattribute:: AssetQuery.repository_query
 
+   .. autoattribute:: AssetQuery.repository_terms
 
-    .. py:attribute:: source_query
-        :noindex:
-
-
-    .. py:method:: match_any_source(match):
-        :noindex:
-
-
-    .. py:method:: clear_source_terms():
-        :noindex:
-
-
-    .. py:attribute:: source_terms
-        :noindex:
-
-
-    .. py:method:: match_created_date(start, end, match):
-        :noindex:
-
-
-    .. py:method:: match_any_created_date(match):
-        :noindex:
-
-
-    .. py:method:: clear_created_date_terms():
-        :noindex:
-
-
-    .. py:attribute:: created_date_terms
-        :noindex:
-
-
-    .. py:method:: match_published(published):
-        :noindex:
-
-
-    .. py:method:: clear_published_terms():
-        :noindex:
-
-
-    .. py:attribute:: published_terms
-        :noindex:
-
-
-    .. py:method:: match_published_date(start, end, match):
-        :noindex:
-
-
-    .. py:method:: match_any_published_date(match):
-        :noindex:
-
-
-    .. py:method:: clear_published_date_terms():
-        :noindex:
-
-
-    .. py:attribute:: published_date_terms
-        :noindex:
-
-
-    .. py:method:: match_principal_credit_string(credit, string_match_type, match):
-        :noindex:
-
-
-    .. py:method:: match_any_principal_credit_string(match):
-        :noindex:
-
-
-    .. py:method:: clear_principal_credit_string_terms():
-        :noindex:
-
-
-    .. py:attribute:: principal_credit_string_terms
-        :noindex:
-
-
-    .. py:method:: match_temporal_coverage(start, end, match):
-        :noindex:
-
-
-    .. py:method:: match_any_temporal_coverage(match):
-        :noindex:
-
-
-    .. py:method:: clear_temporal_coverage_terms():
-        :noindex:
-
-
-    .. py:attribute:: temporal_coverage_terms
-        :noindex:
-
-
-    .. py:method:: match_location_id(location_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_location_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: location_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_location_query():
-        :noindex:
-
-
-    .. py:method:: get_location_query():
-        :noindex:
-
-
-    .. py:attribute:: location_query
-        :noindex:
-
-
-    .. py:method:: match_any_location(match):
-        :noindex:
-
-
-    .. py:method:: clear_location_terms():
-        :noindex:
-
-
-    .. py:attribute:: location_terms
-        :noindex:
-
-
-    .. py:method:: match_spatial_coverage(spatial_unit, match):
-        :noindex:
-
-
-    .. py:method:: clear_spatial_coverage_terms():
-        :noindex:
-
-
-    .. py:attribute:: spatial_coverage_terms
-        :noindex:
-
-
-    .. py:method:: match_spatial_coverage_overlap(spatial_unit, match):
-        :noindex:
-
-
-    .. py:method:: match_any_spatial_coverage(match):
-        :noindex:
-
-
-    .. py:method:: clear_spatial_coverage_overlap_terms():
-        :noindex:
-
-
-    .. py:attribute:: spatial_coverage_overlap_terms
-        :noindex:
-
-
-    .. py:method:: match_asset_content_id(asset_content_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_asset_content_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: asset_content_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_asset_content_query():
-        :noindex:
-
-
-    .. py:method:: get_asset_content_query():
-        :noindex:
-
-
-    .. py:attribute:: asset_content_query
-        :noindex:
-
-
-    .. py:method:: match_any_asset_content(match):
-        :noindex:
-
-
-    .. py:method:: clear_asset_content_terms():
-        :noindex:
-
-
-    .. py:attribute:: asset_content_terms
-        :noindex:
-
-
-    .. py:method:: match_composition_id(composition_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_composition_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: composition_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_composition_query():
-        :noindex:
-
-
-    .. py:method:: get_composition_query():
-        :noindex:
-
-
-    .. py:attribute:: composition_query
-        :noindex:
-
-
-    .. py:method:: match_any_composition(match):
-        :noindex:
-
-
-    .. py:method:: clear_composition_terms():
-        :noindex:
-
-
-    .. py:attribute:: composition_terms
-        :noindex:
-
-
-    .. py:method:: match_repository_id(repository_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_repository_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: repository_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_repository_query():
-        :noindex:
-
-
-    .. py:method:: get_repository_query():
-        :noindex:
-
-
-    .. py:attribute:: repository_query
-        :noindex:
-
-
-    .. py:method:: clear_repository_terms():
-        :noindex:
-
-
-    .. py:attribute:: repository_terms
-        :noindex:
-
-
-    .. py:method:: get_asset_query_record(asset_record_type):
-        :noindex:
-
+   .. automethod:: AssetQuery.get_asset_query_record
 
 Asset Content Query
 -------------------
 
-.. py:class:: AssetContentQuery(abc_repository_queries.AssetContentQuery, osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery)
-    This is the query for searching asset contents.
+.. autoclass:: AssetContentQuery
+   :show-inheritance:
 
+   .. automethod:: AssetContentQuery.match_accessibility_type
 
-    Each method forms an ``AND`` term while multiple invocations of the
-    same method produce a nested ``OR``.
+   .. automethod:: AssetContentQuery.match_any_accessibility_type
 
+   .. autoattribute:: AssetContentQuery.accessibility_type_terms
 
+   .. automethod:: AssetContentQuery.match_data_length
 
+   .. automethod:: AssetContentQuery.match_any_data_length
 
+   .. autoattribute:: AssetContentQuery.data_length_terms
 
-    .. py:method:: match_accessibility_type(accessibility_type, match):
-        :noindex:
+   .. automethod:: AssetContentQuery.match_data
 
+   .. automethod:: AssetContentQuery.match_any_data
 
-    .. py:method:: match_any_accessibility_type(match):
-        :noindex:
+   .. autoattribute:: AssetContentQuery.data_terms
 
+   .. automethod:: AssetContentQuery.match_url
 
-    .. py:method:: clear_accessibility_type_terms():
-        :noindex:
+   .. automethod:: AssetContentQuery.match_any_url
 
+   .. autoattribute:: AssetContentQuery.url_terms
 
-    .. py:attribute:: accessibility_type_terms
-        :noindex:
-
-
-    .. py:method:: match_data_length(low, high, match):
-        :noindex:
-
-
-    .. py:method:: match_any_data_length(match):
-        :noindex:
-
-
-    .. py:method:: clear_data_length_terms():
-        :noindex:
-
-
-    .. py:attribute:: data_length_terms
-        :noindex:
-
-
-    .. py:method:: match_data(data, match, partial):
-        :noindex:
-
-
-    .. py:method:: match_any_data(match):
-        :noindex:
-
-
-    .. py:method:: clear_data_terms():
-        :noindex:
-
-
-    .. py:attribute:: data_terms
-        :noindex:
-
-
-    .. py:method:: match_url(url, string_match_type, match):
-        :noindex:
-
-
-    .. py:method:: match_any_url(match):
-        :noindex:
-
-
-    .. py:method:: clear_url_terms():
-        :noindex:
-
-
-    .. py:attribute:: url_terms
-        :noindex:
-
-
-    .. py:method:: get_asset_content_query_record(asset_content_record_type):
-        :noindex:
-
+   .. automethod:: AssetContentQuery.get_asset_content_query_record
 
 Composition Query
 -----------------
 
-.. py:class:: CompositionQuery(abc_repository_queries.CompositionQuery, osid_queries.OsidObjectQuery, osid_queries.OsidContainableQuery, osid_queries.OsidOperableQuery, osid_queries.OsidSourceableQuery)
-    This is the query for searching compositions.
+.. autoclass:: CompositionQuery
+   :show-inheritance:
 
+   .. automethod:: CompositionQuery.match_asset_id
 
-    Each method specifies an ``AND`` term while multiple invocations of
-    the same method produces a nested ``OR``.
+   .. autoattribute:: CompositionQuery.asset_id_terms
 
+   .. automethod:: CompositionQuery.supports_asset_query
 
+   .. autoattribute:: CompositionQuery.asset_query
 
+   .. automethod:: CompositionQuery.match_any_asset
 
+   .. autoattribute:: CompositionQuery.asset_terms
 
-    .. py:method:: match_asset_id(asset_id, match):
-        :noindex:
+   .. automethod:: CompositionQuery.match_containing_composition_id
 
+   .. autoattribute:: CompositionQuery.containing_composition_id_terms
 
-    .. py:method:: clear_asset_id_terms():
-        :noindex:
+   .. automethod:: CompositionQuery.supports_containing_composition_query
 
+   .. autoattribute:: CompositionQuery.containing_composition_query
 
-    .. py:attribute:: asset_id_terms
-        :noindex:
+   .. automethod:: CompositionQuery.match_any_containing_composition
 
+   .. autoattribute:: CompositionQuery.containing_composition_terms
 
-    .. py:method:: supports_asset_query():
-        :noindex:
+   .. automethod:: CompositionQuery.match_contained_composition_id
 
+   .. autoattribute:: CompositionQuery.contained_composition_id_terms
 
-    .. py:method:: get_asset_query():
-        :noindex:
+   .. automethod:: CompositionQuery.supports_contained_composition_query
 
+   .. autoattribute:: CompositionQuery.contained_composition_query
 
-    .. py:attribute:: asset_query
-        :noindex:
+   .. automethod:: CompositionQuery.match_any_contained_composition
 
+   .. autoattribute:: CompositionQuery.contained_composition_terms
 
-    .. py:method:: match_any_asset(match):
-        :noindex:
+   .. automethod:: CompositionQuery.match_repository_id
 
+   .. autoattribute:: CompositionQuery.repository_id_terms
 
-    .. py:method:: clear_asset_terms():
-        :noindex:
+   .. automethod:: CompositionQuery.supports_repository_query
 
+   .. autoattribute:: CompositionQuery.repository_query
 
-    .. py:attribute:: asset_terms
-        :noindex:
+   .. autoattribute:: CompositionQuery.repository_terms
 
-
-    .. py:method:: match_containing_composition_id(composition_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_containing_composition_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: containing_composition_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_containing_composition_query():
-        :noindex:
-
-
-    .. py:method:: get_containing_composition_query():
-        :noindex:
-
-
-    .. py:attribute:: containing_composition_query
-        :noindex:
-
-
-    .. py:method:: match_any_containing_composition(match):
-        :noindex:
-
-
-    .. py:method:: clear_containing_composition_terms():
-        :noindex:
-
-
-    .. py:attribute:: containing_composition_terms
-        :noindex:
-
-
-    .. py:method:: match_contained_composition_id(composition_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_contained_composition_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: contained_composition_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_contained_composition_query():
-        :noindex:
-
-
-    .. py:method:: get_contained_composition_query():
-        :noindex:
-
-
-    .. py:attribute:: contained_composition_query
-        :noindex:
-
-
-    .. py:method:: match_any_contained_composition(match):
-        :noindex:
-
-
-    .. py:method:: clear_contained_composition_terms():
-        :noindex:
-
-
-    .. py:attribute:: contained_composition_terms
-        :noindex:
-
-
-    .. py:method:: match_repository_id(repository_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_repository_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: repository_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_repository_query():
-        :noindex:
-
-
-    .. py:method:: get_repository_query():
-        :noindex:
-
-
-    .. py:attribute:: repository_query
-        :noindex:
-
-
-    .. py:method:: clear_repository_terms():
-        :noindex:
-
-
-    .. py:attribute:: repository_terms
-        :noindex:
-
-
-    .. py:method:: get_composition_query_record(composition_record_type):
-        :noindex:
-
+   .. automethod:: CompositionQuery.get_composition_query_record
 
 Repository Query
 ----------------
 
-.. py:class:: RepositoryQuery(abc_repository_queries.RepositoryQuery, osid_queries.OsidCatalogQuery)
-    This is the query for searching repositories.
+.. autoclass:: RepositoryQuery
+   :show-inheritance:
 
+   .. automethod:: RepositoryQuery.match_asset_id
 
-    Each method specifies an ``AND`` term while multiple invocations of
-    the same method produce a nested ``OR``.
+   .. autoattribute:: RepositoryQuery.asset_id_terms
 
+   .. automethod:: RepositoryQuery.supports_asset_query
 
+   .. autoattribute:: RepositoryQuery.asset_query
 
+   .. automethod:: RepositoryQuery.match_any_asset
 
+   .. autoattribute:: RepositoryQuery.asset_terms
 
-    .. py:method:: match_asset_id(asset_id, match):
-        :noindex:
+   .. automethod:: RepositoryQuery.match_composition_id
 
+   .. autoattribute:: RepositoryQuery.composition_id_terms
 
-    .. py:method:: clear_asset_id_terms():
-        :noindex:
+   .. automethod:: RepositoryQuery.supports_composition_query
 
+   .. autoattribute:: RepositoryQuery.composition_query
 
-    .. py:attribute:: asset_id_terms
-        :noindex:
+   .. automethod:: RepositoryQuery.match_any_composition
 
+   .. autoattribute:: RepositoryQuery.composition_terms
 
-    .. py:method:: supports_asset_query():
-        :noindex:
+   .. automethod:: RepositoryQuery.match_ancestor_repository_id
 
+   .. autoattribute:: RepositoryQuery.ancestor_repository_id_terms
 
-    .. py:method:: get_asset_query():
-        :noindex:
+   .. automethod:: RepositoryQuery.supports_ancestor_repository_query
 
+   .. autoattribute:: RepositoryQuery.ancestor_repository_query
 
-    .. py:attribute:: asset_query
-        :noindex:
+   .. automethod:: RepositoryQuery.match_any_ancestor_repository
 
+   .. autoattribute:: RepositoryQuery.ancestor_repository_terms
 
-    .. py:method:: match_any_asset(match):
-        :noindex:
+   .. automethod:: RepositoryQuery.match_descendant_repository_id
 
+   .. autoattribute:: RepositoryQuery.descendant_repository_id_terms
 
-    .. py:method:: clear_asset_terms():
-        :noindex:
+   .. automethod:: RepositoryQuery.supports_descendant_repository_query
 
+   .. autoattribute:: RepositoryQuery.descendant_repository_query
 
-    .. py:attribute:: asset_terms
-        :noindex:
+   .. automethod:: RepositoryQuery.match_any_descendant_repository
 
+   .. autoattribute:: RepositoryQuery.descendant_repository_terms
 
-    .. py:method:: match_composition_id(composition_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_composition_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: composition_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_composition_query():
-        :noindex:
-
-
-    .. py:method:: get_composition_query():
-        :noindex:
-
-
-    .. py:attribute:: composition_query
-        :noindex:
-
-
-    .. py:method:: match_any_composition(match):
-        :noindex:
-
-
-    .. py:method:: clear_composition_terms():
-        :noindex:
-
-
-    .. py:attribute:: composition_terms
-        :noindex:
-
-
-    .. py:method:: match_ancestor_repository_id(repository_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_repository_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_repository_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_ancestor_repository_query():
-        :noindex:
-
-
-    .. py:method:: get_ancestor_repository_query():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_repository_query
-        :noindex:
-
-
-    .. py:method:: match_any_ancestor_repository(match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_repository_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_repository_terms
-        :noindex:
-
-
-    .. py:method:: match_descendant_repository_id(repository_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_repository_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_repository_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_descendant_repository_query():
-        :noindex:
-
-
-    .. py:method:: get_descendant_repository_query():
-        :noindex:
-
-
-    .. py:attribute:: descendant_repository_query
-        :noindex:
-
-
-    .. py:method:: match_any_descendant_repository(match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_repository_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_repository_terms
-        :noindex:
-
-
-    .. py:method:: get_repository_query_record(repository_record_type):
-        :noindex:
-
+   .. automethod:: RepositoryQuery.get_repository_query_record
 

@@ -37,7 +37,8 @@ class ObjectiveSearch(osid_searches.OsidSearch):
         pass
 
     def get_objective_search_record(self, objective_search_record_type):
-        """Gets the objective search record corresponding to the given objective search record ``Type``.
+        """Gets the objective search record corresponding to the given objective search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -50,7 +51,8 @@ class ObjectiveSearch(osid_searches.OsidSearch):
         :rtype: ``osid.learning.records.ObjectiveSearchRecord``
         :raise: ``NullArgument`` -- ``objective_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_search_record_type(objective_search_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_search_record_type(objective_search_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -99,7 +101,8 @@ class ObjectiveSearchResults(osid_searches.OsidSearchResults):
     objective_query_inspector = property(fget=get_objective_query_inspector)
 
     def get_objective_search_results_record(self, objective_search_record_type):
-        """Gets the objective search results record corresponding to the given objective search record ``Type``.
+        """Gets the objective search results record corresponding to the given objective search
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -112,7 +115,8 @@ class ObjectiveSearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.learning.records.ObjectiveSearchResultsRecord``
         :raise: ``NullArgument`` -- ``objective_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_search_record_type(objective_search_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_search_record_type(objective_search_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -170,7 +174,8 @@ class ActivitySearch(osid_searches.OsidSearch):
         :rtype: ``osid.learning.records.ActivitySearchRecord``
         :raise: ``NullArgument`` -- ``activitiesearch_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_search_record_type(activitiesearch_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_search_record_type(activitiesearch_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -219,7 +224,8 @@ class ActivitySearchResults(osid_searches.OsidSearchResults):
     activity_query_inspector = property(fget=get_activity_query_inspector)
 
     def get_activity_search_results_record(self, activitiesearch_record_type):
-        """Gets the activity search results record corresponding to the given activity search record ``Type``.
+        """Gets the activity search results record corresponding to the given activity search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -232,7 +238,8 @@ class ActivitySearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.learning.records.ActivitySearchResultsRecord``
         :raise: ``NullArgument`` -- ``activitiesearch_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_search_record_type(activitiesearch_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_search_record_type(activitiesearch_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -277,7 +284,8 @@ class ObjectiveBankSearch(osid_searches.OsidSearch):
         pass
 
     def get_objective_bank_search_record(self, objective_bank_search_record_type):
-        """Gets the objective bank search record corresponding to the given objective bank search record ``Type``.
+        """Gets the objective bank search record corresponding to the given objective bank search
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -290,7 +298,8 @@ class ObjectiveBankSearch(osid_searches.OsidSearch):
         :rtype: ``osid.learning.records.ObjectiveBankSearchRecord``
         :raise: ``NullArgument`` -- ``objective_bank_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_search_record_type(objective bank_search_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_search_record_type(objective bank_search_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -339,8 +348,8 @@ class ObjectiveBankSearchResults(osid_searches.OsidSearchResults):
     objective_bank_query_inspector = property(fget=get_objective_bank_query_inspector)
 
     def get_objective_bank_search_results_record(self, objective_bank_search_record_type):
-        """Gets the objective bank search results record corresponding to the given objective bank search record
-        ``Type``.
+        """Gets the objective bank search results record corresponding to the given objective bank
+            search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -353,7 +362,8 @@ class ObjectiveBankSearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.learning.records.ObjectiveBankSearchResultsRecord``
         :raise: ``NullArgument`` -- ``objective_bank_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_search_record_type(objective bank_search_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_search_record_type(objective bank_search_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*

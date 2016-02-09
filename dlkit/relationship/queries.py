@@ -197,7 +197,8 @@ class RelationshipQuery(osid_queries.OsidRelationshipQuery):
     family_terms = property(fdel=clear_family_terms)
 
     def get_relationship_query_record(self, relationship_record_type):
-        """Gets the relationship query record corresponding to the given ``Relationship`` record ``Type``.
+        """Gets the relationship query record corresponding to the given ``Relationship`` record
+            ``Type``.
 
 
         Multiple record retrievals produce a nested ``OR`` term.
@@ -301,7 +302,8 @@ class FamilyQuery(osid_queries.OsidCatalogQuery):
         """Matches families with any relationship.
 
 
-        :param match: ``true`` to match families with any relationship, ``false`` to match families with no relationship
+        :param match: ``true`` to match families with any relationship, ``false`` to match families
+            with no relationship
         :type match: ``boolean``
 
 
@@ -330,7 +332,8 @@ class FamilyQuery(osid_queries.OsidCatalogQuery):
     relationship_terms = property(fdel=clear_relationship_terms)
 
     def match_ancestor_family_id(self, family_id, match):
-        """Sets the family ``Id`` for this query to match families that have the specified family as an ancestor.
+        """Sets the family ``Id`` for this query to match families that have the specified family as
+            an ancestor.
 
 
         :param family_id: a family ``Id``
@@ -432,7 +435,8 @@ class FamilyQuery(osid_queries.OsidCatalogQuery):
     ancestor_family_terms = property(fdel=clear_ancestor_family_terms)
 
     def match_descendant_family_id(self, family_id, match):
-        """Sets the family ``Id`` for this query to match families that have the specified family as a descednant.
+        """Sets the family ``Id`` for this query to match families that have the specified family as
+            a descednant.
 
 
         :param family_id: a family ``Id``
@@ -505,7 +509,8 @@ class FamilyQuery(osid_queries.OsidCatalogQuery):
         """Matches families with any decendant.
 
 
-        :param match: ``true`` to match families with any decendants, ``false`` to match leaf families
+        :param match: ``true`` to match families with any decendants, ``false`` to match leaf
+            families
         :type match: ``boolean``
 
 

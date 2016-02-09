@@ -266,7 +266,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         """Tests if the given ``Hierarchy`` search record type is supported.
 
 
-        :param hierarchy_search_record_type: a ``Type`` indicating a ``Hierarchy`` search record type
+        :param hierarchy_search_record_type: a ``Type`` indicating a ``Hierarchy`` search record
+            type
         :type hierarchy_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -539,13 +540,14 @@ class HierarchyProfile(osid_managers.OsidProfile):
 
         :param id: the ``Id`` to query
         :type id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a node
         :rtype: ``osid.hierarchy.Node``
@@ -690,7 +692,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         :type id: ``osid.id.Id``
         :param child_id: the ``Id`` of the child to remove
         :type child_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child of ``id``
+        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child
+            of ``id``
         :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -748,8 +751,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_hierarchy_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -842,8 +845,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include hierarchies of
-        types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include
+            hierarchies of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -868,8 +871,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_parent_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include any additional
-        hierarchies with types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include
+            any additional hierarchies with types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -1009,7 +1012,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
 
         :param hierarchy_record_types: array of hierarchy record types
         :type hierarchy_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``hierarchy_record_types`` is ``null``
 
@@ -1058,7 +1062,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_create()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
+            ``get_hierarchy_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1125,7 +1130,8 @@ class HierarchyProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_update()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
+            ``get_hierarchy_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1263,7 +1269,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         self._provider_sessions = dict()
         self._session_management = AUTOMATIC
         self._hierarchy_view = DEFAULT
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
 
 
     # def _get_view(self, view):
@@ -1371,7 +1378,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
     hierarchy_traversal_session = property(fget=get_hierarchy_traversal_session)
 
     def get_hierarchy_traversal_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given hierarchy.
+        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given
+            hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the hierarchy
@@ -1381,8 +1389,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NotFound`` -- ``hierarchy_id`` not found
         :raise: ``NullArgument`` -- ``hierarchyid`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or ``supports_visible_fedaration()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or
+            ``supports_visible_fedaration()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1413,7 +1421,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
     hierarchy_design_session = property(fget=get_hierarchy_design_session)
 
     def get_hierarchy_design_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the topology design service using for the given hierarchy.
+        """Gets the ``OsidSession`` associated with the topology design service using for the given
+            hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the graph
@@ -1423,7 +1432,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1454,7 +1464,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
     hierarchy_sequencing_session = property(fget=get_hierarchy_sequencing_session)
 
     def get_hierarchy_sequencing_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the sequencing design service using for the given hierarchy.
+        """Gets the ``OsidSession`` associated with the sequencing design service using for the
+            given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the graph
@@ -1464,8 +1475,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1477,7 +1488,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         return # osid.hierarchy.HierarchySequencingSession
 
     def get_hierarchy_structure_notification_session(self, hierarchy_structure_receiver):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure.
+        """Gets the session for subscribing to notifications of changes within a hierarchy
+            structure.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -1496,9 +1508,10 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         """
         return # osid.hierarchy.HierarchyStructureNotificationSession
 
-    def get_hierarchy_structure_notification_session_for_hierarchy(self, hierarchy_structure_receiver, hierarchy_id):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure for the given
-        hierarchy.
+    def get_hierarchy_structure_notification_session_for_hierarchy(self,
+        hierarchy_structure_receiver, hierarchy_id):
+        """Gets the session for subscribing to notifications of changes within a hierarchy structure
+            for the given hierarchy.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -1878,13 +1891,14 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 
         :param id: the ``Id`` to query
         :type id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a node
         :rtype: ``osid.hierarchy.Node``
@@ -2029,7 +2043,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :type id: ``osid.id.Id``
         :param child_id: the ``Id`` of the child to remove
         :type child_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child of ``id``
+        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child
+            of ``id``
         :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2087,8 +2102,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         return # boolean
 
     def use_comparative_hierarchy_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2181,8 +2196,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include hierarchies of
-        types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include
+            hierarchies of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -2207,8 +2222,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_parent_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include any additional
-        hierarchies with types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include
+            any additional hierarchies with types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -2348,7 +2363,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 
         :param hierarchy_record_types: array of hierarchy record types
         :type hierarchy_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``hierarchy_record_types`` is ``null``
 
@@ -2397,7 +2413,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NullArgument`` -- ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_create()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
+            ``get_hierarchy_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2464,7 +2481,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_update()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
+            ``get_hierarchy_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2617,7 +2635,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyTraversalSession
 
     def get_hierarchy_traversal_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given hierarchy.
+        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given
+            hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the hierarchy
@@ -2629,8 +2648,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NotFound`` -- ``hierarchyid`` not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2662,7 +2681,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyDesignSession
 
     def get_hierarchy_design_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the topology design service using for the given hierarchy.
+        """Gets the ``OsidSession`` associated with the topology design service using for the given
+            hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the hierarchy
@@ -2674,7 +2694,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2706,7 +2727,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchySequencingSession
 
     def get_hierarchy_sequencing_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the sequencing design service using for the given hierarchy.
+        """Gets the ``OsidSession`` associated with the sequencing design service using for the
+            given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the graph
@@ -2718,8 +2740,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2731,7 +2753,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchySequencingSession
 
     def get_hierarchy_structure_notification_session(self, hierarchy_structure_receiver, proxy):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure.
+        """Gets the session for subscribing to notifications of changes within a hierarchy
+            structure.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -2752,10 +2775,10 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         """
         return # osid.hierarchy.HierarchyStructureNotificationSession
 
-    def get_hierarchy_structure_notification_session_for_hierarchy(self, hierarchy_structure_receiver, hierarchy_id,
-        proxy):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure for the given
-        hierarchy.
+    def get_hierarchy_structure_notification_session_for_hierarchy(self,
+        hierarchy_structure_receiver, hierarchy_id, proxy):
+        """Gets the session for subscribing to notifications of changes within a hierarchy structure
+            for the given hierarchy.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -2767,7 +2790,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :return: a ``HierarchyStructureNotificationSession``
         :rtype: ``osid.hierarchy.HierarchyStructureNotificationSession``
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
-        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver, hierarchy_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver, hierarchy_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_hierarchy_structure_notification()`` is ``false``
 
@@ -3142,13 +3166,14 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 
         :param id: the ``Id`` to query
         :type id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a node
         :rtype: ``osid.hierarchy.Node``
@@ -3293,7 +3318,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :type id: ``osid.id.Id``
         :param child_id: the ``Id`` of the child to remove
         :type child_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child of ``id``
+        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child
+            of ``id``
         :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3351,8 +3377,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # boolean
 
     def use_comparative_hierarchy_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3445,8 +3471,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include hierarchies of
-        types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include
+            hierarchies of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -3471,8 +3497,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_parent_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include any additional
-        hierarchies with types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include
+            any additional hierarchies with types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -3612,7 +3638,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 
         :param hierarchy_record_types: array of hierarchy record types
         :type hierarchy_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``hierarchy_record_types`` is ``null``
 
@@ -3661,7 +3688,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NullArgument`` -- ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_create()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
+            ``get_hierarchy_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3728,7 +3756,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_update()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
+            ``get_hierarchy_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3889,7 +3918,8 @@ class Hierarchy(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         if session_name in self._provider_sessions:
             return self._provider_sessions[session_name]
         else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_hierarchy')
+            session_class = getattr(self._provider_manager, 'get_' + session_name +
+                '_for_hierarchy')
             if self._proxy is None:
                 session = session_class(self._catalog.get_id())
             else:
@@ -3982,9 +4012,8 @@ class Hierarchy(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class HierarchyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``HierarchyList`` provides a means for accessing ``Id`` elements sequentially either one
-        at a
-        time or many at a time.
+    """Like all ``OsidLists,``  ``HierarchyList`` provides a means for accessing ``Id`` elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (hl.hasNext()) { Hierarchy hierarchy =
@@ -4009,8 +4038,8 @@ class HierarchyList(osid_objects.OsidList):
         """Gets the next ``Hierarchy`` in this list.
 
 
-        :return: the next ``Hierarchy`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Hierarchy`` is available before calling this method.
+        :return: the next ``Hierarchy`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Hierarchy`` is available before calling this method.
         :rtype: ``osid.hierarchy.Hierarchy``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -4032,10 +4061,11 @@ class HierarchyList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Hierarchy`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Hierarchy`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Hierarchy`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Hierarchy`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.hierarchy.Hierarchy``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

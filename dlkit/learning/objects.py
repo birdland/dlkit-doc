@@ -371,9 +371,9 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
 
 class ObjectiveList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveList`` provides a means for accessing ``Objective`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveList`` provides a means for accessing ``Objective``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (ol.hasNext()) { Objective objective =
@@ -398,8 +398,8 @@ class ObjectiveList(osid_objects.OsidList):
         """Gets the next ``Objective`` in this list.
 
 
-        :return: the next ``Objective`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Objective`` is available before calling this method.
+        :return: the next ``Objective`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Objective`` is available before calling this method.
         :rtype: ``osid.learning.Objective``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -414,14 +414,15 @@ class ObjectiveList(osid_objects.OsidList):
     next_objective = property(fget=get_next_objective)
 
     def get_next_objectives(self, n):
-        """Gets the next set of ``Objective`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``Objective`` elements in this list which must be less than or equal
+            to the number returned from ``available()``.
 
 
-        :param n: the number of ``Objective`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``Objective`` elements requested which should be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Objective`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Objective`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.learning.Objective``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -501,9 +502,9 @@ class ObjectiveNode(osid_objects.OsidNode):
 
 
 class ObjectiveNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveNodeList`` provides a means for accessing ``ObjectiveNode`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveNodeList`` provides a means for accessing
+        ``ObjectiveNode``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (onl.hasNext()) { ObjectiveNode node =
@@ -528,8 +529,8 @@ class ObjectiveNodeList(osid_objects.OsidList):
         """Gets the next ``ObjectiveNode`` in this list.
 
 
-        :return: the next ``ObjectiveNode`` in this list. The ``has_next()`` method should be used to test that a next
-        ``ObjectiveNode`` is available before calling this method.
+        :return: the next ``ObjectiveNode`` in this list. The ``has_next()`` method should be used
+            to test that a next ``ObjectiveNode`` is available before calling this method.
         :rtype: ``osid.learning.ObjectiveNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -544,15 +545,15 @@ class ObjectiveNodeList(osid_objects.OsidList):
     next_objective_node = property(fget=get_next_objective_node)
 
     def get_next_objective_nodes(self, n):
-        """Gets the next set of ``ObjectiveNode`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``ObjectiveNode`` elements in this list which must be less than or
+            equal to the number returned from ``available()``.
 
 
-        :param n: the number of ``ObjectiveNode`` elements requested which should be less than or equal to
-        ``available()``
+        :param n: the number of ``ObjectiveNode`` elements requested which should be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``ObjectiveNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``ObjectiveNode`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.learning.ObjectiveNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -566,7 +567,8 @@ class ObjectiveNodeList(osid_objects.OsidList):
 
 
 class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
-    """An ``Activity`` represents learning material or other learning activities to meet an objective.
+    """An ``Activity`` represents learning material or other learning activities to meet an
+        objective.
 
 
     An Activity has may relate to a set of ``Asssts`` for self learning,
@@ -988,9 +990,9 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
 
 class ActivityList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ActivityList`` provides a means for accessing ``Activity`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``ActivityList`` provides a means for accessing ``Activity``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (al.hasNext()) { Activity activity =
@@ -1015,8 +1017,8 @@ class ActivityList(osid_objects.OsidList):
         """Gets the next ``Activity`` in this list.
 
 
-        :return: the next ``Activity`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Activity`` is available before calling this method.
+        :return: the next ``Activity`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Activity`` is available before calling this method.
         :rtype: ``osid.learning.Activity``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1031,14 +1033,15 @@ class ActivityList(osid_objects.OsidList):
     next_activity = property(fget=get_next_activity)
 
     def get_next_activities(self, n):
-        """Gets the next set of ``Activity`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``Activity`` elements in this list which must be less than or equal
+            to the number returned from ``available()``.
 
 
-        :param n: the number of ``Activity`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``Activity`` elements requested which should be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Activity`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Activity`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.learning.Activity``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1055,7 +1058,8 @@ class ObjectiveBank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """an objective bank defines a collection of objectives."""
 
     def get_objective_bank_record(self, objective_bank_record_type):
-        """Gets the objective bank record corresponding to the given ``ObjectiveBank`` record ``Type``.
+        """Gets the objective bank record corresponding to the given ``ObjectiveBank`` record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -1095,7 +1099,8 @@ class ObjectiveBankForm(osid_objects.OsidCatalogForm):
     """
 
     def get_objective_bank_form_record(self, objective_bank_record_type):
-        """Gets the ``ObjectiveBankFormRecord`` corresponding to the given objective bank record ``Type``.
+        """Gets the ``ObjectiveBankFormRecord`` corresponding to the given objective bank record
+            ``Type``.
 
 
         :param objective_bank_record_type: an objective bank record type
@@ -1115,9 +1120,9 @@ class ObjectiveBankForm(osid_objects.OsidCatalogForm):
 
 
 class ObjectiveBankList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveBankList`` provides a means for accessing ``ObjectiveBank`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveBankList`` provides a means for accessing
+        ``ObjectiveBank``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (obl.hasNext()) { ObjectiveBank objectiveBanks =
@@ -1142,8 +1147,8 @@ class ObjectiveBankList(osid_objects.OsidList):
         """Gets the next ``ObjectiveBank`` in this list.
 
 
-        :return: the next ``ObjectiveBank`` in this list. The ``has_next()`` method should be used to test that a next
-        ``ObjectiveBank`` is available before calling this method.
+        :return: the next ``ObjectiveBank`` in this list. The ``has_next()`` method should be used
+            to test that a next ``ObjectiveBank`` is available before calling this method.
         :rtype: ``osid.learning.ObjectiveBank``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1158,14 +1163,15 @@ class ObjectiveBankList(osid_objects.OsidList):
     next_objective_bank = property(fget=get_next_objective_bank)
 
     def get_next_objective_banks(self, n):
-        """Gets the next set of ``ObjectiveBank`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``ObjectiveBank`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``ObjectiveBank`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``ObjectiveBank`` elements requested which must be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``ObjectiveBank`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``ObjectiveBank`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.learning.ObjectiveBank``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1245,8 +1251,8 @@ class ObjectiveBankNode(osid_objects.OsidNode):
 
 
 class ObjectiveBankNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveBankNodeList`` provides a means for accessing ``ObjectiveBankNode`` elements
-        sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveBankNodeList`` provides a means for accessing
+    ``ObjectiveBankNode`` elements sequentially either one at a time or many at a time.
 
 
     Examples: while (obnl.hasNext()) { ObjectiveBankNode node bank =
@@ -1271,8 +1277,8 @@ class ObjectiveBankNodeList(osid_objects.OsidList):
         """Gets the next ``ObjectiveBankNode`` in this list.
 
 
-        :return: the next ``ObjectiveBankNode`` in this list. The ``has_next()`` method should be used to test that a
-        next ``ObjectiveBankNode`` is available before calling this method.
+        :return: the next ``ObjectiveBankNode`` in this list. The ``has_next()`` method should be
+            used to test that a next ``ObjectiveBankNode`` is available before calling this method.
         :rtype: ``osid.learning.ObjectiveBankNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1287,15 +1293,15 @@ class ObjectiveBankNodeList(osid_objects.OsidList):
     next_objective_bank_node = property(fget=get_next_objective_bank_node)
 
     def get_next_objective_bank_nodes(self, n):
-        """Gets the next set of ``ObjectiveBankNode`` elements in this list which must be less than or equal to the
-        return from ``available()``.
+        """Gets the next set of ``ObjectiveBankNode`` elements in this list which must be less than
+            or equal to the return from ``available()``.
 
 
-        :param n: the number of ``ObjectiveBankNode`` elements requested which must be less than or equal to
-        ``available()``
+        :param n: the number of ``ObjectiveBankNode`` elements requested which must be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``ObjectiveBankNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``ObjectiveBankNode`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.learning.ObjectiveBankNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

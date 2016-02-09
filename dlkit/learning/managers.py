@@ -162,7 +162,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if an objective to objective bank lookup session is available.
 
 
-        :return: ``true`` if objective objective bank lookup session is supported, ``false`` otherwise
+        :return: ``true`` if objective objective bank lookup session is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -226,7 +227,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if an objective requisite assignment service is supported.
 
 
-        :return: ``true`` if objective requisite assignment service is supported, ``false`` otherwise
+        :return: ``true`` if objective requisite assignment service is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -326,7 +328,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if an activity to objective bank lookup session is available.
 
 
-        :return: ``true`` if activity objective bank lookup session is supported, ``false`` otherwise
+        :return: ``true`` if activity objective bank lookup session is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -454,7 +457,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if a proficiency objective bank mapping lookup service is supported.
 
 
-        :return: ``true`` if a proficiency objective bank lookup service is supported, ``false`` otherwise
+        :return: ``true`` if a proficiency objective bank lookup service is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -470,7 +474,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if a proficiency objective bank mapping service is supported.
 
 
-        :return: ``true`` if proficiency to objective bank mapping service is supported, ``false`` otherwise
+        :return: ``true`` if proficiency to objective bank mapping service is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -719,7 +724,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if the given ``Objective`` search record type is supported.
 
 
-        :param objective_search_record_type: a ``Type`` indicating an ``Objective`` search record type
+        :param objective_search_record_type: a ``Type`` indicating an ``Objective`` search record
+            type
         :type objective_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -896,7 +902,8 @@ class LearningProfile(osid_managers.OsidProfile):
 
         :param objective_bank_record_type: a ``Type`` indicating an ``ObjectiveBank`` type
         :type objective_bank_record_type: ``osid.type.Type``
-        :return: ``true`` if the given objective bank record ``Type`` is supported, ``false`` otherwise
+        :return: ``true`` if the given objective bank record ``Type`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_type`` is ``null``
 
@@ -929,7 +936,8 @@ class LearningProfile(osid_managers.OsidProfile):
         """Tests if the given objective bank search record type is supported.
 
 
-        :param objective_bank_search_record_type: a ``Type`` indicating an ``ObjectiveBank`` search record type
+        :param objective_bank_search_record_type: a ``Type`` indicating an ``ObjectiveBank`` search
+            record type
         :type objective_bank_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -944,9 +952,9 @@ class LearningProfile(osid_managers.OsidProfile):
 
 
 class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, LearningProfile):
-    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects
-        of
-        this service.
+    """The learning manager provides access to learning sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -1059,7 +1067,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_lookup_session = property(fget=get_objective_lookup_session)
 
     def get_objective_lookup_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1069,7 +1078,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1100,7 +1110,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_query_session = property(fget=get_objective_query_session)
 
     def get_objective_query_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1110,7 +1121,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1141,7 +1153,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_search_session = property(fget=get_objective_search_session)
 
     def get_objective_search_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1151,7 +1164,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1182,7 +1196,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_admin_session = property(fget=get_objective_admin_session)
 
     def get_objective_admin_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1192,7 +1207,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1223,8 +1239,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.learning.ObjectiveNotificationSession
 
-    def get_objective_notification_session_for_objective_bank(self, objective_receiver, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective notification service for the given objective bank.
+    def get_objective_notification_session_for_objective_bank(self, objective_receiver,
+        objective_bank_id):
+        """Gets the ``OsidSession`` associated with the objective notification service for the given
+            objective bank.
 
 
         :param objective_receiver: the objective receiver
@@ -1236,8 +1254,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_receiver`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1268,8 +1286,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_hierarchy_session = property(fget=get_objective_hierarchy_session)
 
     def get_objective_hierarchy_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for the given objective
-        bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for
+            the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1279,8 +1297,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1311,7 +1329,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_hierarchy_design_session = property(fget=get_objective_hierarchy_design_session)
 
     def get_objective_hierarchy_design_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1321,8 +1340,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1353,7 +1372,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_sequencing_session = property(fget=get_objective_sequencing_session)
 
     def get_objective_sequencing_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1363,8 +1383,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1454,7 +1474,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_requisite_session = property(fget=get_objective_requisite_session)
 
     def get_objective_requisite_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1464,8 +1485,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1496,7 +1517,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_requisite_assignment_session = property(fget=get_objective_requisite_assignment_session)
 
     def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1506,8 +1528,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1538,7 +1560,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_lookup_session = property(fget=get_activity_lookup_session)
 
     def get_activity_lookup_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1548,7 +1571,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1579,7 +1603,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_query_session = property(fget=get_activity_query_session)
 
     def get_activity_query_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1589,7 +1614,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1620,7 +1646,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_search_session = property(fget=get_activity_search_session)
 
     def get_activity_search_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1630,7 +1657,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1661,7 +1689,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     activity_admin_session = property(fget=get_activity_admin_session)
 
     def get_activity_admin_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -1671,7 +1700,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1702,8 +1732,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.learning.ActivityNotificationSession
 
-    def get_activity_notification_session_for_objective_bank(self, activity_receiver, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the activity notification service for the given objective bank.
+    def get_activity_notification_session_for_objective_bank(self, activity_receiver,
+        objective_bank_id):
+        """Gets the ``OsidSession`` associated with the activity notification service for the given
+            objective bank.
 
 
         :param activity_receiver: the activity receiver
@@ -1715,8 +1747,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``activity_receiver`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1806,7 +1838,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_lookup_session = property(fget=get_proficiency_lookup_session)
 
     def get_proficiency_lookup_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -1816,7 +1849,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1847,7 +1881,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_query_session = property(fget=get_proficiency_query_session)
 
     def get_proficiency_query_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -1857,7 +1892,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1888,7 +1924,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_search_session = property(fget=get_proficiency_search_session)
 
     def get_proficiency_search_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1898,7 +1935,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1929,7 +1967,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     proficiency_admin_session = property(fget=get_proficiency_admin_session)
 
     def get_proficiency_admin_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency administration service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency administration service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1939,7 +1978,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1970,8 +2010,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         """
         return # osid.learning.ProficiencyNotificationSession
 
-    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the proficiency notification service for the given objective bank.
+    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver,
+        objective_bank_id):
+        """Gets the ``OsidSession`` associated with the proficiency notification service for the
+            given objective bank.
 
 
         :param proficiency_receiver: the notification callback
@@ -1983,8 +2025,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``proficiency_receiver`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2021,7 +2063,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :return: a ``ProficiencyObjectiveBankAssignmentSession``
         :rtype: ``osid.learning.ProficiencyObjectiveBankAssignmentSession``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2075,7 +2118,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     my_learning_path_session = property(fget=get_my_learning_path_session)
 
     def get_my_learning_path_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the my learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the my learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -2085,7 +2129,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2116,7 +2161,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     learning_path_session = property(fget=get_learning_path_session)
 
     def get_learning_path_session_for_objective_bank(self, objective_bank_id):
-        """Gets the ``OsidSession`` associated with the learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -2126,7 +2172,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2214,7 +2261,8 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
     objective_bank_admin_session = property(fget=get_objective_bank_admin_session)
 
     def get_objective_bank_notification_session(self, objective_bank_receiver):
-        """Gets the notification session for notifications pertaining to objective bank service changes.
+        """Gets the notification session for notifications pertaining to objective bank service
+            changes.
 
 
         :param objective_bank_receiver: the objective bank receiver
@@ -2292,9 +2340,9 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
 class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
-    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects
-        of
-        this service.
+    """The learning manager provides access to learning sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager support the passing of a ``Proxy``. The
@@ -2409,7 +2457,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveLookupSession
 
     def get_objective_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2421,7 +2470,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2453,7 +2503,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveQuerySession
 
     def get_objective_query_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2465,7 +2516,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2497,7 +2549,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveSearchSession
 
     def get_objective_search_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2509,7 +2562,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2541,7 +2595,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveAdminSession
 
     def get_objective_admin_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2553,7 +2608,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2586,8 +2642,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ObjectiveNotificationSession
 
-    def get_objective_notification_session_for_objective_bank(self, objective_receiver, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective notification service for the given objective bank.
+    def get_objective_notification_session_for_objective_bank(self, objective_receiver,
+        objective_bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the objective notification service for the given
+            objective bank.
 
 
         :param objective_receiver: the objective receiver
@@ -2599,10 +2657,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :return: ``an _objective_notification_session``
         :rtype: ``osid.learning.ObjectiveNotificationSession``
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
-        :raise: ``NullArgument`` -- ``objective_receiver, objective_bank_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``objective_receiver, objective_bank_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2634,8 +2693,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveHierarchySession
 
     def get_objective_hierarchy_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for the given objective
-        bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy traversal service for
+            the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2647,8 +2706,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2680,7 +2739,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveHierarchyDesignSession
 
     def get_objective_hierarchy_design_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective hierarchy design service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2692,8 +2752,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_hierarchy_design()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2725,7 +2785,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveSequencingSession
 
     def get_objective_sequencing_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2737,8 +2798,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_sequencing()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2833,7 +2894,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveRequisiteSession
 
     def get_objective_requisite_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2845,8 +2907,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2877,8 +2939,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ObjectiveRequisiteAssignmentSession
 
-    def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the objective sequencing service for the given objective bank.
+    def get_objective_requisite_assignment_session_for_objective_bank(self, objective_bank_id,
+        proxy):
+        """Gets the ``OsidSession`` associated with the objective sequencing service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2890,8 +2954,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_objective_requisite_assignment()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2923,7 +2987,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivityLookupSession
 
     def get_activity_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2935,7 +3000,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2967,7 +3033,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivityQuerySession
 
     def get_activity_query_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -2979,7 +3046,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3011,7 +3079,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivitySearchSession
 
     def get_activity_search_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3023,7 +3092,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3055,7 +3125,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ActivityAdminSession
 
     def get_activity_admin_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity admin service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the activity admin service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the objective bank
@@ -3067,7 +3138,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3100,8 +3172,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ActivityNotificationSession
 
-    def get_activity_notification_session_for_objective_bank(self, activity_receiver, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the activity notification service for the given objective bank.
+    def get_activity_notification_session_for_objective_bank(self, activity_receiver,
+        objective_bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the activity notification service for the given
+            objective bank.
 
 
         :param activity_receiver: the activity receiver
@@ -3113,10 +3187,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :return: ``an _activity_notification_session``
         :rtype: ``osid.learning.ActivityNotificationSession``
         :raise: ``NotFound`` -- ``objective_bank_id`` not found
-        :raise: ``NullArgument`` -- ``activity_receiver, objective_bank_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``activity_receiver, objective_bank_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_activity_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3211,7 +3286,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencyLookupSession
 
     def get_proficiency_lookup_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency lookup service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -3223,7 +3299,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3255,7 +3332,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencyQuerySession
 
     def get_proficiency_query_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency query service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency query service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the obective bank
@@ -3267,7 +3345,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no ``ObjectiveBank`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3299,7 +3378,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencySearchSession
 
     def get_proficiency_search_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency search service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency search service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3311,7 +3391,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3343,7 +3424,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ProficiencyAdminSession
 
     def get_proficiency_admin_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency administration service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the proficiency administration service for the
+            given objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3355,7 +3437,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3388,8 +3471,10 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         """
         return # osid.learning.ProficiencyNotificationSession
 
-    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the proficiency notification service for the given objective bank.
+    def get_proficiency_notification_session_for_objective_bank(self, proficiency_receiver,
+        objective_bank_id, proxy):
+        """Gets the ``OsidSession`` associated with the proficiency notification service for the
+            given objective bank.
 
 
         :param proficiency_receiver: the notification callback
@@ -3401,10 +3486,11 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :return: a ``ProficiencyNotificationSession``
         :rtype: ``osid.learning.ProficiencyNotificationSession``
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
-        :raise: ``NullArgument`` -- ``proficiency_receiver, objective_bank_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``proficiency_receiver, objective_bank_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3445,7 +3531,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :rtype: ``osid.learning.ProficiencyObjectiveBankAssignmentSession``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_proficiency_objective_bank_assignment()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3500,7 +3587,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.MyLearningPathSession
 
     def get_my_learning_path_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the my learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the my learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3512,7 +3600,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_my_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3544,7 +3633,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.LearningPathSession
 
     def get_learning_path_session_for_objective_bank(self, objective_bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the learning path service for the given objective bank.
+        """Gets the ``OsidSession`` associated with the learning path service for the given
+            objective bank.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3556,7 +3646,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         :raise: ``NotFound`` -- no objective bank found by the given ``Id``
         :raise: ``NullArgument`` -- ``objective_bank_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supporty_learning_path()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3648,7 +3739,8 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         return # osid.learning.ObjectiveBankAdminSession
 
     def get_objective_bank_notification_session(self, objective_bank_receiver, proxy):
-        """Gets the notification session for notifications pertaining to objective bank service changes.
+        """Gets the notification session for notifications pertaining to objective bank service
+            changes.
 
 
         :param objective_bank_receiver: the objective bank receiver

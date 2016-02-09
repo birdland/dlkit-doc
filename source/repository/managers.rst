@@ -1,250 +1,111 @@
 
 
-Managers
-========
-
 
 Repository Profile
 ------------------
 
 .. py:class:: RepositoryProfile(osid_managers.OsidProfile, repository_managers.RepositoryProfile)
-    The repository profile describes interoperability among repository services.
-
-    .. py:method:: supports_visible_federation():
         :noindex:
 
+   .. automethod:: RepositoryProfile.supports_visible_federation
 
-    .. py:method:: supports_asset_lookup():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_lookup
 
+   .. automethod:: RepositoryProfile.supports_asset_query
 
-    .. py:method:: supports_asset_query():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_search
 
+   .. automethod:: RepositoryProfile.supports_asset_admin
 
-    .. py:method:: supports_asset_search():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_notification
 
+   .. automethod:: RepositoryProfile.supports_asset_repository
 
-    .. py:method:: supports_asset_admin():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_repository_assignment
 
+   .. automethod:: RepositoryProfile.supports_asset_smart_repository
 
-    .. py:method:: supports_asset_notification():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_temporal
 
+   .. automethod:: RepositoryProfile.supports_asset_temporal_assignment
 
-    .. py:method:: supports_asset_repository():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_spatial
 
+   .. automethod:: RepositoryProfile.supports_asset_spatial_assignment
 
-    .. py:method:: supports_asset_repository_assignment():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_composition
 
+   .. automethod:: RepositoryProfile.supports_asset_composition_design
 
-    .. py:method:: supports_asset_smart_repository():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_composition_lookup
 
+   .. automethod:: RepositoryProfile.supports_composition_query
 
-    .. py:method:: supports_asset_temporal():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_composition_search
 
+   .. automethod:: RepositoryProfile.supports_composition_admin
 
-    .. py:method:: supports_asset_temporal_assignment():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_composition_notification
 
+   .. automethod:: RepositoryProfile.supports_composition_repository
 
-    .. py:method:: supports_asset_spatial():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_composition_repository_assignment
 
+   .. automethod:: RepositoryProfile.supports_composition_smart_repository
 
-    .. py:method:: supports_asset_spatial_assignment():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_lookup
 
+   .. automethod:: RepositoryProfile.supports_repository_query
 
-    .. py:method:: supports_asset_composition():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_search
 
+   .. automethod:: RepositoryProfile.supports_repository_admin
 
-    .. py:method:: supports_asset_composition_design():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_notification
 
+   .. automethod:: RepositoryProfile.supports_repository_hierarchy
 
-    .. py:method:: supports_composition_lookup():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_hierarchy_design
 
+   .. automethod:: RepositoryProfile.supports_repository_batch
 
-    .. py:method:: supports_composition_query():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_rules
 
+   .. autoattribute:: RepositoryProfile.asset_record_types
 
-    .. py:method:: supports_composition_search():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_record_type
 
+   .. autoattribute:: RepositoryProfile.asset_search_record_types
 
-    .. py:method:: supports_composition_admin():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_search_record_type
 
+   .. autoattribute:: RepositoryProfile.asset_content_record_types
 
-    .. py:method:: supports_composition_notification():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_asset_content_record_type
 
+   .. autoattribute:: RepositoryProfile.composition_record_types
 
-    .. py:method:: supports_composition_repository():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_composition_record_type
 
+   .. autoattribute:: RepositoryProfile.composition_search_record_types
 
-    .. py:method:: supports_composition_repository_assignment():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_composition_search_record_type
 
+   .. autoattribute:: RepositoryProfile.repository_record_types
 
-    .. py:method:: supports_composition_smart_repository():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_record_type
 
+   .. autoattribute:: RepositoryProfile.repository_search_record_types
 
-    .. py:method:: supports_repository_lookup():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_repository_search_record_type
 
+   .. autoattribute:: RepositoryProfile.spatial_unit_record_types
 
-    .. py:method:: supports_repository_query():
-        :noindex:
+   .. automethod:: RepositoryProfile.supports_spatial_unit_record_type
 
+   .. autoattribute:: RepositoryProfile.coordinate_types
 
-    .. py:method:: supports_repository_search():
-        :noindex:
-
-
-    .. py:method:: supports_repository_admin():
-        :noindex:
-
-
-    .. py:method:: supports_repository_notification():
-        :noindex:
-
-
-    .. py:method:: supports_repository_hierarchy():
-        :noindex:
-
-
-    .. py:method:: supports_repository_hierarchy_design():
-        :noindex:
-
-
-    .. py:method:: supports_repository_batch():
-        :noindex:
-
-
-    .. py:method:: supports_repository_rules():
-        :noindex:
-
-
-    .. py:method:: get_asset_record_types():
-        :noindex:
-
-
-    .. py:attribute:: asset_record_types
-        :noindex:
-
-
-    .. py:method:: supports_asset_record_type(asset_record_type):
-        :noindex:
-
-
-    .. py:method:: get_asset_search_record_types():
-        :noindex:
-
-
-    .. py:attribute:: asset_search_record_types
-        :noindex:
-
-
-    .. py:method:: supports_asset_search_record_type(asset_search_record_type):
-        :noindex:
-
-
-    .. py:method:: get_asset_content_record_types():
-        :noindex:
-
-
-    .. py:attribute:: asset_content_record_types
-        :noindex:
-
-
-    .. py:method:: supports_asset_content_record_type(asset_content_record_type):
-        :noindex:
-
-
-    .. py:method:: get_composition_record_types():
-        :noindex:
-
-
-    .. py:attribute:: composition_record_types
-        :noindex:
-
-
-    .. py:method:: supports_composition_record_type(composition_record_type):
-        :noindex:
-
-
-    .. py:method:: get_composition_search_record_types():
-        :noindex:
-
-
-    .. py:attribute:: composition_search_record_types
-        :noindex:
-
-
-    .. py:method:: supports_composition_search_record_type(composition_search_record_type):
-        :noindex:
-
-
-    .. py:method:: get_repository_record_types():
-        :noindex:
-
-
-    .. py:attribute:: repository_record_types
-        :noindex:
-
-
-    .. py:method:: supports_repository_record_type(repository_record_type):
-        :noindex:
-
-
-    .. py:method:: get_repository_search_record_types():
-        :noindex:
-
-
-    .. py:attribute:: repository_search_record_types
-        :noindex:
-
-
-    .. py:method:: supports_repository_search_record_type(repository_search_record_type):
-        :noindex:
-
-
-    .. py:method:: get_spatial_unit_record_types():
-        :noindex:
-
-
-    .. py:attribute:: spatial_unit_record_types
-        :noindex:
-
-
-    .. py:method:: supports_spatial_unit_record_type(spatial_unit_record_type):
-        :noindex:
-
-
-    .. py:method:: get_coordinate_types():
-        :noindex:
-
-
-    .. py:attribute:: coordinate_types
-        :noindex:
-
-
-    .. py:method:: supports_coordinate_type(coordinate_type):
-        :noindex:
-
+   .. automethod:: RepositoryProfile.supports_coordinate_type
 
 Repository Manager
 ------------------
@@ -252,481 +113,7 @@ Repository Manager
 .. py:class:: RepositoryManager(osid_managers.OsidManager, RepositoryProfile, repository_managers.RepositoryManager)
         :noindex:
 
-    .. py:method:: get_asset_lookup_session():
-        :noindex:
+   .. autoattribute:: RepositoryManager.repository_batch_manager
 
-
-    .. py:attribute:: asset_lookup_session
-        :noindex:
-
-
-    .. py:method:: get_asset_lookup_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_query_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_query_session
-        :noindex:
-
-
-    .. py:method:: get_asset_query_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_search_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_search_session
-        :noindex:
-
-
-    .. py:method:: get_asset_search_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_admin_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_admin_session
-        :noindex:
-
-
-    .. py:method:: get_asset_admin_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_notification_session(asset_receiver):
-        :noindex:
-
-
-    .. py:method:: get_asset_notification_session_for_repository(asset_receiver, repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_repository_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_repository_session
-        :noindex:
-
-
-    .. py:method:: get_asset_repository_assignment_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_repository_assignment_session
-        :noindex:
-
-
-    .. py:method:: get_asset_smart_repository_session(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_temporal_session
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_assignment_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_temporal_assignment_session
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_assignment_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_spatial_session
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_assignment_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_spatial_assignment_session
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_assignment_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_asset_composition_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_composition_session
-        :noindex:
-
-
-    .. py:method:: get_asset_composition_design_session():
-        :noindex:
-
-
-    .. py:attribute:: asset_composition_design_session
-        :noindex:
-
-
-    .. py:method:: get_composition_lookup_session():
-        :noindex:
-
-
-    .. py:attribute:: composition_lookup_session
-        :noindex:
-
-
-    .. py:method:: get_composition_lookup_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_composition_query_session():
-        :noindex:
-
-
-    .. py:attribute:: composition_query_session
-        :noindex:
-
-
-    .. py:method:: get_composition_query_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_composition_search_session():
-        :noindex:
-
-
-    .. py:attribute:: composition_search_session
-        :noindex:
-
-
-    .. py:method:: get_composition_search_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_composition_admin_session():
-        :noindex:
-
-
-    .. py:attribute:: composition_admin_session
-        :noindex:
-
-
-    .. py:method:: get_composition_admin_session_for_repository(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_composition_notification_session(composition_receiver):
-        :noindex:
-
-
-    .. py:method:: get_composition_notification_session_for_repository(composition_receiver, repository_id):
-        :noindex:
-
-
-    .. py:method:: get_composition_repository_session():
-        :noindex:
-
-
-    .. py:attribute:: composition_repository_session
-        :noindex:
-
-
-    .. py:method:: get_composition_repository_assignment_session():
-        :noindex:
-
-
-    .. py:attribute:: composition_repository_assignment_session
-        :noindex:
-
-
-    .. py:method:: get_composition_smart_repository_session(repository_id):
-        :noindex:
-
-
-    .. py:method:: get_repository_lookup_session():
-        :noindex:
-
-
-    .. py:attribute:: repository_lookup_session
-        :noindex:
-
-
-    .. py:method:: get_repository_query_session():
-        :noindex:
-
-
-    .. py:attribute:: repository_query_session
-        :noindex:
-
-
-    .. py:method:: get_repository_search_session():
-        :noindex:
-
-
-    .. py:attribute:: repository_search_session
-        :noindex:
-
-
-    .. py:method:: get_repository_admin_session():
-        :noindex:
-
-
-    .. py:attribute:: repository_admin_session
-        :noindex:
-
-
-    .. py:method:: get_repository_notification_session(repository_receiver):
-        :noindex:
-
-
-    .. py:method:: get_repository_hierarchy_session():
-        :noindex:
-
-
-    .. py:attribute:: repository_hierarchy_session
-        :noindex:
-
-
-    .. py:method:: get_repository_hierarchy_design_session():
-        :noindex:
-
-
-    .. py:attribute:: repository_hierarchy_design_session
-        :noindex:
-
-
-    .. py:method:: get_repository_batch_manager():
-        :noindex:
-
-
-    .. py:attribute:: repository_batch_manager
-        :noindex:
-
-
-    .. py:method:: get_repository_rules_manager():
-        :noindex:
-
-
-    .. py:attribute:: repository_rules_manager
-        :noindex:
-
-
-Repository Proxy Manager
-------------------------
-
-.. py:class:: RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile, repository_managers.RepositoryProxyManager)
-        :noindex:
-
-    .. py:method:: get_asset_lookup_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_lookup_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_query_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_query_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_search_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_search_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_admin_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_admin_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_notification_session(asset_receiver, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_notification_session_for_repository(asset_receiver, repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_repository_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_repository_assignment_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_smart_repository_session(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_assignment_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_temporal_assignment_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_assignment_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_spatial_assignment_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_composition_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_asset_composition_design_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_lookup_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_lookup_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_query_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_query_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_search_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_search_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_admin_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_admin_session_for_repository(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_notification_session(composition_receiver, proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_notification_session_for_repository(composition_receiver, repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_repository_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_repository_assignment_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_composition_smart_repository_session(repository_id, proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_lookup_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_query_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_search_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_admin_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_notification_session(repository_receiver, proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_hierarchy_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_hierarchy_design_session(proxy):
-        :noindex:
-
-
-    .. py:method:: get_repository_batch_proxy_manager():
-        :noindex:
-
-
-    .. py:attribute:: repository_batch_proxy_manager
-        :noindex:
-
-
-    .. py:method:: get_repository_rules_proxy_manager():
-        :noindex:
-
-
-    .. py:attribute:: repository_rules_proxy_manager
-        :noindex:
-
+   .. autoattribute:: RepositoryManager.repository_rules_manager
 

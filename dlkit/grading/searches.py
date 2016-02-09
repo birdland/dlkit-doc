@@ -37,7 +37,8 @@ class GradeSystemSearch(osid_searches.OsidSearch):
         pass
 
     def get_grade_system_search_record(self, grade_system_search_record_type):
-        """Gets the grade system search record corresponding to the given grade system search record ``Type``.
+        """Gets the grade system search record corresponding to the given grade system search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -99,7 +100,8 @@ class GradeSystemSearchResults(osid_searches.OsidSearchResults):
     grade_system_query_inspector = property(fget=get_grade_system_query_inspector)
 
     def get_grade_system_search_results_record(self, grade_system_search_record_type):
-        """Gets the grade system search results record corresponding to the given grade system search record ``Type``.
+        """Gets the grade system search results record corresponding to the given grade system
+            search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -157,7 +159,8 @@ class GradeEntrySearch(osid_searches.OsidSearch):
         pass
 
     def get_grade_entry_search_record(self, grade_entry_search_record_type):
-        """Gets the grade entry search record corresponding to the given package search record ``Type``.
+        """Gets the grade entry search record corresponding to the given package search record
+            ``Type``.
 
 
         This method ie used to retrieve an object implementing the
@@ -219,7 +222,8 @@ class GradeEntrySearchResults(osid_searches.OsidSearchResults):
     grade_entry_query_inspector = property(fget=get_grade_entry_query_inspector)
 
     def get_grade_entry_search_results_record(self, grade_entry_search_record_type):
-        """Gets the grade entry search results record corresponding to the given grade entry search record ``Type``.
+        """Gets the grade entry search results record corresponding to the given grade entry search
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -277,7 +281,8 @@ class GradebookColumnSearch(osid_searches.OsidSearch):
         pass
 
     def get_gradebook_column_search_record(self, gradebook_column_search_record_type):
-        """Gets the gradebook column search record corresponding to the given gradebook column search record ``Type``.
+        """Gets the gradebook column search record corresponding to the given gradebook column
+            search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -290,7 +295,8 @@ class GradebookColumnSearch(osid_searches.OsidSearch):
         :rtype: ``osid.grading.records.GradebookColumnSearchRecord``
         :raise: ``NullArgument`` -- ``gradebook_column_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_search_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_search_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -339,8 +345,8 @@ class GradebookColumnSearchResults(osid_searches.OsidSearchResults):
     gradebook_column_query_inspector = property(fget=get_gradebook_column_query_inspector)
 
     def get_gradebook_column_search_results_record(self, gradebook_column_search_record_type):
-        """Gets the gradebook column search results record corresponding to the given gradebook column search record
-        ``Type``.
+        """Gets the gradebook column search results record corresponding to the given gradebook
+            column search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -353,7 +359,8 @@ class GradebookColumnSearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.grading.records.GradebookColumnSearchResultsRecord``
         :raise: ``NullArgument`` -- ``gradebook_column_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_search_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_search_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -398,7 +405,8 @@ class GradebookSearch(osid_searches.OsidSearch):
         pass
 
     def get_gradebook_search_record(self, gradebook_search_record_type):
-        """Gets the gradebook search record corresponding to the given gradebook search record ``Type``.
+        """Gets the gradebook search record corresponding to the given gradebook search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -460,7 +468,8 @@ class GradebookSearchResults(osid_searches.OsidSearchResults):
     gradebook_query_inspector = property(fget=get_gradebook_query_inspector)
 
     def get_gradebook_search_results_record(self, gradebook_search_record_type):
-        """Gets the gradebook search results record corresponding to the given gradebook search record ``Type``.
+        """Gets the gradebook search results record corresponding to the given gradebook search
+            record ``Type``.
 
 
         This method is used to retrieve an object implementing the

@@ -6,11 +6,8 @@ Assessment
 
    summary
    service_managers
-   managers
-   sessions
+   bank
    objects
-   service_catalog
-   searches
    queries
    records
    rules

@@ -236,7 +236,8 @@ class OsidOperableSearchOrder(OsidSearchOrder):
         pass
 
     def order_by_enabled(self, style):
-        """Specifies a preference for ordering the result set by the administratively enabled status.
+        """Specifies a preference for ordering the result set by the administratively enabled
+            status.
 
 
         :param style: the search order style
@@ -251,7 +252,8 @@ class OsidOperableSearchOrder(OsidSearchOrder):
         pass
 
     def order_by_disabled(self, style):
-        """Specifies a preference for ordering the result set by the administratively disabled status.
+        """Specifies a preference for ordering the result set by the administratively disabled
+            status.
 
 
         :param style: the search order style

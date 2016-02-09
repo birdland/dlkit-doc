@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.proxy.records
+.. automodule:: dlkit.proxy.records
 
 Records
 =======
@@ -7,32 +9,16 @@ Records
 Proxy Record
 ------------
 
-.. py:class:: ProxyRecord(abc_proxy_records.ProxyRecord, osid_records.OsidRecord)
-    A record for a ``Proxy``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ProxyRecord
+   :show-inheritance:
 
 
 
 Proxy Condition Record
 ----------------------
 
-.. py:class:: ProxyConditionRecord(abc_proxy_records.ProxyConditionRecord, osid_records.OsidRecord)
-    A record for a ``ProxyCondition``.
-
-
-    The methods specified by the record type are available through the
-    underlying object.
-
-
-
-
+.. autoclass:: ProxyConditionRecord
+   :show-inheritance:
 
 
 

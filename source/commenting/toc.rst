@@ -6,10 +6,7 @@ Commenting
 
    summary
    service_managers
-   managers
-   sessions
+   book
    objects
-   service_catalog
-   searches
    queries
    records

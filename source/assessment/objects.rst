@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.assessment.objects
+.. automodule:: dlkit.assessment.objects
 
 Objects
 =======
@@ -7,1173 +9,346 @@ Objects
 Question
 --------
 
-.. py:class:: Question(abc_assessment_objects.Question, osid_objects.OsidObject)
-    A ``Question`` represents the question portion of an assessment item.
+.. autoclass:: Question
+   :show-inheritance:
 
-
-    Like all OSID objects, a ``Question`` is identified by its ``Id``
-    and any persisted references should use the ``Id``.
-
-
-
-
-
-    .. py:method:: get_question_record(question_record_type):
-        :noindex:
-
+   .. automethod:: Question.get_question_record
 
 Question Form
 -------------
 
-.. py:class:: QuestionForm(abc_assessment_objects.QuestionForm, osid_objects.OsidObjectForm)
-    This is the form for creating and updating ``Questions``.
+.. autoclass:: QuestionForm
+   :show-inheritance:
 
-    .. py:method:: get_question_form_record(question_record_type):
-        :noindex:
-
+   .. automethod:: QuestionForm.get_question_form_record
 
 Question List
 -------------
 
-.. py:class:: QuestionList(abc_assessment_objects.QuestionList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``QuestionList`` provides a means for accessing ``Question`` elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: QuestionList
+   :show-inheritance:
 
+   .. autoattribute:: QuestionList.next_question
 
-    Examples: while (ql.hasNext()) { Question question =
-    ql.getNextQuestion(); }
-
-
-
-
-    or
-      while (ql.hasNext()) {
-           Question[] question = al.getNextQuestions(ql.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_question():
-        :noindex:
-
-
-    .. py:attribute:: next_question
-        :noindex:
-
-
-    .. py:method:: get_next_questions(n):
-        :noindex:
-
+   .. automethod:: QuestionList.get_next_questions
 
 Answer
 ------
 
-.. py:class:: Answer(abc_assessment_objects.Answer, osid_objects.OsidObject)
-    An ``Answer`` represents the question portion of an assessment item.
+.. autoclass:: Answer
+   :show-inheritance:
 
-
-    Like all OSID objects, an ``Answer`` is identified by its ``Id`` and
-    any persisted references should use the ``Id``.
-
-
-
-
-
-    .. py:method:: get_answer_record(answer_record_type):
-        :noindex:
-
+   .. automethod:: Answer.get_answer_record
 
 Answer Form
 -----------
 
-.. py:class:: AnswerForm(abc_assessment_objects.AnswerForm, osid_objects.OsidObjectForm)
-    This is the form for creating and updating ``Answers``.
+.. autoclass:: AnswerForm
+   :show-inheritance:
 
-    .. py:method:: get_answer_form_record(answer_record_type):
-        :noindex:
-
+   .. automethod:: AnswerForm.get_answer_form_record
 
 Answer List
 -----------
 
-.. py:class:: AnswerList(abc_assessment_objects.AnswerList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``AnswerList`` provides a means for accessing ``Answer`` elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: AnswerList
+   :show-inheritance:
 
+   .. autoattribute:: AnswerList.next_answer
 
-    Examples: while (al.hasNext()) { Answer answer = al.getNextAnswer();
-    }
-
-
-
-
-    or
-      while (al.hasNext()) {
-           Answer[] answer = al.getNextAnswers(al.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_answer():
-        :noindex:
-
-
-    .. py:attribute:: next_answer
-        :noindex:
-
-
-    .. py:method:: get_next_answers(n):
-        :noindex:
-
+   .. automethod:: AnswerList.get_next_answers
 
 Item
 ----
 
-.. py:class:: Item(abc_assessment_objects.Item, osid_objects.OsidObject, osid_markers.Aggregateable)
-    An ``Item`` represents an individual assessment item such as a question.
+.. autoclass:: Item
+   :show-inheritance:
 
+   .. autoattribute:: Item.learning_objective_ids
 
-    Like all OSID objects, a ``Item`` is identified by its ``Id`` and
-    any persisted references should use the ``Id``.
+   .. autoattribute:: Item.learning_objectives
 
+   .. autoattribute:: Item.question_id
 
+   .. autoattribute:: Item.question
 
+   .. autoattribute:: Item.answer_ids
 
-    An ``Item`` is composed of a ``Question`` and an ``Answer``.
+   .. autoattribute:: Item.answers
 
-
-
-
-
-    .. py:method:: get_learning_objective_ids():
-        :noindex:
-
-
-    .. py:attribute:: learning_objective_ids
-        :noindex:
-
-
-    .. py:method:: get_learning_objectives():
-        :noindex:
-
-
-    .. py:attribute:: learning_objectives
-        :noindex:
-
-
-    .. py:method:: get_question_id():
-        :noindex:
-
-
-    .. py:attribute:: question_id
-        :noindex:
-
-
-    .. py:method:: get_question():
-        :noindex:
-
-
-    .. py:attribute:: question
-        :noindex:
-
-
-    .. py:method:: get_answer_ids():
-        :noindex:
-
-
-    .. py:attribute:: answer_ids
-        :noindex:
-
-
-    .. py:method:: get_answers():
-        :noindex:
-
-
-    .. py:attribute:: answers
-        :noindex:
-
-
-    .. py:method:: get_item_record(item_record_type):
-        :noindex:
-
+   .. automethod:: Item.get_item_record
 
 Item Form
 ---------
 
-.. py:class:: ItemForm(abc_assessment_objects.ItemForm, osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm)
-    This is the form for creating and updating ``Items``.
+.. autoclass:: ItemForm
+   :show-inheritance:
 
+   .. autoattribute:: ItemForm.learning_objectives_metadata
 
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the
-    ``ItemAdminSession``. For each data element that may be set,
-    metadata may be examined to provide display hints or data
-    constraints.
+   .. autoattribute:: ItemForm.learning_objectives
 
-
-
-
-
-    .. py:method:: get_learning_objectives_metadata():
-        :noindex:
-
-
-    .. py:attribute:: learning_objectives_metadata
-        :noindex:
-
-
-    .. py:method:: set_learning_objectives(objective_ids):
-        :noindex:
-
-
-    .. py:method:: clear_learning_objectives():
-        :noindex:
-
-
-    .. py:attribute:: learning_objectives
-        :noindex:
-
-
-    .. py:method:: get_item_form_record(item_record_type):
-        :noindex:
-
+   .. automethod:: ItemForm.get_item_form_record
 
 Item List
 ---------
 
-.. py:class:: ItemList(abc_assessment_objects.ItemList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``ItemList`` provides a means for accessing ``Item`` elements
-        sequentially
-    either one at a time or many at a time.
+.. autoclass:: ItemList
+   :show-inheritance:
 
+   .. autoattribute:: ItemList.next_item
 
-    Examples: while (il.hasNext()) { Item item = il.getNextItem(); }
-
-
-
-
-    or
-      while (il.hasNext()) {
-           Item[] items = il.getNextItems(il.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_item():
-        :noindex:
-
-
-    .. py:attribute:: next_item
-        :noindex:
-
-
-    .. py:method:: get_next_items(n):
-        :noindex:
-
+   .. automethod:: ItemList.get_next_items
 
 Assessment
 ----------
 
-.. py:class:: Assessment(abc_assessment_objects.Assessment, osid_objects.OsidObject)
-    An ``Assessment`` represents a sequence of assessment items.
+.. autoclass:: Assessment
+   :show-inheritance:
 
+   .. autoattribute:: Assessment.level_id
 
-    Like all OSID objects, an ``Assessment`` is identified by its ``Id``
-    and any persisted references should use the ``Id``.
+   .. autoattribute:: Assessment.level
 
+   .. automethod:: Assessment.has_rubric
 
+   .. autoattribute:: Assessment.rubric_id
 
+   .. autoattribute:: Assessment.rubric
 
-    An ``Assessment`` may have an accompanying rubric used for assessing
-    performance. The rubric assessment is established canonically in
-    this ``Assessment``.
-
-
-
-
-
-    .. py:method:: get_level_id():
-        :noindex:
-
-
-    .. py:attribute:: level_id
-        :noindex:
-
-
-    .. py:method:: get_level():
-        :noindex:
-
-
-    .. py:attribute:: level
-        :noindex:
-
-
-    .. py:method:: has_rubric():
-        :noindex:
-
-
-    .. py:method:: get_rubric_id():
-        :noindex:
-
-
-    .. py:attribute:: rubric_id
-        :noindex:
-
-
-    .. py:method:: get_rubric():
-        :noindex:
-
-
-    .. py:attribute:: rubric
-        :noindex:
-
-
-    .. py:method:: get_assessment_record(assessment_record_type):
-        :noindex:
-
+   .. automethod:: Assessment.get_assessment_record
 
 Assessment Form
 ---------------
 
-.. py:class:: AssessmentForm(abc_assessment_objects.AssessmentForm, osid_objects.OsidObjectForm)
-    This is the form for creating and updating ``Assessments``.
+.. autoclass:: AssessmentForm
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentForm.level_metadata
 
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the
-    ``AssessmentAdminSession``. For each data element that may be set,
-    metadata may be examined to provide display hints or data
-    constraints.
+   .. autoattribute:: AssessmentForm.level
 
+   .. autoattribute:: AssessmentForm.rubric_metadata
 
+   .. autoattribute:: AssessmentForm.rubric
 
-
-
-    .. py:method:: get_level_metadata():
-        :noindex:
-
-
-    .. py:attribute:: level_metadata
-        :noindex:
-
-
-    .. py:method:: set_level(grade_id):
-        :noindex:
-
-
-    .. py:method:: clear_level():
-        :noindex:
-
-
-    .. py:attribute:: level
-        :noindex:
-
-
-    .. py:method:: get_rubric_metadata():
-        :noindex:
-
-
-    .. py:attribute:: rubric_metadata
-        :noindex:
-
-
-    .. py:method:: set_rubric(assessment_id):
-        :noindex:
-
-
-    .. py:method:: clear_rubric():
-        :noindex:
-
-
-    .. py:attribute:: rubric
-        :noindex:
-
-
-    .. py:method:: get_assessment_form_record(assessment_record_type):
-        :noindex:
-
+   .. automethod:: AssessmentForm.get_assessment_form_record
 
 Assessment List
 ---------------
 
-.. py:class:: AssessmentList(abc_assessment_objects.AssessmentList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``AssessmentList`` provides a means for accessing ``Assessment``
-        elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: AssessmentList
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentList.next_assessment
 
-    Examples: while (al.hasNext()) { Assessment assessment =
-    al.getNextAssessment(); }
-
-
-
-
-    or
-      while (al.hasNext()) {
-           Assessment[] assessments = al.hetNextAssessments(al.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_assessment():
-        :noindex:
-
-
-    .. py:attribute:: next_assessment
-        :noindex:
-
-
-    .. py:method:: get_next_assessments(n):
-        :noindex:
-
+   .. automethod:: AssessmentList.get_next_assessments
 
 Assessment Offered
 ------------------
 
-.. py:class:: AssessmentOffered(abc_assessment_objects.AssessmentOffered, osid_objects.OsidObject, osid_markers.Subjugateable)
-    An ``AssessmentOffered`` represents a sequence of assessment items.
+.. autoclass:: AssessmentOffered
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentOffered.assessment_id
 
-    Like all OSID objects, an ``AssessmentOffered`` is identified by its
-    ``Id`` and any persisted references should use the ``Id``.
+   .. autoattribute:: AssessmentOffered.assessment
 
+   .. autoattribute:: AssessmentOffered.level_id
 
+   .. autoattribute:: AssessmentOffered.level
 
+   .. automethod:: AssessmentOffered.are_items_sequential
 
+   .. automethod:: AssessmentOffered.are_items_shuffled
 
-    .. py:method:: get_assessment_id():
-        :noindex:
+   .. automethod:: AssessmentOffered.has_start_time
 
+   .. autoattribute:: AssessmentOffered.start_time
 
-    .. py:attribute:: assessment_id
-        :noindex:
+   .. automethod:: AssessmentOffered.has_deadline
 
+   .. autoattribute:: AssessmentOffered.deadline
 
-    .. py:method:: get_assessment():
-        :noindex:
+   .. automethod:: AssessmentOffered.has_duration
 
+   .. autoattribute:: AssessmentOffered.duration
 
-    .. py:attribute:: assessment
-        :noindex:
+   .. automethod:: AssessmentOffered.is_scored
 
+   .. autoattribute:: AssessmentOffered.score_system_id
 
-    .. py:method:: get_level_id():
-        :noindex:
+   .. autoattribute:: AssessmentOffered.score_system
 
+   .. automethod:: AssessmentOffered.is_graded
 
-    .. py:attribute:: level_id
-        :noindex:
+   .. autoattribute:: AssessmentOffered.grade_system_id
 
+   .. autoattribute:: AssessmentOffered.grade_system
 
-    .. py:method:: get_level():
-        :noindex:
+   .. automethod:: AssessmentOffered.has_rubric
 
+   .. autoattribute:: AssessmentOffered.rubric_id
 
-    .. py:attribute:: level
-        :noindex:
+   .. autoattribute:: AssessmentOffered.rubric
 
-
-    .. py:method:: are_items_sequential():
-        :noindex:
-
-
-    .. py:method:: are_items_shuffled():
-        :noindex:
-
-
-    .. py:method:: has_start_time():
-        :noindex:
-
-
-    .. py:method:: get_start_time():
-        :noindex:
-
-
-    .. py:attribute:: start_time
-        :noindex:
-
-
-    .. py:method:: has_deadline():
-        :noindex:
-
-
-    .. py:method:: get_deadline():
-        :noindex:
-
-
-    .. py:attribute:: deadline
-        :noindex:
-
-
-    .. py:method:: has_duration():
-        :noindex:
-
-
-    .. py:method:: get_duration():
-        :noindex:
-
-
-    .. py:attribute:: duration
-        :noindex:
-
-
-    .. py:method:: is_scored():
-        :noindex:
-
-
-    .. py:method:: get_score_system_id():
-        :noindex:
-
-
-    .. py:attribute:: score_system_id
-        :noindex:
-
-
-    .. py:method:: get_score_system():
-        :noindex:
-
-
-    .. py:attribute:: score_system
-        :noindex:
-
-
-    .. py:method:: is_graded():
-        :noindex:
-
-
-    .. py:method:: get_grade_system_id():
-        :noindex:
-
-
-    .. py:attribute:: grade_system_id
-        :noindex:
-
-
-    .. py:method:: get_grade_system():
-        :noindex:
-
-
-    .. py:attribute:: grade_system
-        :noindex:
-
-
-    .. py:method:: has_rubric():
-        :noindex:
-
-
-    .. py:method:: get_rubric_id():
-        :noindex:
-
-
-    .. py:attribute:: rubric_id
-        :noindex:
-
-
-    .. py:method:: get_rubric():
-        :noindex:
-
-
-    .. py:attribute:: rubric
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_record(assessment_taken_record_type):
-        :noindex:
-
+   .. automethod:: AssessmentOffered.get_assessment_offered_record
 
 Assessment Offered Form
 -----------------------
 
-.. py:class:: AssessmentOfferedForm(abc_assessment_objects.AssessmentOfferedForm, osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm)
-    This is the form for creating and updating an ``AssessmentOffered``.
+.. autoclass:: AssessmentOfferedForm
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentOfferedForm.level_metadata
 
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the
-    ``AssessmentOfferedAdminSession``. For each data element that may be
-    set, metadata may be examined to provide display hints or data
-    constraints.
+   .. autoattribute:: AssessmentOfferedForm.level
 
+   .. autoattribute:: AssessmentOfferedForm.items_sequential_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.items_sequential
 
+   .. autoattribute:: AssessmentOfferedForm.items_shuffled_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.items_shuffled
 
-    .. py:method:: get_level_metadata():
-        :noindex:
+   .. autoattribute:: AssessmentOfferedForm.start_time_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.start_time
 
-    .. py:attribute:: level_metadata
-        :noindex:
+   .. autoattribute:: AssessmentOfferedForm.deadline_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.deadline
 
-    .. py:method:: set_level(grade_id):
-        :noindex:
+   .. autoattribute:: AssessmentOfferedForm.duration_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.duration
 
-    .. py:method:: clear_level():
-        :noindex:
+   .. autoattribute:: AssessmentOfferedForm.score_system_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.score_system
 
-    .. py:attribute:: level
-        :noindex:
+   .. autoattribute:: AssessmentOfferedForm.grade_system_metadata
 
+   .. autoattribute:: AssessmentOfferedForm.grade_system
 
-    .. py:method:: get_items_sequential_metadata():
-        :noindex:
-
-
-    .. py:attribute:: items_sequential_metadata
-        :noindex:
-
-
-    .. py:method:: set_items_sequential(sequential):
-        :noindex:
-
-
-    .. py:method:: clear_items_sequential():
-        :noindex:
-
-
-    .. py:attribute:: items_sequential
-        :noindex:
-
-
-    .. py:method:: get_items_shuffled_metadata():
-        :noindex:
-
-
-    .. py:attribute:: items_shuffled_metadata
-        :noindex:
-
-
-    .. py:method:: set_items_shuffled(shuffle):
-        :noindex:
-
-
-    .. py:method:: clear_items_shuffled():
-        :noindex:
-
-
-    .. py:attribute:: items_shuffled
-        :noindex:
-
-
-    .. py:method:: get_start_time_metadata():
-        :noindex:
-
-
-    .. py:attribute:: start_time_metadata
-        :noindex:
-
-
-    .. py:method:: set_start_time(start):
-        :noindex:
-
-
-    .. py:method:: clear_start_time():
-        :noindex:
-
-
-    .. py:attribute:: start_time
-        :noindex:
-
-
-    .. py:method:: get_deadline_metadata():
-        :noindex:
-
-
-    .. py:attribute:: deadline_metadata
-        :noindex:
-
-
-    .. py:method:: set_deadline(end):
-        :noindex:
-
-
-    .. py:method:: clear_deadline():
-        :noindex:
-
-
-    .. py:attribute:: deadline
-        :noindex:
-
-
-    .. py:method:: get_duration_metadata():
-        :noindex:
-
-
-    .. py:attribute:: duration_metadata
-        :noindex:
-
-
-    .. py:method:: set_duration(duration):
-        :noindex:
-
-
-    .. py:method:: clear_duration():
-        :noindex:
-
-
-    .. py:attribute:: duration
-        :noindex:
-
-
-    .. py:method:: get_score_system_metadata():
-        :noindex:
-
-
-    .. py:attribute:: score_system_metadata
-        :noindex:
-
-
-    .. py:method:: set_score_system(grade_system_id):
-        :noindex:
-
-
-    .. py:method:: clear_score_system():
-        :noindex:
-
-
-    .. py:attribute:: score_system
-        :noindex:
-
-
-    .. py:method:: get_grade_system_metadata():
-        :noindex:
-
-
-    .. py:attribute:: grade_system_metadata
-        :noindex:
-
-
-    .. py:method:: set_grade_system(grade_system_id):
-        :noindex:
-
-
-    .. py:method:: clear_grade_system():
-        :noindex:
-
-
-    .. py:attribute:: grade_system
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_form_record(assessment_offered_record_type):
-        :noindex:
-
+   .. automethod:: AssessmentOfferedForm.get_assessment_offered_form_record
 
 Assessment Offered List
 -----------------------
 
-.. py:class:: AssessmentOfferedList(abc_assessment_objects.AssessmentOfferedList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``AssessmentOfferedList`` provides a means for accessing
-        ``AssessmentTaken``
-    elements sequentially either one at a time or many at a time.
+.. autoclass:: AssessmentOfferedList
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentOfferedList.next_assessment_offered
 
-    Examples: while (aol.hasNext()) { AssessmentOffered assessment =
-    aol.getNextAssessmentOffered();
-
-
-
-
-    or
-      while (aol.hasNext()) {
-           AssessmentOffered[] assessments = aol.hetNextAssessmentsOffered(aol.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_assessment_offered():
-        :noindex:
-
-
-    .. py:attribute:: next_assessment_offered
-        :noindex:
-
-
-    .. py:method:: get_next_assessments_offered(n):
-        :noindex:
-
+   .. automethod:: AssessmentOfferedList.get_next_assessments_offered
 
 Assessment Taken
 ----------------
 
-.. py:class:: AssessmentTaken(abc_assessment_objects.AssessmentTaken, osid_objects.OsidObject)
-    Represents a taken assessment or an assessment in progress.
+.. autoclass:: AssessmentTaken
+   :show-inheritance:
 
-    .. py:method:: get_assessment_offered_id():
-        :noindex:
+   .. autoattribute:: AssessmentTaken.assessment_offered_id
 
+   .. autoattribute:: AssessmentTaken.assessment_offered
 
-    .. py:attribute:: assessment_offered_id
-        :noindex:
+   .. autoattribute:: AssessmentTaken.taker_id
 
+   .. autoattribute:: AssessmentTaken.taker
 
-    .. py:method:: get_assessment_offered():
-        :noindex:
+   .. autoattribute:: AssessmentTaken.taking_agent_id
 
+   .. autoattribute:: AssessmentTaken.taking_agent
 
-    .. py:attribute:: assessment_offered
-        :noindex:
+   .. automethod:: AssessmentTaken.has_started
 
+   .. autoattribute:: AssessmentTaken.actual_start_time
 
-    .. py:method:: get_taker_id():
-        :noindex:
+   .. automethod:: AssessmentTaken.has_ended
 
+   .. autoattribute:: AssessmentTaken.completion_time
 
-    .. py:attribute:: taker_id
-        :noindex:
+   .. autoattribute:: AssessmentTaken.time_spent
 
+   .. autoattribute:: AssessmentTaken.completion
 
-    .. py:method:: get_taker():
-        :noindex:
+   .. automethod:: AssessmentTaken.is_scored
 
+   .. autoattribute:: AssessmentTaken.score_system_id
 
-    .. py:attribute:: taker
-        :noindex:
+   .. autoattribute:: AssessmentTaken.score_system
 
+   .. autoattribute:: AssessmentTaken.score
 
-    .. py:method:: get_taking_agent_id():
-        :noindex:
+   .. automethod:: AssessmentTaken.is_graded
 
+   .. autoattribute:: AssessmentTaken.grade_id
 
-    .. py:attribute:: taking_agent_id
-        :noindex:
+   .. autoattribute:: AssessmentTaken.grade
 
+   .. autoattribute:: AssessmentTaken.feedback
 
-    .. py:method:: get_taking_agent():
-        :noindex:
+   .. automethod:: AssessmentTaken.has_rubric
 
+   .. autoattribute:: AssessmentTaken.rubric_id
 
-    .. py:attribute:: taking_agent
-        :noindex:
+   .. autoattribute:: AssessmentTaken.rubric
 
-
-    .. py:method:: has_started():
-        :noindex:
-
-
-    .. py:method:: get_actual_start_time():
-        :noindex:
-
-
-    .. py:attribute:: actual_start_time
-        :noindex:
-
-
-    .. py:method:: has_ended():
-        :noindex:
-
-
-    .. py:method:: get_completion_time():
-        :noindex:
-
-
-    .. py:attribute:: completion_time
-        :noindex:
-
-
-    .. py:method:: get_time_spent():
-        :noindex:
-
-
-    .. py:attribute:: time_spent
-        :noindex:
-
-
-    .. py:method:: get_completion():
-        :noindex:
-
-
-    .. py:attribute:: completion
-        :noindex:
-
-
-    .. py:method:: is_scored():
-        :noindex:
-
-
-    .. py:method:: get_score_system_id():
-        :noindex:
-
-
-    .. py:attribute:: score_system_id
-        :noindex:
-
-
-    .. py:method:: get_score_system():
-        :noindex:
-
-
-    .. py:attribute:: score_system
-        :noindex:
-
-
-    .. py:method:: get_score():
-        :noindex:
-
-
-    .. py:attribute:: score
-        :noindex:
-
-
-    .. py:method:: is_graded():
-        :noindex:
-
-
-    .. py:method:: get_grade_id():
-        :noindex:
-
-
-    .. py:attribute:: grade_id
-        :noindex:
-
-
-    .. py:method:: get_grade():
-        :noindex:
-
-
-    .. py:attribute:: grade
-        :noindex:
-
-
-    .. py:method:: get_feedback():
-        :noindex:
-
-
-    .. py:attribute:: feedback
-        :noindex:
-
-
-    .. py:method:: has_rubric():
-        :noindex:
-
-
-    .. py:method:: get_rubric_id():
-        :noindex:
-
-
-    .. py:attribute:: rubric_id
-        :noindex:
-
-
-    .. py:method:: get_rubric():
-        :noindex:
-
-
-    .. py:attribute:: rubric
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_record(assessment_taken_record_type):
-        :noindex:
-
+   .. automethod:: AssessmentTaken.get_assessment_taken_record
 
 Assessment Taken Form
 ---------------------
 
-.. py:class:: AssessmentTakenForm(abc_assessment_objects.AssessmentTakenForm, osid_objects.OsidObjectForm)
-    This is the form for creating and updating an ``AssessmentTaken``.
+.. autoclass:: AssessmentTakenForm
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentTakenForm.taker_metadata
 
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the
-    ``AssessmentTakenAdminSession``. For each data element that may be
-    set, metadata may be examined to provide display hints or data
-    constraints.
+   .. autoattribute:: AssessmentTakenForm.taker
 
-
-
-
-
-    .. py:method:: get_taker_metadata():
-        :noindex:
-
-
-    .. py:attribute:: taker_metadata
-        :noindex:
-
-
-    .. py:method:: set_taker(resource_id):
-        :noindex:
-
-
-    .. py:method:: clear_taker():
-        :noindex:
-
-
-    .. py:attribute:: taker
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_form_record(assessment_taken_record_type):
-        :noindex:
-
+   .. automethod:: AssessmentTakenForm.get_assessment_taken_form_record
 
 Assessment Taken List
 ---------------------
 
-.. py:class:: AssessmentTakenList(abc_assessment_objects.AssessmentTakenList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``AssessmentTakenList`` provides a means for accessing
-        ``AssessmentTaken``
-    elements sequentially either one at a time or many at a time.
+.. autoclass:: AssessmentTakenList
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentTakenList.next_assessment_taken
 
-    Examples: while (atl.hasNext()) { AssessmentTaken assessment =
-    atl.getNextAssessmentTaken();
-
-
-
-
-    or
-      while (atl.hasNext()) {
-           AssessmentTaken[] assessments = atl.hetNextAssessmentsTaken(atl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_assessment_taken():
-        :noindex:
-
-
-    .. py:attribute:: next_assessment_taken
-        :noindex:
-
-
-    .. py:method:: get_next_assessments_taken(n):
-        :noindex:
-
+   .. automethod:: AssessmentTakenList.get_next_assessments_taken
 
 Assessment Section
 ------------------
 
-.. py:class:: AssessmentSection(abc_assessment_objects.AssessmentSection, osid_objects.OsidObject)
-    Represents an assessment section.
+.. autoclass:: AssessmentSection
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentSection.assessment_taken_id
 
-    An assessment section represents a cluster of questions used to
-    organize the execution of an assessment. The section is the student
-    aspect of an assessment part.
+   .. autoattribute:: AssessmentSection.assessment_taken
 
+   .. automethod:: AssessmentSection.has_allocated_time
 
+   .. autoattribute:: AssessmentSection.allocated_time
 
+   .. automethod:: AssessmentSection.are_items_sequential
 
+   .. automethod:: AssessmentSection.are_items_shuffled
 
-    .. py:method:: get_assessment_taken_id():
-        :noindex:
-
-
-    .. py:attribute:: assessment_taken_id
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken():
-        :noindex:
-
-
-    .. py:attribute:: assessment_taken
-        :noindex:
-
-
-    .. py:method:: has_allocated_time():
-        :noindex:
-
-
-    .. py:method:: get_allocated_time():
-        :noindex:
-
-
-    .. py:attribute:: allocated_time
-        :noindex:
-
-
-    .. py:method:: are_items_sequential():
-        :noindex:
-
-
-    .. py:method:: are_items_shuffled():
-        :noindex:
-
-
-    .. py:method:: get_assessment_section_record(assessment_section_record_type):
-        :noindex:
-
+   .. automethod:: AssessmentSection.get_assessment_section_record
 
 Assessment Section List
 -----------------------
 
-.. py:class:: AssessmentSectionList(abc_assessment_objects.AssessmentSectionList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``AssessmentSectionList`` provides a means for accessing
-    ``AssessmentSection`` elements sequentially either one at a time or many at a time.
+.. autoclass:: AssessmentSectionList
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentSectionList.next_assessment_section
 
-    Examples: while (asl.hasNext()) { AssessmentSection section =
-    asl.getNextAssessmentSection();
-
-
-
-
-    or
-      while (asl.hasNext()) {
-           AssessmentSection[] sections = asl.hetNextAssessmentSections(asl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_assessment_section():
-        :noindex:
-
-
-    .. py:attribute:: next_assessment_section
-        :noindex:
-
-
-    .. py:method:: get_next_assessment_sections(n):
-        :noindex:
-
+   .. automethod:: AssessmentSectionList.get_next_assessment_sections
 
 Bank
 ----
@@ -1181,184 +356,55 @@ Bank
 .. py:class:: Bank(abc_assessment_objects.Bank, osid_objects.OsidCatalog)
         :noindex:
 
-    .. py:method:: get_bank_record(bank_record_type):
-        :noindex:
-
+   .. automethod:: Bank.get_bank_record
 
 Bank Form
 ---------
 
-.. py:class:: BankForm(abc_assessment_objects.BankForm, osid_objects.OsidCatalogForm)
-    This is the form for creating and updating banks.
+.. autoclass:: BankForm
+   :show-inheritance:
 
-
-    Like all ``OsidForm`` objects, various data elements may be set here
-    for use in the create and update methods in the
-    ``BankAdminSession``. For each data element that may be set,
-    metadata may be examined to provide display hints or data
-    constraints.
-
-
-
-
-
-    .. py:method:: get_bank_form_record(bank_record_type):
-        :noindex:
-
+   .. automethod:: BankForm.get_bank_form_record
 
 Bank List
 ---------
 
-.. py:class:: BankList(abc_assessment_objects.BankList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``BankList`` provides a means for accessing ``Bank`` elements
-        sequentially
-    either one at a time or many at a time.
+.. autoclass:: BankList
+   :show-inheritance:
 
+   .. autoattribute:: BankList.next_bank
 
-    Examples: while (bl.hasNext()) { Bank bank = bl.getNextBank(); }
-
-
-
-
-    or
-      while (bl.hasNext()) {
-           Bank[] banks = bl.getNextBanks(bl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_bank():
-        :noindex:
-
-
-    .. py:attribute:: next_bank
-        :noindex:
-
-
-    .. py:method:: get_next_banks(n):
-        :noindex:
-
+   .. automethod:: BankList.get_next_banks
 
 Bank Node
 ---------
 
-.. py:class:: BankNode(abc_assessment_objects.BankNode, osid_objects.OsidNode)
-    This interface is a container for a partial hierarchy retrieval.
+.. autoclass:: BankNode
+   :show-inheritance:
 
+   .. autoattribute:: BankNode.bank
 
-    The number of hierarchy levels traversable through this interface
-    depend on the number of levels requested in the
-    ``BankHierarchySession``.
+   .. autoattribute:: BankNode.parent_bank_nodes
 
-
-
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: get_parent_bank_nodes():
-        :noindex:
-
-
-    .. py:attribute:: parent_bank_nodes
-        :noindex:
-
-
-    .. py:method:: get_child_bank_nodes():
-        :noindex:
-
-
-    .. py:attribute:: child_bank_nodes
-        :noindex:
-
+   .. autoattribute:: BankNode.child_bank_nodes
 
 Bank Node List
 --------------
 
-.. py:class:: BankNodeList(abc_assessment_objects.BankNodeList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``BankNodeList`` provides a means for accessing ``BankNode`` elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: BankNodeList
+   :show-inheritance:
 
+   .. autoattribute:: BankNodeList.next_bank_node
 
-    Examples: while (bnl.hasNext()) { BankNode node =
-    bnl.getNextBankNode(); }
-
-
-
-
-    or
-      while (bnl.hasNext()) {
-           BankNode[] nodes = bnl.getNextBankNodes(bnl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_bank_node():
-        :noindex:
-
-
-    .. py:attribute:: next_bank_node
-        :noindex:
-
-
-    .. py:method:: get_next_bank_nodes(n):
-        :noindex:
-
+   .. automethod:: BankNodeList.get_next_bank_nodes
 
 Response List
 -------------
 
-.. py:class:: ResponseList(abc_assessment_objects.ResponseList, osid_objects.OsidList)
-    Like all ``OsidLists,`` ``ResponseList`` provides a means for accessing ``Response`` elements
-    sequentially either one at a time or many at a time.
+.. autoclass:: ResponseList
+   :show-inheritance:
 
+   .. autoattribute:: ResponseList.next_response
 
-    Examples: while (rl.hasNext()) { Response response =
-    rl.getNextResponse(); }
-
-
-
-
-    or
-      while (rl.hasNext()) {
-           Response[] responses = rl.getNextResponses(rl.available());
-      }
-
-
-
-
-
-
-
-
-
-    .. py:method:: get_next_response():
-        :noindex:
-
-
-    .. py:attribute:: next_response
-        :noindex:
-
-
-    .. py:method:: get_next_responses(n):
-        :noindex:
-
+   .. automethod:: ResponseList.get_next_responses
 

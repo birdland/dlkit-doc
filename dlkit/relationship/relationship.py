@@ -371,7 +371,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         """Tests if the given ``Relationship`` search record type is supported.
 
 
-        :param relationship_search_record_type: a ``Type`` indicating a ``Relationship`` search record type
+        :param relationship_search_record_type: a ``Type`` indicating a ``Relationship`` search
+            record type
         :type relationship_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given search record type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -480,8 +481,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_family_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -573,8 +574,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         return # osid.relationship.FamilyList
 
     def get_families_by_genus_type(self, family_genus_type):
-        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` which does not include families of
-        genus types derived from the specified ``Type``.
+        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` which does not
+            include families of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known families
@@ -598,8 +599,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         return # osid.relationship.FamilyList
 
     def get_families_by_parent_genus_type(self, family_genus_type):
-        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` and include any additional families
-        with genus types derived from the specified ``Type``.
+        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` and include any
+            additional families with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known families
@@ -733,7 +734,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
         :param family_record_types: array of family record types
         :type family_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Family`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Family`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``family_record_types is null``
 
@@ -780,7 +782,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``family_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``family_form`` did not originate from ``get_family_form_for_create()``
+        :raise: ``Unsupported`` -- ``family_form`` did not originate from
+            ``get_family_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -847,7 +850,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``family_id`` or ``family_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``family_form`` did not originate from ``get_family_form_for_update()``
+        :raise: ``Unsupported`` -- ``family_form`` did not originate from
+            ``get_family_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1011,8 +1015,8 @@ class RelationshipProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_family_view(self):
-        """The returns from the family methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the family methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1308,13 +1312,14 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
         :param family_id: the ``Id`` to query
         :type family_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a family node
         :rtype: ``osid.hierarchy.Node``
@@ -1336,13 +1341,14 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
         :param family_id: the ``Id`` to query
         :type family_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a family node
         :rtype: ``osid.relationship.FamilyNode``
@@ -1520,9 +1526,11 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
 
 
-class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-        aspects of this service.
+class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession,
+    RelationshipProfile):
+    """The relationship manager provides access to relationship sessions and provides
+        interoperability
+    tests for various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -1569,7 +1577,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         self._provider_sessions = dict()
         self._session_management = AUTOMATIC
         self._family_view = DEFAULT
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
 
 
     # def _get_view(self, view):
@@ -1677,7 +1686,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_lookup_session = property(fget=get_relationship_lookup_session)
 
     def get_relationship_lookup_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship lookup service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship lookup service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -1687,8 +1697,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1719,7 +1729,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_query_session = property(fget=get_relationship_query_session)
 
     def get_relationship_query_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship query service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship query service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -1729,7 +1740,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1760,7 +1772,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_search_session = property(fget=get_relationship_search_session)
 
     def get_relationship_search_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship search service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship search service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the ``Family``
@@ -1770,8 +1783,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no family found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1802,7 +1815,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
     relationship_admin_session = property(fget=get_relationship_admin_session)
 
     def get_relationship_admin_session_for_family(self, family_id):
-        """Gets the ``OsidSession`` associated with the relationship administration service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship administration service for the
+            given family.
 
 
         :param family_id: the ``Id`` of the ``Family``
@@ -1812,7 +1826,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no family found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1844,7 +1859,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # osid.relationship.RelationshipNotificationSession
 
     def get_relationship_notification_session_for_family(self, relationship_receiver, family_id):
-        """Gets the ``OsidSession`` associated with the relationship notification service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship notification service for the
+            given family.
 
 
         :param relationship_receiver: the receiver
@@ -1856,8 +1872,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NotFound`` -- no family found by the given ``Id``
         :raise: ``NullArgument`` -- ``relationship_receiver`` or ``family_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2125,8 +2141,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # boolean
 
     def use_comparative_family_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2218,8 +2234,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # osid.relationship.FamilyList
 
     def get_families_by_genus_type(self, family_genus_type):
-        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` which does not include families of
-        genus types derived from the specified ``Type``.
+        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` which does not
+            include families of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known families
@@ -2243,8 +2259,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # osid.relationship.FamilyList
 
     def get_families_by_parent_genus_type(self, family_genus_type):
-        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` and include any additional families
-        with genus types derived from the specified ``Type``.
+        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` and include any
+            additional families with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known families
@@ -2378,7 +2394,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
         :param family_record_types: array of family record types
         :type family_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Family`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Family`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``family_record_types is null``
 
@@ -2425,7 +2442,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NullArgument`` -- ``family_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``family_form`` did not originate from ``get_family_form_for_create()``
+        :raise: ``Unsupported`` -- ``family_form`` did not originate from
+            ``get_family_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2492,7 +2510,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         :raise: ``NullArgument`` -- ``family_id`` or ``family_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``family_form`` did not originate from ``get_family_form_for_update()``
+        :raise: ``Unsupported`` -- ``family_form`` did not originate from
+            ``get_family_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2656,8 +2675,8 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         return # boolean
 
     def use_comparative_family_view(self):
-        """The returns from the family methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the family methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2953,13 +2972,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
         :param family_id: the ``Id`` to query
         :type family_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a family node
         :rtype: ``osid.hierarchy.Node``
@@ -2981,13 +3001,14 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
         :param family_id: the ``Id`` to query
         :type family_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a family node
         :rtype: ``osid.relationship.FamilyNode``
@@ -3166,8 +3187,9 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
 
 class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-        aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides
+        interoperability
+    tests for various aspects of this service.
 
 
     Methods in this manager support the passing of a Proxy. The sessions
@@ -3229,7 +3251,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipLookupSession
 
     def get_relationship_lookup_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship lookup service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship lookup service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -3241,8 +3264,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3274,7 +3297,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipQuerySession
 
     def get_relationship_query_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship query service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship query service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -3286,7 +3310,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3318,7 +3343,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipSearchSession
 
     def get_relationship_search_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship search service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship search service for the given
+            family.
 
 
         :param family_id: the ``Id`` of the family
@@ -3330,8 +3356,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3363,7 +3389,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.RelationshipAdminSession
 
     def get_relationship_admin_session_for_family(self, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship administration service for the given family.
+        """Gets the ``OsidSession`` associated with the relationship administration service for the
+            given family.
 
 
         :param family_id: the ``Id`` of the family
@@ -3375,7 +3402,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3408,8 +3436,10 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         """
         return # osid.relationship.RelationshipNotificationSession
 
-    def get_relationship_notification_session_for_family(self, relationship_receiver, family_id, proxy):
-        """Gets the ``OsidSession`` associated with the relationship notification service for the given family.
+    def get_relationship_notification_session_for_family(self, relationship_receiver, family_id,
+        proxy):
+        """Gets the ``OsidSession`` associated with the relationship notification service for the
+            given family.
 
 
         :param relationship_receiver: the receiver
@@ -3423,8 +3453,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NotFound`` -- no ``Family`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``relationship_receiver, family_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_relationship_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3704,8 +3734,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # boolean
 
     def use_comparative_family_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3797,8 +3827,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.FamilyList
 
     def get_families_by_genus_type(self, family_genus_type):
-        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` which does not include families of
-        genus types derived from the specified ``Type``.
+        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` which does not
+            include families of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known families
@@ -3822,8 +3852,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # osid.relationship.FamilyList
 
     def get_families_by_parent_genus_type(self, family_genus_type):
-        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` and include any additional families
-        with genus types derived from the specified ``Type``.
+        """Gets a ``FamilyList`` corresponding to the given family genus ``Type`` and include any
+            additional families with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known families
@@ -3957,7 +3987,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
 
         :param family_record_types: array of family record types
         :type family_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Family`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Family`` creation using the specified record ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``family_record_types is null``
 
@@ -4004,7 +4035,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NullArgument`` -- ``family_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``family_form`` did not originate from ``get_family_form_for_create()``
+        :raise: ``Unsupported`` -- ``family_form`` did not originate from
+            ``get_family_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4071,7 +4103,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         :raise: ``NullArgument`` -- ``family_id`` or ``family_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``family_form`` did not originate from ``get_family_form_for_update()``
+        :raise: ``Unsupported`` -- ``family_form`` did not originate from
+            ``get_family_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4235,8 +4268,8 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         return # boolean
 
     def use_comparative_family_view(self):
-        """The returns from the family methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the family methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4532,13 +4565,14 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
 
         :param family_id: the ``Id`` to query
         :type family_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a family node
         :rtype: ``osid.hierarchy.Node``
@@ -4560,13 +4594,14 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
 
         :param family_id: the ``Id`` to query
         :type family_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
-            node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
+            returns no parents in the node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
-            in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
+            returns no children in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
+            omit the siblings
         :type include_siblings: ``boolean``
         :return: a family node
         :rtype: ``osid.relationship.FamilyNode``
@@ -4956,8 +4991,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_relationship_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -5029,7 +5064,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
     def use_effective_relationship_view(self):
-        """Only relationships whose effective dates are current are returned by methods in this session.
+        """Only relationships whose effective dates are current are returned by methods in this
+            session.
 
 
 
@@ -5097,8 +5133,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_by_genus_type(self, relationship_genus_type):
-        """Gets a ``RelationshipList`` corresponding to the given relationship genus ``Type`` which does not include
-        relationships of types derived from the specified ``Type``.
+        """Gets a ``RelationshipList`` corresponding to the given relationship genus ``Type`` which
+            does not include relationships of types derived from the specified ``Type``.
 
 
         :param relationship_genus_type: a relationship genus type
@@ -5117,8 +5153,9 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_by_parent_genus_type(self, relationship_genus_type):
-        """Gets a ``RelationshipList`` corresponding to the given relationship genus ``Type`` and include any additional
-        relationships with genus types derived from the specified ``Type``.
+        """Gets a ``RelationshipList`` corresponding to the given relationship genus ``Type`` and
+            include any additional relationships with genus types derived from the specified
+            ``Type``.
 
 
         :param relationship_genus_type: a relationship genus type
@@ -5156,8 +5193,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_on_date(self, from_, to):
-        """Gets a ``RelationshipList`` effective during the entire given date range inclusive but not confined to the
-        date range.
+        """Gets a ``RelationshipList`` effective during the entire given date range inclusive but
+            not confined to the date range.
 
 
         :param from: starting date
@@ -5198,8 +5235,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_for_source_on_date(self, source_id, from_, to):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and effective during the entire given date
-        range inclusive but not confined to the date range.
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and effective during
+            the entire given date range inclusive but not confined to the date range.
 
 
         :param source_id: a peer ``Id``
@@ -5223,7 +5260,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_by_genus_type_for_source(self, source_id, relationship_genus_type):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus ``Type.
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus
+            ``Type.
 
 
         Relationships`` of any genus derived from the given genus are
@@ -5260,9 +5298,11 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.relationship.RelationshipList
 
-    def get_relationships_by_genus_type_for_source_on_date(self, source_id, relationship_genus_type, from_, to):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus ``Type`` and
-        effective during the entire given date range inclusive but not confined to the date range.
+    def get_relationships_by_genus_type_for_source_on_date(self, source_id, relationship_genus_type,
+        from_, to):
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus
+            ``Type`` and effective during the entire given date range inclusive but not confined to
+            the date range.
 
 
         :param source_id: a peer ``Id``
@@ -5276,7 +5316,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the relationships
         :rtype: ``osid.relationship.RelationshipList``
         :raise: ``InvalidArgument`` -- ``from is greater than to``
-        :raise: ``NullArgument`` -- ``source_id, relationship_genus_type, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``source_id, relationship_genus_type, from`` or ``to`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5307,8 +5348,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_for_destination_on_date(self, destination_id, from_, to):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` with a starting effective date in the
-        given range inclusive.
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` with a starting
+            effective date in the given range inclusive.
 
 
         :param destination_id: a peer ``Id``
@@ -5331,8 +5372,10 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.relationship.RelationshipList
 
-    def get_relationships_by_genus_type_for_destination(self, destination_id, relationship_genus_type):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus ``Type.
+    def get_relationships_by_genus_type_for_destination(self, destination_id,
+        relationship_genus_type):
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus
+            ``Type.
 
 
         Relationships`` of any genus derived from the given genus are
@@ -5369,10 +5412,11 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.relationship.RelationshipList
 
-    def get_relationships_by_genus_type_for_destination_on_date(self, destination_id, relationship_genus_type, from_,
-        to):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus ``Type`` and
-        effective during the entire given date range inclusive but not confined to the date range.
+    def get_relationships_by_genus_type_for_destination_on_date(self, destination_id,
+        relationship_genus_type, from_, to):
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Id`` and relationship genus
+            ``Type`` and effective during the entire given date range inclusive but not confined to
+            the date range.
 
 
         :param destination_id: a peer ``Id``
@@ -5386,7 +5430,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the relationships
         :rtype: ``osid.relationship.RelationshipList``
         :raise: ``InvalidArgument`` -- ``from is greater than to``
-        :raise: ``NullArgument`` -- ``destination_id, relationship_genus_type, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``destination_id, relationship_genus_type, from`` or ``to`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5419,8 +5464,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.relationship.RelationshipList
 
     def get_relationships_for_peers_on_date(self, source_id, destination_id, from_, to):
-        """Gets a ``RelationshipList`` corresponding to the given peer ``Ids`` and effective during the entire given
-        date range inclusive but not confined to the date range.
+        """Gets a ``RelationshipList`` corresponding to the given peer ``Ids`` and effective during
+            the entire given date range inclusive but not confined to the date range.
 
 
         :param source_id: a peer ``Id``
@@ -5445,8 +5490,10 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.relationship.RelationshipList
 
-    def get_relationships_by_genus_type_for_peers(self, source_id, destination_id, relationship_genus_type):
-        """Gets a ``RelationshipList`` corresponding between the given peer ``Ids`` and relationship genus ``Type.
+    def get_relationships_by_genus_type_for_peers(self, source_id, destination_id,
+        relationship_genus_type):
+        """Gets a ``RelationshipList`` corresponding between the given peer ``Ids`` and relationship
+            genus ``Type.
 
 
         Relationships`` of any genus derived from the given genus are
@@ -5472,7 +5519,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type relationship_genus_type: ``osid.type.Type``
         :return: the relationships
         :rtype: ``osid.relationship.RelationshipList``
-        :raise: ``NullArgument`` -- ``source_id, destination_id,`` or ``relationship_genus_type`` is ``null``
+        :raise: ``NullArgument`` -- ``source_id, destination_id,`` or ``relationship_genus_type`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5483,10 +5531,10 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.relationship.RelationshipList
 
-    def get_relationships_by_genus_type_for_peers_on_date(self, source_id, destination_id, relationship_genus_type,
-        from_, to):
-        """Gets a ``RelationshipList`` effective during the entire given date range inclusive but not confined to the
-        date range.
+    def get_relationships_by_genus_type_for_peers_on_date(self, source_id, destination_id,
+        relationship_genus_type, from_, to):
+        """Gets a ``RelationshipList`` effective during the entire given date range inclusive but
+            not confined to the date range.
 
 
         :param source_id: a peer ``Id``
@@ -5502,7 +5550,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the relationships
         :rtype: ``osid.relationship.RelationshipList``
         :raise: ``InvalidArgument`` -- ``from is greater than to``
-        :raise: ``NullArgument`` -- ``source_id, destination_id, relationship_genus_type, from`` or ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``source_id, destination_id, relationship_genus_type, from`` or
+            ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5708,7 +5757,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     family = property(fget=get_family)
 
     def can_create_relationships(self):
-        """Tests if this user can create ``Relationships`` A return of true does not guarantee successful authorization.
+        """Tests if this user can create ``Relationships`` A return of true does not guarantee
+            successful authorization.
 
 
         A return of false indicates that it is known creating a
@@ -5742,8 +5792,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param relationship_record_types: array of relationship record types
         :type relationship_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Relationship`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Relationship`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``relationship_record_types`` is ``null``
 
@@ -5754,7 +5804,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_relationship_form_for_create(self, source_id, destination_id, relationship_record_types):
+    def get_relationship_form_for_create(self, source_id, destination_id,
+        relationship_record_types):
         """Gets the relationship form for creating new relationships.
 
 
@@ -5795,7 +5846,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``relationship_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``relationship_form`` did not originate from ``get_relationship_form_for_create()``
+        :raise: ``Unsupported`` -- ``relationship_form`` did not originate from
+            ``get_relationship_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5862,7 +5914,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``relationship_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``relationship_form`` did not originate from ``get_relationship_form_for_update()``
+        :raise: ``Unsupported`` -- ``relationship_form`` did not originate from
+            ``get_relationship_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5966,9 +6019,8 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class FamilyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either
-        one at a
-        time or many at a time.
+    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (fl.hasNext()) { Family family = fl.getNextFamily();
@@ -5993,8 +6045,8 @@ class FamilyList(osid_objects.OsidList):
         """Gets the next ``Family`` in this list.
 
 
-        :return: the next ``Family`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Family`` is available before calling this method.
+        :return: the next ``Family`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Family`` is available before calling this method.
         :rtype: ``osid.relationship.Family``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -6016,9 +6068,11 @@ class FamilyList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Family`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Family`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Family`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Family`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.relationship.Family``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

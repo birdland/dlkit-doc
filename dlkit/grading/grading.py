@@ -332,7 +332,8 @@ class GradingProfile(osid_managers.OsidProfile):
         """Tests if a gradebook column to gradebook lookup session is available.
 
 
-        :return: ``true`` if gradebook column gradebook lookup session is supported, ``false`` otherwise
+        :return: ``true`` if gradebook column gradebook lookup session is supported, ``false``
+            otherwise
         :rtype: ``boolean``
 
 
@@ -632,7 +633,8 @@ class GradingProfile(osid_managers.OsidProfile):
         """Tests if the given ``GradeSystem`` search record type is supported.
 
 
-        :param grade_system_search_record_type: a ``Type`` indicating a ``GradeSystem`` search record type
+        :param grade_system_search_record_type: a ``Type`` indicating a ``GradeSystem`` search
+            record type
         :type grade_system_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -702,7 +704,8 @@ class GradingProfile(osid_managers.OsidProfile):
         """Tests if the given ``GradeEntry`` search record type is supported.
 
 
-        :param grade_entry_search_record_type: a ``Type`` indicating a ``GradeEntry`` search record type
+        :param grade_entry_search_record_type: a ``Type`` indicating a ``GradeEntry`` search record
+            type
         :type grade_entry_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -739,7 +742,8 @@ class GradingProfile(osid_managers.OsidProfile):
 
         :param gradebook_column_record_type: a ``Type`` indicating a ``GradebookColumn`` type
         :type gradebook_column_record_type: ``osid.type.Type``
-        :return: ``true`` if the given gradebook column record ``Type`` is supported, ``false`` otherwise
+        :return: ``true`` if the given gradebook column record ``Type`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
 
@@ -772,7 +776,8 @@ class GradingProfile(osid_managers.OsidProfile):
         """Tests if the given gradebook column search record type is supported.
 
 
-        :param gradebook_column_search_record_type: a ``Type`` indicating a ``GradebookColumn`` search record type
+        :param gradebook_column_search_record_type: a ``Type`` indicating a ``GradebookColumn``
+            search record type
         :type gradebook_column_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -807,9 +812,11 @@ class GradingProfile(osid_managers.OsidProfile):
         """Tests if the given ``GradebookColumnSummary`` record type is supported.
 
 
-        :param gradebook_column_summary_record_type: a ``Type`` indicating a ``GradebookColumnSummary`` type
+        :param gradebook_column_summary_record_type: a ``Type`` indicating a
+            ``GradebookColumnSummary`` type
         :type gradebook_column_summary_record_type: ``osid.type.Type``
-        :return: ``true`` if the given gradebook column summary record ``Type`` is supported, ``false`` otherwise
+        :return: ``true`` if the given gradebook column summary record ``Type`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
 
@@ -877,7 +884,8 @@ class GradingProfile(osid_managers.OsidProfile):
         """Tests if the given gradebook search record type is supported.
 
 
-        :param gradebook_search_record_type: a ``Type`` indicating a ``Gradebook`` search record type
+        :param gradebook_search_record_type: a ``Type`` indicating a ``Gradebook`` search record
+            type
         :type gradebook_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -916,8 +924,8 @@ class GradingProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_gradebook_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1010,8 +1018,8 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does not include
-        gradebooks of types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does
+            not include gradebooks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -1035,8 +1043,8 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_parent_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include any additional
-        gradebooks with genus types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include
+            any additional gradebooks with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -1170,7 +1178,8 @@ class GradingProfile(osid_managers.OsidProfile):
 
         :param gradebook_record_types: array of gradebook record types
         :type gradebook_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_record_types`` is ``null``
 
@@ -1217,7 +1226,8 @@ class GradingProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from ``get_gradebook_form_for_create()``
+        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from
+            ``get_gradebook_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1284,7 +1294,8 @@ class GradingProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form did not originate from get_gradebook_form_for_update()``
+        :raise: ``Unsupported`` -- ``gradebook_form did not originate from
+            get_gradebook_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1388,9 +1399,9 @@ class GradingProfile(osid_managers.OsidProfile):
 
 
 class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, GradingProfile):
-    """The grading manager provides access to grading sessions and provides interoperability tests for various aspects
-        of this
-        service.
+    """The grading manager provides access to grading sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -1470,7 +1481,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         self._provider_sessions = dict()
         self._session_management = AUTOMATIC
         self._gradebook_view = DEFAULT
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
 
 
     # def _get_view(self, view):
@@ -1578,7 +1590,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_system_lookup_session = property(fget=get_grade_system_lookup_session)
 
     def get_grade_system_lookup_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system lookup service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system lookup service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1588,8 +1601,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1620,7 +1633,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_system_query_session = property(fget=get_grade_system_query_session)
 
     def get_grade_system_query_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system query service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system query service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1630,7 +1644,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1661,7 +1676,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_system_search_session = property(fget=get_grade_system_search_session)
 
     def get_grade_system_search_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system search service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system search service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1671,8 +1687,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1703,7 +1719,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_system_admin_session = property(fget=get_grade_system_admin_session)
 
     def get_grade_system_admin_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system admin service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system admin service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1713,7 +1730,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1744,8 +1762,10 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         """
         return # osid.grading.GradeSystemNotificationSession
 
-    def get_grade_system_notification_session_for_gradebook(self, grade_system_receiver, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system notification service for the given gradebook.
+    def get_grade_system_notification_session_for_gradebook(self, grade_system_receiver,
+        gradebook_id):
+        """Gets the ``OsidSession`` associated with the grade system notification service for the
+            given gradebook.
 
 
         :param grade_system_receiver: the grade system receiver
@@ -1757,8 +1777,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``grade_system_receiver`` or ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1848,7 +1868,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_entry_lookup_session = property(fget=get_grade_entry_lookup_session)
 
     def get_grade_entry_lookup_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry lookup service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry lookup service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1858,7 +1879,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1889,7 +1911,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_entry_query_session = property(fget=get_grade_entry_query_session)
 
     def get_grade_entry_query_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry query service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry query service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1899,7 +1922,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1930,7 +1954,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_entry_search_session = property(fget=get_grade_entry_search_session)
 
     def get_grade_entry_search_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry search service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry search service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1940,7 +1965,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1971,7 +1997,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     grade_entry_admin_session = property(fget=get_grade_entry_admin_session)
 
     def get_grade_entry_admin_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry admin service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry admin service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -1981,7 +2008,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2013,7 +2041,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         return # osid.grading.GradeEntryNotificationSession
 
     def get_grade_entry_notification_session_for_gradebook(self, receiver, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry notification service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry notification service for the
+            given gradebook.
 
 
         :param receiver: the grade entry receiver
@@ -2025,8 +2054,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``receiver`` or ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2057,7 +2086,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     gradebook_column_lookup_session = property(fget=get_gradebook_column_lookup_session)
 
     def get_gradebook_column_lookup_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column lookup service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column lookup service for the
+            given gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -2067,8 +2097,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2099,7 +2129,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     gradebook_column_query_session = property(fget=get_gradebook_column_query_session)
 
     def get_gradebook_column_query_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column query service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column query service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -2109,8 +2140,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2141,7 +2172,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     gradebook_column_search_session = property(fget=get_gradebook_column_search_session)
 
     def get_gradebook_column_search_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column search service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column search service for the
+            given gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -2151,8 +2183,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2183,7 +2215,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
     gradebook_column_admin_session = property(fget=get_gradebook_column_admin_session)
 
     def get_gradebook_column_admin_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column admin service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column admin service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -2193,8 +2226,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2225,8 +2258,10 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         """
         return # osid.grading.GradebookColumnNotificationSession
 
-    def get_gradebook_column_notification_session_for_gradebook(self, gradebook_column_receiver, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column notification service for the given gradebook.
+    def get_gradebook_column_notification_session_for_gradebook(self, gradebook_column_receiver,
+        gradebook_id):
+        """Gets the ``OsidSession`` associated with the gradebook column notification service for
+            the given gradebook.
 
 
         :param gradebook_column_receiver: the gradebook column receiver
@@ -2238,8 +2273,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_column_receiver`` or ``gradebook_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2276,7 +2311,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :return: a ``GradebookColumnGradebookAssignmentSession``
         :rtype: ``osid.grading.GradebookColumnGradebookAssignmentSession``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook_assignment()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook_assignment()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2527,8 +2563,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         return # boolean
 
     def use_comparative_gradebook_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2621,8 +2657,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does not include
-        gradebooks of types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does
+            not include gradebooks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -2646,8 +2682,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_parent_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include any additional
-        gradebooks with genus types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include
+            any additional gradebooks with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -2781,7 +2817,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
 
         :param gradebook_record_types: array of gradebook record types
         :type gradebook_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_record_types`` is ``null``
 
@@ -2828,7 +2865,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from ``get_gradebook_form_for_create()``
+        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from
+            ``get_gradebook_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2895,7 +2933,8 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form did not originate from get_gradebook_form_for_update()``
+        :raise: ``Unsupported`` -- ``gradebook_form did not originate from
+            get_gradebook_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2999,9 +3038,9 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
 
 
 class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
-    """The grading manager provides access to grading sessions and provides interoperability tests for various aspects
-        of this
-        service.
+    """The grading manager provides access to grading sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager accept a ``Proxy`` for passing information
@@ -3098,7 +3137,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeSystemLookupSession
 
     def get_grade_system_lookup_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system lookup service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system lookup service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3110,8 +3150,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3143,7 +3183,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeSystemQuerySession
 
     def get_grade_system_query_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system query service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system query service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3155,7 +3196,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3187,7 +3229,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeSystemSearchSession
 
     def get_grade_system_search_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system search service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system search service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3199,8 +3242,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3232,7 +3275,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeSystemAdminSession
 
     def get_grade_system_admin_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system admin service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade system admin service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3244,7 +3288,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3277,8 +3322,10 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         """
         return # osid.grading.GradeSystemNotificationSession
 
-    def get_grade_system_notification_session_for_gradebook(self, grade_system_receiver, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system notification service for the given gradebook.
+    def get_grade_system_notification_session_for_gradebook(self, grade_system_receiver,
+        gradebook_id, proxy):
+        """Gets the ``OsidSession`` associated with the grade system notification service for the
+            given gradebook.
 
 
         :param grade_system_receiver: the grade system receiver
@@ -3292,8 +3339,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``grade_system_receiver, gradebook_id`` or ``porxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3388,7 +3435,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeEntryLookupSession
 
     def get_grade_entry_lookup_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry lookup service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry lookup service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3400,7 +3448,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3432,7 +3481,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeEntryQuerySession
 
     def get_grade_entry_query_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry query service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry query service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3444,7 +3494,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3476,7 +3527,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeEntrySearchSession
 
     def get_grade_entry_search_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry search service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry search service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3488,7 +3540,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3520,7 +3573,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradeEntryAdminSession
 
     def get_grade_entry_admin_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry admin service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the grade entry admin service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3532,7 +3586,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` or ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3565,8 +3620,10 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         """
         return # osid.grading.GradeEntryNotificationSession
 
-    def get_grade_entry_notification_session_for_gradebook(self, grade_entry_receiver, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry notification service for the given gradebook.
+    def get_grade_entry_notification_session_for_gradebook(self, grade_entry_receiver, gradebook_id,
+        proxy):
+        """Gets the ``OsidSession`` associated with the grade entry notification service for the
+            given gradebook.
 
 
         :param grade_entry_receiver: the grade entry receiver
@@ -3580,8 +3637,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``grade_entry_receiver, gradebook_id`` or ``porxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3613,7 +3670,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradebookColumnLookupSession
 
     def get_gradebook_column_lookup_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column lookup service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column lookup service for the
+            given gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3625,8 +3683,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3658,7 +3716,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradebookColumnQuerySession
 
     def get_gradebook_column_query_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column query service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column query service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3670,8 +3729,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3703,7 +3762,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradebookColumnSearchSession
 
     def get_gradebook_column_search_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column search service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column search service for the
+            given gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3715,8 +3775,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3748,7 +3808,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradebookColumnAdminSession
 
     def get_gradebook_column_admin_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column admin service for the given gradebook.
+        """Gets the ``OsidSession`` associated with the gradebook column admin service for the given
+            gradebook.
 
 
         :param gradebook_id: the ``Id`` of the gradebook
@@ -3760,8 +3821,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NotFound`` -- ``gradebook_id`` not found
         :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3794,8 +3855,10 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         """
         return # osid.grading.GradebookColumnNotificationSession
 
-    def get_gradebook_column_notification_session_for_gradebook(self, gradebook_column_receiver, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column notification service for the given gradebook.
+    def get_gradebook_column_notification_session_for_gradebook(self, gradebook_column_receiver,
+        gradebook_id, proxy):
+        """Gets the ``OsidSession`` associated with the gradebook column notification service for
+            the given gradebook.
 
 
         :param gradebook_column_receiver: the gradebook column receiver
@@ -3807,10 +3870,11 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :return: ``a _gradebook_column_notification_session``
         :rtype: ``osid.grading.GradebookColumnNotificationSession``
         :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_receiver, gradebook_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``gradebook_column_receiver, gradebook_id`` or ``proxy`` is
+            ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` or
+            ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3851,7 +3915,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :rtype: ``osid.grading.GradebookColumnGradebookAssignmentSession``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook_assignment()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook_assignment()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4110,8 +4175,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # boolean
 
     def use_comparative_gradebook_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4204,8 +4269,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does not include
-        gradebooks of types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does
+            not include gradebooks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -4229,8 +4294,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_parent_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include any additional
-        gradebooks with genus types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include
+            any additional gradebooks with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -4364,7 +4429,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
 
         :param gradebook_record_types: array of gradebook record types
         :type gradebook_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_record_types`` is ``null``
 
@@ -4411,7 +4477,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from ``get_gradebook_form_for_create()``
+        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from
+            ``get_gradebook_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4478,7 +4545,8 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form did not originate from get_gradebook_form_for_update()``
+        :raise: ``Unsupported`` -- ``gradebook_form did not originate from
+            get_gradebook_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4632,7 +4700,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         if session_name in self._provider_sessions:
             return self._provider_sessions[session_name]
         else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_gradebook')
+            session_class = getattr(self._provider_manager, 'get_' + session_name +
+                '_for_gradebook')
             if self._proxy is None:
                 session = session_class(self._catalog.get_id())
             else:
@@ -4785,8 +4854,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_grade_system_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4934,8 +5003,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeSystemList
 
     def get_grade_systems_by_genus_type(self, grade_system_genus_type):
-        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` which does not include
-        systems of genus types derived from the specified ``Type``.
+        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` which
+            does not include systems of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known systems or
@@ -4959,8 +5028,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeSystemList
 
     def get_grade_systems_by_parent_genus_type(self, grade_system_genus_type):
-        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` and include any additional
-        systems with genus types derived from the specified ``Type``.
+        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` and
+            include any additional systems with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known systems or
@@ -5243,7 +5312,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param grade_system_record_types: array of grade system types
         :type grade_system_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradeSystem`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``GradeSystem`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_record_types`` is ``null``
 
@@ -5290,7 +5360,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_system_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from ``get_grade_system_form_for_create()``
+        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from
+            ``get_grade_system_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5357,7 +5428,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_system_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from ``get_grade_system_form_for_update()``
+        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from
+            ``get_grade_system_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5496,7 +5568,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type grade_system_id: ``osid.id.Id``
         :param grade_record_types: array of grade recod types
         :type grade_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Grade`` creation using the specified ``Types`` is supported, ``false`` otherwise
+        :return: ``true`` if ``Grade`` creation using the specified ``Types`` is supported,
+            ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` or ``grade_record_types`` is ``null``
 
@@ -5546,7 +5619,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_form`` did not originate from ``get_grade_form_for_create()``
+        :raise: ``Unsupported`` -- ``grade_form`` did not originate from
+            ``get_grade_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5614,7 +5688,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_id`` or ``grade_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_form`` did not originate from ``get_grade_form_for_update()``
+        :raise: ``Unsupported`` -- ``grade_form`` did not originate from
+            ``get_grade_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5779,8 +5854,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_grade_entry_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -5852,7 +5927,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
     def use_effective_grade_entry_view(self):
-        """Only grade entries whose effective dates are current are returned by methods in this session.
+        """Only grade entries whose effective dates are current are returned by methods in this
+            session.
 
 
 
@@ -5920,8 +5996,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_by_genus_type(self, grade_entry_genus_type):
-        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` which does not include grade
-        entries of genus types derived from the specified ``Type``.
+        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` which
+            does not include grade entries of genus types derived from the specified ``Type``.
 
 
         :param grade_entry_genus_type: a grade entry genus type
@@ -5940,8 +6016,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_by_parent_genus_type(self, grade_entry_genus_type):
-        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` and include any additional
-        grade entry with genus types derived from the specified ``Type``.
+        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` and
+            include any additional grade entry with genus types derived from the specified ``Type``.
 
 
         :param grade_entry_genus_type: a grade entry genus type
@@ -5979,8 +6055,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_on_date(self, from_, to):
-        """Gets a ``GradeEntryList`` effective during the entire given date range inclusive but not confined to the date
-        range.
+        """Gets a ``GradeEntryList`` effective during the entire given date range inclusive but not
+            confined to the date range.
 
 
         :param from: start of date range
@@ -6021,8 +6097,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_for_gradebook_column_on_date(self, gradebook_column_id, from_, to):
-        """Gets a ``GradeEntryList`` for the given gradebook column and effective during the entire given date range
-        inclusive but not confined to the date range.
+        """Gets a ``GradeEntryList`` for the given gradebook column and effective during the entire
+            given date range inclusive but not confined to the date range.
 
 
         :param gradebook_column_id: a gradebook column ``Id``
@@ -6065,8 +6141,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_for_resource_on_date(self, resource_id, from_, to):
-        """Gets a ``GradeEntryList`` for the given key resource and effective during the entire given date range
-        inclusive but not confined to the date range.
+        """Gets a ``GradeEntryList`` for the given key resource and effective during the entire
+            given date range inclusive but not confined to the date range.
 
 
         :param resource_id: a resource ``Id``
@@ -6110,9 +6186,10 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # osid.grading.GradeEntryList
 
-    def get_grade_entries_for_gradebook_column_and_resource_on_date(self, gradebook_column_id, resource_id, from_, to):
-        """Gets a ``GradeEntryList`` for the given gradebook column, resource, and effective during the entire given
-        date range inclusive but not confined to the date range.
+    def get_grade_entries_for_gradebook_column_and_resource_on_date(self, gradebook_column_id,
+        resource_id, from_, to):
+        """Gets a ``GradeEntryList`` for the given gradebook column, resource, and effective during
+            the entire given date range inclusive but not confined to the date range.
 
 
         :param gradebook_column_id: a gradebook column ``Id``
@@ -6386,8 +6463,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param grade_entry_record_types: array of grade entry record types
         :type grade_entry_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradeEntry`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``GradeEntry`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``grade_entry_record_types`` is ``null``
 
@@ -6398,7 +6475,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_grade_entry_form_for_create(self, gradebook_column_id, resource_id, grade_entry_record_types):
+    def get_grade_entry_form_for_create(self, gradebook_column_id, resource_id,
+        grade_entry_record_types):
         """Gets the grade entry form for creating new grade entries.
 
 
@@ -6414,7 +6492,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the grade entry form
         :rtype: ``osid.grading.GradeEntryForm``
         :raise: ``NotFound`` -- ``gradebook_column_id or resource_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_id, resource_id,`` or ``grade_entry_record_types`` is ``null``
+        :raise: ``NullArgument`` -- ``gradebook_column_id, resource_id,`` or
+            ``grade_entry_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- unable to get form for requested record types
@@ -6439,7 +6518,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_entry_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from ``get_grade_entry_form_for_create()``
+        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from
+            ``get_grade_entry_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -6485,7 +6565,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :return: the grade entry form
         :rtype: ``osid.grading.GradeEntryForm``
         :raise: ``AlreadyExists`` -- ``grade_entry_id`` is already overridden
-        :raise: ``NotFound`` -- ``grade_entry_id`` not found or ``grade_entry_id`` is not a calculated entry
+        :raise: ``NotFound`` -- ``grade_entry_id`` not found or ``grade_entry_id`` is not a
+            calculated entry
         :raise: ``NullArgument`` -- ``grade_entry_id`` or ``grade_entry_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -6511,7 +6592,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_entry_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from ``get_grade_entry_form_for_override()``
+        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from
+            ``get_grade_entry_form_for_override()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -6578,7 +6660,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_entry_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from ``get_grade_entry_form_for_update()``
+        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from
+            ``get_grade_entry_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -6742,8 +6825,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_gradebook_column_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-        authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session,
+            such as authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6869,8 +6952,9 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradebookColumnList
 
     def get_gradebook_columns_by_genus_type(self, gradebook_column_genus_type):
-        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` which does not
-        include gradebook columns of genus types derived from the specified ``Type``.
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type``
+            which does not include gradebook columns of genus types derived from the specified
+            ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebook
@@ -6895,8 +6979,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.grading.GradebookColumnList
 
     def get_gradebook_columns_by_parent_genus_type(self, gradebook_column_genus_type):
-        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` and include any
-        additional columns with genus types derived from the specified ``Type``.
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type``
+            and include any additional columns with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebook
@@ -7206,7 +7290,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def can_create_gradebook_column_with_record_types(self, gradebook_column_record_types):
-        """Tests if this user can create a single ``GradebookColumn`` using the desired record types.
+        """Tests if this user can create a single ``GradebookColumn`` using the desired record
+            types.
 
 
         While ``GradingManager.getGradebookColumnRecordTypes()`` can be
@@ -7218,8 +7303,8 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param gradebook_column_record_types: array of gradebook column record types
         :type gradebook_column_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is
+            supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
 
@@ -7369,8 +7454,10 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type front_gradebook_column_id: ``osid.id.Id``
         :param back_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
         :type back_gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not found
-        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is ``null``
+        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not
+            found
+        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -7394,8 +7481,10 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type source_gradebook_column_id: ``osid.id.Id``
         :param target_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
         :type target_gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not found
-        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is ``null``
+        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not
+            found
+        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is
+            ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -7501,9 +7590,9 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class GradebookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookList`` provides a means for accessing ``Gradebook`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookList`` provides a means for accessing ``Gradebook``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (gl.hasNext()) { Gradebook gradebook =
@@ -7528,8 +7617,8 @@ class GradebookList(osid_objects.OsidList):
         """Gets the next ``Gradebook`` in this list.
 
 
-        :return: the next ``Gradebook`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Gradebook`` is available before calling this method.
+        :return: the next ``Gradebook`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Gradebook`` is available before calling this method.
         :rtype: ``osid.grading.Gradebook``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -7544,14 +7633,15 @@ class GradebookList(osid_objects.OsidList):
     next_gradebook = property(fget=get_next_gradebook)
 
     def get_next_gradebooks(self, n):
-        """Gets the next set of ``Gradebook`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Gradebook`` elements in this list which must be less than or equal
+            to the return from ``available()``.
 
 
-        :param n: the number of ``Gradebook`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Gradebook`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Gradebook`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Gradebook`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.grading.Gradebook``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

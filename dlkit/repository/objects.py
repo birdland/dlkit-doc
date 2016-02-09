@@ -126,8 +126,9 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         """Tests if the copyright status is known.
 
 
-        :return: ``true`` if the copyright status of this asset is known, ``false`` otherwise. If ``false,
-        is_public_domain(),``  ``can_distribute_verbatim(), can_distribute_alterations() and
+        :return: ``true`` if the copyright status of this asset is known, ``false`` otherwise. If
+            ``false, is_public_domain(),``  ``can_distribute_verbatim(),
+            can_distribute_alterations() and
     can_distribute_compositions()`` may also be ``false``.
         :rtype: ``boolean``
 
@@ -150,8 +151,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
 
 
         :return: ``true`` if this asset is in the public domain, ``false`` otherwise. If ``true,``
-        ``can_distribute_verbatim(), can_distribute_alterations() and can_distribute_compositions()`` must also be
-        ``true``.
+            ``can_distribute_verbatim(), can_distribute_alterations() and
+            can_distribute_compositions()`` must also be ``true``.
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``is_copyright_status_known()`` is ``false``
 
@@ -163,15 +164,16 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         return # boolean
 
     def get_copyright(self):
-        """Gets the copyright statement and of this asset which identifies the current copyright holder.
+        """Gets the copyright statement and of this asset which identifies the current copyright
+            holder.
 
 
         For an asset in the public domain, this method may return the
         original copyright statement although it may be no longer valid.
 
 
-        :return: the copyright statement or an empty string if none available. An empty string does not imply the asset
-        is not protected by copyright.
+        :return: the copyright statement or an empty string if none available. An empty string does
+            not imply the asset is not protected by copyright.
         :rtype: ``osid.locale.DisplayText``
         :raise: ``IllegalState`` -- ``is_copyright_status_known()`` is ``false``
 
@@ -188,7 +190,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         """Gets the copyright registration information for this asset.
 
 
-        :return: the copyright registration. An empty string means the registration status isn't known.
+        :return: the copyright registration. An empty string means the registration status isn't
+            known.
         :rtype: ``string``
         :raise: ``IllegalState`` -- ``is_copyright_status_known()`` is ``false``
 
@@ -202,9 +205,9 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     copyright_registration = property(fget=get_copyright_registration)
 
     def can_distribute_verbatim(self):
-        """Tests if there are any license restrictions on this asset that restrict the distribution, re-publication or
-        public display of this asset, commercial or otherwise, without modification, alteration, or inclusion in other
-        works.
+        """Tests if there are any license restrictions on this asset that restrict the distribution,
+            re-publication or public display of this asset, commercial or otherwise, without
+            modification, alteration, or inclusion in other works.
 
 
         This method is intended to offer consumers a means of filtering
@@ -228,8 +231,9 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         return # boolean
 
     def can_distribute_alterations(self):
-        """Tests if there are any license restrictions on this asset that restrict the distribution, re-publication or
-        public display of any alterations or modifications to this asset, commercial or otherwise, for any purpose.
+        """Tests if there are any license restrictions on this asset that restrict the distribution,
+            re-publication or public display of any alterations or modifications to this asset,
+            commercial or otherwise, for any purpose.
 
 
         This method is intended to offer consumers a means of filtering
@@ -244,8 +248,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         exceptions or additional restrictions.
 
 
-        :return: ``true`` if the asset can be modified, ``false`` otherwise. If ``true,``  ``can_distribute_verbatim()``
-        must also be ``true``.
+        :return: ``true`` if the asset can be modified, ``false`` otherwise. If ``true,``
+            ``can_distribute_verbatim()`` must also be ``true``.
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``is_copyright_status_known()`` is ``false``
 
@@ -257,9 +261,10 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         return # boolean
 
     def can_distribute_compositions(self):
-        """Tests if there are any license restrictions on this asset that restrict the distribution, re-publication or
-        public display of this asset as an inclusion within other content or composition, commercial or otherwise, for
-        any purpose, including restrictions upon the distribution or license of the resulting composition.
+        """Tests if there are any license restrictions on this asset that restrict the distribution,
+            re-publication or public display of this asset as an inclusion within other content or
+            composition, commercial or otherwise, for any purpose, including restrictions upon the
+            distribution or license of the resulting composition.
 
 
         This method is intended to offer consumers a means of filtering
@@ -272,8 +277,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         restrictions.
 
 
-        :return: ``true`` if the asset can be part of a larger composition ``false`` otherwise. If ``true,``
-        ``can_distribute_verbatim()`` must also be ``true``.
+        :return: ``true`` if the asset can be part of a larger composition ``false`` otherwise. If
+            ``true,``  ``can_distribute_verbatim()`` must also be ``true``.
         :rtype: ``boolean``
         :raise: ``IllegalState`` -- ``is_copyright_status_known()`` is ``false``
 
@@ -345,8 +350,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     source = property(fget=get_source)
 
     def get_provider_link_ids(self):
-        """Gets the resource ``Ids`` representing the source of this asset in order from the most recent provider to the
-        originating source.
+        """Gets the resource ``Ids`` representing the source of this asset in order from the most
+            recent provider to the originating source.
 
 
         :return: the provider ``Ids``
@@ -364,8 +369,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     provider_link_ids = property(fget=get_provider_link_ids)
 
     def get_provider_links(self):
-        """Gets the ``Resources`` representing the source of this asset in order from the most recent provider to the
-        originating source.
+        """Gets the ``Resources`` representing the source of this asset in order from the most
+            recent provider to the originating source.
 
 
         :return: the provider chain
@@ -382,8 +387,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     provider_links = property(fget=get_provider_links)
 
     def get_created_date(self):
-        """Gets the created date of this asset, which is generally not related to when the object representing the asset
-        was created.
+        """Gets the created date of this asset, which is generally not related to when the object
+            representing the asset was created.
 
 
         The date returned may indicate that not much is known.
@@ -412,7 +417,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
         publisher.
 
 
-        :return: true if this asset has been published, ``false`` if unpublished or its published status is not known
+        :return: true if this asset has been published, ``false`` if unpublished or its published
+            status is not known
         :rtype: ``boolean``
 
 
@@ -447,7 +453,8 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     published_date = property(fget=get_published_date)
 
     def get_principal_credit_string(self):
-        """Gets the credits of the principal people involved in the production of this asset as a display string.
+        """Gets the credits of the principal people involved in the production of this asset as a
+            display string.
 
 
         :return: the principal credits
@@ -629,7 +636,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the title.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -677,7 +685,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the public domain status.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -727,7 +736,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the copyright.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -777,7 +787,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the copyright registration.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -826,7 +837,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the distribution rights.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -878,7 +890,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the distribution rights.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -930,7 +943,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the distribution rights.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -980,7 +994,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the source.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1030,7 +1045,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the provider chain.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1080,7 +1096,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the created date.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1128,7 +1145,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the published status.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1178,7 +1196,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the puiblished date.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1228,7 +1247,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the principal credit string.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1278,7 +1298,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
         """Removes the composition link.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1310,9 +1331,8 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
 
 
 class AssetList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssetList`` provides a means for accessing ``Asset`` elements sequentially either one
-        at a
-        time or many at a time.
+    """Like all ``OsidLists,``  ``AssetList`` provides a means for accessing ``Asset`` elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (al.hasNext()) { Asset asset = al.getNextAsset(); }
@@ -1336,8 +1356,8 @@ class AssetList(osid_objects.OsidList):
         """Gets the next ``Asset`` in this list.
 
 
-        :return: the next ``Asset`` in this list. The ``has_next()`` method should be used to test that a next ``Asset``
-        is available before calling this method.
+        :return: the next ``Asset`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Asset`` is available before calling this method.
         :rtype: ``osid.repository.Asset``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1352,13 +1372,15 @@ class AssetList(osid_objects.OsidList):
     next_asset = property(fget=get_next_asset)
 
     def get_next_assets(self, n):
-        """Gets the next set of ``Assets`` in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Assets`` in this list which must be less than or equal to the
+            return from ``available()``.
 
 
-        :param n: the number of ``Asset`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Asset`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Asset`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Asset`` elements.The length of the array is less than or equal to the
+            number specified.
         :rtype: ``osid.repository.Asset``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1527,7 +1549,8 @@ class AssetContent(osid_objects.OsidObject, osid_markers.Subjugateable):
     url = property(fget=get_url)
 
     def get_asset_content_record(self, asset_content_content_record_type):
-        """Gets the asset content record corresponding to the given ``AssetContent`` record ``Type``.
+        """Gets the asset content record corresponding to the given ``AssetContent`` record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -1675,7 +1698,8 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
         """Removes the content data.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1725,7 +1749,8 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
         """Removes the url.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
+            is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1737,7 +1762,8 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
     url = property(fset=set_url, fdel=clear_url)
 
     def get_asset_content_form_record(self, asset_content_record_type):
-        """Gets the ``AssetContentFormRecord`` corresponding to the given asset content record ``Type``.
+        """Gets the ``AssetContentFormRecord`` corresponding to the given asset content record
+            ``Type``.
 
 
         :param asset_content_record_type: an asset content record type
@@ -1757,9 +1783,8 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
 
 
 class AssetContentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssetContentList`` provides a means for accessing ``AssetContent`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssetContentList`` provides a means for accessing ``AssetContent``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (acl.hasNext()) { AssetContent content =
@@ -1784,8 +1809,8 @@ class AssetContentList(osid_objects.OsidList):
         """Gets the next ``AssetContent`` in this list.
 
 
-        :return: the next ``AssetContent`` in this list. The ``has_next()`` method should be used to test that a next
-        ``AssetContent`` is available before calling this method.
+        :return: the next ``AssetContent`` in this list. The ``has_next()`` method should be used to
+            test that a next ``AssetContent`` is available before calling this method.
         :rtype: ``osid.repository.AssetContent``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1800,14 +1825,15 @@ class AssetContentList(osid_objects.OsidList):
     next_asset_content = property(fget=get_next_asset_content)
 
     def get_next_asset_contents(self, n):
-        """Gets the next set of ``AssetContents`` in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``AssetContents`` in this list which must be less than or equal to
+            the return from ``available()``.
 
 
-        :param n: the number of ``AssetContent`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``AssetContent`` elements requested which must be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``AssetContent`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``AssetContent`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.repository.AssetContent``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1926,9 +1952,9 @@ class CompositionForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableF
 
 
 class CompositionList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``CompositionList`` provides a means for accessing ``Composition`` elements sequentially
-        either
-        one at a time or many at a time.
+    """Like all ``OsidLists,``  ``CompositionList`` provides a means for accessing ``Composition``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (cl.hasNext()) { Composition composition =
@@ -1953,8 +1979,8 @@ class CompositionList(osid_objects.OsidList):
         """Gets the next ``Composition`` in this list.
 
 
-        :return: the next ``Composition`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Composition`` is available before calling this method.
+        :return: the next ``Composition`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Composition`` is available before calling this method.
         :rtype: ``osid.repository.Composition``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1969,14 +1995,15 @@ class CompositionList(osid_objects.OsidList):
     next_composition = property(fget=get_next_composition)
 
     def get_next_compositions(self, n):
-        """Gets the next set of ``Composition`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``Composition`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``Composition`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Composition`` elements requested which must be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Composition`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Composition`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.repository.Composition``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2053,9 +2080,9 @@ class RepositoryForm(osid_objects.OsidCatalogForm):
 
 
 class RepositoryList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository`` elements sequentially
-        either
-        one at a time or many at a time.
+    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (rl.hasNext()) { Repository repository =
@@ -2080,8 +2107,8 @@ class RepositoryList(osid_objects.OsidList):
         """Gets the next ``Repository`` in this list.
 
 
-        :return: the next ``Repository`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Repository`` is available before calling this method.
+        :return: the next ``Repository`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Repository`` is available before calling this method.
         :rtype: ``osid.repository.Repository``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2096,14 +2123,15 @@ class RepositoryList(osid_objects.OsidList):
     next_repository = property(fget=get_next_repository)
 
     def get_next_repositories(self, n):
-        """Gets the next set of ``Repository`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Repository`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``Repository`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Repository`` elements requested which must be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Repository`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Repository`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.repository.Repository``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2183,9 +2211,9 @@ class RepositoryNode(osid_objects.OsidNode):
 
 
 class RepositoryNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``RepositoryNodeList`` provides a means for accessing ``RepositoryNode`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``RepositoryNodeList`` provides a means for accessing
+        ``RepositoryNode``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (rnl.hasNext()) { RepositoryNode node =
@@ -2210,8 +2238,8 @@ class RepositoryNodeList(osid_objects.OsidList):
         """Gets the next ``RepositoryNode`` in this list.
 
 
-        :return: the next ``RepositoryNode`` in this list. The ``has_next()`` method should be used to test that a next
-        ``RepositoryNode`` is available before calling this method.
+        :return: the next ``RepositoryNode`` in this list. The ``has_next()`` method should be used
+            to test that a next ``RepositoryNode`` is available before calling this method.
         :rtype: ``osid.repository.RepositoryNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2226,15 +2254,15 @@ class RepositoryNodeList(osid_objects.OsidList):
     next_repository_node = property(fget=get_next_repository_node)
 
     def get_next_repository_nodes(self, n):
-        """Gets the next set of ``RepositoryNode`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``RepositoryNode`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``RepositoryNode`` elements requested which must be less than or equal to
-        ``available()``
+        :param n: the number of ``RepositoryNode`` elements requested which must be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``RepositoryNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``RepositoryNode`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.repository.RepositoryNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

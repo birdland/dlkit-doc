@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.repository.searches
+.. automodule:: dlkit.repository.searches
 
 Searches
 ========
@@ -7,132 +9,72 @@ Searches
 Asset Search
 ------------
 
-.. py:class:: AssetSearch(abc_repository_searches.AssetSearch, osid_searches.OsidSearch)
-    The search interface for governing asset searches.
+.. autoclass:: AssetSearch
+   :show-inheritance:
 
-    .. py:method:: search_among_assets(asset_ids):
-        :noindex:
+   .. automethod:: AssetSearch.search_among_assets
 
+   .. automethod:: AssetSearch.order_asset_results
 
-    .. py:method:: order_asset_results(asset_search_order):
-        :noindex:
-
-
-    .. py:method:: get_asset_search_record(asset_search_record_type):
-        :noindex:
-
+   .. automethod:: AssetSearch.get_asset_search_record
 
 Asset Search Results
 --------------------
 
-.. py:class:: AssetSearchResults(abc_repository_searches.AssetSearchResults, osid_searches.OsidSearchResults)
-    This interface provides a means to capture results of a search.
+.. autoclass:: AssetSearchResults
+   :show-inheritance:
 
-    .. py:method:: get_assets():
-        :noindex:
+   .. autoattribute:: AssetSearchResults.assets
 
+   .. autoattribute:: AssetSearchResults.asset_query_inspector
 
-    .. py:attribute:: assets
-        :noindex:
-
-
-    .. py:method:: get_asset_query_inspector():
-        :noindex:
-
-
-    .. py:attribute:: asset_query_inspector
-        :noindex:
-
-
-    .. py:method:: get_asset_search_results_record(asset_search_record_type):
-        :noindex:
-
+   .. automethod:: AssetSearchResults.get_asset_search_results_record
 
 Composition Search
 ------------------
 
-.. py:class:: CompositionSearch(abc_repository_searches.CompositionSearch, osid_searches.OsidSearch)
-    The interface for governing composition searches.
+.. autoclass:: CompositionSearch
+   :show-inheritance:
 
-    .. py:method:: search_among_compositions(composition_ids):
-        :noindex:
+   .. automethod:: CompositionSearch.search_among_compositions
 
+   .. automethod:: CompositionSearch.order_composition_results
 
-    .. py:method:: order_composition_results(composition_search_order):
-        :noindex:
-
-
-    .. py:method:: get_composition_search_record(composition_search_record_type):
-        :noindex:
-
+   .. automethod:: CompositionSearch.get_composition_search_record
 
 Composition Search Results
 --------------------------
 
-.. py:class:: CompositionSearchResults(abc_repository_searches.CompositionSearchResults, osid_searches.OsidSearchResults)
-    This interface provides a means to capture results of a search.
+.. autoclass:: CompositionSearchResults
+   :show-inheritance:
 
-    .. py:method:: get_compositions():
-        :noindex:
+   .. autoattribute:: CompositionSearchResults.compositions
 
+   .. autoattribute:: CompositionSearchResults.composition_query_inspector
 
-    .. py:attribute:: compositions
-        :noindex:
-
-
-    .. py:method:: get_composition_query_inspector():
-        :noindex:
-
-
-    .. py:attribute:: composition_query_inspector
-        :noindex:
-
-
-    .. py:method:: get_composition_search_results_record(composition_search_record_type):
-        :noindex:
-
+   .. automethod:: CompositionSearchResults.get_composition_search_results_record
 
 Repository Search
 -----------------
 
-.. py:class:: RepositorySearch(abc_repository_searches.RepositorySearch, osid_searches.OsidSearch)
-    The interface for governing repository searches.
+.. autoclass:: RepositorySearch
+   :show-inheritance:
 
-    .. py:method:: search_among_repositories(repository_ids):
-        :noindex:
+   .. automethod:: RepositorySearch.search_among_repositories
 
+   .. automethod:: RepositorySearch.order_repository_results
 
-    .. py:method:: order_repository_results(repository_search_order):
-        :noindex:
-
-
-    .. py:method:: get_repository_search_record(repository_search_record_type):
-        :noindex:
-
+   .. automethod:: RepositorySearch.get_repository_search_record
 
 Repository Search Results
 -------------------------
 
-.. py:class:: RepositorySearchResults(abc_repository_searches.RepositorySearchResults, osid_searches.OsidSearchResults)
-    This interface provides a means to capture results of a search.
+.. autoclass:: RepositorySearchResults
+   :show-inheritance:
 
-    .. py:method:: get_repositories():
-        :noindex:
+   .. autoattribute:: RepositorySearchResults.repositories
 
+   .. autoattribute:: RepositorySearchResults.repository_query_inspector
 
-    .. py:attribute:: repositories
-        :noindex:
-
-
-    .. py:method:: get_repository_query_inspector():
-        :noindex:
-
-
-    .. py:attribute:: repository_query_inspector
-        :noindex:
-
-
-    .. py:method:: get_repository_search_results_record(repository_search_record_type):
-        :noindex:
-
+   .. automethod:: RepositorySearchResults.get_repository_search_results_record
 

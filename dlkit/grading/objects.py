@@ -87,7 +87,8 @@ class Grade(osid_objects.OsidObject, osid_markers.Subjugateable):
     input_score_end_range = property(fget=get_input_score_end_range)
 
     def get_output_score(self):
-        """Gets the output score for this grade used for calculating cumultives or performing articulation.
+        """Gets the output score for this grade used for calculating cumultives or performing
+            articulation.
 
 
         :return: the output score
@@ -312,9 +313,8 @@ class GradeForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm)
 
 
 class GradeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradeList`` provides a means for accessing ``Grade`` elements sequentially either one
-        at a
-        time or many at a time.
+    """Like all ``OsidLists,``  ``GradeList`` provides a means for accessing ``Grade`` elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (gl.hasNext()) { Grade grade = gl.getNextGrade(); }
@@ -338,8 +338,8 @@ class GradeList(osid_objects.OsidList):
         """Gets the next ``Grade`` in this list.
 
 
-        :return: the next ``Grade`` in this list. The ``has_next()`` method should be used to test that a next ``Grade``
-        is available before calling this method.
+        :return: the next ``Grade`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Grade`` is available before calling this method.
         :rtype: ``osid.grading.Grade``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -354,13 +354,15 @@ class GradeList(osid_objects.OsidList):
     next_grade = property(fget=get_next_grade)
 
     def get_next_grades(self, n):
-        """Gets the next set of ``Grade`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Grade`` elements in this list which must be less than or equal to
+            the return from ``available()``.
 
 
-        :param n: the number of ``Grade`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Grade`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Grade`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Grade`` elements.The length of the array is less than or equal to the
+            number specified.
         :rtype: ``osid.grading.Grade``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -387,7 +389,8 @@ class GradeSystem(osid_objects.OsidObject, osid_markers.Aggregateable):
         """Tests if the grading system is based on grades.
 
 
-        :return: true if the grading system is based on grades, ``false`` if the system is a numeric score
+        :return: true if the grading system is based on grades, ``false`` if the system is a numeric
+            score
         :rtype: ``boolean``
 
 
@@ -722,7 +725,8 @@ class GradeSystemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateabl
     highest_numeric_score = property(fset=set_highest_numeric_score, fdel=clear_highest_numeric_score)
 
     def get_grade_system_form_record(self, grade_system_record_type):
-        """Gets the ``GradeSystemFormRecord`` corresponding to the given grade system record ``Type``.
+        """Gets the ``GradeSystemFormRecord`` corresponding to the given grade system record
+            ``Type``.
 
 
         :param grade_system_record_type: the grade system record type
@@ -742,9 +746,9 @@ class GradeSystemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateabl
 
 
 class GradeSystemList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradeSystemList`` provides a means for accessing ``GradeSystem`` elements sequentially
-        either
-        one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradeSystemList`` provides a means for accessing ``GradeSystem``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (gsl.hasNext()) { GradeSystem system =
@@ -769,8 +773,8 @@ class GradeSystemList(osid_objects.OsidList):
         """Gets the next ``GradeSystem`` in this list.
 
 
-        :return: the next ``GradeSystem`` in this list. The ``has_next()`` method should be used to test that a next
-        ``GradeSystem`` is available before calling this method.
+        :return: the next ``GradeSystem`` in this list. The ``has_next()`` method should be used to
+            test that a next ``GradeSystem`` is available before calling this method.
         :rtype: ``osid.grading.GradeSystem``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -785,14 +789,15 @@ class GradeSystemList(osid_objects.OsidList):
     next_grade_system = property(fget=get_next_grade_system)
 
     def get_next_grade_systems(self, n):
-        """Gets the next set of ``GradeSystem`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``GradeSystem`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``GradeSystem`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``GradeSystem`` elements requested which must be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``GradeSystem`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``GradeSystem`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.grading.GradeSystem``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -890,8 +895,8 @@ class GradeEntry(osid_objects.OsidRelationship):
         """Tests if this is a calculated entry.
 
 
-        :return: ``true`` if this entry is a calculated entry, ``false`` otherwise. If ``true,`` then
-        ``overrides_calculated_entry()`` must be ``false``.
+        :return: ``true`` if this entry is a calculated entry, ``false`` otherwise. If ``true,``
+            then ``overrides_calculated_entry()`` must be ``false``.
         :rtype: ``boolean``
 
 
@@ -907,8 +912,8 @@ class GradeEntry(osid_objects.OsidRelationship):
         """Tests if this is a manual entry that overrides a calculated entry.
 
 
-        :return: ``true`` if this entry overrides a calculated entry, ``false`` otherwise. If ``true,`` then
-        ``is_derived()`` must be ``false``.
+        :return: ``true`` if this entry overrides a calculated entry, ``false`` otherwise. If
+            ``true,`` then ``is_derived()`` must be ``false``.
         :rtype: ``boolean``
 
 
@@ -996,7 +1001,8 @@ class GradeEntry(osid_objects.OsidRelationship):
 
         :return: the grade ``Id``
         :rtype: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``is_graded()`` is ``false`` or ``GradeSystem.isBasedOnGrades()`` is ``false``
+        :raise: ``IllegalState`` -- ``is_graded()`` is ``false`` or
+            ``GradeSystem.isBasedOnGrades()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1013,7 +1019,8 @@ class GradeEntry(osid_objects.OsidRelationship):
 
         :return: the grade
         :rtype: ``osid.grading.Grade``
-        :raise: ``IllegalState`` -- ``is_graded()`` is ``false`` or ``GradeSystem.isBasedOnGrades()`` is ``false``
+        :raise: ``IllegalState`` -- ``is_graded()`` is ``false`` or
+            ``GradeSystem.isBasedOnGrades()`` is ``false``
         :raise: ``OperationFailed`` -- unable to complete request
 
 
@@ -1031,7 +1038,8 @@ class GradeEntry(osid_objects.OsidRelationship):
 
         :return: the score
         :rtype: ``decimal``
-        :raise: ``IllegalState`` -- ``is_graded()`` is ``false`` or ``GradeSystem.isBasedOnGrades()`` is ``true``
+        :raise: ``IllegalState`` -- ``is_graded()`` is ``false`` or
+            ``GradeSystem.isBasedOnGrades()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1242,8 +1250,8 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
 
         :param grade_id: the new grade
         :type grade_id: ``osid.id.Id``
-        :raise: ``InvalidArgument`` -- ``grade_id`` is invalid or ``GradebookColumn.getGradeSystem().isBasedOnGrades()``
-            is ``false``
+        :raise: ``InvalidArgument`` -- ``grade_id`` is invalid or
+            ``GradebookColumn.getGradeSystem().isBasedOnGrades()`` is ``false``
         :raise: ``NoAccess`` -- ``grade_id`` cannot be modified
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
@@ -1293,8 +1301,8 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
 
         :param score: the new score
         :type score: ``decimal``
-        :raise: ``InvalidArgument`` -- ``score`` is invalid or ``GradebookColumn.getGradeSystem().isBasedOnGrades()`` is
-            ``true``
+        :raise: ``InvalidArgument`` -- ``score`` is invalid or
+            ``GradebookColumn.getGradeSystem().isBasedOnGrades()`` is ``true``
         :raise: ``NoAccess`` -- ``score`` cannot be modified
 
 
@@ -1340,9 +1348,9 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
 
 
 class GradeEntryList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradeEntryList`` provides a means for accessing ``GradeEntry`` elements sequentially
-        either
-        one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradeEntryList`` provides a means for accessing ``GradeEntry``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (gel.hasNext()) { GradeEntry entry =
@@ -1367,8 +1375,8 @@ class GradeEntryList(osid_objects.OsidList):
         """Gets the next ``GradeEntry`` in this list.
 
 
-        :return: the next ``GradeEntry`` in this list. The ``has_next()`` method should be used to test that a next
-        ``GradeEntry`` is available before calling this method.
+        :return: the next ``GradeEntry`` in this list. The ``has_next()`` method should be used to
+            test that a next ``GradeEntry`` is available before calling this method.
         :rtype: ``osid.grading.GradeEntry``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1383,14 +1391,15 @@ class GradeEntryList(osid_objects.OsidList):
     next_grade_entry = property(fget=get_next_grade_entry)
 
     def get_next_grade_entries(self, n):
-        """Gets the next set of ``GradeEntry`` elements in this list which must be less than or equal to the number
-        returned from ``available()``.
+        """Gets the next set of ``GradeEntry`` elements in this list which must be less than or
+            equal to the number returned from ``available()``.
 
 
-        :param n: the number of ``GradeEntry`` elements requested which should be less than or equal to ``available()``
+        :param n: the number of ``GradeEntry`` elements requested which should be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``GradeEntry`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``GradeEntry`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.grading.GradeEntry``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1448,7 +1457,8 @@ class GradebookColumn(osid_objects.OsidObject):
     grade_system = property(fget=get_grade_system)
 
     def get_gradebook_column_record(self, gradebook_column_record_type):
-        """Gets the gradebook column record corresponding to the given ``GradeBookColumn`` record ``Type``.
+        """Gets the gradebook column record corresponding to the given ``GradeBookColumn`` record
+            ``Type``.
 
 
         This method ie used to retrieve an object implementing the
@@ -1538,7 +1548,8 @@ class GradebookColumnForm(osid_objects.OsidObjectForm):
     grade_system = property(fset=set_grade_system, fdel=clear_grade_system)
 
     def get_gradebook_column_form_record(self, gradebook_column_record_type):
-        """Gets the ``GradebookColumnFormRecord`` corresponding to the given gradebook column record ``Type``.
+        """Gets the ``GradebookColumnFormRecord`` corresponding to the given gradebook column record
+            ``Type``.
 
 
         :param gradebook_column_record_type: a gradebook column record type
@@ -1558,8 +1569,9 @@ class GradebookColumnForm(osid_objects.OsidObjectForm):
 
 
 class GradebookColumnList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookColumnList`` provides a means for accessing ``GradebookColumn`` elements
-        sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookColumnList`` provides a means for accessing
+        ``GradebookColumn``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (gcl.hasNext()) { GradebookColumn column =
@@ -1584,8 +1596,8 @@ class GradebookColumnList(osid_objects.OsidList):
         """Gets the next ``GradebookColumn`` in this list.
 
 
-        :return: the next ``GradebookColumn`` in this list. The ``has_next()`` method should be used to test that a next
-        ``GradebookColumn`` is available before calling this method.
+        :return: the next ``GradebookColumn`` in this list. The ``has_next()`` method should be used
+            to test that a next ``GradebookColumn`` is available before calling this method.
         :rtype: ``osid.grading.GradebookColumn``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1600,15 +1612,15 @@ class GradebookColumnList(osid_objects.OsidList):
     next_gradebook_column = property(fget=get_next_gradebook_column)
 
     def get_next_gradebook_columns(self, n):
-        """Gets the next set of ``GradebookColumn`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``GradebookColumn`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``GradebookColumn`` elements requested which must be less than or equal to
-        ``available()``
+        :param n: the number of ``GradebookColumn`` elements requested which must be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``GradebookColumn`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``GradebookColumn`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.grading.GradebookColumn``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1792,8 +1804,8 @@ class GradebookColumnSummary(osid_objects.OsidObject):
     sum = property(fget=get_sum)
 
     def get_gradebook_column_summary_record(self, gradebook_column_summary_record_type):
-        """Gets the gradebook column summary record corresponding to the given ``GradebookColumnSummary`` record
-        ``Type``.
+        """Gets the gradebook column summary record corresponding to the given
+            ``GradebookColumnSummary`` record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -1810,7 +1822,8 @@ class GradebookColumnSummary(osid_objects.OsidObject):
         :rtype: ``osid.grading.records.GradebookColumnSummaryRecord``
         :raise: ``NullArgument`` -- ``gradebook_column_summary_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_type)`` is ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_type)`` is
+            ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1884,9 +1897,9 @@ class GradebookForm(osid_objects.OsidCatalogForm):
 
 
 class GradebookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookList`` provides a means for accessing ``Gradebook`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookList`` provides a means for accessing ``Gradebook``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (gl.hasNext()) { Gradebook gradebook =
@@ -1911,8 +1924,8 @@ class GradebookList(osid_objects.OsidList):
         """Gets the next ``Gradebook`` in this list.
 
 
-        :return: the next ``Gradebook`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Gradebook`` is available before calling this method.
+        :return: the next ``Gradebook`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Gradebook`` is available before calling this method.
         :rtype: ``osid.grading.Gradebook``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1927,14 +1940,15 @@ class GradebookList(osid_objects.OsidList):
     next_gradebook = property(fget=get_next_gradebook)
 
     def get_next_gradebooks(self, n):
-        """Gets the next set of ``Gradebook`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Gradebook`` elements in this list which must be less than or equal
+            to the return from ``available()``.
 
 
-        :param n: the number of ``Gradebook`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Gradebook`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Gradebook`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Gradebook`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.grading.Gradebook``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2014,9 +2028,9 @@ class GradebookNode(osid_objects.OsidNode):
 
 
 class GradebookNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookNodeList`` provides a means for accessing ``GradebookNode`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookNodeList`` provides a means for accessing
+        ``GradebookNode``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (gnl.hasNext()) { GradebookNode node =
@@ -2041,8 +2055,8 @@ class GradebookNodeList(osid_objects.OsidList):
         """Gets the next ``GradebookNode`` in this list.
 
 
-        :return: the next ``GradebookNode`` in this list. The ``has_next()`` method should be used to test that a next
-        ``GradebookNode`` is available before calling this method.
+        :return: the next ``GradebookNode`` in this list. The ``has_next()`` method should be used
+            to test that a next ``GradebookNode`` is available before calling this method.
         :rtype: ``osid.grading.GradebookNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -2057,14 +2071,15 @@ class GradebookNodeList(osid_objects.OsidList):
     next_gradebook_node = property(fget=get_next_gradebook_node)
 
     def get_next_gradebook_nodes(self, n):
-        """Gets the next set of ``GradebookNode`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``GradebookNode`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``GradebookNode`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``GradebookNode`` elements requested which must be less than or
+            equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``GradebookNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``GradebookNode`` elements.The length of the array is less than or
+            equal to the number specified.
         :rtype: ``osid.grading.GradebookNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

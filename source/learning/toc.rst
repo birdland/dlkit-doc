@@ -6,10 +6,7 @@ Learning
 
    summary
    service_managers
-   managers
-   sessions
+   objective_bank
    objects
-   service_catalog
-   searches
    queries
    records

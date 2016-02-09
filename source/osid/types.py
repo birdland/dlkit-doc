@@ -1,30 +1,32 @@
-"""Generic type enumerators - IS THIS USED???"""
+"""Language types that are now elsewhere. Duplicate!"""
 # -*- coding: utf-8 -*-
-# pylint: disable=too-few-public-methods
-#    needs to be converted to new-style type enumerators, or discarded
+# pylint disable=too-few-public-arguments
+from .osid_errors import NotFound
+from .settings import LANGUAGETYPE, SCRIPTTYPE, FORMATTYPE
 
-class Generic(object):
-    """Enumerator for None or Null Types"""
-
-    generic_types = {
-        'DEFAULT': 'Default',
-        'UNKNOWN': 'Unkown'
-        }
-
-    def __init__(self):
-        type_set = {
-            'GT': self.generic_types
-            }
-
+class Language(object):
+    """Language type"""
     def get_type_data(self, name):
-        """Return dictionary representation of type."""
-        return {
-            'authority': 'birdland.mit.edu',
-            'namespace': 'Genus Types',
-            'identifier': name,
-            'domain': 'Generic Types',
-            'display_name': self.generic_types[name] + ' Generic Type',
-            'display_label': self.generic_types[name],
-            'description': ('The ' +  self.generic_types[name] +
-                            ' Type. This type has no symantic meaning.')
-            }
+        """gets type dictionary object"""
+        if name == 'DEFAULT':
+            return LANGUAGETYPE
+        else:
+            raise NotFound('DEFAULT Language Type')
+
+class Script(object):
+    """Script type"""
+    def get_type_data(self, name):
+        """gets type dictionary object"""
+        if name == 'DEFAULT':
+            return SCRIPTTYPE
+        else:
+            raise NotFound('DEFAULT Script Type')
+
+class Format(object):
+    """Format type"""
+    def get_type_data(self, name):
+        """gets type dictionary object"""
+        if name == 'DEFAULT':
+            return FORMATTYPE
+        else:
+            raise NotFound('DEFAULT Format Type')

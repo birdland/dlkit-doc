@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.assessment.rules
+.. automodule:: dlkit.assessment.rules
 
 Rules
 =====
@@ -7,35 +9,12 @@ Rules
 Response
 --------
 
-.. py:class:: Response(abc_assessment_rules.Response, osid_rules.OsidCondition)
-    A response to an assessment item.
+.. autoclass:: Response
+   :show-inheritance:
 
+   .. autoattribute:: Response.item_id
 
-    This interface contains methods to set values in response to an
-    assessmet item and mirrors the item record structure with the
-    corresponding setters.
+   .. autoattribute:: Response.item
 
-
-
-
-
-    .. py:method:: get_item_id():
-        :noindex:
-
-
-    .. py:attribute:: item_id
-        :noindex:
-
-
-    .. py:method:: get_item():
-        :noindex:
-
-
-    .. py:attribute:: item
-        :noindex:
-
-
-    .. py:method:: get_response_record(item_record_type):
-        :noindex:
-
+   .. automethod:: Response.get_response_record
 

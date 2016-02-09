@@ -86,7 +86,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any assessment assigned.
 
 
-        :param match: ``true`` to match objectives with any assessment, ``false`` to match objectives with no assessment
+        :param match: ``true`` to match objectives with any assessment, ``false`` to match
+            objectives with no assessment
         :type match: ``boolean``
 
 
@@ -188,8 +189,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any knowledge category.
 
 
-        :param match: ``true`` to match objectives with any knowledge category, ``false`` to match objectives with no
-        knowledge category
+        :param match: ``true`` to match objectives with any knowledge category, ``false`` to match
+            objectives with no knowledge category
         :type match: ``boolean``
 
 
@@ -291,8 +292,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any cognitive process.
 
 
-        :param match: ``true`` to match objectives with any cognitive process, ``false`` to match objectives with no
-        cognitive process
+        :param match: ``true`` to match objectives with any cognitive process, ``false`` to match
+            objectives with no cognitive process
         :type match: ``boolean``
 
 
@@ -394,7 +395,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related activity.
 
 
-        :param match: ``true`` to match objectives with any activity, ``false`` to match objectives with no activity
+        :param match: ``true`` to match objectives with any activity, ``false`` to match objectives
+            with no activity
         :type match: ``boolean``
 
 
@@ -496,7 +498,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related requisite.
 
 
-        :param match: ``true`` to match objectives with any requisite, ``false`` to match objectives with no requisite
+        :param match: ``true`` to match objectives with any requisite, ``false`` to match objectives
+            with no requisite
         :type match: ``boolean``
 
 
@@ -598,7 +601,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related dependents.
 
 
-        :param match: ``true`` to match objectives with any dependent, ``false`` to match objectives with no dependents
+        :param match: ``true`` to match objectives with any dependent, ``false`` to match objectives
+            with no dependents
         :type match: ``boolean``
 
 
@@ -700,8 +704,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related equivalents.
 
 
-        :param match: ``true`` to match objectives with any equivalent, ``false`` to match objectives with no
-        equivalents
+        :param match: ``true`` to match objectives with any equivalent, ``false`` to match
+            objectives with no equivalents
         :type match: ``boolean``
 
 
@@ -730,8 +734,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
     equivalent_objective_terms = property(fdel=clear_equivalent_objective_terms)
 
     def match_ancestor_objective_id(self, objective_id, match):
-        """Sets the objective ``Id`` for this query to match objectives that have the specified objective as an
-        ancestor.
+        """Sets the objective ``Id`` for this query to match objectives that have the specified
+            objective as an ancestor.
 
 
         :param objective_id: an objective ``Id``
@@ -804,7 +808,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches objectives that have any ancestor.
 
 
-        :param match: ``true`` to match objective with any ancestor, ``false`` to match root objectives
+        :param match: ``true`` to match objective with any ancestor, ``false`` to match root
+            objectives
         :type match: ``boolean``
 
 
@@ -833,8 +838,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
     ancestor_objective_terms = property(fdel=clear_ancestor_objective_terms)
 
     def match_descendant_objective_id(self, objective_id, match):
-        """Sets the objective ``Id`` for this query to match objectives that have the specified objective as a
-        descendant.
+        """Sets the objective ``Id`` for this query to match objectives that have the specified
+            objective as a descendant.
 
 
         :param objective_id: an objective ``Id``
@@ -907,7 +912,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches objectives that have any ancestor.
 
 
-        :param match: ``true`` to match objectives with any ancestor, ``false`` to match leaf objectives
+        :param match: ``true`` to match objectives with any ancestor, ``false`` to match leaf
+            objectives
         :type match: ``boolean``
 
 
@@ -1214,7 +1220,8 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         """Matches an activity that has any objective assigned.
 
 
-        :param match: ``true`` to match activities with any asset, ``false`` to match activities with no asset
+        :param match: ``true`` to match activities with any asset, ``false`` to match activities
+            with no asset
         :type match: ``boolean``
 
 
@@ -1316,7 +1323,8 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         """Matches an activity that has any course assigned.
 
 
-        :param match: ``true`` to match activities with any courses, ``false`` to match activities with no courses
+        :param match: ``true`` to match activities with any courses, ``false`` to match activities
+            with no courses
         :type match: ``boolean``
 
 
@@ -1418,8 +1426,8 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         """Matches an activity that has any assessment assigned.
 
 
-        :param match: ``true`` to match activities with any assessments, ``false`` to match activities with no
-        assessments
+        :param match: ``true`` to match activities with any assessments, ``false`` to match
+            activities with no assessments
         :type match: ``boolean``
 
 
@@ -1640,8 +1648,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any objective assigned.
 
 
-        :param match: ``true`` to match objective banks with any objective, ``false`` to match objective banks with no
-        objectives
+        :param match: ``true`` to match objective banks with any objective, ``false`` to match
+            objective banks with no objectives
         :type match: ``boolean``
 
 
@@ -1743,8 +1751,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any activity assigned.
 
 
-        :param match: ``true`` to match objective banks with any activity, ``false`` to match objective banks with no
-        activities
+        :param match: ``true`` to match objective banks with any activity, ``false`` to match
+            objective banks with no activities
         :type match: ``boolean``
 
 
@@ -1773,8 +1781,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     activity_terms = property(fdel=clear_activity_terms)
 
     def match_ancestor_objective_bank_id(self, objective_bank_id, match):
-        """Sets the objective bank ``Id`` for this query to match objective banks that have the specified objective bank
-        as an ancestor.
+        """Sets the objective bank ``Id`` for this query to match objective banks that have the
+            specified objective bank as an ancestor.
 
 
         :param objective_bank_id: an objective bank ``Id``
@@ -1847,7 +1855,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any ancestor.
 
 
-        :param match: ``true`` to match objective banks with any ancestor, ``false`` to match root objective banks
+        :param match: ``true`` to match objective banks with any ancestor, ``false`` to match root
+            objective banks
         :type match: ``boolean``
 
 
@@ -1876,8 +1885,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     ancestor_objective_bank_terms = property(fdel=clear_ancestor_objective_bank_terms)
 
     def match_descendant_objective_bank_id(self, objective_bank_id, match):
-        """Sets the objective bank ``Id`` for this query to match objective banks that have the specified objective bank
-        as a descendant.
+        """Sets the objective bank ``Id`` for this query to match objective banks that have the
+            specified objective bank as a descendant.
 
 
         :param objective_bank_id: an objective bank ``Id``
@@ -1950,7 +1959,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any descendant.
 
 
-        :param match: ``true`` to match objective banks with any descendant, ``false`` to match leaf objective banks
+        :param match: ``true`` to match objective banks with any descendant, ``false`` to match leaf
+            objective banks
         :type match: ``boolean``
 
 
@@ -1979,7 +1989,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     descendant_objective_bank_terms = property(fdel=clear_descendant_objective_bank_terms)
 
     def get_objective_bank_query_record(self, objective_bank_record_type):
-        """Gets the objective bank query record corresponding to the given ``ObjectiveBank`` record ``Type``.
+        """Gets the objective bank query record corresponding to the given ``ObjectiveBank`` record
+            ``Type``.
 
 
         Multiple record retrievals produce a nested ``OR`` term.

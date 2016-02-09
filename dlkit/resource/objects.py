@@ -279,9 +279,9 @@ class ResourceForm(osid_objects.OsidObjectForm):
 
 
 class ResourceList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ResourceList`` provides a means for accessing ``Resource`` elements sequentially
-        either one
-        at a time or many at a time.
+    """Like all ``OsidLists,``  ``ResourceList`` provides a means for accessing ``Resource``
+        elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (rl.hasNext()) { Resource resource =
@@ -306,8 +306,8 @@ class ResourceList(osid_objects.OsidList):
         """Gets the next ``Resource`` in this list.
 
 
-        :return: the next ``Resource`` in this list. The ``has_next()`` method should be used to test that a next
-        ``Resource`` is available before calling this method.
+        :return: the next ``Resource`` in this list. The ``has_next()`` method should be used to
+            test that a next ``Resource`` is available before calling this method.
         :rtype: ``osid.resource.Resource``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -322,14 +322,15 @@ class ResourceList(osid_objects.OsidList):
     next_resource = property(fget=get_next_resource)
 
     def get_next_resources(self, n):
-        """Gets the next set of ``Resources`` in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Resources`` in this list which must be less than or equal to the
+            return from ``available()``.
 
 
-        :param n: the number of ``Resource`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Resource`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Resource`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Resource`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.resource.Resource``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -409,9 +410,8 @@ class ResourceNode(osid_objects.OsidNode):
 
 
 class ResourceNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ResourceNodeList`` provides a means for accessing ``ResourceNode`` elements
-        sequentially
-        either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ResourceNodeList`` provides a means for accessing ``ResourceNode``
+    elements sequentially either one at a time or many at a time.
 
 
     Examples: while (rnl.hasNext()) { ResourceNode node =
@@ -436,8 +436,8 @@ class ResourceNodeList(osid_objects.OsidList):
         """Gets the next ``ResourceNode`` in this list.
 
 
-        :return: the next ``ResourceNode`` in this list. The ``has_next()`` method should be used to test that a next
-        ``ResourceNode`` is available before calling this method.
+        :return: the next ``ResourceNode`` in this list. The ``has_next()`` method should be used to
+            test that a next ``ResourceNode`` is available before calling this method.
         :rtype: ``osid.resource.ResourceNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -452,14 +452,15 @@ class ResourceNodeList(osid_objects.OsidList):
     next_resource_node = property(fget=get_next_resource_node)
 
     def get_next_resource_nodes(self, n):
-        """Gets the next set of ``ResourceNode`` elements in this list which must be less than or equal to the return
-        from ``available()``.
+        """Gets the next set of ``ResourceNode`` elements in this list which must be less than or
+            equal to the return from ``available()``.
 
 
-        :param n: the number of ``ResourceNode`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``ResourceNode`` elements requested which must be less than or equal
+            to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``ResourceNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``ResourceNode`` elements.The length of the array is less than or equal
+            to the number specified.
         :rtype: ``osid.resource.ResourceNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -535,9 +536,9 @@ class BinForm(osid_objects.OsidCatalogForm):
 
 
 class BinList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BinList`` provides a means for accessing ``Bin`` elements sequentially either one at a
-        time
-        or many at a time.
+    """Like all ``OsidLists,``  ``BinList`` provides a means for accessing ``Bin`` elements
+        sequentially
+    either one at a time or many at a time.
 
 
     Examples: while (bl.hasNext()) { Bin bin = bl.getNextBin(); }
@@ -561,8 +562,8 @@ class BinList(osid_objects.OsidList):
         """Gets the next ``Bin`` in this list.
 
 
-        :return: the next ``Bin`` in this list. The ``has_next()`` method should be used to test that a next ``Bin`` is
-        available before calling this method.
+        :return: the next ``Bin`` in this list. The ``has_next()`` method should be used to test
+            that a next ``Bin`` is available before calling this method.
         :rtype: ``osid.resource.Bin``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -577,13 +578,15 @@ class BinList(osid_objects.OsidList):
     next_bin = property(fget=get_next_bin)
 
     def get_next_bins(self, n):
-        """Gets the next set of ``Bin`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``Bin`` elements in this list which must be less than or equal to
+            the return from ``available()``.
 
 
-        :param n: the number of ``Bin`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``Bin`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Bin`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``Bin`` elements.The length of the array is less than or equal to the
+            number specified.
         :rtype: ``osid.resource.Bin``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -663,9 +666,8 @@ class BinNode(osid_objects.OsidNode):
 
 
 class BinNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BinNodeList`` provides a means for accessing ``BinNode`` elements sequentially either
-        one at
-        a time or many at a time.
+    """Like all ``OsidLists,``  ``BinNodeList`` provides a means for accessing ``BinNode`` elements
+    sequentially either one at a time or many at a time.
 
 
     Examples: while (bnl.hasNext()) { BinNode node =
@@ -690,8 +692,8 @@ class BinNodeList(osid_objects.OsidList):
         """Gets the next ``BinNode`` in this list.
 
 
-        :return: the next ``BinNode`` in this list. The ``has_next()`` method should be used to test that a next
-        ``BinNode`` is available before calling this method.
+        :return: the next ``BinNode`` in this list. The ``has_next()`` method should be used to test
+            that a next ``BinNode`` is available before calling this method.
         :rtype: ``osid.resource.BinNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -706,13 +708,15 @@ class BinNodeList(osid_objects.OsidList):
     next_bin_node = property(fget=get_next_bin_node)
 
     def get_next_bin_nodes(self, n):
-        """Gets the next set of ``BinNode`` elements in this list which must be less than or equal to the return from
-        ``available()``.
+        """Gets the next set of ``BinNode`` elements in this list which must be less than or equal
+            to the return from ``available()``.
 
 
-        :param n: the number of ``BinNode`` elements requested which must be less than or equal to ``available()``
+        :param n: the number of ``BinNode`` elements requested which must be less than or equal to
+            ``available()``
         :type n: ``cardinal``
-        :return: an array of ``BinNode`` elements.The length of the array is less than or equal to the number specified.
+        :return: an array of ``BinNode`` elements.The length of the array is less than or equal to
+            the number specified.
         :rtype: ``osid.resource.BinNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

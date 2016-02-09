@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.learning.queries
+.. automodule:: dlkit.learning.queries
 
 Queries
 =======
@@ -7,726 +9,306 @@ Queries
 Objective Query
 ---------------
 
-.. py:class:: ObjectiveQuery(abc_learning_queries.ObjectiveQuery, osid_queries.OsidObjectQuery, osid_queries.OsidFederateableQuery)
-    This is the query for searching objectives.
+.. autoclass:: ObjectiveQuery
+   :show-inheritance:
 
+   .. automethod:: ObjectiveQuery.match_assessment_id
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: ObjectiveQuery.assessment_id_terms
 
+   .. automethod:: ObjectiveQuery.supports_assessment_query
 
+   .. autoattribute:: ObjectiveQuery.assessment_query
 
+   .. automethod:: ObjectiveQuery.match_any_assessment
 
+   .. autoattribute:: ObjectiveQuery.assessment_terms
 
-    .. py:method:: match_assessment_id(assessment_id, match):
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_knowledge_category_id
 
+   .. autoattribute:: ObjectiveQuery.knowledge_category_id_terms
 
-    .. py:method:: clear_assessment_id_terms():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_knowledge_category_query
 
+   .. autoattribute:: ObjectiveQuery.knowledge_category_query
 
-    .. py:attribute:: assessment_id_terms
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_knowledge_category
 
+   .. autoattribute:: ObjectiveQuery.knowledge_category_terms
 
-    .. py:method:: supports_assessment_query():
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_cognitive_process_id
 
+   .. autoattribute:: ObjectiveQuery.cognitive_process_id_terms
 
-    .. py:method:: get_assessment_query():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_cognitive_process_query
 
+   .. autoattribute:: ObjectiveQuery.cognitive_process_query
 
-    .. py:attribute:: assessment_query
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_cognitive_process
 
+   .. autoattribute:: ObjectiveQuery.cognitive_process_terms
 
-    .. py:method:: match_any_assessment(match):
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_activity_id
 
+   .. autoattribute:: ObjectiveQuery.activity_id_terms
 
-    .. py:method:: clear_assessment_terms():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_activity_query
 
+   .. autoattribute:: ObjectiveQuery.activity_query
 
-    .. py:attribute:: assessment_terms
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_activity
 
+   .. autoattribute:: ObjectiveQuery.activity_terms
 
-    .. py:method:: match_knowledge_category_id(grade_id, match):
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_requisite_objective_id
 
+   .. autoattribute:: ObjectiveQuery.requisite_objective_id_terms
 
-    .. py:method:: clear_knowledge_category_id_terms():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_requisite_objective_query
 
+   .. autoattribute:: ObjectiveQuery.requisite_objective_query
 
-    .. py:attribute:: knowledge_category_id_terms
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_requisite_objective
 
+   .. autoattribute:: ObjectiveQuery.requisite_objective_terms
 
-    .. py:method:: supports_knowledge_category_query():
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_dependent_objective_id
 
+   .. autoattribute:: ObjectiveQuery.dependent_objective_id_terms
 
-    .. py:method:: get_knowledge_category_query():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_depndent_objective_query
 
+   .. autoattribute:: ObjectiveQuery.dependent_objective_query
 
-    .. py:attribute:: knowledge_category_query
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_dependent_objective
 
+   .. autoattribute:: ObjectiveQuery.dependent_objective_terms
 
-    .. py:method:: match_any_knowledge_category(match):
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_equivalent_objective_id
 
+   .. autoattribute:: ObjectiveQuery.equivalent_objective_id_terms
 
-    .. py:method:: clear_knowledge_category_terms():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_equivalent_objective_query
 
+   .. autoattribute:: ObjectiveQuery.equivalent_objective_query
 
-    .. py:attribute:: knowledge_category_terms
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_equivalent_objective
 
+   .. autoattribute:: ObjectiveQuery.equivalent_objective_terms
 
-    .. py:method:: match_cognitive_process_id(grade_id, match):
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_ancestor_objective_id
 
+   .. autoattribute:: ObjectiveQuery.ancestor_objective_id_terms
 
-    .. py:method:: clear_cognitive_process_id_terms():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_ancestor_objective_query
 
+   .. autoattribute:: ObjectiveQuery.ancestor_objective_query
 
-    .. py:attribute:: cognitive_process_id_terms
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_ancestor_objective
 
+   .. autoattribute:: ObjectiveQuery.ancestor_objective_terms
 
-    .. py:method:: supports_cognitive_process_query():
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_descendant_objective_id
 
+   .. autoattribute:: ObjectiveQuery.descendant_objective_id_terms
 
-    .. py:method:: get_cognitive_process_query():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_descendant_objective_query
 
+   .. autoattribute:: ObjectiveQuery.descendant_objective_query
 
-    .. py:attribute:: cognitive_process_query
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_any_descendant_objective
 
+   .. autoattribute:: ObjectiveQuery.descendant_objective_terms
 
-    .. py:method:: match_any_cognitive_process(match):
-        :noindex:
+   .. automethod:: ObjectiveQuery.match_objective_bank_id
 
+   .. autoattribute:: ObjectiveQuery.objective_bank_id_terms
 
-    .. py:method:: clear_cognitive_process_terms():
-        :noindex:
+   .. automethod:: ObjectiveQuery.supports_objective_bank_query
 
+   .. autoattribute:: ObjectiveQuery.objective_bank_query
 
-    .. py:attribute:: cognitive_process_terms
-        :noindex:
+   .. autoattribute:: ObjectiveQuery.objective_bank_terms
 
-
-    .. py:method:: match_activity_id(activity_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_activity_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: activity_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_activity_query():
-        :noindex:
-
-
-    .. py:method:: get_activity_query():
-        :noindex:
-
-
-    .. py:attribute:: activity_query
-        :noindex:
-
-
-    .. py:method:: match_any_activity(match):
-        :noindex:
-
-
-    .. py:method:: clear_activity_terms():
-        :noindex:
-
-
-    .. py:attribute:: activity_terms
-        :noindex:
-
-
-    .. py:method:: match_requisite_objective_id(requisite_objective_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_requisite_objective_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: requisite_objective_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_requisite_objective_query():
-        :noindex:
-
-
-    .. py:method:: get_requisite_objective_query():
-        :noindex:
-
-
-    .. py:attribute:: requisite_objective_query
-        :noindex:
-
-
-    .. py:method:: match_any_requisite_objective(match):
-        :noindex:
-
-
-    .. py:method:: clear_requisite_objective_terms():
-        :noindex:
-
-
-    .. py:attribute:: requisite_objective_terms
-        :noindex:
-
-
-    .. py:method:: match_dependent_objective_id(dependent_objective_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_dependent_objective_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: dependent_objective_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_depndent_objective_query():
-        :noindex:
-
-
-    .. py:method:: get_dependent_objective_query():
-        :noindex:
-
-
-    .. py:attribute:: dependent_objective_query
-        :noindex:
-
-
-    .. py:method:: match_any_dependent_objective(match):
-        :noindex:
-
-
-    .. py:method:: clear_dependent_objective_terms():
-        :noindex:
-
-
-    .. py:attribute:: dependent_objective_terms
-        :noindex:
-
-
-    .. py:method:: match_equivalent_objective_id(equivalent_objective_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_equivalent_objective_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: equivalent_objective_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_equivalent_objective_query():
-        :noindex:
-
-
-    .. py:method:: get_equivalent_objective_query():
-        :noindex:
-
-
-    .. py:attribute:: equivalent_objective_query
-        :noindex:
-
-
-    .. py:method:: match_any_equivalent_objective(match):
-        :noindex:
-
-
-    .. py:method:: clear_equivalent_objective_terms():
-        :noindex:
-
-
-    .. py:attribute:: equivalent_objective_terms
-        :noindex:
-
-
-    .. py:method:: match_ancestor_objective_id(objective_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_objective_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_objective_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_ancestor_objective_query():
-        :noindex:
-
-
-    .. py:method:: get_ancestor_objective_query():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_objective_query
-        :noindex:
-
-
-    .. py:method:: match_any_ancestor_objective(match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_objective_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_objective_terms
-        :noindex:
-
-
-    .. py:method:: match_descendant_objective_id(objective_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_objective_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_objective_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_descendant_objective_query():
-        :noindex:
-
-
-    .. py:method:: get_descendant_objective_query():
-        :noindex:
-
-
-    .. py:attribute:: descendant_objective_query
-        :noindex:
-
-
-    .. py:method:: match_any_descendant_objective(match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_objective_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_objective_terms
-        :noindex:
-
-
-    .. py:method:: match_objective_bank_id(objective_bank_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_objective_bank_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_objective_bank_query():
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_query():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_query
-        :noindex:
-
-
-    .. py:method:: clear_objective_bank_terms():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_terms
-        :noindex:
-
-
-    .. py:method:: get_objective_query_record(objective_record_type):
-        :noindex:
-
+   .. automethod:: ObjectiveQuery.get_objective_query_record
 
 Activity Query
 --------------
 
-.. py:class:: ActivityQuery(abc_learning_queries.ActivityQuery, osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery)
-    This is the query for searching activities.
+.. autoclass:: ActivityQuery
+   :show-inheritance:
 
+   .. automethod:: ActivityQuery.match_objective_id
 
-    Each method match request produces an ``AND`` term while multiple
-    invocations of a method produces a nested ``OR``.
+   .. autoattribute:: ActivityQuery.objective_id_terms
 
+   .. automethod:: ActivityQuery.supports_objective_query
 
+   .. autoattribute:: ActivityQuery.objective_query
 
+   .. autoattribute:: ActivityQuery.objective_terms
 
+   .. automethod:: ActivityQuery.match_asset_id
 
-    .. py:method:: match_objective_id(objective_id, match):
-        :noindex:
+   .. autoattribute:: ActivityQuery.asset_id_terms
 
+   .. automethod:: ActivityQuery.supports_asset_query
 
-    .. py:method:: clear_objective_id_terms():
-        :noindex:
+   .. autoattribute:: ActivityQuery.asset_query
 
+   .. automethod:: ActivityQuery.match_any_asset
 
-    .. py:attribute:: objective_id_terms
-        :noindex:
+   .. autoattribute:: ActivityQuery.asset_terms
 
+   .. automethod:: ActivityQuery.match_course_id
 
-    .. py:method:: supports_objective_query():
-        :noindex:
+   .. autoattribute:: ActivityQuery.course_id_terms
 
+   .. automethod:: ActivityQuery.supports_course_query
 
-    .. py:method:: get_objective_query():
-        :noindex:
+   .. autoattribute:: ActivityQuery.course_query
 
+   .. automethod:: ActivityQuery.match_any_course
 
-    .. py:attribute:: objective_query
-        :noindex:
+   .. autoattribute:: ActivityQuery.course_terms
 
+   .. automethod:: ActivityQuery.match_assessment_id
 
-    .. py:method:: clear_objective_terms():
-        :noindex:
+   .. autoattribute:: ActivityQuery.assessment_id_terms
 
+   .. automethod:: ActivityQuery.supports_assessment_query
 
-    .. py:attribute:: objective_terms
-        :noindex:
+   .. autoattribute:: ActivityQuery.assessment_query
 
+   .. automethod:: ActivityQuery.match_any_assessment
 
-    .. py:method:: match_asset_id(asset_id, match):
-        :noindex:
+   .. autoattribute:: ActivityQuery.assessment_terms
 
+   .. automethod:: ActivityQuery.match_objective_bank_id
 
-    .. py:method:: clear_asset_id_terms():
-        :noindex:
+   .. autoattribute:: ActivityQuery.objective_bank_id_terms
 
+   .. automethod:: ActivityQuery.supports_objective_bank_query
 
-    .. py:attribute:: asset_id_terms
-        :noindex:
+   .. autoattribute:: ActivityQuery.objective_bank_query
 
+   .. autoattribute:: ActivityQuery.objective_bank_terms
 
-    .. py:method:: supports_asset_query():
-        :noindex:
+   .. automethod:: ActivityQuery.get_activity_query_record
 
+Proficiency Query
+-----------------
 
-    .. py:method:: get_asset_query():
-        :noindex:
+.. autoclass:: ProficiencyQuery
+   :show-inheritance:
 
+   .. automethod:: ProficiencyQuery.match_resource_id
 
-    .. py:attribute:: asset_query
-        :noindex:
+   .. autoattribute:: ProficiencyQuery.resource_id_terms
 
+   .. automethod:: ProficiencyQuery.supports_resource_query
 
-    .. py:method:: match_any_asset(match):
-        :noindex:
+   .. autoattribute:: ProficiencyQuery.resource_query
 
+   .. autoattribute:: ProficiencyQuery.resource_terms
 
-    .. py:method:: clear_asset_terms():
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_objective_id
 
+   .. autoattribute:: ProficiencyQuery.objective_id_terms
 
-    .. py:attribute:: asset_terms
-        :noindex:
+   .. automethod:: ProficiencyQuery.supports_objective_query
 
+   .. autoattribute:: ProficiencyQuery.objective_query
 
-    .. py:method:: match_course_id(course_id, match):
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_any_objective
 
+   .. autoattribute:: ProficiencyQuery.objective_terms
 
-    .. py:method:: clear_course_id_terms():
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_completion
 
+   .. autoattribute:: ProficiencyQuery.completion_terms
 
-    .. py:attribute:: course_id_terms
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_minimum_completion
 
+   .. autoattribute:: ProficiencyQuery.minimum_completion_terms
 
-    .. py:method:: supports_course_query():
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_level_id
 
+   .. autoattribute:: ProficiencyQuery.level_id_terms
 
-    .. py:method:: get_course_query():
-        :noindex:
+   .. automethod:: ProficiencyQuery.supports_level_query
 
+   .. autoattribute:: ProficiencyQuery.level_query
 
-    .. py:attribute:: course_query
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_any_level
 
+   .. autoattribute:: ProficiencyQuery.level_terms
 
-    .. py:method:: match_any_course(match):
-        :noindex:
+   .. automethod:: ProficiencyQuery.match_objective_bank_id
 
+   .. autoattribute:: ProficiencyQuery.objective_bank_id_terms
 
-    .. py:method:: clear_course_terms():
-        :noindex:
+   .. automethod:: ProficiencyQuery.supports_objective_bank_query
 
+   .. autoattribute:: ProficiencyQuery.objective_bank_query
 
-    .. py:attribute:: course_terms
-        :noindex:
+   .. autoattribute:: ProficiencyQuery.objective_bank_terms
 
-
-    .. py:method:: match_assessment_id(assessment_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_assessment_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: assessment_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_assessment_query():
-        :noindex:
-
-
-    .. py:method:: get_assessment_query():
-        :noindex:
-
-
-    .. py:attribute:: assessment_query
-        :noindex:
-
-
-    .. py:method:: match_any_assessment(match):
-        :noindex:
-
-
-    .. py:method:: clear_assessment_terms():
-        :noindex:
-
-
-    .. py:attribute:: assessment_terms
-        :noindex:
-
-
-    .. py:method:: match_objective_bank_id(objective_bank_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_objective_bank_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_objective_bank_query():
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_query():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_query
-        :noindex:
-
-
-    .. py:method:: clear_objective_bank_terms():
-        :noindex:
-
-
-    .. py:attribute:: objective_bank_terms
-        :noindex:
-
-
-    .. py:method:: get_activity_query_record(activity_record_type):
-        :noindex:
-
+   .. automethod:: ProficiencyQuery.get_proficiency_query_record
 
 Objective Bank Query
 --------------------
 
-.. py:class:: ObjectiveBankQuery(abc_learning_queries.ObjectiveBankQuery, osid_queries.OsidCatalogQuery)
-    This is the query for searching objective banks.
+.. autoclass:: ObjectiveBankQuery
+   :show-inheritance:
 
+   .. automethod:: ObjectiveBankQuery.match_objective_id
 
-    Each method specifies an ``AND`` term while multiple invocations of
-    the same method produce a nested ``OR``.
+   .. autoattribute:: ObjectiveBankQuery.objective_id_terms
 
+   .. automethod:: ObjectiveBankQuery.supports_objective_query
 
+   .. autoattribute:: ObjectiveBankQuery.objective_query
 
+   .. automethod:: ObjectiveBankQuery.match_any_objective
 
+   .. autoattribute:: ObjectiveBankQuery.objective_terms
 
-    .. py:method:: match_objective_id(objective_id, match):
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.match_activity_id
 
+   .. autoattribute:: ObjectiveBankQuery.activity_id_terms
 
-    .. py:method:: clear_objective_id_terms():
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.supports_activity_query
 
+   .. autoattribute:: ObjectiveBankQuery.activity_query
 
-    .. py:attribute:: objective_id_terms
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.match_any_activity
 
+   .. autoattribute:: ObjectiveBankQuery.activity_terms
 
-    .. py:method:: supports_objective_query():
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.match_ancestor_objective_bank_id
 
+   .. autoattribute:: ObjectiveBankQuery.ancestor_objective_bank_id_terms
 
-    .. py:method:: get_objective_query():
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.supports_ancestor_objective_bank_query
 
+   .. autoattribute:: ObjectiveBankQuery.ancestor_objective_bank_query
 
-    .. py:attribute:: objective_query
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.match_any_ancestor_objective_bank
 
+   .. autoattribute:: ObjectiveBankQuery.ancestor_objective_bank_terms
 
-    .. py:method:: match_any_objective(match):
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.match_descendant_objective_bank_id
 
+   .. autoattribute:: ObjectiveBankQuery.descendant_objective_bank_id_terms
 
-    .. py:method:: clear_objective_terms():
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.supports_descendant_objective_bank_query
 
+   .. autoattribute:: ObjectiveBankQuery.descendant_objective_bank_query
 
-    .. py:attribute:: objective_terms
-        :noindex:
+   .. automethod:: ObjectiveBankQuery.match_any_descendant_objective_bank
 
+   .. autoattribute:: ObjectiveBankQuery.descendant_objective_bank_terms
 
-    .. py:method:: match_activity_id(activity_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_activity_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: activity_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_activity_query():
-        :noindex:
-
-
-    .. py:method:: get_activity_query():
-        :noindex:
-
-
-    .. py:attribute:: activity_query
-        :noindex:
-
-
-    .. py:method:: match_any_activity(match):
-        :noindex:
-
-
-    .. py:method:: clear_activity_terms():
-        :noindex:
-
-
-    .. py:attribute:: activity_terms
-        :noindex:
-
-
-    .. py:method:: match_ancestor_objective_bank_id(objective_bank_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_objective_bank_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_objective_bank_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_ancestor_objective_bank_query():
-        :noindex:
-
-
-    .. py:method:: get_ancestor_objective_bank_query():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_objective_bank_query
-        :noindex:
-
-
-    .. py:method:: match_any_ancestor_objective_bank(match):
-        :noindex:
-
-
-    .. py:method:: clear_ancestor_objective_bank_terms():
-        :noindex:
-
-
-    .. py:attribute:: ancestor_objective_bank_terms
-        :noindex:
-
-
-    .. py:method:: match_descendant_objective_bank_id(objective_bank_id, match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_objective_bank_id_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_objective_bank_id_terms
-        :noindex:
-
-
-    .. py:method:: supports_descendant_objective_bank_query():
-        :noindex:
-
-
-    .. py:method:: get_descendant_objective_bank_query():
-        :noindex:
-
-
-    .. py:attribute:: descendant_objective_bank_query
-        :noindex:
-
-
-    .. py:method:: match_any_descendant_objective_bank(match):
-        :noindex:
-
-
-    .. py:method:: clear_descendant_objective_bank_terms():
-        :noindex:
-
-
-    .. py:attribute:: descendant_objective_bank_terms
-        :noindex:
-
-
-    .. py:method:: get_objective_bank_query_record(objective_bank_record_type):
-        :noindex:
-
+   .. automethod:: ObjectiveBankQuery.get_objective_bank_query_record
 

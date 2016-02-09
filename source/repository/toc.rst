@@ -6,10 +6,7 @@ Repository
 
    summary
    service_managers
-   managers
-   sessions
+   repository
    objects
-   service_catalog
-   searches
    queries
    records

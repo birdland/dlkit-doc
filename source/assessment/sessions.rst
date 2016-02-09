@@ -1,4 +1,6 @@
 
+.. currentmodule:: dlkit.assessment.sessions
+.. automodule:: dlkit.assessment.sessions
 
 Sessions
 ========
@@ -7,2517 +9,874 @@ Sessions
 Assessment Session
 ------------------
 
-.. py:class:: AssessmentSession(abc_assessment_sessions.AssessmentSession, osid_sessions.OsidSession)
-    This session is used to take an assessment.
+.. autoclass:: AssessmentSession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentSession.bank_id
 
-    The assessment associated with this session represents the
-    "assessment taken" by an ``Agent``. This session may be created
-    using an ``AssessmentOffered`` ``Id`` retrieved from an assessment
-    bank, and instantiating this session represents the transaction of
-    taking an assessment. Resuming an assessment, if permitted, is
-    performed through instantiating this session with the
-    ``AssessmentTaken`` ``Id``.
+   .. autoattribute:: AssessmentSession.bank
 
+   .. automethod:: AssessmentSession.can_take_assessments
 
+   .. automethod:: AssessmentSession.has_assessment_begun
 
+   .. automethod:: AssessmentSession.is_assessment_over
 
-    ``Assessment Items`` are accessed via the ``Question`` interface. A
-    ``Question``  ``Id`` is the same as the ``Item`` Id.
+   .. automethod:: AssessmentSession.requires_synchronous_sections
 
+   .. automethod:: AssessmentSession.get_first_assessment_section
 
+   .. automethod:: AssessmentSession.has_next_assessment_section
 
+   .. automethod:: AssessmentSession.get_next_assessment_section
 
-    This session manages the flow of control for the assessment taking
-    process. It allows for two types of processes:
+   .. automethod:: AssessmentSession.has_previous_assessment_section
 
+   .. automethod:: AssessmentSession.get_previous_assessment_section
 
+   .. automethod:: AssessmentSession.get_assessment_section
 
+   .. automethod:: AssessmentSession.get_assessment_sections
 
-      * synchronous response: Each consecutive question is only
-        available after the previous item was submitted or skipped.
-      * asynchronous response: Questions may be accessed independently
-        of response submission.
+   .. automethod:: AssessmentSession.is_assessment_section_complete
 
+   .. automethod:: AssessmentSession.get_incomplete_assessment_sections
 
+   .. automethod:: AssessmentSession.has_assessment_section_begun
 
+   .. automethod:: AssessmentSession.is_assessment_section_over
 
+   .. automethod:: AssessmentSession.requires_synchronous_responses
 
+   .. automethod:: AssessmentSession.get_first_question
 
+   .. automethod:: AssessmentSession.has_next_question
 
+   .. automethod:: AssessmentSession.get_next_question
 
-    It may be the case that it is allowed to suspend and resume an
-    assessment. ``can_suspend()`` indicates the availability of this
-    feature. ``finished()`` indicates the assessment is complete.
+   .. automethod:: AssessmentSession.has_previous_question
 
+   .. automethod:: AssessmentSession.get_previous_question
 
+   .. automethod:: AssessmentSession.get_question
 
+   .. automethod:: AssessmentSession.get_questions
 
-    This session is used in the context of an ``AssessmentSection``. An
-    assessment with no sections defined is assumed to have a single
-    default section that maps to the entire assessment.
+   .. automethod:: AssessmentSession.get_response_form
 
+   .. automethod:: AssessmentSession.submit_response
 
+   .. automethod:: AssessmentSession.skip_item
 
+   .. automethod:: AssessmentSession.is_question_answered
 
+   .. automethod:: AssessmentSession.get_unanswered_questions
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. automethod:: AssessmentSession.has_unanswered_questions
 
+   .. automethod:: AssessmentSession.get_first_unanswered_question
 
-    .. py:attribute:: bank_id
-        :noindex:
+   .. automethod:: AssessmentSession.has_next_unanswered_question
 
+   .. automethod:: AssessmentSession.get_next_unanswered_question
 
-    .. py:method:: get_bank():
-        :noindex:
+   .. automethod:: AssessmentSession.has_previous_unanswered_question
 
+   .. automethod:: AssessmentSession.get_previous_unanswered_question
 
-    .. py:attribute:: bank
-        :noindex:
+   .. automethod:: AssessmentSession.get_response
 
+   .. automethod:: AssessmentSession.get_responses
 
-    .. py:method:: can_take_assessments():
-        :noindex:
+   .. automethod:: AssessmentSession.clear_response
 
+   .. automethod:: AssessmentSession.finish_assessment_section
 
-    .. py:method:: has_assessment_begun(assessment_taken_id):
-        :noindex:
+   .. automethod:: AssessmentSession.is_answer_available
 
+   .. automethod:: AssessmentSession.get_answers
 
-    .. py:method:: is_assessment_over(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: requires_synchronous_sections(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: get_first_assessment_section(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: has_next_assessment_section(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_next_assessment_section(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: has_previous_assessment_section(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_previous_assessment_section(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_assessment_section(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_assessment_sections(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: is_assessment_section_complete(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_incomplete_assessment_sections(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: has_assessment_section_begun(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: is_assessment_section_over(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: requires_synchronous_responses(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_first_question(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: has_next_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_next_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: has_previous_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_previous_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_questions(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_response_form(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: submit_response(assessment_section_id, item_id, answer_form):
-        :noindex:
-
-
-    .. py:method:: skip_item(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: is_question_answered(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_unanswered_questions(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: has_unanswered_questions(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: get_first_unanswered_question(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: has_next_unanswered_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_next_unanswered_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: has_previous_unanswered_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_previous_unanswered_question(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_response(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_responses(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: clear_response(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: finish_assessment_section(assessment_section_id):
-        :noindex:
-
-
-    .. py:method:: is_answer_available(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: get_answers(assessment_section_id, item_id):
-        :noindex:
-
-
-    .. py:method:: finish_assessment(assessment_taken_id):
-        :noindex:
-
+   .. automethod:: AssessmentSession.finish_assessment
 
 Item Lookup Session
 -------------------
 
-.. py:class:: ItemLookupSession(abc_assessment_sessions.ItemLookupSession, osid_sessions.OsidSession)
-    This session provides methods for retrieving ``Item`` objects.
+.. autoclass:: ItemLookupSession
+   :show-inheritance:
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. autoattribute:: ItemLookupSession.bank_id
 
+   .. autoattribute:: ItemLookupSession.bank
 
-    .. py:attribute:: bank_id
-        :noindex:
+   .. automethod:: ItemLookupSession.can_lookup_items
 
+   .. automethod:: ItemLookupSession.use_comparative_item_view
 
-    .. py:method:: get_bank():
-        :noindex:
+   .. automethod:: ItemLookupSession.use_plenary_item_view
 
+   .. automethod:: ItemLookupSession.use_federated_bank_view
 
-    .. py:attribute:: bank
-        :noindex:
+   .. automethod:: ItemLookupSession.use_isolated_bank_view
 
+   .. automethod:: ItemLookupSession.get_item
 
-    .. py:method:: can_lookup_items():
-        :noindex:
+   .. automethod:: ItemLookupSession.get_items_by_ids
 
+   .. automethod:: ItemLookupSession.get_items_by_genus_type
 
-    .. py:method:: use_comparative_item_view():
-        :noindex:
+   .. automethod:: ItemLookupSession.get_items_by_parent_genus_type
 
+   .. automethod:: ItemLookupSession.get_items_by_record_type
 
-    .. py:method:: use_plenary_item_view():
-        :noindex:
+   .. automethod:: ItemLookupSession.get_items_by_question
 
+   .. automethod:: ItemLookupSession.get_items_by_answer
 
-    .. py:method:: use_federated_bank_view():
-        :noindex:
+   .. automethod:: ItemLookupSession.get_items_by_learning_objective
 
+   .. automethod:: ItemLookupSession.get_items_by_learning_objectives
 
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_item(item_id):
-        :noindex:
-
-
-    .. py:method:: get_items_by_ids(item_ids):
-        :noindex:
-
-
-    .. py:method:: get_items_by_genus_type(item_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_items_by_parent_genus_type(item_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_items_by_record_type(item_record_type):
-        :noindex:
-
-
-    .. py:method:: get_items_by_question(question_id):
-        :noindex:
-
-
-    .. py:method:: get_items_by_answer(answer_id):
-        :noindex:
-
-
-    .. py:method:: get_items_by_learning_objective(objective_id):
-        :noindex:
-
-
-    .. py:method:: get_items_by_learning_objectives(objective_ids):
-        :noindex:
-
-
-    .. py:method:: get_items():
-        :noindex:
-
-
-    .. py:attribute:: items
-        :noindex:
-
+   .. autoattribute:: ItemLookupSession.items
 
 Item Query Session
 ------------------
 
-.. py:class:: ItemQuerySession(abc_assessment_sessions.ItemQuerySession, osid_sessions.OsidSession)
-    This session provides methods for searching ``Item`` objects.
+.. autoclass:: ItemQuerySession
+   :show-inheritance:
 
+   .. autoattribute:: ItemQuerySession.bank_id
 
-    The search query is constructed using the ``ItemQuery``. The
-    assessment item record ``Type`` also specifies the query record for
-    the assessment item query.
+   .. autoattribute:: ItemQuerySession.bank
 
+   .. automethod:: ItemQuerySession.can_search_items
 
+   .. automethod:: ItemQuerySession.use_federated_bank_view
 
+   .. automethod:: ItemQuerySession.use_isolated_bank_view
 
-    This session defines views that offer differing behaviors for
-    searching.
+   .. autoattribute:: ItemQuerySession.item_query
 
-
-
-
-      * federated assessment bank view: searches include assessment
-        items in assessment banks of which this assessment bank is a
-        ancestor in the assessment bank hierarchy
-      * isolated bank
-
-
-
-
-
-
-
-
-    Assessment items may have a query record indicated by their
-    respective record types. Thequery record is accessed via the
-    ``ItemQuery``.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_search_items():
-        :noindex:
-
-
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_item_query():
-        :noindex:
-
-
-    .. py:attribute:: item_query
-        :noindex:
-
-
-    .. py:method:: get_items_by_query(item_query):
-        :noindex:
-
+   .. automethod:: ItemQuerySession.get_items_by_query
 
 Item Search Session
 -------------------
 
-.. py:class:: ItemSearchSession(abc_assessment_sessions.ItemSearchSession, ItemQuerySession)
-    This session provides methods for searching ``Item`` objects.
+.. autoclass:: ItemSearchSession
+   :show-inheritance:
 
+   .. autoattribute:: ItemSearchSession.item_search
 
-    The search query is constructed using the ``ItemQuery``. The
-    assessment item record ``Type`` also specifies the query record for
-    the assessment item query.
+   .. autoattribute:: ItemSearchSession.item_search_order
 
+   .. automethod:: ItemSearchSession.get_items_by_search
 
-
-
-    ``get_items_by_query()`` is the basic search method and returns a
-    list of ``Items``. A more advanced search may be performed with
-    ``getItemsBySearch()``. It accepts an ``ItemSearch`` in addition to
-    the query for the purpose of specifying additional options affecting
-    the entire search, such as ordering. ``get_items_by_search()``
-    returns an ``ItemSearchResults`` that can be used to access the
-    resulting ``ItemList`` or be used to perform a search within the
-    result set through ``ItemSearch``.
-
-
-
-
-    This session defines views that offer differing behaviors for
-    searching.
-
-
-
-
-      * federated assessment bank view: searches include assessment
-        items in assessment banks of which this assessment bank is a
-        ancestor in the assessment bank hierarchy
-      * isolated bank view: searches are restricted to assessment items
-        in this assessment bank
-
-
-
-
-
-
-
-
-    Assessment items may have a query record indicated by their
-    respective record types. The query record is accessed via the
-    ``ItemQuery``.
-
-
-
-
-
-    .. py:method:: get_item_search():
-        :noindex:
-
-
-    .. py:attribute:: item_search
-        :noindex:
-
-
-    .. py:method:: get_item_search_order():
-        :noindex:
-
-
-    .. py:attribute:: item_search_order
-        :noindex:
-
-
-    .. py:method:: get_items_by_search(item_query, item_search):
-        :noindex:
-
-
-    .. py:method:: get_item_query_from_inspector(item_query_inspector):
-        :noindex:
-
+   .. automethod:: ItemSearchSession.get_item_query_from_inspector
 
 Item Admin Session
 ------------------
 
-.. py:class:: ItemAdminSession(abc_assessment_sessions.ItemAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``Items``.
+.. autoclass:: ItemAdminSession
+   :show-inheritance:
 
+   .. autoattribute:: ItemAdminSession.bank_id
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. autoattribute:: ItemAdminSession.bank
 
+   .. automethod:: ItemAdminSession.can_create_items
 
+   .. automethod:: ItemAdminSession.can_create_item_with_record_types
 
+   .. automethod:: ItemAdminSession.get_item_form_for_create
 
-    Create and update operations differ in their usage. To create an
-    ``Item,`` an ``ItemForm`` is requested using
-    ``get_item_form_for_create()`` specifying the desired record
-    ``Types`` or none if no record ``Types`` are needed. The returned
-    ``ItemForm`` will indicate that it is to be used with a create
-    operation and can be used to examine metdata or validate data prior
-    to creation. Once the ``ItemForm`` is submiited to a create
-    operation, it cannot be reused with another create operation unless
-    the first operation was unsuccessful. Each ``ItemForm`` corresponds
-    to an attempted transaction.
+   .. automethod:: ItemAdminSession.create_item
 
+   .. automethod:: ItemAdminSession.can_update_items
 
+   .. automethod:: ItemAdminSession.get_item_form_for_update
 
+   .. automethod:: ItemAdminSession.update_item
 
-    For updates, ``ItemForms`` are requested to the ``ItemForm``  ``Id``
-    that is to be updated using ``getItemFormForUpdate()``. Similarly,
-    the ``ItemForm`` has metadata about the data that can be updated and
-    it can perform validation before submitting the update. The
-    ``ItemForm`` can only be used once for a successful update and
-    cannot be reused.
+   .. automethod:: ItemAdminSession.can_delete_items
 
+   .. automethod:: ItemAdminSession.delete_item
 
+   .. automethod:: ItemAdminSession.can_manage_item_aliases
 
+   .. automethod:: ItemAdminSession.alias_item
 
-    The delete operations delete ``ItemForm``. To unmap an ``ItemForm``
-    from the current ``Bank,`` the ``ItemBankAssignmentSession`` should
-    be used. These delete operations attempt to remove the ``Item``
-    itself thus removing it from all known ``Bank`` catalogs.
+   .. automethod:: ItemAdminSession.can_create_questions
 
+   .. automethod:: ItemAdminSession.can_create_question_with_record_types
 
+   .. automethod:: ItemAdminSession.get_question_form_for_create
 
+   .. automethod:: ItemAdminSession.create_question
 
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
+   .. automethod:: ItemAdminSession.can_update_questions
 
+   .. automethod:: ItemAdminSession.get_question_form_for_update
 
+   .. automethod:: ItemAdminSession.update_question
 
+   .. automethod:: ItemAdminSession.can_delete_questions
 
+   .. automethod:: ItemAdminSession.delete_question
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. automethod:: ItemAdminSession.can_create_answers
 
+   .. automethod:: ItemAdminSession.can_create_answers_with_record_types
 
-    .. py:attribute:: bank_id
-        :noindex:
+   .. automethod:: ItemAdminSession.get_answer_form_for_create
 
+   .. automethod:: ItemAdminSession.create_answer
 
-    .. py:method:: get_bank():
-        :noindex:
+   .. automethod:: ItemAdminSession.can_update_answers
 
+   .. automethod:: ItemAdminSession.get_answer_form_for_update
 
-    .. py:attribute:: bank
-        :noindex:
+   .. automethod:: ItemAdminSession.update_answer
 
+   .. automethod:: ItemAdminSession.can_delete_answers
 
-    .. py:method:: can_create_items():
-        :noindex:
-
-
-    .. py:method:: can_create_item_with_record_types(item_record_types):
-        :noindex:
-
-
-    .. py:method:: get_item_form_for_create(item_record_types):
-        :noindex:
-
-
-    .. py:method:: create_item(item_form):
-        :noindex:
-
-
-    .. py:method:: can_update_items():
-        :noindex:
-
-
-    .. py:method:: get_item_form_for_update(item_id):
-        :noindex:
-
-
-    .. py:method:: update_item(item_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_items():
-        :noindex:
-
-
-    .. py:method:: delete_item(item_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_item_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_item(item_id, alias_id):
-        :noindex:
-
-
-    .. py:method:: can_create_questions():
-        :noindex:
-
-
-    .. py:method:: can_create_question_with_record_types(question_record_types):
-        :noindex:
-
-
-    .. py:method:: get_question_form_for_create(item_id, question_record_types):
-        :noindex:
-
-
-    .. py:method:: create_question(question_form):
-        :noindex:
-
-
-    .. py:method:: can_update_questions():
-        :noindex:
-
-
-    .. py:method:: get_question_form_for_update(question_id):
-        :noindex:
-
-
-    .. py:method:: update_question(question_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_questions():
-        :noindex:
-
-
-    .. py:method:: delete_question(question_id):
-        :noindex:
-
-
-    .. py:method:: can_create_answers():
-        :noindex:
-
-
-    .. py:method:: can_create_answers_with_record_types(answer_record_types):
-        :noindex:
-
-
-    .. py:method:: get_answer_form_for_create(item_id, answer_record_types):
-        :noindex:
-
-
-    .. py:method:: create_answer(answer_form):
-        :noindex:
-
-
-    .. py:method:: can_update_answers():
-        :noindex:
-
-
-    .. py:method:: get_answer_form_for_update(answer_id):
-        :noindex:
-
-
-    .. py:method:: update_answer(answer_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_answers():
-        :noindex:
-
-
-    .. py:method:: delete_answer(answer_id):
-        :noindex:
-
+   .. automethod:: ItemAdminSession.delete_answer
 
 Item Notification Session
 -------------------------
 
-.. py:class:: ItemNotificationSession(abc_assessment_sessions.ItemNotificationSession, osid_sessions.OsidSession)
-    This session defines methods to receive asynchronous notifications on adds/changes to ``Item``
-    objects.
+.. autoclass:: ItemNotificationSession
+   :show-inheritance:
 
+   .. autoattribute:: ItemNotificationSession.bank_id
 
-    This session is intended for consumers needing to synchronize their
-    state with this service without the use of polling. Notifications
-    are cancelled when this session is closed.
+   .. autoattribute:: ItemNotificationSession.bank
 
+   .. automethod:: ItemNotificationSession.can_register_for_item_notifications
 
+   .. automethod:: ItemNotificationSession.use_federated_bank_view
 
+   .. automethod:: ItemNotificationSession.use_isolated_bank_view
 
-    The two views defined in this session correspond to the views in the
-    ``ItemLookupSession``.
+   .. automethod:: ItemNotificationSession.reliable_item_notifications
 
+   .. automethod:: ItemNotificationSession.unreliable_item_notifications
 
+   .. automethod:: ItemNotificationSession.acknowledge_item_notification
 
+   .. automethod:: ItemNotificationSession.register_for_new_items
 
+   .. automethod:: ItemNotificationSession.register_for_changed_items
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. automethod:: ItemNotificationSession.register_for_changed_item
 
+   .. automethod:: ItemNotificationSession.register_for_deleted_items
 
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_register_for_item_notifications():
-        :noindex:
-
-
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: reliable_item_notifications():
-        :noindex:
-
-
-    .. py:method:: unreliable_item_notifications():
-        :noindex:
-
-
-    .. py:method:: acknowledge_item_notification(notification_id):
-        :noindex:
-
-
-    .. py:method:: register_for_new_items():
-        :noindex:
-
-
-    .. py:method:: register_for_changed_items():
-        :noindex:
-
-
-    .. py:method:: register_for_changed_item(item_id):
-        :noindex:
-
-
-    .. py:method:: register_for_deleted_items():
-        :noindex:
-
-
-    .. py:method:: register_for_deleted_item(item_id):
-        :noindex:
-
-
-    .. py:method:: reliable_item_notifications():
-        :noindex:
-
-
-    .. py:method:: unreliable_item_notifications():
-        :noindex:
-
-
-    .. py:method:: acknowledge_item_notification(notification_id):
-        :noindex:
-
+   .. automethod:: ItemNotificationSession.register_for_deleted_item
 
 Item Bank Session
 -----------------
 
-.. py:class:: ItemBankSession(abc_assessment_sessions.ItemBankSession, osid_sessions.OsidSession)
-    This session provides methods to retrieve ``Item`` to ``Bank`` mappings.
+.. autoclass:: ItemBankSession
+   :show-inheritance:
 
+   .. automethod:: ItemBankSession.can_lookup_item_bank_mappings
 
-    An ``Item`` may appear in multiple ``Banks``. Each ``Bank`` may have
-    its own authorizations governing who is allowed to look at it.
+   .. automethod:: ItemBankSession.use_comparative_bank_view
 
+   .. automethod:: ItemBankSession.use_plenary_bank_view
 
+   .. automethod:: ItemBankSession.get_item_ids_by_bank
 
+   .. automethod:: ItemBankSession.get_items_by_bank
 
-    This lookup session defines two views:
+   .. automethod:: ItemBankSession.get_item_ids_by_banks
 
+   .. automethod:: ItemBankSession.get_items_by_banks
 
+   .. automethod:: ItemBankSession.get_bank_ids_by_item
 
-
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete result set or is an error
-        condition
-
-
-
-
-
-    .. py:method:: can_lookup_item_bank_mappings():
-        :noindex:
-
-
-    .. py:method:: use_comparative_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_item_ids_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_items_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_item_ids_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_items_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_bank_ids_by_item(item_id):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_item(item_id):
-        :noindex:
-
+   .. automethod:: ItemBankSession.get_banks_by_item
 
 Item Bank Assignment Session
 ----------------------------
 
-.. py:class:: ItemBankAssignmentSession(abc_assessment_sessions.ItemBankAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to re-assign ``Items`` to ``Banks``.
+.. autoclass:: ItemBankAssignmentSession
+   :show-inheritance:
 
+   .. automethod:: ItemBankAssignmentSession.can_assign_items
 
-    An ``Item`` may map to multiple ``Banks`` and removing the last
-    reference to an ``Item`` is the equivalent of deleting it. Each
-    ``Bank`` may have its own authorizations governing who is allowed to
-    operate on it.
+   .. automethod:: ItemBankAssignmentSession.can_assign_items_to_bank
 
+   .. automethod:: ItemBankAssignmentSession.get_assignable_bank_ids
 
+   .. automethod:: ItemBankAssignmentSession.get_assignable_bank_ids_for_item
 
+   .. automethod:: ItemBankAssignmentSession.assign_item_to_bank
 
-    Moving or adding a reference of an ``Item`` to another ``Bank`` is
-    not a copy operation (eg: does not change its ``Id`` ).
+   .. automethod:: ItemBankAssignmentSession.unassign_item_from_bank
 
-
-
-
-
-    .. py:method:: can_assign_items():
-        :noindex:
-
-
-    .. py:method:: can_assign_items_to_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids_for_item(bank_id, item_id):
-        :noindex:
-
-
-    .. py:method:: assign_item_to_bank(item_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: unassign_item_from_bank(item_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: reassign_item_to_billing(item_id, from_bank_id, to_bank_id):
-        :noindex:
-
+   .. automethod:: ItemBankAssignmentSession.reassign_item_to_billing
 
 Assessment Lookup Session
 -------------------------
 
-.. py:class:: AssessmentLookupSession(abc_assessment_sessions.AssessmentLookupSession, osid_sessions.OsidSession)
-    This session defines methods for retrieving assessments.
+.. autoclass:: AssessmentLookupSession
+   :show-inheritance:
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. autoattribute:: AssessmentLookupSession.bank_id
 
+   .. autoattribute:: AssessmentLookupSession.bank
 
-    .. py:attribute:: bank_id
-        :noindex:
+   .. automethod:: AssessmentLookupSession.can_lookup_assessments
 
+   .. automethod:: AssessmentLookupSession.use_comparative_assessment_view
 
-    .. py:method:: get_bank():
-        :noindex:
+   .. automethod:: AssessmentLookupSession.use_plenary_assessment_view
 
+   .. automethod:: AssessmentLookupSession.use_federated_bank_view
 
-    .. py:attribute:: bank
-        :noindex:
+   .. automethod:: AssessmentLookupSession.use_isolated_bank_view
 
+   .. automethod:: AssessmentLookupSession.get_assessment
 
-    .. py:method:: can_lookup_assessments():
-        :noindex:
+   .. automethod:: AssessmentLookupSession.get_assessments_by_ids
 
+   .. automethod:: AssessmentLookupSession.get_assessments_by_genus_type
 
-    .. py:method:: use_comparative_assessment_view():
-        :noindex:
+   .. automethod:: AssessmentLookupSession.get_assessments_by_parent_genus_type
 
+   .. automethod:: AssessmentLookupSession.get_assessments_by_record_type
 
-    .. py:method:: use_plenary_assessment_view():
-        :noindex:
-
-
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment(assessment_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_ids(assessment_ids):
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_genus_type(assessment_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_parent_genus_type(assessment_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_record_type(assessment_record_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments():
-        :noindex:
-
-
-    .. py:attribute:: assessments
-        :noindex:
-
+   .. autoattribute:: AssessmentLookupSession.assessments
 
 Assessment Query Session
 ------------------------
 
-.. py:class:: AssessmentQuerySession(abc_assessment_sessions.AssessmentQuerySession, osid_sessions.OsidSession)
-    This session provides methods for querying ``Assessment`` objects.
+.. autoclass:: AssessmentQuerySession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentQuerySession.bank_id
 
-    The search query is constructed using the ``AssessmentQuery``.
+   .. autoattribute:: AssessmentQuerySession.bank
 
+   .. automethod:: AssessmentQuerySession.can_search_assessments
 
+   .. automethod:: AssessmentQuerySession.use_federated_bank_view
 
+   .. automethod:: AssessmentQuerySession.use_isolated_bank_view
 
-    This session defines views that offer differing behaviors for
-    searching.
+   .. autoattribute:: AssessmentQuerySession.assessment_query
 
-
-
-
-      * federated bank view: searches include assessments in banks of
-        which this bank is a ancestor in the bank hierarchy
-      * isolated bank view: searches are restricted to assessments in
-        this bank
-
-
-
-
-
-
-
-
-    Assessments may have a query record indicated by their respective
-    record types. The query record is accessed via the
-    ``AssessmentQuery``. The returns in this session may not be cast
-    directly to these interfaces.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_search_assessments():
-        :noindex:
-
-
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_query():
-        :noindex:
-
-
-    .. py:attribute:: assessment_query
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_query(assessment_query):
-        :noindex:
-
+   .. automethod:: AssessmentQuerySession.get_assessments_by_query
 
 Assessment Admin Session
 ------------------------
 
-.. py:class:: AssessmentAdminSession(abc_assessment_sessions.AssessmentAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``Assessments``.
+.. autoclass:: AssessmentAdminSession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentAdminSession.bank_id
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. autoattribute:: AssessmentAdminSession.bank
 
+   .. automethod:: AssessmentAdminSession.can_create_assessments
 
+   .. automethod:: AssessmentAdminSession.can_create_assessment_with_record_types
 
+   .. automethod:: AssessmentAdminSession.get_assessment_form_for_create
 
-    Create and update operations differ in their usage. To create an
-    ``Assessment,`` an ``AssessmentForm`` is requested using
-    ``get_assessment_form_for_create()`` specifying the desired record
-    ``Types`` or none if no record ``Types`` are needed. The returned
-    ``AssessmentForm`` will indicate that it is to be used with a create
-    operation and can be used to examine metdata or validate data prior
-    to creation. Once the ``AssessmentForm`` is submiited to a create
-    operation, it cannot be reused with another create operation unless
-    the first operation was unsuccessful. Each ``AssessmentForm``
-    corresponds to an attempted transaction.
+   .. automethod:: AssessmentAdminSession.create_assessment
 
+   .. automethod:: AssessmentAdminSession.can_update_assessments
 
+   .. automethod:: AssessmentAdminSession.get_assessment_form_for_update
 
+   .. automethod:: AssessmentAdminSession.update_assessment
 
-    For updates, ``AssessmentForms`` are requested to the ``Assessment``
-    ``Id`` that is to be updated using ``getAssessmentFormForUpdate()``.
-    Similarly, the ``AssessmentForm`` has metadata about the data that
-    can be updated and it can perform validation before submitting the
-    update. The ``AssessmentForm`` can only be used once for a
-    successful update and cannot be reused.
+   .. automethod:: AssessmentAdminSession.can_delete_assessments
 
+   .. automethod:: AssessmentAdminSession.delete_assessment
 
+   .. automethod:: AssessmentAdminSession.can_manage_assessment_aliases
 
-
-    The delete operations delete ``Assessments``. To unmap an
-    ``Assessment`` from the current ``Bank,`` the
-    ``AssessmentBankAssignmentSession`` should be used. These delete
-    operations attempt to remove the ``Assessment`` itself thus removing
-    it from all known ``Bank`` catalogs.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_create_assessments():
-        :noindex:
-
-
-    .. py:method:: can_create_assessment_with_record_types(assessment_record_types):
-        :noindex:
-
-
-    .. py:method:: get_assessment_form_for_create(assessment_record_types):
-        :noindex:
-
-
-    .. py:method:: create_assessment(assessment_form):
-        :noindex:
-
-
-    .. py:method:: can_update_assessments():
-        :noindex:
-
-
-    .. py:method:: get_assessment_form_for_update(assessment_id):
-        :noindex:
-
-
-    .. py:method:: update_assessment(assessment_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_assessments():
-        :noindex:
-
-
-    .. py:method:: delete_assessment(assessment_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_assessment_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_assessment(assessment_id, alias_id):
-        :noindex:
-
+   .. automethod:: AssessmentAdminSession.alias_assessment
 
 Assessment Bank Session
 -----------------------
 
-.. py:class:: AssessmentBankSession(abc_assessment_sessions.AssessmentBankSession, osid_sessions.OsidSession)
-    This session provides methods to retrieve ``Assessment`` to ``Bank`` mappings.
+.. autoclass:: AssessmentBankSession
+   :show-inheritance:
 
+   .. automethod:: AssessmentBankSession.can_lookup_assessment_bank_mappings
 
-    An ``Assessment`` may appear in multiple ``Banks``. Each ``Bank``
-    may have its own authorizations governing who is allowed to look at
-    it.
+   .. automethod:: AssessmentBankSession.use_comparative_bank_view
 
+   .. automethod:: AssessmentBankSession.use_plenary_bank_view
 
+   .. automethod:: AssessmentBankSession.get_assessment_ids_by_bank
 
+   .. automethod:: AssessmentBankSession.get_assessments_by_bank
 
-    This lookup session defines two views:
+   .. automethod:: AssessmentBankSession.get_assessment_ids_by_banks
 
+   .. automethod:: AssessmentBankSession.get_assessments_by_banks
 
+   .. automethod:: AssessmentBankSession.get_bank_ids_by_assessment
 
-
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete result set or is an error
-        condition
-
-
-
-
-
-    .. py:method:: can_lookup_assessment_bank_mappings():
-        :noindex:
-
-
-    .. py:method:: use_comparative_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_ids_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assessment_ids_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_assessments_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_bank_ids_by_assessment(assessment_id):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_assessment(assessment_id):
-        :noindex:
-
+   .. automethod:: AssessmentBankSession.get_banks_by_assessment
 
 Assessment Bank Assignment Session
 ----------------------------------
 
-.. py:class:: AssessmentBankAssignmentSession(abc_assessment_sessions.AssessmentBankAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to re-assign ``Assessments`` to ``Banks``.
+.. autoclass:: AssessmentBankAssignmentSession
+   :show-inheritance:
 
+   .. automethod:: AssessmentBankAssignmentSession.can_assign_assessments
 
-    An ``Assessment`` may map to multiple ``Banks`` and removing the
-    last reference to an ``Assessment`` is the equivalent of deleting
-    it. Each ``Bank`` may have its own authorizations governing who is
-    allowed to operate on it.
+   .. automethod:: AssessmentBankAssignmentSession.can_assign_assessments_to_bank
 
+   .. automethod:: AssessmentBankAssignmentSession.get_assignable_bank_ids
 
+   .. automethod:: AssessmentBankAssignmentSession.get_assignable_bank_ids_for_assessment
 
+   .. automethod:: AssessmentBankAssignmentSession.assign_assessment_to_bank
 
-    Moving or adding a reference of an ``Assessment`` to another
-    ``Bank`` is not a copy operation (eg: does not change its ``Id`` ).
+   .. automethod:: AssessmentBankAssignmentSession.unassign_assessment_from_bank
 
-
-
-
-
-    .. py:method:: can_assign_assessments():
-        :noindex:
-
-
-    .. py:method:: can_assign_assessments_to_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids_for_assessment(bank_id, assessment_id):
-        :noindex:
-
-
-    .. py:method:: assign_assessment_to_bank(assessment_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: unassign_assessment_from_bank(assessment_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: reassign_assessment_to_billing(assessment_id, from_bank_id, to_bank_id):
-        :noindex:
-
+   .. automethod:: AssessmentBankAssignmentSession.reassign_assessment_to_billing
 
 Assessment Basic Authoring Session
 ----------------------------------
 
-.. py:class:: AssessmentBasicAuthoringSession(abc_assessment_sessions.AssessmentBasicAuthoringSession, osid_sessions.OsidSession)
-    This session defines methods to manage assessment items in an assessment.
+.. autoclass:: AssessmentBasicAuthoringSession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentBasicAuthoringSession.bank_id
 
-    This session is used for simple assessments without sections or
-    parts. Updating the items on an assessment authored with sections
-    and parts may result in an error.
+   .. autoattribute:: AssessmentBasicAuthoringSession.bank
 
+   .. automethod:: AssessmentBasicAuthoringSession.can_author_assessments
 
+   .. automethod:: AssessmentBasicAuthoringSession.get_items
 
+   .. automethod:: AssessmentBasicAuthoringSession.add_item
 
+   .. automethod:: AssessmentBasicAuthoringSession.remove_item
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. automethod:: AssessmentBasicAuthoringSession.move_item
 
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_author_assessments():
-        :noindex:
-
-
-    .. py:method:: get_items(assessment_id):
-        :noindex:
-
-
-    .. py:method:: add_item(assessment_id, item_id):
-        :noindex:
-
-
-    .. py:method:: remove_item(assessment_id, item_id):
-        :noindex:
-
-
-    .. py:method:: move_item(assessment_id, item_id, preceeding_item_id):
-        :noindex:
-
-
-    .. py:method:: order_items(item_ids, assessment_id):
-        :noindex:
-
+   .. automethod:: AssessmentBasicAuthoringSession.order_items
 
 Assessment Offered Lookup Session
 ---------------------------------
 
-.. py:class:: AssessmentOfferedLookupSession(abc_assessment_sessions.AssessmentOfferedLookupSession, osid_sessions.OsidSession)
-    This session defines methods for retrieving assessments offered.
+.. autoclass:: AssessmentOfferedLookupSession
+   :show-inheritance:
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. autoattribute:: AssessmentOfferedLookupSession.bank_id
 
+   .. autoattribute:: AssessmentOfferedLookupSession.bank
 
-    .. py:attribute:: bank_id
-        :noindex:
+   .. automethod:: AssessmentOfferedLookupSession.can_lookup_assessments_offered
 
+   .. automethod:: AssessmentOfferedLookupSession.use_comparative_assessment_offered_view
 
-    .. py:method:: get_bank():
-        :noindex:
+   .. automethod:: AssessmentOfferedLookupSession.use_plenary_assessment_offered_view
 
+   .. automethod:: AssessmentOfferedLookupSession.use_federated_bank_view
 
-    .. py:attribute:: bank
-        :noindex:
+   .. automethod:: AssessmentOfferedLookupSession.use_isolated_bank_view
 
+   .. automethod:: AssessmentOfferedLookupSession.get_assessment_offered
 
-    .. py:method:: can_lookup_assessments_offered():
-        :noindex:
+   .. automethod:: AssessmentOfferedLookupSession.get_assessments_offered_by_ids
 
+   .. automethod:: AssessmentOfferedLookupSession.get_assessments_offered_by_genus_type
 
-    .. py:method:: use_comparative_assessment_offered_view():
-        :noindex:
+   .. automethod:: AssessmentOfferedLookupSession.get_assessments_offered_by_parent_genus_type
 
+   .. automethod:: AssessmentOfferedLookupSession.get_assessments_offered_by_record_type
 
-    .. py:method:: use_plenary_assessment_offered_view():
-        :noindex:
+   .. automethod:: AssessmentOfferedLookupSession.get_assessments_offered_by_date
 
+   .. automethod:: AssessmentOfferedLookupSession.get_assessments_offered_for_assessment
 
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered(assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_ids(assessment_offered_ids):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_genus_type(assessment_offered_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_parent_genus_type(assessment_offered_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_record_type(assessment_record_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_date(start, end):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_for_assessment(assessment_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered():
-        :noindex:
-
-
-    .. py:attribute:: assessments_offered
-        :noindex:
-
+   .. autoattribute:: AssessmentOfferedLookupSession.assessments_offered
 
 Assessment Offered Query Session
 --------------------------------
 
-.. py:class:: AssessmentOfferedQuerySession(abc_assessment_sessions.AssessmentOfferedQuerySession, osid_sessions.OsidSession)
-    This session provides methods for querying ``AssessmentOffered`` objects.
+.. autoclass:: AssessmentOfferedQuerySession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentOfferedQuerySession.bank_id
 
-    The search query is constructed using the
-    ``AssessmentOfferedQuery``.
+   .. autoattribute:: AssessmentOfferedQuerySession.bank
 
+   .. automethod:: AssessmentOfferedQuerySession.can_search_assessments_offered
 
+   .. automethod:: AssessmentOfferedQuerySession.use_federated_bank_view
 
+   .. automethod:: AssessmentOfferedQuerySession.use_isolated_bank_view
 
-    This session defines views that offer differing behaviors for
-    searching.
+   .. autoattribute:: AssessmentOfferedQuerySession.assessment_offered_query
 
-
-
-
-      * federated bank view: searches include assessments offered in
-        banks of which this bank is a ancestor in the bank hierarchy
-      * isolated bank view: searches are restricted to assessments
-        offered in this bank
-
-
-
-
-
-
-
-
-    Asessments offered may have a query record indicated by their
-    respective record types. The query record is accessed via the
-    ``AssessmentOfferedQuery``. The returns in this session may not be
-    cast directly to these interfaces.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_search_assessments_offered():
-        :noindex:
-
-
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_query():
-        :noindex:
-
-
-    .. py:attribute:: assessment_offered_query
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_query(assessment_offered_query):
-        :noindex:
-
+   .. automethod:: AssessmentOfferedQuerySession.get_assessments_offered_by_query
 
 Assessment Offered Admin Session
 --------------------------------
 
-.. py:class:: AssessmentOfferedAdminSession(abc_assessment_sessions.AssessmentOfferedAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``AssessmentsOffered``.
+.. autoclass:: AssessmentOfferedAdminSession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentOfferedAdminSession.bank_id
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. autoattribute:: AssessmentOfferedAdminSession.bank
 
+   .. automethod:: AssessmentOfferedAdminSession.can_create_assessments_offered
 
+   .. automethod:: AssessmentOfferedAdminSession.can_create_assessment_offered_with_record_types
 
+   .. automethod:: AssessmentOfferedAdminSession.get_assessment_offered_form_for_create
 
-    Create and update operations differ in their usage. To create an
-    ``AssessmentOffered,`` an ``AssessmentOfferedForm`` is requested
-    using ``get_assessment_offered_form_for_create()`` specifying the
-    assessment and desired record ``Types`` or none if no record
-    ``Types`` are needed. The returned ``AssessmentOfferedForm`` will
-    indicate that it is to be used with a create operation and can be
-    used to examine metdata or validate data prior to creation. Once the
-    ``AssessmentOfferedForm`` is submiited to a create operation, it
-    cannot be reused with another create operation unless the first
-    operation was unsuccessful. Each ``AssessmentOfferedForm``
-    corresponds to an attempted transaction.
+   .. automethod:: AssessmentOfferedAdminSession.create_assessment_offered
 
+   .. automethod:: AssessmentOfferedAdminSession.can_update_assessments_offered
 
+   .. automethod:: AssessmentOfferedAdminSession.get_assessment_offered_form_for_update
 
+   .. automethod:: AssessmentOfferedAdminSession.update_assessment_offered
 
-    For updates, ``AssessmentOfferedForms`` are requested to the
-    ``AssessmentOffered``  ``Id`` that is to be updated using
-    ``getAssessmentOfferedFormForUpdate()``. Similarly, the
-    ``AssessmentOfferedForm`` has metadata about the data that can be
-    updated and it can perform validation before submitting the update.
-    The ``AssessmentOfferedForm`` can only be used once for a successful
-    update and cannot be reused.
+   .. automethod:: AssessmentOfferedAdminSession.can_delete_assessments_offered
 
+   .. automethod:: AssessmentOfferedAdminSession.delete_assessment_offered
 
+   .. automethod:: AssessmentOfferedAdminSession.can_manage_assessment_offered_aliases
 
-
-    The delete operations delete ``AssessmentsOffered``. To unmap an
-    ``AssessmentOffered`` from the current ``Bank,`` the
-    ``AssessmentOfferedBankAssignmentSession`` should be used. These
-    delete operations attempt to remove the ``AssessmentOffered`` itself
-    thus removing it from all known ``Bank`` catalogs.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_create_assessments_offered():
-        :noindex:
-
-
-    .. py:method:: can_create_assessment_offered_with_record_types(assessment_offered_record_types):
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_form_for_create(assessment_id, assessment_offered_record_types):
-        :noindex:
-
-
-    .. py:method:: create_assessment_offered(assessment_offered_form):
-        :noindex:
-
-
-    .. py:method:: can_update_assessments_offered():
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_form_for_update(assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: update_assessment_offered(assessment_offered_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_assessments_offered():
-        :noindex:
-
-
-    .. py:method:: delete_assessment_offered(assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_assessment_offered_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_assessment_offered(assessment_offered_id, alias_id):
-        :noindex:
-
+   .. automethod:: AssessmentOfferedAdminSession.alias_assessment_offered
 
 Assessment Offered Bank Session
 -------------------------------
 
-.. py:class:: AssessmentOfferedBankSession(abc_assessment_sessions.AssessmentOfferedBankSession, osid_sessions.OsidSession)
-    This session provides methods to retrieve ``AssessmentOffered`` to ``Bank`` mappings.
+.. autoclass:: AssessmentOfferedBankSession
+   :show-inheritance:
 
+   .. automethod:: AssessmentOfferedBankSession.can_lookup_assessment_offered_bank_mappings
 
-    An ``AssessmentOffered`` may appear in multiple ``Banks``. Each
-    ``Bank`` may have its own authorizations governing who is allowed to
-    look at it.
+   .. automethod:: AssessmentOfferedBankSession.use_comparative_bank_view
 
+   .. automethod:: AssessmentOfferedBankSession.use_plenary_bank_view
 
+   .. automethod:: AssessmentOfferedBankSession.get_assessment_offered_ids_by_bank
 
+   .. automethod:: AssessmentOfferedBankSession.get_assessments_offered_by_bank
 
-    This lookup session defines two views:
+   .. automethod:: AssessmentOfferedBankSession.get_assessment_offered_ids_by_banks
 
+   .. automethod:: AssessmentOfferedBankSession.get_assessments_offered_by_banks
 
+   .. automethod:: AssessmentOfferedBankSession.get_bank_ids_by_assessment_offered
 
-
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete result set or is an error
-        condition
-
-
-
-
-
-    .. py:method:: can_lookup_assessment_offered_bank_mappings():
-        :noindex:
-
-
-    .. py:method:: use_comparative_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_ids_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assessment_offered_ids_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_assessments_offered_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_bank_ids_by_assessment_offered(assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_assessment_offered(assessment_offered_id):
-        :noindex:
-
+   .. automethod:: AssessmentOfferedBankSession.get_banks_by_assessment_offered
 
 Assessment Offered Bank Assignment Session
 ------------------------------------------
 
-.. py:class:: AssessmentOfferedBankAssignmentSession(abc_assessment_sessions.AssessmentOfferedBankAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to re-assign ``AssessmentOffered`` objects to ``Banks``.
+.. autoclass:: AssessmentOfferedBankAssignmentSession
+   :show-inheritance:
 
+   .. automethod:: AssessmentOfferedBankAssignmentSession.can_assign_assessments_offered
 
-    An ``AssessmentOffered`` may map to multiple ``Banks`` and removing
-    the last reference to an ``AssessmentOffered`` is the equivalent of
-    deleting it. Each ``Bank`` may have its own authorizations governing
-    who is allowed to operate on it.
+   .. automethod:: AssessmentOfferedBankAssignmentSession.can_assign_assessments_offered_to_bank
 
+   .. automethod:: AssessmentOfferedBankAssignmentSession.get_assignable_bank_ids
 
+   .. automethod:: AssessmentOfferedBankAssignmentSession.get_assignable_bank_ids_for_assessment_offered
 
+   .. automethod:: AssessmentOfferedBankAssignmentSession.assign_assessment_offered_to_bank
 
-    Moving or adding a reference of an ``AssessmentOffered`` to another
-    ``Bank`` is not a copy operation (eg: does not change its ``Id`` ).
+   .. automethod:: AssessmentOfferedBankAssignmentSession.unassign_assessment_offered_from_bank
 
-
-
-
-
-    .. py:method:: can_assign_assessments_offered():
-        :noindex:
-
-
-    .. py:method:: can_assign_assessments_offered_to_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids_for_assessment_offered(bank_id, assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: assign_assessment_offered_to_bank(assessment_offered_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: unassign_assessment_offered_from_bank(assessment_offered_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: reassign_assessment_offered_to_billing(assessment_offered_id, from_bank_id, to_bank_id):
-        :noindex:
-
+   .. automethod:: AssessmentOfferedBankAssignmentSession.reassign_assessment_offered_to_billing
 
 Assessment Taken Lookup Session
 -------------------------------
 
-.. py:class:: AssessmentTakenLookupSession(abc_assessment_sessions.AssessmentTakenLookupSession, osid_sessions.OsidSession)
-    This session defines methods for retrieving assessments taken.
+.. autoclass:: AssessmentTakenLookupSession
+   :show-inheritance:
 
-    .. py:method:: get_bank_id():
-        :noindex:
+   .. autoattribute:: AssessmentTakenLookupSession.bank_id
 
+   .. autoattribute:: AssessmentTakenLookupSession.bank
 
-    .. py:attribute:: bank_id
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.can_lookup_assessments_taken
 
+   .. automethod:: AssessmentTakenLookupSession.use_comparative_assessment_taken_view
 
-    .. py:method:: get_bank():
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.use_plenary_assessment_taken_view
 
+   .. automethod:: AssessmentTakenLookupSession.use_federated_bank_view
 
-    .. py:attribute:: bank
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.use_isolated_bank_view
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessment_taken
 
-    .. py:method:: can_lookup_assessments_taken():
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_ids
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_genus_type
 
-    .. py:method:: use_comparative_assessment_taken_view():
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_parent_genus_type
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_record_type
 
-    .. py:method:: use_plenary_assessment_taken_view():
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_date
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_for_taker
 
-    .. py:method:: use_federated_bank_view():
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_date_for_taker
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_for_assessment
 
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_date_for_assessment
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_for_taker_and_assessment
 
-    .. py:method:: get_assessment_taken(assessment_taken_id):
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_date_for_taker_and_assessment
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_for_assessment_offered
 
-    .. py:method:: get_assessments_taken_by_ids(assessment_taken_ids):
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_date_for_assessment_offered
 
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_for_taker_and_assessment_offered
 
-    .. py:method:: get_assessments_taken_by_genus_type(assessment_taken_genus_type):
-        :noindex:
+   .. automethod:: AssessmentTakenLookupSession.get_assessments_taken_by_date_for_taker_and_assessment_offered
 
-
-    .. py:method:: get_assessments_taken_by_parent_genus_type(assessment_taken_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_record_type(assessment_taken_record_type):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_date(from_, to):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_for_taker(resource_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_date_for_taker(resource_id, from_, to):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_for_assessment(assessment_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_date_for_assessment(assessment_id, from_, to):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_for_taker_and_assessment(resource_id, assessment_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_date_for_taker_and_assessment(resource_id, assessment_id, from_, to):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_for_assessment_offered(assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_date_for_assessment_offered(assessment_offered_id, from_, to):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_for_taker_and_assessment_offered(resource_id, assessment_offered_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_date_for_taker_and_assessment_offered(resource_id, assessment_offered_id, from_, to):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken():
-        :noindex:
-
-
-    .. py:attribute:: assessments_taken
-        :noindex:
-
+   .. autoattribute:: AssessmentTakenLookupSession.assessments_taken
 
 Assessment Taken Query Session
 ------------------------------
 
-.. py:class:: AssessmentTakenQuerySession(abc_assessment_sessions.AssessmentTakenQuerySession, osid_sessions.OsidSession)
-    This session provides methods for searching among ``AssessmentTaken`` objects.
+.. autoclass:: AssessmentTakenQuerySession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentTakenQuerySession.bank_id
 
-    The search query is constructed using the ``AssessmentTakenQuery``.
+   .. autoattribute:: AssessmentTakenQuerySession.bank
 
+   .. automethod:: AssessmentTakenQuerySession.can_search_assessments_taken
 
+   .. automethod:: AssessmentTakenQuerySession.use_federated_bank_view
 
+   .. automethod:: AssessmentTakenQuerySession.use_isolated_bank_view
 
-    This session defines views that offer differing behaviors for
-    searching.
+   .. autoattribute:: AssessmentTakenQuerySession.assessment_taken_query
 
-
-
-
-      * federated bank view: searches include assessments taken in banks
-        of which this bank is an ancestor in the bank hierarchy
-      * isolated bank view: searches are restricted to assessments taken
-        in this bank
-
-
-
-
-
-
-
-
-    Assessments taken may have a query record indicated by their
-    respective query record types. The query record is accessed via the
-    ``AssessmentTakenQuery``.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_search_assessments_taken():
-        :noindex:
-
-
-    .. py:method:: use_federated_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_isolated_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_query():
-        :noindex:
-
-
-    .. py:attribute:: assessment_taken_query
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_query(assessment_taken_query):
-        :noindex:
-
+   .. automethod:: AssessmentTakenQuerySession.get_assessments_taken_by_query
 
 Assessment Taken Admin Session
 ------------------------------
 
-.. py:class:: AssessmentTakenAdminSession(abc_assessment_sessions.AssessmentTakenAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``AssessmentsTaken``.
+.. autoclass:: AssessmentTakenAdminSession
+   :show-inheritance:
 
+   .. autoattribute:: AssessmentTakenAdminSession.bank_id
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. autoattribute:: AssessmentTakenAdminSession.bank
 
+   .. automethod:: AssessmentTakenAdminSession.can_create_assessments_taken
 
+   .. automethod:: AssessmentTakenAdminSession.can_create_assessment_taken_with_record_types
 
+   .. automethod:: AssessmentTakenAdminSession.get_assessment_taken_form_for_create
 
-    Create and update operations differ in their usage. To create an
-    ``AssessmentTaken,`` an ``AssessmentTakenForm`` is requested using
-    ``get_assessment_taken_form_for_create()`` specifying the assessment
-    offered and desired record ``Types`` or none if no record ``Types``
-    are needed. The returned ``AssessmentTakenForm`` will indicate that
-    it is to be used with a create operation and can be used to examine
-    metdata or validate data prior to creation. Once the
-    ``AssessmentTakenForm`` is submiited to a create operation, it
-    cannot be reused with another create operation unless the first
-    operation was unsuccessful. Each ``AssessmentTakenForm`` corresponds
-    to an attempted transaction.
+   .. automethod:: AssessmentTakenAdminSession.create_assessment_taken
 
+   .. automethod:: AssessmentTakenAdminSession.can_update_assessments_taken
 
+   .. automethod:: AssessmentTakenAdminSession.get_assessment_taken_form_for_update
 
+   .. automethod:: AssessmentTakenAdminSession.update_assessment_taken
 
-    For updates, ``AssessmentTakenForms`` are requested to the
-    ``AssessmentTaken``  ``Id`` that is to be updated using
-    ``getAssessmentTakenFormForUpdate()``. Similarly, the
-    ``AssessmentTakenForm`` has metadata about the data that can be
-    updated and it can perform validation before submitting the update.
-    The ``AssessmentTakenForm`` can only be used once for a successful
-    update and cannot be reused.
+   .. automethod:: AssessmentTakenAdminSession.can_delete_assessments_taken
 
+   .. automethod:: AssessmentTakenAdminSession.delete_assessment_taken
 
+   .. automethod:: AssessmentTakenAdminSession.can_manage_assessment_taken_aliases
 
-
-    The delete operations delete ``AssessmentsTaken``. To unmap an
-    ``AssessmentTakenForm`` from the current ``Bank,`` the
-    ``AssessmentTakenFormBankAssignmentSession`` should be used. These
-    delete operations attempt to remove the ``AssessmentTakenForm``
-    itself thus removing it from all known ``Bank`` catalogs.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: get_bank_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_id
-        :noindex:
-
-
-    .. py:method:: get_bank():
-        :noindex:
-
-
-    .. py:attribute:: bank
-        :noindex:
-
-
-    .. py:method:: can_create_assessments_taken():
-        :noindex:
-
-
-    .. py:method:: can_create_assessment_taken_with_record_types(assessment_taken_record_types):
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_form_for_create(assessment_offered_id, assessment_taken_record_types):
-        :noindex:
-
-
-    .. py:method:: create_assessment_taken(assessment_taken_form):
-        :noindex:
-
-
-    .. py:method:: can_update_assessments_taken():
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_form_for_update(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: update_assessment_taken(assessment_taken_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_assessments_taken():
-        :noindex:
-
-
-    .. py:method:: delete_assessment_taken(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_assessment_taken_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_assessment_taken(assessment_taken_id, alias_id):
-        :noindex:
-
+   .. automethod:: AssessmentTakenAdminSession.alias_assessment_taken
 
 Assessment Taken Bank Session
 -----------------------------
 
-.. py:class:: AssessmentTakenBankSession(abc_assessment_sessions.AssessmentTakenBankSession, osid_sessions.OsidSession)
-    This session provides methods to retrieve ``AssessmentTaken`` to ``Bank`` mappings.
+.. autoclass:: AssessmentTakenBankSession
+   :show-inheritance:
 
+   .. automethod:: AssessmentTakenBankSession.can_lookup_assessment_taken_bank_mappings
 
-    An ``AssessmentTaken`` may appear in multiple ``Banks``. Each
-    ``Bank`` may have its own authorizations governing who is allowed to
-    look at it.
+   .. automethod:: AssessmentTakenBankSession.use_comparative_bank_view
 
+   .. automethod:: AssessmentTakenBankSession.use_plenary_bank_view
 
+   .. automethod:: AssessmentTakenBankSession.get_assessment_taken_ids_by_bank
 
+   .. automethod:: AssessmentTakenBankSession.get_assessments_taken_by_bank
 
-    This lookup session defines two views:
+   .. automethod:: AssessmentTakenBankSession.get_assessment_taken_ids_by_banks
 
+   .. automethod:: AssessmentTakenBankSession.get_assessments_taken_by_banks
 
+   .. automethod:: AssessmentTakenBankSession.get_bank_ids_by_assessment_taken
 
-
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete result set or is an error
-        condition
-
-
-
-
-
-    .. py:method:: can_lookup_assessment_taken_bank_mappings():
-        :noindex:
-
-
-    .. py:method:: use_comparative_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_ids_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assessment_taken_ids_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_assessments_taken_by_banks(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_bank_ids_by_assessment_taken(assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_assessment_taken(assessment_taken_id):
-        :noindex:
-
+   .. automethod:: AssessmentTakenBankSession.get_banks_by_assessment_taken
 
 Assessment Taken Bank Assignment Session
 ----------------------------------------
 
-.. py:class:: AssessmentTakenBankAssignmentSession(abc_assessment_sessions.AssessmentTakenBankAssignmentSession, osid_sessions.OsidSession)
-    This session provides methods to re-assign ``AssessmentTaken`` objects to ``Banks``.
+.. autoclass:: AssessmentTakenBankAssignmentSession
+   :show-inheritance:
 
+   .. automethod:: AssessmentTakenBankAssignmentSession.can_assign_assessments_taken
 
-    An ``AssessmentTaken`` may map to multiple ``Banks`` and removing
-    the last reference to an ``AssessmentTaken`` is the equivalent of
-    deleting it. Each ``Bank`` may have its own authorizations governing
-    who is allowed to operate on it.
+   .. automethod:: AssessmentTakenBankAssignmentSession.can_assign_assessments_taken_to_bank
 
+   .. automethod:: AssessmentTakenBankAssignmentSession.get_assignable_bank_ids
 
+   .. automethod:: AssessmentTakenBankAssignmentSession.get_assignable_bank_ids_for_assessment_taken
 
+   .. automethod:: AssessmentTakenBankAssignmentSession.assign_assessment_taken_to_bank
 
-    Moving or adding a reference of an ``AssessmentTaken`` to another
-    ``Bank`` is not a copy operation (eg: does not change its ``Id`` ).
+   .. automethod:: AssessmentTakenBankAssignmentSession.unassign_assessment_taken_from_bank
 
-
-
-
-
-    .. py:method:: can_assign_assessments_taken():
-        :noindex:
-
-
-    .. py:method:: can_assign_assessments_taken_to_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_assignable_bank_ids_for_assessment_taken(bank_id, assessment_taken_id):
-        :noindex:
-
-
-    .. py:method:: assign_assessment_taken_to_bank(assessment_taken_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: unassign_assessment_taken_from_bank(assessment_taken_id, bank_id):
-        :noindex:
-
-
-    .. py:method:: reassign_assessment_taken_to_billing(assessment_taken_id, from_bank_id, to_bank_id):
-        :noindex:
-
+   .. automethod:: AssessmentTakenBankAssignmentSession.reassign_assessment_taken_to_billing
 
 Bank Lookup Session
 -------------------
 
-.. py:class:: BankLookupSession(abc_assessment_sessions.BankLookupSession, osid_sessions.OsidSession)
-    This session provides methods for retrieving ``Bank`` objects.
+.. autoclass:: BankLookupSession
+   :show-inheritance:
 
+   .. automethod:: BankLookupSession.can_lookup_banks
 
-    The ``Bank`` represents a collection of ``Items`` and
-    ``Assessments``.
+   .. automethod:: BankLookupSession.use_comparative_bank_view
 
+   .. automethod:: BankLookupSession.use_plenary_bank_view
 
+   .. automethod:: BankLookupSession.get_bank
 
+   .. automethod:: BankLookupSession.get_banks_by_ids
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: BankLookupSession.get_banks_by_genus_type
 
+   .. automethod:: BankLookupSession.get_banks_by_parent_genus_type
 
+   .. automethod:: BankLookupSession.get_banks_by_record_type
 
+   .. automethod:: BankLookupSession.get_banks_by_provider
 
-      * comparative view: elements may be silently omitted or re-ordered
-      * plenary view: provides a complete set or is an error condition
-
-
-
-
-
-
-
-
-    Generally, the comparative view should be used for most applications
-    as it permits operation even if there is data that cannot be
-    accessed. For example, a browsing application may only need to
-    examine the ``Banks`` it can access, without breaking execution.
-    However, an administrative application may require all ``Bank``
-    elements to be available.
-
-
-
-
-    Banks may have an additional records indicated by their respective
-    record types. The record may not be accessed through a cast of the
-    ``Bank``.
-
-
-
-
-
-    .. py:method:: can_lookup_banks():
-        :noindex:
-
-
-    .. py:method:: use_comparative_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_ids(bank_ids):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_genus_type(bank_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_parent_genus_type(bank_genus_type):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_record_type(bank_record_type):
-        :noindex:
-
-
-    .. py:method:: get_banks_by_provider(resource_id):
-        :noindex:
-
-
-    .. py:method:: get_banks():
-        :noindex:
-
-
-    .. py:attribute:: banks
-        :noindex:
-
+   .. autoattribute:: BankLookupSession.banks
 
 Bank Query Session
 ------------------
 
-.. py:class:: BankQuerySession(abc_assessment_sessions.BankQuerySession, osid_sessions.OsidSession)
-    This session provides methods for searching among ``Bank`` objects.
+.. autoclass:: BankQuerySession
+   :show-inheritance:
 
+   .. automethod:: BankQuerySession.can_search_banks
 
-    The search query is constructed using the ``BankQuery``.
+   .. autoattribute:: BankQuerySession.bank_query
 
-
-
-
-    Banks may have aquery record indicated by their respective record
-    types. The query record is accessed via the ``BankQuery``.
-
-
-
-
-
-    .. py:method:: can_search_banks():
-        :noindex:
-
-
-    .. py:method:: get_bank_query():
-        :noindex:
-
-
-    .. py:attribute:: bank_query
-        :noindex:
-
-
-    .. py:method:: get_banks_by_query(bank_query):
-        :noindex:
-
+   .. automethod:: BankQuerySession.get_banks_by_query
 
 Bank Admin Session
 ------------------
 
-.. py:class:: BankAdminSession(abc_assessment_sessions.BankAdminSession, osid_sessions.OsidSession)
-    This session creates, updates, and deletes ``Banks``.
+.. autoclass:: BankAdminSession
+   :show-inheritance:
 
+   .. automethod:: BankAdminSession.can_create_banks
 
-    The data for create and update is provided by the consumer via the
-    form object. ``OsidForms`` are requested for each create or update
-    and may not be reused.
+   .. automethod:: BankAdminSession.can_create_bank_with_record_types
 
+   .. automethod:: BankAdminSession.get_bank_form_for_create
 
+   .. automethod:: BankAdminSession.create_bank
 
+   .. automethod:: BankAdminSession.can_update_banks
 
-    Create and update operations differ in their usage. To create a
-    ``Bank,`` a ``BankForm`` is requested using
-    ``get_bank_form_for_create()`` specifying the desired record
-    ``Types`` or none if no record ``Types`` are needed. The returned
-    ``BankForm`` will indicate that it is to be used with a create
-    operation and can be used to examine metdata or validate data prior
-    to creation. Once the ``BankForm`` is submiited to a create
-    operation, it cannot be reused with another create operation unless
-    the first operation was unsuccessful. Each ``BankForm`` corresponds
-    to an attempted transaction.
+   .. automethod:: BankAdminSession.get_bank_form_for_update
 
+   .. automethod:: BankAdminSession.update_bank
 
+   .. automethod:: BankAdminSession.can_delete_banks
 
+   .. automethod:: BankAdminSession.delete_bank
 
-    For updates, ``BankForms`` are requested to the ``Bank``  ``Id``
-    that is to be updated using ``getBankFormForUpdate()``. Similarly,
-    the ``BankForm`` has metadata about the data that can be updated and
-    it can perform validation before submitting the update. The
-    ``BankForm`` can only be used once for a successful update and
-    cannot be reused.
+   .. automethod:: BankAdminSession.can_manage_bank_aliases
 
-
-
-
-    The delete operations delete ``Banks``.
-
-
-
-
-    This session includes an ``Id`` aliasing mechanism to assign an
-    external ``Id`` to an internally assigned Id.
-
-
-
-
-
-    .. py:method:: can_create_banks():
-        :noindex:
-
-
-    .. py:method:: can_create_bank_with_record_types(bank_record_types):
-        :noindex:
-
-
-    .. py:method:: get_bank_form_for_create(bank_record_types):
-        :noindex:
-
-
-    .. py:method:: create_bank(bank_form):
-        :noindex:
-
-
-    .. py:method:: can_update_banks():
-        :noindex:
-
-
-    .. py:method:: get_bank_form_for_update(bank_id):
-        :noindex:
-
-
-    .. py:method:: update_bank(bank_form):
-        :noindex:
-
-
-    .. py:method:: can_delete_banks():
-        :noindex:
-
-
-    .. py:method:: delete_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: can_manage_bank_aliases():
-        :noindex:
-
-
-    .. py:method:: alias_bank(bank_id, alias_id):
-        :noindex:
-
+   .. automethod:: BankAdminSession.alias_bank
 
 Bank Hierarchy Session
 ----------------------
 
-.. py:class:: BankHierarchySession(abc_assessment_sessions.BankHierarchySession, osid_sessions.OsidSession)
-    This session defines methods for traversing a hierarchy of ``Bank`` objects.
+.. autoclass:: BankHierarchySession
+   :show-inheritance:
 
+   .. autoattribute:: BankHierarchySession.bank_hierarchy_id
 
-    Each node in the hierarchy is a unique ``Bank``. The hierarchy may
-    be traversed recursively to establish the tree structure through
-    ``get_parent_banks()`` and ``getChildBanks()``. To relate these
-    ``Ids`` to another OSID, ``get_bank_nodes()`` can be used for
-    retrievals that can be used for bulk lookups in other OSIDs. Any
-    ``Bank`` available in the Assessment OSID is known to this hierarchy
-    but does not appear in the hierarchy traversal until added as a root
-    node or a child of another node.
+   .. autoattribute:: BankHierarchySession.bank_hierarchy
 
+   .. automethod:: BankHierarchySession.can_access_bank_hierarchy
 
+   .. automethod:: BankHierarchySession.use_comparative_bank_view
 
+   .. automethod:: BankHierarchySession.use_plenary_bank_view
 
-    A user may not be authorized to traverse the entire hierarchy. Parts
-    of the hierarchy may be made invisible through omission from the
-    returns of ``get_parent_banks()`` or ``get_child_banks()`` in lieu
-    of a ``PermissionDenied`` error that may disrupt the traversal
-    through authorized pathways.
+   .. autoattribute:: BankHierarchySession.root_bank_ids
 
+   .. autoattribute:: BankHierarchySession.root_banks
 
+   .. automethod:: BankHierarchySession.has_parent_banks
 
+   .. automethod:: BankHierarchySession.is_parent_of_bank
 
-    This session defines views that offer differing behaviors when
-    retrieving multiple objects.
+   .. automethod:: BankHierarchySession.get_parent_bank_ids
 
+   .. automethod:: BankHierarchySession.get_parent_banks
 
+   .. automethod:: BankHierarchySession.is_ancestor_of_bank
 
+   .. automethod:: BankHierarchySession.has_child_banks
 
-      * comparative view: bank elements may be silently omitted or re-
-        ordered
-      * plenary view: provides a complete set or is an error condition
+   .. automethod:: BankHierarchySession.is_child_of_bank
 
+   .. automethod:: BankHierarchySession.get_child_bank_ids
 
+   .. automethod:: BankHierarchySession.get_child_banks
 
+   .. automethod:: BankHierarchySession.is_descendant_of_bank
 
+   .. automethod:: BankHierarchySession.get_bank_node_ids
 
-    .. py:method:: get_bank_hierarchy_id():
-        :noindex:
-
-
-    .. py:attribute:: bank_hierarchy_id
-        :noindex:
-
-
-    .. py:method:: get_bank_hierarchy():
-        :noindex:
-
-
-    .. py:attribute:: bank_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_access_bank_hierarchy():
-        :noindex:
-
-
-    .. py:method:: use_comparative_bank_view():
-        :noindex:
-
-
-    .. py:method:: use_plenary_bank_view():
-        :noindex:
-
-
-    .. py:method:: get_root_bank_ids():
-        :noindex:
-
-
-    .. py:attribute:: root_bank_ids
-        :noindex:
-
-
-    .. py:method:: get_root_banks():
-        :noindex:
-
-
-    .. py:attribute:: root_banks
-        :noindex:
-
-
-    .. py:method:: has_parent_banks(bank_id):
-        :noindex:
-
-
-    .. py:method:: is_parent_of_bank(id_, bank_id):
-        :noindex:
-
-
-    .. py:method:: get_parent_bank_ids(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_parent_banks(bank_id):
-        :noindex:
-
-
-    .. py:method:: is_ancestor_of_bank(id_, bank_id):
-        :noindex:
-
-
-    .. py:method:: has_child_banks(bank_id):
-        :noindex:
-
-
-    .. py:method:: is_child_of_bank(id_, bank_id):
-        :noindex:
-
-
-    .. py:method:: get_child_bank_ids(bank_id):
-        :noindex:
-
-
-    .. py:method:: get_child_banks(bank_id):
-        :noindex:
-
-
-    .. py:method:: is_descendant_of_bank(id_, bank_id):
-        :noindex:
-
-
-    .. py:method:: get_bank_node_ids(bank_id, ancestor_levels, descendant_levels, include_siblings):
-        :noindex:
-
-
-    .. py:method:: get_bank_nodes(bank_id, ancestor_levels, descendant_levels, include_siblings):
-        :noindex:
-
+   .. automethod:: BankHierarchySession.get_bank_nodes
 
 Bank Hierarchy Design Session
 -----------------------------
 
-.. py:class:: BankHierarchyDesignSession(abc_assessment_sessions.BankHierarchyDesignSession, osid_sessions.OsidSession)
-    This session defines methods for managing a hierarchy of ``Bank`` objects.
+.. autoclass:: BankHierarchyDesignSession
+   :show-inheritance:
 
+   .. autoattribute:: BankHierarchyDesignSession.bank_hierarchy_id
 
-    Each node in the hierarchy is a unique ``Bank``.
+   .. autoattribute:: BankHierarchyDesignSession.bank_hierarchy
 
+   .. automethod:: BankHierarchyDesignSession.can_modify_bank_hierarchy
 
+   .. automethod:: BankHierarchyDesignSession.add_root_bank
 
+   .. automethod:: BankHierarchyDesignSession.remove_root_bank
 
+   .. automethod:: BankHierarchyDesignSession.add_child_bank
 
-    .. py:method:: get_bank_hierarchy_id():
-        :noindex:
+   .. automethod:: BankHierarchyDesignSession.remove_child_bank
 
-
-    .. py:attribute:: bank_hierarchy_id
-        :noindex:
-
-
-    .. py:method:: get_bank_hierarchy():
-        :noindex:
-
-
-    .. py:attribute:: bank_hierarchy
-        :noindex:
-
-
-    .. py:method:: can_modify_bank_hierarchy():
-        :noindex:
-
-
-    .. py:method:: add_root_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: remove_root_bank(bank_id):
-        :noindex:
-
-
-    .. py:method:: add_child_bank(bank_id, child_id):
-        :noindex:
-
-
-    .. py:method:: remove_child_bank(bank_id, child_id):
-        :noindex:
-
-
-    .. py:method:: remove_child_banks(bank_id):
-        :noindex:
-
+   .. automethod:: BankHierarchyDesignSession.remove_child_banks
 
