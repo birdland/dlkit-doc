@@ -74,8 +74,9 @@ class HierarchyForm(osid_objects.OsidCatalogForm):
 
 
 class HierarchyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``HierarchyList`` provides a means for accessing ``Id`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``HierarchyList`` provides a means for accessing ``Id`` elements sequentially either one
+        at a
+    time or many at a time.
 
 
     Examples: while (hl.hasNext()) { Hierarchy hierarchy =
@@ -100,8 +101,8 @@ class HierarchyList(osid_objects.OsidList):
         """Gets the next ``Hierarchy`` in this list.
 
 
-        :return: the next ``Hierarchy`` in this list. The ``has_next()`` method should be used to
-            test that a next ``Hierarchy`` is available before calling this method.
+        :return: the next ``Hierarchy`` in this list. The ``has_next()`` method should be used to test that a next
+            ``Hierarchy`` is available before calling this method.
         :rtype: ``osid.hierarchy.Hierarchy``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -123,11 +124,10 @@ class HierarchyList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Hierarchy`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Hierarchy`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Hierarchy`` elements.The length of the array is less than or equal to
-            the number specified.
+        :return: an array of ``Hierarchy`` elements.The length of the array is less than or equal to the number
+            specified.
         :rtype: ``osid.hierarchy.Hierarchy``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -189,9 +189,9 @@ class Node(osid_objects.OsidNode):
 
 
 class NodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``NodeList`` provides a means for accessing ``Id`` elements
-        sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``NodeList`` provides a means for accessing ``Id`` elements sequentially either one at a
+        time
+    or many at a time.
 
 
     Examples: while (nl.hasNext()) { Node node = nl.getNextNode(); }
@@ -215,8 +215,8 @@ class NodeList(osid_objects.OsidList):
         """Gets the next ``Node`` in this list.
 
 
-        :return: the next ``Node`` in this list. The ``has_next()`` method should be used to test
-            that a next ``Node`` is available before calling this method.
+        :return: the next ``Node`` in this list. The ``has_next()`` method should be used to test that a next ``Node``
+            is available before calling this method.
         :rtype: ``osid.hierarchy.Node``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -238,11 +238,9 @@ class NodeList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Node`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Node`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Node`` elements.The length of the array is less than or equal to the
-            number specified.
+        :return: an array of ``Node`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.hierarchy.Node``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

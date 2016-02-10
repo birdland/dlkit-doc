@@ -238,8 +238,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of resource and agents is supported.
 
 
-        :return: ``true`` if resource agent mapping retrieval is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if resource agent mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -351,8 +350,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of resource relationships and bins is supported.
 
 
-        :return: ``true`` if resource relationship bin mapping retrieval is supported ``,``
-            ``false`` otherwise
+        :return: ``true`` if resource relationship bin mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -368,8 +366,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if managing mappings of resource relationships and bins is supported.
 
 
-        :return: ``true`` if resource relationship bin assignment is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if resource relationship bin assignment is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -385,8 +382,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if resource relationship smart bins are available.
 
 
-        :return: ``true`` if resource relationship smart bins are supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if resource relationship smart bins are supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -639,8 +635,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if the given ``ResourceRelationship`` record type is supported.
 
 
-        :param resource_relationship_record_type: a ``Type`` indicating a ``ResourceRelationship``
-            record type
+        :param resource_relationship_record_type: a ``Type`` indicating a ``ResourceRelationship`` record type
         :type resource_relationship_record_type: ``osid.type.Type``
         :return: ``true`` if the given type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -671,13 +666,12 @@ class ResourceProfile(osid_managers.OsidProfile):
 
     resource_relationship_search_record_types = property(fget=get_resource_relationship_search_record_types)
 
-    def supports_resource_relationship_search_record_type(self,
-        resource_relationship_search_record_type):
+    def supports_resource_relationship_search_record_type(self, resource_relationship_search_record_type):
         """Tests if the given ``ResourceRelationship`` search record type is supported.
 
 
-        :param resource_relationship_search_record_type: a ``Type`` indicating a
-            ``ResourceRelationship`` search record type
+        :param resource_relationship_search_record_type: a ``Type`` indicating a ``ResourceRelationship`` search record
+            type
         :type resource_relationship_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -762,8 +756,9 @@ class ResourceProfile(osid_managers.OsidProfile):
 
 
 class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, ResourceProfile):
-    """The resource manager provides access to resource lookup and creation sessions and provides
-    interoperability tests for various aspects of this service.
+    """The resource manager provides access to resource lookup and creation sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -861,8 +856,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -903,8 +897,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -945,8 +938,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -987,8 +979,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1032,8 +1023,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``resource_receiver`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1133,8 +1124,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1175,8 +1165,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1217,8 +1206,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1262,8 +1250,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``group_receiver`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1304,8 +1291,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1346,8 +1332,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1388,8 +1373,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1420,8 +1405,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_lookup_session = property(fget=get_resource_relationship_lookup_session)
 
     def get_resource_relationship_lookup_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -1431,8 +1415,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1463,8 +1447,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_query_session = property(fget=get_resource_relationship_query_session)
 
     def get_resource_relationship_query_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship query service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship query service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -1474,8 +1457,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1506,8 +1489,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_search_session = property(fget=get_resource_relationship_search_session)
 
     def get_resource_relationship_search_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship search service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship search service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -1517,8 +1499,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1530,8 +1512,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.resource.ResourceRelationshipSearchSession
 
     def get_resource_relationship_admin_session(self):
-        """Gets the ``OsidSession`` associated with the resource relationship administration
-            service.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service.
 
 
         :return: a ``ResourceRelationshipAdminSession``
@@ -1550,8 +1531,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_admin_session = property(fget=get_resource_relationship_admin_session)
 
     def get_resource_relationship_admin_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship administration service
-            for the given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -1561,8 +1541,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1593,10 +1573,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         """
         return # osid.resource.ResourceRelationshipNotificationSession
 
-    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver,
-        bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship notification service
-            for the given bin.
+    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver, bin_id):
+        """Gets the ``OsidSession`` associated with the resource relationship notification service for the given bin.
 
 
         :param resource_relationship_receiver: the notification callback
@@ -1646,8 +1624,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :return: a ``ResourceRelationshipBinAssignmentSession``
         :rtype: ``osid.resource.ResourceRelationshipBinAssignmentSession``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1855,8 +1832,9 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
 
 class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
-    """The resource manager provides access to resource lookup and creation session and provides
-    interoperability tests for various aspects of this service.
+    """The resource manager provides access to resource lookup and creation session and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager accept a ``Proxy``. The sessions included in
@@ -1958,8 +1936,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2003,8 +1980,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2048,8 +2024,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2093,8 +2068,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2142,8 +2116,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``resource_receiver, bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2250,8 +2224,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2295,8 +2268,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2340,8 +2312,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2389,8 +2360,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``group_receiver, bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2434,8 +2404,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2479,8 +2448,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2524,8 +2492,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2557,8 +2525,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipLookupSession
 
     def get_resource_relationship_lookup_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -2570,8 +2537,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2603,8 +2570,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipQuerySession
 
     def get_resource_relationship_query_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship query service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship query service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -2616,8 +2582,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2649,8 +2615,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipSearchSession
 
     def get_resource_relationship_search_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship search service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship search service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -2662,8 +2627,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2675,8 +2640,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipSearchSession
 
     def get_resource_relationship_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship administration
-            service.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service.
 
 
         :param proxy: a proxy
@@ -2696,8 +2660,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipAdminSession
 
     def get_resource_relationship_admin_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship administration service
-            for the given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -2709,8 +2672,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2743,10 +2706,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         """
         return # osid.resource.ResourceRelationshipNotificationSession
 
-    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver,
-        bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship notification service
-            for the given bin.
+    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver, bin_id, proxy):
+        """Gets the ``OsidSession`` associated with the resource relationship notification service for the given bin.
 
 
         :param resource_relationship_receiver: the notification callback
@@ -2758,8 +2719,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :return: a ``ResourceRelationshipNotificationSession``
         :rtype: ``osid.resource.ResourceRelationshipNotificationSession``
         :raise: ``NotFound`` -- no bin found by the given ``Id``
-        :raise: ``NullArgument`` -- ``resource_relationship_receiver, bin_id`` or ``proxy`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``resource_relationship_receiver, bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_resource_relationshipt_notification()`` or
             ``supports_visible_federation()`` is ``false``
@@ -2803,8 +2763,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :rtype: ``osid.resource.ResourceRelationshipBinAssignmentSession``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if

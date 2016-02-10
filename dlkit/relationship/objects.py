@@ -91,8 +91,7 @@ class RelationshipForm(osid_objects.OsidRelationshipForm):
     """
 
     def get_relationship_form_record(self, relationship_record_type):
-        """Gets the ``RelationshipFormRecord`` corresponding to the given relationship record
-            ``Type``.
+        """Gets the ``RelationshipFormRecord`` corresponding to the given relationship record ``Type``.
 
 
         :param relationship_record_type: a relationship record type
@@ -113,9 +112,9 @@ class RelationshipForm(osid_objects.OsidRelationshipForm):
 
 
 class RelationshipList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``Relationship`` provides a means for accessing ``Relationship``
-        elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``Relationship`` provides a means for accessing ``Relationship`` elements sequentially
+        either
+    one at a time or many at a time.
 
 
     Examples: while (rl.hasNext()) { Relationship relationship =
@@ -140,8 +139,8 @@ class RelationshipList(osid_objects.OsidList):
         """Gets the next ``Relationship`` in this list.
 
 
-        :return: the next ``Relationship`` in this list. The ``has_next()`` method should be used to
-            test that a next ``Relationship`` is available before calling this method.
+        :return: the next ``Relationship`` in this list. The ``has_next()`` method should be used to test that a next
+            ``Relationship`` is available before calling this method.
         :rtype: ``osid.relationship.Relationship``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -163,11 +162,10 @@ class RelationshipList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Relationship`` elements requested which must be less than or equal
-            to ``available()``
+        :param n: the number of ``Relationship`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Relationship`` elements.The length of the array is less than or equal
-            to the number specified.
+        :return: an array of ``Relationship`` elements.The length of the array is less than or equal to the number
+            specified.
         :rtype: ``osid.relationship.Relationship``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -253,8 +251,9 @@ class FamilyForm(osid_objects.OsidCatalogForm):
 
 
 class FamilyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either
+        one at a
+    time or many at a time.
 
 
     Examples: while (fl.hasNext()) { Family family = fl.getNextFamily();
@@ -279,8 +278,8 @@ class FamilyList(osid_objects.OsidList):
         """Gets the next ``Family`` in this list.
 
 
-        :return: the next ``Family`` in this list. The ``has_next()`` method should be used to test
-            that a next ``Family`` is available before calling this method.
+        :return: the next ``Family`` in this list. The ``has_next()`` method should be used to test that a next
+            ``Family`` is available before calling this method.
         :rtype: ``osid.relationship.Family``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -302,11 +301,9 @@ class FamilyList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Family`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Family`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Family`` elements.The length of the array is less than or equal to
-            the number specified.
+        :return: an array of ``Family`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.relationship.Family``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -386,9 +383,9 @@ class FamilyNode(osid_objects.OsidNode):
 
 
 class FamilyNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyNodeList`` provides a means for accessing ``FamilyNode``
-        elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``FamilyNodeList`` provides a means for accessing ``FamilyNode`` elements sequentially
+        either
+    one at a time or many at a time.
 
 
     Examples: while (fnl.hasNext()) { FamilyNode node =
@@ -413,8 +410,8 @@ class FamilyNodeList(osid_objects.OsidList):
         """Gets the next ``FamilyNode`` in this list.
 
 
-        :return: the next ``FamilyNode`` in this list. The ``has_next()`` method should be used to
-            test that a next ``FamilyNode`` is available before calling this method.
+        :return: the next ``FamilyNode`` in this list. The ``has_next()`` method should be used to test that a next
+            ``FamilyNode`` is available before calling this method.
         :rtype: ``osid.relationship.FamilyNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -436,11 +433,10 @@ class FamilyNodeList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``FamilyNode`` elements requested which must be less than or equal
-            to ``available()``
+        :param n: the number of ``FamilyNode`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``FamilyNode`` elements.The length of the array is less than or equal
-            to the number specified.
+        :return: an array of ``FamilyNode`` elements.The length of the array is less than or equal to the number
+            specified.
         :rtype: ``osid.relationship.FamilyNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

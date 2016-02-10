@@ -14,8 +14,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
     def __init__(self):
         self._provider_manager = None
-
-
     def supports_visible_federation(self):
         """Tests if federation is visible.
 
@@ -120,8 +118,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of assets and repositories is supported.
 
 
-        :return: ``true`` if asset repository mapping retrieval is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if asset repository mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -169,8 +166,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of assets and time coverage is supported.
 
 
-        :return: ``true`` if asset temporal mapping retrieval is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if asset temporal mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -346,8 +342,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if retrieval of composition to repository mappings is supported.
 
 
-        :return: ``true`` if composition to repository mapping is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if composition to repository mapping is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -363,8 +358,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if assigning composition to repository mappings is supported.
 
 
-        :return: ``true`` if composition to repository assignment is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if composition to repository assignment is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -705,8 +699,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
         :param composition_search_record_type: the composition serach type
         :type composition_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the composition search record type is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if the composition search record type is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``composition_search_record_type`` is ``null``
 
@@ -776,8 +769,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
         :param repository_search_record_type: the repository search type
         :type repository_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the repository search record type is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if the repository search record type is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``repository_search_record_type`` is ``null``
 
@@ -884,8 +876,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1091,8 +1083,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any
-            asset can be assigned.
+        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -1110,8 +1101,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.id.IdList
 
     def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
-        """Gets a list of repositories including and under the given repository node in which a
-            specific asset can be assigned.
+        """Gets a list of repositories including and under the given repository node in which a specific asset can be
+            assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -1159,8 +1150,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :type asset_id: ``osid.id.Id``
         :param repository_id: the ``Id`` of the ``Repository``
         :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not
-            assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
+            ``repository_id``
         :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1177,8 +1168,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
 # The following methods are from osid.repository.CompositionRepositorySession
 
     def use_comparative_composition_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1278,8 +1269,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.repository.CompositionList
 
     def get_composition_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository``
-            objects.
+        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
 
 
         :param repository_ids: list of repository ``Ids``
@@ -1408,8 +1398,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any
-            composition can be assigned.
+        """Gets a list of repositories including and under the given repository node in which any composition can be
+            assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -1427,8 +1417,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.id.IdList
 
     def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
-        """Gets a list of repositories including and under the given repository node in which a
-            specific composition can be assigned.
+        """Gets a list of repositories including and under the given repository node in which a specific composition can
+            be assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -1476,8 +1466,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :type composition_id: ``osid.id.Id``
         :param repository_id: the ``Id`` of the ``Repository``
         :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or
-            ``composition_id`` not assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
+            ``repository_id``
         :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1517,8 +1507,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1611,8 +1601,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.repository.RepositoryList
 
     def get_repositories_by_genus_type(self, repository_genus_type):
-        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does
-            not include repositories of types derived from the specified ``Type``.
+        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does not include
+            repositories of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -1637,9 +1627,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.repository.RepositoryList
 
     def get_repositories_by_parent_genus_type(self, repository_genus_type):
-        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and
-            include any additional repositories with genus types derived from the specified
-            ``Type``.
+        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and include any additional
+            repositories with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -1842,8 +1831,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
         :param repository_record_types: array of repository record types
         :type repository_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Repository`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Repository`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``repository_record_types`` is ``null``
 
@@ -1890,8 +1878,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``repository_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``repository_form`` did not originate from
-            ``get_repository_form_for_create()``
+        :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1958,8 +1945,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``repository_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``repository_form`` did not originate from
-            ``get_repository_form_for_update()``
+        :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2123,8 +2109,8 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the repository methods may omit or translate elements based on this
-            session, such as authorization, and not result in an error.
+        """The returns from the repository methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2399,8 +2385,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         :type id: ``osid.id.Id``
         :param repository_id: the ``Id`` of a repository
         :type repository_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``repository_id,``  ``false``
-            otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``repository_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``id`` is ``null``
@@ -2415,21 +2400,19 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
 
 
         :param repository_id: the ``Id`` to query
         :type repository_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: the specified repository node
         :rtype: ``osid.hierarchy.Node``
@@ -2445,21 +2428,19 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         return # osid.hierarchy.Node
 
-    def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
 
 
         :param repository_id: the ``Id`` to query
         :type repository_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: the specified repository node
         :rtype: ``osid.repository.RepositoryNode``
@@ -2638,8 +2619,9 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
 
 class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides
-    interoperability tests for various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -2803,8 +2785,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """Session state will never be saved"""
         self._session_management = DISABLED
         self.close_sessions()
-
-
     def get_asset_lookup_session(self):
         """Gets the ``OsidSession`` associated with the asset lookup service.
 
@@ -2825,8 +2805,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
     asset_lookup_session = property(fget=get_asset_lookup_session)
 
     def get_asset_lookup_session_for_repository(self, repository_id):
-        """Gets the ``OsidSession`` associated with the asset lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -2836,8 +2815,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2878,8 +2856,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2920,8 +2897,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2962,8 +2938,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3007,8 +2982,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``asset_receiver`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3108,8 +3082,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3150,8 +3123,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3192,8 +3165,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3234,8 +3206,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3304,8 +3276,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
     composition_lookup_session = property(fget=get_composition_lookup_session)
 
     def get_composition_lookup_session_for_repository(self, repository_id):
-        """Gets the ``OsidSession`` associated with the composition lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the composition lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -3315,8 +3286,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3357,8 +3327,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3399,8 +3368,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3412,8 +3380,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.repository.CompositionSearchSession
 
     def get_composition_admin_session(self):
-        """Gets a composition administration session for creating, updating and deleting
-            compositions.
+        """Gets a composition administration session for creating, updating and deleting compositions.
 
 
         :return: a ``CompositionAdminSession``
@@ -3442,8 +3409,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3474,8 +3440,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """
         return # osid.repository.CompositionNotificationSession
 
-    def get_composition_notification_session_for_repository(self, composition_receiver,
-        repository_id):
+    def get_composition_notification_session_for_repository(self, composition_receiver, repository_id):
         """Gets the composition notification session for the given repository.
 
 
@@ -3488,8 +3453,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``composition_receiver`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3617,8 +3582,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
     repository_search_session = property(fget=get_repository_search_session)
 
     def get_repository_admin_session(self):
-        """Gets the repository administrative session for creating, updating and deleteing
-            repositories.
+        """Gets the repository administrative session for creating, updating and deleteing repositories.
 
 
         :return: a ``RepositoryAdminSession``
@@ -3758,8 +3722,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3965,8 +3929,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any
-            asset can be assigned.
+        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -3984,8 +3947,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.id.IdList
 
     def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
-        """Gets a list of repositories including and under the given repository node in which a
-            specific asset can be assigned.
+        """Gets a list of repositories including and under the given repository node in which a specific asset can be
+            assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -4033,8 +3996,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :type asset_id: ``osid.id.Id``
         :param repository_id: the ``Id`` of the ``Repository``
         :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not
-            assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
+            ``repository_id``
         :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4051,8 +4014,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 # The following methods are from osid.repository.CompositionRepositorySession
 
     def use_comparative_composition_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4152,8 +4115,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.repository.CompositionList
 
     def get_composition_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository``
-            objects.
+        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
 
 
         :param repository_ids: list of repository ``Ids``
@@ -4282,8 +4244,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any
-            composition can be assigned.
+        """Gets a list of repositories including and under the given repository node in which any composition can be
+            assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -4301,8 +4263,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.id.IdList
 
     def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
-        """Gets a list of repositories including and under the given repository node in which a
-            specific composition can be assigned.
+        """Gets a list of repositories including and under the given repository node in which a specific composition can
+            be assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -4350,8 +4312,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :type composition_id: ``osid.id.Id``
         :param repository_id: the ``Id`` of the ``Repository``
         :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or
-            ``composition_id`` not assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
+            ``repository_id``
         :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4391,8 +4353,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4485,8 +4447,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.repository.RepositoryList
 
     def get_repositories_by_genus_type(self, repository_genus_type):
-        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does
-            not include repositories of types derived from the specified ``Type``.
+        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does not include
+            repositories of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -4511,9 +4473,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.repository.RepositoryList
 
     def get_repositories_by_parent_genus_type(self, repository_genus_type):
-        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and
-            include any additional repositories with genus types derived from the specified
-            ``Type``.
+        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and include any additional
+            repositories with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -4716,8 +4677,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
         :param repository_record_types: array of repository record types
         :type repository_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Repository`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Repository`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``repository_record_types`` is ``null``
 
@@ -4764,8 +4724,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NullArgument`` -- ``repository_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``repository_form`` did not originate from
-            ``get_repository_form_for_create()``
+        :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4832,8 +4791,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NullArgument`` -- ``repository_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``repository_form`` did not originate from
-            ``get_repository_form_for_update()``
+        :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4997,8 +4955,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the repository methods may omit or translate elements based on this
-            session, such as authorization, and not result in an error.
+        """The returns from the repository methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -5273,8 +5231,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :type id: ``osid.id.Id``
         :param repository_id: the ``Id`` of a repository
         :type repository_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``repository_id,``  ``false``
-            otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``repository_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``id`` is ``null``
@@ -5289,21 +5246,19 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """
         return # boolean
 
-    def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
 
 
         :param repository_id: the ``Id`` to query
         :type repository_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: the specified repository node
         :rtype: ``osid.hierarchy.Node``
@@ -5319,21 +5274,19 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """
         return # osid.hierarchy.Node
 
-    def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
 
 
         :param repository_id: the ``Id`` to query
         :type repository_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: the specified repository node
         :rtype: ``osid.repository.RepositoryNode``
@@ -5512,8 +5465,9 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
 
 class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides
-    interoperability tests for various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager support the passing of a ``Proxy`` for the
@@ -5606,8 +5560,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.AssetLookupSession
 
     def get_asset_lookup_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the asset lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -5619,8 +5572,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -5652,8 +5604,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.AssetQuerySession
 
     def get_asset_query_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the asset query service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the asset query service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -5665,8 +5616,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -5710,8 +5660,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -5755,8 +5704,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -5804,8 +5752,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``asset_receiver, repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -5912,8 +5859,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -5957,8 +5903,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6002,8 +5948,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6047,8 +5992,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6120,8 +6065,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.CompositionLookupSession
 
     def get_composition_lookup_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the composition lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the composition lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -6133,8 +6077,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6178,8 +6121,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6223,8 +6165,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6236,8 +6177,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.CompositionSearchSession
 
     def get_composition_admin_session(self, proxy):
-        """Gets a composition administration session for creating, updating and deleting
-            compositions.
+        """Gets a composition administration session for creating, updating and deleting compositions.
 
 
         :param proxy: a proxy
@@ -6269,8 +6209,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6303,8 +6242,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         """
         return # osid.repository.CompositionNotificationSession
 
-    def get_composition_notification_session_for_repository(self, composition_receiver,
-        repository_id, proxy):
+    def get_composition_notification_session_for_repository(self, composition_receiver, repository_id, proxy):
         """Gets the composition notification session for the given repository.
 
 
@@ -6319,8 +6257,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``composition_receiver, repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -6455,8 +6393,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.RepositorySearchSession
 
     def get_repository_admin_session(self, proxy):
-        """Gets the repository administrative session for creating, updating and deleteing
-            repositories.
+        """Gets the repository administrative session for creating, updating and deleteing repositories.
 
 
         :param proxy: a proxy
@@ -6601,8 +6538,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6808,8 +6745,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any
-            asset can be assigned.
+        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -6827,8 +6763,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.id.IdList
 
     def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
-        """Gets a list of repositories including and under the given repository node in which a
-            specific asset can be assigned.
+        """Gets a list of repositories including and under the given repository node in which a specific asset can be
+            assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -6876,8 +6812,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :type asset_id: ``osid.id.Id``
         :param repository_id: the ``Id`` of the ``Repository``
         :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not
-            assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
+            ``repository_id``
         :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -6894,8 +6830,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 # The following methods are from osid.repository.CompositionRepositorySession
 
     def use_comparative_composition_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6995,8 +6931,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.CompositionList
 
     def get_composition_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository``
-            objects.
+        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
 
 
         :param repository_ids: list of repository ``Ids``
@@ -7125,8 +7060,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # boolean
 
     def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any
-            composition can be assigned.
+        """Gets a list of repositories including and under the given repository node in which any composition can be
+            assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -7144,8 +7079,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.id.IdList
 
     def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
-        """Gets a list of repositories including and under the given repository node in which a
-            specific composition can be assigned.
+        """Gets a list of repositories including and under the given repository node in which a specific composition can
+            be assigned.
 
 
         :param repository_id: the ``Id`` of the ``Repository``
@@ -7193,8 +7128,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :type composition_id: ``osid.id.Id``
         :param repository_id: the ``Id`` of the ``Repository``
         :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or
-            ``composition_id`` not assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
+            ``repository_id``
         :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -7234,8 +7169,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -7328,8 +7263,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.RepositoryList
 
     def get_repositories_by_genus_type(self, repository_genus_type):
-        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does
-            not include repositories of types derived from the specified ``Type``.
+        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` which does not include
+            repositories of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -7354,9 +7289,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.RepositoryList
 
     def get_repositories_by_parent_genus_type(self, repository_genus_type):
-        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and
-            include any additional repositories with genus types derived from the specified
-            ``Type``.
+        """Gets a ``RepositoryList`` corresponding to the given repository genus ``Type`` and include any additional
+            repositories with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -7559,8 +7493,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
         :param repository_record_types: array of repository record types
         :type repository_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Repository`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Repository`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``repository_record_types`` is ``null``
 
@@ -7607,8 +7540,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NullArgument`` -- ``repository_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``repository_form`` did not originate from
-            ``get_repository_form_for_create()``
+        :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -7675,8 +7607,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NullArgument`` -- ``repository_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``repository_form`` did not originate from
-            ``get_repository_form_for_update()``
+        :raise: ``Unsupported`` -- ``repository_form`` did not originate from ``get_repository_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -7840,8 +7771,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # boolean
 
     def use_comparative_repository_view(self):
-        """The returns from the repository methods may omit or translate elements based on this
-            session, such as authorization, and not result in an error.
+        """The returns from the repository methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -8116,8 +8047,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :type id: ``osid.id.Id``
         :param repository_id: the ``Id`` of a repository
         :type repository_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``repository_id,``  ``false``
-            otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``repository_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``id`` is ``null``
@@ -8132,21 +8062,19 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         """
         return # boolean
 
-    def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_repository_node_ids(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
 
 
         :param repository_id: the ``Id`` to query
         :type repository_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: the specified repository node
         :rtype: ``osid.hierarchy.Node``
@@ -8162,21 +8090,19 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         """
         return # osid.hierarchy.Node
 
-    def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_repository_nodes(self, repository_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given repository.
 
 
         :param repository_id: the ``Id`` to query
         :type repository_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: the specified repository node
         :rtype: ``osid.repository.RepositoryNode``
@@ -8405,8 +8331,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         if session_name in self._provider_sessions:
             return self._provider_sessions[session_name]
         else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name +
-                '_for_repository')
+            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_repository')
             if self._proxy is None:
                 session = session_class(self._catalog.get_id())
             else:
@@ -8469,8 +8394,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """Session state will never be saved."""
         self._session_management = DISABLED
         self.close_sessions()
-
-
     def get_repository_record(self, repository_record_type):
         """Gets the record corresponding to the given ``Repository`` record ``Type``.
 
@@ -8559,8 +8482,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_asset_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -8687,8 +8610,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.repository.AssetList
 
     def get_assets_by_genus_type(self, asset_genus_type):
-        """Gets an ``AssetList`` corresponding to the given asset genus ``Type`` which does not
-            include assets of types derived from the specified ``Type``.
+        """Gets an ``AssetList`` corresponding to the given asset genus ``Type`` which does not include assets of types
+            derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known assets or
@@ -8712,8 +8635,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.repository.AssetList
 
     def get_assets_by_parent_genus_type(self, asset_genus_type):
-        """Gets an ``AssetList`` corresponding to the given asset genus ``Type`` and include any
-            additional assets with genus types derived from the specified ``Type``.
+        """Gets an ``AssetList`` corresponding to the given asset genus ``Type`` and include any additional assets with
+            genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known assets or
@@ -9106,8 +9029,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param asset_record_types: array of asset record types
         :type asset_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Asset`` creation using the specified record ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Asset`` creation using the specified record ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``asset_record_types`` is ``null``
 
@@ -9154,8 +9076,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``asset_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``asset_form`` did not originate from
-            ``get_asset_form_for_create()``
+        :raise: ``Unsupported`` -- ``asset_form`` did not originate from ``get_asset_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9222,8 +9143,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``asset_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``asset_form`` did not originate from
-            ``get_asset_form_for_update()``
+        :raise: ``Unsupported`` -- ``asset_form`` did not originate from ``get_asset_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9359,8 +9279,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param asset_content_record_types: array of asset content record types
         :type asset_content_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``AssetContent`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``AssetContent`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``asset_content_record_types`` is ``null``
 
@@ -9407,8 +9326,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``asset_content_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``asset_content_form`` did not originate from
-            ``get_asset_content_form_for_create()``
+        :raise: ``Unsupported`` -- ``asset_content_form`` did not originate from ``get_asset_content_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9474,8 +9392,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``asset_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``asset_content_form`` did not originate from
-            ``get_asset_content_form_for_update()``
+        :raise: ``Unsupported`` -- ``asset_content_form`` did not originate from ``get_asset_content_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9899,8 +9816,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_asset_composition_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10096,8 +10013,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
     def move_asset_ahead(self, asset_id, composition_id, reference_id):
-        """Reorders assets in a composition by moving the specified asset in front of a reference
-            asset.
+        """Reorders assets in a composition by moving the specified asset in front of a reference asset.
 
 
         :param asset_id: ``Id`` of the ``Asset``
@@ -10119,8 +10035,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
     def move_asset_behind(self, asset_id, composition_id, reference_id):
-        """Reorders assets in a composition by moving the specified asset behind of a reference
-            asset.
+        """Reorders assets in a composition by moving the specified asset behind of a reference asset.
 
 
         :param asset_id: ``Id`` of the ``Asset``
@@ -10149,8 +10064,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type asset_ids: ``osid.id.Id[]``
         :param composition_id: ``Id`` of the ``Composition``
         :type composition_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` not found or, an ``asset_id`` not related to
-            ``composition_id``
+        :raise: ``NotFound`` -- ``composition_id`` not found or, an ``asset_id`` not related to ``composition_id``
         :raise: ``NullArgument`` -- ``instruction_ids`` or ``agenda_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -10246,8 +10160,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_composition_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10415,8 +10329,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.repository.CompositionList
 
     def get_compositions_by_genus_type(self, composition_genus_type):
-        """Gets a ``CompositionList`` corresponding to the given composition genus ``Type`` which
-            does not include compositions of types derived from the specified ``Type``.
+        """Gets a ``CompositionList`` corresponding to the given composition genus ``Type`` which does not include
+            compositions of types derived from the specified ``Type``.
 
 
         :param composition_genus_type: a composition genus type
@@ -10435,9 +10349,8 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.repository.CompositionList
 
     def get_compositions_by_parent_genus_type(self, composition_genus_type):
-        """Gets a ``CompositionList`` corresponding to the given composition genus ``Type`` and
-            include any additional compositions with genus types derived from the specified
-            ``Type``.
+        """Gets a ``CompositionList`` corresponding to the given composition genus ``Type`` and include any additional
+            compositions with genus types derived from the specified ``Type``.
 
 
         :param composition_genus_type: a composition genus type
@@ -10742,8 +10655,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``composition_query`` or ``composition_search`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``composition_query`` or ``composition_search`` is not of this
-            service
+        :raise: ``Unsupported`` -- ``composition_query`` or ``composition_search`` is not of this service
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -10849,8 +10761,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param composition_record_types: array of composition record types
         :type composition_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Composition`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Composition`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``composition_record_types`` is ``null``
 
@@ -10897,8 +10808,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``composition_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``composition_form`` did not originate from
-            ``get_composition_form_for_create()``
+        :raise: ``Unsupported`` -- ``composition_form`` did not originate from ``get_composition_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -10965,8 +10875,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``composition_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``composition_form`` did not originate from
-            ``get_composition_form_for_update()``
+        :raise: ``Unsupported`` -- ``composition_form`` did not originate from ``get_composition_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -11042,8 +10951,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type composition_id: ``osid.id.Id``
         :param child_composition_id: the ``Id`` of a child ``Composition``
         :type child_composition_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``child_composition_id`` is already a child of
-            ``composition_id``
+        :raise: ``AlreadyExists`` -- ``child_composition_id`` is already a child of ``composition_id``
         :raise: ``NotFound`` -- ``composition_id`` or ``child_composition_id`` is not found
         :raise: ``NullArgument`` -- ``composition_id`` or ``child_composition_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -11064,8 +10972,7 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type composition_id: ``osid.id.Id``
         :param child_composition_id: the ``Id`` of a child ``Composition``
         :type child_composition_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``child_composition_id`` is not found or not
-            related
+        :raise: ``NotFound`` -- ``composition_id`` or ``child_composition_id`` is not found or not related
         :raise: ``NullArgument`` -- ``composition_id`` or ``child_composition_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -11131,9 +11038,9 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class RepositoryList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository``
-        elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository`` elements sequentially
+        either
+    one at a time or many at a time.
 
 
     Examples: while (rl.hasNext()) { Repository repository =
@@ -11158,8 +11065,8 @@ class RepositoryList(osid_objects.OsidList):
         """Gets the next ``Repository`` in this list.
 
 
-        :return: the next ``Repository`` in this list. The ``has_next()`` method should be used to
-            test that a next ``Repository`` is available before calling this method.
+        :return: the next ``Repository`` in this list. The ``has_next()`` method should be used to test that a next
+            ``Repository`` is available before calling this method.
         :rtype: ``osid.repository.Repository``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -11174,15 +11081,14 @@ class RepositoryList(osid_objects.OsidList):
     next_repository = property(fget=get_next_repository)
 
     def get_next_repositories(self, n):
-        """Gets the next set of ``Repository`` elements in this list which must be less than or
-            equal to the return from ``available()``.
+        """Gets the next set of ``Repository`` elements in this list which must be less than or equal to the return from
+            ``available()``.
 
 
-        :param n: the number of ``Repository`` elements requested which must be less than or equal
-            to ``available()``
+        :param n: the number of ``Repository`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Repository`` elements.The length of the array is less than or equal
-            to the number specified.
+        :return: an array of ``Repository`` elements.The length of the array is less than or equal to the number
+            specified.
         :rtype: ``osid.repository.Repository``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

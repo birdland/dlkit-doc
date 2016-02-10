@@ -2,9 +2,9 @@
 
 
 class Metadata:
-    """The ``Metadata`` interface defines a set of methods describing a the syntax and rules for
-        creating
-    and updating a data element inside an ``OsidForm``.
+    """The ``Metadata`` interface defines a set of methods describing a the syntax and rules for creating and updating a
+        data
+    element inside an ``OsidForm``.
 
 
     This interface provides a means to retrieve special restrictions
@@ -218,8 +218,8 @@ class Metadata:
     units = property(fget=get_units)
 
     def get_minimum_elements(self):
-        """In the case where an array or list of elements is specified in an ``OsidForm,`` this
-            specifies the minimum number of elements that must be included.
+        """In the case where an array or list of elements is specified in an ``OsidForm,`` this specifies the minimum
+            number of elements that must be included.
 
 
         :return: the minimum elements or ``1`` if ``is_array()`` is ``false``
@@ -237,8 +237,8 @@ class Metadata:
     minimum_elements = property(fget=get_minimum_elements)
 
     def get_maximum_elements(self):
-        """In the case where an array or list of elements is specified in an ``OsidForm,`` this
-            specifies the maximum number of elements that can be specified.
+        """In the case where an array or list of elements is specified in an ``OsidForm,`` this specifies the maximum
+            number of elements that can be specified.
 
 
         :return: the maximum elements or ``1`` if ``is_array()`` is ``false``
@@ -339,8 +339,7 @@ class Metadata:
 
         :return: the existing cardinal values
         :rtype: ``cardinal``
-        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL`` or ``is_value_known()`` is
-            ``false``
+        :raise: ``IllegalState`` -- syntax is not a ``CARDINAL`` or ``is_value_known()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -493,8 +492,7 @@ class Metadata:
 
         :return: the existing coordinate values
         :rtype: ``osid.mapping.Coordinate``
-        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE`` or ``is_value_known()`` is
-            ``false``
+        :raise: ``IllegalState`` -- syntax is not a ``COORDINATE`` or ``is_value_known()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -624,8 +622,7 @@ class Metadata:
 
         :return: the existing currency values
         :rtype: ``osid.financials.Currency``
-        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY`` or ``is_value_known()`` is
-            ``false``
+        :raise: ``IllegalState`` -- syntax is not a ``CURRENCY`` or ``is_value_known()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -807,8 +804,7 @@ class Metadata:
 
         :return: the existing date time values
         :rtype: ``osid.calendaring.DateTime``
-        :raise: ``IllegalState`` -- syntax is not a ``DATETIME`` or ``is_value_known()`` is
-            ``false``
+        :raise: ``IllegalState`` -- syntax is not a ``DATETIME`` or ``is_value_known()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1032,8 +1028,7 @@ class Metadata:
 
         :return: the existing distance values
         :rtype: ``osid.mapping.Distance``
-        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE`` or ``is_value_known()`` is
-            ``false``
+        :raise: ``IllegalState`` -- syntax is not a ``DISTANCE`` or ``is_value_known()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1128,8 +1123,7 @@ class Metadata:
 
         :return: the existing duration values
         :rtype: ``osid.calendaring.Duration``
-        :raise: ``IllegalState`` -- syntax is not a ``DURATION`` or ``is_value_known()`` is
-            ``false``
+        :raise: ``IllegalState`` -- syntax is not a ``DURATION`` or ``is_value_known()`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*

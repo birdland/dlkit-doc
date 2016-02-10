@@ -324,8 +324,9 @@ class CommentForm(osid_objects.OsidRelationshipForm):
 
 
 class CommentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``CommentList`` provides a means for accessing ``Comment`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``CommentList`` provides a means for accessing ``Comment`` elements sequentially either
+        one at
+    a time or many at a time.
 
 
     Examples: while (cl.hasNext()) { Comment comment =
@@ -350,8 +351,8 @@ class CommentList(osid_objects.OsidList):
         """Gets the next ``Comment`` in this list.
 
 
-        :return: the next ``Comment`` in this list. The ``has_next()`` method should be used to test
-            that a next ``Comment`` is available before calling this method.
+        :return: the next ``Comment`` in this list. The ``has_next()`` method should be used to test that a next
+            ``Comment`` is available before calling this method.
         :rtype: ``osid.commenting.Comment``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -373,11 +374,9 @@ class CommentList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Comment`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Comment`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Comment`` elements.The length of the array is less than or equal to
-            the number specified.
+        :return: an array of ``Comment`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.commenting.Comment``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -461,9 +460,9 @@ class BookForm(osid_objects.OsidCatalogForm):
 
 
 class BookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements
-        sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at
+        a time
+    or many at a time.
 
 
     Examples: while (bl.hasNext()) { Book book = bl.getNextBook(); }
@@ -487,8 +486,8 @@ class BookList(osid_objects.OsidList):
         """Gets the next ``Book`` in this list.
 
 
-        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test
-            that a next ``Book`` is available before calling this method.
+        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test that a next ``Book``
+            is available before calling this method.
         :rtype: ``osid.commenting.Book``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -510,11 +509,9 @@ class BookList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Book`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Book`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Book`` elements.The length of the array is less than or equal to the
-            number specified.
+        :return: an array of ``Book`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.commenting.Book``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -594,9 +591,9 @@ class BookNode(osid_objects.OsidNode):
 
 
 class BookNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookNodeList`` provides a means for accessing ``BookNode``
-        elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``BookNodeList`` provides a means for accessing ``BookNode`` elements sequentially
+        either one
+    at a time or many at a time.
 
 
     Examples: while (bnl.hasNext()) { BookNode node =
@@ -621,8 +618,8 @@ class BookNodeList(osid_objects.OsidList):
         """Gets the next ``BookNode`` in this list.
 
 
-        :return: the next ``BookNode`` in this list. The ``has_next()`` method should be used to
-            test that a next ``BookNode`` is available before calling this method.
+        :return: the next ``BookNode`` in this list. The ``has_next()`` method should be used to test that a next
+            ``BookNode`` is available before calling this method.
         :rtype: ``osid.commenting.BookNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -644,11 +641,10 @@ class BookNodeList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``BookNode`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``BookNode`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``BookNode`` elements.The length of the array is less than or equal to
-            the number specified.
+        :return: an array of ``BookNode`` elements.The length of the array is less than or equal to the number
+            specified.
         :rtype: ``osid.commenting.BookNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

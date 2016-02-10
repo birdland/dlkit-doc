@@ -208,8 +208,7 @@ class Browsable:
 
 
 class Suppliable:
-    """A marker interface for OSID Provider-owned objects used to supply input from an OSID
-        Consumer."""
+    """A marker interface for OSID Provider-owned objects used to supply input from an OSID Consumer."""
 
 
 
@@ -290,10 +289,10 @@ class Subjugateable:
 
 
 class Aggregateable:
-    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the
-        definition is
-    based on an included set of other ``OsidObjects`` which are directly accessible and do not exist
-    outside the context of the parent object.
+    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the definition is based on an
+        included
+    set of other ``OsidObjects`` which are directly accessible and do not exist outside the context of the parent
+    object.
 
 
     ``Aggregateables`` allow for an ``OsidObject`` to stand alone
@@ -325,16 +324,16 @@ class Aggregateable:
 
 
 class Containable:
-    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive
-    composition of itself directly accessible without knowledge of the originating service."""
+    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself
+    directly accessible without knowledge of the originating service."""
 
     def is_sequestered(self):
-        """Tests if this ``Containable`` is sequestered in that it should not appear outside of its
-            aggregated composition.
+        """Tests if this ``Containable`` is sequestered in that it should not appear outside of its aggregated
+            composition.
 
 
-        :return: ``true`` if this containable is sequestered, ``false`` if this containable may
-            appear outside its aggregate
+        :return: ``true`` if this containable is sequestered, ``false`` if this containable may appear outside its
+            aggregate
         :rtype: ``boolean``
 
 
@@ -450,9 +449,7 @@ class Sourceable:
 
 
 class Federateable:
-    """``Federateable`` is used to indicate an ``OsidObject`` can be federated using the OSID
-        Hierarchy
-    pattern.
+    """``Federateable`` is used to indicate an ``OsidObject`` can be federated using the OSID Hierarchy pattern.
 
 
     An OSID federation of ``OsidObjects`` is where it is inferred from
@@ -541,8 +538,7 @@ class Operable:
         return ``false``.
 
 
-        :return: ``true`` if this operable is enabled, ``false`` if the active status is determined
-            by other rules
+        :return: ``true`` if this operable is enabled, ``false`` if the active status is determined by other rules
         :rtype: ``boolean``
 
 
@@ -563,8 +559,7 @@ class Operable:
         ``is_enabled()`` must return ``false``.
 
 
-        :return: ``true`` if this operable is disabled, ``false`` if the active status is determined
-            by other rules
+        :return: ``true`` if this operable is disabled, ``false`` if the active status is determined by other rules
         :rtype: ``boolean``
 
 

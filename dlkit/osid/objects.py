@@ -93,8 +93,8 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     """
 
     def get_display_name(self):
-        """Gets the preferred display name associated with this instance of this OSID object
-            appropriate for display to the user.
+        """Gets the preferred display name associated with this instance of this OSID object appropriate for display to
+            the user.
 
 
         :return: the display name
@@ -448,8 +448,7 @@ class OsidRule(OsidObject, osid_markers.Operable):
 
 
 class OsidEnabler(OsidRule, osid_markers.Temporal):
-    """``OsidEnabler`` is used to manage the effectiveness, enabledness, or operation of an
-        ``OsidObejct``.
+    """``OsidEnabler`` is used to manage the effectiveness, enabledness, or operation of an ``OsidObejct``.
 
 
     The ``OsidEnabler`` itself is active or inactive When an
@@ -563,8 +562,8 @@ class OsidEnabler(OsidRule, osid_markers.Temporal):
     schedule = property(fget=get_schedule)
 
     def is_effective_by_event(self):
-        """Tests if the effectiveness of the enabler is governed by an ``Event`` such that the start
-            and end dates of the event govern the effectiveness.
+        """Tests if the effectiveness of the enabler is governed by an ``Event`` such that the start and end dates of
+            the event govern the effectiveness.
 
 
         The event may also be a ``RecurringEvent`` in which case the
@@ -790,9 +789,9 @@ class OsidGovernator(OsidObject, osid_markers.Operable, osid_markers.Sourceable)
 
 
 class OsidCompendium(OsidObject, osid_markers.Subjugateable):
-    """``OsidCompendium`` is the top level interface for reports based on measurements,
-        calculations,
-    summaries, or views of transactional activity within periods of time.
+    """``OsidCompendium`` is the top level interface for reports based on measurements, calculations, summaries, or
+        views of
+    transactional activity within periods of time.
 
 
     This time dimension of this report may align with managed time
@@ -862,8 +861,7 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
     """
 
     def get_start_date(self):
-        """Gets the start date used in the evaluation of the transactional data on which this report
-            is based.
+        """Gets the start date used in the evaluation of the transactional data on which this report is based.
 
 
         :return: the date
@@ -881,8 +879,7 @@ class OsidCompendium(OsidObject, osid_markers.Subjugateable):
     start_date = property(fget=get_start_date)
 
     def get_end_date(self):
-        """Gets the end date used in the evaluation of the transactional data on which this report
-            is based.
+        """Gets the end date used in the evaluation of the transactional data on which this report is based.
 
 
         :return: the date
@@ -1016,8 +1013,7 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         """Tests if this form is for an update operation.
 
 
-        :return: ``true`` if this form is for an update operation, ``false`` if for a create
-            operation
+        :return: ``true`` if this form is for an update operation, ``false`` if for a create operation
         :rtype: ``boolean``
 
 
@@ -1048,12 +1044,10 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
     default_locale = property(fget=get_default_locale)
 
     def get_locales(self):
-        """Gets a list of locales for available ``DisplayText`` translations that can be performed
-            using this form.
+        """Gets a list of locales for available ``DisplayText`` translations that can be performed using this form.
 
 
-        :return: a list of available locales or an empty list if no translation operations are
-            available
+        :return: a list of available locales or an empty list if no translation operations are available
         :rtype: ``osid.locale.LocaleList``
 
 
@@ -1085,8 +1079,7 @@ class OsidForm(osid_markers.Identifiable, osid_markers.Suppliable):
         :param script_type: the script type
         :type script_type: ``osid.type.Type``
         :raise: ``NullArgument`` -- ``language_type`` or ``script_type`` is null
-        :raise: ``Unsupported`` -- ``language_type`` and ``script_type`` not available from
-            ``get_locales()``
+        :raise: ``Unsupported`` -- ``language_type`` and ``script_type`` not available from ``get_locales()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1463,8 +1456,7 @@ class OsidSourceableForm(OsidForm):
         """Removes the provider.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1514,8 +1506,7 @@ class OsidSourceableForm(OsidForm):
         """Removes the branding.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1565,8 +1556,7 @@ class OsidSourceableForm(OsidForm):
         """Removes the license.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1625,8 +1615,7 @@ class OsidOperableForm(OsidForm):
         """Removes the administratively enabled flag.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1675,8 +1664,7 @@ class OsidOperableForm(OsidForm):
         """Removes the administratively disabled flag.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1958,8 +1946,7 @@ class OsidRuleForm(OsidObjectForm, OsidOperableForm):
         """Removes the rule.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2013,8 +2000,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """Removes the schedule.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2064,8 +2050,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """Removes the event.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2115,8 +2100,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """Removes the cyclic event.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2166,8 +2150,7 @@ class OsidEnablerForm(OsidRuleForm, OsidTemporalForm):
         """Removes the resource demographic.
 
 
-        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()``
-            is ``true``
+        :raise: ``NoAccess`` -- ``Metadata.isRequired()`` is ``true`` or ``Metadata.isReadOnly()`` is ``true``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2442,8 +2425,7 @@ class OsidList:
         """Tests if there are more elements in this list.
 
 
-        :return: ``true`` if more elements are available in this list, ``false`` if the end of the
-            list has been reached
+        :return: ``true`` if more elements are available in this list, ``false`` if the end of the list has been reached
         :rtype: ``boolean``
 
 

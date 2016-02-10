@@ -13,8 +13,6 @@ class ResourceProfile(osid_managers.OsidProfile):
 
     def __init__(self):
         self._provider_manager = None
-
-
     def supports_visible_federation(self):
         """Tests if federation is visible.
 
@@ -247,8 +245,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of resource and agents is supported.
 
 
-        :return: ``true`` if resource agent mapping retrieval is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if resource agent mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -360,8 +357,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of resource relationships and bins is supported.
 
 
-        :return: ``true`` if resource relationship bin mapping retrieval is supported ``,``
-            ``false`` otherwise
+        :return: ``true`` if resource relationship bin mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -377,8 +373,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if managing mappings of resource relationships and bins is supported.
 
 
-        :return: ``true`` if resource relationship bin assignment is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if resource relationship bin assignment is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -394,8 +389,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if resource relationship smart bins are available.
 
 
-        :return: ``true`` if resource relationship smart bins are supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if resource relationship smart bins are supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -648,8 +642,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         """Tests if the given ``ResourceRelationship`` record type is supported.
 
 
-        :param resource_relationship_record_type: a ``Type`` indicating a ``ResourceRelationship``
-            record type
+        :param resource_relationship_record_type: a ``Type`` indicating a ``ResourceRelationship`` record type
         :type resource_relationship_record_type: ``osid.type.Type``
         :return: ``true`` if the given type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -680,13 +673,12 @@ class ResourceProfile(osid_managers.OsidProfile):
 
     resource_relationship_search_record_types = property(fget=get_resource_relationship_search_record_types)
 
-    def supports_resource_relationship_search_record_type(self,
-        resource_relationship_search_record_type):
+    def supports_resource_relationship_search_record_type(self, resource_relationship_search_record_type):
         """Tests if the given ``ResourceRelationship`` search record type is supported.
 
 
-        :param resource_relationship_search_record_type: a ``Type`` indicating a
-            ``ResourceRelationship`` search record type
+        :param resource_relationship_search_record_type: a ``Type`` indicating a ``ResourceRelationship`` search record
+            type
         :type resource_relationship_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -831,8 +823,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_resource_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -960,8 +952,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # osid.resource.ResourceList
 
     def get_resources_by_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not
-            include resources of types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not include resources
+            of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -985,8 +977,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # osid.resource.ResourceList
 
     def get_resources_by_parent_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include
-            any additional resources with genus types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include any additional
+            resources with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -1358,8 +1350,7 @@ class ResourceProfile(osid_managers.OsidProfile):
 
         :param resource_record_types: array of resource record types
         :type resource_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``resource_record_types`` is ``null``
 
@@ -1406,8 +1397,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_create()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1474,8 +1464,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_update()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1826,8 +1815,8 @@ class ResourceProfile(osid_managers.OsidProfile):
 # The following methods are from osid.resource.ResourceBinSession
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2056,8 +2045,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # boolean
 
     def get_assignable_bin_ids(self, bin_id):
-        """Gets a list of bins including and under the given bin node in which any resource can be
-            assigned.
+        """Gets a list of bins including and under the given bin node in which any resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -2075,8 +2063,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # osid.id.IdList
 
     def get_assignable_bin_ids_for_resource(self, bin_id, resource_id):
-        """Gets a list of bins including and under the given bin node in which a specific resource
-            can be assigned.
+        """Gets a list of bins including and under the given bin node in which a specific resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -2124,8 +2111,7 @@ class ResourceProfile(osid_managers.OsidProfile):
         :type resource_id: ``osid.id.Id``
         :param bin_id: the ``Id`` of the ``Bin``
         :type bin_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not
-            assigned to ``bin_id``
+        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not assigned to ``bin_id``
         :raise: ``NullArgument`` -- ``resource_id`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2201,8 +2187,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_agent_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2469,8 +2455,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         :type agent_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not
-            assigned to ``resource_id``
+        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not assigned to
+            ``resource_id``
         :raise: ``NullArgument`` -- ``agent_id`` or ``resource_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2510,8 +2496,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2603,8 +2589,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # osid.resource.BinList
 
     def get_bins_by_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include
-            bins of types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include bins of types derived
+            from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -2628,8 +2614,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # osid.resource.BinList
 
     def get_bins_by_parent_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any
-            additional bins with genus types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any additional bins with genus
+            types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -2831,8 +2817,7 @@ class ResourceProfile(osid_managers.OsidProfile):
 
         :param bin_record_types: array of bin record types
         :type bin_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``bin_record_types`` is ``null``
 
@@ -3106,8 +3091,8 @@ class ResourceProfile(osid_managers.OsidProfile):
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the bin methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the bin methods may omit or translate elements based on this session, such as authorization,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3403,14 +3388,13 @@ class ResourceProfile(osid_managers.OsidProfile):
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.hierarchy.Node``
@@ -3432,14 +3416,13 @@ class ResourceProfile(osid_managers.OsidProfile):
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.resource.BinNode``
@@ -3618,8 +3601,9 @@ class ResourceProfile(osid_managers.OsidProfile):
 
 
 class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, ResourceProfile):
-    """The resource manager provides access to resource lookup and creation sessions and provides
-    interoperability tests for various aspects of this service.
+    """The resource manager provides access to resource lookup and creation sessions and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -3781,8 +3765,6 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         """Session state will never be saved"""
         self._session_management = DISABLED
         self.close_sessions()
-
-
     def get_resource_lookup_session(self):
         """Gets the ``OsidSession`` associated with the resource lookup service.
 
@@ -3813,8 +3795,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3855,8 +3836,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3897,8 +3877,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3939,8 +3918,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -3984,8 +3962,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``resource_receiver`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4085,8 +4063,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4127,8 +4104,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4169,8 +4145,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4214,8 +4189,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``group_receiver`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4256,8 +4230,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4298,8 +4271,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4340,8 +4312,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4372,8 +4344,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_lookup_session = property(fget=get_resource_relationship_lookup_session)
 
     def get_resource_relationship_lookup_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -4383,8 +4354,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4415,8 +4386,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_query_session = property(fget=get_resource_relationship_query_session)
 
     def get_resource_relationship_query_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship query service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship query service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -4426,8 +4396,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4458,8 +4428,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_search_session = property(fget=get_resource_relationship_search_session)
 
     def get_resource_relationship_search_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship search service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship search service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -4469,8 +4438,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4482,8 +4451,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.resource.ResourceRelationshipSearchSession
 
     def get_resource_relationship_admin_session(self):
-        """Gets the ``OsidSession`` associated with the resource relationship administration
-            service.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service.
 
 
         :return: a ``ResourceRelationshipAdminSession``
@@ -4502,8 +4470,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
     resource_relationship_admin_session = property(fget=get_resource_relationship_admin_session)
 
     def get_resource_relationship_admin_session_for_bin(self, bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship administration service
-            for the given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -4513,8 +4480,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4545,10 +4512,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         """
         return # osid.resource.ResourceRelationshipNotificationSession
 
-    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver,
-        bin_id):
-        """Gets the ``OsidSession`` associated with the resource relationship notification service
-            for the given bin.
+    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver, bin_id):
+        """Gets the ``OsidSession`` associated with the resource relationship notification service for the given bin.
 
 
         :param resource_relationship_receiver: the notification callback
@@ -4598,8 +4563,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :return: a ``ResourceRelationshipBinAssignmentSession``
         :rtype: ``osid.resource.ResourceRelationshipBinAssignmentSession``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -4867,8 +4831,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # boolean
 
     def use_comparative_resource_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4996,8 +4960,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.resource.ResourceList
 
     def get_resources_by_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not
-            include resources of types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not include resources
+            of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -5021,8 +4985,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.resource.ResourceList
 
     def get_resources_by_parent_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include
-            any additional resources with genus types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include any additional
+            resources with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -5394,8 +5358,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
         :param resource_record_types: array of resource record types
         :type resource_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``resource_record_types`` is ``null``
 
@@ -5442,8 +5405,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_create()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5510,8 +5472,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_update()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5862,8 +5823,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 # The following methods are from osid.resource.ResourceBinSession
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6092,8 +6053,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # boolean
 
     def get_assignable_bin_ids(self, bin_id):
-        """Gets a list of bins including and under the given bin node in which any resource can be
-            assigned.
+        """Gets a list of bins including and under the given bin node in which any resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -6111,8 +6071,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.id.IdList
 
     def get_assignable_bin_ids_for_resource(self, bin_id, resource_id):
-        """Gets a list of bins including and under the given bin node in which a specific resource
-            can be assigned.
+        """Gets a list of bins including and under the given bin node in which a specific resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -6160,8 +6119,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :type resource_id: ``osid.id.Id``
         :param bin_id: the ``Id`` of the ``Bin``
         :type bin_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not
-            assigned to ``bin_id``
+        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not assigned to ``bin_id``
         :raise: ``NullArgument`` -- ``resource_id`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -6237,8 +6195,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # boolean
 
     def use_comparative_agent_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6505,8 +6463,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         :type agent_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not
-            assigned to ``resource_id``
+        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not assigned to
+            ``resource_id``
         :raise: ``NullArgument`` -- ``agent_id`` or ``resource_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -6546,8 +6504,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6639,8 +6597,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.resource.BinList
 
     def get_bins_by_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include
-            bins of types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include bins of types derived
+            from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -6664,8 +6622,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # osid.resource.BinList
 
     def get_bins_by_parent_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any
-            additional bins with genus types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any additional bins with genus
+            types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -6867,8 +6825,7 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
         :param bin_record_types: array of bin record types
         :type bin_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``bin_record_types`` is ``null``
 
@@ -7142,8 +7099,8 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the bin methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the bin methods may omit or translate elements based on this session, such as authorization,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -7439,14 +7396,13 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.hierarchy.Node``
@@ -7468,14 +7424,13 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.resource.BinNode``
@@ -7654,8 +7609,9 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
 
 class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
-    """The resource manager provides access to resource lookup and creation session and provides
-    interoperability tests for various aspects of this service.
+    """The resource manager provides access to resource lookup and creation session and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager accept a ``Proxy``. The sessions included in
@@ -7757,8 +7713,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7802,8 +7757,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7847,8 +7801,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7892,8 +7845,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -7941,8 +7893,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``resource_receiver, bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8049,8 +8001,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_membership()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8094,8 +8045,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_group()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8139,8 +8089,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_assignment()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8188,8 +8137,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``group_receiver, bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8233,8 +8181,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_group_hierarchy()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8278,8 +8225,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8323,8 +8269,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- ``bin_id`` not found
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_agent_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8356,8 +8302,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipLookupSession
 
     def get_resource_relationship_lookup_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship lookup service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -8369,8 +8314,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_lookup()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8402,8 +8347,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipQuerySession
 
     def get_resource_relationship_query_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship query service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship query service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -8415,8 +8359,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no ``Bin`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_query()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8448,8 +8392,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipSearchSession
 
     def get_resource_relationship_search_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship search service for the
-            given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship search service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -8461,8 +8404,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_search()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8474,8 +8417,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipSearchSession
 
     def get_resource_relationship_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship administration
-            service.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service.
 
 
         :param proxy: a proxy
@@ -8495,8 +8437,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceRelationshipAdminSession
 
     def get_resource_relationship_admin_session_for_bin(self, bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship administration service
-            for the given bin.
+        """Gets the ``OsidSession`` associated with the resource relationship administration service for the given bin.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -8508,8 +8449,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NotFound`` -- no bin found by the given ``Id``
         :raise: ``NullArgument`` -- ``bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_admin()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8542,10 +8483,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         """
         return # osid.resource.ResourceRelationshipNotificationSession
 
-    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver,
-        bin_id, proxy):
-        """Gets the ``OsidSession`` associated with the resource relationship notification service
-            for the given bin.
+    def get_resource_relationship_notification_session_for_bin(self, resource_relationship_receiver, bin_id, proxy):
+        """Gets the ``OsidSession`` associated with the resource relationship notification service for the given bin.
 
 
         :param resource_relationship_receiver: the notification callback
@@ -8557,8 +8496,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :return: a ``ResourceRelationshipNotificationSession``
         :rtype: ``osid.resource.ResourceRelationshipNotificationSession``
         :raise: ``NotFound`` -- no bin found by the given ``Id``
-        :raise: ``NullArgument`` -- ``resource_relationship_receiver, bin_id`` or ``proxy`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``resource_relationship_receiver, bin_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_resource_relationshipt_notification()`` or
             ``supports_visible_federation()`` is ``false``
@@ -8602,8 +8540,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :rtype: ``osid.resource.ResourceRelationshipBinAssignmentSession``
         :raise: ``NullArgument`` -- ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is
-            ``false``
+        :raise: ``Unimplemented`` -- ``supports_resource_relationship_bin_assignment()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -8881,8 +8818,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # boolean
 
     def use_comparative_resource_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -9010,8 +8947,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceList
 
     def get_resources_by_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not
-            include resources of types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not include resources
+            of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -9035,8 +8972,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.ResourceList
 
     def get_resources_by_parent_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include
-            any additional resources with genus types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include any additional
+            resources with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -9408,8 +9345,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
 
         :param resource_record_types: array of resource record types
         :type resource_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``resource_record_types`` is ``null``
 
@@ -9456,8 +9392,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_create()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9524,8 +9459,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_update()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -9876,8 +9810,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
 # The following methods are from osid.resource.ResourceBinSession
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10106,8 +10040,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # boolean
 
     def get_assignable_bin_ids(self, bin_id):
-        """Gets a list of bins including and under the given bin node in which any resource can be
-            assigned.
+        """Gets a list of bins including and under the given bin node in which any resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -10125,8 +10058,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.id.IdList
 
     def get_assignable_bin_ids_for_resource(self, bin_id, resource_id):
-        """Gets a list of bins including and under the given bin node in which a specific resource
-            can be assigned.
+        """Gets a list of bins including and under the given bin node in which a specific resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -10174,8 +10106,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :type resource_id: ``osid.id.Id``
         :param bin_id: the ``Id`` of the ``Bin``
         :type bin_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not
-            assigned to ``bin_id``
+        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not assigned to ``bin_id``
         :raise: ``NullArgument`` -- ``resource_id`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -10251,8 +10182,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # boolean
 
     def use_comparative_agent_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10519,8 +10450,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         :type agent_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not
-            assigned to ``resource_id``
+        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not assigned to
+            ``resource_id``
         :raise: ``NullArgument`` -- ``agent_id`` or ``resource_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -10560,8 +10491,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -10653,8 +10584,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.BinList
 
     def get_bins_by_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include
-            bins of types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include bins of types derived
+            from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -10678,8 +10609,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # osid.resource.BinList
 
     def get_bins_by_parent_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any
-            additional bins with genus types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any additional bins with genus
+            types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -10881,8 +10812,7 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
 
         :param bin_record_types: array of bin record types
         :type bin_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``bin_record_types`` is ``null``
 
@@ -11156,8 +11086,8 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the bin methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the bin methods may omit or translate elements based on this session, such as authorization,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -11453,14 +11383,13 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.hierarchy.Node``
@@ -11482,14 +11411,13 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.resource.BinNode``
@@ -11781,8 +11709,6 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         """Session state will never be saved."""
         self._session_management = DISABLED
         self.close_sessions()
-
-
     def get_bin_record(self, bin_record_type):
         """Gets the bin record corresponding to the given ``Bin`` record ``Type``.
 
@@ -11871,8 +11797,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_resource_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -12000,8 +11926,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.resource.ResourceList
 
     def get_resources_by_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not
-            include resources of types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not include resources
+            of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -12025,8 +11951,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # osid.resource.ResourceList
 
     def get_resources_by_parent_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include
-            any additional resources with genus types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include any additional
+            resources with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -12398,8 +12324,7 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         :param resource_record_types: array of resource record types
         :type resource_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``resource_record_types`` is ``null``
 
@@ -12446,8 +12371,7 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_create()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -12514,8 +12438,7 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_update()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -12925,8 +12848,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_agent_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -13193,8 +13116,8 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :type agent_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not
-            assigned to ``resource_id``
+        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not assigned to
+            ``resource_id``
         :raise: ``NullArgument`` -- ``agent_id`` or ``resource_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -13210,9 +13133,9 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class BinList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BinList`` provides a means for accessing ``Bin`` elements
-        sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``BinList`` provides a means for accessing ``Bin`` elements sequentially either one at a
+        time
+    or many at a time.
 
 
     Examples: while (bl.hasNext()) { Bin bin = bl.getNextBin(); }
@@ -13236,8 +13159,8 @@ class BinList(osid_objects.OsidList):
         """Gets the next ``Bin`` in this list.
 
 
-        :return: the next ``Bin`` in this list. The ``has_next()`` method should be used to test
-            that a next ``Bin`` is available before calling this method.
+        :return: the next ``Bin`` in this list. The ``has_next()`` method should be used to test that a next ``Bin`` is
+            available before calling this method.
         :rtype: ``osid.resource.Bin``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -13252,15 +13175,13 @@ class BinList(osid_objects.OsidList):
     next_bin = property(fget=get_next_bin)
 
     def get_next_bins(self, n):
-        """Gets the next set of ``Bin`` elements in this list which must be less than or equal to
-            the return from ``available()``.
+        """Gets the next set of ``Bin`` elements in this list which must be less than or equal to the return from
+            ``available()``.
 
 
-        :param n: the number of ``Bin`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Bin`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Bin`` elements.The length of the array is less than or equal to the
-            number specified.
+        :return: an array of ``Bin`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.resource.Bin``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

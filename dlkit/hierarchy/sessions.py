@@ -292,14 +292,13 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
 
         :param id: the ``Id`` to query
         :type id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a node
         :rtype: ``osid.hierarchy.Node``
@@ -453,8 +452,7 @@ class HierarchyDesignSession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param child_id: the ``Id`` of the child to remove
         :type child_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child
-            of ``id``
+        :raise: ``NotFound`` -- ``id`` or ``child_id`` was not found or ``child_id`` is not a child of ``id``
         :raise: ``NullArgument`` -- ``id`` or ``child_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -546,8 +544,8 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_hierarchy_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -640,8 +638,8 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include
-            hierarchies of types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given genus ``Type`` which does not include hierarchies of
+            types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -666,8 +664,8 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
         return # osid.hierarchy.HierarchyList
 
     def get_hierarchies_by_parent_genus_type(self, hierarchy_genus_type):
-        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include
-            any additional hierarchies with types derived from the specified ``Type``.
+        """Gets a ``HierarchyList`` corresponding to the given hierarchy genus ``Type`` and include any additional
+            hierarchies with types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -850,8 +848,7 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
 
         :param hierarchy_record_types: array of hierarchy record types
         :type hierarchy_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Hierarchy`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``hierarchy_record_types`` is ``null``
 
@@ -900,8 +897,7 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
-            ``get_hierarchy_form_for_create()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -968,8 +964,7 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``hierarchy_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from
-            ``get_hierarchy_form_for_update()``
+        :raise: ``Unsupported`` -- ``hierarchy_form`` did not originate from ``get_hierarchy_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*

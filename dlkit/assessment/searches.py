@@ -157,8 +157,7 @@ class AssessmentSearch(osid_searches.OsidSearch):
         pass
 
     def get_assessment_search_record(self, assessment_search_record_type):
-        """Gets the assessment search record corresponding to the given assessment search record
-            ``Type``.
+        """Gets the assessment search record corresponding to the given assessment search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -220,8 +219,7 @@ class AssessmentSearchResults(osid_searches.OsidSearchResults):
     assessment_query_inspector = property(fget=get_assessment_query_inspector)
 
     def get_assessment_search_results_record(self, assessment_search_record_type):
-        """Gets the assessment search order record corresponding to the given assessment search
-            record ``Type``.
+        """Gets the assessment search order record corresponding to the given assessment search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -245,8 +243,7 @@ class AssessmentSearchResults(osid_searches.OsidSearchResults):
 
 
 class AssessmentOfferedSearch(osid_searches.OsidSearch):
-    """``AssessmentOfferedSearch`` defines the interface for specifying assessment search
-        options."""
+    """``AssessmentOfferedSearch`` defines the interface for specifying assessment search options."""
 
     def search_among_assessments_offered(self, assessment_offrered_ids):
         """Execute this search among the given list of assessments.
@@ -280,8 +277,7 @@ class AssessmentOfferedSearch(osid_searches.OsidSearch):
         pass
 
     def get_assessment_offered_search_record(self, assessment_offered_search_record_type):
-        """Gets the assessment search record corresponding to the given assessment offered search
-            record ``Type``.
+        """Gets the assessment search record corresponding to the given assessment offered search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -294,8 +290,7 @@ class AssessmentOfferedSearch(osid_searches.OsidSearch):
         :rtype: ``osid.assessment.records.AssessmentOfferedSearchRecord``
         :raise: ``NullArgument`` -- ``assessment_offered_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(assessment_offered_search_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(assessment_offered_search_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -344,8 +339,8 @@ class AssessmentOfferedSearchResults(osid_searches.OsidSearchResults):
     assessment_offered_query_inspector = property(fget=get_assessment_offered_query_inspector)
 
     def get_assessment_offered_search_results_record(self, assessment_offered_search_record_type):
-        """Gets the assessment offered search results record corresponding to the given assessment
-            offered search record ``Type``.
+        """Gets the assessment offered search results record corresponding to the given assessment offered search record
+            ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -358,8 +353,7 @@ class AssessmentOfferedSearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.assessment.records.AssessmentOfferedSearchResultsRecord``
         :raise: ``NullArgument`` -- ``assessment_offered_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(assessment_offered_search_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(assessment_offered_search_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -404,8 +398,7 @@ class AssessmentTakenSearch(osid_searches.OsidSearch):
         pass
 
     def get_assessment_taken_search_record(self, assessment_taken_search_record_type):
-        """Gets the assessment taken search record corresponding to the given assessment taken
-            search record ``Type``.
+        """Gets the assessment taken search record corresponding to the given assessment taken search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -418,8 +411,7 @@ class AssessmentTakenSearch(osid_searches.OsidSearch):
         :rtype: ``osid.assessment.records.AssessmentTakenSearchRecord``
         :raise: ``NullArgument`` -- ``assessment_taken_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(assessment_taken_search_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(assessment_taken_search_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -468,8 +460,7 @@ class AssessmentTakenSearchResults(osid_searches.OsidSearchResults):
     assessment_taken_query_inspector = property(fget=get_assessment_taken_query_inspector)
 
     def get_assessment_taken_search_results_record(self, assessment_taken_search_record_type):
-        """Gets the assessment taken record corresponding to the given assessment taken search
-            record ``Type``.
+        """Gets the assessment taken record corresponding to the given assessment taken search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -482,8 +473,7 @@ class AssessmentTakenSearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.assessment.records.AssessmentTakenSearchResultsRecord``
         :raise: ``NullArgument`` -- ``assessment_taken_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(assessment_taken_search_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(assessment_taken_search_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -590,8 +580,7 @@ class BankSearchResults(osid_searches.OsidSearchResults):
     bank_query_inspector = property(fget=get_bank_query_inspector)
 
     def get_bank_search_results_record(self, bank_search_record_type):
-        """Gets the bank search results record corresponding to the given bank search record
-            ``Type``.
+        """Gets the bank search results record corresponding to the given bank search record ``Type``.
 
 
         This method is used to retrieve an object implementing the

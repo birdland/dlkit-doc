@@ -37,8 +37,7 @@ class ResourceSearch(osid_searches.OsidSearch):
         pass
 
     def get_resource_search_record(self, resource_search_record_type):
-        """Gets the resource search record corresponding to the given resource search record
-            ``Type``.
+        """Gets the resource search record corresponding to the given resource search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -51,8 +50,7 @@ class ResourceSearch(osid_searches.OsidSearch):
         :rtype: ``osid.resource.records.ResourceSearchRecord``
         :raise: ``NullArgument`` -- ``resource_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type_type(resource_search_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type_type(resource_search_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -101,8 +99,7 @@ class ResourceSearchResults(osid_searches.OsidSearchResults):
     resource_query_inspector = property(fget=get_resource_query_inspector)
 
     def get_resource_search_results_record(self, resource_search_record_type):
-        """Gets the resource search results record corresponding to the given resource search record
-            ``Type``.
+        """Gets the resource search results record corresponding to the given resource search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -115,8 +112,7 @@ class ResourceSearchResults(osid_searches.OsidSearchResults):
         :rtype: ``osid.resource.records.ResourceSearchResultsRecord``
         :raise: ``NullArgument`` -- ``resource_search_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type_type(resource_search_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type_type(resource_search_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*

@@ -461,9 +461,8 @@ class OsidRuntimeProfile(OsidProfile):
 
 
 class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
-    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required
-        for
-    running OSID implementations such as search paths and configurations."""
+    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required for running OSID
+    implementations such as search paths and configurations."""
 
     def get_manager(self, osid, impl_class_name, version):
         """Finds, loads and instantiates providers of OSID managers.

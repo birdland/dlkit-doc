@@ -86,8 +86,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any assessment assigned.
 
 
-        :param match: ``true`` to match objectives with any assessment, ``false`` to match
-            objectives with no assessment
+        :param match: ``true`` to match objectives with any assessment, ``false`` to match objectives with no assessment
         :type match: ``boolean``
 
 
@@ -189,8 +188,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any knowledge category.
 
 
-        :param match: ``true`` to match objectives with any knowledge category, ``false`` to match
-            objectives with no knowledge category
+        :param match: ``true`` to match objectives with any knowledge category, ``false`` to match objectives with no
+            knowledge category
         :type match: ``boolean``
 
 
@@ -292,8 +291,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any cognitive process.
 
 
-        :param match: ``true`` to match objectives with any cognitive process, ``false`` to match
-            objectives with no cognitive process
+        :param match: ``true`` to match objectives with any cognitive process, ``false`` to match objectives with no
+            cognitive process
         :type match: ``boolean``
 
 
@@ -395,8 +394,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related activity.
 
 
-        :param match: ``true`` to match objectives with any activity, ``false`` to match objectives
-            with no activity
+        :param match: ``true`` to match objectives with any activity, ``false`` to match objectives with no activity
         :type match: ``boolean``
 
 
@@ -498,8 +496,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related requisite.
 
 
-        :param match: ``true`` to match objectives with any requisite, ``false`` to match objectives
-            with no requisite
+        :param match: ``true`` to match objectives with any requisite, ``false`` to match objectives with no requisite
         :type match: ``boolean``
 
 
@@ -601,8 +598,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related dependents.
 
 
-        :param match: ``true`` to match objectives with any dependent, ``false`` to match objectives
-            with no dependents
+        :param match: ``true`` to match objectives with any dependent, ``false`` to match objectives with no dependents
         :type match: ``boolean``
 
 
@@ -704,8 +700,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches an objective that has any related equivalents.
 
 
-        :param match: ``true`` to match objectives with any equivalent, ``false`` to match
-            objectives with no equivalents
+        :param match: ``true`` to match objectives with any equivalent, ``false`` to match objectives with no
+            equivalents
         :type match: ``boolean``
 
 
@@ -734,8 +730,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
     equivalent_objective_terms = property(fdel=clear_equivalent_objective_terms)
 
     def match_ancestor_objective_id(self, objective_id, match):
-        """Sets the objective ``Id`` for this query to match objectives that have the specified
-            objective as an ancestor.
+        """Sets the objective ``Id`` for this query to match objectives that have the specified objective as an
+            ancestor.
 
 
         :param objective_id: an objective ``Id``
@@ -808,8 +804,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches objectives that have any ancestor.
 
 
-        :param match: ``true`` to match objective with any ancestor, ``false`` to match root
-            objectives
+        :param match: ``true`` to match objective with any ancestor, ``false`` to match root objectives
         :type match: ``boolean``
 
 
@@ -838,8 +833,8 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
     ancestor_objective_terms = property(fdel=clear_ancestor_objective_terms)
 
     def match_descendant_objective_id(self, objective_id, match):
-        """Sets the objective ``Id`` for this query to match objectives that have the specified
-            objective as a descendant.
+        """Sets the objective ``Id`` for this query to match objectives that have the specified objective as a
+            descendant.
 
 
         :param objective_id: an objective ``Id``
@@ -912,8 +907,7 @@ class ObjectiveQuery(osid_queries.OsidObjectQuery, osid_queries.OsidFederateable
         """Matches objectives that have any ancestor.
 
 
-        :param match: ``true`` to match objectives with any ancestor, ``false`` to match leaf
-            objectives
+        :param match: ``true`` to match objectives with any ancestor, ``false`` to match leaf objectives
         :type match: ``boolean``
 
 
@@ -1220,8 +1214,7 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         """Matches an activity that has any objective assigned.
 
 
-        :param match: ``true`` to match activities with any asset, ``false`` to match activities
-            with no asset
+        :param match: ``true`` to match activities with any asset, ``false`` to match activities with no asset
         :type match: ``boolean``
 
 
@@ -1323,8 +1316,7 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         """Matches an activity that has any course assigned.
 
 
-        :param match: ``true`` to match activities with any courses, ``false`` to match activities
-            with no courses
+        :param match: ``true`` to match activities with any courses, ``false`` to match activities with no courses
         :type match: ``boolean``
 
 
@@ -1426,8 +1418,8 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         """Matches an activity that has any assessment assigned.
 
 
-        :param match: ``true`` to match activities with any assessments, ``false`` to match
-            activities with no assessments
+        :param match: ``true`` to match activities with any assessments, ``false`` to match activities with no
+            assessments
         :type match: ``boolean``
 
 
@@ -1564,6 +1556,484 @@ class ActivityQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateable
         return # osid.learning.records.ActivityQueryRecord
 
 
+class ProficiencyQuery(osid_queries.OsidRelationshipQuery):
+    """This is the query for searching proficiencies.
+
+
+    Each method match specifies an ``AND`` term while multiple
+    invocations of the same method produce a nested ``OR``.
+
+
+    """
+
+    def match_resource_id(self, resource_id, match):
+        """Sets the resource ``Id`` for this query.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param match: ``true`` if a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_resource_id_terms(self):
+        """Clears the resource ``Id`` terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    resource_id_terms = property(fdel=clear_resource_id_terms)
+
+    def supports_resource_query(self):
+        """Tests if a ``ResourceQuery`` is available.
+
+
+        :return: ``true`` if a resource query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_resource_query(self):
+        """Gets the query for a resource.
+
+
+        Multiple retrievals produce a nested ``OR`` term.
+
+
+        :return: the resource query
+        :rtype: ``osid.resource.ResourceQuery``
+        :raise: ``Unimplemented`` -- ``supports_resource_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_resource_query()`` is ``true``.*
+
+
+        """
+        return # osid.resource.ResourceQuery
+
+    resource_query = property(fget=get_resource_query)
+
+    def clear_resource_terms(self):
+        """Clears the resource terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    resource_terms = property(fdel=clear_resource_terms)
+
+    def match_objective_id(self, objective_id, match):
+        """Sets the objective ``Id`` for this query.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_objective_id_terms(self):
+        """Clears the objective ``Id`` terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    objective_id_terms = property(fdel=clear_objective_id_terms)
+
+    def supports_objective_query(self):
+        """Tests if an ``ObjectiveQuery`` is available for querying objectives.
+
+
+        :return: ``true`` if an robjective query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_objective_query(self):
+        """Gets the query for an objective.
+
+
+        Multiple retrievals produce a nested ``OR`` term.
+
+
+        :return: the objective query
+        :rtype: ``osid.learning.ObjectiveQuery``
+        :raise: ``Unimplemented`` -- ``supports_objective_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_objective_query()`` is ``true``.*
+
+
+        """
+        return # osid.learning.ObjectiveQuery
+
+    objective_query = property(fget=get_objective_query)
+
+    def match_any_objective(self, match):
+        """Matches an activity that has any objective assigned.
+
+
+        :param match: ``true`` to match activities with any objective, ``false`` to match activities with no objective
+        :type match: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_objective_terms(self):
+        """Clears the objective terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    objective_terms = property(fdel=clear_objective_terms)
+
+    def match_completion(self, start, end, match):
+        """Sets the completion for this query to match completion percentages between the given range inclusive.
+
+
+        :param start: start of range
+        :type start: ``decimal``
+        :param end: end of range
+        :type end: ``decimal``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_completion_terms(self):
+        """Clears the completion terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    completion_terms = property(fdel=clear_completion_terms)
+
+    def match_minimum_completion(self, completion, match):
+        """Sets the minimum completion for this query.
+
+
+        :param completion: completion percentage
+        :type completion: ``decimal``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_minimum_completion_terms(self):
+        """Clears the minimum completion terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    minimum_completion_terms = property(fdel=clear_minimum_completion_terms)
+
+    def match_level_id(self, grade_id, match):
+        """Sets the level grade ``Id`` for this query.
+
+
+        :param grade_id: a grade ``Id``
+        :type grade_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``grade_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_level_id_terms(self):
+        """Clears all level ``Id`` terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    level_id_terms = property(fdel=clear_level_id_terms)
+
+    def supports_level_query(self):
+        """Tests if a ``GradeQuery`` is available.
+
+
+        :return: ``true`` if a grade query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_level_query(self):
+        """Gets the query for a grade.
+
+
+        Multiple retrievals produce a nested ``OR`` term.
+
+
+        :return: the grade query
+        :rtype: ``osid.grading.GradeQuery``
+        :raise: ``Unimplemented`` -- ``supports_level_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_level_query()`` is ``true``.*
+
+
+        """
+        return # osid.grading.GradeQuery
+
+    level_query = property(fget=get_level_query)
+
+    def match_any_level(self, match):
+        """Matches an assessment offered that has any level assigned.
+
+
+        :param match: ``true`` to match offerings with any level, ``false`` to match offerings with no levsls
+        :type match: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_level_terms(self):
+        """Clears all level terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    level_terms = property(fdel=clear_level_terms)
+
+    def match_objective_bank_id(self, objective_bank_id, match):
+        """Sets the objective bank ``Id`` for this query.
+
+
+        :param objective_bank_id: an objective bank ``Id``
+        :type objective_bank_id: ``osid.id.Id``
+        :param match: ``true`` for a positive match, ``false`` for a negative match
+        :type match: ``boolean``
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def clear_objective_bank_id_terms(self):
+        """Clears the objective bank ``Id`` terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    objective_bank_id_terms = property(fdel=clear_objective_bank_id_terms)
+
+    def supports_objective_bank_query(self):
+        """Tests if a ``ObjectiveBankQuery`` is available for querying resources.
+
+
+        :return: ``true`` if an objective bank query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_objective_bank_query(self):
+        """Gets the query for an objective bank.
+
+
+        Multiple retrievals produce a nested ``OR`` term.
+
+
+        :return: the objective bank query
+        :rtype: ``osid.learning.ObjectiveBankQuery``
+        :raise: ``Unimplemented`` -- ``supports_objective_bank_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_objective_bank_query()`` is ``true``.*
+
+
+        """
+        return # osid.learning.ObjectiveBankQuery
+
+    objective_bank_query = property(fget=get_objective_bank_query)
+
+    def clear_objective_bank_terms(self):
+        """Clears the objective bank terms.
+
+
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    objective_bank_terms = property(fdel=clear_objective_bank_terms)
+
+    def get_proficiency_query_record(self, proficiency_record_type):
+        """Gets the proficiency query record corresponding to the given ``Proficiency`` record ``Type``.
+
+
+        Multiple retrievals produce a nested ``OR`` term.
+
+
+        :param proficiency_record_type: a proficiency offered record type
+        :type proficiency_record_type: ``osid.type.Type``
+        :return: the proficiency offered query record
+        :rtype: ``osid.learning.records.ProficiencyQueryRecord``
+        :raise: ``NullArgument`` -- ``proficiency_offered_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(proficiency_offered_record_type)`` is ``false``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.records.ProficiencyQueryRecord
+
+
 class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     """This is the query for searching objective banks.
 
@@ -1648,8 +2118,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any objective assigned.
 
 
-        :param match: ``true`` to match objective banks with any objective, ``false`` to match
-            objective banks with no objectives
+        :param match: ``true`` to match objective banks with any objective, ``false`` to match objective banks with no
+            objectives
         :type match: ``boolean``
 
 
@@ -1751,8 +2221,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any activity assigned.
 
 
-        :param match: ``true`` to match objective banks with any activity, ``false`` to match
-            objective banks with no activities
+        :param match: ``true`` to match objective banks with any activity, ``false`` to match objective banks with no
+            activities
         :type match: ``boolean``
 
 
@@ -1781,8 +2251,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     activity_terms = property(fdel=clear_activity_terms)
 
     def match_ancestor_objective_bank_id(self, objective_bank_id, match):
-        """Sets the objective bank ``Id`` for this query to match objective banks that have the
-            specified objective bank as an ancestor.
+        """Sets the objective bank ``Id`` for this query to match objective banks that have the specified objective bank
+            as an ancestor.
 
 
         :param objective_bank_id: an objective bank ``Id``
@@ -1855,8 +2325,7 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any ancestor.
 
 
-        :param match: ``true`` to match objective banks with any ancestor, ``false`` to match root
-            objective banks
+        :param match: ``true`` to match objective banks with any ancestor, ``false`` to match root objective banks
         :type match: ``boolean``
 
 
@@ -1885,8 +2354,8 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     ancestor_objective_bank_terms = property(fdel=clear_ancestor_objective_bank_terms)
 
     def match_descendant_objective_bank_id(self, objective_bank_id, match):
-        """Sets the objective bank ``Id`` for this query to match objective banks that have the
-            specified objective bank as a descendant.
+        """Sets the objective bank ``Id`` for this query to match objective banks that have the specified objective bank
+            as a descendant.
 
 
         :param objective_bank_id: an objective bank ``Id``
@@ -1959,8 +2428,7 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
         """Matches an objective bank that has any descendant.
 
 
-        :param match: ``true`` to match objective banks with any descendant, ``false`` to match leaf
-            objective banks
+        :param match: ``true`` to match objective banks with any descendant, ``false`` to match leaf objective banks
         :type match: ``boolean``
 
 
@@ -1989,8 +2457,7 @@ class ObjectiveBankQuery(osid_queries.OsidCatalogQuery):
     descendant_objective_bank_terms = property(fdel=clear_descendant_objective_bank_terms)
 
     def get_objective_bank_query_record(self, objective_bank_record_type):
-        """Gets the objective bank query record corresponding to the given ``ObjectiveBank`` record
-            ``Type``.
+        """Gets the objective bank query record corresponding to the given ``ObjectiveBank`` record ``Type``.
 
 
         Multiple record retrievals produce a nested ``OR`` term.

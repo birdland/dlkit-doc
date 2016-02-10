@@ -65,8 +65,8 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -195,8 +195,8 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_objectives_by_genus_type(self, objective_genus_type):
-        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does
-            not include objectives of genus types derived from the specified ``Type``.
+        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` which does not include
+            objectives of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objectives
@@ -220,8 +220,8 @@ class ObjectiveLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_objectives_by_parent_genus_type(self, objective_genus_type):
-        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include
-            any additional objective with genus types derived from the specified ``Type``.
+        """Gets an ``ObjectiveList`` corresponding to the given objective genus ``Type`` and include any additional
+            objective with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objectives
@@ -585,8 +585,8 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
 
         :param objective_record_types: array of objective record types
         :type objective_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``Objective`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_record_types`` is ``null``
 
@@ -633,8 +633,7 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_form`` did not originate from
-            ``get_objective_form_for_create()``
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -701,8 +700,7 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_form`` did not originate from
-            ``get_objective_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_form`` did not originate from ``get_objective_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -902,8 +900,8 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the objective methods may omit or translate elements based on this
-            session, such as authorization, and not result in an error.
+        """The returns from the objective methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1172,8 +1170,7 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_id: the ``Id`` of an objective
         :type objective_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false``
-            otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_id`` is ``null``
@@ -1188,21 +1185,19 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_objective_node_ids(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
 
         :param objective_id: the ``Id`` to query
         :type objective_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -1218,21 +1213,19 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_objective_nodes(self, objective_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective.
 
 
         :param objective_id: the ``Id`` to query
         :type objective_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective node
         :rtype: ``osid.learning.ObjectiveNode``
@@ -1486,11 +1479,9 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         :type reference_objective_id: ``osid.id.Id``
         :param objective_id: the ``Id`` of the objective to move ahead of ``reference_objective_id``
         :type objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id``
-            not found, or ``reference_objective_id`` or ``objective_id`` is not a child of
-            ``parent_objective_id``
-        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is
-            ``null``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
+            ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1511,11 +1502,9 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         :type reference_objective_id: ``osid.id.Id``
         :param objective_id: the ``Id`` of the objective to move behind ``reference_objective_id``
         :type objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id``
-            not found, or ``reference_objective_id`` or ``objective_id`` is not a child of
-            ``parent_objective_id``
-        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is
-            ``null``
+        :raise: ``NotFound`` -- ``parent_objective_id, reference_objective_id,`` or ``objective_id`` not found, or
+            ``reference_objective_id`` or ``objective_id`` is not a child of ``parent_objective_id``
+        :raise: ``NullArgument`` -- ``parent_objective_id, reference_objective_id,`` or ``id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -1534,8 +1523,8 @@ class ObjectiveSequencingSession(osid_sessions.OsidSession):
         :type parent_objective_id: ``osid.id.Id``
         :param objective_ids: the ``Id`` of the objectives
         :type objective_ids: ``osid.id.Id[]``
-        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an
-            ``objective_id`` is not a child of ``parent_objective_id``
+        :raise: ``NotFound`` -- ``parent_id`` or an ``objective_id`` not found, or an ``objective_id`` is not a child of
+            ``parent_objective_id``
         :raise: ``NullArgument`` -- ``paren_objectivet_id`` or ``objective_ids`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1595,8 +1584,8 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1818,8 +1807,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which
-            any objective can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which any objective can
+            be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1837,8 +1826,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_objective(self, objective_bank_id, objective_id):
-        """Gets a list of objective banks including and under the given objective bank node in which
-            a specific objective can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which a specific
+            objective can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -1886,8 +1875,8 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or
-            ``objective_id`` not mapped to ``objective_bank_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``objective_bank_id`` not found or ``objective_id`` not mapped to
+            ``objective_bank_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1899,8 +1888,7 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
-    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id,
-        to_objective_bank_id):
+    def reassign_proficiency_to_objective_bank(self, objective_id, from_objective_bank_id, to_objective_bank_id):
         """Moves an ``Objective`` from one ``ObjectiveBank`` to another.
 
 
@@ -1913,11 +1901,9 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or
-            ``to_objective_bank_id`` not found or ``objective_id`` not mapped to
-            ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or
-            ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
+            ``objective_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``objective_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2032,8 +2018,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2106,8 +2092,7 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         pass
 
     def get_requisite_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are the immediate requisites for the given
-            ``Objective``.
+        """Gets a list of ``Objectives`` that are the immediate requisites for the given ``Objective``.
 
 
         In plenary mode, the returned list contains all of the immediate
@@ -2134,8 +2119,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveList
 
     def get_all_requisite_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are the requisites for the given ``Objective``
-            including the requistes of the requisites, and so on.
+        """Gets a list of ``Objectives`` that are the requisites for the given ``Objective`` including the requistes of
+            the requisites, and so on.
 
 
         In plenary mode, the returned list contains all of the immediate
@@ -2200,8 +2185,7 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param required_objective_id: ``Id`` of the required ``Objective``
         :type required_objective_id: ``osid.id.Id``
-        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false``
-            otherwise
+        :return: ``true`` if ``objective_id`` depends on ``required_objective_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_id`` not found
         :raise: ``NullArgument`` -- ``objective_id`` is ``null``
@@ -2216,8 +2200,7 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_equivalent_objectives(self, objective_id):
-        """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the
-            purpose of requisites.
+        """Gets a list of ``Objectives`` that are equivalent to the given ``Objective`` for the purpose of requisites.
 
 
         An equivalent objective can satisfy the given objective. In
@@ -2350,8 +2333,8 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param requisite_objective_id: the ``Id`` of the required ``Objective``
         :type requisite_objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or
-            ``objective_id`` not mapped to ``requisite_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``requisite_objective_id`` not found or ``objective_id`` not mapped
+            to ``requisite_objective_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``requisite_objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2364,8 +2347,7 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         pass
 
     def assign_equivalent_objective(self, objective_id, equivalent_objective_id):
-        """Makes an objective equivalent to another objective for the purposes of satisfying a
-            requisite.
+        """Makes an objective equivalent to another objective for the purposes of satisfying a requisite.
 
 
         :param objective_id: the ``Id`` of the principal ``Objective``
@@ -2393,8 +2375,8 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
         :type objective_id: ``osid.id.Id``
         :param equivalent_objective_id: the ``Id`` of the equivalent ``Objective``
         :type equivalent_objective_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or
-            ``objective_id`` is already equivalent to ``equivalent_objective_id``
+        :raise: ``NotFound`` -- ``objective_id`` or ``equivalent_objective_id`` not found or ``objective_id`` is already
+            equivalent to ``equivalent_objective_id``
         :raise: ``NullArgument`` -- ``objective_id`` or ``equivalent_objective_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2510,8 +2492,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_activity_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2640,8 +2622,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ActivityList
 
     def get_activities_by_genus_type(self, activity_genus_type):
-        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does
-            not include activities of genus types derived from the specified ``Type``.
+        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` which does not include activities
+            of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known activities
@@ -2665,8 +2647,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ActivityList
 
     def get_activities_by_parent_genus_type(self, activity_genus_type):
-        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include
-            any additional activity with genus types derived from the specified ``Type``.
+        """Gets an ``ActivityList`` corresponding to the given activity genus ``Type`` and include any additional
+            activity with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known activities
@@ -2972,8 +2954,8 @@ class ActivityAdminSession(osid_sessions.OsidSession):
 
         :param activity_record_types: array of activity record types
         :type activity_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``Activity`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``activity_record_types`` is ``null``
 
@@ -3023,8 +3005,7 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``activity_form`` did not originate from
-            ``get_activity_form_for_create()``
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3091,8 +3072,7 @@ class ActivityAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``activity_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``activity_form`` did not originate from
-            ``get_activity_form_for_update()``
+        :raise: ``Unsupported`` -- ``activity_form`` did not originate from ``get_activity_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3240,8 +3220,8 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3463,8 +3443,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_objective_bank_ids(self, objective_bank_id):
-        """Gets a list of objective banks including and under the given objective bank node in which
-            any activity can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which any activity can be
+            assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3482,8 +3462,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_objective_bank_ids_for_activity(self, objective_bank_id, activity_id):
-        """Gets a list of objective banks including and under the given objective bank node in which
-            a specific activity can be assigned.
+        """Gets a list of objective banks including and under the given objective bank node in which a specific activity
+            can be assigned.
 
 
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
@@ -3531,8 +3511,8 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type activity_id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of the ``ObjectiveBank``
         :type objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or
-            ``activity_id`` not mapped to ``objective_bank_id``
+        :raise: ``NotFound`` -- ``activity_id`` or ``objective_bank_id`` not found or ``activity_id`` not mapped to
+            ``objective_bank_id``
         :raise: ``NullArgument`` -- ``activity_id`` or ``objective_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3544,8 +3524,7 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
-    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id,
-        to_objective_bank_id):
+    def reassign_activity_to_objective_bank(self, activity_id, from_objective_bank_id, to_objective_bank_id):
         """Moves an ``Activity`` from one ``ObjectiveBank`` to another.
 
 
@@ -3558,10 +3537,1191 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
         :type from_objective_bank_id: ``osid.id.Id``
         :param to_objective_bank_id: the ``Id`` of the destination ``ObjectiveBank``
         :type to_objective_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id``
-            not found or ``activity_id`` not mapped to ``from_objective_bank_id``
-        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or
-            ``to_objective_bank_id`` is ``null``
+        :raise: ``NotFound`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` not found or
+            ``activity_id`` not mapped to ``from_objective_bank_id``
+        :raise: ``NullArgument`` -- ``activity_id, from_objective_bank_id,`` or ``to_objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+class ProficiencyLookupSession(osid_sessions.OsidSession):
+    """This session defines methods for retrieving proficiencies."""
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the obective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
+    def can_lookup_proficiencies(self):
+        """Tests if this user can perform ``Proficiency`` lookups.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_proficiency_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_proficiency_view(self):
+        """A complete view of the ``Proficiency`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_federated_objective_bank_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include proficiencies in objective banks
+        which are children of this objective bank in the obective bank
+        hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_objective_bank_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts retrievals to this objective bank
+        only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_effective_proficiency_view(self):
+        """Only proficiencies whose effective dates are current are returned by methods in this session.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_any_effective_proficiency_view(self):
+        """All proficienies of any effective dates are returned by methods in this session.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_proficiency(self, proficiency_id):
+        """Gets the ``Proficiency`` specified by its ``Id``.
+
+
+        :param proficiency_id: the ``Id`` of the ``Proficiency`` to retrieve
+        :type proficiency_id: ``osid.id.Id``
+        :return: the returned ``Proficiency``
+        :rtype: ``osid.learning.Proficiency``
+        :raise: ``NotFound`` -- no ``Proficiency`` found with the given ``Id``
+        :raise: ``NullArgument`` -- ``proficiency_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.Proficiency
+
+    def get_proficiencies_by_ids(self, proficiency_ids):
+        """Gets a ``ProficiencyList`` corresponding to the given ``IdList``.
+
+
+        :param proficiency_ids: the list of ``Ids`` to retrieve
+        :type proficiency_ids: ``osid.id.IdList``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NotFound`` -- an ``Id`` was not found
+        :raise: ``NullArgument`` -- ``proficiency_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type(self, proficiency_genus_type):
+        """Gets a ``ProficiencyList`` corresponding to the given proficiency genus ``Type`` which does not include
+            proficiencies of types derived from the specified ``Type``.
+
+
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``proficiency_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_parent_genus_type(self, proficiency_genus_type):
+        """Gets a ``ProficiencyList`` corresponding to the given proficiency genus ``Type`` and include any additional
+            proficiencies with genus types derived from the specified ``Type``.
+
+
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``proficiency_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_record_type(self, proficiency_record_type):
+        """Gets a ``ProficiencyList`` containing the given proficiency record ``Type``.
+
+
+        :param proficiency_record_type: a proficiency record type
+        :type proficiency_record_type: ``osid.type.Type``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``proficiency_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_on_date(self, from_, to):
+        """Gets a ``ProficiencyList`` effecyive during the entire given date range inclusive but not confined to the
+            date range.
+
+
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_on_date(self, proficiency_genus_type, from_, to):
+        """Gets a ``ProficiencyList`` of the given proficiency genus type effective during the entire given date range
+            inclusive but not confined to the date range.
+
+
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``proficiency_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_objective(self, objective_id):
+        """Gets a ``ProficiencyList`` relating to the given objective.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``objective_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_objective_on_date(self, objective_id, from_, to):
+        """Gets a ``ProficiencyList`` relating to the given objective effective during the entire given date range
+            inclusive but not confined to the date range.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``objective_id, from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_for_objective(self, objective_id, proficiency_genus_type):
+        """Gets a ``ProficiencyList`` relating to the given objective and proficiency genus ``Type``.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``proficiency_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_for_objective_on_date(self, objective_id, proficiency_genus_type, from_, to):
+        """Gets a ``ProficiencyList`` of the given proficiency genus type relating to the given objective effective
+            during the entire given date range inclusive but not confined to the date range.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``objective_id, proficiency_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_objectives(self, objective_ids):
+        """Gets a ``ProficiencyList`` relating to the given objectives.
+
+
+        :param objective_ids: the objective ``Ids``
+        :type objective_ids: ``osid.id.IdList``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``objective_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_resource(self, resource_id):
+        """Gets a ``ProficiencyList`` relating to the given resource.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_resource_on_date(self, resource_id, from_, to):
+        """Gets a ``ProficiencyList`` relating to the given resource effective during the entire given date range
+            inclusive but not confined to the date range.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``resource_id, from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_for_resource(self, resource_id, proficiency_genus_type):
+        """Gets a ``ProficiencyList`` relating to the given resource and proficiency genus ``Type``.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``resource_id`` or ``proficiency_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_for_resource_on_date(self, resource_id, proficiency_genus_type, from_, to):
+        """Gets a ``ProficiencyList`` of the given proficiency genus type relating to the given resource effective
+            during the entire given date range inclusive but not confined to the date range.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``resource_id, proficiency_genus_type, from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_resources(self, resource_ids):
+        """Gets a ``ProficiencyList`` relating to the given resources.
+
+
+        :param resource_ids: the resource ``Ids``
+        :type resource_ids: ``osid.id.IdList``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``resource_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_objective_and_resource(self, objective_id, resource_id):
+        """Gets a ``ProficiencyList`` relating to the given objective and resource ````.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``objective_id`` or ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_for_objective_and_resource_on_date(self, objective_id, resource_id, from_, to):
+        """Gets a ``ProficiencyList`` relating to the given resource and objective effective during the entire given
+            date range inclusive but not confined to the date range.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``objective_id, resource_id, from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_for_objective_and_resource(self, objective_id, resource_id,
+        proficiency_genus_type):
+        """Gets a ``ProficiencyList`` of the given genus type relating to the given objective and resource ````.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``objective_id, resource_id`` or ``proficiency_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies_by_genus_type_for_objective_and_resource_on_date(self, objective_id, resource_id,
+        proficiency_genus_type, from_, to):
+        """Gets a ``ProficiencyList`` of the given genus type relating to the given resource and objective effective
+            during the entire given date range inclusive but not confined to the date range.
+
+
+        :param objective_id: an objective ``Id``
+        :type objective_id: ``osid.id.Id``
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :param proficiency_genus_type: a proficiency genus type
+        :type proficiency_genus_type: ``osid.type.Type``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Proficiency`` list
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``objective_id, resource_id, proficiency_genus_type, from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    def get_proficiencies(self):
+        """Gets all ``Proficiencies``.
+
+
+        :return: a list of ``Proficiencies``
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+    proficiencies = property(fget=get_proficiencies)
+
+
+class ProficiencyQuerySession(osid_sessions.OsidSession):
+    """This session provides methods for searching among ``Proficiency`` objects.
+
+
+    The search query is constructed using the ``ProficiencyQuery``.
+
+
+
+
+    This session defines views that offer differing behaviors for
+    searching.
+
+
+
+
+      * federated objective bank view: searches include proficiencies in
+        objective banks of which this objective bank is an ancestor in
+        the obective bank hierarchy
+      * isolated objective bank view: searches are restricted to
+        proficiencies in this objective bank
+
+
+
+
+
+
+
+
+    Proficiencies may have a query record indicated by their respective
+    record types. The query record is accessed via the
+    ``ProficiencyQuery``.
+
+
+    """
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the obective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
+    def can_search_proficiencies(self):
+        """Tests if this user can perform ``Proficiency`` lookups.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_federated_objective_bank_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include proficiencies in objective banks
+        which are children of this objective bank in the obective bank
+        hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_objective_bank_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts lookups to this objective bank only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_proficiency_query(self):
+        """Gets a proficiency query.
+
+
+        :return: the proficiency query
+        :rtype: ``osid.learning.ProficiencyQuery``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyQuery
+
+    proficiency_query = property(fget=get_proficiency_query)
+
+    def get_proficiencies_by_query(self, proficiency_query):
+        """Gets a list of ``Proficiencies`` matching the given proficiency query.
+
+
+        :param proficiency_query: the proficiency query
+        :type proficiency_query: ``osid.learning.ProficiencyQuery``
+        :return: the returned ``ProficiencyList``
+        :rtype: ``osid.learning.ProficiencyList``
+        :raise: ``NullArgument`` -- ``proficiency_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``proficiency_query`` is not of this service
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyList
+
+
+class ProficiencyAdminSession(osid_sessions.OsidSession):
+    """This session creates, updates, and deletes ``Proficiencies``.
+
+
+    The data for create and update is provided by the consumer via the
+    form object. ``OsidForms`` are requested for each create or update
+    and may not be reused.
+
+
+
+
+    Create and update operations differ in their usage. To create a
+    ``Proficiency,`` a ``ProficiencyForm`` is requested using
+    ``get_proficiency_form_for_create()`` specifying the desired
+    relationship peers and record ``Types`` or none if no record
+    ``Types`` are needed. The returned ``ProficiencyForm`` will indicate
+    that it is to be used with a create operation and can be used to
+    examine metdata or validate data prior to creation. Once the
+    ``ProficiencyForm`` is submiited to a create operation, it cannot be
+    reused with another create operation unless the first operation was
+    unsuccessful. Each ``ProficiencyForm`` corresponds to an attempted
+    transaction.
+
+
+
+
+    For updates, ``ProficiencyForms`` are requested to the
+    ``Proficiency``  ``Id`` that is to be updated using
+    ``getProficiencyFormForUpdate()``. Similarly, the
+    ``ProficiencyForm`` has metadata about the data that can be updated
+    and it can perform validation before submitting the update. The
+    ``ProficiencyForm`` can only be used once for a successful update
+    and cannot be reused.
+
+
+
+
+    The delete operations delete ``Proficiencies``. To unmap a
+    ``Proficiency`` from the current ``ObjectiveBank,`` the
+    ``ProficiencyObjectiveBankAssignmentSession`` should be used. These
+    delete operations attempt to remove the ``Proficiency`` itself thus
+    removing it from all known ``ObjectiveBank`` catalogs.
+
+
+
+
+    This session includes an ``Id`` aliasing mechanism to assign an
+    external ``Id`` to an internally assigned Id.
+
+
+    """
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the obective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
+    def can_create_proficiencies(self):
+        """Tests if this user can create ``Proficiencies``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a
+        ``Proficiency`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        create operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Proficiency`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_proficiency_with_record_types(self, proficiency_record_types):
+        """Tests if this user can create a single ``Proficiency`` using the desired record types.
+
+
+        While ``LearningManager.getProficiencyRecordTypes()`` can be
+        used to examine which records are supported, this method tests
+        which record(s) are required for creating a specific
+        ``Proficiency``. Providing an empty array tests if a
+        ``Proficiency`` can be created with no records.
+
+
+        :param proficiency_record_types: array of proficiency record types
+        :type proficiency_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Proficiency`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``proficiency_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_proficiency_form_for_create(self, objective_id, resource_id, proficiency_record_types):
+        """Gets the proficiency form for creating new proficiencies.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param objective_id: the ``Id`` of the ``Objective``
+        :type objective_id: ``osid.id.Id``
+        :param resource_id: the ``Id`` of the ``Resource``
+        :type resource_id: ``osid.id.Id``
+        :param proficiency_record_types: array of proficiency record types
+        :type proficiency_record_types: ``osid.type.Type[]``
+        :return: the proficiency form
+        :rtype: ``osid.learning.ProficiencyForm``
+        :raise: ``NotFound`` -- ``objective_id`` or ``resource_id`` is not found
+        :raise: ``NullArgument`` -- ``objective_id, resource_id,`` or ``proficieny_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyForm
+
+    def create_proficiency(self, proficiency_form):
+        """Creates a new ``Proficiency``.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param proficiency_form: the form for this ``Proficiency``
+        :type proficiency_form: ``osid.learning.ProficiencyForm``
+        :return: the new ``Proficiency``
+        :rtype: ``osid.learning.Proficiency``
+        :raise: ``IllegalState`` -- ``proficiency_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``proficiency_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``proficiency_form`` did not originate from ``get_proficiency_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.Proficiency
+
+    def can_update_proficiencies(self):
+        """Tests if this user can update ``Proficiencies``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a
+        ``Proficiency`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        update operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Proficiency`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_proficiency_form_for_update(self, proficiency_id):
+        """Gets the proficiency form for updating an existing proficiency.
+
+
+        :param proficiency_id: the ``Id`` of the ``Proficiency``
+        :type proficiency_id: ``osid.id.Id``
+        :return: the proficiency form
+        :rtype: ``osid.learning.ProficiencyForm``
+        :raise: ``NotFound`` -- ``proficiency_id`` is not found
+        :raise: ``NullArgument`` -- ``proficiency_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ProficiencyForm
+
+    def update_proficiency(self, proficiency_form):
+        """Updates an existing proficiency.
+
+
+        :param proficiency_form: the form containing the elements to be updated
+        :type proficiency_form: ``osid.learning.ProficiencyForm``
+        :raise: ``IllegalState`` -- ``proficiency_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``proficiency_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``proficiency_form`` did not originate from ``get_proficiency_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_delete_proficiencies(self):
+        """Tests if this user can delete ``Proficiencies``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a
+        ``Proficiency`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        delete operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Proficiency`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_proficiency(self, proficiency_id):
+        """Deletes a ``Proficiency``.
+
+
+        :param proficiency_id: the ``Id`` of the ``Proficiency`` to remove
+        :type proficiency_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``proficiency_id`` not found
+        :raise: ``NullArgument`` -- ``proficiency_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def delete_proficiencies(self):
+        """Deletes all proficiencies in this ``ObjectiveBank``.
+
+
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_manage_proficiency_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for proficiency entries.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Proficiency`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_proficiency(self, proficiency_id, alias_id):
+        """Adds an ``Id`` to a ``Proficiency`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``Proficiency`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another proficiency, it is
+        reassigned to the given proficiency ``Id``.
+
+
+        :param proficiency_id: the ``Id`` of a ``Proficiency``
+        :type proficiency_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``proficiency_id`` not found
+        :raise: ``NullArgument`` -- ``proficiency_id`` or ``alias_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3640,8 +4800,8 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3734,8 +4894,8 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type``
-            which does not include objective banks of types derived from the specified ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` which does not include
+            objective banks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -3760,9 +4920,8 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
         return # osid.learning.ObjectiveBankList
 
     def get_objective_banks_by_parent_genus_type(self, objective_bank_genus_type):
-        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and
-            include any additional objective banks with genus types derived from the specified
-            ``Type``.
+        """Gets a ``ObjectiveBankList`` corresponding to the given objective bank genus ``Type`` and include any
+            additional objective banks with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known objective
@@ -3946,8 +5105,7 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
 
         :param objective_bank_record_types: array of objective bank record types
         :type objective_bank_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``ObjectiveBank`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``objective_bank_record_types`` is ``null``
 
@@ -4062,8 +5220,7 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``objective_bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from
-            get_objective_bank_form_for_update()``
+        :raise: ``Unsupported`` -- ``objective_bank_form did not originate from get_objective_bank_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4263,8 +5420,8 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_objective_bank_view(self):
-        """The returns from the objective bank methods may omit or translate elements based on this
-            session, such as authorization, and not result in an error.
+        """The returns from the objective bank methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4427,8 +5584,7 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false``
-            otherwise
+        :return: ``true`` if this ``id`` is an ancestor of ``objective_bank_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -4534,8 +5690,7 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         :type id: ``osid.id.Id``
         :param objective_bank_id: the ``Id`` of an objective bank
         :type objective_bank_id: ``osid.id.Id``
-        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false``
-            otherwise
+        :return: ``true`` if the ``id`` is a descendant of the ``objective_bank_id,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NotFound`` -- ``objective_bank_id`` is not found
         :raise: ``NullArgument`` -- ``id`` or ``objective_bank_id`` is ``null``
@@ -4550,21 +5705,19 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_objective_bank_node_ids(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a catalog node
         :rtype: ``osid.hierarchy.Node``
@@ -4580,21 +5733,19 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
         """
         return # osid.hierarchy.Node
 
-    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels,
-        include_siblings):
+    def get_objective_bank_nodes(self, objective_bank_id, ancestor_levels, descendant_levels, include_siblings):
         """Gets a portion of the hierarchy for the given objective bank.
 
 
         :param objective_bank_id: the ``Id`` to query
         :type objective_bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: an objective bank node
         :rtype: ``osid.learning.ObjectiveBankNode``

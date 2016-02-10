@@ -98,8 +98,8 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_grade_system_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -247,8 +247,8 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeSystemList
 
     def get_grade_systems_by_genus_type(self, grade_system_genus_type):
-        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` which
-            does not include systems of genus types derived from the specified ``Type``.
+        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` which does not include
+            systems of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known systems or
@@ -272,8 +272,8 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeSystemList
 
     def get_grade_systems_by_parent_genus_type(self, grade_system_genus_type):
-        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` and
-            include any additional systems with genus types derived from the specified ``Type``.
+        """Gets a ``GradeSystemList`` corresponding to the given grade system genus ``Type`` and include any additional
+            systems with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known systems or
@@ -636,8 +636,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
 
         :param grade_system_record_types: array of grade system types
         :type grade_system_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradeSystem`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``GradeSystem`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_record_types`` is ``null``
 
@@ -684,8 +683,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_system_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from
-            ``get_grade_system_form_for_create()``
+        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from ``get_grade_system_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -752,8 +750,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_system_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from
-            ``get_grade_system_form_for_update()``
+        :raise: ``Unsupported`` -- ``grade_system_form`` did not originate from ``get_grade_system_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -892,8 +889,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
         :type grade_system_id: ``osid.id.Id``
         :param grade_record_types: array of grade recod types
         :type grade_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Grade`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Grade`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` or ``grade_record_types`` is ``null``
 
@@ -943,8 +939,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_form`` did not originate from
-            ``get_grade_form_for_create()``
+        :raise: ``Unsupported`` -- ``grade_form`` did not originate from ``get_grade_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1012,8 +1007,7 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_id`` or ``grade_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_form`` did not originate from
-            ``get_grade_form_for_update()``
+        :raise: ``Unsupported`` -- ``grade_form`` did not originate from ``get_grade_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1178,8 +1172,8 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_grade_entry_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1251,8 +1245,7 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         pass
 
     def use_effective_grade_entry_view(self):
-        """Only grade entries whose effective dates are current are returned by methods in this
-            session.
+        """Only grade entries whose effective dates are current are returned by methods in this session.
 
 
 
@@ -1320,8 +1313,8 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_by_genus_type(self, grade_entry_genus_type):
-        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` which
-            does not include grade entries of genus types derived from the specified ``Type``.
+        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` which does not include grade
+            entries of genus types derived from the specified ``Type``.
 
 
         :param grade_entry_genus_type: a grade entry genus type
@@ -1340,8 +1333,8 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_by_parent_genus_type(self, grade_entry_genus_type):
-        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` and
-            include any additional grade entry with genus types derived from the specified ``Type``.
+        """Gets a ``GradeEntryList`` corresponding to the given grade entry genus ``Type`` and include any additional
+            grade entry with genus types derived from the specified ``Type``.
 
 
         :param grade_entry_genus_type: a grade entry genus type
@@ -1379,8 +1372,8 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_on_date(self, from_, to):
-        """Gets a ``GradeEntryList`` effective during the entire given date range inclusive but not
-            confined to the date range.
+        """Gets a ``GradeEntryList`` effective during the entire given date range inclusive but not confined to the date
+            range.
 
 
         :param from: start of date range
@@ -1421,8 +1414,8 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_for_gradebook_column_on_date(self, gradebook_column_id, from_, to):
-        """Gets a ``GradeEntryList`` for the given gradebook column and effective during the entire
-            given date range inclusive but not confined to the date range.
+        """Gets a ``GradeEntryList`` for the given gradebook column and effective during the entire given date range
+            inclusive but not confined to the date range.
 
 
         :param gradebook_column_id: a gradebook column ``Id``
@@ -1465,8 +1458,8 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradeEntryList
 
     def get_grade_entries_for_resource_on_date(self, resource_id, from_, to):
-        """Gets a ``GradeEntryList`` for the given key resource and effective during the entire
-            given date range inclusive but not confined to the date range.
+        """Gets a ``GradeEntryList`` for the given key resource and effective during the entire given date range
+            inclusive but not confined to the date range.
 
 
         :param resource_id: a resource ``Id``
@@ -1510,10 +1503,9 @@ class GradeEntryLookupSession(osid_sessions.OsidSession):
         """
         return # osid.grading.GradeEntryList
 
-    def get_grade_entries_for_gradebook_column_and_resource_on_date(self, gradebook_column_id,
-        resource_id, from_, to):
-        """Gets a ``GradeEntryList`` for the given gradebook column, resource, and effective during
-            the entire given date range inclusive but not confined to the date range.
+    def get_grade_entries_for_gradebook_column_and_resource_on_date(self, gradebook_column_id, resource_id, from_, to):
+        """Gets a ``GradeEntryList`` for the given gradebook column, resource, and effective during the entire given
+            date range inclusive but not confined to the date range.
 
 
         :param gradebook_column_id: a gradebook column ``Id``
@@ -1868,8 +1860,8 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
 
         :param grade_entry_record_types: array of grade entry record types
         :type grade_entry_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradeEntry`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``GradeEntry`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``grade_entry_record_types`` is ``null``
 
@@ -1880,8 +1872,7 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_grade_entry_form_for_create(self, gradebook_column_id, resource_id,
-        grade_entry_record_types):
+    def get_grade_entry_form_for_create(self, gradebook_column_id, resource_id, grade_entry_record_types):
         """Gets the grade entry form for creating new grade entries.
 
 
@@ -1897,8 +1888,7 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
         :return: the grade entry form
         :rtype: ``osid.grading.GradeEntryForm``
         :raise: ``NotFound`` -- ``gradebook_column_id or resource_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_id, resource_id,`` or
-            ``grade_entry_record_types`` is ``null``
+        :raise: ``NullArgument`` -- ``gradebook_column_id, resource_id,`` or ``grade_entry_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- unable to get form for requested record types
@@ -1923,8 +1913,7 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_entry_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from
-            ``get_grade_entry_form_for_create()``
+        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from ``get_grade_entry_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1970,8 +1959,7 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
         :return: the grade entry form
         :rtype: ``osid.grading.GradeEntryForm``
         :raise: ``AlreadyExists`` -- ``grade_entry_id`` is already overridden
-        :raise: ``NotFound`` -- ``grade_entry_id`` not found or ``grade_entry_id`` is not a
-            calculated entry
+        :raise: ``NotFound`` -- ``grade_entry_id`` not found or ``grade_entry_id`` is not a calculated entry
         :raise: ``NullArgument`` -- ``grade_entry_id`` or ``grade_entry_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1997,8 +1985,7 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_entry_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from
-            ``get_grade_entry_form_for_override()``
+        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from ``get_grade_entry_form_for_override()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2065,8 +2052,7 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``grade_entry_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from
-            ``get_grade_entry_form_for_update()``
+        :raise: ``Unsupported`` -- ``grade_entry_form`` did not originate from ``get_grade_entry_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2230,8 +2216,8 @@ class GradebookColumnLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_gradebook_column_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2357,9 +2343,8 @@ class GradebookColumnLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradebookColumnList
 
     def get_gradebook_columns_by_genus_type(self, gradebook_column_genus_type):
-        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type``
-            which does not include gradebook columns of genus types derived from the specified
-            ``Type``.
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` which does not
+            include gradebook columns of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebook
@@ -2384,8 +2369,8 @@ class GradebookColumnLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradebookColumnList
 
     def get_gradebook_columns_by_parent_genus_type(self, gradebook_column_genus_type):
-        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type``
-            and include any additional columns with genus types derived from the specified ``Type``.
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` and include any
+            additional columns with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebook
@@ -2774,8 +2759,7 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
         return # boolean
 
     def can_create_gradebook_column_with_record_types(self, gradebook_column_record_types):
-        """Tests if this user can create a single ``GradebookColumn`` using the desired record
-            types.
+        """Tests if this user can create a single ``GradebookColumn`` using the desired record types.
 
 
         While ``GradingManager.getGradebookColumnRecordTypes()`` can be
@@ -2787,8 +2771,8 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
 
         :param gradebook_column_record_types: array of gradebook column record types
         :type gradebook_column_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
 
@@ -2938,10 +2922,8 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
         :type front_gradebook_column_id: ``osid.id.Id``
         :param back_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
         :type back_gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not
-            found
-        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is
-            ``null``
+        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -2965,10 +2947,8 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
         :type source_gradebook_column_id: ``osid.id.Id``
         :param target_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
         :type target_gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not
-            found
-        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is
-            ``null``
+        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -3138,8 +3118,8 @@ class GradebookLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_gradebook_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3232,8 +3212,8 @@ class GradebookLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does
-            not include gradebooks of types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` which does not include
+            gradebooks of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -3257,8 +3237,8 @@ class GradebookLookupSession(osid_sessions.OsidSession):
         return # osid.grading.GradebookList
 
     def get_gradebooks_by_parent_genus_type(self, gradebook_genus_type):
-        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include
-            any additional gradebooks with genus types derived from the specified ``Type``.
+        """Gets a ``GradebookList`` corresponding to the given gradebook genus ``Type`` and include any additional
+            gradebooks with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known gradebooks
@@ -3435,8 +3415,7 @@ class GradebookAdminSession(osid_sessions.OsidSession):
 
         :param gradebook_record_types: array of gradebook record types
         :type gradebook_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Gradebook`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``gradebook_record_types`` is ``null``
 
@@ -3483,8 +3462,7 @@ class GradebookAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from
-            ``get_gradebook_form_for_create()``
+        :raise: ``Unsupported`` -- ``gradebook_form`` did not originate from ``get_gradebook_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3551,8 +3529,7 @@ class GradebookAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``gradebook_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_form did not originate from
-            get_gradebook_form_for_update()``
+        :raise: ``Unsupported`` -- ``gradebook_form did not originate from get_gradebook_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*

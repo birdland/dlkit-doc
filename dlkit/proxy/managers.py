@@ -94,9 +94,9 @@ class ProxyProfile(osid_managers.OsidProfile):
 
 
 class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyProfile):
-    """The proxy manager provides access to proxy sessions and provides interoperability tests for
-        various
-    aspects of this service.
+    """The proxy manager provides access to proxy sessions and provides interoperability tests for various aspects of
+        this
+    service.
 
 
     The sessions included in this manager are:
@@ -110,8 +110,8 @@ class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyPr
     """
 
     def get_proxy_session(self):
-        """Gets a ``ProxySession`` which is responsible for acquiring authentication credentials on
-            behalf of a service client.
+        """Gets a ``ProxySession`` which is responsible for acquiring authentication credentials on behalf of a service
+            client.
 
 
         :return: a proxy session for this service
@@ -131,9 +131,9 @@ class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyPr
 
 
 class ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile):
-    """The proxy proxy manager provides access to proxy sessions and provides interoperability tests
-        for
-    various aspects of this service.
+    """The proxy proxy manager provides access to proxy sessions and provides interoperability tests for various aspects
+        of
+    this service.
 
 
     Methods in this manager support the passing of a ``Proxy``. The
@@ -148,8 +148,7 @@ class ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile):
     """
 
     def get_proxy_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the ``ProxySession`` using the supplied
-            ``Proxy``.
+        """Gets the ``OsidSession`` associated with the ``ProxySession`` using the supplied ``Proxy``.
 
 
         :param proxy: proxy

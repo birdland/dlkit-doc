@@ -6,6 +6,5 @@ Proxy
 
    summary
    service_managers
-   no_catalog
    records
    rules

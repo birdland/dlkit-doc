@@ -65,8 +65,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_comment_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -206,8 +206,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_by_genus_type(self, comment_genus_type):
-        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` which does not
-            include comments of genus types derived from the specified ``Type``.
+        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` which does not include comments of
+            genus types derived from the specified ``Type``.
 
 
         :param comment_genus_type: a comment genus type
@@ -226,8 +226,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_by_parent_genus_type(self, comment_genus_type):
-        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` and include any
-            additional comments with genus types derived from the specified ``Type``.
+        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` and include any additional comments
+            with genus types derived from the specified ``Type``.
 
 
         :param comment_genus_type: a comment genus type
@@ -265,8 +265,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_on_date(self, from_, to):
-        """Gets a ``CommentList`` effective during the entire given date range inclusive but not
-            confined to the date range.
+        """Gets a ``CommentList`` effective during the entire given date range inclusive but not confined to the date
+            range.
 
 
         :param from: starting date
@@ -288,8 +288,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_by_genus_type_on_date(self, comment_genus_type, from_, to):
-        """Gets a ``CommentList`` of a given genus type and effective during the entire given date
-            range inclusive but not confined to the date range.
+        """Gets a ``CommentList`` of a given genus type and effective during the entire given date range inclusive but
+            not confined to the date range.
 
 
         :param comment_genus_type: a comment genus type
@@ -332,8 +332,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_for_commentor_on_date(self, resource_id, from_, to):
-        """Gets a list of all comments corresponding to a resource ``Id`` and effective during the
-            entire given date range inclusive but not confined to the date range.
+        """Gets a list of all comments corresponding to a resource ``Id`` and effective during the entire given date
+            range inclusive but not confined to the date range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -377,11 +377,9 @@ class CommentLookupSession(osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_commentor_on_date(self, resource_id, comment_genus_type,
-        from_, to):
-        """Gets a list of all comments of the given genus type corresponding to a resource ``Id``
-            and effective during the entire given date range inclusive but not confined to the date
-            range.
+    def get_comments_by_genus_type_for_commentor_on_date(self, resource_id, comment_genus_type, from_, to):
+        """Gets a list of all comments of the given genus type corresponding to a resource ``Id`` and effective during
+            the entire given date range inclusive but not confined to the date range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -426,8 +424,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.CommentList
 
     def get_comments_for_reference_on_date(self, reference_id, from_, to):
-        """Gets a list of all comments corresponding to a reference ``Id`` and effective during the
-            entire given date range inclusive but not confined to the date range.
+        """Gets a list of all comments corresponding to a reference ``Id`` and effective during the entire given date
+            range inclusive but not confined to the date range.
 
 
         :param reference_id: a reference ``Id``
@@ -471,11 +469,9 @@ class CommentLookupSession(osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_reference_on_date(self, reference_id, comment_genus_type,
-        from_, to):
-        """Gets a list of all comments of the given genus type corresponding to a reference ``Id``
-            and effective during the entire given date range inclusive but not confined to the date
-            range.
+    def get_comments_by_genus_type_for_reference_on_date(self, reference_id, comment_genus_type, from_, to):
+        """Gets a list of all comments of the given genus type corresponding to a reference ``Id`` and effective during
+            the entire given date range inclusive but not confined to the date range.
 
 
         :param reference_id: a reference ``Id``
@@ -489,8 +485,7 @@ class CommentLookupSession(osid_sessions.OsidSession):
         :return: the returned ``CommentList``
         :rtype: ``osid.commenting.CommentList``
         :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
-        :raise: ``NullArgument`` -- ``reference_id, comment_genus_type, from,`` or ``to`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``reference_id, comment_genus_type, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -522,11 +517,9 @@ class CommentLookupSession(osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_for_commentor_and_reference_on_date(self, resource_id, reference_id, from_,
-        to):
-        """Gets a list of all comments corresponding to a resource and reference ``Id`` and
-            effective during the entire given date range inclusive but not confined to the date
-            range.
+    def get_comments_for_commentor_and_reference_on_date(self, resource_id, reference_id, from_, to):
+        """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire
+            given date range inclusive but not confined to the date range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -551,10 +544,8 @@ class CommentLookupSession(osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_commentor_and_reference(self, resource_id, reference_id,
-        comment_genus_type):
-        """Gets a list of comments of the given genus type corresponding to a resource and reference
-            ``Id``.
+    def get_comments_by_genus_type_for_commentor_and_reference(self, resource_id, reference_id, comment_genus_type):
+        """Gets a list of comments of the given genus type corresponding to a resource and reference ``Id``.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -565,8 +556,7 @@ class CommentLookupSession(osid_sessions.OsidSession):
         :type comment_genus_type: ``osid.type.Type``
         :return: the returned ``CommentList``
         :rtype: ``osid.commenting.CommentList``
-        :raise: ``NullArgument`` -- ``resource_id, reference_id`` or ``comment_genus_type`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id`` or ``comment_genus_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -577,11 +567,10 @@ class CommentLookupSession(osid_sessions.OsidSession):
         """
         return # osid.commenting.CommentList
 
-    def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, resource_id,
-        reference_id, comment_genus_type, from_, to):
-        """Gets a list of all comments corresponding to a resource and reference ``Id`` and
-            effective during the entire given date range inclusive but not confined to the date
-            range.
+    def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, resource_id, reference_id,
+        comment_genus_type, from_, to):
+        """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire
+            given date range inclusive but not confined to the date range.
 
 
         :param resource_id: the ``Id`` of the resource
@@ -597,8 +586,7 @@ class CommentLookupSession(osid_sessions.OsidSession):
         :return: the returned ``CommentList``
         :rtype: ``osid.commenting.CommentList``
         :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
-        :raise: ``NullArgument`` -- ``resource_id, reference_id, comment_genus_type, from,`` or
-            ``to`` is ``null``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id, comment_genus_type, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -902,8 +890,7 @@ class CommentAdminSession(osid_sessions.OsidSession):
 
         :param comment_record_types: array of comment record types
         :type comment_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Comment`` creation using the specified record ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Comment`` creation using the specified record ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``comment_record_types`` is ``null``
 
@@ -952,8 +939,7 @@ class CommentAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``comment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``comment_form`` did not originate from
-            ``get_comment_form_for_create()``
+        :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1020,8 +1006,7 @@ class CommentAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``comment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``comment_form`` did not originate from
-            ``get_comment_form_for_update()``
+        :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1167,8 +1152,8 @@ class BookLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1260,8 +1245,8 @@ class BookLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.BookList
 
     def get_books_by_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include
-            books of genus types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
+            types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -1285,8 +1270,8 @@ class BookLookupSession(osid_sessions.OsidSession):
         return # osid.commenting.BookList
 
     def get_books_by_parent_genus_type(self, book_genus_type):
-        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any
-            additional books with genus types derived from the specified ``Type``.
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
+            genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known books or
@@ -1463,8 +1448,7 @@ class BookAdminSession(osid_sessions.OsidSession):
 
         :param book_record_types: array of book record types
         :type book_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
 
@@ -1511,8 +1495,7 @@ class BookAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from
-            ``get_book_form_for_create()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1578,8 +1561,7 @@ class BookAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``book_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``book_form`` did not originte from
-            ``get_book_form_for_update()``
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -1589,8 +1571,7 @@ class BookAdminSession(osid_sessions.OsidSession):
         pass
 
     def can_delete_books(self):
-        """Tests if this user can delete ``Books`` A return of true does not guarantee successful
-            authorization.
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
 
 
         A return of false indicates that it is known deleting a ``Book``
@@ -1778,8 +1759,8 @@ class BookHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_book_view(self):
-        """The returns from the book methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the book methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2075,14 +2056,13 @@ class BookHierarchySession(osid_sessions.OsidSession):
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.hierarchy.Node``
@@ -2104,14 +2084,13 @@ class BookHierarchySession(osid_sessions.OsidSession):
 
         :param book_id: the ``Id`` to query
         :type book_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a book node
         :rtype: ``osid.commenting.BookNode``

@@ -312,8 +312,8 @@ class GradeQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQue
         """Matches grades that are assigned to any grade entry.
 
 
-        :param match: ``true`` to match grades used in any grade entry, ``false`` to match grades
-            that are not used in any grade entries
+        :param match: ``true`` to match grades used in any grade entry, ``false`` to match grades that are not used in
+            any grade entries
         :type match: ``boolean``
 
 
@@ -566,8 +566,7 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
         """Matches grade systems with any grade.
 
 
-        :param match: ``true`` to match grade systems with any grade, ``false`` to match systems
-            with no grade
+        :param match: ``true`` to match grade systems with any grade, ``false`` to match systems with no grade
         :type match: ``boolean``
 
 
@@ -777,8 +776,8 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
         """Matches grade systems assigned to any gradebook column.
 
 
-        :param match: ``true`` to match grade systems mapped to any column, ``false`` to match
-            systems mapped to no columns
+        :param match: ``true`` to match grade systems mapped to any column, ``false`` to match systems mapped to no
+            columns
         :type match: ``boolean``
 
 
@@ -893,8 +892,7 @@ class GradeSystemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregatea
     gradebook_terms = property(fdel=clear_gradebook_terms)
 
     def get_grade_system_query_record(self, grade_system_record_type):
-        """Gets the grade system query record corresponding to the given ``GradeSystem`` record
-            ``Type``.
+        """Gets the grade system query record corresponding to the given ``GradeSystem`` record ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -1086,8 +1084,8 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries with any key resource.
 
 
-        :param match: ``true`` to match grade entries with any key resource, ``false`` to match
-            entries with no key resource
+        :param match: ``true`` to match grade entries with any key resource, ``false`` to match entries with no key
+            resource
         :type match: ``boolean``
 
 
@@ -1221,8 +1219,8 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries overriding any calculated grade entry.
 
 
-        :param match: ``true`` to match grade entries overriding any grade entry, ``false`` to match
-            entries not overriding any entry
+        :param match: ``true`` to match grade entries overriding any grade entry, ``false`` to match entries not
+            overriding any entry
         :type match: ``boolean``
 
 
@@ -1254,8 +1252,8 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries ignored for calculations.
 
 
-        :param match: ``true`` to match grade entries ignored for calculations, ``false`` to match
-            entries used in calculations
+        :param match: ``true`` to match grade entries ignored for calculations, ``false`` to match entries used in
+            calculations
         :type match: ``boolean``
 
 
@@ -1357,8 +1355,7 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries with any grade.
 
 
-        :param match: ``true`` to match grade entries with any grade, ``false`` to match entries
-            with no grade
+        :param match: ``true`` to match grade entries with any grade, ``false`` to match entries with no grade
         :type match: ``boolean``
 
 
@@ -1409,8 +1406,7 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries with any score.
 
 
-        :param match: ``true`` to match grade entries with any score, ``false`` to match entries
-            with no score
+        :param match: ``true`` to match grade entries with any score, ``false`` to match entries with no score
         :type match: ``boolean``
 
 
@@ -1547,8 +1543,7 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries with any grader.
 
 
-        :param match: ``true`` to match grade entries with any grader, ``false`` to match entries
-            with no grader
+        :param match: ``true`` to match grade entries with any grader, ``false`` to match entries with no grader
         :type match: ``boolean``
 
 
@@ -1650,8 +1645,8 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
         """Matches grade entries with any grading agent.
 
 
-        :param match: ``true`` to match grade entries with any grading agent, ``false`` to match
-            entries with no grading agent
+        :param match: ``true`` to match grade entries with any grading agent, ``false`` to match entries with no grading
+            agent
         :type match: ``boolean``
 
 
@@ -1766,8 +1761,7 @@ class GradeEntryQuery(osid_queries.OsidRelationshipQuery):
     gradebook_terms = property(fdel=clear_gradebook_terms)
 
     def get_grade_entry_query_record(self, grade_entry_record_type):
-        """Gets the grade entry query record corresponding to the given ``GradeEntry`` record
-            ``Type``.
+        """Gets the grade entry query record corresponding to the given ``GradeEntry`` record ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -1873,8 +1867,7 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
         """Matches gradebook columns with any grade system assigned.
 
 
-        :param match: ``true`` to match columns with any grade system, ``false`` to match columns
-            with no grade system
+        :param match: ``true`` to match columns with any grade system, ``false`` to match columns with no grade system
         :type match: ``boolean``
 
 
@@ -1976,8 +1969,7 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
         """Matches gradebook columns with any grade entry assigned.
 
 
-        :param match: ``true`` to match columns with any grade entry, ``false`` to match columns
-            with no grade entries
+        :param match: ``true`` to match columns with any grade entry, ``false`` to match columns with no grade entries
         :type match: ``boolean``
 
 
@@ -2009,8 +2001,7 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
         """Tests if a ``GradebookColumnSummaryQuery`` is available for querying grade systems.
 
 
-        :return: ``true`` if a gradebook column summary query interface is available, ``false``
-            otherwise
+        :return: ``true`` if a gradebook column summary query interface is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -2146,8 +2137,7 @@ class GradebookColumnQuery(osid_queries.OsidObjectQuery):
     gradebook_terms = property(fdel=clear_gradebook_terms)
 
     def get_gradebook_column_query_record(self, gradebook_column_record_type):
-        """Gets the gradebook column query record corresponding to the given ``GradebookColumn``
-            record ``Type``.
+        """Gets the gradebook column query record corresponding to the given ``GradebookColumn`` record ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -2253,8 +2243,8 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         """Matches gradebook column derivations with any gradebookc olumn.
 
 
-        :param match: ``true`` to match gradebook column derivations with any gradebook column,
-            ``false`` to match gradebook column derivations with no gradebook columns
+        :param match: ``true`` to match gradebook column derivations with any gradebook column, ``false`` to match
+            gradebook column derivations with no gradebook columns
         :type match: ``boolean``
 
 
@@ -2783,8 +2773,8 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
     gradebook_terms = property(fdel=clear_gradebook_terms)
 
     def get_gradebook_column_summary_query_record(self, gradebook_column_summary_record_type):
-        """Gets the gradebook column summary query record corresponding to the given
-            ``GradebookColumnSummary`` record ``Type``.
+        """Gets the gradebook column summary query record corresponding to the given ``GradebookColumnSummary`` record
+            ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -2796,8 +2786,7 @@ class GradebookColumnSummaryQuery(osid_queries.OsidRuleQuery):
         :rtype: ``osid.grading.records.GradebookColumnSummaryQueryRecord``
         :raise: ``NullArgument`` -- ``gradebook_column_summary_record_type`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_type)`` is
-            ``false``
+        :raise: ``Unsupported`` -- ``has_record_type(gradebook_column_summary_record_type)`` is ``false``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2891,8 +2880,8 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Matches gradebooks that have any grade system.
 
 
-        :param match: ``true`` to match gradebooks with any grade system, ``false`` to match
-            gradebooks with no grade system
+        :param match: ``true`` to match gradebooks with any grade system, ``false`` to match gradebooks with no grade
+            system
         :type match: ``boolean``
 
 
@@ -2994,8 +2983,8 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Matches gradebooks that have any grade entry.
 
 
-        :param match: ``true`` to match gradebooks with any grade entry, ``false`` to match
-            gradebooks with no grade entry
+        :param match: ``true`` to match gradebooks with any grade entry, ``false`` to match gradebooks with no grade
+            entry
         :type match: ``boolean``
 
 
@@ -3097,8 +3086,7 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Matches gradebooks that have any column.
 
 
-        :param match: ``true`` to match gradebooks with any column, ``false`` to match gradebooks
-            with no column
+        :param match: ``true`` to match gradebooks with any column, ``false`` to match gradebooks with no column
         :type match: ``boolean``
 
 
@@ -3127,8 +3115,8 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     gradebook_column_terms = property(fdel=clear_gradebook_column_terms)
 
     def match_ancestor_gradebook_id(self, gradebook_id, match):
-        """Sets the gradebook ``Id`` for this query to match gradebooks that have the specified
-            gradebook as an ancestor.
+        """Sets the gradebook ``Id`` for this query to match gradebooks that have the specified gradebook as an
+            ancestor.
 
 
         :param gradebook_id: a gradebook ``Id``
@@ -3201,8 +3189,7 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Matches gradebook with any ancestor.
 
 
-        :param match: ``true`` to match gradebooks with any ancestor, ``false`` to match root
-            gradebooks
+        :param match: ``true`` to match gradebooks with any ancestor, ``false`` to match root gradebooks
         :type match: ``boolean``
 
 
@@ -3231,8 +3218,8 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
     ancestor_gradebook_terms = property(fdel=clear_ancestor_gradebook_terms)
 
     def match_descendant_gradebook_id(self, gradebook_id, match):
-        """Sets the gradebook ``Id`` for this query to match gradebooks that have the specified
-            gradebook as a descendant.
+        """Sets the gradebook ``Id`` for this query to match gradebooks that have the specified gradebook as a
+            descendant.
 
 
         :param gradebook_id: a gradebook ``Id``
@@ -3305,8 +3292,7 @@ class GradebookQuery(osid_queries.OsidCatalogQuery):
         """Matches gradebook with any descendant.
 
 
-        :param match: ``true`` to match gradebooks with any descendant, ``false`` to match leaf
-            gradebooks
+        :param match: ``true`` to match gradebooks with any descendant, ``false`` to match leaf gradebooks
         :type match: ``boolean``
 
 

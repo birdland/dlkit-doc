@@ -39,8 +39,7 @@ class HierarchyQuery(osid_queries.OsidCatalogQuery):
         """Matches hierarchies with any node.
 
 
-        :param match: ``true`` to match hierarchies with any nodes, ``false`` to match hierarchies
-            with no nodes
+        :param match: ``true`` to match hierarchies with any nodes, ``false`` to match hierarchies with no nodes
         :type match: ``boolean``
 
 

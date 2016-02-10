@@ -1,119 +1,1618 @@
-"""DLKit Services implementations of commenting service."""
-# pylint: disable=no-init
-#     osid specification includes some 'marker' interfaces.
-# pylint: disable=too-many-ancestors
-#     number of ancestors defined in spec.
-# pylint: disable=too-few-public-methods,too-many-public-methods
-#     number of methods defined in spec. Worse yet, these are aggregates.
-# pylint: disable=invalid-name
-#     method and class names defined in spec.
-# pylint: disable=no-self-use,unused-argument
-#     to catch unimplemented methods.
-# pylint: disable=super-init-not-called
-#     it just isn't.
+# -*- coding: utf-8 -*-
+"""Commenting Open Service Interface Definitions
+commenting version 3.0.0
+
+The Commenting OSID provides a means of relating user comments and
+    ratings to OSID Objects.
 
 
-
-from . import osid
-from ..abstract_osid.commenting import objects as abc_commenting_objects
-from .osid_errors import Unimplemented, IllegalState
-from dlkit.manager_impls.commenting import managers as commenting_managers
-
+The Commenting OSID may be used as an auxiliary service orchestrated
+    with other OSIDs to either provide administrative comments as well as
+    create a social network-esque comment and rating service to various
+    ``OsidObjects``.
 
 
-DEFAULT = 0
-COMPARATIVE = 0
-PLENARY = 1
-FEDERATED = 0
-ISOLATED = 1
-AUTOMATIC = 0
-MANDATORY = 1
-DISABLED = -1
+Comments
 
 
-class CommentingProfile(osid.OsidProfile, commenting_managers.CommentingProfile):
-    """CommentingProfile convenience adapter including related Session methods."""
+``Comments`` contain text entries logged by date and ``Agent``. A
+    ``Comment`` may also include a rating represented by a ``Grade`` defined
+    in a ``GradeSystem``. The ``RatingLookupSession`` may be used to query
+    cumulative scores across an object reference or the entire ``Book``.
+
+
+``Comments`` are ``OsidRelationships`` between a commentor and a
+    reference Id. The relationship defines dates for which the comment
+    and/or rating is effective.
+
+
+Commentors
+
+
+An ``Agent`` comments on something. As a person is represented by a
+    ``Resource`` in the Resource OSID, the Comments provide access to both
+    the commenting ``Agent`` and the related ``Resource`` to avoid the need
+    of an additional service orchestration for resolving the ``Agent``.
+
+
+Cataloging
+
+
+``Comments`` are cataloged in ``Books`` which may also be grouped
+    hierarchically to federate multiple collections of comments.
+
+
+Sub Packages
+
+
+The Commenting OSID includes a Commenting Batch OSID for managing
+    ``Comments`` and ``Books`` in bulk.
+
+"""
+
+from ..osid import managers as osid_managers
+from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
+from ..osid import records as osid_records
+from ..osid import queries as osid_queries
+from ..osid import searches as osid_searches
+
+
+class CommentingProfile(osid_managers.OsidProfile):
+    """The commenting profile describes the interoperability among commenting services."""
 
 
     def __init__(self):
         self._provider_manager = None
+    def supports_visible_federation(self):
+        """Tests if any book federation is exposed.
+
+
+        Federation is exposed when a specific book may be identified,
+        selected and used to create a lookup or admin session.
+        Federation is not exposed when a set of books appears as a
+        single book.
+
+
+        :return: ``true`` if visible federation is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
     def supports_comment_lookup(self):
-        """Pass through to provider supports_comment_lookup"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_comment_lookup()
+        """Tests for the availability of a comment lookup service.
+
+
+        :return: ``true`` if comment lookup is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_rating_lookup(self):
+        """Tests for the availability of a rating lookup service.
+
+
+        :return: ``true`` if rating lookup is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def supports_comment_query(self):
-        """Pass through to provider supports_comment_query"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_comment_query()
+        """Tests if querying comments is available.
+
+
+        :return: ``true`` if comment query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_comment_search(self):
+        """Tests if searching for comments is available.
+
+
+        :return: ``true`` if comment search is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def supports_comment_admin(self):
-        """Pass through to provider supports_comment_admin"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_comment_admin()
+        """Tests if managing comments is available.
+
+
+        :return: ``true`` if comment admin is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_comment_notification(self):
+        """Tests if comment notification is available.
+
+
+        :return: ``true`` if comment notification is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_comment_book(self):
+        """Tests if a comment to book lookup session is available.
+
+
+        :return: ``true`` if comment book lookup session is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_comment_book_assignment(self):
+        """Tests if a comment to book assignment session is available.
+
+
+        :return: ``true`` if comment book assignment is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_comment_smart_book(self):
+        """Tests if a comment smart booking session is available.
+
+
+        :return: ``true`` if comment smart booking is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def supports_book_lookup(self):
-        """Pass through to provider supports_book_lookup"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_book_lookup()
+        """Tests for the availability of an book lookup service.
+
+
+        :return: ``true`` if book lookup is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_book_query(self):
+        """Tests if querying books is available.
+
+
+        :return: ``true`` if book query is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_book_search(self):
+        """Tests if searching for books is available.
+
+
+        :return: ``true`` if book search is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def supports_book_admin(self):
-        """Pass through to provider supports_book_admin"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_book_admin()
+        """Tests for the availability of a book administrative service for creating and deleting books.
+
+
+        :return: ``true`` if book administration is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def supports_book_notification(self):
+        """Tests for the availability of a book notification service.
+
+
+        :return: ``true`` if book notification is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented in all
+        providers.*
+
+
+        """
+        return # boolean
 
     def supports_book_hierarchy(self):
-        """Pass through to provider supports_book_hierarchy"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_book_hierarchy()
+        """Tests for the availability of a book hierarchy traversal service.
+
+
+        :return: ``true`` if book hierarchy traversal is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def supports_book_hierarchy_design(self):
-        """Pass through to provider supports_book_hierarchy_design"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.supports_resource_lookup
-        return self._provider_manager.supports_book_hierarchy_design()
+        """Tests for the availability of a book hierarchy design service.
+
+
+        :return: ``true`` if book hierarchy design is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented in all
+        providers.*
+
+
+        """
+        return # boolean
+
+    def supports_commenting_batch(self):
+        """Tests for the availability of a commenting batch service.
+
+
+        :return: ``true`` if commenting batch service is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented in all
+        providers.*
+
+
+        """
+        return # boolean
 
     def get_comment_record_types(self):
-        """Pass through to provider get_comment_record_types"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.get_resource_record_types
-        return self._provider_manager.get_comment_record_types()
+        """Gets the supported ``Comment`` record types.
+
+
+        :return: a list containing the supported comment record types
+        :rtype: ``osid.type.TypeList``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.type.TypeList
 
     comment_record_types = property(fget=get_comment_record_types)
 
+    def supports_comment_record_type(self, comment_record_type):
+        """Tests if the given ``Comment`` record type is supported.
+
+
+        :param comment_record_type: a ``Type`` indicating a ``Comment`` record type
+        :type comment_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``comment_record_type`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
     def get_comment_search_record_types(self):
-        """Pass through to provider get_comment_search_record_types"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.get_resource_record_types
-        return self._provider_manager.get_comment_search_record_types()
+        """Gets the supported comment search record types.
+
+
+        :return: a list containing the supported comment search record types
+        :rtype: ``osid.type.TypeList``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.type.TypeList
 
     comment_search_record_types = property(fget=get_comment_search_record_types)
 
+    def supports_comment_search_record_type(self, comment_search_record_type):
+        """Tests if the given comment search record type is supported.
+
+
+        :param comment_search_record_type: a ``Type`` indicating a comment record type
+        :type comment_search_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``comment_search_record_type`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
     def get_book_record_types(self):
-        """Pass through to provider get_book_record_types"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.get_resource_record_types
-        return self._provider_manager.get_book_record_types()
+        """Gets the supported ``Book`` record types.
+
+
+        :return: a list containing the supported book record types
+        :rtype: ``osid.type.TypeList``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.type.TypeList
 
     book_record_types = property(fget=get_book_record_types)
 
+    def supports_book_record_type(self, book_record_type):
+        """Tests if the given ``Book`` record type is supported.
+
+
+        :param book_record_type: a ``Type`` indicating a ``Book`` record type
+        :type book_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
     def get_book_search_record_types(self):
-        """Pass through to provider get_book_search_record_types"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProfile.get_resource_record_types
-        return self._provider_manager.get_book_search_record_types()
+        """Gets the supported book search record types.
+
+
+        :return: a list containing the supported book search record types
+        :rtype: ``osid.type.TypeList``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.type.TypeList
 
     book_search_record_types = property(fget=get_book_search_record_types)
 
+    def supports_book_search_record_type(self, book_search_record_type):
+        """Tests if the given book search record type is supported.
 
-class CommentingManager(osid.OsidManager, osid.OsidSession, CommentingProfile, commenting_managers.CommentingManager):
-    """CommentingManager convenience adapter including related Session methods."""
+
+        :param book_search_record_type: a ``Type`` indicating a book record type
+        :type book_search_record_type: ``osid.type.Type``
+        :return: ``true`` if the given ``Type`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``book_search_record_type`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+##
+# The following methods are from osid.commenting.BookLookupSession
+
+    def can_lookup_books(self):
+        """Tests if this user can perform ``Book`` lookups.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_book_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_book_view(self):
+        """A complete view of the ``Book`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_book(self, book_id):
+        """Gets the ``Book`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Book`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Book`` and retained for compatibility.
+
+
+        :param book_id: ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    def get_books_by_ids(self, book_ids):
+        """Gets a ``BookList`` corresponding to the given ``IdList``.
+
+
+        In plenary mode, the returned list contains all of the books
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Books`` may be omitted from the list and may
+        present the elements in any order including returning a unique
+        set.
+
+
+        :param book_ids: the list of ``Ids`` to retrieve
+        :type book_ids: ``osid.id.IdList``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``book_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
+            types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_parent_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
+            genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_record_type(self, book_record_type):
+        """Gets a ``BookList`` containing the given book record ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_record_type: a book record type
+        :type book_record_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_provider(self, resource_id):
+        """Gets a ``BookList`` from the given provider ````.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books(self):
+        """Gets all ``Books``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :return: a list of ``Books``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    books = property(fget=get_books)
+
+
+##
+# The following methods are from osid.commenting.BookAdminSession
+
+    def can_create_books(self):
+        """Tests if this user can create ``Books``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer create
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_book_with_record_types(self, book_record_types):
+        """Tests if this user can create a single ``Book`` using the desired record types.
+
+
+        While ``CommentingManager.getBookRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Book``.
+        Providing an empty array tests if a ``Book`` can be created with
+        no records.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_book_form_for_create(self, book_record_types):
+        """Gets the book form for creating new books.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookForm
+
+    def create_book(self, book_form):
+        """Creates a new ``Book``.
+
+
+        :param book_form: the form for this ``Book``
+        :type book_form: ``osid.commenting.BookForm``
+        :return: the new ``Book``
+        :rtype: ``osid.commenting.Book``
+        :raise: ``IllegalState`` -- ``book_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    def can_update_books(self):
+        """Tests if this user can update ``Books``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer update
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_book_form_for_update(self, book_id):
+        """Gets the book form for updating an existing book.
+
+
+        A new book form should be requested for each update transaction.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookForm
+
+    def update_book(self, book_form):
+        """Updates an existing book.
+
+
+        :param book_form: the form containing the elements to be updated
+        :type book_form: ``osid.commenting.BookForm``
+        :raise: ``IllegalState`` -- ``book_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_delete_books(self):
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
+
+
+        A return of false indicates that it is known deleting a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer delete
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_book(self, book_id):
+        """Deletes a ``Book``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to remove
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_manage_book_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Books``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Book`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_book(self, book_id, alias_id):
+        """Adds an ``Id`` to a ``Book`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``Book`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another book, it is
+        reassigned to the given book ``Id``.
+
+
+        :param book_id: the ``Id`` of a ``Book``
+        :type book_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+##
+# The following methods are from osid.commenting.BookHierarchySession
+
+    def get_book_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_hierarchy_id = property(fget=get_book_hierarchy_id)
+
+    def get_book_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    book_hierarchy = property(fget=get_book_hierarchy)
+
+    def can_access_book_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_book_view(self):
+        """The returns from the book methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_book_view(self):
+        """A complete view of the ``Book`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_root_book_ids(self):
+        """Gets the root book ``Ids`` in this hierarchy.
+
+
+        :return: the root book ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    root_book_ids = property(fget=get_root_book_ids)
+
+    def get_root_books(self):
+        """Gets the root books in the book hierarchy.
+
+
+        A node with no parents is an orphan. While all book ``Ids`` are
+        known to the hierarchy, an orphan does not appear in the
+        hierarchy unless explicitly added as a root node or child of
+        another node.
+
+
+        :return: the root books
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    root_books = property(fget=get_root_books)
+
+    def has_parent_books(self, book_id):
+        """Tests if the ``Book`` has any parents.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the book has parents, f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def is_parent_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a direct parent of book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``book_id,`` f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_parent_book_ids(self, book_id):
+        """Gets the parent ``Ids`` of the given book.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_parent_books(self, book_id):
+        """Gets the parent books of the given ``id``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the parent books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def is_ancestor_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is an ancestor of a book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``tru`` e if this ``id`` is an ancestor of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def has_child_books(self, book_id):
+        """Tests if a book has any children.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``book_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def is_child_of_book(self, id_, book_id):
+        """Tests if a book is a direct child of another.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_child_book_ids(self, book_id):
+        """Gets the child ``Ids`` of the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the children of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_child_books(self, book_id):
+        """Gets the child books of the given ``id``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the child books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def is_descendant_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a descendant of a book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` is not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_book_node_ids(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Node
+
+    def get_book_nodes(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.commenting.BookNode``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookNode
+
+
+##
+# The following methods are from osid.commenting.BookHierarchyDesignSession
+
+    def get_book_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_hierarchy_id = property(fget=get_book_hierarchy_id)
+
+    def get_book_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    book_hierarchy = property(fget=get_book_hierarchy)
+
+    def can_modify_book_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def add_root_book(self, book_id):
+        """Adds a root book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_root_book(self, book_id):
+        """Removes a root book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` is not a root
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def add_child_book(self, book_id, child_id):
+        """Adds a child to a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``book_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_child_book(self, book_id, child_id):
+        """Removes a child from a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_child_books(self, book_id):
+        """Removes all children from a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+
+
+class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, CommentingProfile):
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
+        aspects of
+    this service.
+
+
+    The sessions included in this manager are:
+
+
+
+
+      * ``CommentLookupSession:`` a session to lookup comments
+      * ``RatingLookupSession:`` a session to lookup comments
+      * ``CommentQuerySession:`` a session to query comments
+      * ``CommentSearchSession:`` a session to search comments
+      * ``CommentAdminSession:`` a session to manage comments
+      * ``CommentNotificationSession:`` a session to subscribe to
+        notifications of comment changes
+      * ``CommentBookSession:`` a session for looking up comment and
+        book mappings
+      * ``CommentBookAssignmentSession:`` a session for managing comment
+        and book mappings
+      * ``CommentSmartBookSession:`` a session to manage dynamic comment
+        books
+      * ``BookLookupSession:`` a session to retrieve books
+      * ``BookQuerySession:`` a session to query books
+      * ``BookSearchSession:`` a session to search for books
+      * ``BookAdminSession:`` a session to create, update and delete
+        books
+      * ``BookNotificationSession:`` a session to receive notifications
+        for changes in books
+      * ``BookHierarchyTraversalSession:`` a session to traverse
+        hierarchies of books
+      * ``BookHierarchyDesignSession:`` a session to manage hierarchies
+        of books
+
+
+
+
+
+
+
+
+    The commenting manager also provides a profile for determing the
+    supported search types supported by this service.
+
+
+    """
 
 
     def __init__(self, proxy=None):
@@ -209,221 +1708,704 @@ class CommentingManager(osid.OsidManager, osid.OsidSession, CommentingProfile, c
         """Session state will never be saved"""
         self._session_management = DISABLED
         self.close_sessions()
-    def get_comment_lookup_session(self, *args, **kwargs):
-        """Pass through to provider get_comment_lookup_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_catalog_template
-        session = self._instantiate_session(method_name='get_comment_lookup_session', proxy=self._proxy, *args, **kwargs)
-        return Book(
-            self._provider_manager,
-            session.get_book(),
-            self._proxy, comment_lookup_session=session)
+    def get_comment_lookup_session(self):
+        """Gets the ``OsidSession`` associated with the comment lookup service.
+
+
+        :return: a ``CommentLookupSession``
+        :rtype: ``osid.commenting.CommentLookupSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_lookup()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentLookupSession
 
     comment_lookup_session = property(fget=get_comment_lookup_session)
 
-    def get_comment_lookup_session_for_book(self, *args, **kwargs):
-        """Pass through to provider get_comment_lookup_session_for_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_for_bin_catalog_template
-        if self._proxy:
-            session = self._provider_manager.get_comment_lookup_session_for_book(proxy=self._proxy, *args, **kwargs)
-        else:
-            session = self._provider_manager.get_comment_lookup_session_for_book(*args, **kwargs)
-        return Book(
-            self._provider_manager,
-            self.get_book(*args, **kwargs),
-            self._proxy,
-            comment_lookup_session=session)
+    def get_comment_lookup_session_for_book(self, book_id):
+        """Gets the ``OsidSession`` associated with the comment lookup service for the given book.
 
-    def get_comment_query_session(self, *args, **kwargs):
-        """Pass through to provider get_comment_query_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_catalog_template
-        session = self._instantiate_session(method_name='get_comment_query_session', proxy=self._proxy, *args, **kwargs)
-        return Book(
-            self._provider_manager,
-            session.get_book(),
-            self._proxy, comment_query_session=session)
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: a ``CommentLookupSession``
+        :rtype: ``osid.commenting.CommentLookupSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_lookup()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentLookupSession
+
+    def get_rating_lookup_session(self):
+        """Gets the ``OsidSession`` associated with the rating lookup service.
+
+
+        :return: a ``RatingLookupSession``
+        :rtype: ``osid.commenting.RatingLookupSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_rating_lookup()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.RatingLookupSession
+
+    rating_lookup_session = property(fget=get_rating_lookup_session)
+
+    def get_rating_lookup_session_for_book(self, book_id):
+        """Gets the ``OsidSession`` associated with the rating lookup service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: a ``RatingLookupSession``
+        :rtype: ``osid.commenting.RatingLookupSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_rating_lookup()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.RatingLookupSession
+
+    def get_comment_query_session(self):
+        """Gets the ``OsidSession`` associated with the comment query service.
+
+
+        :return: a ``CommentQuerySession``
+        :rtype: ``osid.commenting.CommentQuerySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_query()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentQuerySession
 
     comment_query_session = property(fget=get_comment_query_session)
 
-    def get_comment_query_session_for_book(self, *args, **kwargs):
-        """Pass through to provider get_comment_query_session_for_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_for_bin_catalog_template
-        if self._proxy:
-            session = self._provider_manager.get_comment_query_session_for_book(proxy=self._proxy, *args, **kwargs)
-        else:
-            session = self._provider_manager.get_comment_query_session_for_book(*args, **kwargs)
-        return Book(
-            self._provider_manager,
-            self.get_book(*args, **kwargs),
-            self._proxy,
-            comment_query_session=session)
+    def get_comment_query_session_for_book(self, book_id):
+        """Gets the ``OsidSession`` associated with the comment query service for the given book.
 
-    def get_comment_admin_session(self, *args, **kwargs):
-        """Pass through to provider get_comment_admin_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_catalog_template
-        session = self._instantiate_session(method_name='get_comment_admin_session', proxy=self._proxy, *args, **kwargs)
-        return Book(
-            self._provider_manager,
-            session.get_book(),
-            self._proxy, comment_admin_session=session)
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: a ``CommentQuerySession``
+        :rtype: ``osid.commenting.CommentQuerySession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_query()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentQuerySession
+
+    def get_comment_search_session(self):
+        """Gets the ``OsidSession`` associated with the comment search service.
+
+
+        :return: a ``CommentSearchSession``
+        :rtype: ``osid.commenting.CommentSearchSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_search()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentSearchSession
+
+    comment_search_session = property(fget=get_comment_search_session)
+
+    def get_comment_search_session_for_book(self, book_id):
+        """Gets the ``OsidSession`` associated with the comment search service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: a ``CommentSearchSession``
+        :rtype: ``osid.commenting.CommentSearchSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_search()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentSearchSession
+
+    def get_comment_admin_session(self):
+        """Gets the ``OsidSession`` associated with the comment administration service.
+
+
+        :return: a ``CommentAdminSession``
+        :rtype: ``osid.commenting.CommentAdminSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_admin()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentAdminSession
 
     comment_admin_session = property(fget=get_comment_admin_session)
 
-    def get_comment_admin_session_for_book(self, *args, **kwargs):
-        """Pass through to provider get_comment_admin_session_for_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_for_bin_catalog_template
-        if self._proxy:
-            session = self._provider_manager.get_comment_admin_session_for_book(proxy=self._proxy, *args, **kwargs)
-        else:
-            session = self._provider_manager.get_comment_admin_session_for_book(*args, **kwargs)
-        return Book(
-            self._provider_manager,
-            self.get_book(*args, **kwargs),
-            self._proxy,
-            comment_admin_session=session)
+    def get_comment_admin_session_for_book(self, book_id):
+        """Gets the ``OsidSession`` associated with the comment administration service for the given book.
 
-    def get_book_lookup_session(self, *args, **kwargs):
-        """Pass through to provider get_book_lookup_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_manager_template
-        if self._session_management != DISABLED:
-            self._get_provider_session('book_lookup_session', *args, **kwargs)
-        return self
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: a ``CommentAdminSession``
+        :rtype: ``osid.commenting.CommentAdminSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_admin()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentAdminSession
+
+    def get_comment_notification_session(self, comment_receiver):
+        """Gets the ``OsidSession`` associated with the comment notification service.
+
+
+        :param comment_receiver: the receiver
+        :type comment_receiver: ``osid.commenting.CommentReceiver``
+        :return: a ``CommentNotificationSession``
+        :rtype: ``osid.commenting.CommentNotificationSession``
+        :raise: ``NullArgument`` -- ``comment_receiver`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_notification()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentNotificationSession
+
+    def get_comment_notification_session_for_book(self, comment_receiver, book_id):
+        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
+
+
+        :param comment_receiver: the receiver
+        :type comment_receiver: ``osid.commenting.CommentReceiver``
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: a ``CommentNotificationSession``
+        :rtype: ``osid.commenting.CommentNotificationSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``comment_receiver`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is
+            ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_notification()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentNotificationSession
+
+    def get_comment_book_session(self):
+        """Gets the session for retrieving comment to book mappings.
+
+
+        :return: a ``CommentBookSession``
+        :rtype: ``osid.commenting.CommentBookSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_book()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_book()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentBookSession
+
+    comment_book_session = property(fget=get_comment_book_session)
+
+    def get_comment_book_assignment_session(self):
+        """Gets the session for assigning comment to book mappings.
+
+
+        :return: a ``CommentBookAssignmentSession``
+        :rtype: ``osid.commenting.CommentBookAssignmentSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_book_assignment()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_book_assignment()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentBookAssignmentSession
+
+    comment_book_assignment_session = property(fget=get_comment_book_assignment_session)
+
+    def get_comment_smart_book_session(self, book_id):
+        """Gets the session associated with the comment smart book for the given book.
+
+
+        :param book_id: the ``Id`` of the book
+        :type book_id: ``osid.id.Id``
+        :return: a ``CommentSmartBookSession``
+        :rtype: ``osid.commenting.CommentSmartBookSession``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_smart_book()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_smart_book()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentSmartBookSession
+
+    def get_book_lookup_session(self):
+        """Gets the ``OsidSession`` associated with the book lookup service.
+
+
+        :return: a ``BookLookupSession``
+        :rtype: ``osid.commenting.BookLookupSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_lookup()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_lookup()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookLookupSession
 
     book_lookup_session = property(fget=get_book_lookup_session)
 
-    def get_book_admin_session(self, *args, **kwargs):
-        """Pass through to provider get_book_admin_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_manager_template
-        if self._session_management != DISABLED:
-            self._get_provider_session('book_admin_session', *args, **kwargs)
-        return self
+    def get_book_query_session(self):
+        """Gets the ``OsidSession`` associated with the book query service.
+
+
+        :return: a ``BookQuerySession``
+        :rtype: ``osid.commenting.BookQuerySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_query()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookQuerySession
+
+    book_query_session = property(fget=get_book_query_session)
+
+    def get_book_search_session(self):
+        """Gets the ``OsidSession`` associated with the book search service.
+
+
+        :return: a ``BookSearchSession``
+        :rtype: ``osid.commenting.BookSearchSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_search()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_search()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookSearchSession
+
+    book_search_session = property(fget=get_book_search_session)
+
+    def get_book_admin_session(self):
+        """Gets the ``OsidSession`` associated with the book administrative service.
+
+
+        :return: a ``BookAdminSession``
+        :rtype: ``osid.commenting.BookAdminSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_admin()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_admin()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookAdminSession
 
     book_admin_session = property(fget=get_book_admin_session)
 
-    def get_book_hierarchy_session(self, *args, **kwargs):
-        """Pass through to provider get_book_hierarchy_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_manager_template
-        if self._session_management != DISABLED:
-            self._get_provider_session('book_hierarchy_session', *args, **kwargs)
-        return self
+    def get_book_notification_session(self, book_receiver):
+        """Gets the ``OsidSession`` associated with the book notification service.
+
+
+        :param book_receiver: the receiver
+        :type book_receiver: ``osid.commenting.BookReceiver``
+        :return: a ``BookNotificationSession``
+        :rtype: ``osid.commenting.BookNotificationSession``
+        :raise: ``NullArgument`` -- ``book_receiver`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_notification()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_notification()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookNotificationSession
+
+    def get_book_hierarchy_session(self):
+        """Gets the ``OsidSession`` associated with the book hierarchy service.
+
+
+        :return: a ``BookHierarchySession``
+        :rtype: ``osid.commenting.BookHierarchySession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_hierarchy()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_hierarchy()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookHierarchySession
 
     book_hierarchy_session = property(fget=get_book_hierarchy_session)
 
-    def get_book_hierarchy_design_session(self, *args, **kwargs):
-        """Pass through to provider get_book_hierarchy_design_session"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceManager.get_resource_lookup_session_manager_template
-        if self._session_management != DISABLED:
-            self._get_provider_session('book_hierarchy_design_session', *args, **kwargs)
-        return self
+    def get_book_hierarchy_design_session(self):
+        """Gets the ``OsidSession`` associated with the book hierarchy design service.
+
+
+        :return: a ``BookHierarchyDesignSession``
+        :rtype: ``osid.commenting.BookHierarchyDesignSession``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_hierarchy_design()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_hierarchy_design()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookHierarchyDesignSession
 
     book_hierarchy_design_session = property(fget=get_book_hierarchy_design_session)
 
-    def get_commenting_batch_manager(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services')
+    def get_commenting_batch_manager(self):
+        """Gets a ``CommentingBatchManager``.
+
+
+        :return: a ``CommentingBatchManager``
+        :rtype: ``osid.commenting.batch.CommentingBatchManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_commenting_batch()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_commenting_batch()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.batch.CommentingBatchManager
 
     commenting_batch_manager = property(fget=get_commenting_batch_manager)
 ##
 # The following methods are from osid.commenting.BookLookupSession
 
     def can_lookup_books(self):
-        """Pass through to provider BookLookupSession.can_lookup_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.can_lookup_resources_template
-        return self._get_provider_session('book_lookup_session').can_lookup_books()
+        """Tests if this user can perform ``Book`` lookups.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def use_comparative_book_view(self):
-        """Pass through to provider BookLookupSession.use_comparative_book_view"""
-        self._book_view = COMPARATIVE
-        for session in self._provider_sessions:
-            try:
-                self._provider_sessions[session].use_comparative_book_view()
-            except AttributeError:
-                pass
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def use_plenary_book_view(self):
-        """Pass through to provider BookLookupSession.use_plenary_book_view"""
-        self._book_view = PLENARY
-        for session in self._provider_sessions:
-            try:
-                self._provider_sessions[session].use_plenary_book_view()
-            except AttributeError:
-                pass
+        """A complete view of the ``Book`` returns is desired.
 
-    def get_book(self, *args, **kwargs):
-        """Pass through to provider BookLookupSession.get_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bin
-        return Book(self._provider_manager, self._get_provider_session('book_lookup_session').get_book(*args, **kwargs), self._proxy)
 
-    def get_books_by_ids(self, *args, **kwargs):
-        """Pass through to provider BookLookupSession.get_books_by_ids"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bins_by_ids
-        catalogs = self._get_provider_session('book_lookup_session').get_books_by_ids(*args, **kwargs)
-        cat_list = []
-        for cat in catalogs:
-            cat_list.append(Book(self._provider_manager, cat, self._proxy))
-        return BookList(cat_list)
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
 
-    def get_books_by_genus_type(self, *args, **kwargs):
-        """Pass through to provider BookLookupSession.get_books_by_genus_type"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bins_by_genus_type
-        catalogs = self._get_provider_session('book_lookup_session').get_books_by_genus_type(*args, **kwargs)
-        cat_list = []
-        for cat in catalogs:
-            cat_list.append(Book(self._provider_manager, cat, self._proxy))
-        return BookList(cat_list)
 
-    def get_books_by_parent_genus_type(self, *args, **kwargs):
-        """Pass through to provider BookLookupSession.get_books_by_parent_genus_type"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bins_by_parent_genus_type
-        catalogs = self._get_provider_session('book_lookup_session').get_books_by_parent_genus_type(*args, **kwargs)
-        cat_list = []
-        for cat in catalogs:
-            cat_list.append(Book(self._provider_manager, cat, self._proxy))
-        return BookList(cat_list)
 
-    def get_books_by_record_type(self, *args, **kwargs):
-        """Pass through to provider BookLookupSession.get_books_by_record_type"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bins_by_record_type
-        catalogs = self._get_provider_session('book_lookup_session').get_books_by_record_type(*args, **kwargs)
-        cat_list = []
-        for cat in catalogs:
-            cat_list.append(Book(self._provider_manager, cat, self._proxy))
-        return BookList(cat_list)
 
-    def get_books_by_provider(self, *args, **kwargs):
-        """Pass through to provider BookLookupSession.get_books_by_provider"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bins_by_provider
-        catalogs = self._get_provider_session('book_lookup_session').get_books_by_provider(*args, **kwargs)
-        cat_list = []
-        for cat in catalogs:
-            cat_list.append(Book(self._provider_manager, cat, self._proxy))
-        return BookList(cat_list)
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_book(self, book_id):
+        """Gets the ``Book`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Book`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Book`` and retained for compatibility.
+
+
+        :param book_id: ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    def get_books_by_ids(self, book_ids):
+        """Gets a ``BookList`` corresponding to the given ``IdList``.
+
+
+        In plenary mode, the returned list contains all of the books
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Books`` may be omitted from the list and may
+        present the elements in any order including returning a unique
+        set.
+
+
+        :param book_ids: the list of ``Ids`` to retrieve
+        :type book_ids: ``osid.id.IdList``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``book_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
+            types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_parent_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
+            genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_record_type(self, book_record_type):
+        """Gets a ``BookList`` containing the given book record ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_record_type: a book record type
+        :type book_record_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_provider(self, resource_id):
+        """Gets a ``BookList`` from the given provider ````.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
 
     def get_books(self):
-        """Pass through to provider BookLookupSession.get_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinLookupSession.get_bins_template
-        catalogs = self._get_provider_session('book_lookup_session').get_books()
-        cat_list = []
-        for cat in catalogs:
-            cat_list.append(Book(self._provider_manager, cat, self._proxy))
-        return BookList(cat_list)
+        """Gets all ``Books``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :return: a list of ``Books``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
 
     books = property(fget=get_books)
 
@@ -432,320 +2414,2443 @@ class CommentingManager(osid.OsidManager, osid.OsidSession, CommentingProfile, c
 # The following methods are from osid.commenting.BookAdminSession
 
     def can_create_books(self):
-        """Pass through to provider BookAdminSession.can_create_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resources
-        return self._get_provider_session('book_admin_session').can_create_books()
+        """Tests if this user can create ``Books``.
 
-    def can_create_book_with_record_types(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.can_create_book_with_record_types"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resource_with_record_types
-        return self._get_provider_session('book_admin_session').can_create_book_with_record_types(*args, **kwargs)
 
-    def get_book_form_for_create(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.get_book_form_for_create"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.get_bin_form_for_create
-        return self._get_provider_session('book_admin_session').get_book_form_for_create(*args, **kwargs)
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer create
+        operations to unauthorized users.
 
-    def create_book(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.create_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.create_bin
-        return Book(self._provider_manager, self._get_provider_session('book_admin_session').create_book(*args, **kwargs), self._proxy)
+
+        :return: ``false`` if ``Book`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_book_with_record_types(self, book_record_types):
+        """Tests if this user can create a single ``Book`` using the desired record types.
+
+
+        While ``CommentingManager.getBookRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Book``.
+        Providing an empty array tests if a ``Book`` can be created with
+        no records.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_book_form_for_create(self, book_record_types):
+        """Gets the book form for creating new books.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookForm
+
+    def create_book(self, book_form):
+        """Creates a new ``Book``.
+
+
+        :param book_form: the form for this ``Book``
+        :type book_form: ``osid.commenting.BookForm``
+        :return: the new ``Book``
+        :rtype: ``osid.commenting.Book``
+        :raise: ``IllegalState`` -- ``book_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
 
     def can_update_books(self):
-        """Pass through to provider BookAdminSession.can_update_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resources
-        return self._get_provider_session('book_admin_session').can_update_books()
+        """Tests if this user can update ``Books``.
 
-    def get_book_form_for_update(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.get_book_form_for_update"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.get_bin_form_for_update
-        return self._get_provider_session('book_admin_session').get_book_form_for_update(*args, **kwargs)
 
-    def get_book_form(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.get_book_form_for_update"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.get_bin_form_for_update_template
-        # This method might be a bit sketchy. Time will tell.
-        if isinstance(args[-1], list) or 'book_record_types' in kwargs:
-            return self.get_book_form_for_create(*args, **kwargs)
-        else:
-            return self.get_book_form_for_update(*args, **kwargs)
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer update
+        operations to unauthorized users.
 
-    def update_book(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.update_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.update_bin
-        # OSID spec does not require returning updated catalog
-        return Book(self._provider_manager, self._get_provider_session('book_admin_session').update_book(*args, **kwargs), self._proxy)
 
-    def save_book(self, book_form, *args, **kwargs):
-        """Pass through to provider BookAdminSession.update_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.update_bin
-        if book_form.is_for_update():
-            return self.update_book(book_form, *args, **kwargs)
-        else:
-            return self.create_book(book_form, *args, **kwargs)
+        :return: ``false`` if ``Book`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_book_form_for_update(self, book_id):
+        """Gets the book form for updating an existing book.
+
+
+        A new book form should be requested for each update transaction.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookForm
+
+    def update_book(self, book_form):
+        """Updates an existing book.
+
+
+        :param book_form: the form containing the elements to be updated
+        :type book_form: ``osid.commenting.BookForm``
+        :raise: ``IllegalState`` -- ``book_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
 
     def can_delete_books(self):
-        """Pass through to provider BookAdminSession.can_delete_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resources
-        return self._get_provider_session('book_admin_session').can_delete_books()
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
 
-    def delete_book(self, *args, **kwargs):
-        """Pass through to provider BookAdminSession.delete_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinAdminSession.delete_bin
-        self._get_provider_session('book_admin_session').delete_book(*args, **kwargs)
+
+        A return of false indicates that it is known deleting a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer delete
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_book(self, book_id):
+        """Deletes a ``Book``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to remove
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
 
     def can_manage_book_aliases(self):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services')
+        """Tests if this user can manage ``Id`` aliases for ``Books``.
 
-    def alias_book(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Book`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_book(self, book_id, alias_id):
+        """Adds an ``Id`` to a ``Book`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``Book`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another book, it is
+        reassigned to the given book ``Id``.
+
+
+        :param book_id: the ``Id`` of a ``Book``
+        :type book_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
 
 
 ##
 # The following methods are from osid.commenting.BookHierarchySession
 
     def get_book_hierarchy_id(self):
-        """Pass through to provider BookHierarchySession.get_book_hierarchy_id"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_bin_hierarchy_id
-        return self._get_provider_session('book_hierarchy_session').get_book_hierarchy_id()
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
 
     book_hierarchy_id = property(fget=get_book_hierarchy_id)
 
     def get_book_hierarchy(self):
-        """Pass through to provider BookHierarchySession.get_book_hierarchy"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_bin_hierarchy
-        return self._get_provider_session('book_hierarchy_session').get_book_hierarchy()
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
 
     book_hierarchy = property(fget=get_book_hierarchy)
 
     def can_access_book_hierarchy(self):
-        """Pass through to provider BookHierarchySession.can_access_book_hierarchy"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.can_access_bin_hierarchy
-        return self._get_provider_session('book_hierarchy_session').can_access_book_hierarchy()
+        """Tests if this user can perform hierarchy queries.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_book_view(self):
+        """The returns from the book methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_book_view(self):
+        """A complete view of the ``Book`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def get_root_book_ids(self):
-        """Pass through to provider BookHierarchySession.get_root_book_ids"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_root_bin_ids
-        return self._get_provider_session('book_hierarchy_session').get_root_book_ids()
+        """Gets the root book ``Ids`` in this hierarchy.
+
+
+        :return: the root book ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
 
     root_book_ids = property(fget=get_root_book_ids)
 
     def get_root_books(self):
-        """Pass through to provider BookHierarchySession.get_root_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_root_bins
-        return self._get_provider_session('book_hierarchy_session').get_root_books()
+        """Gets the root books in the book hierarchy.
+
+
+        A node with no parents is an orphan. While all book ``Ids`` are
+        known to the hierarchy, an orphan does not appear in the
+        hierarchy unless explicitly added as a root node or child of
+        another node.
+
+
+        :return: the root books
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
 
     root_books = property(fget=get_root_books)
 
-    def has_parent_books(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.has_parent_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.has_parent_bins
-        return self._get_provider_session('book_hierarchy_session').has_parent_books(*args, **kwargs)
+    def has_parent_books(self, book_id):
+        """Tests if the ``Book`` has any parents.
 
-    def is_parent_of_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.is_parent_of_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.is_parent_of_bin
-        return self._get_provider_session('book_hierarchy_session').is_parent_of_book(*args, **kwargs)
 
-    def get_parent_book_ids(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.get_parent_book_ids"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_parent_bin_ids
-        return self._get_provider_session('book_hierarchy_session').get_parent_book_ids(*args, **kwargs)
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the book has parents, f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
-    def get_parent_books(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.get_parent_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_parent_bins
-        return self._get_provider_session('book_hierarchy_session').get_parent_books(*args, **kwargs)
 
-    def is_ancestor_of_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.is_ancestor_of_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.is_ancestor_of_bin
-        return self._get_provider_session('book_hierarchy_session').is_ancestor_of_book(*args, **kwargs)
+        *compliance: mandatory -- This method must be implemented.*
 
-    def has_child_books(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.has_child_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.has_child_bins
-        return self._get_provider_session('book_hierarchy_session').has_child_books(*args, **kwargs)
 
-    def is_child_of_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.is_child_of_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.is_child_of_bin
-        return self._get_provider_session('book_hierarchy_session').is_child_of_book(*args, **kwargs)
+        """
+        return # boolean
 
-    def get_child_book_ids(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.get_child_book_ids"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_child_bin_ids
-        return self._get_provider_session('book_hierarchy_session').get_child_book_ids(*args, **kwargs)
+    def is_parent_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a direct parent of book.
 
-    def get_child_books(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.get_child_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_child_bins
-        return self._get_provider_session('book_hierarchy_session').get_child_books(*args, **kwargs)
 
-    def is_descendant_of_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.is_descendant_of_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.is_descendant_of_bin
-        return self._get_provider_session('book_hierarchy_session').is_descendant_of_book(*args, **kwargs)
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``book_id,`` f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
-    def get_book_node_ids(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.get_book_node_ids"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_bin_node_ids
-        return self._get_provider_session('book_hierarchy_session').get_book_node_ids(*args, **kwargs)
 
-    def get_book_nodes(self, *args, **kwargs):
-        """Pass through to provider BookHierarchySession.get_book_nodes"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchySession.get_bin_nodes
-        return self._get_provider_session('book_hierarchy_session').get_book_nodes(*args, **kwargs)
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_parent_book_ids(self, book_id):
+        """Gets the parent ``Ids`` of the given book.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_parent_books(self, book_id):
+        """Gets the parent books of the given ``id``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the parent books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def is_ancestor_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is an ancestor of a book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``tru`` e if this ``id`` is an ancestor of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def has_child_books(self, book_id):
+        """Tests if a book has any children.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``book_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def is_child_of_book(self, id_, book_id):
+        """Tests if a book is a direct child of another.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_child_book_ids(self, book_id):
+        """Gets the child ``Ids`` of the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the children of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_child_books(self, book_id):
+        """Gets the child books of the given ``id``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the child books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def is_descendant_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a descendant of a book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` is not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_book_node_ids(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Node
+
+    def get_book_nodes(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.commenting.BookNode``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookNode
 
 
 ##
 # The following methods are from osid.commenting.BookHierarchyDesignSession
 
+    def get_book_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_hierarchy_id = property(fget=get_book_hierarchy_id)
+
+    def get_book_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    book_hierarchy = property(fget=get_book_hierarchy)
+
     def can_modify_book_hierarchy(self):
-        """Pass through to provider BookHierarchyDesignSession.can_modify_book_hierarchy"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchyDesignSession.can_modify_bin_hierarchy
-        return self._get_provider_session('book_hierarchy_design_session').can_modify_book_hierarchy()
+        """Tests if this user can change the hierarchy.
 
-    def create_book_hierarchy(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.can_modify_book_hierarchy"""
-        # Patched in by cjshaw@mit.edu, Jul 23, 2014, added by birdland to template on Aug 8, 2014
-        # Is not part of specs for catalog hierarchy design sessions, but may want to be in hierarchy service instead
-        # Will not return an actual object, just JSON
-        # since a BankHierarchy does not seem to be an OSID thing.
-        return self._get_provider_session('book_hierarchy_design_session').create_book_hierarchy(*args, **kwargs)
 
-    def delete_book_hierarchy(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.can_modify_book_hierarchy"""
-        # Patched in by cjshaw@mit.edu, Jul 23, 2014, added by birdland to template on Aug 8, 2014
-        # Is not part of specs for catalog hierarchy design sessions, but may want to be in hierarchy service instead
-        # Will not return an actual object, just JSON
-        # since a BankHierarchy does not seem to be an OSID thing.
-        return self._get_provider_session('book_hierarchy_design_session').delete_book_hierarchy(*args, **kwargs)
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
 
-    def add_root_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.add_root_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchyDesignSession.add_root_bin
-        self._get_provider_session('book_hierarchy_design_session').add_root_book(*args, **kwargs)
 
-    def remove_root_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.remove_root_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchyDesignSession.remove_root_bin
-        self._get_provider_session('book_hierarchy_design_session').remove_root_book(*args, **kwargs)
-
-    def add_child_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.add_child_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchyDesignSession.add_child_bin
-        self._get_provider_session('book_hierarchy_design_session').add_child_book(*args, **kwargs)
-
-    def remove_child_book(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.remove_child_book"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchyDesignSession.remove_child_bin
-        self._get_provider_session('book_hierarchy_design_session').remove_child_book(*args, **kwargs)
-
-    def remove_child_books(self, *args, **kwargs):
-        """Pass through to provider BookHierarchyDesignSession.remove_child_books"""
-        # Implemented from kitosid template for -
-        # osid.resource.BinHierarchyDesignSession.remove_child_bins
-        self._get_provider_session('book_hierarchy_design_session').remove_child_books(*args, **kwargs)
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
 
 
 
 
-class CommentingProxyManager(osid.OsidProxyManager, CommentingProfile, commenting_managers.CommentingProxyManager):
-    """CommentingProxyManager convenience adapter including related Session methods."""
+        *compliance: mandatory -- This method must be implemented.*
 
-    def get_comment_lookup_session(self, *args, **kwargs):
-        """Sends control to Manager"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProxyManager.get_resource_lookup_session_template
-        return CommentingManager.get_comment_lookup_session(*args, **kwargs)
 
-    def get_comment_lookup_session_for_book(self, *args, **kwargs):
-        """Sends control to Manager"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProxyManager.get_resource_lookup_session_for_bin_template
-        return CommentingManager.get_comment_lookup_session_for_book(*args, **kwargs)
+        """
+        return # boolean
 
-    def get_comment_query_session(self, *args, **kwargs):
-        """Sends control to Manager"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProxyManager.get_resource_lookup_session_template
-        return CommentingManager.get_comment_query_session(*args, **kwargs)
+    def add_root_book(self, book_id):
+        """Adds a root book.
 
-    def get_comment_query_session_for_book(self, *args, **kwargs):
-        """Sends control to Manager"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceProxyManager.get_resource_lookup_session_for_bin_template
-        return CommentingManager.get_comment_query_session_for_book(*args, **kwargs)
 
-    def get_comment_admin_session(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
-    def get_comment_admin_session_for_book(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def get_book_lookup_session(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        *compliance: mandatory -- This method must be implemented.*
 
-    def get_book_admin_session(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def get_book_hierarchy_session(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        """
+        pass
 
-    def get_book_hierarchy_design_session(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+    def remove_root_book(self, book_id):
+        """Removes a root book.
 
-    def get_commenting_batch_proxy_manager(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services')
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` is not a root
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def add_child_book(self, book_id, child_id):
+        """Adds a child to a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``book_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_child_book(self, book_id, child_id):
+        """Removes a child from a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_child_books(self, book_id):
+        """Removes all children from a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+
+
+class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
+        aspects of
+    this service.
+
+
+    Methods in this manager accept a ``Proxy`` for passing information
+    from a server environment. The sessions included in this manager
+    are:
+
+
+
+
+      * ``CommentLookupSession:`` a session to lookup comments
+      * ``RatingLookupSession:`` a session to lookup comments
+      * ``CommentQuerySession:`` a session to query comments
+      * ``CommentSearchSession:`` a session to search comments
+      * ``CommentAdminSession:`` a session to manage comments
+      * ``CommentNotificationSession:`` a session to subscribe to
+        notifications of comment changes
+      * ``CommentBookSession:`` a session for looking up comment and
+        book mappings
+      * ``CommentBookAssignmentSession:`` a session for managing comment
+        and book mappings
+      * ``CommentSmartBookSession:`` a session to manage dynamic comment
+        books
+      * ``BookLookupSession:`` a session to retrieve books
+      * ``BookQuerySession:`` a session to query books
+      * ``BookSearchSession:`` a session to search for books
+      * ``BookAdminSession:`` a session to create, update and delete
+        books
+      * ``BookNotificationSession:`` a session to receive notifications
+        for changes in books
+      * ``BookHierarchyTraversalSession:`` a session to traverse
+        hierarchies of books
+      * ``BookHierarchyDesignSession:`` a session to manage hierarchies
+        of books
+
+
+
+
+
+
+
+
+    The commenting manager also provides a profile for determing the
+    supported search types supported by this service.
+
+
+    """
+
+    def get_comment_lookup_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the comment lookup service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentLookupSession``
+        :rtype: ``osid.commenting.CommentLookupSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_lookup()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentLookupSession
+
+    def get_comment_lookup_session_for_book(self, book_id, proxy):
+        """Gets the ``OsidSession`` associated with the comment lookup service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentLookupSession``
+        :rtype: ``osid.commenting.CommentLookupSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_lookup()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentLookupSession
+
+    def get_rating_lookup_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the rating lookup service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RatingLookupSession``
+        :rtype: ``osid.commenting.RatingLookupSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_rating_lookup()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.RatingLookupSession
+
+    def get_rating_lookup_session_for_book(self, book_id, proxy):
+        """Gets the ``OsidSession`` associated with the rating lookup service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``RatingLookupSession``
+        :rtype: ``osid.commenting.RatingLookupSession``
+        :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_rating_lookup()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.RatingLookupSession
+
+    def get_comment_query_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the comment query service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentQuerySession``
+        :rtype: ``osid.commenting.CommentQuerySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_query()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentQuerySession
+
+    def get_comment_query_session_for_book(self, book_id, proxy):
+        """Gets the ``OsidSession`` associated with the comment query service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentQuerySession``
+        :rtype: ``osid.commenting.CommentQuerySession``
+        :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_query()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentQuerySession
+
+    def get_comment_search_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the comment search service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentSearchSession``
+        :rtype: ``osid.commenting.CommentSearchSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_search()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentSearchSession
+
+    def get_comment_search_session_for_book(self, book_id, proxy):
+        """Gets the ``OsidSession`` associated with the comment search service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentSearchSession``
+        :rtype: ``osid.commenting.CommentSearchSession``
+        :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_search()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentSearchSession
+
+    def get_comment_admin_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the comment administration service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentAdminSession``
+        :rtype: ``osid.commenting.CommentAdminSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_admin()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentAdminSession
+
+    def get_comment_admin_session_for_book(self, book_id, proxy):
+        """Gets the ``OsidSession`` associated with the comment administration service for the given book.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentAdminSession``
+        :rtype: ``osid.commenting.CommentAdminSession``
+        :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_admin()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentAdminSession
+
+    def get_comment_notification_session(self, comment_receiver, proxy):
+        """Gets the ``OsidSession`` associated with the comment notification service.
+
+
+        :param comment_receiver: the receiver
+        :type comment_receiver: ``osid.commenting.CommentReceiver``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentNotificationSession``
+        :rtype: ``osid.commenting.CommentNotificationSession``
+        :raise: ``NullArgument`` -- ``comment_receiver`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_notification()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentNotificationSession
+
+    def get_comment_notification_session_for_book(self, comment_receiver, book_id, proxy):
+        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
+
+
+        :param comment_receiver: the receiver
+        :type comment_receiver: ``osid.commenting.CommentReceiver``
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentNotificationSession``
+        :rtype: ``osid.commenting.CommentNotificationSession``
+        :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
+        :raise: ``NullArgument`` -- ``comment_receiver, book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is
+            ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_notification()`` and
+        ``supports_visible_federation()`` are ``true``*
+
+
+        """
+        return # osid.commenting.CommentNotificationSession
+
+    def get_comment_book_session(self, proxy):
+        """Gets the session for retrieving comment to book mappings.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentBookSession``
+        :rtype: ``osid.commenting.CommentBookSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_book()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_book()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentBookSession
+
+    def get_comment_book_assignment_session(self, proxy):
+        """Gets the session for assigning comment to book mappings.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``CommentBookAssignmentSession``
+        :rtype: ``osid.commenting.CommentBookAssignmentSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_book_assignment()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_book_assignment()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentBookAssignmentSession
+
+    def get_comment_smart_book_session(self, book_id, proxy):
+        """Gets the session for managing dynamic comment books for the given book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: ``book_id`` not found
+        :rtype: ``osid.commenting.CommentSmartBookSession``
+        :raise: ``NotFound`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_comment_smart_book()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_comment_smart_book()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.CommentSmartBookSession
+
+    def get_book_lookup_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the book lookup service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookLookupSession``
+        :rtype: ``osid.commenting.BookLookupSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_lookup()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_lookup()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookLookupSession
+
+    def get_book_query_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the book query service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookQuerySession``
+        :rtype: ``osid.commenting.BookQuerySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_queryh()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_query()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookQuerySession
+
+    def get_book_search_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the book search service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookSearchSession``
+        :rtype: ``osid.commenting.BookSearchSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_search()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_search()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookSearchSession
+
+    def get_book_admin_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the book administrative service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookAdminSession``
+        :rtype: ``osid.commenting.BookAdminSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_admin()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_admin()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookAdminSession
+
+    def get_book_notification_session(self, book_receiver, proxy):
+        """Gets the ``OsidSession`` associated with the book notification service.
+
+
+        :param book_receiver: the receiver
+        :type book_receiver: ``osid.commenting.BookReceiver``
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookNotificationSession``
+        :rtype: ``osid.commenting.BookNotificationSession``
+        :raise: ``NullArgument`` -- ``book_receiver`` or ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_notification()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_notification()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookNotificationSession
+
+    def get_book_hierarchy_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the book hierarchy service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookHierarchySession``
+        :rtype: ``osid.commenting.BookHierarchySession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_hierarchy()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_hierarchy()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookHierarchySession
+
+    def get_book_hierarchy_design_session(self, proxy):
+        """Gets the ``OsidSession`` associated with the book hierarchy design service.
+
+
+        :param proxy: a proxy
+        :type proxy: ``osid.proxy.Proxy``
+        :return: a ``BookHierarchyDesignSession``
+        :rtype: ``osid.commenting.BookHierarchyDesignSession``
+        :raise: ``NullArgument`` -- ``proxy`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_book_hierarchy_design()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_book_hierarchy_design()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.BookHierarchyDesignSession
+
+    def get_commenting_batch_proxy_manager(self):
+        """Gets a ``CommentingBatchProxyManager``.
+
+
+        :return: a ``CommentingBatchProxyManager``
+        :rtype: ``osid.commenting.batch.CommentingBatchProxyManager``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unimplemented`` -- ``supports_commenting_batch()`` is ``false``
+
+
+        *compliance: optional -- This method must be implemented if
+        ``supports_commenting_batch()`` is ``true``.*
+
+
+        """
+        return # osid.commenting.batch.CommentingBatchProxyManager
 
     commenting_batch_proxy_manager = property(fget=get_commenting_batch_proxy_manager)
+##
+# The following methods are from osid.commenting.BookLookupSession
+
+    def can_lookup_books(self):
+        """Tests if this user can perform ``Book`` lookups.
 
 
-class Book(abc_commenting_objects.Book, osid.OsidSession, osid.OsidCatalog):
-    """Book convenience adapter including related Session methods."""
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_book_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_book_view(self):
+        """A complete view of the ``Book`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_book(self, book_id):
+        """Gets the ``Book`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Book`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Book`` and retained for compatibility.
+
+
+        :param book_id: ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    def get_books_by_ids(self, book_ids):
+        """Gets a ``BookList`` corresponding to the given ``IdList``.
+
+
+        In plenary mode, the returned list contains all of the books
+        specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if an ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible ``Books`` may be omitted from the list and may
+        present the elements in any order including returning a unique
+        set.
+
+
+        :param book_ids: the list of ``Ids`` to retrieve
+        :type book_ids: ``osid.id.IdList``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``book_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` which does not include books of genus
+            types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_parent_genus_type(self, book_genus_type):
+        """Gets a ``BookList`` corresponding to the given book genus ``Type`` and include any additional books with
+            genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_genus_type: a book genus type
+        :type book_genus_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_record_type(self, book_record_type):
+        """Gets a ``BookList`` containing the given book record ``Type``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param book_record_type: a book record type
+        :type book_record_type: ``osid.type.Type``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books_by_provider(self, resource_id):
+        """Gets a ``BookList`` from the given provider ````.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :param resource_id: a resource ``Id``
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``Book`` list
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def get_books(self):
+        """Gets all ``Books``.
+
+
+        In plenary mode, the returned list contains all known books or
+        an error results. Otherwise, the returned list may contain only
+        those books that are accessible through this session.
+
+
+        :return: a list of ``Books``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    books = property(fget=get_books)
+
+
+##
+# The following methods are from osid.commenting.BookAdminSession
+
+    def can_create_books(self):
+        """Tests if this user can create ``Books``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer create
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_book_with_record_types(self, book_record_types):
+        """Tests if this user can create a single ``Book`` using the desired record types.
+
+
+        While ``CommentingManager.getBookRecordTypes()`` can be used to
+        examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Book``.
+        Providing an empty array tests if a ``Book`` can be created with
+        no records.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Book`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_book_form_for_create(self, book_record_types):
+        """Gets the book form for creating new books.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param book_record_types: array of book record types
+        :type book_record_types: ``osid.type.Type[]``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NullArgument`` -- ``book_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookForm
+
+    def create_book(self, book_form):
+        """Creates a new ``Book``.
+
+
+        :param book_form: the form for this ``Book``
+        :type book_form: ``osid.commenting.BookForm``
+        :return: the new ``Book``
+        :rtype: ``osid.commenting.Book``
+        :raise: ``IllegalState`` -- ``book_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    def can_update_books(self):
+        """Tests if this user can update ``Books``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer update
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_book_form_for_update(self, book_id):
+        """Gets the book form for updating an existing book.
+
+
+        A new book form should be requested for each update transaction.
+
+
+        :param book_id: the ``Id`` of the ``Book``
+        :type book_id: ``osid.id.Id``
+        :return: the book form
+        :rtype: ``osid.commenting.BookForm``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookForm
+
+    def update_book(self, book_form):
+        """Updates an existing book.
+
+
+        :param book_form: the form containing the elements to be updated
+        :type book_form: ``osid.commenting.BookForm``
+        :raise: ``IllegalState`` -- ``book_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``book_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``book_form`` did not originte from ``get_book_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_delete_books(self):
+        """Tests if this user can delete ``Books`` A return of true does not guarantee successful authorization.
+
+
+        A return of false indicates that it is known deleting a ``Book``
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may not wish to offer delete
+        operations to unauthorized users.
+
+
+        :return: ``false`` if ``Book`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_book(self, book_id):
+        """Deletes a ``Book``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to remove
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_manage_book_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``Books``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``Book`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_book(self, book_id, alias_id):
+        """Adds an ``Id`` to a ``Book`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``Book`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another book, it is
+        reassigned to the given book ``Id``.
+
+
+        :param book_id: the ``Id`` of a ``Book``
+        :type book_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+##
+# The following methods are from osid.commenting.BookHierarchySession
+
+    def get_book_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_hierarchy_id = property(fget=get_book_hierarchy_id)
+
+    def get_book_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    book_hierarchy = property(fget=get_book_hierarchy)
+
+    def can_access_book_hierarchy(self):
+        """Tests if this user can perform hierarchy queries.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations.
+
+
+        :return: ``false`` if hierarchy traversal methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_book_view(self):
+        """The returns from the book methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_book_view(self):
+        """A complete view of the ``Book`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_root_book_ids(self):
+        """Gets the root book ``Ids`` in this hierarchy.
+
+
+        :return: the root book ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    root_book_ids = property(fget=get_root_book_ids)
+
+    def get_root_books(self):
+        """Gets the root books in the book hierarchy.
+
+
+        A node with no parents is an orphan. While all book ``Ids`` are
+        known to the hierarchy, an orphan does not appear in the
+        hierarchy unless explicitly added as a root node or child of
+        another node.
+
+
+        :return: the root books
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    root_books = property(fget=get_root_books)
+
+    def has_parent_books(self, book_id):
+        """Tests if the ``Book`` has any parents.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the book has parents, f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def is_parent_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a direct parent of book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if this ``id`` is a parent of ``book_id,`` f ``alse`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_parent_book_ids(self, book_id):
+        """Gets the parent ``Ids`` of the given book.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: the parent ``Ids`` of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_parent_books(self, book_id):
+        """Gets the parent books of the given ``id``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the parent books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def is_ancestor_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is an ancestor of a book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``tru`` e if this ``id`` is an ancestor of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def has_child_books(self, book_id):
+        """Tests if a book has any children.
+
+
+        :param book_id: a book ``Id``
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``book_id`` has children, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def is_child_of_book(self, id_, book_id):
+        """Tests if a book is a direct child of another.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a child of ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_child_book_ids(self, book_id):
+        """Gets the child ``Ids`` of the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the children of the book
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_child_books(self, book_id):
+        """Gets the child books of the given ``id``.
+
+
+        :param book_id: the ``Id`` of the ``Book`` to query
+        :type book_id: ``osid.id.Id``
+        :return: the child books of the ``id``
+        :rtype: ``osid.commenting.BookList``
+        :raise: ``NotFound`` -- a ``Book`` identified by ``Id is`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookList
+
+    def is_descendant_of_book(self, id_, book_id):
+        """Tests if an ``Id`` is a descendant of a book.
+
+
+        :param id: an ``Id``
+        :type id: ``osid.id.Id``
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :return: ``true`` if the ``id`` is a descendant of the ``book_id,``  ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``id`` or ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+        *implementation notes*: If ``id`` is not found return ``false``.
+
+
+        """
+        return # boolean
+
+    def get_book_node_ids(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.hierarchy.Node``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Node
+
+    def get_book_nodes(self, book_id, ancestor_levels, descendant_levels, include_siblings):
+        """Gets a portion of the hierarchy for the given book.
+
+
+        :param book_id: the ``Id`` to query
+        :type book_id: ``osid.id.Id``
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
+        :type ancestor_levels: ``cardinal``
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
+        :type descendant_levels: ``cardinal``
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
+        :type include_siblings: ``boolean``
+        :return: a book node
+        :rtype: ``osid.commenting.BookNode``
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.BookNode
+
+
+##
+# The following methods are from osid.commenting.BookHierarchyDesignSession
+
+    def get_book_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_hierarchy_id = property(fget=get_book_hierarchy_id)
+
+    def get_book_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    book_hierarchy = property(fget=get_book_hierarchy)
+
+    def can_modify_book_hierarchy(self):
+        """Tests if this user can change the hierarchy.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known performing any update
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer these
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if changing this hierarchy is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def add_root_book(self, book_id):
+        """Adds a root book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already in hierarchy
+        :raise: ``NotFound`` -- ``book_id`` is not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_root_book(self, book_id):
+        """Removes a root book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` is not a root
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def add_child_book(self, book_id, child_id):
+        """Adds a child to a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``book_id`` is already a parent of ``child_id``
+        :raise: ``NotFound`` -- ``book_id`` or ``child_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_child_book(self, book_id, child_id):
+        """Removes a child from a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :param child_id: the ``Id`` of the new child
+        :type child_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not a parent of ``child_id``
+        :raise: ``NullArgument`` -- ``book_id`` or ``child_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def remove_child_books(self, book_id):
+        """Removes all children from a book.
+
+
+        :param book_id: the ``Id`` of a book
+        :type book_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``book_id`` not found
+        :raise: ``NullArgument`` -- ``book_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+
+
+class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
+    """A ``Book`` represents a collection of comments.
+
+
+    Like all OSID objects, a ``Book`` is identified by its ``Id`` and
+    any persisted references should use the ``Id``.
+
+
+    """
 
 
     # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
@@ -858,157 +4963,641 @@ class Book(abc_commenting_objects.Book, osid.OsidSession, osid.OsidCatalog):
         """Session state will never be saved."""
         self._session_management = DISABLED
         self.close_sessions()
-    def get_book_record(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+    def get_book_record(self, book_record_type):
+        """Gets the book record corresponding to the given ``Book`` record ``Type``.
+
+
+        This method is used to retrieve an object implementing the
+        requested record. The ``book_record_type`` may be the ``Type``
+        returned in ``get_record_types()`` or any of its parents in a
+        ``Type`` hierarchy where ``has_record_type(book_record_type)``
+        is ``true`` .
+
+
+        :param book_record_type: the type of book record to retrieve
+        :type book_record_type: ``osid.type.Type``
+        :return: the book record
+        :rtype: ``osid.commenting.records.BookRecord``
+        :raise: ``NullArgument`` -- ``book_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.records.BookRecord
 ##
 # The following methods are from osid.commenting.CommentLookupSession
 
+    def get_book_id(self):
+        """Gets the ``Book``  ``Id`` associated with this session.
+
+
+        :return: the ``Book Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_id = property(fget=get_book_id)
+
+    def get_book(self):
+        """Gets the ``Book`` associated with this session.
+
+
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    book = property(fget=get_book)
+
     def can_lookup_comments(self):
-        """Pass through to provider CommentLookupSession.can_lookup_comments"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.can_lookup_resources_template
-        return self._get_provider_session('comment_lookup_session').can_lookup_comments()
+        """Tests if this user can examine this book.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer these
+        operations.
+
+
+        :return: ``false`` if book reading methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
 
     def use_comparative_comment_view(self):
-        """Pass through to provider CommentLookupSession.use_comparative_comment_view"""
-        self._object_views['comment'] = COMPARATIVE
-        for session in self._provider_sessions:
-            try:
-                self._provider_sessions[session].use_comparative_comment_view()
-            except AttributeError:
-                pass
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def use_plenary_comment_view(self):
-        """Pass through to provider CommentLookupSession.use_plenary_comment_view"""
-        self._object_views['comment'] = PLENARY
-        for session in self._provider_sessions:
-            try:
-                self._provider_sessions[session].use_plenary_comment_view()
-            except AttributeError:
-                pass
+        """A complete view of the ``Comment`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def use_federated_book_view(self):
-        """Pass through to provider CommentLookupSession.use_federated_book_view"""
-        self._book_view = FEDERATED
-        for session in self._provider_sessions:
-            try:
-                self._provider_sessions[session].use_federated_book_view()
-            except AttributeError:
-                pass
+        """Federates the view for methods in this session.
+
+
+        A federated view will include comments in books which are
+        children of this book in the book hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def use_isolated_book_view(self):
-        """Pass through to provider CommentLookupSession.use_isolated_book_view"""
-        self._book_view = ISOLATED
-        for session in self._provider_sessions:
-            try:
-                self._provider_sessions[session].use_isolated_book_view()
-            except AttributeError:
-                pass
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts retrievals to this book only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def use_effective_comment_view(self):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services')
+        """Only comments whose effective dates are current are returned by methods in this session.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def use_any_effective_comment_view(self):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services')
+        """All comments of any effective dates are returned by all methods in this session.
 
-    def get_comment(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comment"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.get_resource_template
-        return self._get_provider_session('comment_lookup_session').get_comment(*args, **kwargs)
 
-    def get_comments_by_ids(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comments_by_ids"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.get_resources_by_ids_template
-        return self._get_provider_session('comment_lookup_session').get_comments_by_ids(*args, **kwargs)
 
-    def get_comments_by_genus_type(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comments_by_genus_type"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.get_resources_by_genus_type_template
-        return self._get_provider_session('comment_lookup_session').get_comments_by_genus_type(*args, **kwargs)
 
-    def get_comments_by_parent_genus_type(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comments_by_parent_genus_type"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.get_resources_by_parent_genus_type_template
-        return self._get_provider_session('comment_lookup_session').get_comments_by_parent_genus_type(*args, **kwargs)
 
-    def get_comments_by_record_type(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comments_by_record_type"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.get_resources_by_record_type_template
-        return self._get_provider_session('comment_lookup_session').get_comments_by_record_type(*args, **kwargs)
 
-    def get_comments_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        *compliance: mandatory -- This method is must be implemented.*
 
-    def get_comments_by_genus_type_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def get_comments_for_commentor(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        """
+        pass
 
-    def get_comments_for_commentor_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+    def get_comment(self, comment_id):
+        """Gets the ``Comment`` specified by its ``Id``.
 
-    def get_comments_by_genus_type_for_commentor(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def get_comments_by_genus_type_for_commentor_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        :param comment_id: the ``Id`` of the ``Comment`` to retrieve
+        :type comment_id: ``osid.id.Id``
+        :return: the returned ``Comment``
+        :rtype: ``osid.commenting.Comment``
+        :raise: ``NotFound`` -- no ``Comment`` found with the given ``Id``
+        :raise: ``NullArgument`` -- ``comment_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
-    def get_comments_for_reference(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comments_for_reference"""
-        # Implemented from kitosid template for -
-        # osid.relationship.RelationshipLookupSession.get_relationships_for_source_template
-        return self._get_provider_session('comment_lookup_session').get_comments_for_reference(*args, **kwargs)
 
-    def get_comments_for_reference_on_date(self, *args, **kwargs):
-        """Pass through to provider CommentLookupSession.get_comments_for_reference_on_date"""
-        # Implemented from kitosid template for -
-        # osid.relationship.RelationshipLookupSession.get_relationships_for_source_on_date_template
-        return self._get_provider_session('comment_lookup_session').get_comments_for_reference_on_date(*args, **kwargs)
+        *compliance: mandatory -- This method must be implemented.*
 
-    def get_comments_by_genus_type_for_reference(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def get_comments_by_genus_type_for_reference_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        """
+        return # osid.commenting.Comment
 
-    def get_comments_for_commentor_and_reference(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+    def get_comments_by_ids(self, comment_ids):
+        """Gets a ``CommentList`` corresponding to the given ``IdList``.
 
-    def get_comments_for_commentor_and_reference_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
 
-    def get_comments_by_genus_type_for_commentor_and_reference(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+        :param comment_ids: the list of ``Ids`` to retrieve
+        :type comment_ids: ``osid.id.IdList``
+        :return: the returned ``Comment list``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``comment_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
-    def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, *args, **kwargs):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services - args=' + str(args) + ', kwargs=' + str(kwargs))
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type(self, comment_genus_type):
+        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` which does not include comments of
+            genus types derived from the specified ``Type``.
+
+
+        :param comment_genus_type: a comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :return: the returned ``Comment`` list
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``comment_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_parent_genus_type(self, comment_genus_type):
+        """Gets a ``CommentList`` corresponding to the given comment genus ``Type`` and include any additional comments
+            with genus types derived from the specified ``Type``.
+
+
+        :param comment_genus_type: a comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :return: the returned ``Comment`` list
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``comment_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_record_type(self, comment_record_type):
+        """Gets a ``CommentList`` containing the given comment record ``Type``.
+
+
+        :param comment_record_type: a comment record type
+        :type comment_record_type: ``osid.type.Type``
+        :return: the returned ``Comment`` list
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``comment_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_on_date(self, from_, to):
+        """Gets a ``CommentList`` effective during the entire given date range inclusive but not confined to the date
+            range.
+
+
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Comment`` list
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``from`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_on_date(self, comment_genus_type, from_, to):
+        """Gets a ``CommentList`` of a given genus type and effective during the entire given date range inclusive but
+            not confined to the date range.
+
+
+        :param comment_genus_type: a comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :param from: starting date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: ending date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``Comment`` list
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
+        :raise: ``NullArgument`` -- ``comment_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_for_commentor(self, resource_id):
+        """Gets a list of comments corresponding to a resource ``Id``.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``resource_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_for_commentor_on_date(self, resource_id, from_, to):
+        """Gets a list of all comments corresponding to a resource ``Id`` and effective during the entire given date
+            range inclusive but not confined to the date range.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param from: from date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: to date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
+        :raise: ``NullArgument`` -- ``resource_id, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_for_commentor(self, resource_id, comment_genus_type):
+        """Gets a list of comments of the given genus type corresponding to a resource ``Id``.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param comment_genus_type: the comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``resource_id`` or ``comment_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_for_commentor_on_date(self, resource_id, comment_genus_type, from_, to):
+        """Gets a list of all comments of the given genus type corresponding to a resource ``Id`` and effective during
+            the entire given date range inclusive but not confined to the date range.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param comment_genus_type: the comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :param from: from date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: to date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
+        :raise: ``NullArgument`` -- ``resource_id, comment_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_for_reference(self, reference_id):
+        """Gets a list of comments corresponding to a reference ``Id``.
+
+
+        :param reference_id: the ``Id`` of the reference
+        :type reference_id: ``osid.id.Id``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``reference_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_for_reference_on_date(self, reference_id, from_, to):
+        """Gets a list of all comments corresponding to a reference ``Id`` and effective during the entire given date
+            range inclusive but not confined to the date range.
+
+
+        :param reference_id: a reference ``Id``
+        :type reference_id: ``osid.id.Id``
+        :param from: from date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: to date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
+        :raise: ``NullArgument`` -- ``reference_id, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_for_reference(self, reference_id, comment_genus_type):
+        """Gets a list of comments of the given genus type corresponding to a reference ``Id``.
+
+
+        :param reference_id: the ``Id`` of the reference
+        :type reference_id: ``osid.id.Id``
+        :param comment_genus_type: the comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``reference_id`` or ``comment_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_for_reference_on_date(self, reference_id, comment_genus_type, from_, to):
+        """Gets a list of all comments of the given genus type corresponding to a reference ``Id`` and effective during
+            the entire given date range inclusive but not confined to the date range.
+
+
+        :param reference_id: a reference ``Id``
+        :type reference_id: ``osid.id.Id``
+        :param comment_genus_type: the comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :param from: from date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: to date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
+        :raise: ``NullArgument`` -- ``reference_id, comment_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_for_commentor_and_reference(self, resource_id, reference_id):
+        """Gets a list of comments corresponding to a resource and reference ``Id``.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param reference_id: the ``Id`` of the reference
+        :type reference_id: ``osid.id.Id``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``resource_id`` or ``reference_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_for_commentor_and_reference_on_date(self, resource_id, reference_id, from_, to):
+        """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire
+            given date range inclusive but not confined to the date range.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param reference_id: a reference ``Id``
+        :type reference_id: ``osid.id.Id``
+        :param from: from date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: to date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_for_commentor_and_reference(self, resource_id, reference_id, comment_genus_type):
+        """Gets a list of comments of the given genus type corresponding to a resource and reference ``Id``.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param reference_id: the ``Id`` of the reference
+        :type reference_id: ``osid.id.Id``
+        :param comment_genus_type: the comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id`` or ``comment_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
+
+    def get_comments_by_genus_type_for_commentor_and_reference_on_date(self, resource_id, reference_id,
+        comment_genus_type, from_, to):
+        """Gets a list of all comments corresponding to a resource and reference ``Id`` and effective during the entire
+            given date range inclusive but not confined to the date range.
+
+
+        :param resource_id: the ``Id`` of the resource
+        :type resource_id: ``osid.id.Id``
+        :param reference_id: a reference ``Id``
+        :type reference_id: ``osid.id.Id``
+        :param comment_genus_type: the comment genus type
+        :type comment_genus_type: ``osid.type.Type``
+        :param from: from date
+        :type from: ``osid.calendaring.DateTime``
+        :param to: to date
+        :type to: ``osid.calendaring.DateTime``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``InvalidArgument`` -- ``to`` is less than ``from``
+        :raise: ``NullArgument`` -- ``resource_id, reference_id, comment_genus_type, from,`` or ``to`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
 
     def get_comments(self):
-        """Pass through to provider CommentLookupSession.get_comments"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceLookupSession.get_resources_template
-        return self._get_provider_session('comment_lookup_session').get_comments()
+        """Gets all comments.
+
+
+        :return: a list of comments
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
 
     comments = property(fget=get_comments)
 
@@ -1016,161 +5605,495 @@ class Book(abc_commenting_objects.Book, osid.OsidSession, osid.OsidCatalog):
 ##
 # The following methods are from osid.commenting.CommentQuerySession
 
+    def get_book_id(self):
+        """Gets the ``Book``  ``Id`` associated with this session.
+
+
+        :return: the ``Book Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_id = property(fget=get_book_id)
+
+    def get_book(self):
+        """Gets the ``Book`` associated with this session.
+
+
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    book = property(fget=get_book)
+
     def can_search_comments(self):
-        """Pass through to provider CommentQuerySession.can_search_comments"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceQuerySession.can_search_resources_template
-        return self._get_provider_session('comment_query_session').can_search_comments()
+        """Tests if this user can perform comment searches.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not wish to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_federated_book_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include comments in books which are
+        children of this book in the book hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_book_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts searches to this book only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
 
     def get_comment_query(self):
-        """Pass through to provider CommentQuerySession.get_comment_query"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceQuerySession.get_item_query_template
-        return self._get_provider_session('comment_query_session').get_comment_query()
+        """Gets a comment query.
+
+
+        :return: the comment query
+        :rtype: ``osid.commenting.CommentQuery``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentQuery
 
     comment_query = property(fget=get_comment_query)
 
-    def get_comments_by_query(self, *args, **kwargs):
-        """Pass through to provider CommentQuerySession.get_comments_by_query"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceQuerySession.get_items_by_query_template
-        return self._get_provider_session('comment_query_session').get_comments_by_query(*args, **kwargs)
+    def get_comments_by_query(self, comment_query):
+        """Gets a list of comments matching the given search.
+
+
+        :param comment_query: the search query array
+        :type comment_query: ``osid.commenting.CommentQuery``
+        :return: the returned ``CommentList``
+        :rtype: ``osid.commenting.CommentList``
+        :raise: ``NullArgument`` -- ``comment_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``comment_query`` is not of this service
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentList
 
 
 ##
 # The following methods are from osid.commenting.CommentAdminSession
 
+    def get_book_id(self):
+        """Gets the ``Book``  ``Id`` associated with this session.
+
+
+        :return: the ``Book Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    book_id = property(fget=get_book_id)
+
+    def get_book(self):
+        """Gets the ``Book`` associated with this session.
+
+
+        :return: the book
+        :rtype: ``osid.commenting.Book``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
+
+    book = property(fget=get_book)
+
     def can_create_comments(self):
-        """Pass through to provider CommentAdminSession.can_create_comments"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resources
-        return self._get_provider_session('comment_admin_session').can_create_comments()
+        """Tests if this user can create comments.
 
-    def can_create_comment_with_record_types(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.can_create_comment_with_record_types"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resource_with_record_types
-        return self._get_provider_session('comment_admin_session').can_create_comment_with_record_types(*args, **kwargs)
 
-    def get_comment_form_for_create(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.get_comment_form_for_create"""
-        # Implemented from -
-        # osid.commenting.CommentAdminSession.get_comment_form_for_create
-        return self._get_provider_session('comment_admin_session').get_comment_form_for_create(*args, **kwargs)
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a
+        ``Comment`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        create operations to unauthorized users.
 
-    def create_comment(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.create_comment"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.create_resource
-        return self._get_provider_session('comment_admin_session').create_comment(*args, **kwargs)
+
+        :return: ``false`` if ``Comment`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_comment_with_record_types(self, comment_record_types):
+        """Tests if this user can create a single ``Comment`` using the desired record types.
+
+
+        While ``CommentingManager.getCommentRecordTypes()`` can be used
+        to examine which records are supported, this method tests which
+        record(s) are required for creating a specific ``Comment``.
+        Providing an empty array tests if a ``Comment`` can be created
+        with no records.
+
+
+        :param comment_record_types: array of comment record types
+        :type comment_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``Comment`` creation using the specified record ``Types`` is supported, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``comment_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_comment_form_for_create(self, reference_id, comment_record_types):
+        """Gets the comment form for creating new comments.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param reference_id: the ``Id`` for the reference object
+        :type reference_id: ``osid.id.Id``
+        :param comment_record_types: array of comment record types
+        :type comment_record_types: ``osid.type.Type[]``
+        :return: the comment form
+        :rtype: ``osid.commenting.CommentForm``
+        :raise: ``NullArgument`` -- ``reference_id or comment_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentForm
+
+    def create_comment(self, comment_form):
+        """Creates a new ``Comment``.
+
+
+        :param comment_form: the form for this ``Comment``
+        :type comment_form: ``osid.commenting.CommentForm``
+        :return: the new ``Comment``
+        :rtype: ``osid.commenting.Comment``
+        :raise: ``IllegalState`` -- ``comment_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``comment_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Comment
 
     def can_update_comments(self):
-        """Pass through to provider CommentAdminSession.can_update_comments"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resources
-        return self._get_provider_session('comment_admin_session').can_update_comments()
+        """Tests if this user can update comments.
 
-    def get_comment_form_for_update(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.get_comment_form_for_update"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.get_resource_form_for_update
-        return self._get_provider_session('comment_admin_session').get_comment_form_for_update(*args, **kwargs)
 
-    def get_comment_form(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.get_comment_form_for_update"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.get_resource_form_for_update
-        # This method might be a bit sketchy. Time will tell.
-        if isinstance(args[-1], list) or 'comment_record_types' in kwargs:
-            return self.get_comment_form_for_create(*args, **kwargs)
-        else:
-            return self.get_comment_form_for_update(*args, **kwargs)
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a
+        ``Comment`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        update operations to unauthorized users.
 
-    def duplicate_comment(self, comment_id):
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.get_resource_form_for_update
-        return self._get_provider_session('comment_admin_session').duplicate_comment(comment_id)
 
-    def update_comment(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.update_comment"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.update_resource
-        # Note: The OSID spec does not require returning updated object
-        return self._get_provider_session('comment_admin_session').update_comment(*args, **kwargs)
+        :return: ``false`` if ``Comment`` modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
 
-    def save_comment(self, comment_form, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.update_comment"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.update_resource
-        if comment_form.is_for_update():
-            return self.update_comment(comment_form, *args, **kwargs)
-        else:
-            return self.create_comment(comment_form, *args, **kwargs)
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_comment_form_for_update(self, comment_id):
+        """Gets the comment form for updating an existing comment.
+
+
+        A new comment form should be requested for each update
+        transaction.
+
+
+        :param comment_id: the ``Id`` of the ``Comment``
+        :type comment_id: ``osid.id.Id``
+        :return: the comment form
+        :rtype: ``osid.commenting.CommentForm``
+        :raise: ``NotFound`` -- ``comment_id`` is not found
+        :raise: ``NullArgument`` -- ``comment_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.CommentForm
+
+    def update_comment(self, comment_form):
+        """Updates an existing comment.
+
+
+        :param comment_form: the form containing the elements to be updated
+        :type comment_form: ``osid.commenting.CommentForm``
+        :raise: ``IllegalState`` -- ``comment_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``comment_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``comment_form`` did not originate from ``get_comment_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
 
     def can_delete_comments(self):
-        """Pass through to provider CommentAdminSession.can_delete_comments"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.can_create_resources
-        return self._get_provider_session('comment_admin_session').can_delete_comments()
+        """Tests if this user can delete comments.
 
-    def delete_comment(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.delete_comment"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.delete_resource
-        self._get_provider_session('comment_admin_session').delete_comment(*args, **kwargs)
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting an
+        ``Comment`` will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may not wish to offer
+        delete operations to unauthorized users.
+
+
+        :return: ``false`` if ``Comment`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_comment(self, comment_id):
+        """Deletes a ``Comment``.
+
+
+        :param comment_id: the ``Id`` of the ``Comment`` to remove
+        :type comment_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``comment_id`` not found
+        :raise: ``NullArgument`` -- ``comment_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
 
     def can_manage_comment_aliases(self):
-        """Pass through to provider unimplemented"""
-        raise Unimplemented('Unimplemented in dlkit.services')
-
-    def alias_comment(self, *args, **kwargs):
-        """Pass through to provider CommentAdminSession.alias_comment"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceAdminSession.alias_resources
-        self._get_provider_session('comment_admin_session').alias_comment(*args, **kwargs)
+        """Tests if this user can manage ``Id`` aliases for ``Comnents``.
 
 
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
 
 
-class BookList(abc_commenting_objects.BookList, osid.OsidList):
-    """BookList convenience adapter including related Session methods."""
+        :return: ``false`` if ``Comment`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_comment(self, comment_id, alias_id):
+        """Adds an ``Id`` to a ``Comment`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``Comment`` is determined by the
+        provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another comment, it is
+        reassigned to the given comment ``Id``.
+
+
+        :param comment_id: the ``Id`` of a ``Comment``
+        :type comment_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``comment_id`` not found
+        :raise: ``NullArgument`` -- ``comment_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+
+
+class BookList(osid_objects.OsidList):
+    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at
+        a time
+    or many at a time.
+
+
+    Examples: while (bl.hasNext()) { Book book = bl.getNextBook(); }
+
+
+
+
+    or
+      while (bl.hasNext()) {
+           Book[] books = bl.getNextBooks(bl.available());
+      }
+
+
+
+
+
+
+    """
 
     def get_next_book(self):
-        """Gets next object"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceList.get_next_resource
-        try:
-            next_item = self.next()
-        except StopIteration:
-            raise IllegalState('no more elements available in this list')
-        else:
-            return next_item
+        """Gets the next ``Book`` in this list.
 
-    def next(self):
-        """next method for enumerator"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceList.get_next_resource
-        next_item = osid.OsidList.next(self)
-        return next_item
+
+        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test that a next ``Book``
+            is available before calling this method.
+        :rtype: ``osid.commenting.Book``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
 
     next_book = property(fget=get_next_book)
 
     def get_next_books(self, n):
-        """gets next n objects from list"""
-        # Implemented from kitosid template for -
-        # osid.resource.ResourceList.get_next_resources
-        if n > self.available():
-            # !!! This is not quite as specified (see method docs) !!!
-            raise IllegalState('not enough elements available in this list')
-        else:
-            next_list = []
-            i = 0
-            while i < n:
-                try:
-                    next_list.append(self.next())
-                except StopIteration:
-                    break
-                i += 1
-            return next_list
+        """Gets the next set of ``Book`` elements in this list.
+
+
+        The specified amount must be less than or equal to the return
+        from ``available()``.
+
+
+        :param n: the number of ``Book`` elements requested which must be less than or equal to ``available()``
+        :type n: ``cardinal``
+        :return: an array of ``Book`` elements.The length of the array is less than or equal to the number specified.
+        :rtype: ``osid.commenting.Book``
+        :raise: ``IllegalState`` -- no more elements available in this list
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.commenting.Book
 
 

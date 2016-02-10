@@ -6,7 +6,6 @@ Osid
 
    summary
    service_managers
-   no_catalog
    objects
    markers
    queries

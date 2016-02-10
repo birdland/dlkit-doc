@@ -11,8 +11,6 @@ class ProxyProfile(osid_managers.OsidProfile):
 
     def __init__(self):
         self._provider_manager = None
-
-
     def supports_proxy(self):
         """Tests if a proxy session is supported.
 
@@ -98,57 +96,12 @@ class ProxyProfile(osid_managers.OsidProfile):
 
         """
         return # boolean
-##
-# The following methods are from osid.proxy.ProxySession
-
-    def get_proxy_condition(self):
-        """Gets a proxy condition for acquiring a proxy.
-
-
-        A new proxy condition should be acquired for each proxy request.
-
-
-        :return: a proxy condiiton
-        :rtype: ``osid.proxy.ProxyCondition``
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.proxy.ProxyCondition
-
-    proxy_condition = property(fget=get_proxy_condition)
-
-    def get_proxy(self, input_):
-        """Gets a proxy.
-
-
-        :param input: a proxy condition
-        :type input: ``osid.proxy.ProxyCondition``
-        :return: a proxy
-        :rtype: ``osid.proxy.Proxy``
-        :raise: ``NullArgument`` -- ``input`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``input`` is not of this service
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.proxy.Proxy
-
-
 
 
 class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyProfile):
-    """The proxy manager provides access to proxy sessions and provides interoperability tests for
-        various
-    aspects of this service.
+    """The proxy manager provides access to proxy sessions and provides interoperability tests for various aspects of
+        this
+    service.
 
 
     The sessions included in this manager are:
@@ -167,8 +120,7 @@ class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyPr
     def __init__(self):
         import settings
         import importlib
-        provider_module = importlib.import_module(settings.PROXY_PROVIDER_MANAGER_PATH,
-            settings.ANCHOR_PATH)
+        provider_module = importlib.import_module(settings.PROXY_PROVIDER_MANAGER_PATH, settings.ANCHOR_PATH)
         provider_manager_class = getattr(provider_module, 'ProxyManager')
         self._provider_manager = provider_manager_class()
         self._provider_sessions = dict()
@@ -185,11 +137,9 @@ class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyPr
             else:
                 self._provider_sessions[session] = get_session()
             return self._provider_sessions[session]
-
-
     def get_proxy_session(self):
-        """Gets a ``ProxySession`` which is responsible for acquiring authentication credentials on
-            behalf of a service client.
+        """Gets a ``ProxySession`` which is responsible for acquiring authentication credentials on behalf of a service
+            client.
 
 
         :return: a proxy session for this service
@@ -206,57 +156,12 @@ class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyPr
         return # osid.proxy.ProxySession
 
     proxy_session = property(fget=get_proxy_session)
-##
-# The following methods are from osid.proxy.ProxySession
-
-    def get_proxy_condition(self):
-        """Gets a proxy condition for acquiring a proxy.
-
-
-        A new proxy condition should be acquired for each proxy request.
-
-
-        :return: a proxy condiiton
-        :rtype: ``osid.proxy.ProxyCondition``
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.proxy.ProxyCondition
-
-    proxy_condition = property(fget=get_proxy_condition)
-
-    def get_proxy(self, input_):
-        """Gets a proxy.
-
-
-        :param input: a proxy condition
-        :type input: ``osid.proxy.ProxyCondition``
-        :return: a proxy
-        :rtype: ``osid.proxy.Proxy``
-        :raise: ``NullArgument`` -- ``input`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``input`` is not of this service
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.proxy.Proxy
-
-
 
 
 class ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile):
-    """The proxy proxy manager provides access to proxy sessions and provides interoperability tests
-        for
-    various aspects of this service.
+    """The proxy proxy manager provides access to proxy sessions and provides interoperability tests for various aspects
+        of
+    this service.
 
 
     Methods in this manager support the passing of a ``Proxy``. The
@@ -271,8 +176,7 @@ class ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile):
     """
 
     def get_proxy_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the ``ProxySession`` using the supplied
-            ``Proxy``.
+        """Gets the ``OsidSession`` associated with the ``ProxySession`` using the supplied ``Proxy``.
 
 
         :param proxy: proxy
@@ -290,50 +194,5 @@ class ProxyProxyManager(osid_managers.OsidProxyManager, ProxyProfile):
 
         """
         return # osid.proxy.ProxySession
-##
-# The following methods are from osid.proxy.ProxySession
-
-    def get_proxy_condition(self):
-        """Gets a proxy condition for acquiring a proxy.
-
-
-        A new proxy condition should be acquired for each proxy request.
-
-
-        :return: a proxy condiiton
-        :rtype: ``osid.proxy.ProxyCondition``
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.proxy.ProxyCondition
-
-    proxy_condition = property(fget=get_proxy_condition)
-
-    def get_proxy(self, input_):
-        """Gets a proxy.
-
-
-        :param input: a proxy condition
-        :type input: ``osid.proxy.ProxyCondition``
-        :return: a proxy
-        :rtype: ``osid.proxy.Proxy``
-        :raise: ``NullArgument`` -- ``input`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``input`` is not of this service
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.proxy.Proxy
-
-
 
 

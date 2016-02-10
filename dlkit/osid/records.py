@@ -25,8 +25,7 @@ class OsidRecord:
 
         :param record_type: a type
         :type record_type: ``osid.type.Type``
-        :return: ``true`` if the given record ``Type`` is implemented by this record, ``false``
-            otherwise
+        :return: ``true`` if the given record ``Type`` is implemented by this record, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``record_type`` is ``null``
 

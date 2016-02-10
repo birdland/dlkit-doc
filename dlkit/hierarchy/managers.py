@@ -231,8 +231,7 @@ class HierarchyProfile(osid_managers.OsidProfile):
         """Tests if the given ``Hierarchy`` search record type is supported.
 
 
-        :param hierarchy_search_record_type: a ``Type`` indicating a ``Hierarchy`` search record
-            type
+        :param hierarchy_search_record_type: a ``Type`` indicating a ``Hierarchy`` search record type
         :type hierarchy_search_record_type: ``osid.type.Type``
         :return: ``true`` if the given Type is supported, ``false`` otherwise
         :rtype: ``boolean``
@@ -294,8 +293,7 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
     hierarchy_traversal_session = property(fget=get_hierarchy_traversal_session)
 
     def get_hierarchy_traversal_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given
-            hierarchy.
+        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the hierarchy
@@ -305,8 +303,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NotFound`` -- ``hierarchy_id`` not found
         :raise: ``NullArgument`` -- ``hierarchyid`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or
-            ``supports_visible_fedaration()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or ``supports_visible_fedaration()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -337,8 +335,7 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
     hierarchy_design_session = property(fget=get_hierarchy_design_session)
 
     def get_hierarchy_design_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the topology design service using for the given
-            hierarchy.
+        """Gets the ``OsidSession`` associated with the topology design service using for the given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the graph
@@ -348,8 +345,7 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -380,8 +376,7 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
     hierarchy_sequencing_session = property(fget=get_hierarchy_sequencing_session)
 
     def get_hierarchy_sequencing_session_for_hierarchy(self, hierarchy_id):
-        """Gets the ``OsidSession`` associated with the sequencing design service using for the
-            given hierarchy.
+        """Gets the ``OsidSession`` associated with the sequencing design service using for the given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the graph
@@ -391,8 +386,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -404,8 +399,7 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         return # osid.hierarchy.HierarchySequencingSession
 
     def get_hierarchy_structure_notification_session(self, hierarchy_structure_receiver):
-        """Gets the session for subscribing to notifications of changes within a hierarchy
-            structure.
+        """Gets the session for subscribing to notifications of changes within a hierarchy structure.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -424,10 +418,9 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         """
         return # osid.hierarchy.HierarchyStructureNotificationSession
 
-    def get_hierarchy_structure_notification_session_for_hierarchy(self,
-        hierarchy_structure_receiver, hierarchy_id):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure
-            for the given hierarchy.
+    def get_hierarchy_structure_notification_session_for_hierarchy(self, hierarchy_structure_receiver, hierarchy_id):
+        """Gets the session for subscribing to notifications of changes within a hierarchy structure for the given
+            hierarchy.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -598,8 +591,7 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyTraversalSession
 
     def get_hierarchy_traversal_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given
-            hierarchy.
+        """Gets the ``OsidSession`` associated with the hierarchy traversal service for the given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the hierarchy
@@ -611,8 +603,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NotFound`` -- ``hierarchyid`` not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_traversal()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -644,8 +636,7 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchyDesignSession
 
     def get_hierarchy_design_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the topology design service using for the given
-            hierarchy.
+        """Gets the ``OsidSession`` associated with the topology design service using for the given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the hierarchy
@@ -657,8 +648,7 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_design()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -690,8 +680,7 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchySequencingSession
 
     def get_hierarchy_sequencing_session_for_hierarchy(self, hierarchy_id, proxy):
-        """Gets the ``OsidSession`` associated with the sequencing design service using for the
-            given hierarchy.
+        """Gets the ``OsidSession`` associated with the sequencing design service using for the given hierarchy.
 
 
         :param hierarchy_id: the ``Id`` of the graph
@@ -703,8 +692,8 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
         :raise: ``NullArgument`` -- ``hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_hierarchy_sequencing()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -716,8 +705,7 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         return # osid.hierarchy.HierarchySequencingSession
 
     def get_hierarchy_structure_notification_session(self, hierarchy_structure_receiver, proxy):
-        """Gets the session for subscribing to notifications of changes within a hierarchy
-            structure.
+        """Gets the session for subscribing to notifications of changes within a hierarchy structure.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -738,10 +726,10 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         """
         return # osid.hierarchy.HierarchyStructureNotificationSession
 
-    def get_hierarchy_structure_notification_session_for_hierarchy(self,
-        hierarchy_structure_receiver, hierarchy_id, proxy):
-        """Gets the session for subscribing to notifications of changes within a hierarchy structure
-            for the given hierarchy.
+    def get_hierarchy_structure_notification_session_for_hierarchy(self, hierarchy_structure_receiver, hierarchy_id,
+        proxy):
+        """Gets the session for subscribing to notifications of changes within a hierarchy structure for the given
+            hierarchy.
 
 
         :param hierarchy_structure_receiver: a receiver
@@ -753,8 +741,7 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         :return: a ``HierarchyStructureNotificationSession``
         :rtype: ``osid.hierarchy.HierarchyStructureNotificationSession``
         :raise: ``NotFound`` -- ``hierarchy_id`` is not found
-        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver, hierarchy_id`` or ``proxy`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``hierarchy_structure_receiver, hierarchy_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_hierarchy_structure_notification()`` is ``false``
 

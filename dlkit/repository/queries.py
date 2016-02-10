@@ -38,8 +38,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches a title that has any value.
 
 
-        :param match: ``true`` to match assets with any title, ``false`` to match assets with no
-            title
+        :param match: ``true`` to match assets with any title, ``false`` to match assets with no title
         :type match: ``boolean``
 
 
@@ -87,8 +86,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any public domain value.
 
 
-        :param match: ``true`` to match assets with any public domain value, ``false`` to match
-            assets with no public domain value
+        :param match: ``true`` to match assets with any public domain value, ``false`` to match assets with no public
+            domain value
         :type match: ``boolean``
 
 
@@ -141,8 +140,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any copyright statement.
 
 
-        :param match: ``true`` to match assets with any copyright value, ``false`` to match assets
-            with no copyright value
+        :param match: ``true`` to match assets with any copyright value, ``false`` to match assets with no copyright
+            value
         :type match: ``boolean``
 
 
@@ -195,8 +194,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any copyright registration.
 
 
-        :param match: ``true`` to match assets with any copyright registration value, ``false`` to
-            match assets with no copyright registration value
+        :param match: ``true`` to match assets with any copyright registration value, ``false`` to match assets with no
+            copyright registration value
         :type match: ``boolean``
 
 
@@ -394,8 +393,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any source.
 
 
-        :param match: ``true`` to match assets with any source, ``false`` to match assets with no
-            sources
+        :param match: ``true`` to match assets with any source, ``false`` to match assets with no sources
         :type match: ``boolean``
 
 
@@ -447,8 +445,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any creation time.
 
 
-        :param match: ``true`` to match assets with any created time, ``false`` to match assets with
-            no cerated time
+        :param match: ``true`` to match assets with any created time, ``false`` to match assets with no cerated time
         :type match: ``boolean``
 
 
@@ -532,8 +529,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any published time.
 
 
-        :param match: ``true`` to match assets with any published time, ``false`` to match assets
-            with no published time
+        :param match: ``true`` to match assets with any published time, ``false`` to match assets with no published time
         :type match: ``boolean``
 
 
@@ -586,8 +582,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches a principal credit string that has any value.
 
 
-        :param match: ``true`` to match assets with any principal credit string, ``false`` to match
-            assets with no principal credit string
+        :param match: ``true`` to match assets with any principal credit string, ``false`` to match assets with no
+            principal credit string
         :type match: ``boolean``
 
 
@@ -639,8 +635,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any temporal coverage.
 
 
-        :param match: ``true`` to match assets with any temporal coverage, ``false`` to match assets
-            with no temporal coverage
+        :param match: ``true`` to match assets with any temporal coverage, ``false`` to match assets with no temporal
+            coverage
         :type match: ``boolean``
 
 
@@ -742,8 +738,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any provider.
 
 
-        :param match: ``true`` to match assets with any location, ``false`` to match assets with no
-            locations
+        :param match: ``true`` to match assets with any location, ``false`` to match assets with no locations
         :type match: ``boolean``
 
 
@@ -827,8 +822,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with no spatial coverage.
 
 
-        :param match: ``true`` to match assets with any spatial coverage, ``false`` to match assets
-            with no spatial coverage
+        :param match: ``true`` to match assets with any spatial coverage, ``false`` to match assets with no spatial
+            coverage
         :type match: ``boolean``
 
 
@@ -930,8 +925,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any content.
 
 
-        :param match: ``true`` to match assets with any content, ``false`` to match assets with no
-            content
+        :param match: ``true`` to match assets with any content, ``false`` to match assets with no content
         :type match: ``boolean``
 
 
@@ -960,8 +954,7 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
     asset_content_terms = property(fdel=clear_asset_content_terms)
 
     def match_composition_id(self, composition_id, match):
-        """Sets the composition ``Id`` for this query to match assets that are a part of the
-            composition.
+        """Sets the composition ``Id`` for this query to match assets that are a part of the composition.
 
 
         :param composition_id: the composition ``Id``
@@ -1034,8 +1027,8 @@ class AssetQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQue
         """Matches assets with any composition mappings.
 
 
-        :param match: ``true`` to match assets with any composition, ``false`` to match assets with
-            no composition mappings
+        :param match: ``true`` to match assets with any composition, ``false`` to match assets with no composition
+            mappings
         :type match: ``boolean``
 
 
@@ -1207,8 +1200,8 @@ class AssetContentQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugate
         """Matches asset content that has any accessibility type.
 
 
-        :param match: ``true`` to match content with any accessibility type, ``false`` to match
-            content with no accessibility type
+        :param match: ``true`` to match content with any accessibility type, ``false`` to match content with no
+            accessibility type
         :type match: ``boolean``
 
 
@@ -1259,8 +1252,7 @@ class AssetContentQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugate
         """Matches content that has any data length.
 
 
-        :param match: ``true`` to match content with any data length, ``false`` to match content
-            with no data length
+        :param match: ``true`` to match content with any data length, ``false`` to match content with no data length
         :type match: ``boolean``
 
 
@@ -1311,8 +1303,7 @@ class AssetContentQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugate
         """Matches content that has any data.
 
 
-        :param match: ``true`` to match content with any data, ``false`` to match content with no
-            data
+        :param match: ``true`` to match content with any data, ``false`` to match content with no data
         :type match: ``boolean``
 
 
@@ -1399,8 +1390,7 @@ class AssetContentQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugate
     url_terms = property(fdel=clear_url_terms)
 
     def get_asset_content_query_record(self, asset_content_record_type):
-        """Gets the asset content query record corresponding to the given ``AssetContent`` record
-            ``Type``.
+        """Gets the asset content query record corresponding to the given ``AssetContent`` record ``Type``.
 
 
         Multiple record retrievals produce a nested ``OR`` term.
@@ -1506,8 +1496,7 @@ class CompositionQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainabl
         """Matches compositions that has any asset mapping.
 
 
-        :param match: ``true`` to match compositions with any asset, ``false`` to match compositions
-            with no asset
+        :param match: ``true`` to match compositions with any asset, ``false`` to match compositions with no asset
         :type match: ``boolean``
 
 
@@ -1536,8 +1525,8 @@ class CompositionQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainabl
     asset_terms = property(fdel=clear_asset_terms)
 
     def match_containing_composition_id(self, composition_id, match):
-        """Sets the composition ``Id`` for this query to match compositions that have the specified
-            composition as an ancestor.
+        """Sets the composition ``Id`` for this query to match compositions that have the specified composition as an
+            ancestor.
 
 
         :param composition_id: a composition ``Id``
@@ -1610,8 +1599,7 @@ class CompositionQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainabl
         """Matches compositions with any ancestor.
 
 
-        :param match: ``true`` to match composition with any ancestor, ``false`` to match root
-            compositions
+        :param match: ``true`` to match composition with any ancestor, ``false`` to match root compositions
         :type match: ``boolean``
 
 
@@ -1640,8 +1628,7 @@ class CompositionQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainabl
     containing_composition_terms = property(fdel=clear_containing_composition_terms)
 
     def match_contained_composition_id(self, composition_id, match):
-        """Sets the composition ``Id`` for this query to match compositions that contain the
-            specified composition.
+        """Sets the composition ``Id`` for this query to match compositions that contain the specified composition.
 
 
         :param composition_id: a composition ``Id``
@@ -1714,8 +1701,7 @@ class CompositionQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainabl
         """Matches compositions that contain any other compositions.
 
 
-        :param match: ``true`` to match composition with any descendant, ``false`` to match leaf
-            compositions
+        :param match: ``true`` to match composition with any descendant, ``false`` to match leaf compositions
         :type match: ``boolean``
 
 
@@ -1830,8 +1816,7 @@ class CompositionQuery(osid_queries.OsidObjectQuery, osid_queries.OsidContainabl
     repository_terms = property(fdel=clear_repository_terms)
 
     def get_composition_query_record(self, composition_record_type):
-        """Gets the composition query record corresponding to the given ``Composition`` record
-            ``Type``.
+        """Gets the composition query record corresponding to the given ``Composition`` record ``Type``.
 
 
         Multiple retrievals produce a nested ``OR`` term.
@@ -1937,8 +1922,7 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
         """Matches repositories that has any asset mapping.
 
 
-        :param match: ``true`` to match repositories with any asset, ``false`` to match repositories
-            with no asset
+        :param match: ``true`` to match repositories with any asset, ``false`` to match repositories with no asset
         :type match: ``boolean``
 
 
@@ -2040,8 +2024,8 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
         """Matches repositories that has any composition mapping.
 
 
-        :param match: ``true`` to match repositories with any composition, ``false`` to match
-            repositories with no composition
+        :param match: ``true`` to match repositories with any composition, ``false`` to match repositories with no
+            composition
         :type match: ``boolean``
 
 
@@ -2070,8 +2054,8 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
     composition_terms = property(fdel=clear_composition_terms)
 
     def match_ancestor_repository_id(self, repository_id, match):
-        """Sets the repository ``Id`` for this query to match repositories that have the specified
-            repository as an ancestor.
+        """Sets the repository ``Id`` for this query to match repositories that have the specified repository as an
+            ancestor.
 
 
         :param repository_id: a repository ``Id``
@@ -2144,8 +2128,7 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
         """Matches repositories with any ancestor.
 
 
-        :param match: ``true`` to match repositories with any ancestor, ``false`` to match root
-            repositories
+        :param match: ``true`` to match repositories with any ancestor, ``false`` to match root repositories
         :type match: ``boolean``
 
 
@@ -2174,8 +2157,8 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
     ancestor_repository_terms = property(fdel=clear_ancestor_repository_terms)
 
     def match_descendant_repository_id(self, repository_id, match):
-        """Sets the repository ``Id`` for this query to match repositories that have the specified
-            repository as a descendant.
+        """Sets the repository ``Id`` for this query to match repositories that have the specified repository as a
+            descendant.
 
 
         :param repository_id: a repository ``Id``
@@ -2248,8 +2231,7 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
         """Matches repositories with any descendant.
 
 
-        :param match: ``true`` to match repositories with any descendant, ``false`` to match leaf
-            repositories
+        :param match: ``true`` to match repositories with any descendant, ``false`` to match leaf repositories
         :type match: ``boolean``
 
 
@@ -2278,8 +2260,7 @@ class RepositoryQuery(osid_queries.OsidCatalogQuery):
     descendant_repository_terms = property(fdel=clear_descendant_repository_terms)
 
     def get_repository_query_record(self, repository_record_type):
-        """Gets the repository query record corresponding to the given ``Repository`` record
-            ``Type``.
+        """Gets the repository query record corresponding to the given ``Repository`` record ``Type``.
 
 
         Multiple record retrievals produce a nested ``OR`` term.

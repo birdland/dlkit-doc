@@ -214,9 +214,9 @@ class TypeForm(osid_objects.OsidForm):
 
 
 class TypeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``TypeList`` provides a means for accessing ``Type`` elements
-        sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``TypeList`` provides a means for accessing ``Type`` elements sequentially either one at
+        a time
+    or many at a time.
 
 
     Examples: while (tl.hasNext()) { Type type = tl.getNextType(); }
@@ -240,8 +240,8 @@ class TypeList(osid_objects.OsidList):
         """Gets the next ``Type`` in this list.
 
 
-        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test
-            that a next ``Type`` is available before calling this method.
+        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type``
+            is available before calling this method.
         :rtype: ``osid.type.Type``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
@@ -263,11 +263,9 @@ class TypeList(osid_objects.OsidList):
         from ``available()``.
 
 
-        :param n: the number of ``Type`` elements requested which must be less than or equal to
-            ``available()``
+        :param n: the number of ``Type`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Type`` elements.The length of the array is less than or equal to the
-            number specified.
+        :return: an array of ``Type`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.type.Type``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request

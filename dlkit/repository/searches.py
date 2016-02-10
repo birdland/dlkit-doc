@@ -99,8 +99,7 @@ class AssetSearchResults(osid_searches.OsidSearchResults):
     asset_query_inspector = property(fget=get_asset_query_inspector)
 
     def get_asset_search_results_record(self, asset_search_record_type):
-        """Gets the asset search results record corresponding to the given asset search record
-            ``Type``.
+        """Gets the asset search results record corresponding to the given asset search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -158,8 +157,7 @@ class CompositionSearch(osid_searches.OsidSearch):
         pass
 
     def get_composition_search_record(self, composition_search_record_type):
-        """Gets the composition search record corresponding to the given composition search record
-            ``Type``.
+        """Gets the composition search record corresponding to the given composition search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -221,8 +219,7 @@ class CompositionSearchResults(osid_searches.OsidSearchResults):
     composition_query_inspector = property(fget=get_composition_query_inspector)
 
     def get_composition_search_results_record(self, composition_search_record_type):
-        """Gets the composition search results record corresponding to the given composition search
-            record ``Type``.
+        """Gets the composition search results record corresponding to the given composition search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -280,8 +277,7 @@ class RepositorySearch(osid_searches.OsidSearch):
         pass
 
     def get_repository_search_record(self, repository_search_record_type):
-        """Gets the repository search record corresponding to the given repository search record
-            ``Type``.
+        """Gets the repository search record corresponding to the given repository search record ``Type``.
 
 
         This method is used to retrieve an object implementing the
@@ -343,8 +339,7 @@ class RepositorySearchResults(osid_searches.OsidSearchResults):
     repository_query_inspector = property(fget=get_repository_query_inspector)
 
     def get_repository_search_results_record(self, repository_search_record_type):
-        """Gets the repository search results record corresponding to the given repository search
-            record ``Type``.
+        """Gets the repository search results record corresponding to the given repository search record ``Type``.
 
 
         This method is used to retrieve an object implementing the

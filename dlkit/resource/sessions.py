@@ -110,8 +110,8 @@ class ResourceLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_resource_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -239,8 +239,8 @@ class ResourceLookupSession(osid_sessions.OsidSession):
         return # osid.resource.ResourceList
 
     def get_resources_by_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not
-            include resources of types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` which does not include resources
+            of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -264,8 +264,8 @@ class ResourceLookupSession(osid_sessions.OsidSession):
         return # osid.resource.ResourceList
 
     def get_resources_by_parent_genus_type(self, resource_genus_type):
-        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include
-            any additional resources with genus types derived from the specified ``Type``.
+        """Gets a ``ResourceList`` corresponding to the given resource genus ``Type`` and include any additional
+            resources with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known resources
@@ -758,8 +758,7 @@ class ResourceAdminSession(osid_sessions.OsidSession):
 
         :param resource_record_types: array of resource record types
         :type resource_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Resource`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``resource_record_types`` is ``null``
 
@@ -806,8 +805,7 @@ class ResourceAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_create()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -874,8 +872,7 @@ class ResourceAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``resource_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``resource_form`` did not originate from
-            ``get_resource_form_for_update()``
+        :raise: ``Unsupported`` -- ``resource_form`` did not originate from ``get_resource_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -977,9 +974,7 @@ class ResourceAdminSession(osid_sessions.OsidSession):
 
 
 class ResourceNotificationSession(osid_sessions.OsidSession):
-    """This session defines methods to receive notifications on adds/changes to ``Resource`` objects
-        in
-    this ``Bin``.
+    """This session defines methods to receive notifications on adds/changes to ``Resource`` objects in this ``Bin``.
 
 
     This also includes existing resources that may appear or disappear
@@ -1263,8 +1258,8 @@ class ResourceBinSession(osid_sessions.OsidSession):
     """
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1508,8 +1503,7 @@ class ResourceBinAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_bin_ids(self, bin_id):
-        """Gets a list of bins including and under the given bin node in which any resource can be
-            assigned.
+        """Gets a list of bins including and under the given bin node in which any resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -1527,8 +1521,7 @@ class ResourceBinAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_bin_ids_for_resource(self, bin_id, resource_id):
-        """Gets a list of bins including and under the given bin node in which a specific resource
-            can be assigned.
+        """Gets a list of bins including and under the given bin node in which a specific resource can be assigned.
 
 
         :param bin_id: the ``Id`` of the ``Bin``
@@ -1576,8 +1569,7 @@ class ResourceBinAssignmentSession(osid_sessions.OsidSession):
         :type resource_id: ``osid.id.Id``
         :param bin_id: the ``Id`` of the ``Bin``
         :type bin_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not
-            assigned to ``bin_id``
+        :raise: ``NotFound`` -- ``resource_id`` or ``bin_id`` not found or ``resource_id`` not assigned to ``bin_id``
         :raise: ``NullArgument`` -- ``resource_id`` or ``bin_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1672,8 +1664,8 @@ class ResourceAgentSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_agent_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1947,8 +1939,8 @@ class ResourceAgentAssignmentSession(osid_sessions.OsidSession):
         :type agent_id: ``osid.id.Id``
         :param resource_id: the ``Id`` of the ``Resource``
         :type resource_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not
-            assigned to ``resource_id``
+        :raise: ``NotFound`` -- ``agent_id`` or ``resource_id`` not found or ``agent_id`` not assigned to
+            ``resource_id``
         :raise: ``NullArgument`` -- ``agent_id`` or ``resource_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -2027,8 +2019,8 @@ class BinLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -2120,8 +2112,8 @@ class BinLookupSession(osid_sessions.OsidSession):
         return # osid.resource.BinList
 
     def get_bins_by_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include
-            bins of types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` which does not include bins of types derived
+            from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -2145,8 +2137,8 @@ class BinLookupSession(osid_sessions.OsidSession):
         return # osid.resource.BinList
 
     def get_bins_by_parent_genus_type(self, bin_genus_type):
-        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any
-            additional bins with genus types derived from the specified ``Type``.
+        """Gets a ``BinList`` corresponding to the given bin genus ``Type`` and include any additional bins with genus
+            types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known bins or an
@@ -2402,8 +2394,7 @@ class BinAdminSession(osid_sessions.OsidSession):
 
         :param bin_record_types: array of bin record types
         :type bin_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Bin`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``bin_record_types`` is ``null``
 
@@ -2712,8 +2703,8 @@ class BinHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bin_view(self):
-        """The returns from the bin methods may omit or translate elements based on this session,
-            such as authorization, and not result in an error.
+        """The returns from the bin methods may omit or translate elements based on this session, such as authorization,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3009,14 +3000,13 @@ class BinHierarchySession(osid_sessions.OsidSession):
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.hierarchy.Node``
@@ -3038,14 +3028,13 @@ class BinHierarchySession(osid_sessions.OsidSession):
 
         :param bin_id: the ``Id`` to query
         :type bin_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bin node
         :rtype: ``osid.resource.BinNode``

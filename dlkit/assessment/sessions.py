@@ -230,8 +230,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentSection
 
     def has_next_assessment_section(self, assessment_section_id):
-        """Tests if there is a next assessment section in the assessment following the given
-            assessment section ``Id``.
+        """Tests if there is a next assessment section in the assessment following the given assessment section ``Id``.
 
 
         :param assessment_section_id: ``Id`` of the ``AssessmentSection``
@@ -273,8 +272,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentSection
 
     def has_previous_assessment_section(self, assessment_section_id):
-        """Tests if there is a previous assessment section in the assessment following the given
-            assessment section ``Id``.
+        """Tests if there is a previous assessment section in the assessment following the given assessment section
+            ``Id``.
 
 
         :param assessment_section_id: ``Id`` of the ``AssessmentSection``
@@ -418,8 +417,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if this assessment section has begun, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false or is_assessment_over()``
-            is ``true``
+        :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false or is_assessment_over()`` is ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -444,8 +442,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if this assessment is over, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessmen_sectiont_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
+        :raise: ``IllegalState`` -- ``has_assessmen_sectiont_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -486,8 +484,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if this synchronous responses are required, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false or is_assessment_over()``
-            is ``true``
+        :raise: ``IllegalState`` -- ``has_assessment_begun()`` is ``false or is_assessment_over()`` is ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -508,8 +505,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the first question
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -532,10 +528,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a next question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -558,8 +553,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the next question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_next_question()`` is ``false``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -581,10 +576,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a previous question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -607,8 +601,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the previous question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_previous_question()`` is ``false``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -630,10 +624,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the returned ``Question``
         :rtype: ``osid.assessment.Question``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -653,8 +646,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the list of assessment questions
         :rtype: ``osid.assessment.QuestionList``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -677,10 +669,10 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: an answer form
         :rtype: ``osid.assessment.AnswerForm``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -702,13 +694,12 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :param answer_form: the response
         :type answer_form: ``osid.assessment.AnswerForm``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
         :raise: ``InvalidArgument`` -- one or more of the elements in the form is invalid
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
-        :raise: ``NullArgument`` -- ``assessment_section_id, item_id,`` or ``answer_form`` is
-            ``null``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
+        :raise: ``NullArgument`` -- ``assessment_section_id, item_id,`` or ``answer_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``answer_form`` is not of this service
@@ -728,10 +719,10 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or
-            ``item_id`` not part of ``assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
+        :raise: ``NotFound`` -- ``assessment_section_id`` or ``item_id`` is not found, or ``item_id`` not part of
+            ``assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -753,10 +744,10 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if this item has a response, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -776,8 +767,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the list of questions with no rsponses
         :rtype: ``osid.assessment.QuestionList``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -798,8 +788,7 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: ``true`` if there are unanswered questions, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -843,10 +832,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a next unanswered question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -869,8 +857,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the next unanswered question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_next_unanswered_question()`` is ``false``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -892,10 +880,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if there is a previous unanswered question, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -918,8 +905,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the previous unanswered question
         :rtype: ``osid.assessment.Question``
         :raise: ``IllegalState`` -- ``has_previous_unanswered_question()`` is ``false``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -941,10 +928,10 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: the response
         :rtype: ``osid.assessment.Response``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -964,8 +951,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :return: the list of responses
         :rtype: ``osid.assessment.ResponseList``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -989,10 +976,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type assessment_section_id: ``osid.id.Id``
         :param item_id: ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or
-            is_assessment_section_over() is true``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun() is false or is_assessment_section_over() is true``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1013,8 +999,8 @@ class AssessmentSession(osid_sessions.OsidSession):
 
         :param assessment_section_id: ``Id`` of the ``AssessmentSection``
         :type assessment_section_id: ``osid.id.Id``
-        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or
-            is_assessment_section_over()`` is ``true``
+        :raise: ``IllegalState`` -- ``has_assessment_section_begun()`` is ``false or is_assessment_section_over()`` is
+            ``true``
         :raise: ``NotFound`` -- ``assessment_section_id`` is not found
         :raise: ``NullArgument`` -- ``assessment_section_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
@@ -1037,8 +1023,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :return: ``true`` if an answer are available, ``false`` otherwise
         :rtype: ``boolean``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1061,8 +1047,8 @@ class AssessmentSession(osid_sessions.OsidSession):
         :return: the answers
         :rtype: ``osid.assessment.AnswerList``
         :raise: ``IllegalState`` -- ``is_answer_available()`` is ``false``
-        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part
-            of assessment_section_id``
+        :raise: ``NotFound`` -- ``assessment_section_id or item_id is not found, or item_id not part of
+            assessment_section_id``
         :raise: ``NullArgument`` -- ``assessment_section_id or item_id is null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -1157,8 +1143,8 @@ class ItemLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_item_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -1286,8 +1272,8 @@ class ItemLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.ItemList
 
     def get_items_by_genus_type(self, item_genus_type):
-        """Gets an ``ItemList`` corresponding to the given assessment item genus ``Type`` which does
-            not include assessment items of genus types derived from the specified ``Type``.
+        """Gets an ``ItemList`` corresponding to the given assessment item genus ``Type`` which does not include
+            assessment items of genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known assessment
@@ -1312,9 +1298,8 @@ class ItemLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.ItemList
 
     def get_items_by_parent_genus_type(self, item_genus_type):
-        """Gets an ``ItemList`` corresponding to the given assessment item genus ``Type`` and
-            include any additional assessment items with genus types derived from the specified
-            ``Type``.
+        """Gets an ``ItemList`` corresponding to the given assessment item genus ``Type`` and include any additional
+            assessment items with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known assessment
@@ -1907,8 +1892,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
         :param item_record_types: array of item record types
         :type item_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Item`` creation using the specified record ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Item`` creation using the specified record ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``item_record_types`` is ``null``
 
@@ -1926,8 +1910,8 @@ class ItemAdminSession(osid_sessions.OsidSession):
         A new form should be requested for each create transaction.
 
 
-        :param item_record_types: array of item record types to be included in the create operation
-            or an empty list if none
+        :param item_record_types: array of item record types to be included in the create operation or an empty list if
+            none
         :type item_record_types: ``osid.type.Type[]``
         :return: the assessment item form
         :rtype: ``osid.assessment.ItemForm``
@@ -1956,8 +1940,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``item_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``item_form`` did not originate from
-            ``get_item_form_for_create()``
+        :raise: ``Unsupported`` -- ``item_form`` did not originate from ``get_item_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2023,8 +2006,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``item_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``item_form`` did not originate from
-            ``get_item_form_for_update()``
+        :raise: ``Unsupported`` -- ``item_form`` did not originate from ``get_item_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2160,8 +2142,8 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
         :param question_record_types: array of question record types
         :type question_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Question`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``Question`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``question_record_types`` is ``null``
 
@@ -2181,8 +2163,8 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
         :param item_id: an assessment item ``Id``
         :type item_id: ``osid.id.Id``
-        :param question_record_types: array of question record types to be included in the create
-            operation or an empty list if none
+        :param question_record_types: array of question record types to be included in the create operation or an empty
+            list if none
         :type question_record_types: ``osid.type.Type[]``
         :return: the question form
         :rtype: ``osid.assessment.QuestionForm``
@@ -2212,8 +2194,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``question_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``question_form`` did not originate from
-            ``get_question_form_for_create()``
+        :raise: ``Unsupported`` -- ``question_form`` did not originate from ``get_question_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2280,8 +2261,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``question_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``question_form`` did not originate from
-            ``get_question_form_for_update()``
+        :raise: ``Unsupported`` -- ``question_form`` did not originate from ``get_question_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2367,8 +2347,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
         :param answer_record_types: array of answer record types
         :type answer_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Answer`` creation using the specified record ``Types`` is supported,
-            ``false`` otherwise
+        :return: ``true`` if ``Answer`` creation using the specified record ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``answern_record_types`` is ``null``
 
@@ -2388,8 +2367,8 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
         :param item_id: an assessment item ``Id``
         :type item_id: ``osid.id.Id``
-        :param answer_record_types: array of answer record types to be included in the create
-            operation or an empty list if none
+        :param answer_record_types: array of answer record types to be included in the create operation or an empty list
+            if none
         :type answer_record_types: ``osid.type.Type[]``
         :return: the answer form
         :rtype: ``osid.assessment.AnswerForm``
@@ -2418,8 +2397,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``answer_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``answer_form`` did not originate from
-            ``get_answer_form_for_create()``
+        :raise: ``Unsupported`` -- ``answer_form`` did not originate from ``get_answer_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2486,8 +2464,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``answer_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``answer_form`` did not originate from
-            ``get_answer_form_for_update()``
+        :raise: ``Unsupported`` -- ``answer_form`` did not originate from ``get_answer_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -2539,9 +2516,7 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
 
 class ItemNotificationSession(osid_sessions.OsidSession):
-    """This session defines methods to receive asynchronous notifications on adds/changes to
-        ``Item``
-    objects.
+    """This session defines methods to receive asynchronous notifications on adds/changes to ``Item`` objects.
 
 
     This session is intended for consumers needing to synchronize their
@@ -2902,8 +2877,8 @@ class ItemBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3124,8 +3099,7 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given bank node in which any item can be
-            assigned.
+        """Gets a list of banks including and under the given bank node in which any item can be assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -3143,8 +3117,7 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_bank_ids_for_item(self, bank_id, item_id):
-        """Gets a list of banks including and under the given bank node in which a specific item can
-            be assigned.
+        """Gets a list of banks including and under the given bank node in which a specific item can be assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -3192,8 +3165,7 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :param bank_id: the ``Id`` of the ``Bank``
         :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found or ``item_id`` not assigned to
-            ``bank_id``
+        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found or ``item_id`` not assigned to ``bank_id``
         :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -3218,8 +3190,8 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
         :type from_bank_id: ``osid.id.Id``
         :param to_bank_id: the ``Id`` of the destination ``Bank``
         :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``item_id`` not mapped to ``from_bank_id``
+        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or ``item_id`` not mapped to
+            ``from_bank_id``
         :raise: ``NullArgument`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -3295,8 +3267,8 @@ class AssessmentLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_assessment_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -3424,8 +3396,8 @@ class AssessmentLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentList
 
     def get_assessments_by_genus_type(self, assessment_genus_type):
-        """Gets an ``AssessmentList`` corresponding to the given assessment genus ``Type`` which
-            does not include assessments of types derived from the specified ``Type``.
+        """Gets an ``AssessmentList`` corresponding to the given assessment genus ``Type`` which does not include
+            assessments of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -3450,8 +3422,8 @@ class AssessmentLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentList
 
     def get_assessments_by_parent_genus_type(self, assessment_genus_type):
-        """Gets an ``AssessmentList`` corresponding to the given assessment genus ``Type`` and
-            include any additional assessments with genus types derived from the specified ``Type``.
+        """Gets an ``AssessmentList`` corresponding to the given assessment genus ``Type`` and include any additional
+            assessments with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -3804,8 +3776,7 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
         return # boolean
 
     def can_create_assessment_with_record_types(self, assessment_record_types):
-        """Tests if this user can create a single ``Assessment`` using the desired record interface
-            types.
+        """Tests if this user can create a single ``Assessment`` using the desired record interface types.
 
 
         While ``AssessmentManager.getAssessmentRecordTypes()`` can be
@@ -3817,8 +3788,8 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
 
         :param assessment_record_types: array of assessment record types
         :type assessment_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Assessment`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``Assessment`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_record_types`` is ``null``
 
@@ -3836,8 +3807,8 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
         A new form should be requested for each create transaction.
 
 
-        :param assessment_record_types: array of assessment record types to be included in the
-            create operation or an empty list if none
+        :param assessment_record_types: array of assessment record types to be included in the create operation or an
+            empty list if none
         :type assessment_record_types: ``osid.type.Type[]``
         :return: the assessment form
         :rtype: ``osid.assessment.AssessmentForm``
@@ -3866,8 +3837,7 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``assessment_form`` did not originate from
-            ``get_assessment_form_for_create()``
+        :raise: ``Unsupported`` -- ``assessment_form`` did not originate from ``get_assessment_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -3934,8 +3904,7 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``assessment_form did not originate from
-            get_assessment_form_for_update()``
+        :raise: ``Unsupported`` -- ``assessment_form did not originate from get_assessment_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -4083,8 +4052,8 @@ class AssessmentBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4305,8 +4274,7 @@ class AssessmentBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment can
-            be assigned.
+        """Gets a list of banks including and under the given banks node in which any assessment can be assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -4324,8 +4292,7 @@ class AssessmentBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_bank_ids_for_assessment(self, bank_id, assessment_id):
-        """Gets a list of bank including and under the given bank node in which a specific
-            assessment can be assigned.
+        """Gets a list of bank including and under the given bank node in which a specific assessment can be assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -4373,8 +4340,8 @@ class AssessmentBankAssignmentSession(osid_sessions.OsidSession):
         :type assessment_id: ``osid.id.Id``
         :param bank_id: the ``Id`` of the ``Bank``
         :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found or ``assessment_id`` not
-            assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found or ``assessment_id`` not assigned to
+            ``bank_id``
         :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -4399,8 +4366,8 @@ class AssessmentBankAssignmentSession(osid_sessions.OsidSession):
         :type from_bank_id: ``osid.id.Id``
         :param to_bank_id: the ``Id`` of the destination ``Bank``
         :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_id`` not mapped to ``from_bank_id``
+        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_id`` not
+            mapped to ``from_bank_id``
         :raise: ``NullArgument`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
@@ -4531,8 +4498,7 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
         :type assessment_id: ``osid.id.Id``
         :param item_id: the ``Id`` of the ``Item``
         :type item_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``item_id`` not found or ``item_id`` not on
-            ``assessmentid``
+        :raise: ``NotFound`` -- ``assessment_id`` or ``item_id`` not found or ``item_id`` not on ``assessmentid``
         :raise: ``NullArgument`` -- ``assessment_id`` or ``item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -4554,8 +4520,8 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
         :type item_id: ``osid.id.Id``
         :param preceeding_item_id: the ``Id`` of a preceeding ``Item`` in the sequence
         :type preceeding_item_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found, or ``item_id`` or
-            ``preceeding_item_id`` not on ``assessment_id``
+        :raise: ``NotFound`` -- ``assessment_id`` is not found, or ``item_id`` or ``preceeding_item_id`` not on
+            ``assessment_id``
         :raise: ``NullArgument`` -- ``assessment_id, item_id`` or ``preceeding_item_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -4575,8 +4541,7 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
         :type item_ids: ``osid.id.Id[]``
         :param assessment_id: the ``Id`` of the ``Assessment``
         :type assessment_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found or an ``item_id`` is not on
-            ``assessment_id``
+        :raise: ``NotFound`` -- ``assessment_id`` is not found or an ``item_id`` is not on ``assessment_id``
         :raise: ``NullArgument`` -- ``assessment_id`` or ``item_ids`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -4652,8 +4617,8 @@ class AssessmentOfferedLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_assessment_offered_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -4781,9 +4746,8 @@ class AssessmentOfferedLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_genus_type(self, assessment_offered_genus_type):
-        """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered genus
-            ``Type`` which does not include assessments of types derived from the specified
-            ``Type``.
+        """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered genus ``Type`` which does not
+            include assessments of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -4808,9 +4772,8 @@ class AssessmentOfferedLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_parent_genus_type(self, assessment_offered_genus_type):
-        """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered genus
-            ``Type`` and include any additional assessments with genus types derived from the
-            specified ``Type``.
+        """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered genus ``Type`` and include
+            any additional assessments with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -4835,8 +4798,7 @@ class AssessmentOfferedLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_record_type(self, assessment_record_type):
-        """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered record
-            ``Type``.
+        """Gets an ``AssessmentOfferedList`` corresponding to the given assessment offered record ``Type``.
 
 
         The set of assessments implementing the given record type is
@@ -4862,8 +4824,8 @@ class AssessmentOfferedLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentOfferedList
 
     def get_assessments_offered_by_date(self, start, end):
-        """Gets an ``AssessmentOfferedList`` that have designated start times where the start times
-            fall in the given range inclusive.
+        """Gets an ``AssessmentOfferedList`` that have designated start times where the start times fall in the given
+            range inclusive.
 
 
         In plenary mode, the returned list contains all known
@@ -5088,8 +5050,7 @@ class AssessmentOfferedQuerySession(osid_sessions.OsidSession):
     assessment_offered_query = property(fget=get_assessment_offered_query)
 
     def get_assessments_offered_by_query(self, assessment_offered_query):
-        """Gets a list of ``AssessmentOffered`` elements matching the given assessment offered
-            query.
+        """Gets a list of ``AssessmentOffered`` elements matching the given assessment offered query.
 
 
         :param assessment_offered_query: the assessment offered query
@@ -5221,8 +5182,7 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
         return # boolean
 
     def can_create_assessment_offered_with_record_types(self, assessment_offered_record_types):
-        """Tests if this user can create a single ``AssessmentOffered`` using the desired record
-            types.
+        """Tests if this user can create a single ``AssessmentOffered`` using the desired record types.
 
 
         While ``AssessmentManager.getAssessmentOfferedRecordTypes()``
@@ -5234,8 +5194,8 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
 
         :param assessment_offered_record_types: array of assessment offered record types
         :type assessment_offered_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``AssessmentOffered`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``AssessmentOffered`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_offered_record_types`` is ``null``
 
@@ -5246,8 +5206,7 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_assessment_offered_form_for_create(self, assessment_id,
-        assessment_offered_record_types):
+    def get_assessment_offered_form_for_create(self, assessment_id, assessment_offered_record_types):
         """Gets the assessment offered form for creating new assessments offered.
 
 
@@ -5256,14 +5215,13 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
 
         :param assessment_id: the ``Id`` of the related ``Assessment``
         :type assessment_id: ``osid.id.Id``
-        :param assessment_offered_record_types: array of assessment offered record types to be
-            included in the create operation or an empty list if none
+        :param assessment_offered_record_types: array of assessment offered record types to be included in the create
+            operation or an empty list if none
         :type assessment_offered_record_types: ``osid.type.Type[]``
         :return: the assessment offered form
         :rtype: ``osid.assessment.AssessmentOfferedForm``
         :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``assessment_offered_record_types`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``assessment_id`` or ``assessment_offered_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- unable to get form for requested record types
@@ -5283,14 +5241,12 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
         :type assessment_offered_form: ``osid.assessment.AssessmentOfferedForm``
         :return: the new ``AssessmentOffered``
         :rtype: ``osid.assessment.AssessmentOffered``
-        :raise: ``IllegalState`` -- ``assessment_offrered_form`` already used in a create
-            transaction
+        :raise: ``IllegalState`` -- ``assessment_offrered_form`` already used in a create transaction
         :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
         :raise: ``NullArgument`` -- ``assessment_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``assessment_form`` did not originate from
-            ``get_assessment_form_for_create()``
+        :raise: ``Unsupported`` -- ``assessment_form`` did not originate from ``get_assessment_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5352,14 +5308,12 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
 
         :param assessment_offered_form: the form containing the elements to be updated
         :type assessment_offered_form: ``osid.assessment.AssessmentOfferedForm``
-        :raise: ``IllegalState`` -- ``assessment_offrered_form`` already used in an update
-            transaction
+        :raise: ``IllegalState`` -- ``assessment_offrered_form`` already used in an update transaction
         :raise: ``InvalidArgument`` -- the form contains an invalid value
         :raise: ``NullArgument`` -- ``assessment_offered_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``assessment_form`` did not originate from
-            ``get_assessment_form_for_update()``
+        :raise: ``Unsupported`` -- ``assessment_form`` did not originate from ``get_assessment_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -5507,8 +5461,8 @@ class AssessmentOfferedBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -5729,8 +5683,8 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment
-            offered can be assigned.
+        """Gets a list of banks including and under the given banks node in which any assessment offered can be
+            assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -5748,8 +5702,8 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_bank_ids_for_assessment_offered(self, bank_id, assessment_offered_id):
-        """Gets a list of bank including and under the given bank node in which a specific
-            assessment offered can be assigned.
+        """Gets a list of bank including and under the given bank node in which a specific assessment offered can be
+            assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -5797,8 +5751,8 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
         :type assessment_offered_id: ``osid.id.Id``
         :param bank_id: the ``Id`` of the ``Bank``
         :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found or
-            ``assessment_offered_id`` not assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found or ``assessment_offered_id`` not
+            assigned to ``bank_id``
         :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -5810,8 +5764,7 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
         """
         pass
 
-    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id,
-        to_bank_id):
+    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
         """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
 
 
@@ -5824,10 +5777,9 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
         :type from_bank_id: ``osid.id.Id``
         :param to_bank_id: the ``Id`` of the destination ``Bank``
         :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found
-            or ``assessment_offered_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is
-            ``null``
+        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found or
+            ``assessment_offered_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -5902,8 +5854,8 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_assessment_taken_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -6031,9 +5983,8 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_genus_type(self, assessment_taken_genus_type):
-        """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken genus
-            ``Type`` which does not include assessments of types derived from the specified
-            ``Type``.
+        """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken genus ``Type`` which does not
+            include assessments of types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -6058,9 +6009,8 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_parent_genus_type(self, assessment_taken_genus_type):
-        """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken genus
-            ``Type`` and include any additional assessments with genus types derived from the
-            specified ``Type``.
+        """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken genus ``Type`` and include any
+            additional assessments with genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known
@@ -6085,8 +6035,7 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_record_type(self, assessment_taken_record_type):
-        """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken record
-            ``Type``.
+        """Gets an ``AssessmentTakenList`` corresponding to the given assessment taken record ``Type``.
 
 
         The set of assessments implementing the given record type is
@@ -6167,8 +6116,7 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_taker(self, resource_id, from_, to):
-        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given
-            resource.
+        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given resource.
 
 
         In plenary mode, the returned list contains all known
@@ -6223,8 +6171,7 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.AssessmentTakenList
 
     def get_assessments_taken_by_date_for_assessment(self, assessment_id, from_, to):
-        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given
-            assessment.
+        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given assessment.
 
 
         In plenary mode, the returned list contains all known
@@ -6280,10 +6227,9 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         """
         return # osid.assessment.AssessmentTakenList
 
-    def get_assessments_taken_by_date_for_taker_and_assessment(self, resource_id, assessment_id,
-        from_, to):
-        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given
-            resource and assessment.
+    def get_assessments_taken_by_date_for_taker_and_assessment(self, resource_id, assessment_id, from_, to):
+        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given resource and
+            assessment.
 
 
         In plenary mode, the returned list contains all known
@@ -6339,10 +6285,8 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         """
         return # osid.assessment.AssessmentTakenList
 
-    def get_assessments_taken_by_date_for_assessment_offered(self, assessment_offered_id, from_,
-        to):
-        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given
-            assessment offered.
+    def get_assessments_taken_by_date_for_assessment_offered(self, assessment_offered_id, from_, to):
+        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given assessment offered.
 
 
         In plenary mode, the returned list contains all known
@@ -6371,8 +6315,7 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         """
         return # osid.assessment.AssessmentTakenList
 
-    def get_assessments_taken_for_taker_and_assessment_offered(self, resource_id,
-        assessment_offered_id):
+    def get_assessments_taken_for_taker_and_assessment_offered(self, resource_id, assessment_offered_id):
         """Gets an ``AssessmentTakenList`` for the given resource and assessment offered.
 
 
@@ -6399,10 +6342,10 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         """
         return # osid.assessment.AssessmentTakenList
 
-    def get_assessments_taken_by_date_for_taker_and_assessment_offered(self, resource_id,
-        assessment_offered_id, from_, to):
-        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given
-            resource and assessment offered.
+    def get_assessments_taken_by_date_for_taker_and_assessment_offered(self, resource_id, assessment_offered_id, from_,
+        to):
+        """Gets an ``AssessmentTakenList`` started in the given date range inclusive for the given resource and
+            assessment offered.
 
 
         In plenary mode, the returned list contains all known
@@ -6422,8 +6365,7 @@ class AssessmentTakenLookupSession(osid_sessions.OsidSession):
         :return: the returned ``AssessmentTaken`` list
         :rtype: ``osid.assessment.AssessmentTakenList``
         :raise: ``InvalidArgument`` -- ``from`` is greater than ``to``
-        :raise: ``NullArgument`` -- ``resource_id, assessment_offered_id, from,`` or ``to`` is
-            ``null``
+        :raise: ``NullArgument`` -- ``resource_id, assessment_offered_id, from,`` or ``to`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
 
@@ -6738,8 +6680,7 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
         return # boolean
 
     def can_create_assessment_taken_with_record_types(self, assessment_taken_record_types):
-        """Tests if this user can create a single ``AssessmentTaken`` using the desired record
-            types.
+        """Tests if this user can create a single ``AssessmentTaken`` using the desired record types.
 
 
         While ``AssessmentManager.getAssessmentTakenRecordTypes()`` can
@@ -6751,8 +6692,8 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
 
         :param assessment_taken_record_types: array of assessment taken record types
         :type assessment_taken_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``AssessmentTaken`` creation using the specified record ``Types`` is
-            supported, ``false`` otherwise
+        :return: ``true`` if ``AssessmentTaken`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_taken_record_types`` is ``null``
 
@@ -6763,8 +6704,7 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
         """
         return # boolean
 
-    def get_assessment_taken_form_for_create(self, assessment_offered_id,
-        assessment_taken_record_types):
+    def get_assessment_taken_form_for_create(self, assessment_offered_id, assessment_taken_record_types):
         """Gets the assessment taken form for creating new assessments taken.
 
 
@@ -6773,14 +6713,13 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
 
         :param assessment_offered_id: the ``Id`` of the related ``AssessmentOffered``
         :type assessment_offered_id: ``osid.id.Id``
-        :param assessment_taken_record_types: array of assessment taken record types to be included
-            in the create operation or an empty list if none
+        :param assessment_taken_record_types: array of assessment taken record types to be included in the create
+            operation or an empty list if none
         :type assessment_taken_record_types: ``osid.type.Type[]``
         :return: the assessment taken form
         :rtype: ``osid.assessment.AssessmentTakenForm``
         :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``assessment_taken_record_types``
-            is ``null``
+        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``assessment_taken_record_types`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- unable to get form for requested record types
@@ -7022,8 +6961,8 @@ class AssessmentTakenBankSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -7244,8 +7183,7 @@ class AssessmentTakenBankAssignmentSession(osid_sessions.OsidSession):
         return # boolean
 
     def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment
-            taken can be assigned.
+        """Gets a list of banks including and under the given banks node in which any assessment taken can be assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -7263,8 +7201,8 @@ class AssessmentTakenBankAssignmentSession(osid_sessions.OsidSession):
         return # osid.id.IdList
 
     def get_assignable_bank_ids_for_assessment_taken(self, bank_id, assessment_taken_id):
-        """Gets a list of bank including and under the given bank node in which a specific
-            assessment taken can be assigned.
+        """Gets a list of bank including and under the given bank node in which a specific assessment taken can be
+            assigned.
 
 
         :param bank_id: the ``Id`` of the ``Bank``
@@ -7312,8 +7250,8 @@ class AssessmentTakenBankAssignmentSession(osid_sessions.OsidSession):
         :type assessment_taken_id: ``osid.id.Id``
         :param bank_id: the ``Id`` of the ``Bank``
         :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found or
-            ``assessment_taken_id`` not assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found or ``assessment_taken_id`` not assigned
+            to ``bank_id``
         :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
@@ -7338,10 +7276,9 @@ class AssessmentTakenBankAssignmentSession(osid_sessions.OsidSession):
         :type from_bank_id: ``osid.id.Id``
         :param to_bank_id: the ``Id`` of the destination ``Bank``
         :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found
-            or ``assessment_taken_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is
-            ``null``
+        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found or
+            ``assessment_taken_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -7420,8 +7357,8 @@ class BankLookupSession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -7513,8 +7450,8 @@ class BankLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.BankList
 
     def get_banks_by_genus_type(self, bank_genus_type):
-        """Gets a ``BankList`` corresponding to the given bank genus ``Type`` which does not include
-            banks of types derived from the specified ``Type``.
+        """Gets a ``BankList`` corresponding to the given bank genus ``Type`` which does not include banks of types
+            derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known banks or
@@ -7538,8 +7475,8 @@ class BankLookupSession(osid_sessions.OsidSession):
         return # osid.assessment.BankList
 
     def get_banks_by_parent_genus_type(self, bank_genus_type):
-        """Gets a ``BankList`` corresponding to the given bank genus ``Type`` and include any
-            additional banks with genus types derived from the specified ``Type``.
+        """Gets a ``BankList`` corresponding to the given bank genus ``Type`` and include any additional banks with
+            genus types derived from the specified ``Type``.
 
 
         In plenary mode, the returned list contains all known banks or
@@ -7793,8 +7730,7 @@ class BankAdminSession(osid_sessions.OsidSession):
 
         :param bank_record_types: array of bank record types
         :type bank_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``Bank`` creation using the specified ``Types`` is supported, ``false``
-            otherwise
+        :return: ``true`` if ``Bank`` creation using the specified ``Types`` is supported, ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``bank_record_types`` is ``null``
 
@@ -7812,8 +7748,8 @@ class BankAdminSession(osid_sessions.OsidSession):
         A new form should be requested for each create transaction.
 
 
-        :param bank_record_types: array of bank record types to be included in the create operation
-            or an empty list if none
+        :param bank_record_types: array of bank record types to be included in the create operation or an empty list if
+            none
         :type bank_record_types: ``osid.type.Type[]``
         :return: the bank form
         :rtype: ``osid.assessment.BankForm``
@@ -7842,8 +7778,7 @@ class BankAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``bank_form`` did not originate from
-            ``get_bank_form_for_create()``
+        :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_create()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -7909,8 +7844,7 @@ class BankAdminSession(osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``bank_form`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
-        :raise: ``Unsupported`` -- ``bank_form`` did not originate from
-            ``get_bank_form_for_update()``
+        :raise: ``Unsupported`` -- ``bank_form`` did not originate from ``get_bank_form_for_update()``
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -8109,8 +8043,8 @@ class BankHierarchySession(osid_sessions.OsidSession):
         return # boolean
 
     def use_comparative_bank_view(self):
-        """The returns from the bank methods may omit or translate elements based on this session,
-            such as assessment, and not result in an error.
+        """The returns from the bank methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
 
         This view is used when greater interoperability is desired at
@@ -8400,14 +8334,13 @@ class BankHierarchySession(osid_sessions.OsidSession):
 
         :param bank_id: the ``Id`` to query
         :type bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bank node
         :rtype: ``osid.hierarchy.Node``
@@ -8429,14 +8362,13 @@ class BankHierarchySession(osid_sessions.OsidSession):
 
         :param bank_id: the ``Id`` to query
         :type bank_id: ``osid.id.Id``
-        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0
-            returns no parents in the node.
+        :param ancestor_levels: the maximum number of ancestor levels to include. A value of 0 returns no parents in the
+            node.
         :type ancestor_levels: ``cardinal``
-        :param descendant_levels: the maximum number of descendant levels to include. A value of 0
-            returns no children in the node.
+        :param descendant_levels: the maximum number of descendant levels to include. A value of 0 returns no children
+            in the node.
         :type descendant_levels: ``cardinal``
-        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to
-            omit the siblings
+        :param include_siblings: ``true`` to include the siblings of the given node, ``false`` to omit the siblings
         :type include_siblings: ``boolean``
         :return: a bank node
         :rtype: ``osid.assessment.BankNode``

@@ -110,8 +110,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of assets and repositories is supported.
 
 
-        :return: ``true`` if asset repository mapping retrieval is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if asset repository mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -159,8 +158,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if retrieving mappings of assets and time coverage is supported.
 
 
-        :return: ``true`` if asset temporal mapping retrieval is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if asset temporal mapping retrieval is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -336,8 +334,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if retrieval of composition to repository mappings is supported.
 
 
-        :return: ``true`` if composition to repository mapping is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if composition to repository mapping is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -353,8 +350,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """Tests if assigning composition to repository mappings is supported.
 
 
-        :return: ``true`` if composition to repository assignment is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if composition to repository assignment is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -695,8 +691,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
         :param composition_search_record_type: the composition serach type
         :type composition_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the composition search record type is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if the composition search record type is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``composition_search_record_type`` is ``null``
 
@@ -766,8 +761,7 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
         :param repository_search_record_type: the repository search type
         :type repository_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the repository search record type is supported ``,``  ``false``
-            otherwise
+        :return: ``true`` if the repository search record type is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
         :raise: ``NullArgument`` -- ``repository_search_record_type`` is ``null``
 
@@ -850,8 +844,9 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
 
 class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides
-    interoperability tests for various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     The sessions included in this manager are:
@@ -941,8 +936,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
     asset_lookup_session = property(fget=get_asset_lookup_session)
 
     def get_asset_lookup_session_for_repository(self, repository_id):
-        """Gets the ``OsidSession`` associated with the asset lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -952,8 +946,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -994,8 +987,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1036,8 +1028,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1078,8 +1069,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1123,8 +1113,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``asset_receiver`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1224,8 +1213,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1266,8 +1254,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1308,8 +1296,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1350,8 +1337,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1420,8 +1407,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
     composition_lookup_session = property(fget=get_composition_lookup_session)
 
     def get_composition_lookup_session_for_repository(self, repository_id):
-        """Gets the ``OsidSession`` associated with the composition lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the composition lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -1431,8 +1417,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1473,8 +1458,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1515,8 +1499,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1528,8 +1511,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.repository.CompositionSearchSession
 
     def get_composition_admin_session(self):
-        """Gets a composition administration session for creating, updating and deleting
-            compositions.
+        """Gets a composition administration session for creating, updating and deleting compositions.
 
 
         :return: a ``CompositionAdminSession``
@@ -1558,8 +1540,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1590,8 +1571,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """
         return # osid.repository.CompositionNotificationSession
 
-    def get_composition_notification_session_for_repository(self, composition_receiver,
-        repository_id):
+    def get_composition_notification_session_for_repository(self, composition_receiver, repository_id):
         """Gets the composition notification session for the given repository.
 
 
@@ -1604,8 +1584,8 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``composition_receiver`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1733,8 +1713,7 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
     repository_search_session = property(fget=get_repository_search_session)
 
     def get_repository_admin_session(self):
-        """Gets the repository administrative session for creating, updating and deleteing
-            repositories.
+        """Gets the repository administrative session for creating, updating and deleteing repositories.
 
 
         :return: a ``RepositoryAdminSession``
@@ -1850,8 +1829,9 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
 
 class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides
-    interoperability tests for various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests
+        for
+    various aspects of this service.
 
 
     Methods in this manager support the passing of a ``Proxy`` for the
@@ -1944,8 +1924,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.AssetLookupSession
 
     def get_asset_lookup_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the asset lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -1957,8 +1936,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1990,8 +1968,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.AssetQuerySession
 
     def get_asset_query_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the asset query service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the asset query service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -2003,8 +1980,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2048,8 +2024,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2093,8 +2068,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()``
-            is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2142,8 +2116,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``asset_receiver, repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2250,8 +2223,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2295,8 +2267,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2340,8 +2312,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2385,8 +2356,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2458,8 +2429,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.CompositionLookupSession
 
     def get_composition_lookup_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the composition lookup service for the given
-            repository.
+        """Gets the ``OsidSession`` associated with the composition lookup service for the given repository.
 
 
         :param repository_id: the ``Id`` of the repository
@@ -2471,8 +2441,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2516,8 +2485,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2561,8 +2529,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2574,8 +2541,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.CompositionSearchSession
 
     def get_composition_admin_session(self, proxy):
-        """Gets a composition administration session for creating, updating and deleting
-            compositions.
+        """Gets a composition administration session for creating, updating and deleting compositions.
 
 
         :param proxy: a proxy
@@ -2607,8 +2573,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2641,8 +2606,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         """
         return # osid.repository.CompositionNotificationSession
 
-    def get_composition_notification_session_for_repository(self, composition_receiver,
-        repository_id, proxy):
+    def get_composition_notification_session_for_repository(self, composition_receiver, repository_id, proxy):
         """Gets the composition notification session for the given repository.
 
 
@@ -2657,8 +2621,8 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         :raise: ``NotFound`` -- ``repository_id`` not found
         :raise: ``NullArgument`` -- ``composition_receiver, repository_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -2793,8 +2757,7 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.RepositorySearchSession
 
     def get_repository_admin_session(self, proxy):
-        """Gets the repository administrative session for creating, updating and deleteing
-            repositories.
+        """Gets the repository administrative session for creating, updating and deleteing repositories.
 
 
         :param proxy: a proxy

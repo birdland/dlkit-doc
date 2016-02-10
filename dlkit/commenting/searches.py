@@ -99,8 +99,7 @@ class CommentSearchResults(osid_searches.OsidSearchResults):
     comment_query_inspector = property(fget=get_comment_query_inspector)
 
     def get_comment_search_results_record(self, comment_search_record_type):
-        """Gets the comment search results record corresponding to the given comment search record
-            ``Type``.
+        """Gets the comment search results record corresponding to the given comment search record ``Type``.
 
 
         This method is used to retrieve an object implementing the

@@ -106,6 +106,58 @@ class ActivitySearchRecord(osid_records.OsidRecord):
 
 
 
+class ProficiencyRecord(osid_records.OsidRecord):
+    """A record for a ``Proficiency``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+    """
+
+
+
+
+class ProficiencyQueryRecord(osid_records.OsidRecord):
+    """A record for a ``ProficiencyQuery``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+    """
+
+
+
+
+class ProficiencyFormRecord(osid_records.OsidRecord):
+    """A record for a ``ProficiencyForm``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+    """
+
+
+
+
+class ProficiencySearchRecord(osid_records.OsidRecord):
+    """A record for a ``ProficiencySearch``.
+
+
+    The methods specified by the record type are available through the
+    underlying object.
+
+
+    """
+
+
+
+
 class ObjectiveBankRecord(osid_records.OsidRecord):
     """A record for a ``ObjectiveBank``.
 

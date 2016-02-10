@@ -151,8 +151,7 @@ class OsidSession:
     effective_agent = property(fget=get_effective_agent)
 
     def get_date(self):
-        """Gets the service date which may be the current date or the effective date in which this
-            session exists.
+        """Gets the service date which may be the current date or the effective date in which this session exists.
 
 
         :return: the service date

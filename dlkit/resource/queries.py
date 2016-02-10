@@ -150,8 +150,7 @@ class ResourceQuery(osid_queries.OsidObjectQuery):
         """Matches resources inside any group.
 
 
-        :param match: ``true`` to match any containing group, ``false`` to match resources part of
-            no groups
+        :param match: ``true`` to match any containing group, ``false`` to match resources part of no groups
         :type match: ``boolean``
 
 
@@ -457,8 +456,7 @@ class ResourceQuery(osid_queries.OsidObjectQuery):
         """Matches resources with any resource relationship.
 
 
-        :param match: ``true`` to match any resource relationship, ``false`` to match resources with
-            no relationship
+        :param match: ``true`` to match any resource relationship, ``false`` to match resources with no relationship
         :type match: ``boolean``
 
 
@@ -679,8 +677,7 @@ class BinQuery(osid_queries.OsidCatalogQuery):
         """Matches bins with any resource.
 
 
-        :param match: ``true`` to match bins with any resource, ``false`` to match bins with no
-            resources
+        :param match: ``true`` to match bins with any resource, ``false`` to match bins with no resources
         :type match: ``boolean``
 
 
@@ -709,8 +706,7 @@ class BinQuery(osid_queries.OsidCatalogQuery):
     resource_terms = property(fdel=clear_resource_terms)
 
     def match_ancestor_bin_id(self, binid, match):
-        """Sets the bin ``Id`` for this query to match bins that have the specified bin as an
-            ancestor.
+        """Sets the bin ``Id`` for this query to match bins that have the specified bin as an ancestor.
 
 
         :param binid: a bin ``Id``
@@ -812,8 +808,7 @@ class BinQuery(osid_queries.OsidCatalogQuery):
     ancestor_bin_terms = property(fdel=clear_ancestor_bin_terms)
 
     def match_descendant_bin_id(self, binid, match):
-        """Sets the bin ``Id`` for this query to match bins that have the specified bin as a
-            descendant.
+        """Sets the bin ``Id`` for this query to match bins that have the specified bin as a descendant.
 
 
         :param binid: a bin ``Id``

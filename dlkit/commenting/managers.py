@@ -221,8 +221,7 @@ class CommentingProfile(osid_managers.OsidProfile):
         return # boolean
 
     def supports_book_admin(self):
-        """Tests for the availability of a book administrative service for creating and deleting
-            books.
+        """Tests for the availability of a book administrative service for creating and deleting books.
 
 
         :return: ``true`` if book administration is available, ``false`` otherwise
@@ -446,9 +445,9 @@ class CommentingProfile(osid_managers.OsidProfile):
 
 
 class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability
-        tests
-    for various aspects of this service.
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
+        aspects of
+    this service.
 
 
     The sessions included in this manager are:
@@ -524,8 +523,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -566,8 +564,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -608,8 +605,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -650,8 +646,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -682,8 +677,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
     comment_admin_session = property(fget=get_comment_admin_session)
 
     def get_comment_admin_session_for_book(self, book_id):
-        """Gets the ``OsidSession`` associated with the comment administration service for the given
-            book.
+        """Gets the ``OsidSession`` associated with the comment administration service for the given book.
 
 
         :param book_id: the ``Id`` of the ``Book``
@@ -693,8 +687,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -726,8 +719,7 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         return # osid.commenting.CommentNotificationSession
 
     def get_comment_notification_session_for_book(self, comment_receiver, book_id):
-        """Gets the ``OsidSession`` associated with the comment notification service for the given
-            book.
+        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
 
 
         :param comment_receiver: the receiver
@@ -739,8 +731,8 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``comment_receiver`` or ``book_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -965,9 +957,9 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
 class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability
-        tests
-    for various aspects of this service.
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
+        aspects of
+    this service.
 
 
     Methods in this manager accept a ``Proxy`` for passing information
@@ -1048,8 +1040,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1093,8 +1084,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Book`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_rating_lookup()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1138,8 +1128,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_query()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1183,8 +1172,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_search()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1216,8 +1204,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # osid.commenting.CommentAdminSession
 
     def get_comment_admin_session_for_book(self, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the comment administration service for the given
-            book.
+        """Gets the ``OsidSession`` associated with the comment administration service for the given book.
 
 
         :param book_id: the ``Id`` of the ``Book``
@@ -1229,8 +1216,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_admin()`` or ``supports_visible_federation()`` is ``false``
 
 
         *compliance: optional -- This method must be implemented if
@@ -1264,8 +1250,7 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         return # osid.commenting.CommentNotificationSession
 
     def get_comment_notification_session_for_book(self, comment_receiver, book_id, proxy):
-        """Gets the ``OsidSession`` associated with the comment notification service for the given
-            book.
+        """Gets the ``OsidSession`` associated with the comment notification service for the given book.
 
 
         :param comment_receiver: the receiver
@@ -1279,8 +1264,8 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         :raise: ``NotFound`` -- no ``Comment`` found by the given ``Id``
         :raise: ``NullArgument`` -- ``comment_receiver, book_id`` or ``proxy`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or
-            ``supports_visible_federation()`` is ``false``
+        :raise: ``Unimplemented`` -- ``supports_comment_notification()`` or ``supports_visible_federation()`` is
+            ``false``
 
 
         *compliance: optional -- This method must be implemented if
