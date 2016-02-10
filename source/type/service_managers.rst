@@ -12,9 +12,7 @@ Type Profile
 .. autoclass:: TypeProfile
    :show-inheritance:
 
-   .. automethod:: TypeProfile.supports_type_lookup
 
-   .. automethod:: TypeProfile.supports_type_admin
 
 Type Manager
 ------------
@@ -29,9 +27,7 @@ Type Manager
 Type Methods
 ------------
 
-   .. automethod:: TypeManager.supports_type_lookup
 
-   .. automethod:: TypeManager.supports_type_admin
 
 
 
