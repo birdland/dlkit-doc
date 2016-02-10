@@ -5,16 +5,13 @@ from ..osid import queries as osid_queries
 class CommentQuery(osid_queries.OsidRelationshipQuery):
     """This is the query for searching comments.
 
-
     Each method specifies an ``AND`` term while multiple invocations of
     the same method produce a nested ``OR``.
-
 
     """
 
     def match_reference_id(self, source_id, match):
         """Sets reference ``Id``.
-
 
         :param source_id: a source ``Id``
         :type source_id: ``osid.id.Id``
@@ -22,9 +19,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``source_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -34,11 +29,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -48,16 +39,13 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def match_commentor_id(self, resource_id, match):
         """Sets a resource ``Id`` to match a commentor.
 
-
         :param resource_id: a resource ``Id``
         :type resource_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``resource_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -67,11 +55,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -81,15 +65,11 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def supports_commentor_query(self):
         """Tests if a ``ResourceQuery`` is available.
 
-
         :return: ``true`` if a resource query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -97,18 +77,14 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def get_commentor_query(self):
         """Gets the query for a resource query.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the resource query
         :rtype: ``osid.resource.ResourceQuery``
         :raise: ``Unimplemented`` -- ``supports_commentor_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_commentor_query()`` is ``true``.*
-
 
         """
         return # osid.resource.ResourceQuery
@@ -120,11 +96,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -134,16 +106,13 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def match_commenting_agent_id(self, agent_id, match):
         """Sets an agent ``Id``.
 
-
         :param agent_id: an agent ``Id``
         :type agent_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``agent_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -153,11 +122,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -167,15 +132,11 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def supports_commenting_agent_query(self):
         """Tests if an ``AgentQuery`` is available.
 
-
         :return: ``true`` if an agent query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -183,18 +144,14 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def get_commenting_agent_query(self):
         """Gets the query for an agent query.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the agent query
         :rtype: ``osid.authentication.AgentQuery``
         :raise: ``Unimplemented`` -- ``supports_commenting_agent_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_commenting_agent_query()`` is ``true``.*
-
 
         """
         return # osid.authentication.AgentQuery
@@ -206,11 +163,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -219,7 +172,6 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
     def match_text(self, text, string_match_type, match):
         """Matches text.
-
 
         :param text: the text
         :type text: ``string``
@@ -231,9 +183,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
         :raise: ``NullArgument`` -- ``text`` is ``null``
         :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -241,15 +191,11 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def match_any_text(self, match):
         """Matches a comment that has any text assigned.
 
-
         :param match: ``true`` to match comments with any text, ``false`` to match comments with no text
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -259,11 +205,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -273,16 +215,13 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def match_rating_id(self, grade_id, match):
         """Sets a grade ``Id``.
 
-
         :param grade_id: a grade ``Id``
         :type grade_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -292,11 +231,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -306,15 +241,11 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def supports_rating_query(self):
         """Tests if a ``GradeQuery`` is available.
 
-
         :return: ``true`` if a rating query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -322,18 +253,14 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def get_rating_query(self):
         """Gets the query for a rating query.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the rating query
         :rtype: ``osid.grading.GradeQuery``
         :raise: ``Unimplemented`` -- ``supports_rating_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_rating_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeQuery
@@ -343,15 +270,11 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def match_any_rating(self, match):
         """Matches books with any rating.
 
-
         :param match: ``true`` to match comments with any rating, ``false`` to match comments with no ratings
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -361,11 +284,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -375,16 +294,13 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def match_book_id(self, book_id, match):
         """Sets the book ``Id`` for this query to match comments assigned to books.
 
-
         :param book_id: a book ``Id``
         :type book_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -394,11 +310,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -408,15 +320,11 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def supports_book_query(self):
         """Tests if a ``BookQuery`` is available.
 
-
         :return: ``true`` if a book query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -424,18 +332,14 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def get_book_query(self):
         """Gets the query for a book query.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the book query
         :rtype: ``osid.commenting.BookQuery``
         :raise: ``Unimplemented`` -- ``supports_book_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_book_query()`` is ``true``.*
-
 
         """
         return # osid.commenting.BookQuery
@@ -447,11 +351,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -461,9 +361,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
     def get_comment_query_record(self, comment_record_type):
         """Gets the comment query record corresponding to the given ``Comment`` record ``Type``.
 
-
         Multiple record retrievals produce a nested ``OR`` term.
-
 
         :param comment_record_type: a comment record type
         :type comment_record_type: ``osid.type.Type``
@@ -473,9 +371,7 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(comment_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.records.CommentQueryRecord
@@ -484,16 +380,13 @@ class CommentQuery(osid_queries.OsidRelationshipQuery):
 class BookQuery(osid_queries.OsidCatalogQuery):
     """This is the query for searching books.
 
-
     Each method specifies an ``AND`` term while multiple invocations of
     the same method produce a nested ``OR``.
-
 
     """
 
     def match_comment_id(self, comment_id, match):
         """Sets the comment ``Id`` for this query to match comments assigned to books.
-
 
         :param comment_id: a comment ``Id``
         :type comment_id: ``osid.id.Id``
@@ -501,9 +394,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``comment_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -513,11 +404,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -527,15 +414,11 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def supports_comment_query(self):
         """Tests if a comment query is available.
 
-
         :return: ``true`` if a comment query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -543,15 +426,12 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def get_comment_query(self):
         """Gets the query for a comment.
 
-
         :return: the comment query
         :rtype: ``osid.commenting.CommentQuery``
         :raise: ``Unimplemented`` -- ``supports_comment_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_comment_query()`` is ``true``.*
-
 
         """
         return # osid.commenting.CommentQuery
@@ -561,15 +441,11 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def match_any_comment(self, match):
         """Matches books with any comment.
 
-
         :param match: ``true`` to match books with any comment, ``false`` to match books with no comments
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -579,11 +455,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -593,16 +465,13 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def match_ancestor_book_id(self, book_id, match):
         """Sets the book ``Id`` for this query to match books that have the specified book as an ancestor.
 
-
         :param book_id: a book ``Id``
         :type book_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, a ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -612,11 +481,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -626,15 +491,11 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def supports_ancestor_book_query(self):
         """Tests if a ``BookQuery`` is available.
 
-
         :return: ``true`` if a book query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -642,18 +503,14 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def get_ancestor_book_query(self):
         """Gets the query for a book.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the book query
         :rtype: ``osid.commenting.BookQuery``
         :raise: ``Unimplemented`` -- ``supports_ancestor_book_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_ancestor_book_query()`` is ``true``.*
-
 
         """
         return # osid.commenting.BookQuery
@@ -663,15 +520,11 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def match_any_ancestor_book(self, match):
         """Matches books with any ancestor.
 
-
         :param match: ``true`` to match books with any ancestor, ``false`` to match root books
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -681,11 +534,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -695,16 +544,13 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def match_descendant_book_id(self, book_id, match):
         """Sets the book ``Id`` for this query to match books that have the specified book as a descendant.
 
-
         :param book_id: a book ``Id``
         :type book_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``book_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -714,11 +560,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -728,15 +570,11 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def supports_descendant_book_query(self):
         """Tests if a ``BookQuery`` is available.
 
-
         :return: ``true`` if a book query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -744,18 +582,14 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def get_descendant_book_query(self):
         """Gets the query for a book.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the book query
         :rtype: ``osid.commenting.BookQuery``
         :raise: ``Unimplemented`` -- ``supports_descendant_book_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_descendant_book_query()`` is ``true``.*
-
 
         """
         return # osid.commenting.BookQuery
@@ -765,15 +599,11 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def match_any_descendant_book(self, match):
         """Matches books with any descendant.
 
-
         :param match: ``true`` to match books with any descendant, ``false`` to match leaf books
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -783,11 +613,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -797,9 +623,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
     def get_book_query_record(self, book_record_type):
         """Gets the book query record corresponding to the given ``Book`` record ``Type``.
 
-
         Multiple record retrievals produce a nested boolean ``OR`` term.
-
 
         :param book_record_type: a book record type
         :type book_record_type: ``osid.type.Type``
@@ -809,9 +633,7 @@ class BookQuery(osid_queries.OsidCatalogQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.records.BookQueryRecord

@@ -9,15 +9,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_comment_lookup(self):
         """Tests for the availability of a comment lookup service.
 
-
         :return: ``true`` if comment lookup is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -25,15 +21,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_comment_query(self):
         """Tests if querying comments is available.
 
-
         :return: ``true`` if comment query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -41,15 +33,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_comment_admin(self):
         """Tests if managing comments is available.
 
-
         :return: ``true`` if comment admin is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -57,15 +45,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_book_lookup(self):
         """Tests for the availability of an book lookup service.
 
-
         :return: ``true`` if book lookup is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -73,15 +57,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_book_admin(self):
         """Tests for the availability of a book administrative service for creating and deleting books.
 
-
         :return: ``true`` if book administration is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -89,15 +69,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_book_hierarchy(self):
         """Tests for the availability of a book hierarchy traversal service.
 
-
         :return: ``true`` if book hierarchy traversal is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -105,16 +81,12 @@ class CommentingProfile(osid_managers.OsidProfile):
     def supports_book_hierarchy_design(self):
         """Tests for the availability of a book hierarchy design service.
 
-
         :return: ``true`` if book hierarchy design is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented in all
         providers.*
-
 
         """
         return # boolean
@@ -122,15 +94,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def get_comment_record_types(self):
         """Gets the supported ``Comment`` record types.
 
-
         :return: a list containing the supported comment record types
         :rtype: ``osid.type.TypeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.TypeList
@@ -140,15 +108,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def get_comment_search_record_types(self):
         """Gets the supported comment search record types.
 
-
         :return: a list containing the supported comment search record types
         :rtype: ``osid.type.TypeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.TypeList
@@ -158,15 +122,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def get_book_record_types(self):
         """Gets the supported ``Book`` record types.
 
-
         :return: a list containing the supported book record types
         :rtype: ``osid.type.TypeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.TypeList
@@ -176,15 +136,11 @@ class CommentingProfile(osid_managers.OsidProfile):
     def get_book_search_record_types(self):
         """Gets the supported book search record types.
 
-
         :return: a list containing the supported book search record types
         :rtype: ``osid.type.TypeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.TypeList
@@ -193,14 +149,10 @@ class CommentingProfile(osid_managers.OsidProfile):
 
 
 class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
-        aspects of
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various aspects of
     this service.
 
-
     The sessions included in this manager are:
-
-
 
 
       * ``CommentLookupSession:`` a session to lookup comments
@@ -231,29 +183,21 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
 
-
-
-
-
     The commenting manager also provides a profile for determing the
     supported search types supported by this service.
-
 
     """
 
     def get_commenting_batch_manager(self):
         """Gets a ``CommentingBatchManager``.
 
-
         :return: a ``CommentingBatchManager``
         :rtype: ``osid.commenting.batch.CommentingBatchManager``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_commenting_batch()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_commenting_batch()`` is ``true``.*
-
 
         """
         return # osid.commenting.batch.CommentingBatchManager
@@ -262,16 +206,12 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
 class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability tests for various
-        aspects of
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various aspects of
     this service.
-
 
     Methods in this manager accept a ``Proxy`` for passing information
     from a server environment. The sessions included in this manager
     are:
-
-
 
 
       * ``CommentLookupSession:`` a session to lookup comments
@@ -302,29 +242,21 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
 
 
 
-
-
-
-
     The commenting manager also provides a profile for determing the
     supported search types supported by this service.
-
 
     """
 
     def get_commenting_batch_proxy_manager(self):
         """Gets a ``CommentingBatchProxyManager``.
 
-
         :return: a ``CommentingBatchProxyManager``
         :rtype: ``osid.commenting.batch.CommentingBatchProxyManager``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unimplemented`` -- ``supports_commenting_batch()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_commenting_batch()`` is ``true``.*
-
 
         """
         return # osid.commenting.batch.CommentingBatchProxyManager

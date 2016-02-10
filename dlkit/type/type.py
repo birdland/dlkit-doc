@@ -33,15 +33,11 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_display_name(self):
         """Gets the full display name of this ``Type``.
 
-
         :return: the display name of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -51,19 +47,14 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_display_label(self):
         """Gets the shorter display label for this ``Type``.
 
-
         Where a display name of a ``Type`` might be ``"`` Critical
         Logging Priority Type", the display label could be "critical".
-
 
         :return: the display label for this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -73,15 +64,11 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_description(self):
         """Gets a description of this ``Type``.
 
-
         :return: the description of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -91,19 +78,14 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_domain(self):
         """Gets the domain.
 
-
         The domain can provide an information label about ths
         application space of this Type.
-
 
         :return: the domain of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -113,22 +95,17 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_authority(self):
         """Gets the authority of this ``Type``.
 
-
         The authority is a string used to ensure the uniqueness of this
         ``Type`` when using a non- federated identifier space.
         Generally, it is a domain name identifying the party responsible
         for this ``Type``. This method is used to compare one ``Type``
         to another.
 
-
         :return: the authority of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -138,18 +115,13 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_identifier_namespace(self):
         """Gets the namespace of the identifier.
 
-
         This method is used to compare one ``Type`` to another.
-
 
         :return: the authority of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -161,18 +133,13 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_identifier(self):
         """Gets the identifier of this ``Type``.
 
-
         This method is used to compare one ``Type`` to another.
-
 
         :return: the identifier of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -186,15 +153,11 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_display_name_metadata(self):
         """Gets the metadata for the display name.
 
-
         :return: metadata for the display name
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -204,16 +167,13 @@ class TypeProfile(osid_managers.OsidProfile):
     def set_display_name(self, display_name):
         """Sets a display name.
 
-
         :param display_name: the new display name
         :type display_name: ``string``
         :raise: ``InvalidArgument`` -- ``display_name`` is invalid
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
         :raise: ``NullArgument`` -- ``display_name`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -221,12 +181,9 @@ class TypeProfile(osid_managers.OsidProfile):
     def clear_display_name(self):
         """Clears the display name.
 
-
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -236,15 +193,11 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_display_label_metadata(self):
         """Gets the metadata for the display label.
 
-
         :return: metadata for the display label
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -254,16 +207,13 @@ class TypeProfile(osid_managers.OsidProfile):
     def set_display_label(self, display_label):
         """Seta a display label.
 
-
         :param display_label: the new display label
         :type display_label: ``string``
         :raise: ``InvalidArgument`` -- ``display_label`` is invalid
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
         :raise: ``NullArgument`` -- ``display_label`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -271,12 +221,9 @@ class TypeProfile(osid_managers.OsidProfile):
     def clear_display_label(self):
         """Clears the display label.
 
-
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -286,15 +233,11 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_description_metadata(self):
         """Gets the metadata for the description.
 
-
         :return: metadata for the description
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -304,16 +247,13 @@ class TypeProfile(osid_managers.OsidProfile):
     def set_description(self, description):
         """Sets a description.
 
-
         :param description: the new description
         :type description: ``string``
         :raise: ``InvalidArgument`` -- ``description`` is invalid
         :raise: ``NoAccess`` -- ``description`` cannot be modified
         :raise: ``NullArgument`` -- ``description`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -321,12 +261,9 @@ class TypeProfile(osid_managers.OsidProfile):
     def clear_description(self):
         """Clears the description.
 
-
         :raise: ``NoAccess`` -- ``description`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -336,15 +273,11 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_domain_metadata(self):
         """Gets the metadata for the domain.
 
-
         :return: metadata for the domain
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -354,16 +287,13 @@ class TypeProfile(osid_managers.OsidProfile):
     def set_domain(self, domain):
         """Sets a domain.
 
-
         :param domain: the new domain
         :type domain: ``string``
         :raise: ``InvalidArgument`` -- ``domain`` is invalid
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
         :raise: ``NullArgument`` -- ``domain`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -371,12 +301,9 @@ class TypeProfile(osid_managers.OsidProfile):
     def clear_domain(self):
         """Clears the domain.
 
-
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -390,16 +317,12 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_next_type(self):
         """Gets the next ``Type`` in this list.
 
-
-        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type``
-            is available before calling this method.
+        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type`` is available before calling this method.
         :rtype: ``osid.type.Type``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type
@@ -409,10 +332,8 @@ class TypeProfile(osid_managers.OsidProfile):
     def get_next_types(self, n):
         """Gets the next set of ``Types`` in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
-
 
         :param n: the number of ``Type`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
@@ -421,9 +342,7 @@ class TypeProfile(osid_managers.OsidProfile):
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type
@@ -434,14 +353,10 @@ class TypeProfile(osid_managers.OsidProfile):
 class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProfile):
     """This manager provides access to the available sessions of the type service.
 
-
     The ``TypeLookupSession`` is used for looking up ``Types`` and the
     ``TypeAdminSession`` is used for managing and registering new Types.
 
-
     """
-
-
 
 
     def __init__(self, proxy=None):
@@ -455,7 +370,6 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         # This is to initialize self._proxy
         osid.OsidSession.__init__(self, proxy)
 
-
     def _get_provider_session(self, session):
         if session in self._provider_sessions:
             return self._provider_sessions[session]
@@ -464,10 +378,9 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
                 get_session = getattr(self._provider_manager, 'get_' + session)
             except:
                 raise # Unimplemented???
-            else:
+            else: 
                 self._provider_sessions[session] = get_session()
             return self._provider_sessions[session]
-
 
     def initialize(self, runtime):
         """OSID Manager initialize"""
@@ -482,12 +395,12 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         # need to add version argument
         self._provider_manager = runtime.get_manager('TYPE', provider_impl)
 
-
     def get_types(self, *args, **kwargs):
         """Pass through to provider method"""
         # Implemented from
         # osid.type.TypeLookupSession.get_types
         return self._get_provider_session('type_lookup_session').get_types(*args, **kwargs)
+
 
 ##
 # The following methods are from osid.type.TypeProfile
@@ -513,15 +426,11 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_display_name(self):
         """Gets the full display name of this ``Type``.
 
-
         :return: the display name of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -531,19 +440,14 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_display_label(self):
         """Gets the shorter display label for this ``Type``.
 
-
         Where a display name of a ``Type`` might be ``"`` Critical
         Logging Priority Type", the display label could be "critical".
-
 
         :return: the display label for this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -553,15 +457,11 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_description(self):
         """Gets a description of this ``Type``.
 
-
         :return: the description of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -571,19 +471,14 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_domain(self):
         """Gets the domain.
 
-
         The domain can provide an information label about ths
         application space of this Type.
-
 
         :return: the domain of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -593,22 +488,17 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_authority(self):
         """Gets the authority of this ``Type``.
 
-
         The authority is a string used to ensure the uniqueness of this
         ``Type`` when using a non- federated identifier space.
         Generally, it is a domain name identifying the party responsible
         for this ``Type``. This method is used to compare one ``Type``
         to another.
 
-
         :return: the authority of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -618,18 +508,13 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_identifier_namespace(self):
         """Gets the namespace of the identifier.
 
-
         This method is used to compare one ``Type`` to another.
-
 
         :return: the authority of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -641,18 +526,13 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_identifier(self):
         """Gets the identifier of this ``Type``.
 
-
         This method is used to compare one ``Type`` to another.
-
 
         :return: the identifier of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -666,15 +546,11 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_display_name_metadata(self):
         """Gets the metadata for the display name.
 
-
         :return: metadata for the display name
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -684,16 +560,13 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def set_display_name(self, display_name):
         """Sets a display name.
 
-
         :param display_name: the new display name
         :type display_name: ``string``
         :raise: ``InvalidArgument`` -- ``display_name`` is invalid
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
         :raise: ``NullArgument`` -- ``display_name`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -701,12 +574,9 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def clear_display_name(self):
         """Clears the display name.
 
-
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -716,15 +586,11 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_display_label_metadata(self):
         """Gets the metadata for the display label.
 
-
         :return: metadata for the display label
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -734,16 +600,13 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def set_display_label(self, display_label):
         """Seta a display label.
 
-
         :param display_label: the new display label
         :type display_label: ``string``
         :raise: ``InvalidArgument`` -- ``display_label`` is invalid
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
         :raise: ``NullArgument`` -- ``display_label`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -751,12 +614,9 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def clear_display_label(self):
         """Clears the display label.
 
-
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -766,15 +626,11 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_description_metadata(self):
         """Gets the metadata for the description.
 
-
         :return: metadata for the description
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -784,16 +640,13 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def set_description(self, description):
         """Sets a description.
 
-
         :param description: the new description
         :type description: ``string``
         :raise: ``InvalidArgument`` -- ``description`` is invalid
         :raise: ``NoAccess`` -- ``description`` cannot be modified
         :raise: ``NullArgument`` -- ``description`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -801,12 +654,9 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def clear_description(self):
         """Clears the description.
 
-
         :raise: ``NoAccess`` -- ``description`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -816,15 +666,11 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_domain_metadata(self):
         """Gets the metadata for the domain.
 
-
         :return: metadata for the domain
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -834,16 +680,13 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def set_domain(self, domain):
         """Sets a domain.
 
-
         :param domain: the new domain
         :type domain: ``string``
         :raise: ``InvalidArgument`` -- ``domain`` is invalid
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
         :raise: ``NullArgument`` -- ``domain`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -851,12 +694,9 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def clear_domain(self):
         """Clears the domain.
 
-
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -870,16 +710,12 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_next_type(self):
         """Gets the next ``Type`` in this list.
 
-
-        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type``
-            is available before calling this method.
+        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type`` is available before calling this method.
         :rtype: ``osid.type.Type``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type
@@ -889,10 +725,8 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
     def get_next_types(self, n):
         """Gets the next set of ``Types`` in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
-
 
         :param n: the number of ``Type`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
@@ -901,9 +735,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type
@@ -914,12 +746,10 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
 class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     """This manager provides access to the available sessions of the type service.
 
-
     Methods in this manager support the passing of a ``Proxy`` object
     for the purpose of passing information from a server environment.
     The ``TypeLookupSession`` is used for looking up ``Types`` and the
     ``TypeAdminSession`` is used for managing and registering new Types.
-
 
     """
 
@@ -948,15 +778,11 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_display_name(self):
         """Gets the full display name of this ``Type``.
 
-
         :return: the display name of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -966,19 +792,14 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_display_label(self):
         """Gets the shorter display label for this ``Type``.
 
-
         Where a display name of a ``Type`` might be ``"`` Critical
         Logging Priority Type", the display label could be "critical".
-
 
         :return: the display label for this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -988,15 +809,11 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_description(self):
         """Gets a description of this ``Type``.
 
-
         :return: the description of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -1006,19 +823,14 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_domain(self):
         """Gets the domain.
 
-
         The domain can provide an information label about ths
         application space of this Type.
-
 
         :return: the domain of this ``Type``
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -1028,22 +840,17 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_authority(self):
         """Gets the authority of this ``Type``.
 
-
         The authority is a string used to ensure the uniqueness of this
         ``Type`` when using a non- federated identifier space.
         Generally, it is a domain name identifying the party responsible
         for this ``Type``. This method is used to compare one ``Type``
         to another.
 
-
         :return: the authority of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -1053,18 +860,13 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_identifier_namespace(self):
         """Gets the namespace of the identifier.
 
-
         This method is used to compare one ``Type`` to another.
-
 
         :return: the authority of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -1076,18 +878,13 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_identifier(self):
         """Gets the identifier of this ``Type``.
 
-
         This method is used to compare one ``Type`` to another.
-
 
         :return: the identifier of this ``Type``
         :rtype: ``string``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # string
@@ -1101,15 +898,11 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_display_name_metadata(self):
         """Gets the metadata for the display name.
 
-
         :return: metadata for the display name
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -1119,16 +912,13 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def set_display_name(self, display_name):
         """Sets a display name.
 
-
         :param display_name: the new display name
         :type display_name: ``string``
         :raise: ``InvalidArgument`` -- ``display_name`` is invalid
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
         :raise: ``NullArgument`` -- ``display_name`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1136,12 +926,9 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def clear_display_name(self):
         """Clears the display name.
 
-
         :raise: ``NoAccess`` -- ``display_name`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1151,15 +938,11 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_display_label_metadata(self):
         """Gets the metadata for the display label.
 
-
         :return: metadata for the display label
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -1169,16 +952,13 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def set_display_label(self, display_label):
         """Seta a display label.
 
-
         :param display_label: the new display label
         :type display_label: ``string``
         :raise: ``InvalidArgument`` -- ``display_label`` is invalid
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
         :raise: ``NullArgument`` -- ``display_label`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1186,12 +966,9 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def clear_display_label(self):
         """Clears the display label.
 
-
         :raise: ``NoAccess`` -- ``display_label`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1201,15 +978,11 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_description_metadata(self):
         """Gets the metadata for the description.
 
-
         :return: metadata for the description
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -1219,16 +992,13 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def set_description(self, description):
         """Sets a description.
 
-
         :param description: the new description
         :type description: ``string``
         :raise: ``InvalidArgument`` -- ``description`` is invalid
         :raise: ``NoAccess`` -- ``description`` cannot be modified
         :raise: ``NullArgument`` -- ``description`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1236,12 +1006,9 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def clear_description(self):
         """Clears the description.
 
-
         :raise: ``NoAccess`` -- ``description`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1251,15 +1018,11 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_domain_metadata(self):
         """Gets the metadata for the domain.
 
-
         :return: metadata for the domain
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -1269,16 +1032,13 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def set_domain(self, domain):
         """Sets a domain.
 
-
         :param domain: the new domain
         :type domain: ``string``
         :raise: ``InvalidArgument`` -- ``domain`` is invalid
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
         :raise: ``NullArgument`` -- ``domain`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1286,12 +1046,9 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def clear_domain(self):
         """Clears the domain.
 
-
         :raise: ``NoAccess`` -- ``domain`` cannot be modified
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1305,16 +1062,12 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_next_type(self):
         """Gets the next ``Type`` in this list.
 
-
-        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type``
-            is available before calling this method.
+        :return: the next ``Type`` in this list. The ``has_next()`` method should be used to test that a next ``Type`` is available before calling this method.
         :rtype: ``osid.type.Type``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type
@@ -1324,10 +1077,8 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
     def get_next_types(self, n):
         """Gets the next set of ``Types`` in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
-
 
         :param n: the number of ``Type`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
@@ -1336,9 +1087,7 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type

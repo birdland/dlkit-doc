@@ -5,19 +5,15 @@ from ..osid import queries as osid_queries
 class QuestionQuery(osid_queries.OsidObjectQuery):
     """This is the query for searching questions.
 
-
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
-
 
     """
 
     def get_question_query_record(self, question_record_type):
         """Gets the question record query corresponding to the given ``Item`` record ``Type``.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :param question_record_type: a question record type
         :type question_record_type: ``osid.type.Type``
@@ -27,9 +23,7 @@ class QuestionQuery(osid_queries.OsidObjectQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(question_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.QuestionQueryRecord
@@ -38,19 +32,15 @@ class QuestionQuery(osid_queries.OsidObjectQuery):
 class AnswerQuery(osid_queries.OsidObjectQuery):
     """This is the query for searching answers.
 
-
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
-
 
     """
 
     def get_answer_query_record(self, answer_record_type):
         """Gets the answer record query corresponding to the given ``Answer`` record ``Type``.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :param answer_record_type: an answer record type
         :type answer_record_type: ``osid.type.Type``
@@ -60,9 +50,7 @@ class AnswerQuery(osid_queries.OsidObjectQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(answer_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.AnswerQueryRecord
@@ -71,16 +59,13 @@ class AnswerQuery(osid_queries.OsidObjectQuery):
 class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuery):
     """This is the query for searching items.
 
-
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
-
 
     """
 
     def match_learning_objective_id(self, objective_id, match):
         """Sets the learning objective ``Id`` for this query.
-
 
         :param objective_id: a learning objective ``Id``
         :type objective_id: ``osid.id.Id``
@@ -88,9 +73,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``objective_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -100,11 +83,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -114,15 +93,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def supports_learning_objective_query(self):
         """Tests if an ``ObjectiveQuery`` is available.
 
-
         :return: ``true`` if a learning objective query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -130,18 +105,14 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def get_learning_objective_query(self):
         """Gets the query for a learning objective.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the learning objective query
         :rtype: ``osid.learning.ObjectiveQuery``
         :raise: ``Unimplemented`` -- ``supports_learning_objective_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_learning_objective_query()`` is ``true``.*
-
 
         """
         return # osid.learning.ObjectiveQuery
@@ -151,16 +122,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_any_learning_objective(self, match):
         """Matches an item with any objective.
 
-
-        :param match: ``true`` to match items with any learning objective, ``false`` to match items with no learning
-            objectives
+        :param match: ``true`` to match items with any learning objective, ``false`` to match items with no learning objectives
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -170,11 +136,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -184,16 +146,13 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_question_id(self, question_id, match):
         """Sets the question ``Id`` for this query.
 
-
         :param question_id: a question ``Id``
         :type question_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``question_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -203,11 +162,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -217,15 +172,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def supports_question_query(self):
         """Tests if a ``QuestionQuery`` is available.
 
-
         :return: ``true`` if a question query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -233,18 +184,14 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def get_question_query(self):
         """Gets the query for a question.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the question query
         :rtype: ``osid.assessment.QuestionQuery``
         :raise: ``Unimplemented`` -- ``supports_question_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_learning_objective_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.QuestionQuery
@@ -254,15 +201,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_any_question(self, match):
         """Matches an item with any question.
 
-
         :param match: ``true`` to match items with any question, ``false`` to match items with no questions
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -272,11 +215,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -286,16 +225,13 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_answer_id(self, answer_id, match):
         """Sets the answer ``Id`` for this query.
 
-
         :param answer_id: an answer ``Id``
         :type answer_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``answer_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -305,11 +241,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -319,15 +251,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def supports_answer_query(self):
         """Tests if an ``AnswerQuery`` is available.
 
-
         :return: ``true`` if an answer query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -335,18 +263,14 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def get_answer_query(self):
         """Gets the query for an answer.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the answer query
         :rtype: ``osid.assessment.AnswerQuery``
         :raise: ``Unimplemented`` -- ``supports_answer_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_learning_objective_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AnswerQuery
@@ -356,15 +280,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_any_answer(self, match):
         """Matches an item with any answer.
 
-
         :param match: ``true`` to match items with any answer, ``false`` to match items with no answers
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -374,11 +294,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -388,16 +304,13 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_assessment_id(self, assessment_id, match):
         """Sets the assessment ``Id`` for this query.
 
-
         :param assessment_id: an assessment ``Id``
         :type assessment_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -407,11 +320,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -421,15 +330,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def supports_assessment_query(self):
         """Tests if an ``AssessmentQuery`` is available.
 
-
         :return: ``true`` if an assessment query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -437,18 +342,14 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def get_assessment_query(self):
         """Gets the query for an assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment query
         :rtype: ``osid.assessment.AssessmentQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentQuery
@@ -458,15 +359,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_any_assessment(self, match):
         """Matches an item with any assessment.
 
-
         :param match: ``true`` to match items with any assessment, ``false`` to match items with no assessments
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -476,11 +373,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -490,16 +383,13 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def match_bank_id(self, bank_id, match):
         """Sets the bank ``Id`` for this query.
 
-
         :param bank_id: a bank ``Id``
         :type bank_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -509,11 +399,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -523,15 +409,11 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def supports_bank_query(self):
         """Tests if a ``BankQuery`` is available.
 
-
         :return: ``true`` if a bank query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -539,18 +421,14 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def get_bank_query(self):
         """Gets the query for a bank.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the bank query
         :rtype: ``osid.assessment.BankQuery``
         :raise: ``Unimplemented`` -- ``supports_bank_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_bank_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.BankQuery
@@ -562,11 +440,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -576,9 +450,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
     def get_item_query_record(self, item_record_type):
         """Gets the item record query corresponding to the given ``Item`` record ``Type``.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :param item_record_type: an item record type
         :type item_record_type: ``osid.type.Type``
@@ -588,9 +460,7 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(item_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.ItemQueryRecord
@@ -599,16 +469,13 @@ class ItemQuery(osid_queries.OsidObjectQuery, osid_queries.OsidAggregateableQuer
 class AssessmentQuery(osid_queries.OsidObjectQuery):
     """This is the query for searching assessments.
 
-
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
-
 
     """
 
     def match_level_id(self, grade_id, match):
         """Sets the level grade ``Id`` for this query.
-
 
         :param grade_id: a grade ``Id``
         :type grade_id: ``osid.id.Id``
@@ -616,9 +483,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -628,11 +493,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -642,15 +503,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def supports_level_query(self):
         """Tests if a ``GradeQuery`` is available.
 
-
         :return: ``true`` if a grade query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -658,18 +515,14 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_level_query(self):
         """Gets the query for a grade.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the grade query
         :rtype: ``osid.grading.GradeQuery``
         :raise: ``Unimplemented`` -- ``supports_level_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_level_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeQuery
@@ -679,15 +532,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_any_level(self, match):
         """Matches an assessment that has any level assigned.
 
-
         :param match: ``true`` to match assessments with any level, ``false`` to match assessments with no level
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -697,11 +546,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -711,16 +556,13 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_rubric_id(self, assessment_id, match):
         """Sets the rubric assessment ``Id`` for this query.
 
-
         :param assessment_id: an assessment ``Id``
         :type assessment_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -730,11 +572,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -744,15 +582,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def supports_rubric_query(self):
         """Tests if an ``AssessmentQuery`` is available.
 
-
         :return: ``true`` if a rubric assessment query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -760,18 +594,14 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_rubric_query(self):
         """Gets the query for a rubric assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment query
         :rtype: ``osid.assessment.AssessmentQuery``
         :raise: ``Unimplemented`` -- ``supports_rubric_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_rubric_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentQuery
@@ -781,15 +611,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_any_rubric(self, match):
         """Matches an assessment that has any rubric assessment assigned.
 
-
         :param match: ``true`` to match assessments with any rubric, ``false`` to match assessments with no rubric
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -799,11 +625,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -813,16 +635,13 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_item_id(self, item_id, match):
         """Sets the item ``Id`` for this query.
 
-
         :param item_id: an item ``Id``
         :type item_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``item_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -832,11 +651,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -846,15 +661,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def supports_item_query(self):
         """Tests if an ``ItemQuery`` is available.
 
-
         :return: ``true`` if an item query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -862,18 +673,14 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_item_query(self):
         """Gets the query for an item.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the item query
         :rtype: ``osid.assessment.ItemQuery``
         :raise: ``Unimplemented`` -- ``supports_item_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_item_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.ItemQuery
@@ -883,15 +690,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_any_item(self, match):
         """Matches an assessment that has any item.
 
-
         :param match: ``true`` to match assessments with any item, ``false`` to match assessments with no items
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -901,11 +704,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -915,16 +714,13 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_assessment_offered_id(self, assessment_offered_id, match):
         """Sets the assessment offered ``Id`` for this query.
 
-
         :param assessment_offered_id: an assessment offered ``Id``
         :type assessment_offered_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -934,11 +730,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -948,15 +740,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def supports_assessment_offered_query(self):
         """Tests if an ``AssessmentOfferedQuery`` is available.
 
-
         :return: ``true`` if an assessment offered query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -964,18 +752,14 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_assessment_offered_query(self):
         """Gets the query for an assessment offered.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment offered query
         :rtype: ``osid.assessment.AssessmentOfferedQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_offered_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentOfferedQuery
@@ -985,15 +769,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_any_assessment_offered(self, match):
         """Matches an assessment that has any offering.
 
-
         :param match: ``true`` to match assessments with any offering, ``false`` to match assessments with no offerings
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1003,11 +783,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1017,16 +793,13 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_assessment_taken_id(self, assessment_taken_id, match):
         """Sets the assessment taken ``Id`` for this query.
 
-
         :param assessment_taken_id: an assessment taken ``Id``
         :type assessment_taken_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1036,11 +809,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1050,15 +819,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def supports_assessment_taken_query(self):
         """Tests if an ``AssessmentTakenQuery`` is available.
 
-
         :return: ``true`` if an assessment taken query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1066,18 +831,14 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_assessment_taken_query(self):
         """Gets the query for an assessment taken.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment taken query
         :rtype: ``osid.assessment.AssessmentTakenQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_taken_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentTakenQuery
@@ -1087,16 +848,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_any_assessment_taken(self, match):
         """Matches an assessment that has any taken version.
 
-
-        :param match: ``true`` to match assessments with any taken assessments, ``false`` to match assessments with no
-            taken assessments
+        :param match: ``true`` to match assessments with any taken assessments, ``false`` to match assessments with no taken assessments
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1106,11 +862,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1120,16 +872,13 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def match_bank_id(self, bank_id, match):
         """Sets the bank ``Id`` for this query.
 
-
         :param bank_id: a bank ``Id``
         :type bank_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1139,11 +888,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1153,15 +898,11 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def supports_bank_query(self):
         """Tests if a ``BankQuery`` is available.
 
-
         :return: ``true`` if a bank query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1169,18 +910,14 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_bank_query(self):
         """Gets the query for a bank.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the bank query
         :rtype: ``osid.assessment.BankQuery``
         :raise: ``Unimplemented`` -- ``supports_bank_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_bank_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.BankQuery
@@ -1192,11 +929,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1206,9 +939,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
     def get_assessment_query_record(self, assessment_record_type):
         """Gets the assessment query record corresponding to the given ``Assessment`` record ``Type``.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :param assessment_record_type: an assessment record type
         :type assessment_record_type: ``osid.type.Type``
@@ -1218,9 +949,7 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(assessment_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.AssessmentQueryRecord
@@ -1229,16 +958,13 @@ class AssessmentQuery(osid_queries.OsidObjectQuery):
 class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubjugateableQuery):
     """This is the query for searching assessments.
 
-
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
-
 
     """
 
     def match_assessment_id(self, assessment_id, match):
         """Sets the assessment ``Id`` for this query.
-
 
         :param assessment_id: an assessment ``Id``
         :type assessment_id: ``osid.id.Id``
@@ -1246,9 +972,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1258,11 +982,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1272,15 +992,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_assessment_query(self):
         """Tests if an ``AssessmentQuery`` is available.
 
-
         :return: ``true`` if an assessment query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1288,18 +1004,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_assessment_query(self):
         """Gets the query for an assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment query
         :rtype: ``osid.assessment.AssessmentQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentQuery
@@ -1311,11 +1023,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1325,16 +1033,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_level_id(self, grade_id, match):
         """Sets the level grade ``Id`` for this query.
 
-
         :param grade_id: a grade ``Id``
         :type grade_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1344,11 +1049,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1358,15 +1059,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_level_query(self):
         """Tests if a ``GradeQuery`` is available.
 
-
         :return: ``true`` if a grade query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1374,18 +1071,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_level_query(self):
         """Gets the query for a grade.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the grade query
         :rtype: ``osid.grading.GradeQuery``
         :raise: ``Unimplemented`` -- ``supports_level_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_level_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeQuery
@@ -1395,15 +1088,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_level(self, match):
         """Matches an assessment offered that has any level assigned.
 
-
         :param match: ``true`` to match offerings with any level, ``false`` to match offerings with no levsls
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1413,11 +1102,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1427,15 +1112,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_items_sequential(self, match):
         """Match sequential assessments.
 
-
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1445,11 +1126,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1459,15 +1136,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_items_shuffled(self, match):
         """Match shuffled item assessments.
 
-
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1477,11 +1150,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1491,7 +1160,6 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_start_time(self, start, end, match):
         """Matches assessments whose start time falls between the specified range inclusive.
 
-
         :param start: start of range
         :type start: ``osid.calendaring.DateTime``
         :param end: end of range
@@ -1500,9 +1168,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1510,15 +1176,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_start_time(self, match):
         """Matches offerings that has any start time assigned.
 
-
         :param match: ``true`` to match offerings with any start time, ``false`` to match offerings with no start time
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1528,11 +1190,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1541,7 +1199,6 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
     def match_deadline(self, start, end, match):
         """Matches assessments whose end time falls between the specified range inclusive.
-
 
         :param start: start of range
         :type start: ``osid.calendaring.DateTime``
@@ -1552,9 +1209,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1562,15 +1217,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_deadline(self, match):
         """Matches offerings that have any deadline assigned.
 
-
         :param match: ``true`` to match offerings with any deadline, ``false`` to match offerings with no deadline
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1580,11 +1231,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1593,7 +1240,6 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
     def match_duration(self, low, high, match):
         """Matches assessments whose duration falls between the specified range inclusive.
-
 
         :param low: start range of duration
         :type low: ``osid.calendaring.Duration``
@@ -1604,9 +1250,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1614,15 +1258,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_duration(self, match):
         """Matches offerings that have any duration assigned.
 
-
         :param match: ``true`` to match offerings with any duration, ``false`` to match offerings with no duration
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1632,11 +1272,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1646,16 +1282,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_score_system_id(self, grade_system_id, match):
         """Sets the grade system ``Id`` for this query.
 
-
         :param grade_system_id: a grade system ``Id``
         :type grade_system_id: ``osid.id.Id``
         :param match: ``true for a positive match, false for a negative match``
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1665,11 +1298,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1679,15 +1308,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_score_system_query(self):
         """Tests if a ``GradeSystemQuery`` is available.
 
-
         :return: ``true`` if a grade system query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1695,18 +1320,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_score_system_query(self):
         """Gets the query for a grade system.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the grade system query
         :rtype: ``osid.grading.GradeSystemQuery``
         :raise: ``Unimplemented`` -- ``supports_score_system_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_score_system_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeSystemQuery
@@ -1716,16 +1337,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_score_system(self, match):
         """Matches taken assessments that have any grade system assigned.
 
-
-        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade
-            system
+        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade system
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1735,11 +1351,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1749,16 +1361,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_grade_system_id(self, grade_system_id, match):
         """Sets the grade system ``Id`` for this query.
 
-
         :param grade_system_id: a grade system ``Id``
         :type grade_system_id: ``osid.id.Id``
         :param match: ``true for a positive match, false for a negative match``
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1768,11 +1377,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1782,15 +1387,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_grade_system_query(self):
         """Tests if a ``GradeSystemQuery`` is available.
 
-
         :return: ``true`` if a grade system query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1798,18 +1399,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_grade_system_query(self):
         """Gets the query for a grade system.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the grade system query
         :rtype: ``osid.grading.GradeSystemQuery``
         :raise: ``Unimplemented`` -- ``supports_score_system_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_score_system_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeSystemQuery
@@ -1819,16 +1416,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_grade_system(self, match):
         """Matches taken assessments that have any grade system assigned.
 
-
-        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade
-            system
+        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade system
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1838,11 +1430,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1852,16 +1440,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_rubric_id(self, assessment_offered_id, match):
         """Sets the rubric assessment offered ``Id`` for this query.
 
-
         :param assessment_offered_id: an assessment offered ``Id``
         :type assessment_offered_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1871,11 +1456,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1885,15 +1466,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_rubric_query(self):
         """Tests if an ``AssessmentOfferedQuery`` is available.
 
-
         :return: ``true`` if a rubric assessment offered query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -1901,18 +1478,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_rubric_query(self):
         """Gets the query for a rubric assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment offered query
         :rtype: ``osid.assessment.AssessmentOfferedQuery``
         :raise: ``Unimplemented`` -- ``supports_rubric_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_rubric_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentOfferedQuery
@@ -1922,16 +1495,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_rubric(self, match):
         """Matches an assessment offered that has any rubric assessment assigned.
 
-
-        :param match: ``true`` to match assessments offered with any rubric, ``false`` to match assessments offered with
-            no rubric
+        :param match: ``true`` to match assessments offered with any rubric, ``false`` to match assessments offered with no rubric
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1941,11 +1509,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1955,16 +1519,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_assessment_taken_id(self, assessment_taken_id, match):
         """Sets the assessment taken ``Id`` for this query.
 
-
         :param assessment_taken_id: an assessment taken ``Id``
         :type assessment_taken_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1974,11 +1535,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -1988,15 +1545,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_assessment_taken_query(self):
         """Tests if an ``AssessmentTakenQuery`` is available.
 
-
         :return: ``true`` if an assessment taken query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2004,18 +1557,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_assessment_taken_query(self):
         """Gets the query for an assessment taken.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment taken query
         :rtype: ``osid.assessment.AssessmentTakenQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_taken_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentTakenQuery
@@ -2025,16 +1574,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_any_assessment_taken(self, match):
         """Matches offerings that have any taken assessment version.
 
-
-        :param match: ``true`` to match offerings with any taken assessment, ``false`` to match offerings with no
-            assessmen taken
+        :param match: ``true`` to match offerings with any taken assessment, ``false`` to match offerings with no assessmen taken
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2044,11 +1588,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2058,16 +1598,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def match_bank_id(self, bank_id, match):
         """Sets the bank ``Id`` for this query.
 
-
         :param bank_id: a bank ``Id``
         :type bank_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2077,11 +1614,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2091,15 +1624,11 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def supports_bank_query(self):
         """Tests if a ``BankQuery`` is available.
 
-
         :return: ``true`` if a bank query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2107,18 +1636,14 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_bank_query(self):
         """Gets the query for a bank.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the bank query
         :rtype: ``osid.assessment.BankQuery``
         :raise: ``Unimplemented`` -- ``supports_bank_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_bank_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.BankQuery
@@ -2130,11 +1655,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2144,9 +1665,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
     def get_assessment_offered_query_record(self, assessment_offered_record_type):
         """Gets the assessment offered query record corresponding to the given ``AssessmentOffered`` record ``Type``.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :param assessment_offered_record_type: an assessment offered record type
         :type assessment_offered_record_type: ``osid.type.Type``
@@ -2156,9 +1675,7 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(assessment_offered_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.AssessmentOfferedQueryRecord
@@ -2167,16 +1684,13 @@ class AssessmentOfferedQuery(osid_queries.OsidObjectQuery, osid_queries.OsidSubj
 class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     """This is the query for searching assessments.
 
-
     Each method match request produces an ``AND`` term while multiple
     invocations of a method produces a nested ``OR``.
-
 
     """
 
     def match_assessment_offered_id(self, assessment_offered_id, match):
         """Sets the assessment offered ``Id`` for this query.
-
 
         :param assessment_offered_id: an assessment ``Id``
         :type assessment_offered_id: ``osid.id.Id``
@@ -2184,9 +1698,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2196,11 +1708,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2210,15 +1718,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_assessment_offered_query(self):
         """Tests if an ``AssessmentOfferedQuery`` is available.
 
-
         :return: ``true`` if an assessment offered query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2226,18 +1730,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_assessment_offered_query(self):
         """Gets the query for an assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment offered query
         :rtype: ``osid.assessment.AssessmentOfferedQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_offered_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentOfferedQuery
@@ -2249,11 +1749,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2263,16 +1759,13 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_taker_id(self, resource_id, match):
         """Sets the resource ``Id`` for this query.
 
-
         :param resource_id: a resource ``Id``
         :type resource_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``resource_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2282,11 +1775,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2296,15 +1785,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_taker_query(self):
         """Tests if a ``ResourceQuery`` is available.
 
-
         :return: ``true`` if a resource query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2312,18 +1797,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_taker_query(self):
         """Gets the query for a resource.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the resource query
         :rtype: ``osid.resource.ResourceQuery``
         :raise: ``Unimplemented`` -- ``supports_taker_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_taker_query()`` is ``true``.*
-
 
         """
         return # osid.resource.ResourceQuery
@@ -2335,11 +1816,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2349,16 +1826,13 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_taking_agent_id(self, agent_id, match):
         """Sets the agent ``Id`` for this query.
 
-
         :param agent_id: an agent ``Id``
         :type agent_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``agent_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2368,11 +1842,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2382,15 +1852,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_taking_agent_query(self):
         """Tests if an ``AgentQuery`` is available.
 
-
         :return: ``true`` if an agent query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2398,18 +1864,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_taking_agent_query(self):
         """Gets the query for an agent.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the agent query
         :rtype: ``osid.authentication.AgentQuery``
         :raise: ``Unimplemented`` -- ``supports_taking_agent_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_taking_agent_query()`` is ``true``.*
-
 
         """
         return # osid.authentication.AgentQuery
@@ -2421,11 +1883,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2435,7 +1893,6 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_actual_start_time(self, start, end, match):
         """Matches assessments whose start time falls between the specified range inclusive.
 
-
         :param start: start of range
         :type start: ``osid.calendaring.DateTime``
         :param end: end of range
@@ -2445,9 +1902,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2455,16 +1910,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_actual_start_time(self, match):
         """Matches taken assessments taken that have begun.
 
-
-        :param match: ``true`` to match assessments taken started, ``false`` to match assessments taken that have not
-            begun
+        :param match: ``true`` to match assessments taken started, ``false`` to match assessments taken that have not begun
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2474,11 +1924,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2487,7 +1933,6 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
     def match_completion_time(self, start, end, match):
         """Matches assessments whose completion time falls between the specified range inclusive.
-
 
         :param start: start of range
         :type start: ``osid.calendaring.DateTime``
@@ -2498,9 +1943,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :raise: ``InvalidArgument`` -- ``end`` is less than ``start``
         :raise: ``NullArgument`` -- ``start`` or ``end`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2508,16 +1951,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_completion_time(self, match):
         """Matches taken assessments taken that have completed.
 
-
-        :param match: ``true`` to match assessments taken completed, ``false`` to match assessments taken that are
-            incomplete
+        :param match: ``true`` to match assessments taken completed, ``false`` to match assessments taken that are incomplete
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2527,11 +1965,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2540,7 +1974,6 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
     def match_time_spent(self, low, high, match):
         """Matches assessments where the time spent falls between the specified range inclusive.
-
 
         :param low: start of duration range
         :type low: ``osid.calendaring.Duration``
@@ -2551,9 +1984,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :raise: ``InvalidArgument`` -- ``high`` is less than ``low``
         :raise: ``NullArgument`` -- ``low`` or ``high`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2563,11 +1994,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2577,16 +2004,13 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_score_system_id(self, grade_system_id, match):
         """Sets the grade system ``Id`` for this query.
 
-
         :param grade_system_id: a grade system ``Id``
         :type grade_system_id: ``osid.id.Id``
         :param match: ``true for a positive match, false for a negative match``
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_system_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2596,11 +2020,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2610,15 +2030,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_score_system_query(self):
         """Tests if a ``GradeSystemQuery`` is available.
 
-
         :return: ``true`` if a grade system query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2626,18 +2042,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_score_system_query(self):
         """Gets the query for a grade system.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the grade system query
         :rtype: ``osid.grading.GradeSystemQuery``
         :raise: ``Unimplemented`` -- ``supports_score_system_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_score_system_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeSystemQuery
@@ -2647,16 +2059,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_score_system(self, match):
         """Matches taken assessments that have any grade system assigned.
 
-
-        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade
-            system
+        :param match: ``true`` to match assessments with any grade system, ``false`` to match assessments with no grade system
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2666,11 +2073,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2680,7 +2083,6 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_score(self, low, high, match):
         """Matches assessments whose score falls between the specified range inclusive.
 
-
         :param low: start of range
         :type low: ``decimal``
         :param high: end of range
@@ -2689,9 +2091,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :type match: ``boolean``
         :raise: ``InvalidArgument`` -- ``high`` is less than ``low``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2699,15 +2099,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_score(self, match):
         """Matches taken assessments that have any score assigned.
 
-
         :param match: ``true`` to match assessments with any score, ``false`` to match assessments with no score
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2717,11 +2113,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2731,16 +2123,13 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_grade_id(self, grade_id, match):
         """Sets the grade ``Id`` for this query.
 
-
         :param grade_id: a grade ``Id``
         :type grade_id: ``osid.id.Id``
         :param match: ``true for a positive match, false for a negative match``
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2750,11 +2139,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2764,15 +2149,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_grade_query(self):
         """Tests if a ``GradeQuery`` is available.
 
-
         :return: ``true`` if a grade query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2780,18 +2161,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_grade_query(self):
         """Gets the query for a grade.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the grade query
         :rtype: ``osid.grading.GradeQuery``
         :raise: ``Unimplemented`` -- ``supports_grade_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_grade_query()`` is ``true``.*
-
 
         """
         return # osid.grading.GradeQuery
@@ -2801,15 +2178,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_grade(self, match):
         """Matches taken assessments that have any grade assigned.
 
-
         :param match: ``true`` to match assessments with any grade, ``false`` to match assessments with no grade
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2819,11 +2192,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2832,7 +2201,6 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
     def match_feedback(self, comments, string_match_type, match):
         """Sets the comment string for this query.
-
 
         :param comments: comment string
         :type comments: ``string``
@@ -2844,9 +2212,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :raise: ``NullArgument`` -- ``comments`` or ``string_match_type`` is ``null``
         :raise: ``Unsupported`` -- ``supports_string_match_type(string_match_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2854,15 +2220,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_feedback(self, match):
         """Matches taken assessments that have any comments.
 
-
         :param match: ``true`` to match assessments with any comments, ``false`` to match assessments with no comments
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2872,11 +2234,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2886,16 +2244,13 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_rubric_id(self, assessment_taken_id, match):
         """Sets the rubric assessment taken ``Id`` for this query.
 
-
         :param assessment_taken_id: an assessment taken ``Id``
         :type assessment_taken_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2905,11 +2260,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2919,15 +2270,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_rubric_query(self):
         """Tests if an ``AssessmentTakenQuery`` is available.
 
-
         :return: ``true`` if a rubric assessment taken query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -2935,18 +2282,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_rubric_query(self):
         """Gets the query for a rubric assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment taken query
         :rtype: ``osid.assessment.AssessmentTakenQuery``
         :raise: ``Unimplemented`` -- ``supports_rubric_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_rubric_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentTakenQuery
@@ -2956,16 +2299,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_any_rubric(self, match):
         """Matches an assessment taken that has any rubric assessment assigned.
 
-
-        :param match: ``true`` to match assessments taken with any rubric, ``false`` to match assessments taken with no
-            rubric
+        :param match: ``true`` to match assessments taken with any rubric, ``false`` to match assessments taken with no rubric
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2975,11 +2313,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -2989,16 +2323,13 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def match_bank_id(self, bank_id, match):
         """Sets the bank ``Id`` for this query.
 
-
         :param bank_id: a bank ``Id``
         :type bank_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3008,11 +2339,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3022,15 +2349,11 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def supports_bank_query(self):
         """Tests if a ``BankQuery`` is available.
 
-
         :return: ``true`` if a bank query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -3038,18 +2361,14 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_bank_query(self):
         """Gets the query for a bank.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the bank query
         :rtype: ``osid.assessment.BankQuery``
         :raise: ``Unimplemented`` -- ``supports_bank_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_bank_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.BankQuery
@@ -3061,11 +2380,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3075,9 +2390,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
     def get_assessment_taken_query_record(self, assessment_taken_record_type):
         """Gets the assessment taken query record corresponding to the given ``AssessmentTaken`` record ``Type``.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :param assessment_taken_record_type: an assessment taken record type
         :type assessment_taken_record_type: ``osid.type.Type``
@@ -3087,22 +2400,18 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(assessment_taken_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.AssessmentTakenQueryRecord
 
 
 class BankQuery(osid_queries.OsidCatalogQuery):
-    """This is the query for searching banks Each method specifies an ``AND`` term while multiple invocations of the
-        same
+    """This is the query for searching banks Each method specifies an ``AND`` term while multiple invocations of the same
     method produce a nested ``OR``."""
 
     def match_item_id(self, item_id, match):
         """Sets the item ``Id`` for this query.
-
 
         :param item_id: an item ``Id``
         :type item_id: ``osid.id.Id``
@@ -3110,9 +2419,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``item_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3122,11 +2429,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3136,15 +2439,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def supports_item_query(self):
         """Tests if a ``ItemQuery`` is available.
 
-
         :return: ``true`` if an item query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -3152,18 +2451,14 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def get_item_query(self):
         """Gets the query for an item.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the item query
         :rtype: ``osid.assessment.ItemQuery``
         :raise: ``Unimplemented`` -- ``supports_item_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_item_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.ItemQuery
@@ -3173,15 +2468,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_any_item(self, match):
         """Matches assessment banks that have any item assigned.
 
-
         :param match: ``true`` to match banks with any item, ``false`` to match assessments with no item
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3191,11 +2482,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3205,16 +2492,13 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_assessment_id(self, assessment_id, match):
         """Sets the assessment ``Id`` for this query.
 
-
         :param assessment_id: an assessment ``Id``
         :type assessment_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3224,11 +2508,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3238,15 +2518,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def supports_assessment_query(self):
         """Tests if an ``AssessmentQuery`` is available.
 
-
         :return: ``true`` if an assessment query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -3254,18 +2530,14 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def get_assessment_query(self):
         """Gets the query for an assessment.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment query
         :rtype: ``osid.assessment.AssessmentQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentQuery
@@ -3275,15 +2547,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_any_assessment(self, match):
         """Matches assessment banks that have any assessment assigned.
 
-
         :param match: ``true`` to match banks with any assessment, ``false`` to match banks with no assessment
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3293,11 +2561,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3307,16 +2571,13 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_assessment_offered_id(self, assessment_offered_id, match):
         """Sets the assessment offered ``Id`` for this query.
 
-
         :param assessment_offered_id: an assessment ``Id``
         :type assessment_offered_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3326,11 +2587,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3340,15 +2597,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def supports_assessment_offered_query(self):
         """Tests if an ``AssessmentOfferedQuery`` is available.
 
-
         :return: ``true`` if an assessment offered query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -3356,18 +2609,14 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def get_assessment_offered_query(self):
         """Gets the query for an assessment offered.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the assessment offered query
         :rtype: ``osid.assessment.AssessmentOfferedQuery``
         :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_assessment_offered_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.AssessmentOfferedQuery
@@ -3377,15 +2626,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_any_assessment_offered(self, match):
         """Matches assessment banks that have any assessment offering assigned.
 
-
         :param match: ``true`` to match banks with any assessment offering, ``false`` to match banks with no offering
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3395,11 +2640,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3409,16 +2650,13 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_ancestor_bank_id(self, bank_id, match):
         """Sets the bank ``Id`` for to match banks in which the specified bank is an acestor.
 
-
         :param bank_id: a bank ``Id``
         :type bank_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3428,11 +2666,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3442,15 +2676,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def supports_ancestor_bank_query(self):
         """Tests if a ``BankQuery`` is available.
 
-
         :return: ``true`` if a bank query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -3458,18 +2688,14 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def get_ancestor_bank_query(self):
         """Gets the query for an ancestor bank.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the bank query
         :rtype: ``osid.assessment.BankQuery``
         :raise: ``Unimplemented`` -- ``supports_ancestor_bank_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_ancestor_bank_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.BankQuery
@@ -3479,15 +2705,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_any_ancestor_bank(self, match):
         """Matches a bank that has any ancestor.
 
-
         :param match: ``true`` to match banks with any ancestor banks, ``false`` to match root banks
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3497,11 +2719,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3511,16 +2729,13 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_descendant_bank_id(self, bank_id, match):
         """Sets the bank ``Id`` for to match banks in which the specified bank is a descendant.
 
-
         :param bank_id: a bank ``Id``
         :type bank_id: ``osid.id.Id``
         :param match: ``true`` for a positive match, ``false`` for a negative match
         :type match: ``boolean``
         :raise: ``NullArgument`` -- ``bank_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3530,11 +2745,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3544,15 +2755,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def supports_descendant_bank_query(self):
         """Tests if a ``BankQuery`` is available.
 
-
         :return: ``true`` if a bank query is available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -3560,18 +2767,14 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def get_descendant_bank_query(self):
         """Gets the query for a descendant bank.
 
-
         Multiple retrievals produce a nested ``OR`` term.
-
 
         :return: the bank query
         :rtype: ``osid.assessment.BankQuery``
         :raise: ``Unimplemented`` -- ``supports_descendant_bank_query()`` is ``false``
 
-
         *compliance: optional -- This method must be implemented if
         ``supports_descendant_bank_query()`` is ``true``.*
-
 
         """
         return # osid.assessment.BankQuery
@@ -3581,15 +2784,11 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def match_any_descendant_bank(self, match):
         """Matches a bank that has any descendant.
 
-
         :param match: ``true`` to match banks with any descendant banks, ``false`` to match leaf banks
         :type match: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3599,11 +2798,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
 
 
 
-
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -3613,9 +2808,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
     def get_bank_query_record(self, bank_record_type):
         """Gets the bank query record corresponding to the given ``Bank`` record ``Type``.
 
-
         Multiple record retrievals produce a nested ``OR`` term.
-
 
         :param bank_record_type: a bank record type
         :type bank_record_type: ``osid.type.Type``
@@ -3625,9 +2818,7 @@ class BankQuery(osid_queries.OsidCatalogQuery):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(bank_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.assessment.records.BankQueryRecord

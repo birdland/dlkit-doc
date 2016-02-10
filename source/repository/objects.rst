@@ -18,7 +18,7 @@ Asset
 
    .. automethod:: Asset.is_public_domain
 
-   .. autoattribute:: Asset.copyright
+   .. autoattribute:: Asset.copyright_
 
    .. autoattribute:: Asset.copyright_registration
 
@@ -72,7 +72,7 @@ Asset Form
 
    .. autoattribute:: AssetForm.copyright_metadata
 
-   .. autoattribute:: AssetForm.copyright
+   .. autoattribute:: AssetForm.copyright_
 
    .. autoattribute:: AssetForm.copyright_registration_metadata
 

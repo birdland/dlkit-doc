@@ -6,25 +6,19 @@ from ..osid import sessions as osid_sessions
 class Relationship(osid_objects.OsidRelationship):
     """A ``Relationship`` is an object between two peers.
 
-
     The genus type indicates the relationship between the peer and the
     related peer.
-
 
     """
 
     def get_source_id(self):
         """Gets the from peer ``Id`` in this relationship.
 
-
         :return: the peer
         :rtype: ``osid.id.Id``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -34,15 +28,11 @@ class Relationship(osid_objects.OsidRelationship):
     def get_destination_id(self):
         """Gets the to peer ``Id`` in this relationship.
 
-
         :return: the related peer
         :rtype: ``osid.id.Id``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -52,13 +42,11 @@ class Relationship(osid_objects.OsidRelationship):
     def get_relationship_record(self, relationship_record_type):
         """Gets the relationshop record corresponding to the given ``Relationship`` record ``Type``.
 
-
         This method is used to retrieve an object implementing the
         requested record. The ``relationship_record_type`` may be the
         ``Type`` returned in ``get_record_types()`` or any of its
         parents in a ``Type`` hierarchy where
         ``has_record_type(relationship_record_type)`` is ``true`` .
-
 
         :param relationship_record_type: the type of relationship record to retrieve
         :type relationship_record_type: ``osid.type.Type``
@@ -69,9 +57,7 @@ class Relationship(osid_objects.OsidRelationship):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(relationship_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.records.RelationshipRecord
@@ -80,19 +66,16 @@ class Relationship(osid_objects.OsidRelationship):
 class RelationshipForm(osid_objects.OsidRelationshipForm):
     """This is the form for creating and updating ``Relationships``.
 
-
     Like all ``OsidForm`` objects, various data elements may be set here
     for use in the create and update methods in the
     ``RelationshipAdminSession``. For each data element that may be set,
     metadata may be examined to provide display hints or data
     constraints.
 
-
     """
 
     def get_relationship_form_record(self, relationship_record_type):
         """Gets the ``RelationshipFormRecord`` corresponding to the given relationship record ``Type``.
-
 
         :param relationship_record_type: a relationship record type
         :type relationship_record_type: ``osid.type.Type``
@@ -103,24 +86,18 @@ class RelationshipForm(osid_objects.OsidRelationshipForm):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(relationship_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.records.RelationshipFormRecord
 
 
 class RelationshipList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``Relationship`` provides a means for accessing ``Relationship`` elements sequentially
-        either
+    """Like all ``OsidLists,``  ``Relationship`` provides a means for accessing ``Relationship`` elements sequentially either
     one at a time or many at a time.
-
 
     Examples: while (rl.hasNext()) { Relationship relationship =
     rl.getNextRelationship(); }
-
-
 
 
     or
@@ -130,24 +107,17 @@ class RelationshipList(osid_objects.OsidList):
 
 
 
-
-
-
     """
 
     def get_next_relationship(self):
         """Gets the next ``Relationship`` in this list.
 
-
-        :return: the next ``Relationship`` in this list. The ``has_next()`` method should be used to test that a next
-            ``Relationship`` is available before calling this method.
+        :return: the next ``Relationship`` in this list. The ``has_next()`` method should be used to test that a next ``Relationship`` is available before calling this method.
         :rtype: ``osid.relationship.Relationship``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.Relationship
@@ -157,22 +127,17 @@ class RelationshipList(osid_objects.OsidList):
     def get_next_relationships(self, n):
         """Gets the next set of ``Relationships`` elements in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
 
-
         :param n: the number of ``Relationship`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``Relationship`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``Relationship`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.relationship.Relationship``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.Relationship
@@ -181,23 +146,19 @@ class RelationshipList(osid_objects.OsidList):
 class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A ``Family`` represents a collection of relationships.
 
-
     Like all OSID objects, a ``Family`` is identified by its ``Id`` and
     any persisted references should use the ``Id``.
-
 
     """
 
     def get_family_record(self, family_record_type):
         """Gets the famly record corresponding to the given ``Family`` record ``Type``.
 
-
         This method is used to retrieve an object implementing the
         requested record. The ``family_record_type`` may be the ``Type``
         returned in ``get_record_types()`` or any of its parents in a
         ``Type`` hierarchy where ``has_record_type(family_record_type)``
         is ``true`` .
-
 
         :param family_record_type: the type of family record to retrieve
         :type family_record_type: ``osid.type.Type``
@@ -208,9 +169,7 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(family_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.records.FamilyRecord
@@ -219,19 +178,16 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 class FamilyForm(osid_objects.OsidCatalogForm):
     """This is the form for creating and updating ``Family`` objects.
 
-
     Like all ``OsidForm`` objects, various data elements may be set here
     for use in the create and update methods in the
     ``FamilyAdminSession``. For each data element that may be set,
     metadata may be examined to provide display hints or data
     constraints.
 
-
     """
 
     def get_family_form_record(self, family_record_type):
         """Gets the ``FamilyFormRecord`` corresponding to the given family record ``Type``.
-
 
         :param family_record_type: the family record type
         :type family_record_type: ``osid.type.Type``
@@ -242,24 +198,18 @@ class FamilyForm(osid_objects.OsidCatalogForm):
         :raise: ``PermissionDenied`` -- authorization failure occurred
         :raise: ``Unsupported`` -- ``has_record_type(family_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.records.FamilyFormRecord
 
 
 class FamilyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either
-        one at a
+    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either one at a
     time or many at a time.
-
 
     Examples: while (fl.hasNext()) { Family family = fl.getNextFamily();
     }
-
-
 
 
     or
@@ -269,24 +219,17 @@ class FamilyList(osid_objects.OsidList):
 
 
 
-
-
-
     """
 
     def get_next_family(self):
         """Gets the next ``Family`` in this list.
 
-
-        :return: the next ``Family`` in this list. The ``has_next()`` method should be used to test that a next
-            ``Family`` is available before calling this method.
+        :return: the next ``Family`` in this list. The ``has_next()`` method should be used to test that a next ``Family`` is available before calling this method.
         :rtype: ``osid.relationship.Family``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.Family
@@ -296,10 +239,8 @@ class FamilyList(osid_objects.OsidList):
     def get_next_families(self, n):
         """Gets the next set of ``Family elements`` in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
-
 
         :param n: the number of ``Family`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
@@ -308,9 +249,7 @@ class FamilyList(osid_objects.OsidList):
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.Family
@@ -319,26 +258,20 @@ class FamilyList(osid_objects.OsidList):
 class FamilyNode(osid_objects.OsidNode):
     """This interface is a container for a partial hierarchy retrieval.
 
-
     The number of hierarchy levels traversable through this interface
     depend on the number of levels requested in the
     ``FamilyHierarchySession``.
-
 
     """
 
     def get_family(self):
         """Gets the ``Family`` at this node.
 
-
         :return: the family represented by this node
         :rtype: ``osid.relationship.Family``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.Family
@@ -348,15 +281,11 @@ class FamilyNode(osid_objects.OsidNode):
     def get_parent_family_nodes(self):
         """Gets the parents of this family.
 
-
         :return: the parents of the ``id``
         :rtype: ``osid.relationship.FamilyNodeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.FamilyNodeList
@@ -366,15 +295,11 @@ class FamilyNode(osid_objects.OsidNode):
     def get_child_family_nodes(self):
         """Gets the children of this family.
 
-
         :return: the children of this family
         :rtype: ``osid.relationship.FamilyNodeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.FamilyNodeList
@@ -383,15 +308,11 @@ class FamilyNode(osid_objects.OsidNode):
 
 
 class FamilyNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyNodeList`` provides a means for accessing ``FamilyNode`` elements sequentially
-        either
+    """Like all ``OsidLists,``  ``FamilyNodeList`` provides a means for accessing ``FamilyNode`` elements sequentially either
     one at a time or many at a time.
-
 
     Examples: while (fnl.hasNext()) { FamilyNode node =
     fnl.getNextFamilyNode(); }
-
-
 
 
     or
@@ -401,24 +322,17 @@ class FamilyNodeList(osid_objects.OsidList):
 
 
 
-
-
-
     """
 
     def get_next_family_node(self):
         """Gets the next ``FamilyNode`` in this list.
 
-
-        :return: the next ``FamilyNode`` in this list. The ``has_next()`` method should be used to test that a next
-            ``FamilyNode`` is available before calling this method.
+        :return: the next ``FamilyNode`` in this list. The ``has_next()`` method should be used to test that a next ``FamilyNode`` is available before calling this method.
         :rtype: ``osid.relationship.FamilyNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.FamilyNode
@@ -428,22 +342,17 @@ class FamilyNodeList(osid_objects.OsidList):
     def get_next_family_nodes(self, n):
         """Gets the next set of ``FamilyNode elements`` in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
 
-
         :param n: the number of ``FamilyNode`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``FamilyNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``FamilyNode`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.relationship.FamilyNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.relationship.FamilyNode

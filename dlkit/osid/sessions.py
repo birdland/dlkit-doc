@@ -4,7 +4,6 @@
 class OsidSession:
     """The ``OsidSession`` is the top level interface for all OSID sessions.
 
-
     An ``OsidSession`` is created through its corresponding
     ``OsidManager``. A new ``OsidSession`` should be created for each
     user of a service and for each processing thread. A session
@@ -15,27 +14,20 @@ class OsidSession:
     retrieval of ``OsidObjects``.
 
 
-
-
     ``OsidSession`` defines a set of common methods used throughout all
     OSID sessions. An OSID session may optionally support transactions
     through the transaction interface.
-
 
     """
 
     def get_locale(self):
         """Gets the locale indicating the localization preferences in effect for this session.
 
-
         :return: the locale
         :rtype: ``osid.locale.Locale``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.Locale
@@ -45,15 +37,11 @@ class OsidSession:
     def is_authenticated(self):
         """Tests if an agent is authenticated to this session.
 
-
         :return: ``true`` if valid authentication credentials exist, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -61,18 +49,14 @@ class OsidSession:
     def get_authenticated_agent_id(self):
         """Gets the ``Id`` of the agent authenticated to this session.
 
-
         This is the agent for which credentials are used either acquired
         natively or via an ``OsidProxyManager``.
-
 
         :return: the authenticated agent ``Id``
         :rtype: ``osid.id.Id``
         :raise: ``IllegalState`` -- ``is_authenticated()`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -82,19 +66,15 @@ class OsidSession:
     def get_authenticated_agent(self):
         """Gets the agent authenticated to this session.
 
-
         This is the agent for which credentials are used either acquired
         natively or via an ``OsidProxyManager``.
-
 
         :return: the authenticated agent
         :rtype: ``osid.authentication.Agent``
         :raise: ``IllegalState`` -- ``is_authenticated()`` is ``false``
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.authentication.Agent
@@ -104,22 +84,17 @@ class OsidSession:
     def get_effective_agent_id(self):
         """Gets the ``Id`` of the effective agent in use by this session.
 
-
         If ``is_authenticated()`` is true, then the effective agent may
         be the same as the agent returned by
         ``getAuthenticatedAgent()``. If ``is_authenticated()`` is
         ``false,`` then the effective agent may be a default agent used
         for authorization by an unknwon or anonymous user.
 
-
         :return: the effective agent
         :rtype: ``osid.id.Id``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -129,21 +104,17 @@ class OsidSession:
     def get_effective_agent(self):
         """Gets the effective agent in use by this session.
 
-
         If ``is_authenticated()`` is true, then the effective agent may
         be the same as the agent returned by
         ``getAuthenticatedAgent()``. If ``is_authenticated()`` is
         ``false,`` then the effective agent may be a default agent used
         for authorization by an unknwon or anonymous user.
 
-
         :return: the effective agent
         :rtype: ``osid.authentication.Agent``
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.authentication.Agent
@@ -153,15 +124,11 @@ class OsidSession:
     def get_date(self):
         """Gets the service date which may be the current date or the effective date in which this session exists.
 
-
         :return: the service date
         :rtype: ``timestamp``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # timestamp
@@ -171,15 +138,11 @@ class OsidSession:
     def get_clock_rate(self):
         """Gets the rate of the service clock.
 
-
         :return: the clock rate
         :rtype: ``decimal``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # decimal
@@ -189,15 +152,11 @@ class OsidSession:
     def get_format_type(self):
         """Gets the ``DisplayText`` format ``Type`` preference in effect for this session.
 
-
         :return: the effective ``DisplayText`` format ``Type``
         :rtype: ``osid.type.Type``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.Type
@@ -207,22 +166,17 @@ class OsidSession:
     def supports_transactions(self):
         """Tests for the availability of transactions.
 
-
         :return: ``true`` if transaction methods are available, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
 
     def start_transaction(self):
         """Starts a new transaction for this sesson.
-
 
         Transactions are a means for an OSID to provide an all-or-
         nothing set of operations within a session and may be used to
@@ -231,13 +185,11 @@ class OsidSession:
         transaction before the previous has been committed or aborted
         results in an ``IllegalState`` error.
 
-
         :return: a new transaction
         :rtype: ``osid.transaction.Transaction``
         :raise: ``IllegalState`` -- a transaction is already open
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- transactions not supported
-
 
         *compliance: optional -- This method must be implemented if
         ``supports_transactions()`` is true.*
@@ -248,7 +200,6 @@ class OsidSession:
         simply allow for a means of processing bulk updates.  To
         maximize interoperability, providers should honor the one-
         transaction-at-a-time rule.
-
 
         """
         return # osid.transaction.Transaction

@@ -5,27 +5,20 @@ from ..osid import sessions as osid_sessions
 class ProxySession(osid_sessions.OsidSession):
     """This session converts external data into a proxy for use in OSID proxy managers.
 
-
     The external data is specified in the form of a ``ProxyCondition``.
-
 
     """
 
     def get_proxy_condition(self):
         """Gets a proxy condition for acquiring a proxy.
 
-
         A new proxy condition should be acquired for each proxy request.
-
 
         :return: a proxy condiiton
         :rtype: ``osid.proxy.ProxyCondition``
 
 
-
-
         *compliance: mandatory -- This method is must be implemented.*
-
 
         """
         return # osid.proxy.ProxyCondition
@@ -34,7 +27,6 @@ class ProxySession(osid_sessions.OsidSession):
 
     def get_proxy(self, input_):
         """Gets a proxy.
-
 
         :param input: a proxy condition
         :type input: ``osid.proxy.ProxyCondition``
@@ -45,9 +37,7 @@ class ProxySession(osid_sessions.OsidSession):
         :raise: ``PermissionDenied`` -- authorization failure
         :raise: ``Unsupported`` -- ``input`` is not of this service
 
-
         *compliance: mandatory -- This method is must be implemented.*
-
 
         """
         return # osid.proxy.Proxy

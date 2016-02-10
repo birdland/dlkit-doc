@@ -9,15 +9,11 @@ class HierarchyProfile(osid_managers.OsidProfile):
     def supports_hierarchy_traversal(self):
         """Tests if hierarchy traversal is supported.
 
-
         :return: ``true`` if hierarchy traversal is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -25,15 +21,11 @@ class HierarchyProfile(osid_managers.OsidProfile):
     def supports_hierarchy_design(self):
         """Tests if hierarchy design is supported.
 
-
         :return: ``true`` if hierarchy design is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -41,15 +33,11 @@ class HierarchyProfile(osid_managers.OsidProfile):
     def supports_hierarchy_lookup(self):
         """Tests if a hierarchy lookup is supported.
 
-
         :return: ``true`` if hierarchy lookup is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -57,15 +45,11 @@ class HierarchyProfile(osid_managers.OsidProfile):
     def supports_hierarchy_admin(self):
         """Tests if a hierarchy administration is supported.
 
-
         :return: ``true`` if hierarchy administration is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -73,15 +57,11 @@ class HierarchyProfile(osid_managers.OsidProfile):
     def get_hierarchy_record_types(self):
         """Gets the supported ``Hierarchy`` types.
 
-
         :return: a list containing the supported ``Hierarchy`` record types
         :rtype: ``osid.type.TypeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.TypeList
@@ -91,15 +71,11 @@ class HierarchyProfile(osid_managers.OsidProfile):
     def get_hierarchy_search_record_types(self):
         """Gets the supported ``Hierarchy`` search record types.
 
-
         :return: a list containing the supported ``Hierarchy`` search record types
         :rtype: ``osid.type.TypeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.type.TypeList
@@ -110,10 +86,7 @@ class HierarchyProfile(osid_managers.OsidProfile):
 class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, HierarchyProfile):
     """The hierarchy manager provides access sessions to traverse and manage hierrachies of ``Ids``.
 
-
     The sessions included in this manager are:
-
-
 
 
       * ``HierarchyTraversalSession:`` a basic session traversing a
@@ -131,7 +104,6 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
         hierarchies
       * ``HierarchyNotificationSession:`` a session for subscribing to
         changes in hierarchies
-
 
     """
 
@@ -141,11 +113,8 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
     """The hierarchy manager provides access sessions to traverse and manage hierrachies of ``Ids``.
 
-
     Methods in this manager accept a ``Proxy`` to pass information from
     server environments. The sessions included in this manager are:
-
-
 
 
       * ``HierarchyTraversalSession:`` a basic session traversing a
@@ -163,7 +132,6 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
         hierarchies
       * ``HierarchyNotificationSession:`` a session for subscribing to
         changes in hierarchies
-
 
     """
 

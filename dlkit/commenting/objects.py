@@ -9,15 +9,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_reference_id(self):
         """Gets the ``Id`` of the referenced object to which this comment pertains.
 
-
         :return: the reference ``Id``
         :rtype: ``osid.id.Id``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -27,15 +23,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_commentor_id(self):
         """Gets the ``Id`` of the resource who created this comment.
 
-
         :return: the ``Resource``  ``Id``
         :rtype: ``osid.id.Id``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -45,14 +37,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_commentor(self):
         """Gets the resource who created this comment.
 
-
         :return: the ``Resource``
         :rtype: ``osid.resource.Resource``
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.resource.Resource
@@ -62,15 +51,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_commenting_agent_id(self):
         """Gets the ``Id`` of the agent who created this comment.
 
-
         :return: the ``Agent``  ``Id``
         :rtype: ``osid.id.Id``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -80,14 +65,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_commenting_agent(self):
         """Gets the agent who created this comment.
 
-
         :return: the ``Agent``
         :rtype: ``osid.authentication.Agent``
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.authentication.Agent
@@ -97,15 +79,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_text(self):
         """Gets the comment text.
 
-
         :return: the comment text
         :rtype: ``osid.locale.DisplayText``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.locale.DisplayText
@@ -115,15 +93,11 @@ class Comment(osid_objects.OsidRelationship):
     def has_rating(self):
         """Tests if this comment includes a rating.
 
-
         :return: ``true`` if this comment includes a rating, ``false`` otherwise
         :rtype: ``boolean``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # boolean
@@ -131,14 +105,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_rating_id(self):
         """Gets the ``Id`` of the ``Grade``.
 
-
         :return: the ``Agent``  ``Id``
         :rtype: ``osid.id.Id``
         :raise: ``IllegalState`` -- ``has_rating()`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.id.Id
@@ -148,15 +119,12 @@ class Comment(osid_objects.OsidRelationship):
     def get_rating(self):
         """Gets the ``Grade``.
 
-
         :return: the ``Grade``
         :rtype: ``osid.grading.Grade``
         :raise: ``IllegalState`` -- ``has_rating()`` is ``false``
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.grading.Grade
@@ -166,13 +134,11 @@ class Comment(osid_objects.OsidRelationship):
     def get_comment_record(self, comment_record_type):
         """Gets the comment record corresponding to the given ``Comment`` record ``Type``.
 
-
         This method is used to retrieve an object implementing the
         requested record. The ``comment_record_type`` may be the
         ``Type`` returned in ``get_record_types()`` or any of its
         parents in a ``Type`` hierarchy where
         ``has_record_type(comment_record_type)`` is ``true`` .
-
 
         :param comment_record_type: the type of comment record to retrieve
         :type comment_record_type: ``osid.type.Type``
@@ -182,9 +148,7 @@ class Comment(osid_objects.OsidRelationship):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(comment_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.records.CommentRecord
@@ -193,28 +157,22 @@ class Comment(osid_objects.OsidRelationship):
 class CommentForm(osid_objects.OsidRelationshipForm):
     """This is the form for creating and updating ``Comment`` objects.
 
-
     Like all ``OsidForm`` objects, various data elements may be set here
     for use in the create and update methods in the
     ``CommentAdminSession``. For each data element that may be set,
     metadata may be examined to provide display hints or data
     constraints.
 
-
     """
 
     def get_text_metadata(self):
         """Gets the metadata for the text.
 
-
         :return: metadata for the text
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -224,16 +182,13 @@ class CommentForm(osid_objects.OsidRelationshipForm):
     def set_text(self, text):
         """Sets the text.
 
-
         :param text: the new text
         :type text: ``string``
         :raise: ``InvalidArgument`` -- ``text`` is invalid
         :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
         :raise: ``NullArgument`` -- ``text`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -241,12 +196,9 @@ class CommentForm(osid_objects.OsidRelationshipForm):
     def clear_text(self):
         """Clears the text.
 
-
         :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -256,15 +208,11 @@ class CommentForm(osid_objects.OsidRelationshipForm):
     def get_rating_metadata(self):
         """Gets the metadata for a rating.
 
-
         :return: metadata for the rating
         :rtype: ``osid.Metadata``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.Metadata
@@ -274,16 +222,13 @@ class CommentForm(osid_objects.OsidRelationshipForm):
     def set_rating(self, grade_id):
         """Sets the rating.
 
-
         :param grade_id: the new rating
         :type grade_id: ``osid.id.Id``
         :raise: ``InvalidArgument`` -- ``grade_id`` is invalid
         :raise: ``NoAccess`` -- ``Metadata.isReadOnly()`` is ``true``
         :raise: ``NullArgument`` -- ``grade_id`` is ``null``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -291,12 +236,9 @@ class CommentForm(osid_objects.OsidRelationshipForm):
     def clear_rating(self):
         """Clears the rating.
 
-
         :raise: ``NoAccess`` -- ``Metadata.isRequired()`` or ``Metadata.isReadOnly()`` is ``true``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         pass
@@ -306,7 +248,6 @@ class CommentForm(osid_objects.OsidRelationshipForm):
     def get_comment_form_record(self, comment_record_type):
         """Gets the ``CommentFormRecord`` corresponding to the given comment record ``Type``.
 
-
         :param comment_record_type: the comment record type
         :type comment_record_type: ``osid.type.Type``
         :return: the comment form record
@@ -315,24 +256,18 @@ class CommentForm(osid_objects.OsidRelationshipForm):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(comment_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.records.CommentFormRecord
 
 
 class CommentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``CommentList`` provides a means for accessing ``Comment`` elements sequentially either
-        one at
+    """Like all ``OsidLists,``  ``CommentList`` provides a means for accessing ``Comment`` elements sequentially either one at
     a time or many at a time.
-
 
     Examples: while (cl.hasNext()) { Comment comment =
     cl.getNextComment(); }
-
-
 
 
     or
@@ -342,24 +277,17 @@ class CommentList(osid_objects.OsidList):
 
 
 
-
-
-
     """
 
     def get_next_comment(self):
         """Gets the next ``Comment`` in this list.
 
-
-        :return: the next ``Comment`` in this list. The ``has_next()`` method should be used to test that a next
-            ``Comment`` is available before calling this method.
+        :return: the next ``Comment`` in this list. The ``has_next()`` method should be used to test that a next ``Comment`` is available before calling this method.
         :rtype: ``osid.commenting.Comment``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.Comment
@@ -369,10 +297,8 @@ class CommentList(osid_objects.OsidList):
     def get_next_comments(self, n):
         """Gets the next set of ``Comment`` elements in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
-
 
         :param n: the number of ``Comment`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
@@ -381,9 +307,7 @@ class CommentList(osid_objects.OsidList):
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.Comment
@@ -392,23 +316,19 @@ class CommentList(osid_objects.OsidList):
 class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A ``Book`` represents a collection of comments.
 
-
     Like all OSID objects, a ``Book`` is identified by its ``Id`` and
     any persisted references should use the ``Id``.
-
 
     """
 
     def get_book_record(self, book_record_type):
         """Gets the book record corresponding to the given ``Book`` record ``Type``.
 
-
         This method is used to retrieve an object implementing the
         requested record. The ``book_record_type`` may be the ``Type``
         returned in ``get_record_types()`` or any of its parents in a
         ``Type`` hierarchy where ``has_record_type(book_record_type)``
         is ``true`` .
-
 
         :param book_record_type: the type of book record to retrieve
         :type book_record_type: ``osid.type.Type``
@@ -418,9 +338,7 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.records.BookRecord
@@ -429,19 +347,16 @@ class Book(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 class BookForm(osid_objects.OsidCatalogForm):
     """This is the form for creating and updating ``Books``.
 
-
     Like all ``OsidForm`` objects, various data elements may be set here
     for use in the create and update methods in the
     ``BookAdminSession``. For each data element that may be set,
     metadata may be examined to provide display hints or data
     constraints.
 
-
     """
 
     def get_book_form_record(self, book_record_type):
         """Gets the ``BookFormRecord`` corresponding to the given book record ``Type``.
-
 
         :param book_record_type: the book record type
         :type book_record_type: ``osid.type.Type``
@@ -451,23 +366,17 @@ class BookForm(osid_objects.OsidCatalogForm):
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``Unsupported`` -- ``has_record_type(book_record_type)`` is ``false``
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.records.BookFormRecord
 
 
 class BookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at
-        a time
+    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at a time
     or many at a time.
 
-
     Examples: while (bl.hasNext()) { Book book = bl.getNextBook(); }
-
-
 
 
     or
@@ -477,24 +386,17 @@ class BookList(osid_objects.OsidList):
 
 
 
-
-
-
     """
 
     def get_next_book(self):
         """Gets the next ``Book`` in this list.
 
-
-        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test that a next ``Book``
-            is available before calling this method.
+        :return: the next ``Book`` in this list. The ``has_next()`` method should be used to test that a next ``Book`` is available before calling this method.
         :rtype: ``osid.commenting.Book``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.Book
@@ -504,10 +406,8 @@ class BookList(osid_objects.OsidList):
     def get_next_books(self, n):
         """Gets the next set of ``Book`` elements in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
-
 
         :param n: the number of ``Book`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
@@ -516,9 +416,7 @@ class BookList(osid_objects.OsidList):
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.Book
@@ -527,26 +425,20 @@ class BookList(osid_objects.OsidList):
 class BookNode(osid_objects.OsidNode):
     """This interface is a container for a partial hierarchy retrieval.
 
-
     The number of hierarchy levels traversable through this interface
     depend on the number of levels requested in the
     ``BookHierarchySession``.
-
 
     """
 
     def get_book(self):
         """Gets the ``Book`` at this node.
 
-
         :return: the book represented by this node
         :rtype: ``osid.commenting.Book``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.Book
@@ -556,15 +448,11 @@ class BookNode(osid_objects.OsidNode):
     def get_parent_book_nodes(self):
         """Gets the parents of this book.
 
-
         :return: the parents of this book
         :rtype: ``osid.commenting.BookNodeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.BookNodeList
@@ -574,15 +462,11 @@ class BookNode(osid_objects.OsidNode):
     def get_child_book_nodes(self):
         """Gets the children of this book.
 
-
         :return: the children of this book
         :rtype: ``osid.commenting.BookNodeList``
 
 
-
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.BookNodeList
@@ -591,15 +475,11 @@ class BookNode(osid_objects.OsidNode):
 
 
 class BookNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookNodeList`` provides a means for accessing ``BookNode`` elements sequentially
-        either one
+    """Like all ``OsidLists,``  ``BookNodeList`` provides a means for accessing ``BookNode`` elements sequentially either one
     at a time or many at a time.
-
 
     Examples: while (bnl.hasNext()) { BookNode node =
     bnl.getNextBookNode(); }
-
-
 
 
     or
@@ -609,24 +489,17 @@ class BookNodeList(osid_objects.OsidList):
 
 
 
-
-
-
     """
 
     def get_next_book_node(self):
         """Gets the next ``BookNode`` in this list.
 
-
-        :return: the next ``BookNode`` in this list. The ``has_next()`` method should be used to test that a next
-            ``BookNode`` is available before calling this method.
+        :return: the next ``BookNode`` in this list. The ``has_next()`` method should be used to test that a next ``BookNode`` is available before calling this method.
         :rtype: ``osid.commenting.BookNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.BookNode
@@ -636,22 +509,17 @@ class BookNodeList(osid_objects.OsidList):
     def get_next_book_nodes(self, n):
         """Gets the next set of ``BookNode`` elements in this list.
 
-
         The specified amount must be less than or equal to the return
         from ``available()``.
 
-
         :param n: the number of ``BookNode`` elements requested which must be less than or equal to ``available()``
         :type n: ``cardinal``
-        :return: an array of ``BookNode`` elements.The length of the array is less than or equal to the number
-            specified.
+        :return: an array of ``BookNode`` elements.The length of the array is less than or equal to the number specified.
         :rtype: ``osid.commenting.BookNode``
         :raise: ``IllegalState`` -- no more elements available in this list
         :raise: ``OperationFailed`` -- unable to complete request
 
-
         *compliance: mandatory -- This method must be implemented.*
-
 
         """
         return # osid.commenting.BookNode
