@@ -6,37 +6,7 @@ from ..osid import sessions as osid_sessions
 class TypeProfile(osid_managers.OsidProfile):
     """The ``TypeProfile`` describes the interoperability among type services."""
 
-    def supports_type_lookup(self):
-        """Tests if ``Type`` lookup is supported.
 
-
-        :return: ``true`` if ``Type`` lookup is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_type_admin(self):
-        """Tests if a ``Type`` administrative service is supported.
-
-
-        :return: ``true`` if ``Type`` administration is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
 
 class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProfile):
@@ -49,43 +19,7 @@ class TypeManager(osid_managers.OsidManager, osid_sessions.OsidSession, TypeProf
 
     """
 
-    def get_type_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the type lookup service.
 
-
-        :return: a ``TypeLookupSession``
-        :rtype: ``osid.type.TypeLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_type_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_type_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.type.TypeLookupSession
-
-    type_lookup_session = property(fget=get_type_lookup_session)
-
-    def get_type_admin_session(self):
-        """Gets the ``OsidSession`` associated with the type admin service.
-
-
-        :return: a ``TypeAdminSession``
-        :rtype: ``osid.type.TypeAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_type_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_type_admin()`` is ``true``.*
-
-
-        """
-        return # osid.type.TypeAdminSession
-
-    type_admin_session = property(fget=get_type_admin_session)
 
 
 class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
@@ -100,44 +34,6 @@ class TypeProxyManager(osid_managers.OsidProxyManager, TypeProfile):
 
     """
 
-    def get_type_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the type lookup service.
 
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``TypeLookupSession``
-        :rtype: ``osid.type.TypeLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_type_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_type_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.type.TypeLookupSession
-
-    def get_type_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the ``TypeAdmin`` service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: the new ``TypeAdminSession``
-        :rtype: ``osid.type.TypeAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_type_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_type_admin()`` is ``true``.*
-
-
-        """
-        return # osid.type.TypeAdminSession
 
 

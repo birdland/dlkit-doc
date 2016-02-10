@@ -38,42 +38,6 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
 
     """
 
-    def get_gradebook_id(self):
-        """Gets the ``GradeSystem``  ``Id`` associated with this session.
-
-
-        :return: the ``GradeSystem Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_lookup_grade_systems(self):
         """Tests if this user can perform ``GradeSystem`` lookups.
 
@@ -380,42 +344,6 @@ class GradeSystemQuerySession(osid_sessions.OsidSession):
 
     """
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_search_grade_systems(self):
         """Tests if this user can perform ``GradeSystem`` searches.
 
@@ -563,42 +491,6 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
 
 
     """
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
 
     def can_create_grade_systems(self):
         """Tests if this user can create ``GradeSystems``.
@@ -1112,42 +1004,6 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
 class GradeEntryLookupSession(osid_sessions.OsidSession):
     """This session provides methods for retrieving ``GradeEntrie`` s."""
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_lookup_grade_entries(self):
         """Tests if this user can perform ``GradeEntry`` lookups.
 
@@ -1605,42 +1461,6 @@ class GradeEntryQuerySession(osid_sessions.OsidSession):
 
     """
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_search_grade_entries(self):
         """Tests if this user can perform ``GradeEntry`` searches.
 
@@ -1787,42 +1607,6 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
 
 
     """
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
 
     def can_create_grade_entries(self):
         """Tests if this user can create grade entries.
@@ -2156,42 +1940,6 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
 class GradebookColumnLookupSession(osid_sessions.OsidSession):
     """This session provides methods for retrieving ``GradebookColumns``."""
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_lookup_gradebook_columns(self):
         """Tests if this user can perform ``GradebookColumn`` lookups.
 
@@ -2515,42 +2263,6 @@ class GradebookColumnQuerySession(osid_sessions.OsidSession):
 
     """
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_search_gradebook_columns(self):
         """Tests if this user can perform ``GradebookColumn`` searches.
 
@@ -2698,42 +2410,6 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
 
 
     """
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
 
     def can_create_gradebook_columns(self):
         """Tests if this user can create gradebook columns.
@@ -3154,33 +2830,6 @@ class GradebookLookupSession(osid_sessions.OsidSession):
 
         """
         pass
-
-    def get_gradebook(self, gradebook_id):
-        """Gets the ``Gradebook`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Gradebook`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Gradebook`` and retained
-        for compatility.
-
-
-        :param gradebook_id: ``Id`` of the ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
-        :return: the gradebook
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
 
     def get_gradebooks_by_ids(self, gradebook_ids):
         """Gets a ``GradebookList`` corresponding to the given ``IdList``.

@@ -95,60 +95,12 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
     def __init__(self):
         self._provider_manager = None
-    def supports_visible_federation(self):
-        """Tests if federation is visible.
-
-
-        :return: ``true`` if visible federation is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_my_assessment_taken(self):
-        """Tests if a session is available to lookup taken assessments for the authenticated agent.
-
-
-        :return: ``true`` if my assessment taken session is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_assessment(self):
         """Tests for the availability of a assessment service which is the service for taking and examining assessments
             taken.
 
 
         :return: ``true`` if assessment is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_results(self):
-        """Tests for the availability of an assessment rsults service.
-
-
-        :return: ``true`` if assessment results is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -276,22 +228,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_item_smart_bank(self):
-        """Tests if an item smart bank session is available.
-
-
-        :return: ``true`` if item smart bank session is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_assessment_lookup(self):
         """Tests if an assessment lookup service is supported.
 
@@ -328,47 +264,11 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_assessment_search(self):
-        """Tests if an assessment search service is supported.
-
-
-        :return: ``true`` if assessment search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_assessment_admin(self):
         """Tests if an assessment administrative service is supported.
 
 
         :return: ``true`` if assessment admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_notification(self):
-        """Tests if assessment notification is supported.
-
-
-        Messages may be sent when assessments are created, modified, or
-        deleted.
-
-
-        :return: ``true`` if assessment notification is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -401,22 +301,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
 
         :return: ``true`` if assessment bank assignment is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_smart_bank(self):
-        """Tests if an assessment smart bank session is available.
-
-
-        :return: ``true`` if assessment smart bank session is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -476,47 +360,11 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_assessment_offered_search(self):
-        """Tests if an assessment offered search service is supported.
-
-
-        :return: ``true`` if assessment offered search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_assessment_offered_admin(self):
         """Tests if an assessment offered administrative service is supported.
 
 
         :return: ``true`` if assessment offered admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_offered_notification(self):
-        """Tests if assessment offered notification is supported.
-
-
-        Messages may be sent when offered assessments are created,
-        modified, or deleted.
-
-
-        :return: ``true`` if assessment offered notification is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -560,22 +408,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_assessment_offered_smart_bank(self):
-        """Tests if an assessment offered smart bank session is available.
-
-
-        :return: ``true`` if assessment offered smart bank session is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_assessment_taken_lookup(self):
         """Tests if an assessment taken lookup service is supported.
 
@@ -608,48 +440,12 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_assessment_taken_search(self):
-        """Tests if an assessment taken search service is supported.
-
-
-        :return: ``true`` if assessment taken search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_assessment_taken_admin(self):
         """Tests if an assessment taken administrative service is supported which is used to instantiate an assessment
             offered.
 
 
         :return: ``true`` if assessment taken admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_taken_notification(self):
-        """Tests if assessment taken notification is supported.
-
-
-        Messages may be sent when items are created, modified, or
-        deleted.
-
-
-        :return: ``true`` if assessment taken notification is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -682,22 +478,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
 
         :return: ``true`` if assessment taken bank assignment is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_taken_smart_bank(self):
-        """Tests if an assessment taken smart bank session is available.
-
-
-        :return: ``true`` if assessment taken smart bank session is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -745,47 +525,11 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_bank_search(self):
-        """Tests if a bank search service is supported.
-
-
-        :return: ``true`` if bank search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_bank_admin(self):
         """Tests if a banlk administrative service is supported.
 
 
         :return: ``true`` if bank admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_bank_notification(self):
-        """Tests if bank notification is supported.
-
-
-        Messages may be sent when items are created, modified, or
-        deleted.
-
-
-        :return: ``true`` if bank notification is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -829,38 +573,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_assessment_authoring(self):
-        """Tests if an assessment authoring service is supported.
-
-
-        :return: ``true`` if an assessment authoring is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_assessment_batch(self):
-        """Tests if an assessment batch service is supported.
-
-
-        :return: ``true`` if an assessment batch service is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_item_record_types(self):
         """Gets the supported ``Item`` record types.
 
@@ -878,23 +590,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     item_record_types = property(fget=get_item_record_types)
-
-    def supports_item_record_type(self, item_record_type):
-        """Tests if the given ``Item`` record type is supported.
-
-
-        :param item_record_type: a ``Type`` indicating a ``Item`` record type
-        :type item_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``item_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_item_search_record_types(self):
         """Gets the supported ``Item`` search record types.
@@ -914,23 +609,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
     item_search_record_types = property(fget=get_item_search_record_types)
 
-    def supports_item_search_record_type(self, item_search_record_type):
-        """Tests if the given ``Item`` search record type is supported.
-
-
-        :param item_search_record_type: a ``Type`` indicating an ``Item`` search record type
-        :type item_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``item_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_assessment_record_types(self):
         """Gets the supported ``Assessment`` record types.
 
@@ -948,23 +626,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     assessment_record_types = property(fget=get_assessment_record_types)
-
-    def supports_assessment_record_type(self, assessment_record_type):
-        """Tests if the given ``Assessment`` record type is supported.
-
-
-        :param assessment_record_type: a ``Type`` indicating an ``Assessment`` record type
-        :type assessment_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_assessment_search_record_types(self):
         """Gets the supported ``Assessment`` search record types.
@@ -984,23 +645,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
     assessment_search_record_types = property(fget=get_assessment_search_record_types)
 
-    def supports_assessment_search_record_type(self, assessment_search_record_type):
-        """Tests if the given assessment search record type is supported.
-
-
-        :param assessment_search_record_type: a ``Type`` indicating an assessment search record type
-        :type assessment_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given search record Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_assessment_offered_record_types(self):
         """Gets the supported ``AssessmentOffered`` record types.
 
@@ -1018,23 +662,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     assessment_offered_record_types = property(fget=get_assessment_offered_record_types)
-
-    def supports_assessment_offered_record_type(self, assessment_offered_record_type):
-        """Tests if the given ``AssessmentOffered`` record type is supported.
-
-
-        :param assessment_offered_record_type: a ``Type`` indicating an ``AssessmentOffered`` record type
-        :type assessment_offered_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_offered_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_assessment_offered_search_record_types(self):
         """Gets the supported ``AssessmentOffered`` search record types.
@@ -1054,23 +681,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
     assessment_offered_search_record_types = property(fget=get_assessment_offered_search_record_types)
 
-    def supports_assessment_offered_search_record_type(self, assessment_offered_search_record_type):
-        """Tests if the given ``AssessmentOffered`` search record type is supported.
-
-
-        :param assessment_offered_search_record_type: a ``Type`` indicating an ``AssessmentOffered`` search record type
-        :type assessment_offered_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_offered_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_assessment_taken_record_types(self):
         """Gets the supported ``AssessmentTaken`` record types.
 
@@ -1088,23 +698,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     assessment_taken_record_types = property(fget=get_assessment_taken_record_types)
-
-    def supports_assessment_taken_record_type(self, assessment_taken_record_type):
-        """Tests if the given ``AssessmentTaken`` record type is supported.
-
-
-        :param assessment_taken_record_type: a ``Type`` indicating an ``AssessmentTaken`` record type
-        :type assessment_taken_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_taken_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_assessment_taken_search_record_types(self):
         """Gets the supported ``AssessmentTaken`` search record types.
@@ -1124,23 +717,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
     assessment_taken_search_record_types = property(fget=get_assessment_taken_search_record_types)
 
-    def supports_assessment_taken_search_record_type(self, assessment_taken_search_record_type):
-        """Tests if the given ``AssessmentTaken`` search record type is supported.
-
-
-        :param assessment_taken_search_record_type: a ``Type`` indicating an ``AssessmentTaken`` search record type
-        :type assessment_taken_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_taken_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_assessment_section_record_types(self):
         """Gets the supported ``AssessmentSection`` record types.
 
@@ -1158,23 +734,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     assessment_section_record_types = property(fget=get_assessment_section_record_types)
-
-    def supports_assessment_section_record_type(self, assessment_section_record_type):
-        """Tests if the given ``AssessmentSection`` record type is supported.
-
-
-        :param assessment_section_record_type: a ``Type`` indicating an ``AssessmentSection`` record type
-        :type assessment_section_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``assessment_section_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_bank_record_types(self):
         """Gets the supported ``Bank`` record types.
@@ -1194,23 +753,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
     bank_record_types = property(fget=get_bank_record_types)
 
-    def supports_bank_record_type(self, bank_record_type):
-        """Tests if the given ``Bank`` record type is supported.
-
-
-        :param bank_record_type: a ``Type`` indicating a ``Bank`` type
-        :type bank_record_type: ``osid.type.Type``
-        :return: ``true`` if the given key record ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_bank_search_record_types(self):
         """Gets the supported bank search record types.
 
@@ -1228,1385 +770,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     bank_search_record_types = property(fget=get_bank_search_record_types)
-
-    def supports_bank_search_record_type(self, bank_search_record_type):
-        """Tests if the given bank search record type is supported.
-
-
-        :param bank_search_record_type: a ``Type`` indicating a ``Bank`` search record type
-        :type bank_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-##
-# The following methods are from osid.assessment.ItemBankSession
-
-    def can_lookup_item_bank_mappings(self):
-        """Tests if this user can perform lookups of item/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``Item`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_item_ids_by_bank(self, bank_id):
-        """Gets the list of ``Item``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related item ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_items_by_bank(self, bank_id):
-        """Gets the list of ``Items`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related items
-        :rtype: ``osid.assessment.ItemList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.ItemList
-
-    def get_item_ids_by_banks(self, bank_ids):
-        """Gets the list of ``Item Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_items_by_banks(self, bank_ids):
-        """Gets the list of ``Items`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of items
-        :rtype: ``osid.assessment.ItemList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.ItemList
-
-    def get_bank_ids_by_item(self, item_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Item``.
-
-
-        :param item_id: ``Id`` of an ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_item(self, item_id):
-        """Gets the list of ``Banks`` mapped to an ``Item``.
-
-
-        :param item_id: ``Id`` of an ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.ItemBankAssignmentSession
-
-    def can_assign_items(self):
-        """Tests if this user can alter item/bank mappings.
-
-
-        A return of true does not guarantee successful assessment. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_items_to_bank(self, bank_id):
-        """Tests if this user can alter item/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given bank node in which any item can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_item(self, bank_id, item_id):
-        """Gets a list of banks including and under the given bank node in which a specific item can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_item_to_bank(self, item_id, bank_id):
-        """Adds an existing ``Item`` to a ``Bank``.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``item_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_item_from_bank(self, item_id, bank_id):
-        """Removes an ``Item`` from a ``Bank``.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found or ``item_id`` not assigned to ``bank_id``
-        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_item_to_billing(self, item_id, from_bank_id, to_bank_id):
-        """Moves an ``Item`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or ``item_id`` not mapped to
-            ``from_bank_id``
-        :raise: ``NullArgument`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentBankSession
-
-    def can_lookup_assessment_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``Assessment`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_ids_by_bank(self, bank_id):
-        """Gets the list of ``Assessment``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_by_bank(self, bank_id):
-        """Gets the list of ``Assessments`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentList
-
-    def get_assessment_ids_by_banks(self, bank_ids):
-        """Gets the list of ``Assessment Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_by_banks(self, bank_ids):
-        """Gets the list of ``Assessments`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentList
-
-    def get_bank_ids_by_assessment(self, assessment_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Assessment``.
-
-
-        :param assessment_id: ``Id`` of an ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment(self, assessment_id):
-        """Gets the list of ``Banks`` mapped to an ``Assessment``.
-
-
-        :param assessment_id: ``Id`` of an ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentBankAssignmentSession
-
-    def can_assign_assessments(self):
-        """Tests if this user can alter assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_to_bank(self, bank_id):
-        """Tests if this user can alter assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment(self, bank_id, assessment_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_to_bank(self, assessment_id, bank_id):
-        """Adds an existing ``Assessment`` to a ``Bank``.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_from_bank(self, assessment_id, bank_id):
-        """Removes an ``Assessment`` from a ``Bank``.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found or ``assessment_id`` not assigned to
-            ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_to_billing(self, assessment_id, from_bank_id, to_bank_id):
-        """Moves an ``Assessment`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_id`` not
-            mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentOfferedBankSession
-
-    def can_lookup_assessment_offered_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``AssessmentOffered`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_offered_ids_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentOffered``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment offered ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_offered_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentOffereds`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments offered
-        :rtype: ``osid.assessment.AssessmentOfferedList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedList
-
-    def get_assessment_offered_ids_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentOffered Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_offered_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentOffered`` objects corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments offered
-        :rtype: ``osid.assessment.AssessmentOfferedList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedList
-
-    def get_bank_ids_by_assessment_offered(self, assessment_offered_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentOffered``.
-
-
-        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment_offered(self, assessment_offered_id):
-        """Gets the list of ``Banks`` mapped to an ``AssessmentOffered``.
-
-
-        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentOfferedBankAssignmentSession
-
-    def can_assign_assessments_offered(self):
-        """Tests if this user can alter assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_offered_to_bank(self, bank_id):
-        """Tests if this user can alter assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment offered can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment_offered(self, bank_id, assessment_offered_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment offered can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_offered_to_bank(self, assessment_offered_id, bank_id):
-        """Adds an existing ``AssessmentOffered`` to a ``Bank``.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_offered_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_offered_from_bank(self, assessment_offered_id, bank_id):
-        """Removes an ``AssessmentOffered`` from a ``Bank``.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found or ``assessment_offered_id`` not
-            assigned to ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
-        """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_offered_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentTakenBankSession
-
-    def can_lookup_assessment_taken_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``AssessmentTaken`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_taken_ids_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentTaken``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment taken ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_taken_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentTakens`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments taken
-        :rtype: ``osid.assessment.AssessmentTakenList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenList
-
-    def get_assessment_taken_ids_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentTaken Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_taken_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentTaken`` objects corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments taken
-        :rtype: ``osid.assessment.AssessmentTakenList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenList
-
-    def get_bank_ids_by_assessment_taken(self, assessment_taken_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentTaken``.
-
-
-        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment_taken(self, assessment_taken_id):
-        """Gets the list of ``Banks`` mapped to an ``AssessmentTaken``.
-
-
-        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentTakenBankAssignmentSession
-
-    def can_assign_assessments_taken(self):
-        """Tests if this user can alter assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_taken_to_bank(self, bank_id):
-        """Tests if this user can alter assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment taken can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment_taken(self, bank_id, assessment_taken_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment taken can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_taken_to_bank(self, assessment_taken_id, bank_id):
-        """Adds an existing ``AssessmentTaken`` to a ``Bank``.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_taken_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_taken_from_bank(self, assessment_taken_id, bank_id):
-        """Removes an ``AssessmentTaken`` from a ``Bank``.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found or ``assessment_taken_id`` not assigned
-            to ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_taken_to_billing(self, assessment_taken_id, from_bank_id, to_bank_id):
-        """Moves an ``AssessmentTaken`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_taken_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
 ##
 # The following methods are from osid.assessment.BankLookupSession
 
@@ -2670,32 +833,6 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
         """
         pass
-
-    def get_bank(self, bank_id):
-        """Gets the ``Bank`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Bank`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Bank`` and retained for compatibility.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: the bank
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
 
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.
@@ -3943,1387 +2080,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         """Session state will never be saved"""
         self._session_management = DISABLED
         self.close_sessions()
-    def get_my_assessment_taken_session(self):
-        """Gets a ``MyAssessmentTakenSession`` to retrieve assessments taken for the current agent.
-
-
-        :return: a ``MyAssessmentTakenSession``
-        :rtype: ``osid.assessment.MyAssessmentTakenSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_assessment_taken()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_my_assessment_taken()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.MyAssessmentTakenSession
-
-    my_assessment_taken_session = property(fget=get_my_assessment_taken_session)
-
-    def get_my_assessment_taken_session_for_bank(self, bank_id):
-        """Gets a ``MyAssessmentTakenSession`` to retrieve assessments taken for the current agent for the given bank
-            ``Id``.
-
-
-        :param bank_id: the ``Id`` of a bank
-        :type bank_id: ``osid.id.Id``
-        :return: a ``MyAssessmentTakenSession``
-        :rtype: ``osid.assessment.MyAssessmentTakenSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_assessment_taken()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_my_assessment_taken()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.MyAssessmentTakenSession
-
-    def get_assessment_session(self):
-        """Gets an ``AssessmentSession`` which is responsible for taking assessments and examining responses from
-            assessments taken.
-
-
-        :return: an assessment session for this service
-        :rtype: ``osid.assessment.AssessmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSession
-
-    assessment_session = property(fget=get_assessment_session)
-
-    def get_assessment_session_for_bank(self, bank_id):
-        """Gets an ``AssessmentSession`` which is responsible for performing assessments for the given bank ``Id``.
-
-
-        :param bank_id: the ``Id`` of a bank
-        :type bank_id: ``osid.id.Id``
-        :return: an assessment session for this service
-        :rtype: ``osid.assessment.AssessmentSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSession
-
-    def get_assessment_results_session(self):
-        """Gets an ``AssessmentResultsSession`` to retrieve assessment results.
-
-
-        :return: an assessment results session for this service
-        :rtype: ``osid.assessment.AssessmentResultsSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_results()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_results()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentResultsSession
-
-    assessment_results_session = property(fget=get_assessment_results_session)
-
-    def get_assessment_results_session_for_bank(self, bank_id):
-        """Gets an ``AssessmentResultsSession`` to retrieve assessment results for the given bank.
-
-
-        :param bank_id: the ``Id`` of the assessment taken
-        :type bank_id: ``osid.id.Id``
-        :return: an assessment results session for this service
-        :rtype: ``osid.assessment.AssessmentResultsSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_results()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_results()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentResultsSession
-
-    def get_item_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the item lookup service.
-
-
-        :return: an ``ItemLookupSession``
-        :rtype: ``osid.assessment.ItemLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemLookupSession
-
-    item_lookup_session = property(fget=get_item_lookup_session)
-
-    def get_item_lookup_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the item lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _item_lookup_session``
-        :rtype: ``osid.assessment.ItemLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_lookup()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemLookupSession
-
-    def get_item_query_session(self):
-        """Gets the ``OsidSession`` associated with the item query service.
-
-
-        :return: an ``ItemQuerySession``
-        :rtype: ``osid.assessment.ItemQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemQuerySession
-
-    item_query_session = property(fget=get_item_query_session)
-
-    def get_item_query_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the item query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _item_query_session``
-        :rtype: ``osid.assessment.ItemQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_query()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemQuerySession
-
-    def get_item_search_session(self):
-        """Gets the ``OsidSession`` associated with the item search service.
-
-
-        :return: an ``ItemSearchSession``
-        :rtype: ``osid.assessment.ItemSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemSearchSession
-
-    item_search_session = property(fget=get_item_search_session)
-
-    def get_item_search_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the item search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _item_search_session``
-        :rtype: ``osid.assessment.ItemSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_search()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemSearchSession
-
-    def get_item_admin_session(self):
-        """Gets the ``OsidSession`` associated with the item administration service.
-
-
-        :return: an ``ItemAdminSession``
-        :rtype: ``osid.assessment.ItemAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemAdminSession
-
-    item_admin_session = property(fget=get_item_admin_session)
-
-    def get_item_admin_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the item admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _item_admin_session``
-        :rtype: ``osid.assessment.ItemAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_admin()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemAdminSession
-
-    def get_item_notification_session(self, item_receiver):
-        """Gets the notification session for notifications pertaining to item changes.
-
-
-        :param item_receiver: the item receiver interface
-        :type item_receiver: ``osid.assessment.ItemReceiver``
-        :return: an ``ItemNotificationSession``
-        :rtype: ``osid.assessment.ItemNotificationSession``
-        :raise: ``NullArgument`` -- ``item_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemNotificationSession
-
-    def get_item_notification_session_for_bank(self, item_receiver, bank_id):
-        """Gets the ``OsidSession`` associated with the item notification service for the given bank.
-
-
-        :param item_receiver: the item receiver interface
-        :type item_receiver: ``osid.assessment.ItemReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _item_notification_session``
-        :rtype: ``osid.assessment.AssessmentNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``item_receiver`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_notification()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentNotificationSession
-
-    def get_item_bank_session(self):
-        """Gets the ``OsidSession`` associated with the item banking service.
-
-
-        :return: an ``ItemBankSession``
-        :rtype: ``osid.assessment.ItemBankSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemBankSession
-
-    item_bank_session = property(fget=get_item_bank_session)
-
-    def get_item_bank_assignment_session(self):
-        """Gets the ``OsidSession`` associated with the item bank assignment service.
-
-
-        :return: an ``ItemBankAssignmentSession``
-        :rtype: ``osid.assessment.ItemBankAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemBankAssignmentSession
-
-    item_bank_assignment_session = property(fget=get_item_bank_assignment_session)
-
-    def get_item_smart_bank_session(self, bank_id):
-        """Gets the ``OsidSession`` associated with the item smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``ItemSmartBankSession``
-        :rtype: ``osid.assessment.ItemSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemSmartBankSession
-
-    def get_assessment_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the assessment lookup service.
-
-
-        :return: an ``AssessmentLookupSession``
-        :rtype: ``osid.assessment.AssessmentLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentLookupSession
-
-    assessment_lookup_session = property(fget=get_assessment_lookup_session)
-
-    def get_assessment_lookup_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _assessment_lookup_session``
-        :rtype: ``osid.assessment.AssessmentLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentLookupSession
-
-    def get_assessment_query_session(self):
-        """Gets the ``OsidSession`` associated with the assessment query service.
-
-
-        :return: an ``AssessmentQuerySession``
-        :rtype: ``osid.assessment.AssessmentQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentQuerySession
-
-    assessment_query_session = property(fget=get_assessment_query_session)
-
-    def get_assessment_query_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _assessment_query_session``
-        :rtype: ``osid.assessment.AssessmentQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentQuerySession
-
-    def get_assessment_search_session(self):
-        """Gets the ``OsidSession`` associated with the assessment search service.
-
-
-        :return: an ``AssessmentSearchSession``
-        :rtype: ``osid.assessment.AssessmentSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSearchSession
-
-    assessment_search_session = property(fget=get_assessment_search_session)
-
-    def get_assessment_search_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _assessment_search_session``
-        :rtype: ``osid.assessment.AssessmentSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSearchSession
-
-    def get_assessment_admin_session(self):
-        """Gets the ``OsidSession`` associated with the assessment administration service.
-
-
-        :return: an ``AssessmentAdminSession``
-        :rtype: ``osid.assessment.AssessmentAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentAdminSession
-
-    assessment_admin_session = property(fget=get_assessment_admin_session)
-
-    def get_assessment_admin_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _assessment_admin_session``
-        :rtype: ``osid.assessment.AssessmentAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentAdminSession
-
-    def get_assessment_notification_session(self, assessment_receiver):
-        """Gets the notification session for notifications pertaining to assessment changes.
-
-
-        :param assessment_receiver: the assessment receiver interface
-        :type assessment_receiver: ``osid.assessment.AssessmentReceiver``
-        :return: an ``AssessmentNotificationSession``
-        :rtype: ``osid.assessment.AssessmentNotificationSession``
-        :raise: ``NullArgument`` -- ``assessment_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentNotificationSession
-
-    def get_assessment_notification_session_for_bank(self, assessment_receiver, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment notification service for the given bank.
-
-
-        :param assessment_receiver: the assessment receiver interface
-        :type assessment_receiver: ``osid.assessment.AssessmentReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: ``an _assessment_notification_session``
-        :rtype: ``osid.assessment.AssessmentNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_receiver`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentNotificationSession
-
-    def get_assessment_bank_session(self):
-        """Gets the ``OsidSession`` associated with the assessment banking service.
-
-
-        :return: an ``AssessmentBankSession``
-        :rtype: ``osid.assessment.AssessmentBankSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBankSession
-
-    assessment_bank_session = property(fget=get_assessment_bank_session)
-
-    def get_assessment_bank_assignment_session(self):
-        """Gets the ``OsidSession`` associated with the assessment bank assignment service.
-
-
-        :return: an ``AssessmentBankAssignmentSession``
-        :rtype: ``osid.assessment.AssessmentBankAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBankAssignmentSession
-
-    assessment_bank_assignment_session = property(fget=get_assessment_bank_assignment_session)
-
-    def get_assessment_smart_bank_session(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentSmartBankSession``
-        :rtype: ``osid.assessment.AssessmentSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSmartBankSession
-
-    def get_assessment_basic_authoring_session(self):
-        """Gets the ``OsidSession`` associated with the assessment authoring service.
-
-
-        :return: an ``AssessmentBasicAuthoringSession``
-        :rtype: ``osid.assessment.AssessmentBasicAuthoringSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_basic_authoring()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBasicAuthoringSession
-
-    assessment_basic_authoring_session = property(fget=get_assessment_basic_authoring_session)
-
-    def get_assessment_basic_authoring_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment authoring service for the given bank.
-
-
-        :param bank_id: the ``Id`` of a bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentBasicAuthoringSession``
-        :rtype: ``osid.assessment.AssessmentBasicAuthoringSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` or ``supports_visibe_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_basic_authoring()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBasicAuthoringSession
-
-    def get_assessment_offered_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the assessment offered lookup service.
-
-
-        :return: an ``AssessmentOfferedLookupSession``
-        :rtype: ``osid.assessment.AssessmentOfferedLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedLookupSession
-
-    assessment_offered_lookup_session = property(fget=get_assessment_offered_lookup_session)
-
-    def get_assessment_offered_lookup_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment offered lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentOfferedLookupSession``
-        :rtype: ``osid.assessment.AssessmentOfferedLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedLookupSession
-
-    def get_assessment_offered_query_session(self):
-        """Gets the ``OsidSession`` associated with the assessment offered query service.
-
-
-        :return: an ``AssessmentOfferedQuerySession``
-        :rtype: ``osid.assessment.AssessmentOfferedQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedQuerySession
-
-    assessment_offered_query_session = property(fget=get_assessment_offered_query_session)
-
-    def get_assessment_offered_query_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment offered query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentOfferedQuerySession``
-        :rtype: ``osid.assessment.AssessmentOfferedQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedQuerySession
-
-    def get_assessment_offered_search_session(self):
-        """Gets the ``OsidSession`` associated with the assessment offered search service.
-
-
-        :return: an ``AssessmentOfferedSearchSession``
-        :rtype: ``osid.assessment.AssessmentOfferedSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedSearchSession
-
-    assessment_offered_search_session = property(fget=get_assessment_offered_search_session)
-
-    def get_assessment_offered_search_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment offered search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentOfferedSearchSession``
-        :rtype: ``osid.assessment.AssessmentOfferedSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedSearchSession
-
-    def get_assessment_offered_admin_session(self):
-        """Gets the ``OsidSession`` associated with the assessment offered administration service.
-
-
-        :return: an ``AssessmentOfferedAdminSession``
-        :rtype: ``osid.assessment.AssessmentOfferedAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedAdminSession
-
-    assessment_offered_admin_session = property(fget=get_assessment_offered_admin_session)
-
-    def get_assessment_offered_admin_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment offered admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentOfferedAdminSession``
-        :rtype: ``osid.assessment.AssessmentOfferedAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedAdminSession
-
-    def get_assessment_offered_notification_session(self, assessment_offered_receiver):
-        """Gets the notification session for notifications pertaining to offered assessment changes.
-
-
-        :param assessment_offered_receiver: the assessment offered receiver interface
-        :type assessment_offered_receiver: ``osid.assessment.AssessmentOfferedReceiver``
-        :return: an ``AssessmentOfferedNotificationSession``
-        :rtype: ``osid.assessment.AssessmentOfferedNotificationSession``
-        :raise: ``NullArgument`` -- ``assessment_offered_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedNotificationSession
-
-    def get_assessment_offered_notification_session_for_bank(self, assessment_offered_receiver, bank_id):
-        """Gets the ``OsidSession`` associated with the offered assessment notification service for the given bank.
-
-
-        :param assessment_offered_receiver: the assessment offered receiver interface
-        :type assessment_offered_receiver: ``osid.assessment.AssessmentOfferedReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: a ``AssessmentOfferedNotificationSession``
-        :rtype: ``osid.assessment.AssessmentOfferedNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_offered_receiver`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_notification()`` or ``supports_visible_federation()``
-            is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedNotificationSession
-
-    def get_assessment_offered_bank_session(self):
-        """Gets the session for retrieving offered assessments to bank mappings.
-
-
-        :return: an ``AssessmentOfferedBankSession``
-        :rtype: ``osid.assessment.AssessmentOfferedBankSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedBankSession
-
-    assessment_offered_bank_session = property(fget=get_assessment_offered_bank_session)
-
-    def get_assessment_offered_bank_assignment_session(self):
-        """Gets the session for assigning offered assessments to bank mappings.
-
-
-        :return: an ``AssessmentOfferedBankAssignmentSession``
-        :rtype: ``osid.assessment.AssessmentOfferedBankAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedBankAssignmentSession
-
-    assessment_offered_bank_assignment_session = property(fget=get_assessment_offered_bank_assignment_session)
-
-    def get_assessment_offered_smart_bank_session(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment offered smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentOfferedSmartBankSession``
-        :rtype: ``osid.assessment.AssessmentOfferedSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedSmartBankSession
-
-    def get_assessment_taken_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the assessment taken lookup service.
-
-
-        :return: an ``AssessmentTakenLookupSession``
-        :rtype: ``osid.assessment.AssessmentTakenLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenLookupSession
-
-    assessment_taken_lookup_session = property(fget=get_assessment_taken_lookup_session)
-
-    def get_assessment_taken_lookup_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment taken lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentTakenLookupSession``
-        :rtype: ``osid.assessment.AssessmentTakenLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenLookupSession
-
-    def get_assessment_taken_query_session(self):
-        """Gets the ``OsidSession`` associated with the assessment taken query service.
-
-
-        :return: an ``AssessmentTakenQuerySession``
-        :rtype: ``osid.assessment.AssessmentTakenQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenQuerySession
-
-    assessment_taken_query_session = property(fget=get_assessment_taken_query_session)
-
-    def get_assessment_taken_query_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment taken query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentTakenQuerySession``
-        :rtype: ``osid.assessment.AssessmentTakenQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenQuerySession
-
-    def get_assessment_taken_search_session(self):
-        """Gets the ``OsidSession`` associated with the assessment taken search service.
-
-
-        :return: an ``AssessmentTakenSearchSession``
-        :rtype: ``osid.assessment.AssessmentTakenSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenSearchSession
-
-    assessment_taken_search_session = property(fget=get_assessment_taken_search_session)
-
-    def get_assessment_taken_search_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment taken search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentTakenSearchSession``
-        :rtype: ``osid.assessment.AssessmentTakenSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenSearchSession
-
-    def get_assessment_taken_admin_session(self):
-        """Gets the ``OsidSession`` associated with the assessment taken administration service.
-
-
-        :return: an ``AssessmentTakenAdminSession``
-        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenAdminSession
-
-    assessment_taken_admin_session = property(fget=get_assessment_taken_admin_session)
-
-    def get_assessment_taken_admin_session_for_bank(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentTakenSearchSession``
-        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenAdminSession
-
-    def get_assessment_taken_notification_session(self, assessment_taken_receiver):
-        """Gets the notification session for notifications pertaining to taken assessment changes.
-
-
-        :param assessment_taken_receiver: the assessment taken receiver interface
-        :type assessment_taken_receiver: ``osid.assessment.AssessmentTakenReceiver``
-        :return: an ``AssessmentTakenNotificationSession``
-        :rtype: ``osid.assessment.AssessmentTakenNotificationSession``
-        :raise: ``NullArgument`` -- ``assessment_taken_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenNotificationSession
-
-    def get_assessment_taken_notification_session_for_bank(self, assessment_taken_receiver, bank_id):
-        """Gets the ``OsidSession`` associated with the taken assessment notification service for the given bank.
-
-
-        :param assessment_taken_receiver: the assessment taken receiver interface
-        :type assessment_taken_receiver: ``osid.assessment.AssessmentTakenReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentTakenNotificationSession``
-        :rtype: ``osid.assessment.AssessmentTakenNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_taken_receiver`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_notification()`` or ``supports_visible_federation()``
-            is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenNotificationSession
-
-    def get_assessment_taken_bank_session(self):
-        """Gets the session for retrieving taken assessments to bank mappings.
-
-
-        :return: an ``AssessmentTakenBankSession``
-        :rtype: ``osid.assessment.AssessmentTakenBankSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenBankSession
-
-    assessment_taken_bank_session = property(fget=get_assessment_taken_bank_session)
-
-    def get_assessment_taken_bank_assignment_session(self):
-        """Gets the session for assigning taken assessments to bank mappings.
-
-
-        :return: an ``AssessmentTakenBankAssignmentSession``
-        :rtype: ``osid.assessment.AssessmentTakenBankAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenBankAssignmentSession
-
-    assessment_taken_bank_assignment_session = property(fget=get_assessment_taken_bank_assignment_session)
-
-    def get_assessment_taken_smart_bank_session(self, bank_id):
-        """Gets the ``OsidSession`` associated with the assessment taken smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :return: an ``AssessmentTakenSmartBankSession``
-        :rtype: ``osid.assessment.AssessmentTakenSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenSmartBankSession
-
-    def get_bank_lookup_session(self):
-        """Gets the OsidSession associated with the bank lookup service.
-
-
-        :return: a ``BankLookupSession``
-        :rtype: ``osid.assessment.BankLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_lookup() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_lookup()`` is true.*
-
-
-        """
-        return # osid.assessment.BankLookupSession
-
-    bank_lookup_session = property(fget=get_bank_lookup_session)
-
-    def get_bank_query_session(self):
-        """Gets the OsidSession associated with the bank query service.
-
-
-        :return: a ``BankQuerySession``
-        :rtype: ``osid.assessment.BankQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_query() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_query()`` is true.*
-
-
-        """
-        return # osid.assessment.BankQuerySession
-
-    bank_query_session = property(fget=get_bank_query_session)
-
-    def get_bank_search_session(self):
-        """Gets the OsidSession associated with the bank search service.
-
-
-        :return: a ``BankSearchSession``
-        :rtype: ``osid.assessment.BankSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_search() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_search()`` is true.*
-
-
-        """
-        return # osid.assessment.BankSearchSession
-
-    bank_search_session = property(fget=get_bank_search_session)
-
-    def get_bank_admin_session(self):
-        """Gets the OsidSession associated with the bank administration service.
-
-
-        :return: a ``BankAdminSession``
-        :rtype: ``osid.assessment.BankAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_admin() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_admin()`` is true.*
-
-
-        """
-        return # osid.assessment.BankAdminSession
-
-    bank_admin_session = property(fget=get_bank_admin_session)
-
-    def get_bank_notification_session(self, bankreceiver):
-        """Gets the notification session for notifications pertaining to bank service changes.
-
-
-        :param bankreceiver: the bank receiver interface
-        :type bankreceiver: ``osid.assessment.BankReceiver``
-        :return: a ``BankNotificationSession``
-        :rtype: ``osid.assessment.BankNotificationSession``
-        :raise: ``NullArgument`` -- ``bank_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_notification() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_notification()`` is true.*
-
-
-        """
-        return # osid.assessment.BankNotificationSession
-
-    def get_bank_hierarchy_session(self):
-        """Gets the session traversing bank hierarchies.
-
-
-        :return: a ``BankHierarchySession``
-        :rtype: ``osid.assessment.BankHierarchySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_hierarchy() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_hierarchy()`` is true.*
-
-
-        """
-        return # osid.assessment.BankHierarchySession
-
-    bank_hierarchy_session = property(fget=get_bank_hierarchy_session)
-
-    def get_bank_hierarchy_design_session(self):
-        """Gets the session designing bank hierarchies.
-
-
-        :return: a ``BankHierarchySession``
-        :rtype: ``osid.assessment.BankHierarchyDesignSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_hierarchy_design() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_hierarchy_design()`` is true.*
-
-
-        """
-        return # osid.assessment.BankHierarchyDesignSession
-
-    bank_hierarchy_design_session = property(fget=get_bank_hierarchy_design_session)
-
     def get_assessment_authoring_manager(self):
         """Gets an ``AssessmentAuthoringManager``.
 
@@ -5361,1368 +2117,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         return # osid.assessment.batch.AssessmentBatchManager
 
     assessment_batch_manager = property(fget=get_assessment_batch_manager)
-##
-# The following methods are from osid.assessment.ItemBankSession
-
-    def can_lookup_item_bank_mappings(self):
-        """Tests if this user can perform lookups of item/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``Item`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_item_ids_by_bank(self, bank_id):
-        """Gets the list of ``Item``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related item ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_items_by_bank(self, bank_id):
-        """Gets the list of ``Items`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related items
-        :rtype: ``osid.assessment.ItemList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.ItemList
-
-    def get_item_ids_by_banks(self, bank_ids):
-        """Gets the list of ``Item Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_items_by_banks(self, bank_ids):
-        """Gets the list of ``Items`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of items
-        :rtype: ``osid.assessment.ItemList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.ItemList
-
-    def get_bank_ids_by_item(self, item_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Item``.
-
-
-        :param item_id: ``Id`` of an ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_item(self, item_id):
-        """Gets the list of ``Banks`` mapped to an ``Item``.
-
-
-        :param item_id: ``Id`` of an ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.ItemBankAssignmentSession
-
-    def can_assign_items(self):
-        """Tests if this user can alter item/bank mappings.
-
-
-        A return of true does not guarantee successful assessment. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_items_to_bank(self, bank_id):
-        """Tests if this user can alter item/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given bank node in which any item can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_item(self, bank_id, item_id):
-        """Gets a list of banks including and under the given bank node in which a specific item can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_item_to_bank(self, item_id, bank_id):
-        """Adds an existing ``Item`` to a ``Bank``.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``item_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_item_from_bank(self, item_id, bank_id):
-        """Removes an ``Item`` from a ``Bank``.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found or ``item_id`` not assigned to ``bank_id``
-        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_item_to_billing(self, item_id, from_bank_id, to_bank_id):
-        """Moves an ``Item`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or ``item_id`` not mapped to
-            ``from_bank_id``
-        :raise: ``NullArgument`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentBankSession
-
-    def can_lookup_assessment_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``Assessment`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_ids_by_bank(self, bank_id):
-        """Gets the list of ``Assessment``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_by_bank(self, bank_id):
-        """Gets the list of ``Assessments`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentList
-
-    def get_assessment_ids_by_banks(self, bank_ids):
-        """Gets the list of ``Assessment Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_by_banks(self, bank_ids):
-        """Gets the list of ``Assessments`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentList
-
-    def get_bank_ids_by_assessment(self, assessment_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Assessment``.
-
-
-        :param assessment_id: ``Id`` of an ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment(self, assessment_id):
-        """Gets the list of ``Banks`` mapped to an ``Assessment``.
-
-
-        :param assessment_id: ``Id`` of an ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentBankAssignmentSession
-
-    def can_assign_assessments(self):
-        """Tests if this user can alter assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_to_bank(self, bank_id):
-        """Tests if this user can alter assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment(self, bank_id, assessment_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_to_bank(self, assessment_id, bank_id):
-        """Adds an existing ``Assessment`` to a ``Bank``.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_from_bank(self, assessment_id, bank_id):
-        """Removes an ``Assessment`` from a ``Bank``.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found or ``assessment_id`` not assigned to
-            ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_to_billing(self, assessment_id, from_bank_id, to_bank_id):
-        """Moves an ``Assessment`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_id`` not
-            mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentOfferedBankSession
-
-    def can_lookup_assessment_offered_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``AssessmentOffered`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_offered_ids_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentOffered``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment offered ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_offered_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentOffereds`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments offered
-        :rtype: ``osid.assessment.AssessmentOfferedList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedList
-
-    def get_assessment_offered_ids_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentOffered Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_offered_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentOffered`` objects corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments offered
-        :rtype: ``osid.assessment.AssessmentOfferedList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedList
-
-    def get_bank_ids_by_assessment_offered(self, assessment_offered_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentOffered``.
-
-
-        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment_offered(self, assessment_offered_id):
-        """Gets the list of ``Banks`` mapped to an ``AssessmentOffered``.
-
-
-        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentOfferedBankAssignmentSession
-
-    def can_assign_assessments_offered(self):
-        """Tests if this user can alter assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_offered_to_bank(self, bank_id):
-        """Tests if this user can alter assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment offered can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment_offered(self, bank_id, assessment_offered_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment offered can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_offered_to_bank(self, assessment_offered_id, bank_id):
-        """Adds an existing ``AssessmentOffered`` to a ``Bank``.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_offered_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_offered_from_bank(self, assessment_offered_id, bank_id):
-        """Removes an ``AssessmentOffered`` from a ``Bank``.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found or ``assessment_offered_id`` not
-            assigned to ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
-        """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_offered_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentTakenBankSession
-
-    def can_lookup_assessment_taken_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``AssessmentTaken`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_taken_ids_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentTaken``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment taken ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_taken_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentTakens`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments taken
-        :rtype: ``osid.assessment.AssessmentTakenList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenList
-
-    def get_assessment_taken_ids_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentTaken Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_taken_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentTaken`` objects corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments taken
-        :rtype: ``osid.assessment.AssessmentTakenList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenList
-
-    def get_bank_ids_by_assessment_taken(self, assessment_taken_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentTaken``.
-
-
-        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment_taken(self, assessment_taken_id):
-        """Gets the list of ``Banks`` mapped to an ``AssessmentTaken``.
-
-
-        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentTakenBankAssignmentSession
-
-    def can_assign_assessments_taken(self):
-        """Tests if this user can alter assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_taken_to_bank(self, bank_id):
-        """Tests if this user can alter assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment taken can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment_taken(self, bank_id, assessment_taken_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment taken can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_taken_to_bank(self, assessment_taken_id, bank_id):
-        """Adds an existing ``AssessmentTaken`` to a ``Bank``.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_taken_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_taken_from_bank(self, assessment_taken_id, bank_id):
-        """Removes an ``AssessmentTaken`` from a ``Bank``.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found or ``assessment_taken_id`` not assigned
-            to ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_taken_to_billing(self, assessment_taken_id, from_bank_id, to_bank_id):
-        """Moves an ``AssessmentTaken`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_taken_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
 ##
 # The following methods are from osid.assessment.BankLookupSession
 
@@ -6786,32 +2180,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
         """
         pass
-
-    def get_bank(self, bank_id):
-        """Gets the ``Bank`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Bank`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Bank`` and retained for compatibility.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: the bank
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
 
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.
@@ -7966,1487 +3334,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
     """
 
-    def get_my_assessment_taken_session(self, proxy):
-        """Gets a ``MyAssessmentTakenSession`` to retrieve assessments taken for the current agent.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``MyAssessmentTakenSession``
-        :rtype: ``osid.assessment.MyAssessmentTakenSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_assessment_taken()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_my_assessment_taken()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.MyAssessmentTakenSession
-
-    def get_my_assessment_taken_session_for_bank(self, bank_id, proxy):
-        """Gets a ``MyAssessmentTakenSession`` to retrieve assessments taken for the current agent for the given bank
-            ``Id``.
-
-
-        :param bank_id: the ``Id`` of a bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``MyAssessmentTakenSession``
-        :rtype: ``osid.assessment.MyAssessmentTakenSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_my_assessment_taken()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_my_assessment_taken()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.MyAssessmentTakenSession
-
-    def get_assessment_session(self, proxy):
-        """Gets an ``AssessmentSession`` which is responsible for taking assessments and examining responses from
-            assessments taken.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an assessment session for this service
-        :rtype: ``osid.assessment.AssessmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSession
-
-    def get_assessment_session_for_bank(self, bank_id, proxy):
-        """Gets an ``AssessmentSession`` which is responsible for performing assessments for the given bank ``Id``.
-
-
-        :param bank_id: the ``Id`` of a bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an assessment session for this service
-        :rtype: ``osid.assessment.AssessmentSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSession
-
-    def get_assessment_results_session(self, proxy):
-        """Gets an ``AssessmentResultsSession`` to retrieve assessment results.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an assessment results session for this service
-        :rtype: ``osid.assessment.AssessmentResultsSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_results()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_results()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentResultsSession
-
-    def get_assessment_results_session_for_bank(self, bank_id, proxy):
-        """Gets an ``AssessmentResultsSession`` to retrieve assessment results for the given bank.
-
-
-        :param bank_id: the ``Id`` of the assessment taken
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an assessment results session for this service
-        :rtype: ``osid.assessment.AssessmentResultsSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_results()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_results()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentResultsSession
-
-    def get_item_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the item lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemLookupSession``
-        :rtype: ``osid.assessment.ItemLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemLookupSession
-
-    def get_item_lookup_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the item lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _item_lookup_session``
-        :rtype: ``osid.assessment.ItemLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_lookup()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemLookupSession
-
-    def get_item_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the item query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemQuerySession``
-        :rtype: ``osid.assessment.ItemQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemQuerySession
-
-    def get_item_query_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the item query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _item_query_session``
-        :rtype: ``osid.assessment.ItemQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_query()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemQuerySession
-
-    def get_item_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the item search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemSearchSession``
-        :rtype: ``osid.assessment.ItemSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemSearchSession
-
-    def get_item_search_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the item search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _item_search_session``
-        :rtype: ``osid.assessment.ItemSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``porxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_search()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemSearchSession
-
-    def get_item_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the item administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemAdminSession``
-        :rtype: ``osid.assessment.ItemAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemAdminSession
-
-    def get_item_admin_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the item admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _item_admin_session``
-        :rtype: ``osid.assessment.ItemAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_admin()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.assessment.ItemAdminSession
-
-    def get_item_notification_session(self, item_receiver, proxy):
-        """Gets the notification session for notifications pertaining to item changes.
-
-
-        :param item_receiver: the item receiver interface
-        :type item_receiver: ``osid.assessment.ItemReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemNotificationSession``
-        :rtype: ``osid.assessment.ItemNotificationSession``
-        :raise: ``NullArgument`` -- ``item_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemNotificationSession
-
-    def get_item_notification_session_for_bank(self, item_receiver, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the item notification service for the given bank.
-
-
-        :param item_receiver: the item receiver interface
-        :type item_receiver: ``osid.assessment.ItemReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _item_notification_session``
-        :rtype: ``osid.assessment.AssessmentNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``item_receiver, bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_item_notification()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentNotificationSession
-
-    def get_item_bank_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the item banking service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemBankSession``
-        :rtype: ``osid.assessment.ItemBankSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemBankSession
-
-    def get_item_bank_assignment_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the item bank assignment service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemBankAssignmentSession``
-        :rtype: ``osid.assessment.ItemBankAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemBankAssignmentSession
-
-    def get_item_smart_bank_session(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the item smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``ItemSmartBankSession``
-        :rtype: ``osid.assessment.ItemSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_item_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_item_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.ItemSmartBankSession
-
-    def get_assessment_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentLookupSession``
-        :rtype: ``osid.assessment.AssessmentLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentLookupSession
-
-    def get_assessment_lookup_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _assessment_lookup_session``
-        :rtype: ``osid.assessment.AssessmentLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentLookupSession
-
-    def get_assessment_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentQuerySession``
-        :rtype: ``osid.assessment.AssessmentQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentQuerySession
-
-    def get_assessment_query_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _assessment_query_session``
-        :rtype: ``osid.assessment.AssessmentQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentQuerySession
-
-    def get_assessment_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentSearchSession``
-        :rtype: ``osid.assessment.AssessmentSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSearchSession
-
-    def get_assessment_search_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _assessment_search_session``
-        :rtype: ``osid.assessment.AssessmentSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSearchSession
-
-    def get_assessment_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentAdminSession``
-        :rtype: ``osid.assessment.AssessmentAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentAdminSession
-
-    def get_assessment_admin_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _assessment_admin_session``
-        :rtype: ``osid.assessment.AssessmentAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentAdminSession
-
-    def get_assessment_notification_session(self, assessment_receiver, proxy):
-        """Gets the notification session for notifications pertaining to assessment changes.
-
-
-        :param assessment_receiver: the assessment receiver interface
-        :type assessment_receiver: ``osid.assessment.AssessmentReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentNotificationSession``
-        :rtype: ``osid.assessment.AssessmentNotificationSession``
-        :raise: ``NullArgument`` -- ``assessment_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentNotificationSession
-
-    def get_assessment_notification_session_for_bank(self, assessment_receiver, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment notification service for the given bank.
-
-
-        :param assessment_receiver: the assessment receiver interface
-        :type assessment_receiver: ``osid.assessment.AssessmentReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``an _assessment_notification_session``
-        :rtype: ``osid.assessment.AssessmentNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_receiver, bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentNotificationSession
-
-    def get_assessment_bank_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment banking service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentBankSession``
-        :rtype: ``osid.assessment.AssessmentBankSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBankSession
-
-    def get_assessment_bank_assignment_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment bank assignment service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentBankAssignmentSession``
-        :rtype: ``osid.assessment.AssessmentBankAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBankAssignmentSession
-
-    def get_assessment_smart_bank_session(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentSmartBankSession``
-        :rtype: ``osid.assessment.AssessmentSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentSmartBankSession
-
-    def get_assessment_basic_authoring_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment authoring service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentBasicAuthoringSession``
-        :rtype: ``osid.assessment.AssessmentBasicAuthoringSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_basic_authoring()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBasicAuthoringSession
-
-    def get_assessment_basic_authoring_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment authoring service for the given bank.
-
-
-        :param bank_id: the ``Id`` of a bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentBasicAuthoringSession``
-        :rtype: ``osid.assessment.AssessmentBasicAuthoringSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_basic_authoring()`` or ``supports_visibe_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_basic_authoring()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentBasicAuthoringSession
-
-    def get_assessment_offered_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedLookupSession``
-        :rtype: ``osid.assessment.AssessmentOfferedLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedLookupSession
-
-    def get_assessment_offered_lookup_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedLookupSession``
-        :rtype: ``osid.assessment.AssessmentOfferedLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedLookupSession
-
-    def get_assessment_offered_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedQuerySession``
-        :rtype: ``osid.assessment.AssessmentOfferedQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedQuerySession
-
-    def get_assessment_offered_query_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedQuerySession``
-        :rtype: ``osid.assessment.AssessmentOfferedQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_query()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedQuerySession
-
-    def get_assessment_offered_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedSearchSession``
-        :rtype: ``osid.assessment.AssessmentOfferedSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedSearchSession
-
-    def get_assessment_offered_search_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedSearchSession``
-        :rtype: ``osid.assessment.AssessmentOfferedSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or proxy is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedSearchSession
-
-    def get_assessment_offered_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedAdminSession``
-        :rtype: ``osid.assessment.AssessmentOfferedAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedAdminSession
-
-    def get_assessment_offered_admin_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedAdminSession``
-        :rtype: ``osid.assessment.AssessmentOfferedAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_admin()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedAdminSession
-
-    def get_assessment_offered_notification_session(self, assessment_offered_receiver, proxy):
-        """Gets the notification session for notifications pertaining to offered assessment changes.
-
-
-        :param assessment_offered_receiver: the assessment offered receiver interface
-        :type assessment_offered_receiver: ``osid.assessment.AssessmentOfferedReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedNotificationSession``
-        :rtype: ``osid.assessment.AssessmentOfferedNotificationSession``
-        :raise: ``NullArgument`` -- ``assessment_offered_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedNotificationSession
-
-    def get_assessment_offered_notification_session_for_bank(self, assessment_offered_receiver, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the offered assessment notification service for the given bank.
-
-
-        :param assessment_offered_receiver: the assessment offered receiver interface
-        :type assessment_offered_receiver: ``osid.assessment.AssessmentOfferedReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``AssessmentOfferedNotificationSession``
-        :rtype: ``osid.assessment.AssessmentOfferedNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` or ``proxy`` not found
-        :raise: ``NullArgument`` -- ``assessment_offered_receiver, bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_notification()`` or ``supports_visible_federation()``
-            is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedNotificationSession
-
-    def get_assessment_offered_bank_session(self, proxy):
-        """Gets the session for retrieving offered assessments to bank mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedBankSession``
-        :rtype: ``osid.assessment.AssessmentOfferedBankSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedBankSession
-
-    def get_assessment_offered_bank_assignment_session(self, proxy):
-        """Gets the session for assigning offered assessments to bank mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedBankAssignmentSession``
-        :rtype: ``osid.assessment.AssessmentOfferedBankAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedBankAssignmentSession
-
-    def get_assessment_offered_smart_bank_session(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment offered smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentOfferedSmartBankSession``
-        :rtype: ``osid.assessment.AssessmentOfferedSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_offered_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_offered_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedSmartBankSession
-
-    def get_assessment_taken_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenLookupSession``
-        :rtype: ``osid.assessment.AssessmentTakenLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenLookupSession
-
-    def get_assessment_taken_lookup_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken lookup service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenLookupSession``
-        :rtype: ``osid.assessment.AssessmentTakenLookupSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenLookupSession
-
-    def get_assessment_taken_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenQuerySession``
-        :rtype: ``osid.assessment.AssessmentTakenQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_query()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenQuerySession
-
-    def get_assessment_taken_query_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken query service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenQuerySession``
-        :rtype: ``osid.assessment.AssessmentTakenQuerySession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_query()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenQuerySession
-
-    def get_assessment_taken_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenSearchSession``
-        :rtype: ``osid.assessment.AssessmentTakenSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_search()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenSearchSession
-
-    def get_assessment_taken_search_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken search service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenSearchSession``
-        :rtype: ``osid.assessment.AssessmentTakenSearchSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenSearchSession
-
-    def get_assessment_taken_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenAdminSession``
-        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_admin()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenAdminSession
-
-    def get_assessment_taken_admin_session_for_bank(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken admin service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenSearchSession``
-        :rtype: ``osid.assessment.AssessmentTakenAdminSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_admin()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenAdminSession
-
-    def get_assessment_taken_notification_session(self, assessment_taken_receiver, proxy):
-        """Gets the notification session for notifications pertaining to taken assessment changes.
-
-
-        :param assessment_taken_receiver: the assessment taken receiver interface
-        :type assessment_taken_receiver: ``osid.assessment.AssessmentTakenReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenNotificationSession``
-        :rtype: ``osid.assessment.AssessmentTakenNotificationSession``
-        :raise: ``NullArgument`` -- ``assessment_taken_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_notification()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenNotificationSession
-
-    def get_assessment_taken_notification_session_for_bank(self, assessment_taken_receiver, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the taken assessment notification service for the given bank.
-
-
-        :param assessment_taken_receiver: the assessment taken receiver interface
-        :type assessment_taken_receiver: ``osid.assessment.AssessmentTakenReceiver``
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenNotificationSession``
-        :rtype: ``osid.assessment.AssessmentTakenNotificationSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_taken_receiver, bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_notification()`` or ``supports_visible_federation()``
-            is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenNotificationSession
-
-    def get_assessment_taken_bank_session(self, proxy):
-        """Gets the session for retrieving taken assessments to bank mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenBankSession``
-        :rtype: ``osid.assessment.AssessmentTakenBankSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_bank()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenBankSession
-
-    def get_assessment_taken_bank_assignment_session(self, proxy):
-        """Gets the session for assigning taken assessments to bank mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenBankAssignmentSession``
-        :rtype: ``osid.assessment.AssessmentTakenBankAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_bank_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_bank_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenBankAssignmentSession
-
-    def get_assessment_taken_smart_bank_session(self, bank_id, proxy):
-        """Gets the ``OsidSession`` associated with the assessment taken smart banking service for the given bank.
-
-
-        :param bank_id: the ``Id`` of the bank
-        :type bank_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssessmentTakenSmartBankSession``
-        :rtype: ``osid.assessment.AssessmentTakenSmartBankSession``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_assessment_taken_smart_bank()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_assessment_taken_smart_bank()`` and
-        ``supports_visibe_federation()`` is ``true``.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenSmartBankSession
-
-    def get_bank_lookup_session(self, proxy):
-        """Gets the OsidSession associated with the bank lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankLookupSession``
-        :rtype: ``osid.assessment.BankLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_lookup() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_lookup()`` is true.*
-
-
-        """
-        return # osid.assessment.BankLookupSession
-
-    def get_bank_query_session(self, proxy):
-        """Gets the OsidSession associated with the bank query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankQuerySession``
-        :rtype: ``osid.assessment.BankQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_query() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_query()`` is true.*
-
-
-        """
-        return # osid.assessment.BankQuerySession
-
-    def get_bank_search_session(self, proxy):
-        """Gets the OsidSession associated with the bank search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankSearchSession``
-        :rtype: ``osid.assessment.BankSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_search() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_search()`` is true.*
-
-
-        """
-        return # osid.assessment.BankSearchSession
-
-    def get_bank_admin_session(self, proxy):
-        """Gets the OsidSession associated with the bank administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankAdminSession``
-        :rtype: ``osid.assessment.BankAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_admin() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_admin()`` is true.*
-
-
-        """
-        return # osid.assessment.BankAdminSession
-
-    def get_bank_notification_session(self, bank_receiver, proxy):
-        """Gets the notification session for notifications pertaining to bank service changes.
-
-
-        :param bank_receiver: the bank receiver interface
-        :type bank_receiver: ``osid.assessment.BankReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankNotificationSession``
-        :rtype: ``osid.assessment.BankNotificationSession``
-        :raise: ``NullArgument`` -- ``bank_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_notification() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_notification()`` is true.*
-
-
-        """
-        return # osid.assessment.BankNotificationSession
-
-    def get_bank_hierarchy_session(self, proxy):
-        """Gets the session traversing bank hierarchies.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankHierarchySession``
-        :rtype: ``osid.assessment.BankHierarchySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_hierarchy() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_hierarchy()`` is true.*
-
-
-        """
-        return # osid.assessment.BankHierarchySession
-
-    def get_bank_hierarchy_design_session(self, proxy):
-        """Gets the session designing bank hierarchies.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``BankHierarchySession``
-        :rtype: ``osid.assessment.BankHierarchyDesignSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_bank_hierarchy_design() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_bank_hierarchy_design()`` is true.*
-
-
-        """
-        return # osid.assessment.BankHierarchyDesignSession
-
     def get_assessment_authoring_proxy_manager(self):
         """Gets an ``AssessmentAuthoringProxyManager``.
 
@@ -9484,1368 +3371,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         return # osid.assessment.batch.AssessmentBatchProxyManager
 
     assessment_batch_proxy_manager = property(fget=get_assessment_batch_proxy_manager)
-##
-# The following methods are from osid.assessment.ItemBankSession
-
-    def can_lookup_item_bank_mappings(self):
-        """Tests if this user can perform lookups of item/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``Item`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_item_ids_by_bank(self, bank_id):
-        """Gets the list of ``Item``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related item ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_items_by_bank(self, bank_id):
-        """Gets the list of ``Items`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related items
-        :rtype: ``osid.assessment.ItemList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.ItemList
-
-    def get_item_ids_by_banks(self, bank_ids):
-        """Gets the list of ``Item Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_items_by_banks(self, bank_ids):
-        """Gets the list of ``Items`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of items
-        :rtype: ``osid.assessment.ItemList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.ItemList
-
-    def get_bank_ids_by_item(self, item_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Item``.
-
-
-        :param item_id: ``Id`` of an ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_item(self, item_id):
-        """Gets the list of ``Banks`` mapped to an ``Item``.
-
-
-        :param item_id: ``Id`` of an ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``item_id`` is not found
-        :raise: ``NullArgument`` -- ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- assessment failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.ItemBankAssignmentSession
-
-    def can_assign_items(self):
-        """Tests if this user can alter item/bank mappings.
-
-
-        A return of true does not guarantee successful assessment. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_items_to_bank(self, bank_id):
-        """Tests if this user can alter item/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given bank node in which any item can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_item(self, bank_id, item_id):
-        """Gets a list of banks including and under the given bank node in which a specific item can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``item_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_item_to_bank(self, item_id, bank_id):
-        """Adds an existing ``Item`` to a ``Bank``.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``item_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_item_from_bank(self, item_id, bank_id):
-        """Removes an ``Item`` from a ``Bank``.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found or ``item_id`` not assigned to ``bank_id``
-        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_item_to_billing(self, item_id, from_bank_id, to_bank_id):
-        """Moves an ``Item`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param item_id: the ``Id`` of the ``Item``
-        :type item_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or ``item_id`` not mapped to
-            ``from_bank_id``
-        :raise: ``NullArgument`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentBankSession
-
-    def can_lookup_assessment_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``Assessment`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_ids_by_bank(self, bank_id):
-        """Gets the list of ``Assessment``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_by_bank(self, bank_id):
-        """Gets the list of ``Assessments`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentList
-
-    def get_assessment_ids_by_banks(self, bank_ids):
-        """Gets the list of ``Assessment Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_by_banks(self, bank_ids):
-        """Gets the list of ``Assessments`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments
-        :rtype: ``osid.assessment.AssessmentList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentList
-
-    def get_bank_ids_by_assessment(self, assessment_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Assessment``.
-
-
-        :param assessment_id: ``Id`` of an ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment(self, assessment_id):
-        """Gets the list of ``Banks`` mapped to an ``Assessment``.
-
-
-        :param assessment_id: ``Id`` of an ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentBankAssignmentSession
-
-    def can_assign_assessments(self):
-        """Tests if this user can alter assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_to_bank(self, bank_id):
-        """Tests if this user can alter assessment/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment(self, bank_id, assessment_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_to_bank(self, assessment_id, bank_id):
-        """Adds an existing ``Assessment`` to a ``Bank``.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_from_bank(self, assessment_id, bank_id):
-        """Removes an ``Assessment`` from a ``Bank``.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found or ``assessment_id`` not assigned to
-            ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_to_billing(self, assessment_id, from_bank_id, to_bank_id):
-        """Moves an ``Assessment`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_id: the ``Id`` of the ``Assessment``
-        :type assessment_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_id`` not
-            mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentOfferedBankSession
-
-    def can_lookup_assessment_offered_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``AssessmentOffered`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_offered_ids_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentOffered``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment offered ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_offered_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentOffereds`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments offered
-        :rtype: ``osid.assessment.AssessmentOfferedList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedList
-
-    def get_assessment_offered_ids_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentOffered Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_offered_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentOffered`` objects corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments offered
-        :rtype: ``osid.assessment.AssessmentOfferedList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentOfferedList
-
-    def get_bank_ids_by_assessment_offered(self, assessment_offered_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentOffered``.
-
-
-        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment_offered(self, assessment_offered_id):
-        """Gets the list of ``Banks`` mapped to an ``AssessmentOffered``.
-
-
-        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentOfferedBankAssignmentSession
-
-    def can_assign_assessments_offered(self):
-        """Tests if this user can alter assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_offered_to_bank(self, bank_id):
-        """Tests if this user can alter assessment offered/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment offered can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment_offered(self, bank_id, assessment_offered_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment offered can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_offered_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_offered_to_bank(self, assessment_offered_id, bank_id):
-        """Adds an existing ``AssessmentOffered`` to a ``Bank``.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_offered_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_offered_from_bank(self, assessment_offered_id, bank_id):
-        """Removes an ``AssessmentOffered`` from a ``Bank``.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found or ``assessment_offered_id`` not
-            assigned to ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
-        """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
-        :type assessment_offered_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_offered_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.assessment.AssessmentTakenBankSession
-
-    def can_lookup_assessment_taken_bank_mappings(self):
-        """Tests if this user can perform lookups of assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_bank_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
-            and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_bank_view(self):
-        """A complete view of the ``AssessmentTaken`` and ``Bank`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_assessment_taken_ids_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentTaken``  ``Ids`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessment taken ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_taken_by_bank(self, bank_id):
-        """Gets the list of ``AssessmentTakens`` associated with a ``Bank``.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of related assessments taken
-        :rtype: ``osid.assessment.AssessmentTakenList``
-        :raise: ``NotFound`` -- ``bank_id`` is not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenList
-
-    def get_assessment_taken_ids_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentTaken Ids`` corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assessments_taken_by_banks(self, bank_ids):
-        """Gets the list of ``AssessmentTaken`` objects corresponding to a list of ``Banks``.
-
-
-        :param bank_ids: list of bank ``Ids``
-        :type bank_ids: ``osid.id.IdList``
-        :return: list of assessments taken
-        :rtype: ``osid.assessment.AssessmentTakenList``
-        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.AssessmentTakenList
-
-    def get_bank_ids_by_assessment_taken(self, assessment_taken_id):
-        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentTaken``.
-
-
-        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_banks_by_assessment_taken(self, assessment_taken_id):
-        """Gets the list of ``Banks`` mapped to an ``AssessmentTaken``.
-
-
-        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of banks
-        :rtype: ``osid.assessment.BankList``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.BankList
-
-
-##
-# The following methods are from osid.assessment.AssessmentTakenBankAssignmentSession
-
-    def can_assign_assessments_taken(self):
-        """Tests if this user can alter assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assessments_taken_to_bank(self, bank_id):
-        """Tests if this user can alter assessment taken/bank mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_bank_ids(self, bank_id):
-        """Gets a list of banks including and under the given banks node in which any assessment taken can be assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_bank_ids_for_assessment_taken(self, bank_id, assessment_taken_id):
-        """Gets a list of bank including and under the given bank node in which a specific assessment taken can be
-            assigned.
-
-
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :return: list of assignable bank ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_taken_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_assessment_taken_to_bank(self, assessment_taken_id, bank_id):
-        """Adds an existing ``AssessmentTaken`` to a ``Bank``.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``assessment_taken_id`` is already assigned to ``bank_id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_assessment_taken_from_bank(self, assessment_taken_id, bank_id):
-        """Removes an ``AssessmentTaken`` from a ``Bank``.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param bank_id: the ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found or ``assessment_taken_id`` not assigned
-            to ``bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def reassign_assessment_taken_to_billing(self, assessment_taken_id, from_bank_id, to_bank_id):
-        """Moves an ``AssessmentTaken`` from one ``Bank`` to another.
-
-
-        Mappings to other ``Banks`` are unaffected.
-
-
-        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
-        :type assessment_taken_id: ``osid.id.Id``
-        :param from_bank_id: the ``Id`` of the current ``Bank``
-        :type from_bank_id: ``osid.id.Id``
-        :param to_bank_id: the ``Id`` of the destination ``Bank``
-        :type to_bank_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found or
-            ``assessment_taken_id`` not mapped to ``from_bank_id``
-        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
 ##
 # The following methods are from osid.assessment.BankLookupSession
 
@@ -10909,32 +3434,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 
         """
         pass
-
-    def get_bank(self, bank_id):
-        """Gets the ``Bank`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Bank`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Bank`` and retained for compatibility.
-
-
-        :param bank_id: ``Id`` of the ``Bank``
-        :type bank_id: ``osid.id.Id``
-        :return: the bank
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``NotFound`` -- ``bank_id`` not found
-        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
 
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.
@@ -12114,42 +4613,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.AssessmentSession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_take_assessments(self):
         """Tests if this user can take this assessment section.
 
@@ -13142,42 +5605,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.ItemLookupSession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_lookup_items(self):
         """Tests if this user can perform ``Item`` lookups.
 
@@ -13529,42 +5956,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.ItemQuerySession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_search_items(self):
         """Tests if this user can perform ``Item`` searches.
 
@@ -13753,42 +6144,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.assessment.ItemAdminSession
-
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
 
     def can_create_items(self):
         """Tests if this user can create ``Items``.
@@ -14452,42 +6807,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.ItemNotificationSession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_register_for_item_notifications(self):
         """Tests if this user can register for ``Item`` notifications.
 
@@ -14752,14 +7071,21 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 ##
-# The following methods are from osid.assessment.AssessmentLookupSession
+# The following methods are from osid.assessment.ItemBankSession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
+    def can_lookup_item_bank_mappings(self):
+        """Tests if this user can perform lookups of item/bank mappings.
 
 
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
 
 
 
@@ -14768,16 +7094,310 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.id.Id
+        return # boolean
 
-    bank_id = property(fget=get_bank_id)
+    def use_comparative_bank_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
 
 
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_bank_view(self):
+        """A complete view of the ``Item`` and ``Bank`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_item_ids_by_bank(self, bank_id):
+        """Gets the list of ``Item``  ``Ids`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related item ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_items_by_bank(self, bank_id):
+        """Gets the list of ``Items`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related items
+        :rtype: ``osid.assessment.ItemList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.ItemList
+
+    def get_item_ids_by_banks(self, bank_ids):
+        """Gets the list of ``Item Ids`` corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- assessment failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_items_by_banks(self, bank_ids):
+        """Gets the list of ``Items`` corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of items
+        :rtype: ``osid.assessment.ItemList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- assessment failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.ItemList
+
+    def get_bank_ids_by_item(self, item_id):
+        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Item``.
+
+
+        :param item_id: ``Id`` of an ``Item``
+        :type item_id: ``osid.id.Id``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``item_id`` is not found
+        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- assessment failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_banks_by_item(self, item_id):
+        """Gets the list of ``Banks`` mapped to an ``Item``.
+
+
+        :param item_id: ``Id`` of an ``Item``
+        :type item_id: ``osid.id.Id``
+        :return: list of banks
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- ``item_id`` is not found
+        :raise: ``NullArgument`` -- ``item_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- assessment failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.BankList
+
+
+##
+# The following methods are from osid.assessment.ItemBankAssignmentSession
+
+    def can_assign_items(self):
+        """Tests if this user can alter item/bank mappings.
+
+
+        A return of true does not guarantee successful assessment. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        assignment operations to unauthorized users.
+
+
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_assign_items_to_bank(self, bank_id):
+        """Tests if this user can alter item/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_assignable_bank_ids(self, bank_id):
+        """Gets a list of banks including and under the given bank node in which any item can be assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assignable_bank_ids_for_item(self, bank_id, item_id):
+        """Gets a list of banks including and under the given bank node in which a specific item can be assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :param item_id: the ``Id`` of the ``Item``
+        :type item_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` or ``item_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def assign_item_to_bank(self, item_id, bank_id):
+        """Adds an existing ``Item`` to a ``Bank``.
+
+
+        :param item_id: the ``Id`` of the ``Item``
+        :type item_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``item_id`` is already assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def unassign_item_from_bank(self, item_id, bank_id):
+        """Removes an ``Item`` from a ``Bank``.
+
+
+        :param item_id: the ``Id`` of the ``Item``
+        :type item_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``item_id`` or ``bank_id`` not found or ``item_id`` not assigned to ``bank_id``
+        :raise: ``NullArgument`` -- ``item_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def reassign_item_to_billing(self, item_id, from_bank_id, to_bank_id):
+        """Moves an ``Item`` from one ``Bank`` to another.
+
+
+        Mappings to other ``Banks`` are unaffected.
+
+
+        :param item_id: the ``Id`` of the ``Item``
+        :type item_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` not found or ``item_id`` not mapped to
+            ``from_bank_id``
+        :raise: ``NullArgument`` -- ``item_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -14786,9 +7406,11 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.assessment.Bank
+        pass
 
-    bank = property(fget=get_bank)
+
+##
+# The following methods are from osid.assessment.AssessmentLookupSession
 
     def can_lookup_assessments(self):
         """Tests if this user can perform ``Assessment`` lookups.
@@ -15048,42 +7670,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.AssessmentQuerySession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_search_assessments(self):
         """Tests if this user can perform ``Assessment`` searches.
 
@@ -15183,42 +7769,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.assessment.AssessmentAdminSession
-
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
 
     def can_create_assessments(self):
         """Tests if this user can create ``Assessments``.
@@ -15474,14 +8024,21 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 ##
-# The following methods are from osid.assessment.AssessmentBasicAuthoringSession
+# The following methods are from osid.assessment.AssessmentBankSession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
+    def can_lookup_assessment_bank_mappings(self):
+        """Tests if this user can perform lookups of assessment/bank mappings.
 
 
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
 
 
 
@@ -15490,16 +8047,311 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.id.Id
+        return # boolean
 
-    bank_id = property(fget=get_bank_id)
+    def use_comparative_bank_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
 
 
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_bank_view(self):
+        """A complete view of the ``Assessment`` and ``Bank`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_assessment_ids_by_bank(self, bank_id):
+        """Gets the list of ``Assessment``  ``Ids`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related assessment ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assessments_by_bank(self, bank_id):
+        """Gets the list of ``Assessments`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related assessments
+        :rtype: ``osid.assessment.AssessmentList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.AssessmentList
+
+    def get_assessment_ids_by_banks(self, bank_ids):
+        """Gets the list of ``Assessment Ids`` corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assessments_by_banks(self, bank_ids):
+        """Gets the list of ``Assessments`` corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of assessments
+        :rtype: ``osid.assessment.AssessmentList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.AssessmentList
+
+    def get_bank_ids_by_assessment(self, assessment_id):
+        """Gets the list of ``Bank``  ``Ids`` mapped to an ``Assessment``.
+
+
+        :param assessment_id: ``Id`` of an ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``assessment_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_banks_by_assessment(self, assessment_id):
+        """Gets the list of ``Banks`` mapped to an ``Assessment``.
+
+
+        :param assessment_id: ``Id`` of an ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :return: list of banks
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- ``assessment_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.BankList
+
+
+##
+# The following methods are from osid.assessment.AssessmentBankAssignmentSession
+
+    def can_assign_assessments(self):
+        """Tests if this user can alter assessment/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_assign_assessments_to_bank(self, bank_id):
+        """Tests if this user can alter assessment/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_assignable_bank_ids(self, bank_id):
+        """Gets a list of banks including and under the given banks node in which any assessment can be assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assignable_bank_ids_for_assessment(self, bank_id, assessment_id):
+        """Gets a list of bank including and under the given bank node in which a specific assessment can be assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :param assessment_id: the ``Id`` of the ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def assign_assessment_to_bank(self, assessment_id, bank_id):
+        """Adds an existing ``Assessment`` to a ``Bank``.
+
+
+        :param assessment_id: the ``Id`` of the ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``assessment_id`` is already assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def unassign_assessment_from_bank(self, assessment_id, bank_id):
+        """Removes an ``Assessment`` from a ``Bank``.
+
+
+        :param assessment_id: the ``Id`` of the ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_id`` or ``bank_id`` not found or ``assessment_id`` not assigned to
+            ``bank_id``
+        :raise: ``NullArgument`` -- ``assessment_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def reassign_assessment_to_billing(self, assessment_id, from_bank_id, to_bank_id):
+        """Moves an ``Assessment`` from one ``Bank`` to another.
+
+
+        Mappings to other ``Banks`` are unaffected.
+
+
+        :param assessment_id: the ``Id`` of the ``Assessment``
+        :type assessment_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` not found or ``assessment_id`` not
+            mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -15508,9 +8360,11 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.assessment.Bank
+        pass
 
-    bank = property(fget=get_bank)
+
+##
+# The following methods are from osid.assessment.AssessmentBasicAuthoringSession
 
     def can_author_assessments(self):
         """Tests if this user can author assessments.
@@ -15641,42 +8495,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.assessment.AssessmentOfferedLookupSession
-
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
 
     def can_lookup_assessments_offered(self):
         """Tests if this user can perform ``AssessmentOffered`` lookups.
@@ -15989,42 +8807,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.AssessmentOfferedQuerySession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_search_assessments_offered(self):
         """Tests if this user can perform ``AssessmentOffered`` searches.
 
@@ -16124,42 +8906,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.assessment.AssessmentOfferedAdminSession
-
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
 
     def can_create_assessments_offered(self):
         """Tests if this user can create ``AssessmentOffered`` objects.
@@ -16418,14 +9164,21 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 ##
-# The following methods are from osid.assessment.AssessmentTakenLookupSession
+# The following methods are from osid.assessment.AssessmentOfferedBankSession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
+    def can_lookup_assessment_offered_bank_mappings(self):
+        """Tests if this user can perform lookups of assessment offered/bank mappings.
 
 
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
 
 
 
@@ -16434,16 +9187,313 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.id.Id
+        return # boolean
 
-    bank_id = property(fget=get_bank_id)
+    def use_comparative_bank_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
 
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
 
 
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_bank_view(self):
+        """A complete view of the ``AssessmentOffered`` and ``Bank`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_assessment_offered_ids_by_bank(self, bank_id):
+        """Gets the list of ``AssessmentOffered``  ``Ids`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related assessment offered ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assessments_offered_by_bank(self, bank_id):
+        """Gets the list of ``AssessmentOffereds`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related assessments offered
+        :rtype: ``osid.assessment.AssessmentOfferedList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.AssessmentOfferedList
+
+    def get_assessment_offered_ids_by_banks(self, bank_ids):
+        """Gets the list of ``AssessmentOffered Ids`` corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assessments_offered_by_banks(self, bank_ids):
+        """Gets the list of ``AssessmentOffered`` objects corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of assessments offered
+        :rtype: ``osid.assessment.AssessmentOfferedList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.AssessmentOfferedList
+
+    def get_bank_ids_by_assessment_offered(self, assessment_offered_id):
+        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentOffered``.
+
+
+        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_banks_by_assessment_offered(self, assessment_offered_id):
+        """Gets the list of ``Banks`` mapped to an ``AssessmentOffered``.
+
+
+        :param assessment_offered_id: ``Id`` of an ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :return: list of banks
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- ``assessment_offered_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_offered_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.BankList
+
+
+##
+# The following methods are from osid.assessment.AssessmentOfferedBankAssignmentSession
+
+    def can_assign_assessments_offered(self):
+        """Tests if this user can alter assessment offered/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_assign_assessments_offered_to_bank(self, bank_id):
+        """Tests if this user can alter assessment offered/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_assignable_bank_ids(self, bank_id):
+        """Gets a list of banks including and under the given banks node in which any assessment offered can be
+            assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assignable_bank_ids_for_assessment_offered(self, bank_id, assessment_offered_id):
+        """Gets a list of bank including and under the given bank node in which a specific assessment offered can be
+            assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_offered_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def assign_assessment_offered_to_bank(self, assessment_offered_id, bank_id):
+        """Adds an existing ``AssessmentOffered`` to a ``Bank``.
+
+
+        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``assessment_offered_id`` is already assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def unassign_assessment_offered_from_bank(self, assessment_offered_id, bank_id):
+        """Removes an ``AssessmentOffered`` from a ``Bank``.
+
+
+        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_offered_id`` or ``bank_id`` not found or ``assessment_offered_id`` not
+            assigned to ``bank_id``
+        :raise: ``NullArgument`` -- ``assessment_offered_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def reassign_assessment_offered_to_billing(self, assessment_offered_id, from_bank_id, to_bank_id):
+        """Moves an ``AssessmentOffered`` from one ``Bank`` to another.
+
+
+        Mappings to other ``Banks`` are unaffected.
+
+
+        :param assessment_offered_id: the ``Id`` of the ``AssessmentOffered``
+        :type assessment_offered_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` not found or
+            ``assessment_offered_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_offered_id, from_bank_id,`` or ``to_bank_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -16452,9 +9502,11 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.assessment.Bank
+        pass
 
-    bank = property(fget=get_bank)
+
+##
+# The following methods are from osid.assessment.AssessmentTakenLookupSession
 
     def can_lookup_assessments_taken(self):
         """Tests if this user can perform ``AssessmentTaken`` lookups.
@@ -17030,42 +10082,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.assessment.AssessmentTakenQuerySession
 
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
-
     def can_search_assessments_taken(self):
         """Tests if this user can perform ``AssessmentTaken`` searches.
 
@@ -17165,42 +10181,6 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.assessment.AssessmentTakenAdminSession
-
-    def get_bank_id(self):
-        """Gets the ``Bank``  ``Id`` associated with this session.
-
-
-        :return: the ``Bank Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    bank_id = property(fget=get_bank_id)
-
-    def get_bank(self):
-        """Gets the ``Bank`` associated with this session.
-
-
-        :return: the ``Bank`` associated with this session
-        :rtype: ``osid.assessment.Bank``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure occurred
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.assessment.Bank
-
-    bank = property(fget=get_bank)
 
     def can_create_assessments_taken(self):
         """Tests if this user can create ``AssessmentTaken`` objects.
@@ -17451,6 +10431,347 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``alias_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+##
+# The following methods are from osid.assessment.AssessmentTakenBankSession
+
+    def can_lookup_assessment_taken_bank_mappings(self):
+        """Tests if this user can perform lookups of assessment taken/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_bank_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as assessment,
+            and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_bank_view(self):
+        """A complete view of the ``AssessmentTaken`` and ``Bank`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_assessment_taken_ids_by_bank(self, bank_id):
+        """Gets the list of ``AssessmentTaken``  ``Ids`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related assessment taken ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assessments_taken_by_bank(self, bank_id):
+        """Gets the list of ``AssessmentTakens`` associated with a ``Bank``.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of related assessments taken
+        :rtype: ``osid.assessment.AssessmentTakenList``
+        :raise: ``NotFound`` -- ``bank_id`` is not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.AssessmentTakenList
+
+    def get_assessment_taken_ids_by_banks(self, bank_ids):
+        """Gets the list of ``AssessmentTaken Ids`` corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assessments_taken_by_banks(self, bank_ids):
+        """Gets the list of ``AssessmentTaken`` objects corresponding to a list of ``Banks``.
+
+
+        :param bank_ids: list of bank ``Ids``
+        :type bank_ids: ``osid.id.IdList``
+        :return: list of assessments taken
+        :rtype: ``osid.assessment.AssessmentTakenList``
+        :raise: ``NullArgument`` -- ``bank_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.AssessmentTakenList
+
+    def get_bank_ids_by_assessment_taken(self, assessment_taken_id):
+        """Gets the list of ``Bank``  ``Ids`` mapped to an ``AssessmentTaken``.
+
+
+        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: list of bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_banks_by_assessment_taken(self, assessment_taken_id):
+        """Gets the list of ``Banks`` mapped to an ``AssessmentTaken``.
+
+
+        :param assessment_taken_id: ``Id`` of an ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: list of banks
+        :rtype: ``osid.assessment.BankList``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.BankList
+
+
+##
+# The following methods are from osid.assessment.AssessmentTakenBankAssignmentSession
+
+    def can_assign_assessments_taken(self):
+        """Tests if this user can alter assessment taken/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_assign_assessments_taken_to_bank(self, bank_id):
+        """Tests if this user can alter assessment taken/bank mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_assignable_bank_ids(self, bank_id):
+        """Gets a list of banks including and under the given banks node in which any assessment taken can be assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assignable_bank_ids_for_assessment_taken(self, bank_id, assessment_taken_id):
+        """Gets a list of bank including and under the given bank node in which a specific assessment taken can be
+            assigned.
+
+
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: list of assignable bank ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``bank_id`` or ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def assign_assessment_taken_to_bank(self, assessment_taken_id, bank_id):
+        """Adds an existing ``AssessmentTaken`` to a ``Bank``.
+
+
+        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``assessment_taken_id`` is already assigned to ``bank_id``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def unassign_assessment_taken_from_bank(self, assessment_taken_id, bank_id):
+        """Removes an ``AssessmentTaken`` from a ``Bank``.
+
+
+        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :param bank_id: the ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` or ``bank_id`` not found or ``assessment_taken_id`` not assigned
+            to ``bank_id``
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` or ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def reassign_assessment_taken_to_billing(self, assessment_taken_id, from_bank_id, to_bank_id):
+        """Moves an ``AssessmentTaken`` from one ``Bank`` to another.
+
+
+        Mappings to other ``Banks`` are unaffected.
+
+
+        :param assessment_taken_id: the ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :param from_bank_id: the ``Id`` of the current ``Bank``
+        :type from_bank_id: ``osid.id.Id``
+        :param to_bank_id: the ``Id`` of the destination ``Bank``
+        :type to_bank_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` not found or
+            ``assessment_taken_id`` not mapped to ``from_bank_id``
+        :raise: ``NullArgument`` -- ``assessment_taken_id, from_bank_id,`` or ``to_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
 
 
         *compliance: mandatory -- This method must be implemented.*

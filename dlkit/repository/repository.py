@@ -14,22 +14,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
     def __init__(self):
         self._provider_manager = None
-    def supports_visible_federation(self):
-        """Tests if federation is visible.
-
-
-        :return: ``true`` if visible federation is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_asset_lookup(self):
         """Tests if asset lookup is supported.
 
@@ -146,86 +130,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_asset_smart_repository(self):
-        """Tests if asset smart repository is supported.
-
-
-        :return: ``true`` if asset smart repository is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_asset_temporal(self):
-        """Tests if retrieving mappings of assets and time coverage is supported.
-
-
-        :return: ``true`` if asset temporal mapping retrieval is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_asset_temporal_assignment(self):
-        """Tests if managing mappings of assets and time ocverage is supported.
-
-
-        :return: ``true`` if asset temporal assignment is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_asset_spatial(self):
-        """Tests if retrieving mappings of assets and spatial coverage is supported.
-
-
-        :return: ``true`` if asset spatial mapping retrieval is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_asset_spatial_assignment(self):
-        """Tests if managing mappings of assets and spatial ocverage is supported.
-
-
-        :return: ``true`` if asset spatial assignment is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_asset_composition(self):
         """Tests if assets are included in compositions.
 
@@ -322,22 +226,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_composition_notification(self):
-        """Tests if composition notification is supported.
-
-
-        :return: ``true`` if composition notification is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_composition_repository(self):
         """Tests if retrieval of composition to repository mappings is supported.
 
@@ -359,22 +247,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
 
         :return: ``true`` if composition to repository assignment is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_composition_smart_repository(self):
-        """Tests if composition smart repository is supported.
-
-
-        :return: ``true`` if composition smart repository is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -418,48 +290,11 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_repository_search(self):
-        """Tests if repository search is supported.
-
-
-        :return: ``true`` if repository search is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_repository_admin(self):
         """Tests if repository administration is supported.
 
 
         :return: ``true`` if repository administration is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_repository_notification(self):
-        """Tests if repository notification is supported.
-
-
-        Messages may be sent when ``Repository`` objects are created,
-        deleted or updated. Notifications for assets within repositories
-        are sent via the asset notification session.
-
-
-        :return: ``true`` if repository notification is supported ``,``  ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -503,38 +338,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_repository_batch(self):
-        """Tests if a repository batch service is supported.
-
-
-        :return: ``true`` if a repository batch service is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_repository_rules(self):
-        """Tests if a repository rules service is supported.
-
-
-        :return: ``true`` if a repository rules service is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_asset_record_types(self):
         """Gets all the asset record types supported.
 
@@ -552,23 +355,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     asset_record_types = property(fget=get_asset_record_types)
-
-    def supports_asset_record_type(self, asset_record_type):
-        """Tests if a given asset type is supported.
-
-
-        :param asset_record_type: the asset record type
-        :type asset_record_type: ``osid.type.Type``
-        :return: ``true`` if the asset record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``asset_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_asset_search_record_types(self):
         """Gets all the asset search record types supported.
@@ -588,23 +374,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
     asset_search_record_types = property(fget=get_asset_search_record_types)
 
-    def supports_asset_search_record_type(self, asset_search_record_type):
-        """Tests if a given asset search record type is supported.
-
-
-        :param asset_search_record_type: the asset search record type
-        :type asset_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the asset search record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``asset_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_asset_content_record_types(self):
         """Gets all the asset content record types supported.
 
@@ -622,23 +391,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     asset_content_record_types = property(fget=get_asset_content_record_types)
-
-    def supports_asset_content_record_type(self, asset_content_record_type):
-        """Tests if a given asset content record type is supported.
-
-
-        :param asset_content_record_type: the asset content record type
-        :type asset_content_record_type: ``osid.type.Type``
-        :return: ``true`` if the asset content record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``asset_content_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_composition_record_types(self):
         """Gets all the composition record types supported.
@@ -658,23 +410,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
     composition_record_types = property(fget=get_composition_record_types)
 
-    def supports_composition_record_type(self, composition_record_type):
-        """Tests if a given composition record type is supported.
-
-
-        :param composition_record_type: the composition record type
-        :type composition_record_type: ``osid.type.Type``
-        :return: ``true`` if the composition record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``composition_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_composition_search_record_types(self):
         """Gets all the composition search record types supported.
 
@@ -692,23 +427,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     composition_search_record_types = property(fget=get_composition_search_record_types)
-
-    def supports_composition_search_record_type(self, composition_search_record_type):
-        """Tests if a given composition search record type is supported.
-
-
-        :param composition_search_record_type: the composition serach type
-        :type composition_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the composition search record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``composition_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_repository_record_types(self):
         """Gets all the repository record types supported.
@@ -728,23 +446,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
     repository_record_types = property(fget=get_repository_record_types)
 
-    def supports_repository_record_type(self, repository_record_type):
-        """Tests if a given repository record type is supported.
-
-
-        :param repository_record_type: the repository record type
-        :type repository_record_type: ``osid.type.Type``
-        :return: ``true`` if the repository record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_repository_search_record_types(self):
         """Gets all the repository search record types supported.
 
@@ -762,23 +463,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     repository_search_record_types = property(fget=get_repository_search_record_types)
-
-    def supports_repository_search_record_type(self, repository_search_record_type):
-        """Tests if a given repository search record type is supported.
-
-
-        :param repository_search_record_type: the repository search type
-        :type repository_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the repository search record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_spatial_unit_record_types(self):
         """Gets all the spatial unit record types supported.
@@ -798,23 +482,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
     spatial_unit_record_types = property(fget=get_spatial_unit_record_types)
 
-    def supports_spatial_unit_record_type(self, spatial_unit_record_type):
-        """Tests if a given spatial unit record type is supported.
-
-
-        :param spatial_unit_record_type: the spatial unit record type
-        :type spatial_unit_record_type: ``osid.type.Type``
-        :return: ``true`` if the spatial unit record type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``spatial_unit_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_coordinate_types(self):
         """Gets all the coordinate types supported.
 
@@ -832,654 +499,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     coordinate_types = property(fget=get_coordinate_types)
-
-    def supports_coordinate_type(self, coordinate_type):
-        """Tests if a given coordinate type is supported.
-
-
-        :param coordinate_type: the coordinate type
-        :type coordinate_type: ``osid.type.Type``
-        :return: ``true`` if the coordinate type is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``coordinate_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-##
-# The following methods are from osid.repository.AssetRepositorySession
-
-    def can_lookup_asset_repository_mappings(self):
-        """Tests if this user can perform lookups of asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_repository_view(self):
-        """A complete view of the ``Asset`` and ``Repository`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_asset_ids_by_repository(self, repository_id):
-        """Gets the list of ``Asset``  ``Ids`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related asset ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assets_by_repository(self, repository_id):
-        """Gets the list of ``Assets`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related assets
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.AssetList
-
-    def get_asset_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Asset Ids`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of asset ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assets_by_repositories(self, repository_ids):
-        """Gets the list of ``Assets`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of assets
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.AssetList
-
-    def get_repository_ids_by_asset(self, asset_id):
-        """Gets the list of ``Repository``  ``Ids`` mapped to an ``Asset``.
-
-
-        :param asset_id: ``Id`` of an ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``asset_id`` is not found
-        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_repositories_by_asset(self, asset_id):
-        """Gets the list of ``Repository`` objects mapped to an ``Asset``.
-
-
-        :param asset_id: ``Id`` of an ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of repositories
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``NotFound`` -- ``asset_id`` is not found
-        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.RepositoryList
-
-
-##
-# The following methods are from osid.repository.AssetRepositoryAssignmentSession
-
-    def can_assign_assets(self):
-        """Tests if this user can alter asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assets_to_repository(self, repository_id):
-        """Tests if this user can alter asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
-        """Gets a list of repositories including and under the given repository node in which a specific asset can be
-            assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` or ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_asset_to_repository(self, asset_id, repository_id):
-        """Adds an existing ``Asset`` to a ``Repository``.
-
-
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``asset_id`` already assigned to ``repository_id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_asset_from_repository(self, asset_id, repository_id):
-        """Removes an ``Asset`` from a ``Repository``.
-
-
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
-            ``repository_id``
-        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.repository.CompositionRepositorySession
-
-    def use_comparative_composition_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_composition_repository_view(self):
-        """A complete view of the ``Composition`` and ``Repository`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def can_lookup_composition_repository_mappings(self):
-        """Tests if this user can perform lookups of composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_composition_ids_by_repository(self, repository_id):
-        """Gets the list of ``Composition``  ``Ids`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related composition ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_compositions_by_repository(self, repository_id):
-        """Gets the list of ``Compositions`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related compositions
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.CompositionList
-
-    def get_composition_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of composition ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_compoitions_by_repositories(self, repository_ids):
-        """Gets the list of ``Compositions`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of Compositions
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.CompositionList
-
-    def get_repository_ids_by_composition(self, composition_id):
-        """Gets the ``Repository``  ``Ids`` mapped to a ``Composition``.
-
-
-        :param composition_id: ``Id`` of a ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``composition_id`` is not found
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_repositories_by_composition(self, composition_id):
-        """Gets the ``Repository`` objects mapped to a ``Composition``.
-
-
-        :param composition_id: ``Id`` of a ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of repositories
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``NotFound`` -- ``composition_id`` is not found
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.RepositoryList
-
-
-##
-# The following methods are from osid.repository.CompositionRepositoryAssignmentSession
-
-    def can_assign_compositions(self):
-        """Tests if this user can alter composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_compositions_to_repository(self, repository_id):
-        """Tests if this user can alter composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any composition can be
-            assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
-        """Gets a list of repositories including and under the given repository node in which a specific composition can
-            be assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` or ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_composition_to_repository(self, composition_id, repository_id):
-        """Adds an existing ``Composition`` to a ``Repository``.
-
-
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``composition_id`` already assigned to ``repository_id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_composition_from_repository(self, composition_id, repository_id):
-        """Removes ``Composition`` from a ``Repository``.
-
-
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
-            ``repository_id``
-        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
 ##
 # The following methods are from osid.repository.RepositoryLookupSession
 
@@ -1543,33 +562,6 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
         """
         pass
-
-    def get_repository(self, repository_id):
-        """Gets the ``Repository`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Repository`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Repository`` and retained
-        for compatibility.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: the repository
-        :rtype: ``osid.repository.Repository``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
 
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
@@ -2785,879 +1777,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """Session state will never be saved"""
         self._session_management = DISABLED
         self.close_sessions()
-    def get_asset_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the asset lookup service.
-
-
-        :return: the new ``AssetLookupSession``
-        :rtype: ``osid.repository.AssetLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetLookupSession
-
-    asset_lookup_session = property(fget=get_asset_lookup_session)
-
-    def get_asset_lookup_session_for_repository(self, repository_id):
-        """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: the new ``AssetLookupSession``
-        :rtype: ``osid.repository.AssetLookupSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetLookupSession
-
-    def get_asset_query_session(self):
-        """Gets an asset query session.
-
-
-        :return: an ``AssetQuerySession``
-        :rtype: ``osid.repository.AssetQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_query()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetQuerySession
-
-    asset_query_session = property(fget=get_asset_query_session)
-
-    def get_asset_query_session_for_repository(self, repository_id):
-        """Gets an asset query session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetQuerySession``
-        :rtype: ``osid.repository.AssetQuerySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_query()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.repository.AssetQuerySession
-
-    def get_asset_search_session(self):
-        """Gets an asset search session.
-
-
-        :return: an ``AssetSearchSession``
-        :rtype: ``osid.repository.AssetSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_search()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSearchSession
-
-    asset_search_session = property(fget=get_asset_search_session)
-
-    def get_asset_search_session_for_repository(self, repository_id):
-        """Gets an asset search session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetSearchSession``
-        :rtype: ``osid.repository.AssetSearchSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetSearchSession
-
-    def get_asset_admin_session(self):
-        """Gets an asset administration session for creating, updating and deleting assets.
-
-
-        :return: an ``AssetAdminSession``
-        :rtype: ``osid.repository.AssetAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_admin()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetAdminSession
-
-    asset_admin_session = property(fget=get_asset_admin_session)
-
-    def get_asset_admin_session_for_repository(self, repository_id):
-        """Gets an asset administration session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetAdminSession``
-        :rtype: ``osid.repository.AssetAdminSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_admin()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.repository.AssetAdminSession
-
-    def get_asset_notification_session(self, asset_receiver):
-        """Gets the notification session for notifications pertaining to asset changes.
-
-
-        :param asset_receiver: the notification callback
-        :type asset_receiver: ``osid.repository.AssetReceiver``
-        :return: an ``AssetNotificationSession``
-        :rtype: ``osid.repository.AssetNotificationSession``
-        :raise: ``NullArgument`` -- ``asset_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_notification()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetNotificationSession
-
-    def get_asset_notification_session_for_repository(self, asset_receiver, repository_id):
-        """Gets the asset notification session for the given repository.
-
-
-        :param asset_receiver: the notification callback
-        :type asset_receiver: ``osid.repository.AssetReceiver``
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetNotificationSession``
-        :rtype: ``osid.repository.AssetNotificationSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``asset_receiver`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_notfication()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetNotificationSession
-
-    def get_asset_repository_session(self):
-        """Gets the session for retrieving asset to repository mappings.
-
-
-        :return: an ``AssetRepositorySession``
-        :rtype: ``osid.repository.AssetRepositorySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_repository()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetRepositorySession
-
-    asset_repository_session = property(fget=get_asset_repository_session)
-
-    def get_asset_repository_assignment_session(self):
-        """Gets the session for assigning asset to repository mappings.
-
-
-        :return: an ``AssetRepositoryAsignmentSession``
-        :rtype: ``osid.repository.AssetRepositoryAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_repository_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_repository_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetRepositoryAssignmentSession
-
-    asset_repository_assignment_session = property(fget=get_asset_repository_assignment_session)
-
-    def get_asset_smart_repository_session(self, repository_id):
-        """Gets an asset smart repository session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetSmartRepositorySession``
-        :rtype: ``osid.repository.AssetSmartRepositorySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_smart_repository()``  ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_smart_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSmartRepositorySession
-
-    def get_asset_temporal_session(self):
-        """Gets the session for retrieving temporal coverage of an asset.
-
-
-        :return: an ``AssetTemporalSession``
-        :rtype: ``osid.repository.AssetTemporalSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalSession
-
-    asset_temporal_session = property(fget=get_asset_temporal_session)
-
-    def get_asset_temporal_session_for_repository(self, repository_id):
-        """Gets the session for retrieving temporal coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetTemporalSession``
-        :rtype: ``osid.repository.AssetTemporalSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalSession
-
-    def get_asset_temporal_assignment_session(self):
-        """Gets the session for assigning temporal coverage to an asset.
-
-
-        :return: an ``AssetTemporalAssignmentSession``
-        :rtype: ``osid.repository.AssetTemporalAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalAssignmentSession
-
-    asset_temporal_assignment_session = property(fget=get_asset_temporal_assignment_session)
-
-    def get_asset_temporal_assignment_session_for_repository(self, repository_id):
-        """Gets the session for assigning temporal coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetTemporalAssignmentSession``
-        :rtype: ``osid.repository.AssetTemporalAssignmentSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal_assignment()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalAssignmentSession
-
-    def get_asset_spatial_session(self):
-        """Gets the session for retrieving spatial coverage of an asset.
-
-
-        :return: an ``AssetSpatialSession``
-        :rtype: ``osid.repository.AssetSpatialSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_spatial_assets()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_spatial_assets()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialSession
-
-    asset_spatial_session = property(fget=get_asset_spatial_session)
-
-    def get_asset_spatial_session_for_repository(self, repository_id):
-        """Gets the session for retrieving spatial coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetSpatialSession``
-        :rtype: ``osid.repository.AssetSpatialSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_spatial()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialSession
-
-    def get_asset_spatial_assignment_session(self):
-        """Gets the session for assigning spatial coverage to an asset.
-
-
-        :return: an ``AssetSpatialAssignmentSession``
-        :rtype: ``osid.repository.AssetSpatialAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_spatial_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialAssignmentSession
-
-    asset_spatial_assignment_session = property(fget=get_asset_spatial_assignment_session)
-
-    def get_asset_spatial_assignment_session_for_repository(self, repository_id):
-        """Gets the session for assigning spatial coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: an ``AssetSpatialAssignmentSession``
-        :rtype: ``osid.repository.AssetSpatialAssignmentSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_spatial_assignment()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialAssignmentSession
-
-    def get_asset_composition_session(self):
-        """Gets the session for retrieving asset compositions.
-
-
-        :return: an ``AssetCompositionSession``
-        :rtype: ``osid.repository.AssetCompositionSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_composition()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_composition()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetCompositionSession
-
-    asset_composition_session = property(fget=get_asset_composition_session)
-
-    def get_asset_composition_design_session(self):
-        """Gets the session for creating asset compositions.
-
-
-        :return: an ``AssetCompositionDesignSession``
-        :rtype: ``osid.repository.AssetCompositionDesignSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_composition_design()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_composition_design()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetCompositionDesignSession
-
-    asset_composition_design_session = property(fget=get_asset_composition_design_session)
-
-    def get_composition_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the composition lookup service.
-
-
-        :return: the new ``CompositionLookupSession``
-        :rtype: ``osid.repository.CompositionLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionLookupSession
-
-    composition_lookup_session = property(fget=get_composition_lookup_session)
-
-    def get_composition_lookup_session_for_repository(self, repository_id):
-        """Gets the ``OsidSession`` associated with the composition lookup service for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: the new ``CompositionLookupSession``
-        :rtype: ``osid.repository.CompositionLookupSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionLookupSession
-
-    def get_composition_query_session(self):
-        """Gets a composition query session.
-
-
-        :return: a ``CompositionQuerySession``
-        :rtype: ``osid.repository.CompositionQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_query()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionQuerySession
-
-    composition_query_session = property(fget=get_composition_query_session)
-
-    def get_composition_query_session_for_repository(self, repository_id):
-        """Gets a composition query session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: a ``CompositionQuerySession``
-        :rtype: ``osid.repository.CompositionQuerySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionQuerySession
-
-    def get_composition_search_session(self):
-        """Gets a composition search session.
-
-
-        :return: a ``CompositionSearchSession``
-        :rtype: ``osid.repository.CompositionSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_search()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionSearchSession
-
-    composition_search_session = property(fget=get_composition_search_session)
-
-    def get_composition_search_session_for_repository(self, repository_id):
-        """Gets a composition search session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: a ``CompositionSearchSession``
-        :rtype: ``osid.repository.CompositionSearchSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionSearchSession
-
-    def get_composition_admin_session(self):
-        """Gets a composition administration session for creating, updating and deleting compositions.
-
-
-        :return: a ``CompositionAdminSession``
-        :rtype: ``osid.repository.CompositionAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_admin()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionAdminSession
-
-    composition_admin_session = property(fget=get_composition_admin_session)
-
-    def get_composition_admin_session_for_repository(self, repository_id):
-        """Gets a composiiton administrative session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: a ``CompositionAdminSession``
-        :rtype: ``osid.repository.CompositionAdminSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionAdminSession
-
-    def get_composition_notification_session(self, composition_receiver):
-        """Gets the notification session for notifications pertaining to composition changes.
-
-
-        :param composition_receiver: the notification callback
-        :type composition_receiver: ``osid.repository.CompositionReceiver``
-        :return: a ``CompositionNotificationSession``
-        :rtype: ``osid.repository.CompositionNotificationSession``
-        :raise: ``NullArgument`` -- ``composition_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_notification()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionNotificationSession
-
-    def get_composition_notification_session_for_repository(self, composition_receiver, repository_id):
-        """Gets the composition notification session for the given repository.
-
-
-        :param composition_receiver: the notification callback
-        :type composition_receiver: ``osid.repository.CompositionReceiver``
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: a ``CompositionNotificationSession``
-        :rtype: ``osid.repository.CompositionNotificationSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``composition_receiver`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_notfication()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionNotificationSession
-
-    def get_composition_repository_session(self):
-        """Gets the session for retrieving composition to repository mappings.
-
-
-        :return: a ``CompositionRepositorySession``
-        :rtype: ``osid.repository.CompositionRepositorySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_repository()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionRepositorySession
-
-    composition_repository_session = property(fget=get_composition_repository_session)
-
-    def get_composition_repository_assignment_session(self):
-        """Gets the session for assigning composition to repository mappings.
-
-
-        :return: a ``CompositionRepositoryAssignmentSession``
-        :rtype: ``osid.repository.CompositionRepositoryAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_repository_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_repository_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionRepositoryAssignmentSession
-
-    composition_repository_assignment_session = property(fget=get_composition_repository_assignment_session)
-
-    def get_composition_smart_repository_session(self, repository_id):
-        """Gets a composition smart repository session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :return: a ``CompositionSmartRepositorySession``
-        :rtype: ``osid.repository.CompositionSmartRepositorySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_smart_repository()``  ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_smart_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionSmartRepositorySession
-
-    def get_repository_lookup_session(self):
-        """Gets the repository lookup session.
-
-
-        :return: a ``RepositoryLookupSession``
-        :rtype: ``osid.repository.RepositoryLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryLookupSession
-
-    repository_lookup_session = property(fget=get_repository_lookup_session)
-
-    def get_repository_query_session(self):
-        """Gets the repository query session.
-
-
-        :return: a ``RepositoryQuerySession``
-        :rtype: ``osid.repository.RepositoryQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_query()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryQuerySession
-
-    repository_query_session = property(fget=get_repository_query_session)
-
-    def get_repository_search_session(self):
-        """Gets the repository search session.
-
-
-        :return: a ``RepositorySearchSession``
-        :rtype: ``osid.repository.RepositorySearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_search()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositorySearchSession
-
-    repository_search_session = property(fget=get_repository_search_session)
-
-    def get_repository_admin_session(self):
-        """Gets the repository administrative session for creating, updating and deleteing repositories.
-
-
-        :return: a ``RepositoryAdminSession``
-        :rtype: ``osid.repository.RepositoryAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_admin()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryAdminSession
-
-    repository_admin_session = property(fget=get_repository_admin_session)
-
-    def get_repository_notification_session(self, repository_receiver):
-        """Gets the notification session for subscribing to changes to a repository.
-
-
-        :param repository_receiver: the notification callback
-        :type repository_receiver: ``osid.repository.RepositoryReceiver``
-        :return: a ``RepositoryNotificationSession``
-        :rtype: ``osid.repository.RepositoryNotificationSession``
-        :raise: ``NullArgument`` -- ``repository_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_notification()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryNotificationSession
-
-    def get_repository_hierarchy_session(self):
-        """Gets the repository hierarchy traversal session.
-
-
-        :return: ``a RepositoryHierarchySession``
-        :rtype: ``osid.repository.RepositoryHierarchySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_hierarchy()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_hierarchy()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryHierarchySession
-
-    repository_hierarchy_session = property(fget=get_repository_hierarchy_session)
-
-    def get_repository_hierarchy_design_session(self):
-        """Gets the repository hierarchy design session.
-
-
-        :return: a ``RepostoryHierarchyDesignSession``
-        :rtype: ``osid.repository.RepositoryHierarchyDesignSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_hierarchy_design()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_hierarchy_design()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryHierarchyDesignSession
-
-    repository_hierarchy_design_session = property(fget=get_repository_hierarchy_design_session)
-
     def get_repository_batch_manager(self):
         """Gets a ``RepositoryBatchManager``.
 
@@ -3695,637 +1814,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         return # osid.repository.rules.RepositoryRulesManager
 
     repository_rules_manager = property(fget=get_repository_rules_manager)
-##
-# The following methods are from osid.repository.AssetRepositorySession
-
-    def can_lookup_asset_repository_mappings(self):
-        """Tests if this user can perform lookups of asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_repository_view(self):
-        """A complete view of the ``Asset`` and ``Repository`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_asset_ids_by_repository(self, repository_id):
-        """Gets the list of ``Asset``  ``Ids`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related asset ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assets_by_repository(self, repository_id):
-        """Gets the list of ``Assets`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related assets
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.AssetList
-
-    def get_asset_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Asset Ids`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of asset ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assets_by_repositories(self, repository_ids):
-        """Gets the list of ``Assets`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of assets
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.AssetList
-
-    def get_repository_ids_by_asset(self, asset_id):
-        """Gets the list of ``Repository``  ``Ids`` mapped to an ``Asset``.
-
-
-        :param asset_id: ``Id`` of an ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``asset_id`` is not found
-        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_repositories_by_asset(self, asset_id):
-        """Gets the list of ``Repository`` objects mapped to an ``Asset``.
-
-
-        :param asset_id: ``Id`` of an ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of repositories
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``NotFound`` -- ``asset_id`` is not found
-        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.RepositoryList
-
-
-##
-# The following methods are from osid.repository.AssetRepositoryAssignmentSession
-
-    def can_assign_assets(self):
-        """Tests if this user can alter asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assets_to_repository(self, repository_id):
-        """Tests if this user can alter asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
-        """Gets a list of repositories including and under the given repository node in which a specific asset can be
-            assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` or ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_asset_to_repository(self, asset_id, repository_id):
-        """Adds an existing ``Asset`` to a ``Repository``.
-
-
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``asset_id`` already assigned to ``repository_id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_asset_from_repository(self, asset_id, repository_id):
-        """Removes an ``Asset`` from a ``Repository``.
-
-
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
-            ``repository_id``
-        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.repository.CompositionRepositorySession
-
-    def use_comparative_composition_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_composition_repository_view(self):
-        """A complete view of the ``Composition`` and ``Repository`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def can_lookup_composition_repository_mappings(self):
-        """Tests if this user can perform lookups of composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_composition_ids_by_repository(self, repository_id):
-        """Gets the list of ``Composition``  ``Ids`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related composition ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_compositions_by_repository(self, repository_id):
-        """Gets the list of ``Compositions`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related compositions
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.CompositionList
-
-    def get_composition_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of composition ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_compoitions_by_repositories(self, repository_ids):
-        """Gets the list of ``Compositions`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of Compositions
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.CompositionList
-
-    def get_repository_ids_by_composition(self, composition_id):
-        """Gets the ``Repository``  ``Ids`` mapped to a ``Composition``.
-
-
-        :param composition_id: ``Id`` of a ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``composition_id`` is not found
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_repositories_by_composition(self, composition_id):
-        """Gets the ``Repository`` objects mapped to a ``Composition``.
-
-
-        :param composition_id: ``Id`` of a ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of repositories
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``NotFound`` -- ``composition_id`` is not found
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.RepositoryList
-
-
-##
-# The following methods are from osid.repository.CompositionRepositoryAssignmentSession
-
-    def can_assign_compositions(self):
-        """Tests if this user can alter composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_compositions_to_repository(self, repository_id):
-        """Tests if this user can alter composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any composition can be
-            assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
-        """Gets a list of repositories including and under the given repository node in which a specific composition can
-            be assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` or ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_composition_to_repository(self, composition_id, repository_id):
-        """Adds an existing ``Composition`` to a ``Repository``.
-
-
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``composition_id`` already assigned to ``repository_id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_composition_from_repository(self, composition_id, repository_id):
-        """Removes ``Composition`` from a ``Repository``.
-
-
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
-            ``repository_id``
-        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
 ##
 # The following methods are from osid.repository.RepositoryLookupSession
 
@@ -4389,33 +1877,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
         """
         pass
-
-    def get_repository(self, repository_id):
-        """Gets the ``Repository`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Repository`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Repository`` and retained
-        for compatibility.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: the repository
-        :rtype: ``osid.repository.Repository``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
 
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
@@ -5539,941 +3000,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
     """
 
-    def get_asset_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the asset lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetLookupSession``
-        :rtype: ``osid.repository.AssetLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetLookupSession
-
-    def get_asset_lookup_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the asset lookup service for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetLookupSession``
-        :rtype: ``osid.repository.AssetLookupSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetLookupSession
-
-    def get_asset_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the asset query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetQuerySession``
-        :rtype: ``osid.repository.AssetQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_query()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetQuerySession
-
-    def get_asset_query_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the asset query service for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetQuerySession``
-        :rtype: ``osid.repository.AssetQuerySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_query()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.repository.AssetQuerySession
-
-    def get_asset_search_session(self, proxy):
-        """Gets an asset search session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSearchSession``
-        :rtype: ``osid.repository.AssetSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_search()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSearchSession
-
-    def get_asset_search_session_for_repository(self, repository_id, proxy):
-        """Gets an asset search session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSearchSession``
-        :rtype: ``osid.repository.AssetSearchSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetSearchSession
-
-    def get_asset_admin_session(self, proxy):
-        """Gets an asset administration session for creating, updating and deleting assets.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetAdminSession``
-        :rtype: ``osid.repository.AssetAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_admin()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetAdminSession
-
-    def get_asset_admin_session_for_repository(self, repository_id, proxy):
-        """Gets an asset administration session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetAdminSession``
-        :rtype: ``osid.repository.AssetAdminSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_admin()`` and ``supports_visible_federation()``
-        are ``true``.*
-
-
-        """
-        return # osid.repository.AssetAdminSession
-
-    def get_asset_notification_session(self, asset_receiver, proxy):
-        """Gets the notification session for notifications pertaining to asset changes.
-
-
-        :param asset_receiver: the notification callback
-        :type asset_receiver: ``osid.repository.AssetReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetNotificationSession``
-        :rtype: ``osid.repository.AssetNotificationSession``
-        :raise: ``NullArgument`` -- ``asset_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_notification()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetNotificationSession
-
-    def get_asset_notification_session_for_repository(self, asset_receiver, repository_id, proxy):
-        """Gets the asset notification session for the given repository.
-
-
-        :param asset_receiver: the notification callback
-        :type asset_receiver: ``osid.repository.AssetReceiver``
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetNotificationSession``
-        :rtype: ``osid.repository.AssetNotificationSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``asset_receiver, repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_notification()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_notfication()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetNotificationSession
-
-    def get_asset_repository_session(self, proxy):
-        """Gets the session for retrieving asset to repository mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetRepositorySession``
-        :rtype: ``osid.repository.AssetRepositorySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_repository()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetRepositorySession
-
-    def get_asset_repository_assignment_session(self, proxy):
-        """Gets the session for assigning asset to repository mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetRepositoryAsignmentSession``
-        :rtype: ``osid.repository.AssetRepositoryAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_repository_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_repository_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetRepositoryAssignmentSession
-
-    def get_asset_smart_repository_session(self, repository_id, proxy):
-        """Gets an asset smart repository session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSmartRepositorySession``
-        :rtype: ``osid.repository.AssetSmartRepositorySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_asset_smart_repository()``  ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_smart_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSmartRepositorySession
-
-    def get_asset_temporal_session(self, proxy):
-        """Gets the session for retrieving temporal coverage of an asset.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetTemporalSession``
-        :rtype: ``osid.repository.AssetTemporalSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalSession
-
-    def get_asset_temporal_session_for_repository(self, repository_id, proxy):
-        """Gets the session for retrieving temporal coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetTemporalSession``
-        :rtype: ``osid.repository.AssetTemporalSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalSession
-
-    def get_asset_temporal_assignment_session(self, proxy):
-        """Gets the session for assigning temporal coverage to an asset.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetTemporalAssignmentSession``
-        :rtype: ``osid.repository.AssetTemporalAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalAssignmentSession
-
-    def get_asset_temporal_assignment_session_for_repository(self, repository_id, proxy):
-        """Gets the session for assigning temporal coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetTemporalAssignmentSession``
-        :rtype: ``osid.repository.AssetTemporalAssignmentSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_temporal_assignment()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_temporal_assignment()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetTemporalAssignmentSession
-
-    def get_asset_spatial_session(self, proxy):
-        """Gets the session for retrieving spatial coverage of an asset.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSpatialSession``
-        :rtype: ``osid.repository.AssetSpatialSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_spatial_assets()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_spatial_assets()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialSession
-
-    def get_asset_spatial_session_for_repository(self, repository_id, proxy):
-        """Gets the session for retrieving spatial coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSpatialSession``
-        :rtype: ``osid.repository.AssetSpatialSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_spatial()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialSession
-
-    def get_asset_spatial_assignment_session(self, proxy):
-        """Gets the session for assigning spatial coverage to an asset.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSpatialAssignmentSession``
-        :rtype: ``osid.repository.AssetSpatialAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_spatial_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialAssignmentSession
-
-    def get_asset_spatial_assignment_session_for_repository(self, repository_id, proxy):
-        """Gets the session for assigning spatial coverage of an asset for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetSpatialAssignmentSession``
-        :rtype: ``osid.repository.AssetSpatialAssignmentSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_spatial_assignment()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_spatial_assignment()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.AssetSpatialAssignmentSession
-
-    def get_asset_composition_session(self, proxy):
-        """Gets the session for retrieving asset compositions.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetCompositionSession``
-        :rtype: ``osid.repository.AssetCompositionSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_composition()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_composition()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetCompositionSession
-
-    def get_asset_composition_design_session(self, proxy):
-        """Gets the session for creating asset compositions.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: an ``AssetCompositionDesignSession``
-        :rtype: ``osid.repository.AssetCompositionDesignSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_asset_composition_design()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_asset_composition_design()`` is ``true``.*
-
-
-        """
-        return # osid.repository.AssetCompositionDesignSession
-
-    def get_composition_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the composition lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: the new ``CompositionLookupSession``
-        :rtype: ``osid.repository.CompositionLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionLookupSession
-
-    def get_composition_lookup_session_for_repository(self, repository_id, proxy):
-        """Gets the ``OsidSession`` associated with the composition lookup service for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: the new ``CompositionLookupSession``
-        :rtype: ``osid.repository.CompositionLookupSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionLookupSession
-
-    def get_composition_query_session(self, proxy):
-        """Gets a composition query session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionQuerySession``
-        :rtype: ``osid.repository.CompositionSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_query()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionQuerySession
-
-    def get_composition_query_session_for_repository(self, repository_id, proxy):
-        """Gets a composition query session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionQuerySession``
-        :rtype: ``osid.repository.CompositionQuerySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionQuerySession
-
-    def get_composition_search_session(self, proxy):
-        """Gets a composition search session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionSearchSession``
-        :rtype: ``osid.repository.CompositionSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_search()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionSearchSession
-
-    def get_composition_search_session_for_repository(self, repository_id, proxy):
-        """Gets a composition search session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionSearchSession``
-        :rtype: ``osid.repository.CompositionSearchSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionSearchSession
-
-    def get_composition_admin_session(self, proxy):
-        """Gets a composition administration session for creating, updating and deleting compositions.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionAdminSession``
-        :rtype: ``osid.repository.CompositionAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_admin()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionAdminSession
-
-    def get_composition_admin_session_for_repository(self, repository_id, proxy):
-        """Gets a composiiton administrative session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionAdminSession``
-        :rtype: ``osid.repository.CompositionAdminSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionAdminSession
-
-    def get_composition_notification_session(self, composition_receiver, proxy):
-        """Gets the notification session for notifications pertaining to composition changes.
-
-
-        :param composition_receiver: the notification callback
-        :type composition_receiver: ``osid.repository.CompositionReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionNotificationSession``
-        :rtype: ``osid.repository.CompositionNotificationSession``
-        :raise: ``NullArgument`` -- ``composition_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_notification()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionNotificationSession
-
-    def get_composition_notification_session_for_repository(self, composition_receiver, repository_id, proxy):
-        """Gets the composition notification session for the given repository.
-
-
-        :param composition_receiver: the notification callback
-        :type composition_receiver: ``osid.repository.CompositionReceiver``
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionNotificationSession``
-        :rtype: ``osid.repository.CompositionNotificationSession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``composition_receiver, repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_notfication()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.repository.CompositionNotificationSession
-
-    def get_composition_repository_session(self, proxy):
-        """Gets the session for retrieving composition to repository mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionRepositorySession``
-        :rtype: ``osid.repository.CompositionRepositorySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_repository()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionRepositorySession
-
-    def get_composition_repository_assignment_session(self, proxy):
-        """Gets the session for assigning composition to repository mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionRepositoryAssignmentSession``
-        :rtype: ``osid.repository.CompositionRepositoryAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_composition_repository_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_repository_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionRepositoryAssignmentSession
-
-    def get_composition_smart_repository_session(self, repository_id, proxy):
-        """Gets a composition smart repository session for the given repository.
-
-
-        :param repository_id: the ``Id`` of the repository
-        :type repository_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``CompositionSmartRepositorySession``
-        :rtype: ``osid.repository.CompositionSmartRepositorySession``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_composition_smart_repository()``  ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_composition_smart_repository()`` is ``true``.*
-
-
-        """
-        return # osid.repository.CompositionSmartRepositorySession
-
-    def get_repository_lookup_session(self, proxy):
-        """Gets the repository lookup session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RepositoryLookupSession``
-        :rtype: ``osid.repository.RepositoryLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryLookupSession
-
-    def get_repository_query_session(self, proxy):
-        """Gets the repository query session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RepositoryQuerySession``
-        :rtype: ``osid.repository.RepositoryQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_query()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryQuerySession
-
-    def get_repository_search_session(self, proxy):
-        """Gets the repository search session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RepositorySearchSession``
-        :rtype: ``osid.repository.RepositorySearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_search()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositorySearchSession
-
-    def get_repository_admin_session(self, proxy):
-        """Gets the repository administrative session for creating, updating and deleteing repositories.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RepositoryAdminSession``
-        :rtype: ``osid.repository.RepositoryAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_admin()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryAdminSession
-
-    def get_repository_notification_session(self, repository_receiver, proxy):
-        """Gets the notification session for subscribing to changes to a repository.
-
-
-        :param repository_receiver: the notification callback
-        :type repository_receiver: ``osid.repository.RepositoryReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RepositoryNotificationSession``
-        :rtype: ``osid.repository.RepositoryNotificationSession``
-        :raise: ``NullArgument`` -- ``repository_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_notification()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryNotificationSession
-
-    def get_repository_hierarchy_session(self, proxy):
-        """Gets the repository hierarchy traversal session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a RepositoryHierarchySession``
-        :rtype: ``osid.repository.RepositoryHierarchySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_hierarchy()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_hierarchy()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryHierarchySession
-
-    def get_repository_hierarchy_design_session(self, proxy):
-        """Gets the repository hierarchy design session.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``RepostoryHierarchyDesignSession``
-        :rtype: ``osid.repository.RepositoryHierarchyDesignSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_repository_hierarchy_design()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_repository_hierarchy_design()`` is ``true``.*
-
-
-        """
-        return # osid.repository.RepositoryHierarchyDesignSession
-
     def get_repository_batch_proxy_manager(self):
         """Gets a ``RepositoryBatchProxyManager``.
 
@@ -6511,637 +3037,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         return # osid.repository.rules.RepositoryRulesProxyManager
 
     repository_rules_proxy_manager = property(fget=get_repository_rules_proxy_manager)
-##
-# The following methods are from osid.repository.AssetRepositorySession
-
-    def can_lookup_asset_repository_mappings(self):
-        """Tests if this user can perform lookups of asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_repository_view(self):
-        """A complete view of the ``Asset`` and ``Repository`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_asset_ids_by_repository(self, repository_id):
-        """Gets the list of ``Asset``  ``Ids`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related asset ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assets_by_repository(self, repository_id):
-        """Gets the list of ``Assets`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related assets
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.AssetList
-
-    def get_asset_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Asset Ids`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of asset ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assets_by_repositories(self, repository_ids):
-        """Gets the list of ``Assets`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of assets
-        :rtype: ``osid.repository.AssetList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.AssetList
-
-    def get_repository_ids_by_asset(self, asset_id):
-        """Gets the list of ``Repository``  ``Ids`` mapped to an ``Asset``.
-
-
-        :param asset_id: ``Id`` of an ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``asset_id`` is not found
-        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_repositories_by_asset(self, asset_id):
-        """Gets the list of ``Repository`` objects mapped to an ``Asset``.
-
-
-        :param asset_id: ``Id`` of an ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of repositories
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``NotFound`` -- ``asset_id`` is not found
-        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.RepositoryList
-
-
-##
-# The following methods are from osid.repository.AssetRepositoryAssignmentSession
-
-    def can_assign_assets(self):
-        """Tests if this user can alter asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_assets_to_repository(self, repository_id):
-        """Tests if this user can alter asset/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
-        """Gets a list of repositories including and under the given repository node in which a specific asset can be
-            assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` or ``asset_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_asset_to_repository(self, asset_id, repository_id):
-        """Adds an existing ``Asset`` to a ``Repository``.
-
-
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``asset_id`` already assigned to ``repository_id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_asset_from_repository(self, asset_id, repository_id):
-        """Removes an ``Asset`` from a ``Repository``.
-
-
-        :param asset_id: the ``Id`` of the ``Asset``
-        :type asset_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
-            ``repository_id``
-        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.repository.CompositionRepositorySession
-
-    def use_comparative_composition_repository_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_composition_repository_view(self):
-        """A complete view of the ``Composition`` and ``Repository`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def can_lookup_composition_repository_mappings(self):
-        """Tests if this user can perform lookups of composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known lookup methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        lookup operations to unauthorized users.
-
-
-        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_composition_ids_by_repository(self, repository_id):
-        """Gets the list of ``Composition``  ``Ids`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related composition ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_compositions_by_repository(self, repository_id):
-        """Gets the list of ``Compositions`` associated with a ``Repository``.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of related compositions
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``NotFound`` -- ``repository_id`` is not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.CompositionList
-
-    def get_composition_ids_by_repositories(self, repository_ids):
-        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of composition ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_compoitions_by_repositories(self, repository_ids):
-        """Gets the list of ``Compositions`` corresponding to a list of ``Repository`` objects.
-
-
-        :param repository_ids: list of repository ``Ids``
-        :type repository_ids: ``osid.id.IdList``
-        :return: list of Compositions
-        :rtype: ``osid.repository.CompositionList``
-        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.CompositionList
-
-    def get_repository_ids_by_composition(self, composition_id):
-        """Gets the ``Repository``  ``Ids`` mapped to a ``Composition``.
-
-
-        :param composition_id: ``Id`` of a ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NotFound`` -- ``composition_id`` is not found
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_repositories_by_composition(self, composition_id):
-        """Gets the ``Repository`` objects mapped to a ``Composition``.
-
-
-        :param composition_id: ``Id`` of a ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of repositories
-        :rtype: ``osid.repository.RepositoryList``
-        :raise: ``NotFound`` -- ``composition_id`` is not found
-        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.RepositoryList
-
-
-##
-# The following methods are from osid.repository.CompositionRepositoryAssignmentSession
-
-    def can_assign_compositions(self):
-        """Tests if this user can alter composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_assign_compositions_to_repository(self, repository_id):
-        """Tests if this user can alter composition/repository mappings.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known mapping methods in
-        this session will result in a ``PermissionDenied``. This is
-        intended as a hint to an application that may opt not to offer
-        assignment operations to unauthorized users.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: ``false`` if mapping is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_assignable_repository_ids(self, repository_id):
-        """Gets a list of repositories including and under the given repository node in which any composition can be
-            assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
-        """Gets a list of repositories including and under the given repository node in which a specific composition can
-            be assigned.
-
-
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :return: list of assignable repository ``Ids``
-        :rtype: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``repository_id`` or ``composition_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.IdList
-
-    def assign_composition_to_repository(self, composition_id, repository_id):
-        """Adds an existing ``Composition`` to a ``Repository``.
-
-
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``composition_id`` already assigned to ``repository_id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def unassign_composition_from_repository(self, composition_id, repository_id):
-        """Removes ``Composition`` from a ``Repository``.
-
-
-        :param composition_id: the ``Id`` of the ``Composition``
-        :type composition_id: ``osid.id.Id``
-        :param repository_id: the ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
-            ``repository_id``
-        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
 ##
 # The following methods are from osid.repository.RepositoryLookupSession
 
@@ -7205,33 +3100,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
         """
         pass
-
-    def get_repository(self, repository_id):
-        """Gets the ``Repository`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Repository`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Repository`` and retained
-        for compatibility.
-
-
-        :param repository_id: ``Id`` of the ``Repository``
-        :type repository_id: ``osid.id.Id``
-        :return: the repository
-        :rtype: ``osid.repository.Repository``
-        :raise: ``NotFound`` -- ``repository_id`` not found
-        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
 
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
@@ -8422,42 +4290,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetLookupSession
 
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
-
     def can_lookup_assets(self):
         """Tests if this user can perform ``Asset`` lookups.
 
@@ -8734,42 +4566,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetQuerySession
 
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
-
     def can_search_assets(self):
         """Tests if this user can perform ``Asset`` searches.
 
@@ -8956,42 +4752,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.AssetAdminSession
-
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
 
     def can_create_assets(self):
         """Tests if this user can create ``Assets``.
@@ -9446,42 +5206,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetNotificationSession
 
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
-
     def can_register_for_asset_notifications(self):
         """Tests if this user can register for ``Asset`` notifications.
 
@@ -9754,14 +5478,21 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 ##
-# The following methods are from osid.repository.AssetCompositionSession
+# The following methods are from osid.repository.AssetRepositorySession
 
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
+    def can_lookup_asset_repository_mappings(self):
+        """Tests if this user can perform lookups of asset/repository mappings.
 
 
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
 
 
 
@@ -9770,16 +5501,56 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.id.Id
+        return # boolean
 
-    repository_id = property(fget=get_repository_id)
+    def use_comparative_repository_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
 
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
 
 
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_repository_view(self):
+        """A complete view of the ``Asset`` and ``Repository`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_asset_ids_by_repository(self, repository_id):
+        """Gets the list of ``Asset``  ``Ids`` associated with a ``Repository``.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: list of related asset ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``repository_id`` is not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
@@ -9788,9 +5559,241 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
         """
-        return # osid.repository.Repository
+        return # osid.id.IdList
 
-    repository = property(fget=get_repository)
+    def get_assets_by_repository(self, repository_id):
+        """Gets the list of ``Assets`` associated with a ``Repository``.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: list of related assets
+        :rtype: ``osid.repository.AssetList``
+        :raise: ``NotFound`` -- ``repository_id`` is not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.AssetList
+
+    def get_asset_ids_by_repositories(self, repository_ids):
+        """Gets the list of ``Asset Ids`` corresponding to a list of ``Repository`` objects.
+
+
+        :param repository_ids: list of repository ``Ids``
+        :type repository_ids: ``osid.id.IdList``
+        :return: list of asset ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assets_by_repositories(self, repository_ids):
+        """Gets the list of ``Assets`` corresponding to a list of ``Repository`` objects.
+
+
+        :param repository_ids: list of repository ``Ids``
+        :type repository_ids: ``osid.id.IdList``
+        :return: list of assets
+        :rtype: ``osid.repository.AssetList``
+        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.AssetList
+
+    def get_repository_ids_by_asset(self, asset_id):
+        """Gets the list of ``Repository``  ``Ids`` mapped to an ``Asset``.
+
+
+        :param asset_id: ``Id`` of an ``Asset``
+        :type asset_id: ``osid.id.Id``
+        :return: list of repository ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``asset_id`` is not found
+        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_repositories_by_asset(self, asset_id):
+        """Gets the list of ``Repository`` objects mapped to an ``Asset``.
+
+
+        :param asset_id: ``Id`` of an ``Asset``
+        :type asset_id: ``osid.id.Id``
+        :return: list of repositories
+        :rtype: ``osid.repository.RepositoryList``
+        :raise: ``NotFound`` -- ``asset_id`` is not found
+        :raise: ``NullArgument`` -- ``asset_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.RepositoryList
+
+
+##
+# The following methods are from osid.repository.AssetRepositoryAssignmentSession
+
+    def can_assign_assets(self):
+        """Tests if this user can alter asset/repository mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        assignment operations to unauthorized users.
+
+
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_assign_assets_to_repository(self, repository_id):
+        """Tests if this user can alter asset/repository mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        assignment operations to unauthorized users.
+
+
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_assignable_repository_ids(self, repository_id):
+        """Gets a list of repositories including and under the given repository node in which any asset can be assigned.
+
+
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: list of assignable repository ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assignable_repository_ids_for_asset(self, repository_id, asset_id):
+        """Gets a list of repositories including and under the given repository node in which a specific asset can be
+            assigned.
+
+
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :param asset_id: the ``Id`` of the ``Asset``
+        :type asset_id: ``osid.id.Id``
+        :return: list of assignable repository ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``repository_id`` or ``asset_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def assign_asset_to_repository(self, asset_id, repository_id):
+        """Adds an existing ``Asset`` to a ``Repository``.
+
+
+        :param asset_id: the ``Id`` of the ``Asset``
+        :type asset_id: ``osid.id.Id``
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``asset_id`` already assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found
+        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def unassign_asset_from_repository(self, asset_id, repository_id):
+        """Removes an ``Asset`` from a ``Repository``.
+
+
+        :param asset_id: the ``Id`` of the ``Asset``
+        :type asset_id: ``osid.id.Id``
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``asset_id`` or ``repository_id`` not found or ``asset_id`` not assigned to
+            ``repository_id``
+        :raise: ``NullArgument`` -- ``asset_id`` or ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+##
+# The following methods are from osid.repository.AssetCompositionSession
 
     def can_access_asset_compositions(self):
         """Tests if this user can perform composition lookups.
@@ -9932,42 +5935,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetCompositionDesignSession
 
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
-
     def can_compose_assets(self):
         """Tests if this user can manage mapping of ``Assets`` to ``Compositions``.
 
@@ -10099,42 +6066,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.CompositionLookupSession
-
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
 
     def can_lookup_compositions(self):
         """Tests if this user can perform ``Composition`` lookups.
@@ -10438,42 +6369,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.CompositionQuerySession
 
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
-
     def can_search_compositions(self):
         """Tests if this user can perform ``Composition`` searches.
 
@@ -10688,42 +6583,6 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.CompositionAdminSession
-
-    def get_repository_id(self):
-        """Gets the ``Repository``  ``Id`` associated with this session.
-
-
-        :return: the ``Repository Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    repository_id = property(fget=get_repository_id)
-
-    def get_repository(self):
-        """Gets the ``Repository`` associated with this session.
-
-
-        :return: the ``Repository`` associated with this session
-        :rtype: ``osid.repository.Repository``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.repository.Repository
-
-    repository = property(fget=get_repository)
 
     def can_create_compositions(self):
         """Tests if this user can create ``Compositions``.
@@ -11024,6 +6883,322 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``AlreadyExists`` -- ``alias_id`` is in use as a primary ``Id``
         :raise: ``NotFound`` -- ``composition_id`` not found
         :raise: ``NullArgument`` -- ``composition_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
+##
+# The following methods are from osid.repository.CompositionRepositorySession
+
+    def use_comparative_composition_repository_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_composition_repository_view(self):
+        """A complete view of the ``Composition`` and ``Repository`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def can_lookup_composition_repository_mappings(self):
+        """Tests if this user can perform lookups of composition/repository mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known lookup methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        lookup operations to unauthorized users.
+
+
+        :return: ``false`` if looking up mappings is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_composition_ids_by_repository(self, repository_id):
+        """Gets the list of ``Composition``  ``Ids`` associated with a ``Repository``.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: list of related composition ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``repository_id`` is not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_compositions_by_repository(self, repository_id):
+        """Gets the list of ``Compositions`` associated with a ``Repository``.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: list of related compositions
+        :rtype: ``osid.repository.CompositionList``
+        :raise: ``NotFound`` -- ``repository_id`` is not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.CompositionList
+
+    def get_composition_ids_by_repositories(self, repository_ids):
+        """Gets the list of ``Composition``  ``Ids`` corresponding to a list of ``Repository`` objects.
+
+
+        :param repository_ids: list of repository ``Ids``
+        :type repository_ids: ``osid.id.IdList``
+        :return: list of composition ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_compoitions_by_repositories(self, repository_ids):
+        """Gets the list of ``Compositions`` corresponding to a list of ``Repository`` objects.
+
+
+        :param repository_ids: list of repository ``Ids``
+        :type repository_ids: ``osid.id.IdList``
+        :return: list of Compositions
+        :rtype: ``osid.repository.CompositionList``
+        :raise: ``NullArgument`` -- ``repository_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.CompositionList
+
+    def get_repository_ids_by_composition(self, composition_id):
+        """Gets the ``Repository``  ``Ids`` mapped to a ``Composition``.
+
+
+        :param composition_id: ``Id`` of a ``Composition``
+        :type composition_id: ``osid.id.Id``
+        :return: list of repository ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NotFound`` -- ``composition_id`` is not found
+        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_repositories_by_composition(self, composition_id):
+        """Gets the ``Repository`` objects mapped to a ``Composition``.
+
+
+        :param composition_id: ``Id`` of a ``Composition``
+        :type composition_id: ``osid.id.Id``
+        :return: list of repositories
+        :rtype: ``osid.repository.RepositoryList``
+        :raise: ``NotFound`` -- ``composition_id`` is not found
+        :raise: ``NullArgument`` -- ``composition_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.RepositoryList
+
+
+##
+# The following methods are from osid.repository.CompositionRepositoryAssignmentSession
+
+    def can_assign_compositions(self):
+        """Tests if this user can alter composition/repository mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        assignment operations to unauthorized users.
+
+
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_assign_compositions_to_repository(self, repository_id):
+        """Tests if this user can alter composition/repository mappings.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known mapping methods in
+        this session will result in a ``PermissionDenied``. This is
+        intended as a hint to an application that may opt not to offer
+        assignment operations to unauthorized users.
+
+
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: ``false`` if mapping is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_assignable_repository_ids(self, repository_id):
+        """Gets a list of repositories including and under the given repository node in which any composition can be
+            assigned.
+
+
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: list of assignable repository ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def get_assignable_repository_ids_for_composition(self, repository_id, composition_id):
+        """Gets a list of repositories including and under the given repository node in which a specific composition can
+            be assigned.
+
+
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :param composition_id: the ``Id`` of the ``Composition``
+        :type composition_id: ``osid.id.Id``
+        :return: list of assignable repository ``Ids``
+        :rtype: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``repository_id`` or ``composition_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.IdList
+
+    def assign_composition_to_repository(self, composition_id, repository_id):
+        """Adds an existing ``Composition`` to a ``Repository``.
+
+
+        :param composition_id: the ``Id`` of the ``Composition``
+        :type composition_id: ``osid.id.Id``
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``composition_id`` already assigned to ``repository_id``
+        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found
+        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def unassign_composition_from_repository(self, composition_id, repository_id):
+        """Removes ``Composition`` from a ``Repository``.
+
+
+        :param composition_id: the ``Id`` of the ``Composition``
+        :type composition_id: ``osid.id.Id``
+        :param repository_id: the ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``composition_id`` or ``repository_id`` not found or ``composition_id`` not assigned to
+            ``repository_id``
+        :raise: ``NullArgument`` -- ``composition_id`` or ``repository_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 

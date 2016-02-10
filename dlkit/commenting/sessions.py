@@ -5,42 +5,6 @@ from ..osid import sessions as osid_sessions
 class CommentLookupSession(osid_sessions.OsidSession):
     """This session defines methods for retrieving comments."""
 
-    def get_book_id(self):
-        """Gets the ``Book``  ``Id`` associated with this session.
-
-
-        :return: the ``Book Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    book_id = property(fget=get_book_id)
-
-    def get_book(self):
-        """Gets the ``Book`` associated with this session.
-
-
-        :return: the book
-        :rtype: ``osid.commenting.Book``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.commenting.Book
-
-    book = property(fget=get_book)
-
     def can_lookup_comments(self):
         """Tests if this user can examine this book.
 
@@ -634,42 +598,6 @@ class CommentQuerySession(osid_sessions.OsidSession):
 
     """
 
-    def get_book_id(self):
-        """Gets the ``Book``  ``Id`` associated with this session.
-
-
-        :return: the ``Book Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    book_id = property(fget=get_book_id)
-
-    def get_book(self):
-        """Gets the ``Book`` associated with this session.
-
-
-        :return: the book
-        :rtype: ``osid.commenting.Book``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.commenting.Book
-
-    book = property(fget=get_book)
-
     def can_search_comments(self):
         """Tests if this user can perform comment searches.
 
@@ -817,42 +745,6 @@ class CommentAdminSession(osid_sessions.OsidSession):
 
 
     """
-
-    def get_book_id(self):
-        """Gets the ``Book``  ``Id`` associated with this session.
-
-
-        :return: the ``Book Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    book_id = property(fget=get_book_id)
-
-    def get_book(self):
-        """Gets the ``Book`` associated with this session.
-
-
-        :return: the book
-        :rtype: ``osid.commenting.Book``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.commenting.Book
-
-    book = property(fget=get_book)
 
     def can_create_comments(self):
         """Tests if this user can create comments.
@@ -1188,32 +1080,6 @@ class BookLookupSession(osid_sessions.OsidSession):
 
         """
         pass
-
-    def get_book(self, book_id):
-        """Gets the ``Book`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Book`` may have a different
-        ``Id`` than requested, such as the case where a duplicate ``Id``
-        was assigned to a ``Book`` and retained for compatibility.
-
-
-        :param book_id: ``Id`` of the ``Book``
-        :type book_id: ``osid.id.Id``
-        :return: the book
-        :rtype: ``osid.commenting.Book``
-        :raise: ``NotFound`` -- ``book_id`` not found
-        :raise: ``NullArgument`` -- ``book_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.commenting.Book
 
     def get_books_by_ids(self, book_ids):
         """Gets a ``BookList`` corresponding to the given ``IdList``.

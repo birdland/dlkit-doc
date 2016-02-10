@@ -14,22 +14,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
     def __init__(self):
         self._provider_manager = None
-    def supports_visible_federation(self):
-        """Tests if federation is visible.
-
-
-        :return: ``true`` if visible federation is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_grade_system_lookup(self):
         """Tests if a grade system lookup service is supported.
 
@@ -62,95 +46,11 @@ class GradingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_grade_system_search(self):
-        """Tests if a grade system search service is supported.
-
-
-        :return: ``true`` if grade system search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_grade_system_admin(self):
         """Tests if a grade system administrative service is supported.
 
 
         :return: ``true`` if grade system admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grade_system_notification(self):
-        """Tests if grade system notification is supported.
-
-
-        Messages may be sent when grade entries are created, modified,
-        or deleted.
-
-
-        :return: ``true`` if grade system notification is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grade_system_gradebook(self):
-        """Tests if a grade system to gradebook lookup session is available.
-
-
-        :return: ``true`` if grade system gradebook lookup session is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grade_system_gradebook_assignment(self):
-        """Tests if a grade system to gradebook assignment session is available.
-
-
-        :return: ``true`` if grade system gradebook assignment is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grade_system_smart_gradebook(self):
-        """Tests if a grade system smart gradebook session is available.
-
-
-        :return: ``true`` if grade system smart gradebook is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -194,43 +94,11 @@ class GradingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_grade_entry_search(self):
-        """Tests if a grade entry search service is supported.
-
-
-        :return: ``true`` if grade entry search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_grade_entry_admin(self):
         """Tests if a grade entry administrative service is supported.
 
 
         :return: ``true`` if grade entry admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grade_entry_notification(self):
-        """Tests if grade entry notification is supported.
-
-
-        :return: ``true`` if grade entry notification is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -274,95 +142,11 @@ class GradingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_gradebook_column_search(self):
-        """Tests if a gradebook column search service is supported.
-
-
-        :return: ``true`` if grade system search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_gradebook_column_admin(self):
         """Tests if a gradebook column administrative service is supported.
 
 
         :return: ``true`` if gradebook column admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_column_notification(self):
-        """Tests if gradebook column notification is supported.
-
-
-        Messages may be sent when grade entries are created, modified,
-        or deleted.
-
-
-        :return: ``true`` if gradebook column notification is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_column_gradebook(self):
-        """Tests if a gradebook column to gradebook lookup session is available.
-
-
-        :return: ``true`` if gradebook column gradebook lookup session is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_column_gradebook_assignment(self):
-        """Tests if a gradebook column to gradebook assignment session is available.
-
-
-        :return: ``true`` if gradebook column gradebook assignment is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_column_smart_gradebook(self):
-        """Tests if a gradebook column smart gradebookt session is available.
-
-
-        :return: ``true`` if gradebook column amsrt gradebook is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -390,143 +174,11 @@ class GradingProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
-    def supports_gradebook_query(self):
-        """Tests if a gradebook query service is supported.
-
-
-        :return: ``true`` if gradebook query is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_search(self):
-        """Tests if a gradebook search service is supported.
-
-
-        :return: ``true`` if gradebook search is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def supports_gradebook_admin(self):
         """Tests if a gradebook administrative service is supported.
 
 
         :return: ``true`` if gradebook admin is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_notification(self):
-        """Tests if gradebook notification is supported.
-
-
-        Messages may be sent when gradebooks are created, modified, or
-        deleted.
-
-
-        :return: ``true`` if gradebook notification is supported ``,``  ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_hierarchy(self):
-        """Tests if a gradebook hierarchy traversal is supported.
-
-
-        :return: ``true`` if a gradebook hierarchy traversal is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_gradebook_hierarchy_design(self):
-        """Tests if gradebook hierarchy design is supported.
-
-
-        :return: ``true`` if a gradebook hierarchy design is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grading_batch(self):
-        """Tests if a grading batch service is supported.
-
-
-        :return: ``true`` if a grading batch service is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grading_calculation(self):
-        """Tests if a grading calculation service is supported.
-
-
-        :return: ``true`` if a grading calculation service is supported, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def supports_grading_transform(self):
-        """Tests if a grade system transform service is supported.
-
-
-        :return: ``true`` if a grading transform service is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -556,23 +208,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
     grade_record_types = property(fget=get_grade_record_types)
 
-    def supports_grade_record_type(self, grade_record_type):
-        """Tests if the given ``Grade`` record type is supported.
-
-
-        :param grade_record_type: a ``Type`` indicating a ``Grade`` record type
-        :type grade_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``grade_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_grade_system_record_types(self):
         """Gets the supported ``GradeSystem`` record types.
 
@@ -590,23 +225,6 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     grade_system_record_types = property(fget=get_grade_system_record_types)
-
-    def supports_grade_system_record_type(self, grade_system_record_type):
-        """Tests if the given ``GradeSystem`` record type is supported.
-
-
-        :param grade_system_record_type: a ``Type`` indicating a ``GradeSystem`` record type
-        :type grade_system_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``grade_system_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_grade_system_search_record_types(self):
         """Gets the supported ``GradeSystem`` search record types.
@@ -626,23 +244,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
     grade_system_search_record_types = property(fget=get_grade_system_search_record_types)
 
-    def supports_grade_system_search_record_type(self, grade_system_search_record_type):
-        """Tests if the given ``GradeSystem`` search record type is supported.
-
-
-        :param grade_system_search_record_type: a ``Type`` indicating a ``GradeSystem`` search record type
-        :type grade_system_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``grade_system_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_grade_entry_record_types(self):
         """Gets the supported ``GradeEntry`` record types.
 
@@ -660,23 +261,6 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     grade_entry_record_types = property(fget=get_grade_entry_record_types)
-
-    def supports_grade_entry_record_type(self, grade_entry_record_type):
-        """Tests if the given ``GradeEntry`` record type is supported.
-
-
-        :param grade_entry_record_type: a ``Type`` indicating a ``GradeEntry`` record type
-        :type grade_entry_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``grade_entry_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_grade_entry_search_record_types(self):
         """Gets the supported ``GradeEntry`` search record types.
@@ -696,23 +280,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
     grade_entry_search_record_types = property(fget=get_grade_entry_search_record_types)
 
-    def supports_grade_entry_search_record_type(self, grade_entry_search_record_type):
-        """Tests if the given ``GradeEntry`` search record type is supported.
-
-
-        :param grade_entry_search_record_type: a ``Type`` indicating a ``GradeEntry`` search record type
-        :type grade_entry_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given Type is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``grade_entry_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_gradebook_column_record_types(self):
         """Gets the supported ``GradebookColumn`` record types.
 
@@ -730,23 +297,6 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     gradebook_column_record_types = property(fget=get_gradebook_column_record_types)
-
-    def supports_gradebook_column_record_type(self, gradebook_column_record_type):
-        """Tests if the given ``GradebookColumn`` record type is supported.
-
-
-        :param gradebook_column_record_type: a ``Type`` indicating a ``GradebookColumn`` type
-        :type gradebook_column_record_type: ``osid.type.Type``
-        :return: ``true`` if the given gradebook column record ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_gradebook_column_search_record_types(self):
         """Gets the supported gradebook column search record types.
@@ -766,23 +316,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
     gradebook_column_search_record_types = property(fget=get_gradebook_column_search_record_types)
 
-    def supports_gradebook_column_search_record_type(self, gradebook_column_search_record_type):
-        """Tests if the given gradebook column search record type is supported.
-
-
-        :param gradebook_column_search_record_type: a ``Type`` indicating a ``GradebookColumn`` search record type
-        :type gradebook_column_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``gradebook_column_search_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_gradebook_column_summary_record_types(self):
         """Gets the supported ``GradebookColumnSummary`` record types.
 
@@ -800,23 +333,6 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     gradebook_column_summary_record_types = property(fget=get_gradebook_column_summary_record_types)
-
-    def supports_gradebook_column_summary_record_type(self, gradebook_column_summary_record_type):
-        """Tests if the given ``GradebookColumnSummary`` record type is supported.
-
-
-        :param gradebook_column_summary_record_type: a ``Type`` indicating a ``GradebookColumnSummary`` type
-        :type gradebook_column_summary_record_type: ``osid.type.Type``
-        :return: ``true`` if the given gradebook column summary record ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
 
     def get_gradebook_record_types(self):
         """Gets the supported ``Gradebook`` record types.
@@ -836,23 +352,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
     gradebook_record_types = property(fget=get_gradebook_record_types)
 
-    def supports_gradebook_record_type(self, gradebook_record_type):
-        """Tests if the given ``Gradebook`` record type is supported.
-
-
-        :param gradebook_record_type: a ``Type`` indicating a ``Gradebook`` type
-        :type gradebook_record_type: ``osid.type.Type``
-        :return: ``true`` if the given gradebook record ``Type`` is supported, ``false`` otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``gradebook_record_type`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
     def get_gradebook_search_record_types(self):
         """Gets the supported gradebook search record types.
 
@@ -870,16 +369,24 @@ class GradingProfile(osid_managers.OsidProfile):
         return # osid.type.TypeList
 
     gradebook_search_record_types = property(fget=get_gradebook_search_record_types)
+##
+# The following methods are from osid.grading.GradebookColumnLookupSession
 
-    def supports_gradebook_search_record_type(self, gradebook_search_record_type):
-        """Tests if the given gradebook search record type is supported.
+    def can_lookup_gradebook_columns(self):
+        """Tests if this user can perform ``GradebookColumn`` lookups.
 
 
-        :param gradebook_search_record_type: a ``Type`` indicating a ``Gradebook`` search record type
-        :type gradebook_search_record_type: ``osid.type.Type``
-        :return: ``true`` if the given search record ``Type`` is supported, ``false`` otherwise
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
         :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``gradebook_search_record_type`` is ``null``
+
+
 
 
         *compliance: mandatory -- This method must be implemented.*
@@ -887,6 +394,692 @@ class GradingProfile(osid_managers.OsidProfile):
 
         """
         return # boolean
+
+    def use_comparative_gradebook_column_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_gradebook_column_view(self):
+        """A complete view of the ``GradebookColumn`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_federated_gradebook_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include gradebook columns in gradebooks
+        which are children of this gradebook in the gradebook hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_gradebook_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts lookups to this gradebook only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_gradebook_column(self, gradebook_column_id):
+        """Gets the ``GradebookColumn`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``GradebookColumn`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``GradebookColumn`` and
+        retained for compatibility.
+
+
+        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column
+        :rtype: ``osid.grading.GradebookColumn``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumn
+
+    def get_gradebook_columns_by_ids(self, gradebook_column_ids):
+        """Gets a ``GradebookColumnList`` corresponding to the given ``IdList``.
+
+
+        In plenary mode, the returned list contains all of the gradebook
+        columns specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if a ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible gradeboook columns may be omitted from the list.
+
+
+        :param gradebook_column_ids: the list of ``Ids`` to retrieve
+        :type gradebook_column_ids: ``osid.id.IdList``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``grade_book_column_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_genus_type(self, gradebook_column_genus_type):
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` which does not
+            include gradebook columns of genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_genus_type: a gradebook column genus type
+        :type gradebook_column_genus_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_parent_genus_type(self, gradebook_column_genus_type):
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` and include any
+            additional columns with genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_genus_type: a gradebook column genus type
+        :type gradebook_column_genus_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_record_type(self, gradebook_column_record_type):
+        """Gets a ``GradebookColumnList`` containing the given gradebook column record ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_record_type: a gradebook column record type
+        :type gradebook_column_record_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns(self):
+        """Gets all gradebook columns.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :return: a ``GradebookColumn``
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    gradebook_columns = property(fget=get_gradebook_columns)
+
+    def supports_summary(self):
+        """Tests if a summary entry is available.
+
+
+        :return: ``true`` if a summary entry is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_summary(self, gradebook_column_id):
+        """Gets the ``GradebookColumnSummary`` for summary results.
+
+
+        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column summary
+        :rtype: ``osid.grading.GradebookColumnSummary``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unimplemented`` -- ``has_summary()`` is ``false``
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnSummary
+
+
+##
+# The following methods are from osid.grading.GradebookColumnQuerySession
+
+    def can_search_gradebook_columns(self):
+        """Tests if this user can perform ``GradebookColumn`` searches.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_federated_gradebook_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include gradebook columns in gradebooks
+        which are children of this gradebook in the gradebook hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_gradebook_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts searches to this gradebook only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_gradebook_column_query(self):
+        """Gets a gradebook column query.
+
+
+        :return: the gradebook column
+        :rtype: ``osid.grading.GradebookColumnQuery``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnQuery
+
+    gradebook_column_query = property(fget=get_gradebook_column_query)
+
+    def get_gradebook_columns_by_query(self, gradebook_column_query):
+        """Gets a list of gradebook columns matching the given query.
+
+
+        :param gradebook_column_query: the gradebook column query
+        :type gradebook_column_query: ``osid.grading.GradebookColumnQuery``
+        :return: the returned ``GradebookColumnList``
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_query`` is not of this service
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+
+##
+# The following methods are from osid.grading.GradebookColumnAdminSession
+
+    def can_create_gradebook_columns(self):
+        """Tests if this user can create gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a gradebook
+        column will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer create
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_gradebook_column_with_record_types(self, gradebook_column_record_types):
+        """Tests if this user can create a single ``GradebookColumn`` using the desired record types.
+
+
+        While ``GradingManager.getGradebookColumnRecordTypes()`` can be
+        used to examine which records are supported, this method tests
+        which record(s) are required for creating a specific
+        ``GradebookColumn``. Providing an empty array tests if a
+        ``GradebookColumn`` can be created with no records.
+
+
+        :param gradebook_column_record_types: array of gradebook column record types
+        :type gradebook_column_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_form_for_create(self, gradebook_column_record_types):
+        """Gets the gradebook column form for creating new gradebook columns.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param gradebook_column_record_types: array of gradebook column record types
+        :type gradebook_column_record_types: ``osid.type.Type[]``
+        :return: the gradebook column form
+        :rtype: ``osid.grading.GradebookColumnForm``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnForm
+
+    def create_gradebook_column(self, gradebook_column_form):
+        """Creates a new ``GradebookColumn``.
+
+
+        :param gradebook_column_form: the form for this ``GradebookColumn``
+        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
+        :return: the new ``GradebookColumn``
+        :rtype: ``osid.grading.GradebookColumn``
+        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
+            ``get_gradebook_column_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumn
+
+    def can_update_gradebook_columns(self):
+        """Tests if this user can update gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a
+        ``GradebookColumn`` will result in a ``PermissionDenied``. This
+        is intended as a hint to an application that may opt not to
+        offer update operations to an unauthorized user.
+
+
+        :return: ``false`` if gradebook column modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_form_for_update(self, gradebook_column_id):
+        """Gets the gradebook column form for updating an existing gradebook column.
+
+
+        A new gradebook column form should be requested for each update
+        transaction.
+
+
+        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column form
+        :rtype: ``osid.grading.GradebookColumnForm``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnForm
+
+    def update_gradebook_column(self, gradebook_column_form):
+        """Updates an existing gradebook column.
+
+
+        :param gradebook_column_form: the form containing the elements to be updated
+        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
+        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
+            ``get_gradebook_column_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def sequence_gradebook_columns(self, gradebook_column_ids):
+        """Resequences the gradebook columns.
+
+
+        :param gradebook_column_ids: the ``Ids`` of the ``GradebookColumns``
+        :type gradebook_column_ids: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``gradebook_column_id_list`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def move_gradebook_column(self, front_gradebook_column_id, back_gradebook_column_id):
+        """Moves a gradebook column in front of another.
+
+
+        :param front_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type front_gradebook_column_id: ``osid.id.Id``
+        :param back_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type back_gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def copy_gradebook_column_entries(self, source_gradebook_column_id, target_gradebook_column_id):
+        """Copies gradebook column entries from one column to another.
+
+
+        If the target grade column grade system differs from the source,
+        the grades in the entries are transformed to the new grade
+        system.
+
+
+        :param source_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type source_gradebook_column_id: ``osid.id.Id``
+        :param target_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type target_gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_delete_gradebook_columns(self):
+        """Tests if this user can delete gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a
+        ``GradebookColumn`` will result in a ``PermissionDenied``. This
+        is intended as a hint to an application that may opt not to
+        offer delete operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_gradebook_column(self, gradebook_column_id):
+        """Deletes the ``GradebookColumn`` identified by the given ``Id``.
+
+
+        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to delete
+        :type gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- a ``GradebookColumn`` was not found identified by the given ``Id``
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_manage_gradebook_column_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``GradebookColumns``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_gradebook_column(self, gradebook_column_id, alias_id):
+        """Adds an ``Id`` to a ``GradebookColumn`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``GradebookColumn`` is determined by
+        the provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another gradebook column,
+        it is reassigned to the given gradebook column ``Id``.
+
+
+        :param gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
 ##
 # The following methods are from osid.grading.GradebookLookupSession
 
@@ -950,33 +1143,6 @@ class GradingProfile(osid_managers.OsidProfile):
 
         """
         pass
-
-    def get_gradebook(self, gradebook_id):
-        """Gets the ``Gradebook`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Gradebook`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Gradebook`` and retained
-        for compatility.
-
-
-        :param gradebook_id: ``Id`` of the ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
-        :return: the gradebook
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
 
     def get_gradebooks_by_ids(self, gradebook_ids):
         """Gets a ``GradebookList`` corresponding to the given ``IdList``.
@@ -1555,892 +1721,6 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         """Session state will never be saved"""
         self._session_management = DISABLED
         self.close_sessions()
-    def get_grade_system_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the grade system lookup service.
-
-
-        :return: a ``GradeSystemLookupSession``
-        :rtype: ``osid.grading.GradeSystemLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemLookupSession
-
-    grade_system_lookup_session = property(fget=get_grade_system_lookup_session)
-
-    def get_grade_system_lookup_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system lookup service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeSystemLookupSession``
-        :rtype: ``osid.grading.GradeSystemLookupSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemLookupSession
-
-    def get_grade_system_query_session(self):
-        """Gets the ``OsidSession`` associated with the grade system query service.
-
-
-        :return: a ``GradeSystemQuerySession``
-        :rtype: ``osid.grading.GradeSystemQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_query()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemQuerySession
-
-    grade_system_query_session = property(fget=get_grade_system_query_session)
-
-    def get_grade_system_query_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system query service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeSystemQuerySession``
-        :rtype: ``osid.grading.GradeSystemQuerySession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemQuerySession
-
-    def get_grade_system_search_session(self):
-        """Gets the ``OsidSession`` associated with the grade system search service.
-
-
-        :return: a ``GradeSystemSearchSession``
-        :rtype: ``osid.grading.GradeSystemSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_search()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemSearchSession
-
-    grade_system_search_session = property(fget=get_grade_system_search_session)
-
-    def get_grade_system_search_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system search service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeSystemSearchSession``
-        :rtype: ``osid.grading.GradeSystemSearchSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemSearchSession
-
-    def get_grade_system_admin_session(self):
-        """Gets the ``OsidSession`` associated with the grade system administration service.
-
-
-        :return: a ``GradeSystemAdminSession``
-        :rtype: ``osid.grading.GradeSystemAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_admin()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemAdminSession
-
-    grade_system_admin_session = property(fget=get_grade_system_admin_session)
-
-    def get_grade_system_admin_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system admin service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeSystemAdminSession``
-        :rtype: ``osid.grading.GradeSystemAdminSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemAdminSession
-
-    def get_grade_system_notification_session(self, grade_system_receiver):
-        """Gets the notification session for notifications pertaining to grade system changes.
-
-
-        :param grade_system_receiver: the grade system receiver
-        :type grade_system_receiver: ``osid.grading.GradeSystemReceiver``
-        :return: a ``GradeSystemNotificationSession``
-        :rtype: ``osid.grading.GradeSystemNotificationSession``
-        :raise: ``NullArgument`` -- ``grade_system_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_notification()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemNotificationSession
-
-    def get_grade_system_notification_session_for_gradebook(self, grade_system_receiver, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade system notification service for the given gradebook.
-
-
-        :param grade_system_receiver: the grade system receiver
-        :type grade_system_receiver: ``osid.grading.GradeSystemReceiver``
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a _grade_system_notification_session``
-        :rtype: ``osid.grading.GradeSystemNotificationSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``grade_system_receiver`` or ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemNotificationSession
-
-    def get_grade_system_gradebook_session(self):
-        """Gets the session for retrieving grade system to gradebook mappings.
-
-
-        :return: a ``GradeSystemGradebookSession``
-        :rtype: ``osid.grading.GradeSystemGradebookSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemGradebookSession
-
-    grade_system_gradebook_session = property(fget=get_grade_system_gradebook_session)
-
-    def get_grade_system_gradebook_assignment_session(self):
-        """Gets the session for assigning grade system to gradebook mappings.
-
-
-        :return: a ``GradeSystemGradebookAssignmentSession``
-        :rtype: ``osid.grading.GradeSystemGradebookSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_gradebook_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_gradebook_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemGradebookSession
-
-    grade_system_gradebook_assignment_session = property(fget=get_grade_system_gradebook_assignment_session)
-
-    def get_grade_system_smart_gradebook_session(self, gradebook_id):
-        """Gets the session for managing smart gradebooks of grade systems.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: a ``GradeSystemSmartGradebookSession``
-        :rtype: ``osid.grading.GradeSystemSmartGradebookSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_smart_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_smart_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemSmartGradebookSession
-
-    def get_grade_entry_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the grade entry lookup service.
-
-
-        :return: a ``GradeEntryLookupSession``
-        :rtype: ``osid.grading.GradeEntryLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryLookupSession
-
-    grade_entry_lookup_session = property(fget=get_grade_entry_lookup_session)
-
-    def get_grade_entry_lookup_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry lookup service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeEntryLookupSession``
-        :rtype: ``osid.grading.GradeEntryLookupSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryLookupSession
-
-    def get_grade_entry_query_session(self):
-        """Gets the ``OsidSession`` associated with the grade entry query service.
-
-
-        :return: a ``GradeEntryQuerySession``
-        :rtype: ``osid.grading.GradeEntryQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_query()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryQuerySession
-
-    grade_entry_query_session = property(fget=get_grade_entry_query_session)
-
-    def get_grade_entry_query_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry query service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeEntryQuerySession``
-        :rtype: ``osid.grading.GradeEntryQuerySession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryQuerySession
-
-    def get_grade_entry_search_session(self):
-        """Gets the ``OsidSession`` associated with the grade entry search service.
-
-
-        :return: a ``GradeEntrySearchSession``
-        :rtype: ``osid.grading.GradeEntrySearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_search()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntrySearchSession
-
-    grade_entry_search_session = property(fget=get_grade_entry_search_session)
-
-    def get_grade_entry_search_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry search service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeEntrySearchSession``
-        :rtype: ``osid.grading.GradeEntrySearchSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntrySearchSession
-
-    def get_grade_entry_admin_session(self):
-        """Gets the ``OsidSession`` associated with the grade entry administration service.
-
-
-        :return: a ``GradeEntryAdminSession``
-        :rtype: ``osid.grading.GradeEntryAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_admin()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryAdminSession
-
-    grade_entry_admin_session = property(fget=get_grade_entry_admin_session)
-
-    def get_grade_entry_admin_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry admin service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradeEntryAdminSession``
-        :rtype: ``osid.grading.GradeEntryAdminSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryAdminSession
-
-    def get_grade_entry_notification_session(self, receiver):
-        """Gets the notification session for notifications pertaining to grade entry changes.
-
-
-        :param receiver: the grade entry receiver
-        :type receiver: ``osid.grading.GradeEntryReceiver``
-        :return: a ``GradeEntryNotificationSession``
-        :rtype: ``osid.grading.GradeEntryNotificationSession``
-        :raise: ``NullArgument`` -- ``receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_notification()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryNotificationSession
-
-    def get_grade_entry_notification_session_for_gradebook(self, receiver, gradebook_id):
-        """Gets the ``OsidSession`` associated with the grade entry notification service for the given gradebook.
-
-
-        :param receiver: the grade entry receiver
-        :type receiver: ``osid.grading.GradeEntryReceiver``
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a _grade_entry_notification_session``
-        :rtype: ``osid.grading.GradeEntryNotificationSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``receiver`` or ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryNotificationSession
-
-    def get_gradebook_column_lookup_session(self):
-        """Gets the ``OsidSession`` associated with the gradebook column lookup service.
-
-
-        :return: a ``GradebookColumnLookupSession``
-        :rtype: ``osid.grading.GradebookColumnLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnLookupSession
-
-    gradebook_column_lookup_session = property(fget=get_gradebook_column_lookup_session)
-
-    def get_gradebook_column_lookup_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column lookup service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a _gradebook_column_lookup_session``
-        :rtype: ``osid.grading.GradebookColumnLookupSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnLookupSession
-
-    def get_gradebook_column_query_session(self):
-        """Gets the ``OsidSession`` associated with the gradebook column query service.
-
-
-        :return: a ``GradebookColumnQuerySession``
-        :rtype: ``osid.grading.GradebookColumnQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_query()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnQuerySession
-
-    gradebook_column_query_session = property(fget=get_gradebook_column_query_session)
-
-    def get_gradebook_column_query_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column query service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradebookColumnQuerySession``
-        :rtype: ``osid.grading.GradebookColumnQuerySession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnQuerySession
-
-    def get_gradebook_column_search_session(self):
-        """Gets the ``OsidSession`` associated with the gradebook column search service.
-
-
-        :return: a ``GradebookColumnSearchSession``
-        :rtype: ``osid.grading.GradebookColumnSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_search()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnSearchSession
-
-    gradebook_column_search_session = property(fget=get_gradebook_column_search_session)
-
-    def get_gradebook_column_search_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column search service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a _gradebook_column_search_session``
-        :rtype: ``osid.grading.GradebookColumnSearchSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnSearchSession
-
-    def get_gradebook_column_admin_session(self):
-        """Gets the ``OsidSession`` associated with the gradebook column administration service.
-
-
-        :return: a ``GradebookColumnAdminSession``
-        :rtype: ``osid.grading.GradebookColumnAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_admin()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnAdminSession
-
-    gradebook_column_admin_session = property(fget=get_gradebook_column_admin_session)
-
-    def get_gradebook_column_admin_session_for_gradebook(self, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column admin service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a GradebookColumnAdminSession``
-        :rtype: ``osid.grading.GradebookColumnAdminSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnAdminSession
-
-    def get_gradebook_column_notification_session(self, gradebook_column_receiver):
-        """Gets the notification session for notifications pertaining to gradebook column changes.
-
-
-        :param gradebook_column_receiver: the grade system receiver
-        :type gradebook_column_receiver: ``osid.grading.GradebookColumnReceiver``
-        :return: a ``GradebookColumnNotificationSession``
-        :rtype: ``osid.grading.GradebookColumnNotificationSession``
-        :raise: ``NullArgument`` -- ``gradebook_column_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_notification()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnNotificationSession
-
-    def get_gradebook_column_notification_session_for_gradebook(self, gradebook_column_receiver, gradebook_id):
-        """Gets the ``OsidSession`` associated with the gradebook column notification service for the given gradebook.
-
-
-        :param gradebook_column_receiver: the gradebook column receiver
-        :type gradebook_column_receiver: ``osid.grading.GradebookColumnReceiver``
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: ``a _gradebook_column_notification_session``
-        :rtype: ``osid.grading.GradebookColumnNotificationSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_receiver`` or ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` or ``supports_visible_federation()``
-            is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnNotificationSession
-
-    def get_gradebook_column_gradebook_session(self):
-        """Gets the session for retrieving gradebook column to gradebook mappings.
-
-
-        :return: a ``GradebookColumnGradebookSession``
-        :rtype: ``osid.grading.GradebookColumnGradebookSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnGradebookSession
-
-    gradebook_column_gradebook_session = property(fget=get_gradebook_column_gradebook_session)
-
-    def get_gradebook_column_gradebook_assignment_session(self):
-        """Gets the session for assigning gradebook column to gradebook mappings.
-
-
-        :return: a ``GradebookColumnGradebookAssignmentSession``
-        :rtype: ``osid.grading.GradebookColumnGradebookAssignmentSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_gradebook_assignment()`` is
-        ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnGradebookAssignmentSession
-
-    gradebook_column_gradebook_assignment_session = property(fget=get_gradebook_column_gradebook_assignment_session)
-
-    def get_gradebook_column_smart_gradebook_session(self, gradebook_id):
-        """Gets the session for managing smart gradebooks of gradebook columns.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :return: a ``GradebookColumnSmartGradebookSession``
-        :rtype: ``osid.grading.GradebookColumnSmartGradebookSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_smart_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_smart_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnSmartGradebookSession
-
-    def get_gradebook_lookup_session(self):
-        """Gets the OsidSession associated with the gradebook lookup service.
-
-
-        :return: a ``GradebookLookupSession``
-        :rtype: ``osid.grading.GradebookLookupSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_lookup() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_lookup()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookLookupSession
-
-    gradebook_lookup_session = property(fget=get_gradebook_lookup_session)
-
-    def get_gradebook_query_session(self):
-        """Gets the OsidSession associated with the gradebook query service.
-
-
-        :return: a ``GradebookQuerySession``
-        :rtype: ``osid.grading.GradebookQuerySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_query() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_query()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookQuerySession
-
-    gradebook_query_session = property(fget=get_gradebook_query_session)
-
-    def get_gradebook_search_session(self):
-        """Gets the OsidSession associated with the gradebook search service.
-
-
-        :return: a ``GradebookSearchSession``
-        :rtype: ``osid.grading.GradebookSearchSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_search() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_search()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookSearchSession
-
-    gradebook_search_session = property(fget=get_gradebook_search_session)
-
-    def get_gradebook_admin_session(self):
-        """Gets the OsidSession associated with the gradebook administration service.
-
-
-        :return: a ``GradebookAdminSession``
-        :rtype: ``osid.grading.GradebookAdminSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_admin() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_admin()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookAdminSession
-
-    gradebook_admin_session = property(fget=get_gradebook_admin_session)
-
-    def get_gradebook_notification_session(self, gradebook_receiver):
-        """Gets the notification session for notifications pertaining to gradebook service changes.
-
-
-        :param gradebook_receiver: the gradebook receiver
-        :type gradebook_receiver: ``osid.grading.GradebookReceiver``
-        :return: a ``GradebookNotificationSession``
-        :rtype: ``osid.grading.GradebookNotificationSession``
-        :raise: ``NullArgument`` -- ``gradebook_receiver`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_notification() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_notification()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookNotificationSession
-
-    def get_gradebook_hierarchy_session(self):
-        """Gets the session traversing gradebook hierarchies.
-
-
-        :return: a ``GradebookHierarchySession``
-        :rtype: ``osid.grading.GradebookHierarchySession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_hierarchy() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_hierarchy()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookHierarchySession
-
-    gradebook_hierarchy_session = property(fget=get_gradebook_hierarchy_session)
-
-    def get_gradebook_hierarchy_design_session(self):
-        """Gets the session designing gradebook hierarchies.
-
-
-        :return: a ``GradebookHierarchyDesignSession``
-        :rtype: ``osid.grading.GradebookHierarchyDesignSession``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_hierarchy_design() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_hierarchy_design()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookHierarchyDesignSession
-
-    gradebook_hierarchy_design_session = property(fget=get_gradebook_hierarchy_design_session)
-
     def get_grading_batch_manager(self):
         """Gets the ``GradingBatchManager``.
 
@@ -2497,6 +1777,717 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         return # osid.grading.transform.GradingTransformManager
 
     grading_transform_manager = property(fget=get_grading_transform_manager)
+##
+# The following methods are from osid.grading.GradebookColumnLookupSession
+
+    def can_lookup_gradebook_columns(self):
+        """Tests if this user can perform ``GradebookColumn`` lookups.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_gradebook_column_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_gradebook_column_view(self):
+        """A complete view of the ``GradebookColumn`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_federated_gradebook_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include gradebook columns in gradebooks
+        which are children of this gradebook in the gradebook hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_gradebook_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts lookups to this gradebook only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_gradebook_column(self, gradebook_column_id):
+        """Gets the ``GradebookColumn`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``GradebookColumn`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``GradebookColumn`` and
+        retained for compatibility.
+
+
+        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column
+        :rtype: ``osid.grading.GradebookColumn``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumn
+
+    def get_gradebook_columns_by_ids(self, gradebook_column_ids):
+        """Gets a ``GradebookColumnList`` corresponding to the given ``IdList``.
+
+
+        In plenary mode, the returned list contains all of the gradebook
+        columns specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if a ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible gradeboook columns may be omitted from the list.
+
+
+        :param gradebook_column_ids: the list of ``Ids`` to retrieve
+        :type gradebook_column_ids: ``osid.id.IdList``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``grade_book_column_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_genus_type(self, gradebook_column_genus_type):
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` which does not
+            include gradebook columns of genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_genus_type: a gradebook column genus type
+        :type gradebook_column_genus_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_parent_genus_type(self, gradebook_column_genus_type):
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` and include any
+            additional columns with genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_genus_type: a gradebook column genus type
+        :type gradebook_column_genus_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_record_type(self, gradebook_column_record_type):
+        """Gets a ``GradebookColumnList`` containing the given gradebook column record ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_record_type: a gradebook column record type
+        :type gradebook_column_record_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns(self):
+        """Gets all gradebook columns.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :return: a ``GradebookColumn``
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    gradebook_columns = property(fget=get_gradebook_columns)
+
+    def supports_summary(self):
+        """Tests if a summary entry is available.
+
+
+        :return: ``true`` if a summary entry is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_summary(self, gradebook_column_id):
+        """Gets the ``GradebookColumnSummary`` for summary results.
+
+
+        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column summary
+        :rtype: ``osid.grading.GradebookColumnSummary``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unimplemented`` -- ``has_summary()`` is ``false``
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnSummary
+
+
+##
+# The following methods are from osid.grading.GradebookColumnQuerySession
+
+    def can_search_gradebook_columns(self):
+        """Tests if this user can perform ``GradebookColumn`` searches.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_federated_gradebook_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include gradebook columns in gradebooks
+        which are children of this gradebook in the gradebook hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_gradebook_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts searches to this gradebook only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_gradebook_column_query(self):
+        """Gets a gradebook column query.
+
+
+        :return: the gradebook column
+        :rtype: ``osid.grading.GradebookColumnQuery``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnQuery
+
+    gradebook_column_query = property(fget=get_gradebook_column_query)
+
+    def get_gradebook_columns_by_query(self, gradebook_column_query):
+        """Gets a list of gradebook columns matching the given query.
+
+
+        :param gradebook_column_query: the gradebook column query
+        :type gradebook_column_query: ``osid.grading.GradebookColumnQuery``
+        :return: the returned ``GradebookColumnList``
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_query`` is not of this service
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+
+##
+# The following methods are from osid.grading.GradebookColumnAdminSession
+
+    def can_create_gradebook_columns(self):
+        """Tests if this user can create gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a gradebook
+        column will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer create
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_gradebook_column_with_record_types(self, gradebook_column_record_types):
+        """Tests if this user can create a single ``GradebookColumn`` using the desired record types.
+
+
+        While ``GradingManager.getGradebookColumnRecordTypes()`` can be
+        used to examine which records are supported, this method tests
+        which record(s) are required for creating a specific
+        ``GradebookColumn``. Providing an empty array tests if a
+        ``GradebookColumn`` can be created with no records.
+
+
+        :param gradebook_column_record_types: array of gradebook column record types
+        :type gradebook_column_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_form_for_create(self, gradebook_column_record_types):
+        """Gets the gradebook column form for creating new gradebook columns.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param gradebook_column_record_types: array of gradebook column record types
+        :type gradebook_column_record_types: ``osid.type.Type[]``
+        :return: the gradebook column form
+        :rtype: ``osid.grading.GradebookColumnForm``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnForm
+
+    def create_gradebook_column(self, gradebook_column_form):
+        """Creates a new ``GradebookColumn``.
+
+
+        :param gradebook_column_form: the form for this ``GradebookColumn``
+        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
+        :return: the new ``GradebookColumn``
+        :rtype: ``osid.grading.GradebookColumn``
+        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
+            ``get_gradebook_column_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumn
+
+    def can_update_gradebook_columns(self):
+        """Tests if this user can update gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a
+        ``GradebookColumn`` will result in a ``PermissionDenied``. This
+        is intended as a hint to an application that may opt not to
+        offer update operations to an unauthorized user.
+
+
+        :return: ``false`` if gradebook column modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_form_for_update(self, gradebook_column_id):
+        """Gets the gradebook column form for updating an existing gradebook column.
+
+
+        A new gradebook column form should be requested for each update
+        transaction.
+
+
+        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column form
+        :rtype: ``osid.grading.GradebookColumnForm``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnForm
+
+    def update_gradebook_column(self, gradebook_column_form):
+        """Updates an existing gradebook column.
+
+
+        :param gradebook_column_form: the form containing the elements to be updated
+        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
+        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
+            ``get_gradebook_column_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def sequence_gradebook_columns(self, gradebook_column_ids):
+        """Resequences the gradebook columns.
+
+
+        :param gradebook_column_ids: the ``Ids`` of the ``GradebookColumns``
+        :type gradebook_column_ids: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``gradebook_column_id_list`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def move_gradebook_column(self, front_gradebook_column_id, back_gradebook_column_id):
+        """Moves a gradebook column in front of another.
+
+
+        :param front_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type front_gradebook_column_id: ``osid.id.Id``
+        :param back_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type back_gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def copy_gradebook_column_entries(self, source_gradebook_column_id, target_gradebook_column_id):
+        """Copies gradebook column entries from one column to another.
+
+
+        If the target grade column grade system differs from the source,
+        the grades in the entries are transformed to the new grade
+        system.
+
+
+        :param source_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type source_gradebook_column_id: ``osid.id.Id``
+        :param target_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type target_gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_delete_gradebook_columns(self):
+        """Tests if this user can delete gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a
+        ``GradebookColumn`` will result in a ``PermissionDenied``. This
+        is intended as a hint to an application that may opt not to
+        offer delete operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_gradebook_column(self, gradebook_column_id):
+        """Deletes the ``GradebookColumn`` identified by the given ``Id``.
+
+
+        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to delete
+        :type gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- a ``GradebookColumn`` was not found identified by the given ``Id``
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_manage_gradebook_column_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``GradebookColumns``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_gradebook_column(self, gradebook_column_id, alias_id):
+        """Adds an ``Id`` to a ``GradebookColumn`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``GradebookColumn`` is determined by
+        the provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another gradebook column,
+        it is reassigned to the given gradebook column ``Id``.
+
+
+        :param gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
 ##
 # The following methods are from osid.grading.GradebookLookupSession
 
@@ -2560,33 +2551,6 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
 
         """
         pass
-
-    def get_gradebook(self, gradebook_id):
-        """Gets the ``Gradebook`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Gradebook`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Gradebook`` and retained
-        for compatility.
-
-
-        :param gradebook_id: ``Id`` of the ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
-        :return: the gradebook
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
 
     def get_gradebooks_by_ids(self, gradebook_ids):
         """Gets a ``GradebookList`` corresponding to the given ``IdList``.
@@ -3074,956 +3038,6 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
 
     """
 
-    def get_grade_system_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade system lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemLookupSession``
-        :rtype: ``osid.grading.GradeSystemLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemLookupSession
-
-    def get_grade_system_lookup_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system lookup service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeSystemLookupSession``
-        :rtype: ``osid.grading.GradeSystemLookupSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemLookupSession
-
-    def get_grade_system_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade system query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemQuerySession``
-        :rtype: ``osid.grading.GradeSystemQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_query()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemQuerySession
-
-    def get_grade_system_query_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system query service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeSystemQuerySession``
-        :rtype: ``osid.grading.GradeSystemQuerySession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemQuerySession
-
-    def get_grade_system_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade system search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemSearchSession``
-        :rtype: ``osid.grading.GradeSystemSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_search()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemSearchSession
-
-    def get_grade_system_search_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system search service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeSystemSearchSession``
-        :rtype: ``osid.grading.GradeSystemSearchSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemSearchSession
-
-    def get_grade_system_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade system administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemAdminSession``
-        :rtype: ``osid.grading.GradeSystemAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_admin()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemAdminSession
-
-    def get_grade_system_admin_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system admin service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeSystemAdminSession``
-        :rtype: ``osid.grading.GradeSystemAdminSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemAdminSession
-
-    def get_grade_system_notification_session(self, grade_system_receiver, proxy):
-        """Gets the notification session for notifications pertaining to grade system changes.
-
-
-        :param grade_system_receiver: the grade system receiver
-        :type grade_system_receiver: ``osid.grading.GradeSystemReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemNotificationSession``
-        :rtype: ``osid.grading.GradeSystemNotificationSession``
-        :raise: ``NullArgument`` -- ``grade_system_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_notification()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemNotificationSession
-
-    def get_grade_system_notification_session_for_gradebook(self, grade_system_receiver, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade system notification service for the given gradebook.
-
-
-        :param grade_system_receiver: the grade system receiver
-        :type grade_system_receiver: ``osid.grading.GradeSystemReceiver``
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a _grade_system_notification_session``
-        :rtype: ``osid.grading.GradeSystemNotificationSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``grade_system_receiver, gradebook_id`` or ``porxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_system_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemNotificationSession
-
-    def get_grade_system_gradebook_session(self, proxy):
-        """Gets the session for retrieving grade system to gradebook mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemGradebookSession``
-        :rtype: ``osid.grading.GradeSystemGradebookSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemGradebookSession
-
-    def get_grade_system_gradebook_assignment_session(self, proxy):
-        """Gets the session for assigning grade system to gradebook mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemGradebookAssignmentSession``
-        :rtype: ``osid.grading.GradeSystemGradebookSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_gradebook_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_gradebook_assignment()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemGradebookSession
-
-    def get_grade_system_smart_gradebook_session(self, gradebook_id, proxy):
-        """Gets the session for managing smart gradebooks of grade systems.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeSystemSmartGradebookSession``
-        :rtype: ``osid.grading.GradeSystemSmartGradebookSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_system_smart_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_system_smart_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeSystemSmartGradebookSession
-
-    def get_grade_entry_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeEntryLookupSession``
-        :rtype: ``osid.grading.GradeEntryLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryLookupSession
-
-    def get_grade_entry_lookup_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry lookup service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeEntryLookupSession``
-        :rtype: ``osid.grading.GradeEntryLookupSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryLookupSession
-
-    def get_grade_entry_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeEntryQuerySession``
-        :rtype: ``osid.grading.GradeEntryQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_query()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryQuerySession
-
-    def get_grade_entry_query_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry query service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeEntryQuerySession``
-        :rtype: ``osid.grading.GradeEntryQuerySession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_query()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryQuerySession
-
-    def get_grade_entry_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeEntrySearchSession``
-        :rtype: ``osid.grading.GradeEntrySearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_search()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntrySearchSession
-
-    def get_grade_entry_search_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry search service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeEntrySearchSession``
-        :rtype: ``osid.grading.GradeEntrySearchSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_search()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntrySearchSession
-
-    def get_grade_entry_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeEntryAdminSession``
-        :rtype: ``osid.grading.GradeEntryAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_admin()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryAdminSession
-
-    def get_grade_entry_admin_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry admin service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradeEntryAdminSession``
-        :rtype: ``osid.grading.GradeEntryAdminSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_admin()`` or ``supports_visible_federation()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryAdminSession
-
-    def get_grade_entry_notification_session(self, grade_entry_receiver, proxy):
-        """Gets the notification session for notifications pertaining to grade entry changes.
-
-
-        :param grade_entry_receiver: the grade entry receiver
-        :type grade_entry_receiver: ``osid.grading.GradeEntryReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradeEntryNotificationSession``
-        :rtype: ``osid.grading.GradeEntryNotificationSession``
-        :raise: ``NullArgument`` -- ``grade_entry_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_notification()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryNotificationSession
-
-    def get_grade_entry_notification_session_for_gradebook(self, grade_entry_receiver, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the grade entry notification service for the given gradebook.
-
-
-        :param grade_entry_receiver: the grade entry receiver
-        :type grade_entry_receiver: ``osid.grading.GradeEntryReceiver``
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a _grade_entry_notification_session``
-        :rtype: ``osid.grading.GradeEntryNotificationSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``grade_entry_receiver, gradebook_id`` or ``porxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_grade_entry_notification()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_grade_entry_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradeEntryNotificationSession
-
-    def get_gradebook_column_lookup_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnLookupSession``
-        :rtype: ``osid.grading.GradebookColumnLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_lookup()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnLookupSession
-
-    def get_gradebook_column_lookup_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column lookup service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a _gradebook_column_lookup_session``
-        :rtype: ``osid.grading.GradebookColumnLookupSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_lookup()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_lookup()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnLookupSession
-
-    def get_gradebook_column_query_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnQuerySession``
-        :rtype: ``osid.grading.GradebookColumnQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_query()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnQuerySession
-
-    def get_gradebook_column_query_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column query service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnQuerySession``
-        :rtype: ``osid.grading.GradebookColumnQuerySession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_query()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_query()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnQuerySession
-
-    def get_gradebook_column_search_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnSearchSession``
-        :rtype: ``osid.grading.GradebookColumnSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_search()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnSearchSession
-
-    def get_gradebook_column_search_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column search service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a _gradebook_column_search_session``
-        :rtype: ``osid.grading.GradebookColumnSearchSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_search()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_search()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnSearchSession
-
-    def get_gradebook_column_admin_session(self, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnAdminSession``
-        :rtype: ``osid.grading.GradebookColumnAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_admin()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnAdminSession
-
-    def get_gradebook_column_admin_session_for_gradebook(self, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column admin service for the given gradebook.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a GradebookColumnAdminSession``
-        :rtype: ``osid.grading.GradebookColumnAdminSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_admin()`` or ``supports_visible_federation()`` is
-            ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_admin()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnAdminSession
-
-    def get_gradebook_column_notification_session(self, gradebook_column_receiver, proxy):
-        """Gets the notification session for notifications pertaining to gradebook column changes.
-
-
-        :param gradebook_column_receiver: the grade system receiver
-        :type gradebook_column_receiver: ``osid.grading.GradebookColumnReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnNotificationSession``
-        :rtype: ``osid.grading.GradebookColumnNotificationSession``
-        :raise: ``NullArgument`` -- ``gradebook_column_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_notification()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnNotificationSession
-
-    def get_gradebook_column_notification_session_for_gradebook(self, gradebook_column_receiver, gradebook_id, proxy):
-        """Gets the ``OsidSession`` associated with the gradebook column notification service for the given gradebook.
-
-
-        :param gradebook_column_receiver: the gradebook column receiver
-        :type gradebook_column_receiver: ``osid.grading.GradebookColumnReceiver``
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: ``a _gradebook_column_notification_session``
-        :rtype: ``osid.grading.GradebookColumnNotificationSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_receiver, gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- ``unable to complete request``
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_notification()`` or ``supports_visible_federation()``
-            is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_notification()`` and
-        ``supports_visible_federation()`` are ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnNotificationSession
-
-    def get_gradebook_column_gradebook_session(self, proxy):
-        """Gets the session for retrieving gradebook column to gradebook mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnGradebookSession``
-        :rtype: ``osid.grading.GradebookColumnGradebookSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnGradebookSession
-
-    def get_gradebook_column_gradebook_assignment_session(self, proxy):
-        """Gets the session for assigning gradebook column to gradebook mappings.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnGradebookAssignmentSession``
-        :rtype: ``osid.grading.GradebookColumnGradebookAssignmentSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_gradebook_assignment()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_gradebook_assignment()`` is
-        ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnGradebookAssignmentSession
-
-    def get_gradebook_column_smart_gradebook_session(self, gradebook_id, proxy):
-        """Gets the session for managing smart gradebooks of gradebook columns.
-
-
-        :param gradebook_id: the ``Id`` of the gradebook
-        :type gradebook_id: ``osid.id.Id``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookColumnSmartGradebookSession``
-        :rtype: ``osid.grading.GradebookColumnSmartGradebookSession``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_column_smart_gradebook()`` is ``false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_column_smart_gradebook()`` is ``true``.*
-
-
-        """
-        return # osid.grading.GradebookColumnSmartGradebookSession
-
-    def get_gradebook_lookup_session(self, proxy):
-        """Gets the OsidSession associated with the gradebook lookup service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookLookupSession``
-        :rtype: ``osid.grading.GradebookLookupSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_lookup() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_lookup()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookLookupSession
-
-    def get_gradebook_query_session(self, proxy):
-        """Gets the OsidSession associated with the gradebook query service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookQuerySession``
-        :rtype: ``osid.grading.GradebookQuerySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_query() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_query()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookQuerySession
-
-    def get_gradebook_search_session(self, proxy):
-        """Gets the OsidSession associated with the gradebook search service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookSearchSession``
-        :rtype: ``osid.grading.GradebookSearchSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_search() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_search()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookSearchSession
-
-    def get_gradebook_admin_session(self, proxy):
-        """Gets the OsidSession associated with the gradebook administration service.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookAdminSession``
-        :rtype: ``osid.grading.GradebookAdminSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_admin() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_admin()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookAdminSession
-
-    def get_gradebook_notification_session(self, gradebook_receiver, proxy):
-        """Gets the notification session for notifications pertaining to gradebook service changes.
-
-
-        :param gradebook_receiver: the gradebook receiver
-        :type gradebook_receiver: ``osid.grading.GradebookReceiver``
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookNotificationSession``
-        :rtype: ``osid.grading.GradebookNotificationSession``
-        :raise: ``NullArgument`` -- ``gradebook_receiver`` or ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_notification() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_notification()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookNotificationSession
-
-    def get_gradebook_hierarchy_session(self, proxy):
-        """Gets the session traversing gradebook hierarchies.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookHierarchySession``
-        :rtype: ``osid.grading.GradebookHierarchySession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_hierarchy() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_hierarchy()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookHierarchySession
-
-    def get_gradebook_hierarchy_design_session(self, proxy):
-        """Gets the session designing gradebook hierarchies.
-
-
-        :param proxy: a proxy
-        :type proxy: ``osid.proxy.Proxy``
-        :return: a ``GradebookHierarchyDesignSession``
-        :rtype: ``osid.grading.GradebookHierarchyDesignSession``
-        :raise: ``NullArgument`` -- ``proxy`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``Unimplemented`` -- ``supports_gradebook_hierarchy_design() is false``
-
-
-        *compliance: optional -- This method must be implemented if
-        ``supports_gradebook_hierarchy_design()`` is true.*
-
-
-        """
-        return # osid.grading.GradebookHierarchyDesignSession
-
     def get_grading_batch_proxy_manager(self):
         """Gets the ``GradingBatchProxyManager``.
 
@@ -4080,6 +3094,717 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         return # osid.grading.transform.GradingTransformProxyManager
 
     grading_transform_proxy_manager = property(fget=get_grading_transform_proxy_manager)
+##
+# The following methods are from osid.grading.GradebookColumnLookupSession
+
+    def can_lookup_gradebook_columns(self):
+        """Tests if this user can perform ``GradebookColumn`` lookups.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer lookup
+        operations to unauthorized users.
+
+
+        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_comparative_gradebook_column_view(self):
+        """The returns from the lookup methods may omit or translate elements based on this session, such as
+            authorization, and not result in an error.
+
+
+        This view is used when greater interoperability is desired at
+        the expense of precision.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_plenary_gradebook_column_view(self):
+        """A complete view of the ``GradebookColumn`` returns is desired.
+
+
+        Methods will return what is requested or result in an error.
+        This view is used when greater precision is desired at the
+        expense of interoperability.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_federated_gradebook_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include gradebook columns in gradebooks
+        which are children of this gradebook in the gradebook hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_gradebook_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts lookups to this gradebook only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_gradebook_column(self, gradebook_column_id):
+        """Gets the ``GradebookColumn`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``GradebookColumn`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``GradebookColumn`` and
+        retained for compatibility.
+
+
+        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column
+        :rtype: ``osid.grading.GradebookColumn``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumn
+
+    def get_gradebook_columns_by_ids(self, gradebook_column_ids):
+        """Gets a ``GradebookColumnList`` corresponding to the given ``IdList``.
+
+
+        In plenary mode, the returned list contains all of the gradebook
+        columns specified in the ``Id`` list, in the order of the list,
+        including duplicates, or an error results if a ``Id`` in the
+        supplied list is not found or inaccessible. Otherwise,
+        inaccessible gradeboook columns may be omitted from the list.
+
+
+        :param gradebook_column_ids: the list of ``Ids`` to retrieve
+        :type gradebook_column_ids: ``osid.id.IdList``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NotFound`` -- an ``Id was`` not found
+        :raise: ``NullArgument`` -- ``grade_book_column_ids`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_genus_type(self, gradebook_column_genus_type):
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` which does not
+            include gradebook columns of genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_genus_type: a gradebook column genus type
+        :type gradebook_column_genus_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_parent_genus_type(self, gradebook_column_genus_type):
+        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` and include any
+            additional columns with genus types derived from the specified ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_genus_type: a gradebook column genus type
+        :type gradebook_column_genus_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns_by_record_type(self, gradebook_column_record_type):
+        """Gets a ``GradebookColumnList`` containing the given gradebook column record ``Type``.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :param gradebook_column_record_type: a gradebook column record type
+        :type gradebook_column_record_type: ``osid.type.Type``
+        :return: the returned ``GradebookColumn`` list
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    def get_gradebook_columns(self):
+        """Gets all gradebook columns.
+
+
+        In plenary mode, the returned list contains all known gradebook
+        columns or an error results. Otherwise, the returned list may
+        contain only those gradebook columns that are accessible through
+        this session.
+
+
+        :return: a ``GradebookColumn``
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+    gradebook_columns = property(fget=get_gradebook_columns)
+
+    def supports_summary(self):
+        """Tests if a summary entry is available.
+
+
+        :return: ``true`` if a summary entry is available, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_summary(self, gradebook_column_id):
+        """Gets the ``GradebookColumnSummary`` for summary results.
+
+
+        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column summary
+        :rtype: ``osid.grading.GradebookColumnSummary``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unimplemented`` -- ``has_summary()`` is ``false``
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnSummary
+
+
+##
+# The following methods are from osid.grading.GradebookColumnQuerySession
+
+    def can_search_gradebook_columns(self):
+        """Tests if this user can perform ``GradebookColumn`` searches.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer search
+        operations to unauthorized users.
+
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def use_federated_gradebook_view(self):
+        """Federates the view for methods in this session.
+
+
+        A federated view will include gradebook columns in gradebooks
+        which are children of this gradebook in the gradebook hierarchy.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def use_isolated_gradebook_view(self):
+        """Isolates the view for methods in this session.
+
+
+        An isolated view restricts searches to this gradebook only.
+
+
+
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        pass
+
+    def get_gradebook_column_query(self):
+        """Gets a gradebook column query.
+
+
+        :return: the gradebook column
+        :rtype: ``osid.grading.GradebookColumnQuery``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnQuery
+
+    gradebook_column_query = property(fget=get_gradebook_column_query)
+
+    def get_gradebook_columns_by_query(self, gradebook_column_query):
+        """Gets a list of gradebook columns matching the given query.
+
+
+        :param gradebook_column_query: the gradebook column query
+        :type gradebook_column_query: ``osid.grading.GradebookColumnQuery``
+        :return: the returned ``GradebookColumnList``
+        :rtype: ``osid.grading.GradebookColumnList``
+        :raise: ``NullArgument`` -- ``gradebook_column_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_query`` is not of this service
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnList
+
+
+##
+# The following methods are from osid.grading.GradebookColumnAdminSession
+
+    def can_create_gradebook_columns(self):
+        """Tests if this user can create gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known creating a gradebook
+        column will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer create
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` creation is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def can_create_gradebook_column_with_record_types(self, gradebook_column_record_types):
+        """Tests if this user can create a single ``GradebookColumn`` using the desired record types.
+
+
+        While ``GradingManager.getGradebookColumnRecordTypes()`` can be
+        used to examine which records are supported, this method tests
+        which record(s) are required for creating a specific
+        ``GradebookColumn``. Providing an empty array tests if a
+        ``GradebookColumn`` can be created with no records.
+
+
+        :param gradebook_column_record_types: array of gradebook column record types
+        :type gradebook_column_record_types: ``osid.type.Type[]``
+        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is supported, ``false``
+            otherwise
+        :rtype: ``boolean``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_form_for_create(self, gradebook_column_record_types):
+        """Gets the gradebook column form for creating new gradebook columns.
+
+
+        A new form should be requested for each create transaction.
+
+
+        :param gradebook_column_record_types: array of gradebook column record types
+        :type gradebook_column_record_types: ``osid.type.Type[]``
+        :return: the gradebook column form
+        :rtype: ``osid.grading.GradebookColumnForm``
+        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- unable to get form for requested record types
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnForm
+
+    def create_gradebook_column(self, gradebook_column_form):
+        """Creates a new ``GradebookColumn``.
+
+
+        :param gradebook_column_form: the form for this ``GradebookColumn``
+        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
+        :return: the new ``GradebookColumn``
+        :rtype: ``osid.grading.GradebookColumn``
+        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in a create transaction
+        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
+        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
+            ``get_gradebook_column_form_for_create()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumn
+
+    def can_update_gradebook_columns(self):
+        """Tests if this user can update gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known updating a
+        ``GradebookColumn`` will result in a ``PermissionDenied``. This
+        is intended as a hint to an application that may opt not to
+        offer update operations to an unauthorized user.
+
+
+        :return: ``false`` if gradebook column modification is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def get_gradebook_column_form_for_update(self, gradebook_column_id):
+        """Gets the gradebook column form for updating an existing gradebook column.
+
+
+        A new gradebook column form should be requested for each update
+        transaction.
+
+
+        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :return: the gradebook column form
+        :rtype: ``osid.grading.GradebookColumnForm``
+        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.grading.GradebookColumnForm
+
+    def update_gradebook_column(self, gradebook_column_form):
+        """Updates an existing gradebook column.
+
+
+        :param gradebook_column_form: the form containing the elements to be updated
+        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
+        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in an update transaction
+        :raise: ``InvalidArgument`` -- the form contains an invalid value
+        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
+            ``get_gradebook_column_form_for_update()``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def sequence_gradebook_columns(self, gradebook_column_ids):
+        """Resequences the gradebook columns.
+
+
+        :param gradebook_column_ids: the ``Ids`` of the ``GradebookColumns``
+        :type gradebook_column_ids: ``osid.id.IdList``
+        :raise: ``NullArgument`` -- ``gradebook_column_id_list`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def move_gradebook_column(self, front_gradebook_column_id, back_gradebook_column_id):
+        """Moves a gradebook column in front of another.
+
+
+        :param front_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type front_gradebook_column_id: ``osid.id.Id``
+        :param back_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type back_gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def copy_gradebook_column_entries(self, source_gradebook_column_id, target_gradebook_column_id):
+        """Copies gradebook column entries from one column to another.
+
+
+        If the target grade column grade system differs from the source,
+        the grades in the entries are transformed to the new grade
+        system.
+
+
+        :param source_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type source_gradebook_column_id: ``osid.id.Id``
+        :param target_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type target_gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not found
+        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_delete_gradebook_columns(self):
+        """Tests if this user can delete gradebook columns.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known deleting a
+        ``GradebookColumn`` will result in a ``PermissionDenied``. This
+        is intended as a hint to an application that may opt not to
+        offer delete operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` deletion is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def delete_gradebook_column(self, gradebook_column_id):
+        """Deletes the ``GradebookColumn`` identified by the given ``Id``.
+
+
+        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to delete
+        :type gradebook_column_id: ``osid.id.Id``
+        :raise: ``NotFound`` -- a ``GradebookColumn`` was not found identified by the given ``Id``
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+    def can_manage_gradebook_column_aliases(self):
+        """Tests if this user can manage ``Id`` aliases for ``GradebookColumns``.
+
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known changing an alias
+        will result in a ``PermissionDenied``. This is intended as a
+        hint to an application that may opt not to offer alias
+        operations to an unauthorized user.
+
+
+        :return: ``false`` if ``GradebookColumn`` aliasing is not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # boolean
+
+    def alias_gradebook_column(self, gradebook_column_id, alias_id):
+        """Adds an ``Id`` to a ``GradebookColumn`` for the purpose of creating compatibility.
+
+
+        The primary ``Id`` of the ``GradebookColumn`` is determined by
+        the provider. The new ``Id`` performs as an alias to the primary
+        ``Id``. If the alias is a pointer to another gradebook column,
+        it is reassigned to the given gradebook column ``Id``.
+
+
+        :param gradebook_column_id: the ``Id`` of a ``GradebookColumn``
+        :type gradebook_column_id: ``osid.id.Id``
+        :param alias_id: the alias ``Id``
+        :type alias_id: ``osid.id.Id``
+        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
+        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
+        :raise: ``NullArgument`` -- ``gradebook_column_id`` or ``alias_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        pass
+
+
 ##
 # The following methods are from osid.grading.GradebookLookupSession
 
@@ -4143,33 +3868,6 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
 
         """
         pass
-
-    def get_gradebook(self, gradebook_id):
-        """Gets the ``Gradebook`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``Gradebook`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``Gradebook`` and retained
-        for compatility.
-
-
-        :param gradebook_id: ``Id`` of the ``Gradebook``
-        :type gradebook_id: ``osid.id.Id``
-        :return: the gradebook
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``NotFound`` -- ``gradebook_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
 
     def get_gradebooks_by_ids(self, gradebook_ids):
         """Gets a ``GradebookList`` corresponding to the given ``IdList``.
@@ -4720,42 +4418,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.grading.GradeSystemLookupSession
 
-    def get_gradebook_id(self):
-        """Gets the ``GradeSystem``  ``Id`` associated with this session.
-
-
-        :return: the ``GradeSystem Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_lookup_grade_systems(self):
         """Tests if this user can perform ``GradeSystem`` lookups.
 
@@ -5030,42 +4692,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.grading.GradeSystemQuerySession
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_search_grade_systems(self):
         """Tests if this user can perform ``GradeSystem`` searches.
 
@@ -5165,42 +4791,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.grading.GradeSystemAdminSession
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
 
     def can_create_grade_systems(self):
         """Tests if this user can create ``GradeSystems``.
@@ -5714,42 +5304,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.grading.GradeEntryLookupSession
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_lookup_grade_entries(self):
         """Tests if this user can perform ``GradeEntry`` lookups.
 
@@ -6173,42 +5727,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.grading.GradeEntryQuerySession
 
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
     def can_search_grade_entries(self):
         """Tests if this user can perform ``GradeEntry`` searches.
 
@@ -6308,42 +5826,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.grading.GradeEntryAdminSession
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
 
     def can_create_grade_entries(self):
         """Tests if this user can create grade entries.
@@ -6663,825 +6145,6 @@ class Gradebook(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
         :raise: ``NotFound`` -- ``grade_entry_id`` not found
         :raise: ``NullArgument`` -- ``grade_entry_id`` or ``alias_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-
-##
-# The following methods are from osid.grading.GradebookColumnLookupSession
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
-    def can_lookup_gradebook_columns(self):
-        """Tests if this user can perform ``GradebookColumn`` lookups.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known all methods in this
-        session will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer lookup
-        operations to unauthorized users.
-
-
-        :return: ``false`` if lookup methods are not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_comparative_gradebook_column_view(self):
-        """The returns from the lookup methods may omit or translate elements based on this session, such as
-            authorization, and not result in an error.
-
-
-        This view is used when greater interoperability is desired at
-        the expense of precision.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_plenary_gradebook_column_view(self):
-        """A complete view of the ``GradebookColumn`` returns is desired.
-
-
-        Methods will return what is requested or result in an error.
-        This view is used when greater precision is desired at the
-        expense of interoperability.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_federated_gradebook_view(self):
-        """Federates the view for methods in this session.
-
-
-        A federated view will include gradebook columns in gradebooks
-        which are children of this gradebook in the gradebook hierarchy.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_isolated_gradebook_view(self):
-        """Isolates the view for methods in this session.
-
-
-        An isolated view restricts lookups to this gradebook only.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_gradebook_column(self, gradebook_column_id):
-        """Gets the ``GradebookColumn`` specified by its ``Id``.
-
-
-        In plenary mode, the exact ``Id`` is found or a ``NotFound``
-        results. Otherwise, the returned ``GradebookColumn`` may have a
-        different ``Id`` than requested, such as the case where a
-        duplicate ``Id`` was assigned to a ``GradebookColumn`` and
-        retained for compatibility.
-
-
-        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
-        :return: the gradebook column
-        :rtype: ``osid.grading.GradebookColumn``
-        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumn
-
-    def get_gradebook_columns_by_ids(self, gradebook_column_ids):
-        """Gets a ``GradebookColumnList`` corresponding to the given ``IdList``.
-
-
-        In plenary mode, the returned list contains all of the gradebook
-        columns specified in the ``Id`` list, in the order of the list,
-        including duplicates, or an error results if a ``Id`` in the
-        supplied list is not found or inaccessible. Otherwise,
-        inaccessible gradeboook columns may be omitted from the list.
-
-
-        :param gradebook_column_ids: the list of ``Ids`` to retrieve
-        :type gradebook_column_ids: ``osid.id.IdList``
-        :return: the returned ``GradebookColumn`` list
-        :rtype: ``osid.grading.GradebookColumnList``
-        :raise: ``NotFound`` -- an ``Id was`` not found
-        :raise: ``NullArgument`` -- ``grade_book_column_ids`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnList
-
-    def get_gradebook_columns_by_genus_type(self, gradebook_column_genus_type):
-        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` which does not
-            include gradebook columns of genus types derived from the specified ``Type``.
-
-
-        In plenary mode, the returned list contains all known gradebook
-        columns or an error results. Otherwise, the returned list may
-        contain only those gradebook columns that are accessible through
-        this session.
-
-
-        :param gradebook_column_genus_type: a gradebook column genus type
-        :type gradebook_column_genus_type: ``osid.type.Type``
-        :return: the returned ``GradebookColumn`` list
-        :rtype: ``osid.grading.GradebookColumnList``
-        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnList
-
-    def get_gradebook_columns_by_parent_genus_type(self, gradebook_column_genus_type):
-        """Gets a ``GradebookColumnList`` corresponding to the given gradebook column genus ``Type`` and include any
-            additional columns with genus types derived from the specified ``Type``.
-
-
-        In plenary mode, the returned list contains all known gradebook
-        columns or an error results. Otherwise, the returned list may
-        contain only those gradebook columns that are accessible through
-        this session.
-
-
-        :param gradebook_column_genus_type: a gradebook column genus type
-        :type gradebook_column_genus_type: ``osid.type.Type``
-        :return: the returned ``GradebookColumn`` list
-        :rtype: ``osid.grading.GradebookColumnList``
-        :raise: ``NullArgument`` -- ``gradebook_column_genus_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnList
-
-    def get_gradebook_columns_by_record_type(self, gradebook_column_record_type):
-        """Gets a ``GradebookColumnList`` containing the given gradebook column record ``Type``.
-
-
-        In plenary mode, the returned list contains all known gradebook
-        columns or an error results. Otherwise, the returned list may
-        contain only those gradebook columns that are accessible through
-        this session.
-
-
-        :param gradebook_column_record_type: a gradebook column record type
-        :type gradebook_column_record_type: ``osid.type.Type``
-        :return: the returned ``GradebookColumn`` list
-        :rtype: ``osid.grading.GradebookColumnList``
-        :raise: ``NullArgument`` -- ``gradebook_column_record_type`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnList
-
-    def get_gradebook_columns(self):
-        """Gets all gradebook columns.
-
-
-        In plenary mode, the returned list contains all known gradebook
-        columns or an error results. Otherwise, the returned list may
-        contain only those gradebook columns that are accessible through
-        this session.
-
-
-        :return: a ``GradebookColumn``
-        :rtype: ``osid.grading.GradebookColumnList``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnList
-
-    gradebook_columns = property(fget=get_gradebook_columns)
-
-    def supports_summary(self):
-        """Tests if a summary entry is available.
-
-
-        :return: ``true`` if a summary entry is available, ``false`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_gradebook_column_summary(self, gradebook_column_id):
-        """Gets the ``GradebookColumnSummary`` for summary results.
-
-
-        :param gradebook_column_id: ``Id`` of the ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
-        :return: the gradebook column summary
-        :rtype: ``osid.grading.GradebookColumnSummary``
-        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
-        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unimplemented`` -- ``has_summary()`` is ``false``
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnSummary
-
-
-##
-# The following methods are from osid.grading.GradebookColumnQuerySession
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
-    def can_search_gradebook_columns(self):
-        """Tests if this user can perform ``GradebookColumn`` searches.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known all methods in this
-        session will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer search
-        operations to unauthorized users.
-
-
-        :return: ``false`` if search methods are not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def use_federated_gradebook_view(self):
-        """Federates the view for methods in this session.
-
-
-        A federated view will include gradebook columns in gradebooks
-        which are children of this gradebook in the gradebook hierarchy.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def use_isolated_gradebook_view(self):
-        """Isolates the view for methods in this session.
-
-
-        An isolated view restricts searches to this gradebook only.
-
-
-
-
-
-
-        *compliance: mandatory -- This method is must be implemented.*
-
-
-        """
-        pass
-
-    def get_gradebook_column_query(self):
-        """Gets a gradebook column query.
-
-
-        :return: the gradebook column
-        :rtype: ``osid.grading.GradebookColumnQuery``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnQuery
-
-    gradebook_column_query = property(fget=get_gradebook_column_query)
-
-    def get_gradebook_columns_by_query(self, gradebook_column_query):
-        """Gets a list of gradebook columns matching the given query.
-
-
-        :param gradebook_column_query: the gradebook column query
-        :type gradebook_column_query: ``osid.grading.GradebookColumnQuery``
-        :return: the returned ``GradebookColumnList``
-        :rtype: ``osid.grading.GradebookColumnList``
-        :raise: ``NullArgument`` -- ``gradebook_column_query`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_column_query`` is not of this service
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnList
-
-
-##
-# The following methods are from osid.grading.GradebookColumnAdminSession
-
-    def get_gradebook_id(self):
-        """Gets the ``Gradebook``  ``Id`` associated with this session.
-
-
-        :return: the ``Gradebook Id`` associated with this session
-        :rtype: ``osid.id.Id``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.id.Id
-
-    gradebook_id = property(fget=get_gradebook_id)
-
-    def get_gradebook(self):
-        """Gets the ``Gradebook`` associated with this session.
-
-
-        :return: the ``Gradebook`` associated with this session
-        :rtype: ``osid.grading.Gradebook``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.Gradebook
-
-    gradebook = property(fget=get_gradebook)
-
-    def can_create_gradebook_columns(self):
-        """Tests if this user can create gradebook columns.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known creating a gradebook
-        column will result in a ``PermissionDenied``. This is intended
-        as a hint to an application that may opt not to offer create
-        operations to an unauthorized user.
-
-
-        :return: ``false`` if ``GradebookColumn`` creation is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def can_create_gradebook_column_with_record_types(self, gradebook_column_record_types):
-        """Tests if this user can create a single ``GradebookColumn`` using the desired record types.
-
-
-        While ``GradingManager.getGradebookColumnRecordTypes()`` can be
-        used to examine which records are supported, this method tests
-        which record(s) are required for creating a specific
-        ``GradebookColumn``. Providing an empty array tests if a
-        ``GradebookColumn`` can be created with no records.
-
-
-        :param gradebook_column_record_types: array of gradebook column record types
-        :type gradebook_column_record_types: ``osid.type.Type[]``
-        :return: ``true`` if ``GradebookColumn`` creation using the specified record ``Types`` is supported, ``false``
-            otherwise
-        :rtype: ``boolean``
-        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_gradebook_column_form_for_create(self, gradebook_column_record_types):
-        """Gets the gradebook column form for creating new gradebook columns.
-
-
-        A new form should be requested for each create transaction.
-
-
-        :param gradebook_column_record_types: array of gradebook column record types
-        :type gradebook_column_record_types: ``osid.type.Type[]``
-        :return: the gradebook column form
-        :rtype: ``osid.grading.GradebookColumnForm``
-        :raise: ``NullArgument`` -- ``gradebook_column_record_types`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- unable to get form for requested record types
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnForm
-
-    def create_gradebook_column(self, gradebook_column_form):
-        """Creates a new ``GradebookColumn``.
-
-
-        :param gradebook_column_form: the form for this ``GradebookColumn``
-        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
-        :return: the new ``GradebookColumn``
-        :rtype: ``osid.grading.GradebookColumn``
-        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in a create transaction
-        :raise: ``InvalidArgument`` -- one or more of the form elements is invalid
-        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
-            ``get_gradebook_column_form_for_create()``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumn
-
-    def can_update_gradebook_columns(self):
-        """Tests if this user can update gradebook columns.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known updating a
-        ``GradebookColumn`` will result in a ``PermissionDenied``. This
-        is intended as a hint to an application that may opt not to
-        offer update operations to an unauthorized user.
-
-
-        :return: ``false`` if gradebook column modification is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def get_gradebook_column_form_for_update(self, gradebook_column_id):
-        """Gets the gradebook column form for updating an existing gradebook column.
-
-
-        A new gradebook column form should be requested for each update
-        transaction.
-
-
-        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
-        :return: the gradebook column form
-        :rtype: ``osid.grading.GradebookColumnForm``
-        :raise: ``NotFound`` -- ``gradebook_column_id`` is not found
-        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # osid.grading.GradebookColumnForm
-
-    def update_gradebook_column(self, gradebook_column_form):
-        """Updates an existing gradebook column.
-
-
-        :param gradebook_column_form: the form containing the elements to be updated
-        :type gradebook_column_form: ``osid.grading.GradebookColumnForm``
-        :raise: ``IllegalState`` -- ``gradebook_column_form`` already used in an update transaction
-        :raise: ``InvalidArgument`` -- the form contains an invalid value
-        :raise: ``NullArgument`` -- ``gradebook_column_form`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-        :raise: ``Unsupported`` -- ``gradebook_column_form`` did not originate from
-            ``get_gradebook_column_form_for_update()``
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def sequence_gradebook_columns(self, gradebook_column_ids):
-        """Resequences the gradebook columns.
-
-
-        :param gradebook_column_ids: the ``Ids`` of the ``GradebookColumns``
-        :type gradebook_column_ids: ``osid.id.IdList``
-        :raise: ``NullArgument`` -- ``gradebook_column_id_list`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def move_gradebook_column(self, front_gradebook_column_id, back_gradebook_column_id):
-        """Moves a gradebook column in front of another.
-
-
-        :param front_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
-        :type front_gradebook_column_id: ``osid.id.Id``
-        :param back_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
-        :type back_gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is not found
-        :raise: ``NullArgument`` -- ``front_gradebook_column_id or back_gradebook_column_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def copy_gradebook_column_entries(self, source_gradebook_column_id, target_gradebook_column_id):
-        """Copies gradebook column entries from one column to another.
-
-
-        If the target grade column grade system differs from the source,
-        the grades in the entries are transformed to the new grade
-        system.
-
-
-        :param source_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
-        :type source_gradebook_column_id: ``osid.id.Id``
-        :param target_gradebook_column_id: the ``Id`` of a ``GradebookColumn``
-        :type target_gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- ``source_gradebook_column_id ortarget_gradebook_column_id`` is not found
-        :raise: ``NullArgument`` -- ``source_gradebook_column_id target_gradebook_column_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def can_delete_gradebook_columns(self):
-        """Tests if this user can delete gradebook columns.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known deleting a
-        ``GradebookColumn`` will result in a ``PermissionDenied``. This
-        is intended as a hint to an application that may opt not to
-        offer delete operations to an unauthorized user.
-
-
-        :return: ``false`` if ``GradebookColumn`` deletion is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def delete_gradebook_column(self, gradebook_column_id):
-        """Deletes the ``GradebookColumn`` identified by the given ``Id``.
-
-
-        :param gradebook_column_id: the ``Id`` of the ``GradebookColumn`` to delete
-        :type gradebook_column_id: ``osid.id.Id``
-        :raise: ``NotFound`` -- a ``GradebookColumn`` was not found identified by the given ``Id``
-        :raise: ``NullArgument`` -- ``gradebook_column_id`` is ``null``
-        :raise: ``OperationFailed`` -- unable to complete request
-        :raise: ``PermissionDenied`` -- authorization failure
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        pass
-
-    def can_manage_gradebook_column_aliases(self):
-        """Tests if this user can manage ``Id`` aliases for ``GradebookColumns``.
-
-
-        A return of true does not guarantee successful authorization. A
-        return of false indicates that it is known changing an alias
-        will result in a ``PermissionDenied``. This is intended as a
-        hint to an application that may opt not to offer alias
-        operations to an unauthorized user.
-
-
-        :return: ``false`` if ``GradebookColumn`` aliasing is not authorized, ``true`` otherwise
-        :rtype: ``boolean``
-
-
-
-
-        *compliance: mandatory -- This method must be implemented.*
-
-
-        """
-        return # boolean
-
-    def alias_gradebook_column(self, gradebook_column_id, alias_id):
-        """Adds an ``Id`` to a ``GradebookColumn`` for the purpose of creating compatibility.
-
-
-        The primary ``Id`` of the ``GradebookColumn`` is determined by
-        the provider. The new ``Id`` performs as an alias to the primary
-        ``Id``. If the alias is a pointer to another gradebook column,
-        it is reassigned to the given gradebook column ``Id``.
-
-
-        :param gradebook_column_id: the ``Id`` of a ``GradebookColumn``
-        :type gradebook_column_id: ``osid.id.Id``
-        :param alias_id: the alias ``Id``
-        :type alias_id: ``osid.id.Id``
-        :raise: ``AlreadyExists`` -- ``alias_id`` is already assigned
-        :raise: ``NotFound`` -- ``gradebook_column_id`` not found
-        :raise: ``NullArgument`` -- ``gradebook_column_id`` or ``alias_id`` is ``null``
         :raise: ``OperationFailed`` -- unable to complete request
         :raise: ``PermissionDenied`` -- authorization failure
 
