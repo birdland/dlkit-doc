@@ -261,6 +261,32 @@ class RelationshipProfile(osid_managers.OsidProfile):
         """
         pass
 
+    def get_family(self, family_id):
+        """Gets the ``Family`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Family`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Family`` and retained for compatibil
+
+
+        :param family_id: ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: the family
+        :rtype: ``osid.relationship.Family``
+        :raise: ``NotFound`` -- ``family_id`` not found
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.relationship.Family
+
     def get_families_by_ids(self, family_ids):
         """Gets a ``FamilyList`` corresponding to the given ``IdList``.
 
@@ -1475,6 +1501,32 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         """
         pass
 
+    def get_family(self, family_id):
+        """Gets the ``Family`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Family`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Family`` and retained for compatibil
+
+
+        :param family_id: ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: the family
+        :rtype: ``osid.relationship.Family``
+        :raise: ``NotFound`` -- ``family_id`` not found
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.relationship.Family
+
     def get_families_by_ids(self, family_ids):
         """Gets a ``FamilyList`` corresponding to the given ``IdList``.
 
@@ -2595,6 +2647,32 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
 
         """
         pass
+
+    def get_family(self, family_id):
+        """Gets the ``Family`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Family`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Family`` and retained for compatibil
+
+
+        :param family_id: ``Id`` of the ``Family``
+        :type family_id: ``osid.id.Id``
+        :return: the family
+        :rtype: ``osid.relationship.Family``
+        :raise: ``NotFound`` -- ``family_id`` not found
+        :raise: ``NullArgument`` -- ``family_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.relationship.Family
 
     def get_families_by_ids(self, family_ids):
         """Gets a ``FamilyList`` corresponding to the given ``IdList``.
@@ -3723,6 +3801,42 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.relationship.RelationshipLookupSession
 
+    def get_family_id(self):
+        """Gets the ``Family``  ``Id`` associated with this session.
+
+
+        :return: the ``Family Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    family_id = property(fget=get_family_id)
+
+    def get_family(self):
+        """Gets the ``Family`` associated with this session.
+
+
+        :return: the family
+        :rtype: ``osid.relationship.Family``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.relationship.Family
+
+    family = property(fget=get_family)
+
     def can_lookup_relationships(self):
         """Tests if this user can perform ``Relationship`` lookups.
 
@@ -4326,6 +4440,42 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.relationship.RelationshipQuerySession
 
+    def get_family_id(self):
+        """Gets the ``Family``  ``Id`` associated with this session.
+
+
+        :return: the ``Family Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    family_id = property(fget=get_family_id)
+
+    def get_family(self):
+        """Gets the ``Family`` associated with this session.
+
+
+        :return: the family
+        :rtype: ``osid.relationship.Family``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.relationship.Family
+
+    family = property(fget=get_family)
+
     def use_federated_family_view(self):
         """Federates the view for methods in this session.
 
@@ -4425,6 +4575,42 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.relationship.RelationshipAdminSession
+
+    def get_family_id(self):
+        """Gets the ``Familt``  ``Id`` associated with this session.
+
+
+        :return: the ``Family Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    family_id = property(fget=get_family_id)
+
+    def get_family(self):
+        """Gets the ``Family`` associated with this session.
+
+
+        :return: the family
+        :rtype: ``osid.relationship.Family``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.relationship.Family
+
+    family = property(fget=get_family)
 
     def can_create_relationships(self):
         """Tests if this user can create ``Relationships`` A return of true does not guarantee successful authorization.

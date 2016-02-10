@@ -501,6 +501,32 @@ class ResourceProfile(osid_managers.OsidProfile):
         """
         pass
 
+    def get_bin(self, bin_id):
+        """Gets the ``Bin`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Bin`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Bin`` and retained for compatibility.
+
+
+        :param bin_id: ``Id`` of the ``Bin``
+        :type bin_id: ``osid.id.Id``
+        :return: the bin
+        :rtype: ``osid.resource.Bin``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
     def get_bins_by_ids(self, bin_ids):
         """Gets a ``BinList`` corresponding to the given ``IdList``.
 
@@ -1808,6 +1834,32 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         """
         pass
 
+    def get_bin(self, bin_id):
+        """Gets the ``Bin`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Bin`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Bin`` and retained for compatibility.
+
+
+        :param bin_id: ``Id`` of the ``Bin``
+        :type bin_id: ``osid.id.Id``
+        :return: the bin
+        :rtype: ``osid.resource.Bin``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
     def get_bins_by_ids(self, bin_ids):
         """Gets a ``BinList`` corresponding to the given ``IdList``.
 
@@ -3022,6 +3074,32 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         """
         pass
 
+    def get_bin(self, bin_id):
+        """Gets the ``Bin`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Bin`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Bin`` and retained for compatibility.
+
+
+        :param bin_id: ``Id`` of the ``Bin``
+        :type bin_id: ``osid.id.Id``
+        :return: the bin
+        :rtype: ``osid.resource.Bin``
+        :raise: ``NotFound`` -- ``bin_id`` not found
+        :raise: ``NullArgument`` -- ``bin_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
     def get_bins_by_ids(self, bin_ids):
         """Gets a ``BinList`` corresponding to the given ``IdList``.
 
@@ -4205,6 +4283,42 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.resource.ResourceLookupSession
 
+    def get_bin_id(self):
+        """Gets the ``Bin``  ``Id`` associated with this session.
+
+
+        :return: the ``Bin Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bin_id = property(fget=get_bin_id)
+
+    def get_bin(self):
+        """Gets the ``Bin`` associated with this session.
+
+
+        :return: the ``Bin`` associated with this session
+        :rtype: ``osid.resource.Bin``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
+    bin = property(fget=get_bin)
+
     def can_lookup_resources(self):
         """Tests if this user can perform ``Resource`` lookups.
 
@@ -4458,6 +4572,42 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.resource.ResourceQuerySession
 
+    def get_bin_id(self):
+        """Gets the ``Bin``  ``Id`` associated with this session.
+
+
+        :return: the ``Bin Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bin_id = property(fget=get_bin_id)
+
+    def get_bin(self):
+        """Gets the ``Bin`` associated with this session.
+
+
+        :return: the ``Bin`` associated with this session
+        :rtype: ``osid.resource.Bin``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
+    bin = property(fget=get_bin)
+
     def can_search_resources(self):
         """Tests if this user can perform ``Resource`` searches.
 
@@ -4647,6 +4797,42 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.resource.ResourceAdminSession
+
+    def get_bin_id(self):
+        """Gets the ``Bin``  ``Id`` associated with this session.
+
+
+        :return: the ``Bin Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bin_id = property(fget=get_bin_id)
+
+    def get_bin(self):
+        """Gets the ``Bin`` associated with this session.
+
+
+        :return: the ``Bin`` associated with this session
+        :rtype: ``osid.resource.Bin``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
+    bin = property(fget=get_bin)
 
     def can_create_resources(self):
         """Tests if this user can create ``Resources``.
@@ -4901,6 +5087,42 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.resource.ResourceNotificationSession
+
+    def get_bin_id(self):
+        """Gets the ``Bin``  ``Id`` associated with this session.
+
+
+        :return: the ``Bin Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bin_id = property(fget=get_bin_id)
+
+    def get_bin(self):
+        """Gets the ``Bin`` associated with this session.
+
+
+        :return: the ``Bin`` associated with this session
+        :rtype: ``osid.resource.Bin``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
+    bin = property(fget=get_bin)
 
     def can_register_for_resource_notifications(self):
         """Tests if this user can register for ``Resource`` notifications.
@@ -5425,6 +5647,42 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.resource.ResourceAgentSession
 
+    def get_bin_id(self):
+        """Gets the ``Bin``  ``Id`` associated with this session.
+
+
+        :return: the ``Bin Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bin_id = property(fget=get_bin_id)
+
+    def get_bin(self):
+        """Gets the ``Bin`` associated with this session.
+
+
+        :return: the ``Bin`` associated with this session
+        :rtype: ``osid.resource.Bin``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
+    bin = property(fget=get_bin)
+
     def can_lookup_resource_agent_mappings(self):
         """Tests if this user can perform lookups of resource/agent mappings.
 
@@ -5604,6 +5862,42 @@ class Bin(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.resource.ResourceAgentAssignmentSession
+
+    def get_bin_id(self):
+        """Gets the ``Bin``  ``Id`` associated with this session.
+
+
+        :return: the ``Bin Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bin_id = property(fget=get_bin_id)
+
+    def get_bin(self):
+        """Gets the ``Bin`` associated with this session.
+
+
+        :return: the ``Bin`` associated with this session
+        :rtype: ``osid.resource.Bin``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.resource.Bin
+
+    bin = property(fget=get_bin)
 
     def can_assign_agents(self):
         """Tests if this user can alter resource/agent mappings.

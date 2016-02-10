@@ -55,6 +55,42 @@ class AssessmentSession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_take_assessments(self):
         """Tests if this user can take this assessment section.
 
@@ -1047,6 +1083,42 @@ class AssessmentSession(osid_sessions.OsidSession):
 class ItemLookupSession(osid_sessions.OsidSession):
     """This session provides methods for retrieving ``Item`` objects."""
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_lookup_items(self):
         """Tests if this user can perform ``Item`` lookups.
 
@@ -1431,6 +1503,42 @@ class ItemQuerySession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_search_items(self):
         """Tests if this user can perform ``Item`` searches.
 
@@ -1711,6 +1819,42 @@ class ItemAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
 
     def can_create_items(self):
         """Tests if this user can create ``Items``.
@@ -2388,6 +2532,42 @@ class ItemNotificationSession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_register_for_item_notifications(self):
         """Tests if this user can register for ``Item`` notifications.
 
@@ -3027,6 +3207,42 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
 class AssessmentLookupSession(osid_sessions.OsidSession):
     """This session defines methods for retrieving assessments."""
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_lookup_assessments(self):
         """Tests if this user can perform ``Assessment`` lookups.
 
@@ -3317,6 +3533,42 @@ class AssessmentQuerySession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_search_assessments(self):
         """Tests if this user can perform ``Assessment`` searches.
 
@@ -3463,6 +3715,42 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
 
     def can_create_assessments(self):
         """Tests if this user can create ``Assessments``.
@@ -4103,6 +4391,42 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_author_assessments(self):
         """Tests if this user can author assessments.
 
@@ -4232,6 +4556,42 @@ class AssessmentBasicAuthoringSession(osid_sessions.OsidSession):
 
 class AssessmentOfferedLookupSession(osid_sessions.OsidSession):
     """This session defines methods for retrieving assessments offered."""
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
 
     def can_lookup_assessments_offered(self):
         """Tests if this user can perform ``AssessmentOffered`` lookups.
@@ -4577,6 +4937,42 @@ class AssessmentOfferedQuerySession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_search_assessments_offered(self):
         """Tests if this user can perform ``AssessmentOffered`` searches.
 
@@ -4725,6 +5121,42 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
 
     def can_create_assessments_offered(self):
         """Tests if this user can create ``AssessmentOffered`` objects.
@@ -5362,6 +5794,42 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
 class AssessmentTakenLookupSession(osid_sessions.OsidSession):
     """This session defines methods for retrieving assessments taken."""
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_lookup_assessments_taken(self):
         """Tests if this user can perform ``AssessmentTaken`` lookups.
 
@@ -5967,6 +6435,42 @@ class AssessmentTakenQuerySession(osid_sessions.OsidSession):
 
     """
 
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
     def can_search_assessments_taken(self):
         """Tests if this user can perform ``AssessmentTaken`` searches.
 
@@ -6115,6 +6619,42 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
 
     def can_create_assessments_taken(self):
         """Tests if this user can create ``AssessmentTaken`` objects.
@@ -6853,6 +7393,32 @@ class BankLookupSession(osid_sessions.OsidSession):
 
         """
         pass
+
+    def get_bank(self, bank_id):
+        """Gets the ``Bank`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Bank`` may have a different
+        ``Id`` than requested, such as the case where a duplicate ``Id``
+        was assigned to a ``Bank`` and retained for compatibility.
+
+
+        :param bank_id: ``Id`` of the ``Bank``
+        :type bank_id: ``osid.id.Id``
+        :return: the bank
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``NotFound`` -- ``bank_id`` not found
+        :raise: ``NullArgument`` -- ``bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.assessment.Bank
 
     def get_banks_by_ids(self, bank_ids):
         """Gets a ``BankList`` corresponding to the given ``IdList``.

@@ -696,6 +696,33 @@ class RepositoryProfile(osid_managers.OsidProfile):
         """
         pass
 
+    def get_repository(self, repository_id):
+        """Gets the ``Repository`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Repository`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Repository`` and retained
+        for compatibility.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: the repository
+        :rtype: ``osid.repository.Repository``
+        :raise: ``NotFound`` -- ``repository_id`` not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
 
@@ -2011,6 +2038,33 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         """
         pass
 
+    def get_repository(self, repository_id):
+        """Gets the ``Repository`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Repository`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Repository`` and retained
+        for compatibility.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: the repository
+        :rtype: ``osid.repository.Repository``
+        :raise: ``NotFound`` -- ``repository_id`` not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
 
@@ -3234,6 +3288,33 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         """
         pass
 
+    def get_repository(self, repository_id):
+        """Gets the ``Repository`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Repository`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Repository`` and retained
+        for compatibility.
+
+
+        :param repository_id: ``Id`` of the ``Repository``
+        :type repository_id: ``osid.id.Id``
+        :return: the repository
+        :rtype: ``osid.repository.Repository``
+        :raise: ``NotFound`` -- ``repository_id`` not found
+        :raise: ``NullArgument`` -- ``repository_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
     def get_repositories_by_ids(self, repository_ids):
         """Gets a ``RepositoryList`` corresponding to the given ``IdList``.
 
@@ -4423,6 +4504,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetLookupSession
 
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
+
     def can_lookup_assets(self):
         """Tests if this user can perform ``Asset`` lookups.
 
@@ -4699,6 +4816,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetQuerySession
 
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
+
     def can_search_assets(self):
         """Tests if this user can perform ``Asset`` searches.
 
@@ -4885,6 +5038,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.AssetAdminSession
+
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
 
     def can_create_assets(self):
         """Tests if this user can create ``Assets``.
@@ -5338,6 +5527,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.AssetNotificationSession
+
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
 
     def can_register_for_asset_notifications(self):
         """Tests if this user can register for ``Asset`` notifications.
@@ -5928,6 +6153,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetCompositionSession
 
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
+
     def can_access_asset_compositions(self):
         """Tests if this user can perform composition lookups.
 
@@ -6068,6 +6329,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.AssetCompositionDesignSession
 
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
+
     def can_compose_assets(self):
         """Tests if this user can manage mapping of ``Assets`` to ``Compositions``.
 
@@ -6199,6 +6496,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.CompositionLookupSession
+
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
 
     def can_lookup_compositions(self):
         """Tests if this user can perform ``Composition`` lookups.
@@ -6502,6 +6835,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 ##
 # The following methods are from osid.repository.CompositionQuerySession
 
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
+
     def can_search_compositions(self):
         """Tests if this user can perform ``Composition`` searches.
 
@@ -6716,6 +7085,42 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 ##
 # The following methods are from osid.repository.CompositionAdminSession
+
+    def get_repository_id(self):
+        """Gets the ``Repository``  ``Id`` associated with this session.
+
+
+        :return: the ``Repository Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    repository_id = property(fget=get_repository_id)
+
+    def get_repository(self):
+        """Gets the ``Repository`` associated with this session.
+
+
+        :return: the ``Repository`` associated with this session
+        :rtype: ``osid.repository.Repository``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.repository.Repository
+
+    repository = property(fget=get_repository)
 
     def can_create_compositions(self):
         """Tests if this user can create ``Compositions``.

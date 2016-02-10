@@ -5,6 +5,42 @@ from ..osid import sessions as osid_sessions
 class ObjectiveLookupSession(osid_sessions.OsidSession):
     """This session provides methods for retrieving ``Objective`` s."""
 
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
     def can_lookup_objectives(self):
         """Tests if this user can perform ``Objective`` lookups.
 
@@ -293,6 +329,42 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
 
     """
 
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
     def can_search_objectives(self):
         """Tests if this user can perform ``Objectives`` searches.
 
@@ -440,6 +512,42 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
 
     def can_create_objectives(self):
         """Tests if this user can create ``Objectives``.
@@ -1850,6 +1958,42 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
 
     """
 
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
     def can_lookup_objective_prerequisites(self):
         """Tests if this user can perform ``Objective`` lookups.
 
@@ -2101,6 +2245,42 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
 
     """
 
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
     def can_assign_requisites(self):
         """Tests if this user can manage objective requisites.
 
@@ -2251,6 +2431,42 @@ class ActivityLookupSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
 
     def can_lookup_activities(self):
         """Tests if this user can perform ``Activity`` lookups.
@@ -2665,6 +2881,42 @@ class ActivityAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the ``ObjectiveBank`` associated with this session
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
 
     def can_create_activities(self):
         """Tests if this user can create ``Activities``.
@@ -3301,6 +3553,42 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
 
 class ProficiencyLookupSession(osid_sessions.OsidSession):
     """This session defines methods for retrieving proficiencies."""
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the obective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
 
     def can_lookup_proficiencies(self):
         """Tests if this user can perform ``Proficiency`` lookups.
@@ -3953,6 +4241,42 @@ class ProficiencyQuerySession(osid_sessions.OsidSession):
 
     """
 
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the obective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
+
     def can_search_proficiencies(self):
         """Tests if this user can perform ``Proficiency`` lookups.
 
@@ -4102,6 +4426,42 @@ class ProficiencyAdminSession(osid_sessions.OsidSession):
 
 
     """
+
+    def get_objective_bank_id(self):
+        """Gets the ``ObjectiveBank``  ``Id`` associated with this session.
+
+
+        :return: the ``ObjectiveBank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    objective_bank_id = property(fget=get_objective_bank_id)
+
+    def get_objective_bank(self):
+        """Gets the ``ObjectiveBank`` associated with this session.
+
+
+        :return: the obective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
+
+    objective_bank = property(fget=get_objective_bank)
 
     def can_create_proficiencies(self):
         """Tests if this user can create ``Proficiencies``.
@@ -4476,6 +4836,33 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
 
         """
         pass
+
+    def get_objective_bank(self, objective_bank_id):
+        """Gets the ``ObjectiveBank`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``ObjectiveBank`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``ObjectiveBank`` and
+        retained for compatility.
+
+
+        :param objective_bank_id: ``Id`` of the ``ObjectiveBank``
+        :type objective_bank_id: ``osid.id.Id``
+        :return: the objective bank
+        :rtype: ``osid.learning.ObjectiveBank``
+        :raise: ``NotFound`` -- ``objective_bank_id`` not found
+        :raise: ``NullArgument`` -- ``objective_bank_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+
+        """
+        return # osid.learning.ObjectiveBank
 
     def get_objective_banks_by_ids(self, objective_bank_ids):
         """Gets a ``ObjectiveBankList`` corresponding to the given ``IdList``.

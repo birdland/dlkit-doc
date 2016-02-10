@@ -141,6 +141,42 @@ class HierarchyProfile(osid_managers.OsidProfile):
 ##
 # The following methods are from osid.hierarchy.HierarchyTraversalSession
 
+    def get_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    hierarchy_id = property(fget=get_hierarchy_id)
+
+    def get_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    hierarchy = property(fget=get_hierarchy)
+
     def can_access_hierarchy(self):
         """Tests if this user can perform hierarchy queries.
 
@@ -389,6 +425,42 @@ class HierarchyProfile(osid_managers.OsidProfile):
 ##
 # The following methods are from osid.hierarchy.HierarchyDesignSession
 
+    def get_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    hierarchy_id = property(fget=get_hierarchy_id)
+
+    def get_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    hierarchy = property(fget=get_hierarchy)
+
     def can_modify_hierarchy(self):
         """Tests if this user can change the hierarchy.
 
@@ -572,6 +644,33 @@ class HierarchyProfile(osid_managers.OsidProfile):
 
         """
         pass
+
+    def get_hierarchy(self, hierarchy_id):
+        """Gets the ``Hierarchy`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Hierarchy`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Hierarchy`` and retained
+        for compati
+
+
+        :param hierarchy_id: the ``Id`` of the ``Hierarchy`` to retrieve
+        :type hierarchy_id: ``osid.id.Id``
+        :return: the returned ``Hierarchy``
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``NotFound`` -- no ``Hierarchy`` found with the given ``Id``
+        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
 
     def get_hierarchies_by_ids(self, hierarchy_ids):
         """Gets a ``Hierarchy`` corresponding to the given ``IdList``.
@@ -1115,6 +1214,42 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 ##
 # The following methods are from osid.hierarchy.HierarchyTraversalSession
 
+    def get_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    hierarchy_id = property(fget=get_hierarchy_id)
+
+    def get_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    hierarchy = property(fget=get_hierarchy)
+
     def can_access_hierarchy(self):
         """Tests if this user can perform hierarchy queries.
 
@@ -1363,6 +1498,42 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 ##
 # The following methods are from osid.hierarchy.HierarchyDesignSession
 
+    def get_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    hierarchy_id = property(fget=get_hierarchy_id)
+
+    def get_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    hierarchy = property(fget=get_hierarchy)
+
     def can_modify_hierarchy(self):
         """Tests if this user can change the hierarchy.
 
@@ -1546,6 +1717,33 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 
         """
         pass
+
+    def get_hierarchy(self, hierarchy_id):
+        """Gets the ``Hierarchy`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Hierarchy`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Hierarchy`` and retained
+        for compati
+
+
+        :param hierarchy_id: the ``Id`` of the ``Hierarchy`` to retrieve
+        :type hierarchy_id: ``osid.id.Id``
+        :return: the returned ``Hierarchy``
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``NotFound`` -- no ``Hierarchy`` found with the given ``Id``
+        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
 
     def get_hierarchies_by_ids(self, hierarchy_ids):
         """Gets a ``Hierarchy`` corresponding to the given ``IdList``.
@@ -1996,6 +2194,42 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 ##
 # The following methods are from osid.hierarchy.HierarchyTraversalSession
 
+    def get_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    hierarchy_id = property(fget=get_hierarchy_id)
+
+    def get_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    hierarchy = property(fget=get_hierarchy)
+
     def can_access_hierarchy(self):
         """Tests if this user can perform hierarchy queries.
 
@@ -2244,6 +2478,42 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 ##
 # The following methods are from osid.hierarchy.HierarchyDesignSession
 
+    def get_hierarchy_id(self):
+        """Gets the hierarchy ``Id`` associated with this session.
+
+
+        :return: the hierarchy ``Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.id.Id
+
+    hierarchy_id = property(fget=get_hierarchy_id)
+
+    def get_hierarchy(self):
+        """Gets the hierarchy associated with this session.
+
+
+        :return: the hierarchy associated with this session
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
+
+    hierarchy = property(fget=get_hierarchy)
+
     def can_modify_hierarchy(self):
         """Tests if this user can change the hierarchy.
 
@@ -2427,6 +2697,33 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 
         """
         pass
+
+    def get_hierarchy(self, hierarchy_id):
+        """Gets the ``Hierarchy`` specified by its ``Id``.
+
+
+        In plenary mode, the exact ``Id`` is found or a ``NotFound``
+        results. Otherwise, the returned ``Hierarchy`` may have a
+        different ``Id`` than requested, such as the case where a
+        duplicate ``Id`` was assigned to a ``Hierarchy`` and retained
+        for compati
+
+
+        :param hierarchy_id: the ``Id`` of the ``Hierarchy`` to retrieve
+        :type hierarchy_id: ``osid.id.Id``
+        :return: the returned ``Hierarchy``
+        :rtype: ``osid.hierarchy.Hierarchy``
+        :raise: ``NotFound`` -- no ``Hierarchy`` found with the given ``Id``
+        :raise: ``NullArgument`` -- ``hierarchy_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+
+        """
+        return # osid.hierarchy.Hierarchy
 
     def get_hierarchies_by_ids(self, hierarchy_ids):
         """Gets a ``Hierarchy`` corresponding to the given ``IdList``.
