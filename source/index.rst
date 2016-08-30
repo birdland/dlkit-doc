@@ -7,8 +7,8 @@ Welcome to the DLKit documentation!
 ===================================
 
 This documentation for the Digital Learning Toolkit (DLKit), like the toolkit itself,
-is still under development. It currently covers only a small handful of the 160 service packages 
-and 9,000 educational service APIs that have been defined by MIT's Office of Digital Learning and
+is still under development. It currently covers only a small handful of the 180 service packages 
+and over 10,000 educational service APIs that have been defined by MIT's Office of Digital Learning and
 its collaborators to date.
 
 The DLKit codebase is generated from the Open Service Interface Definitions (OSIDs), 
