@@ -29,6 +29,10 @@ Currently, DLKit works with Python 2.6 and 2.7.
 If you are interested in learning more about the DLKit Python libraries documented here,
 please contact dlkit-info@mit.edu
 
+Get DLKit
+---------
+The latest builds of DLKit and related dependencies are available here: https://bitbucket.org/cjshaw/
+
 Testing
 -------
 Unit tests and limited functional tests for DLKit are available here: https://github.mit.edu/sei/dlkit_tests
