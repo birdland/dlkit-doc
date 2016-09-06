@@ -35,7 +35,7 @@ The latest release of DLKit and related dependencies are available here: https:/
 
 Testing
 -------
-Unit tests and limited functional tests for DLKit are available here: https://github.mit.edu/sei/dlkit_tests
+Unit tests and limited functional tests for DLKit are available here: https://bitbucket.org/cjshaw/dlkit-tests
 
 Contents:
 ---------
