@@ -85,7 +85,7 @@ Dependencies
 DLKit has several dependencies that are also listed as git submodules. They
 are relisted here for convenience, along with their git repositories:
 
-  * AWS Adapter (for storing / retrieving files from Amazon AWS S3): https://github.mit.edu/sei/aws_adapter
-  * Handcar (MC3 learning service): https://github.mit.edu/sei/handcar
-  * Primordium (basic object types): https://github.mit.edu/sei/primordium
+  * AWS Adapter (for storing / retrieving files from Amazon AWS S3): https://bitbucket.org/cjshaw/aws_adapter
+  * Handcar (MC3 learning service-based implementation): https://bitbucket.org/cjshaw/handcar
+  * Primordium (basic object types): https://bitbucket.org/cjshaw/primordium
   * Record extensions (for extending objects in the MongoDB implementation): https://github.mit.edu/sei/dlkit_records
