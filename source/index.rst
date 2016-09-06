@@ -31,7 +31,7 @@ please contact dlkit-info@mit.edu
 
 Get DLKit
 ---------
-The latest release of DLKit and related dependencies are available here: https://bitbucket.org/cjshaw/
+The latest release of DLKit and related dependencies are available here: https://bitbucket.org/cjshaw/dlkit
 
 Testing
 -------
