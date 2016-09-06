@@ -13,8 +13,8 @@ Handcar.
 Two examples are available, one for Open edX and another for Django. You
 can also build your own, using these as templates:
 
-* Open edX runtime: https://github.mit.edu/sei/dlkit_edx
-* Django runtime: https://github.mit.edu/sei/dlkit_django
+* Django runtime: https://bitbucket.org/cjshaw/dlkit_django
+* Open edX runtime: https://bitbucket.org/cjshaw/dlkit_edx
 
 Both runtimes require the addition of ``configs.py`` and
 ``registry.py`` files. These allow different instances of
