@@ -31,7 +31,11 @@ please contact dlkit-info@mit.edu
 
 Get DLKit
 ---------
-The latest release of DLKit and related dependencies are available here: https://bitbucket.org/cjshaw/dlkit
+The latest release of DLKit and related dependencies are available here: https://bitbucket.org/cjshaw/
+
+The core MongoDB implemenation is located in the https://bitbucket.org/cjshaw/dlkit repository, which has
+sub-module dependencies on a number of the other repositories on the site. More information about this
+can be found in the introduction section.
 
 Testing
 -------
