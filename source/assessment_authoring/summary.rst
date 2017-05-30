@@ -1,5 +1,5 @@
 Summary
 =======
 
-.. currentmodule:: dlkit.services.assessment.authoring
-.. automodule:: dlkit.services.assessment.authoring
+.. currentmodule:: dlkit.services.assessment_authoring
+.. automodule:: dlkit.services.assessment_authoring

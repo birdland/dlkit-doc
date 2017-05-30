@@ -258,6 +258,154 @@ class AssessmentPartLookupSession(osid_sessions.OsidSession):
     assessment_parts = property(fget=get_assessment_parts)
 
 
+class AssessmentPartQuerySession(osid_sessions.OsidSession):
+    """This session provides methods for searching among ``AssessmentPart`` objects.
+
+    The search query is constructed using the ``AssessmentPartQuery``.
+
+    This session defines views that offer differing behaviors for
+    searching.
+
+      * federated bank view: searches include assessment parts in bank
+        of which this bank is an ancestor in the bank hierarchy
+      * isolated bank view: searches are restricted to assessment parts
+        in this bank
+      * sequestered assessment part viiew: All assessment part methods
+        suppress sequestered assessment parts.
+      * unsequestered assessment part view: All assessment part methods
+        return all assessment parts.
+
+
+    Assessment parts may have a query record indicated by their
+    respective record types. The query record is accessed via the
+    ``AssessmentPartQuery``.
+
+    """
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+        :return: the bank
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
+    def can_search_assessment_parts(self):
+        """Tests if this user can perform ``AssessmentPart`` lookups.
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may not offer lookup operations
+        to unauthorized users.
+
+        :return: ``false`` if search methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
+    def use_federated_bank_view(self):
+        """Federates the view for methods in this session.
+
+        A federated view will include assessment part in banks which are
+        children of this step in the bank hierarchy.
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+        """
+        pass
+
+    def use_isolated_bank_view(self):
+        """Isolates the view for methods in this session.
+
+        An isolated view restricts lookups to this bank only.
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+        """
+        pass
+
+    def use_sequestered_assessment_part_view(self):
+        """The methods in this session omit sequestered assessment parts.
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+        """
+        pass
+
+    def use_unsequestered_assessment_part_view(self):
+        """The methods in this session return all assessment parts, including sequestered assessment parts.
+
+
+
+        *compliance: mandatory -- This method is must be implemented.*
+
+        """
+        pass
+
+    def get_assessment_part_query(self):
+        """Gets an assessment part query.
+
+        :return: the assessment part query
+        :rtype: ``osid.assessment.authoring.AssessmentPartQuery``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.authoring.AssessmentPartQuery
+
+    assessment_part_query = property(fget=get_assessment_part_query)
+
+    def get_assessment_parts_by_query(self, assessment_part_query):
+        """Gets a list of ``AssessmentParts`` matching the given assessment part query.
+
+        :param assessment_part_query: the assessment part query
+        :type assessment_part_query: ``osid.assessment.authoring.AssessmentPartQuery``
+        :return: the returned ``AssessmentPartList``
+        :rtype: ``osid.assessment.authoring.AssessmentPartList``
+        :raise: ``NullArgument`` -- ``assessment_part_query`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+        :raise: ``Unsupported`` -- ``assessment_part_query`` is not of this service
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.authoring.AssessmentPartList
+
+
 class AssessmentPartAdminSession(osid_sessions.OsidSession):
     """This session creates, updates, and deletes ``AssessmentParts``.
 

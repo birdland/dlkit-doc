@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.services.assessment.authoring
-.. automodule:: dlkit.services.assessment.authoring
+.. currentmodule:: dlkit.services.assessment_authoring
+.. automodule:: dlkit.services.assessment_authoring
 
 Service Managers
 ================
@@ -13,6 +13,8 @@ Assessment Authoring Profile
    :show-inheritance:
 
    .. automethod:: AssessmentAuthoringProfile.supports_assessment_part_lookup
+
+   .. automethod:: AssessmentAuthoringProfile.supports_assessment_part_query
 
    .. automethod:: AssessmentAuthoringProfile.supports_assessment_part_admin
 

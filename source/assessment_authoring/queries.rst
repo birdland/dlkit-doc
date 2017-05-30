@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.assessment.authoring.queries
-.. automodule:: dlkit.assessment.authoring.queries
+.. currentmodule:: dlkit.assessment_authoring.queries
+.. automodule:: dlkit.assessment_authoring.queries
 
 Queries
 =======

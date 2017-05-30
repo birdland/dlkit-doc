@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.logging.queries
-.. automodule:: dlkit.logging.queries
+.. currentmodule:: dlkit.logging_.queries
+.. automodule:: dlkit.logging_.queries
 
 Queries
 =======

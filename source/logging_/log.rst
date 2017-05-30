@@ -1,5 +1,5 @@
 
-.. currentmodule:: dlkit.services.logging
+.. currentmodule:: dlkit.services.logging_
 
 Log
 ===

@@ -1565,6 +1565,66 @@ class CompositionList(osid_objects.OsidList):
 class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A repository defines a collection of assets."""
 
+
+    def can_lookup_asset_contents(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.can_lookup_asset_contents
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').can_lookup_asset_contents(*args, **kwargs)
+
+    def get_asset_content(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_content
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_content(*args, **kwargs)
+
+    def get_asset_contents_by_ids(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_ids
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_ids(*args, **kwargs)
+
+    def get_asset_contents_by_genus_type(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_genus_type
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_genus_type(*args, **kwargs)
+
+    def get_asset_contents_by_parent_genus_type(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_parent_genus_type
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_parent_genus_type(*args, **kwargs)
+
+    def get_asset_contents_by_record_type(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_record_type
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_record_type(*args, **kwargs)
+
+    def get_asset_contents_for_asset(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_for_asset
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_for_asset(*args, **kwargs)
+
+    def get_asset_contents_by_genus_type_for_asset(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_genus_type_for_asset
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_genus_type_for_asset(*args, **kwargs)
+
+    def get_asset_content_query(self, *args, **kwargs):
+        """Pass through to provider AssetQuerySession.get_asset_content_query
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_query_session').get_asset_content_query(*args, **kwargs)
+
+    def get_asset_contents_by_query(self, *args, **kwargs):
+        """Pass through to provider AssetQuerySession.get_asset_contents_by_query
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_query_session').get_asset_contents_by_query(*args, **kwargs)
     def get_repository_record(self, repository_record_type):
         """Gets the record corresponding to the given ``Repository`` record ``Type``.
 

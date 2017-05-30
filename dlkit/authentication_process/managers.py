@@ -77,7 +77,7 @@ class AuthenticationProcessProfile(osid_managers.OsidProfile):
     trust_types = property(fget=get_trust_types)
 
 
-class AuthenticationProcessManager(osid_managers.OsidManager, osid_sessions.OsidSession, authentication.process_UNKNOWN_MODULE.AuthenticationProcessProfile):
+class AuthenticationProcessManager(osid_managers.OsidManager, osid_sessions.OsidSession, AuthenticationProcessProfile):
     """The authentication process manager provides access to authentication sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
@@ -98,7 +98,7 @@ class AuthenticationProcessManager(osid_managers.OsidManager, osid_sessions.Osid
 
 
 
-class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, authentication.process_UNKNOWN_MODULE.AuthenticationProcessProfile):
+class AuthenticationProcessProxyManager(osid_managers.OsidProxyManager, AuthenticationProcessProfile):
     """The authentication process proxy manager provides access to authentication sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` object.

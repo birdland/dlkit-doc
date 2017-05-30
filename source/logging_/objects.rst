@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.logging.objects
-.. automodule:: dlkit.logging.objects
+.. currentmodule:: dlkit.logging_.objects
+.. automodule:: dlkit.logging_.objects
 
 Objects
 =======

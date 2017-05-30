@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.assessment.authoring.records
-.. automodule:: dlkit.assessment.authoring.records
+.. currentmodule:: dlkit.assessment_authoring.records
+.. automodule:: dlkit.assessment_authoring.records
 
 Records
 =======
