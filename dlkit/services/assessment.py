@@ -77,13 +77,22 @@ from ..osid import rules as osid_rules
 class AssessmentProfile(osid_managers.OsidProfile):
     """The ``AssessmentProfile`` describes the interoperability among assessment services."""
 
-    def __init__(self):
-        self._provider_manager = None
-
     def supports_assessment(self):
         """Tests for the availability of a assessment service which is the service for taking and examining assessments taken.
 
         :return: ``true`` if assessment is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
+    def supports_assessment_results(self):
+        """Tests for the availability of an assessment rsults service.
+
+        :return: ``true`` if assessment results is supported, ``false`` otherwise
         :rtype: ``boolean``
 
 
@@ -1517,11 +1526,9 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
 
 class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, AssessmentProfile):
-    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of
-    this service.
+    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``MyAssessmentTakenSession:`` a session to get taken or in
         progress assessments for the current agent
@@ -1529,7 +1536,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         assessments taken
       * ``AssessmentResultsSession:`` a session to retrieve assessment
         results
-
 
       * ``ItemLookupSession:`` a session to look up ``Items``
       * ``ItemQuerySession`` : a session to query ``Items``
@@ -1544,7 +1550,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         bank mappings
       * ``ItemSmartBankSession:`` a session for managing dynamic banks
 
-
       * ``AssessmentLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentQuerySession:`` a session to query ``Assessments``
@@ -1554,7 +1559,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
       * ``AssessmentNotificationSession: a`` session to receive messages
         pertaining to ``Assessment`` changes
 
-
       * ``AssessmentBankSession:`` a session for looking up assessment
         and bank mappings
       * ``AssessmentBankAssignmentSession:`` a session for managing
@@ -1563,7 +1567,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         banks
       * ``AssessmentBasicAuthoringSession:`` a session for making simple
         mappings of assessment items to assessments
-
 
       * ``AssessmentOfferedLookupSession:`` a session to look up
         ``AssessmentsOffered``
@@ -1582,7 +1585,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
       * ``AssessmentOfferedSmartBankSession`` : a session to manage
         dynamic banks of assessments offered
 
-
       * ``AssessmentTakenLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentTakenQuerySession:`` a session to query
@@ -1600,7 +1602,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
       * ``AssessmentTakenSmartBankSession:`` a session to manage dynamic
         banks of assessments taken
 
-
       * ``BankLookupSession:`` a session to lookup banks
       * ``BankQuerySession`` : a session to query banks
       * ``BankSearchSession:`` a session to search banks
@@ -1614,91 +1615,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         ``Bank`` hierarchy
 
     """
-
-    def __init__(self, proxy=None):
-        self._runtime = None
-        self._provider_manager = None
-        self._provider_sessions = dict()
-        self._session_management = AUTOMATIC
-        self._bank_view = DEFAULT
-        # This is to initialize self._proxy
-        osid.OsidSession.__init__(self, proxy)
-
-    # def _get_view(self, view):
-    #     """Gets the currently set view"""
-    #     if view in self._views:
-    #         return self._views[view]
-    #     else:
-    #         self._views[view] = DEFAULT
-    #         return DEFAULT
-
-    def _set_bank_view(self, session):
-        """Sets the underlying bank view to match current view"""
-        if self._bank_view == COMPARATIVE:
-            try:
-                session.use_comparative_bank_view()
-            except AttributeError:
-                pass
-        else:
-            try:
-                session.use_plenary_bank_view()
-            except AttributeError:
-                pass
-
-    def _get_provider_session(self, session_name, proxy=None):
-        """Gets the session for the provider"""
-        if self._proxy is None:
-            self._proxy = proxy
-        if session_name in self._provider_sessions:
-            return self._provider_sessions[session_name]
-        else:
-            session = self._instantiate_session('get_' + session_name, self._proxy)
-            self._set_bank_view(session)
-            if self._session_management != DISABLED:
-                self._provider_sessions[session_name] = session
-            return session
-
-    def _instantiate_session(self, method_name, proxy=None, *args, **kwargs):
-        """Instantiates a provider session"""
-        session_class = getattr(self._provider_manager, method_name)
-        if proxy is None:
-            return session_class(*args, **kwargs)
-        else:
-            return session_class(proxy=proxy, *args, **kwargs)
-
-    def initialize(self, runtime):
-        """OSID Manager initialize"""
-        from .primitives import Id
-        if self._runtime is not None:
-            raise IllegalState('Manager has already been initialized')
-        self._runtime = runtime
-        config = runtime.get_configuration()
-        parameter_id = Id('parameter:assessmentProviderImpl@dlkit_service')
-        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
-        if self._proxy is None:
-            # need to add version argument
-            self._provider_manager = runtime.get_manager('ASSESSMENT', provider_impl)
-        else:
-            # need to add version argument
-            self._provider_manager = runtime.get_proxy_manager('ASSESSMENT', provider_impl)
-
-    def close_sessions(self):
-        """Close all sessions, unless session management is set to MANDATORY"""
-        if self._session_management != MANDATORY:
-            self._provider_sessions = dict()
-
-    def use_automatic_session_management(self):
-        """Session state will be saved unless closed by consumers"""
-        self._session_management = AUTOMATIC
-
-    def use_mandatory_session_management(self):
-        """Session state will be saved and can not be closed by consumers"""
-        self._session_management = MANDATORY
-
-    def disable_session_management(self):
-        """Session state will never be saved"""
-        self._session_management = DISABLED
-        self.close_sessions()
 
     def get_assessment_authoring_manager(self):
         """Gets an ``AssessmentAuthoringManager``.
@@ -2658,12 +2574,10 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
 
 class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
-    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of
-    this service.
+    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` object.
     The sessions included in this manager are:
-
 
       * ``MyAssessmentTakenSession:`` a session to get taken or in
         progress assessments for the current agent
@@ -2671,7 +2585,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         assessments taken
       * ``AssessmentResultsSession:`` a session to retrieve assessment
         results
-
 
       * ``ItemLookupSession:`` a session to look up ``Items``
       * ``ItemQuerySession`` : a session to query ``Items``
@@ -2686,7 +2599,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         bank mappings
       * ``ItemSmartBankSession:`` a session for managing dynamic banks
 
-
       * ``AssessmentLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentQuerySession:`` a session to query ``Assessments``
@@ -2696,7 +2608,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
       * ``AssessmentNotificationSession: a`` session to receive messages
         pertaining to ``Assessment`` changes
 
-
       * ``AssessmentBankSession:`` a session for looking up assessment
         and bank mappings
       * ``AssessmentBankAssignmentSession:`` a session for managing
@@ -2705,7 +2616,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         banks
       * ``AssessmentBasicAuthoringSession:`` a session for making simple
         mappings of assessment items to assessments
-
 
       * ``AssessmentOfferedLookupSession:`` a session to look up
         ``Assessments``
@@ -2724,7 +2634,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
       * ``AssessmentOfferedSmartBankSession`` : a session to manage
         dynamic banks
 
-
       * ``AssessmentTakenLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentTakenQuerySession:`` a session to query
@@ -2741,7 +2650,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         managing assessments taken and bank mappings
       * ``AssessmentTakenSmartBankSession:`` a session to manage dynamic
         banks of assessments taken
-
 
       * ``BankLookupSession:`` a session to lookup banks
       * ``BankQuerySession`` : a session to query banks
@@ -3717,105 +3625,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
 class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A bank defines a collection of assessments and items."""
 
-    # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
-    def __init__(self, provider_manager, catalog, proxy, **kwargs):
-        self._provider_manager = provider_manager
-        self._catalog = catalog
-        osid.OsidObject.__init__(self, self._catalog) # This is to initialize self._object
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
-        self._catalog_id = catalog.get_id()
-        self._provider_sessions = kwargs
-        self._session_management = AUTOMATIC
-        self._bank_view = DEFAULT
-        self._object_views = dict()
-
-    def _set_bank_view(self, session):
-        """Sets the underlying bank view to match current view"""
-        if self._bank_view == FEDERATED:
-            try:
-                session.use_federated_bank_view()
-            except AttributeError:
-                pass
-        else:
-            try:
-                session.use_isolated_bank_view()
-            except AttributeError:
-                pass
-
-    def _set_object_view(self, session):
-        """Sets the underlying object views to match current view"""
-        for obj_name in self._object_views:
-            if self._object_views[obj_name] == PLENARY:
-                try:
-                    getattr(session, 'use_plenary_' + obj_name + '_view')()
-                except AttributeError:
-                    pass
-            else:
-                try:
-                    getattr(session, 'use_comparative_' + obj_name + '_view')()
-                except AttributeError:
-                    pass
-
-    def _get_provider_session(self, session_name):
-        """Returns the requested provider session."""
-        if session_name in self._provider_sessions:
-            return self._provider_sessions[session_name]
-        else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_bank')
-            if self._proxy is None:
-                session = session_class(self._catalog.get_id())
-            else:
-                session = session_class(self._catalog.get_id(), self._proxy)
-            self._set_bank_view(session)
-            self._set_object_view(session)
-            if self._session_management != DISABLED:
-                self._provider_sessions[session_name] = session
-            return session
-
-    def get_bank_id(self):
-        """Gets the Id of this bank."""
-        return self._catalog_id
-
-    def get_bank(self):
-        """Strange little method to assure conformance for inherited Sessions."""
-        return self
-
-    def get_objective_hierarchy_id(self):
-        """WHAT am I doing here?"""
-        return self._catalog_id
-
-    def get_objective_hierarchy(self):
-        """WHAT am I doing here?"""
-        return self
-
-    def __getattr__(self, name):
-        if '_catalog' in self.__dict__:
-            try:
-                return self._catalog[name]
-            except AttributeError:
-                pass
-        raise AttributeError
-
-    def close_sessions(self):
-        """Close all sessions currently being managed by this Manager to save memory."""
-        if self._session_management != MANDATORY:
-            self._provider_sessions = dict()
-        raise IllegalState()
-
-    def use_automatic_session_management(self):
-        """Session state will be saved until closed by consumers."""
-        self._session_management = AUTOMATIC
-
-    def use_mandatory_session_management(self):
-        """Session state will always be saved and can not be closed by consumers."""
-        # Session state will be saved and can not be closed by consumers 
-        self._session_management = MANDATORY
-
-    def disable_session_management(self):
-        """Session state will never be saved."""
-        self._session_management = DISABLED
-        self.close_sessions()
-
     def get_bank_record(self, bank_record_type):
         """Gets the bank record corresponding to the given ``Bank`` record ``Type``.
 
@@ -4691,6 +4500,129 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
         """
         pass
+
+
+##
+# The following methods are from osid.assessment.AssessmentResultsSession
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
+    def can_access_assessment_results(self):
+        """Tests if this user can take this assessment.
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer assessment
+        operations to unauthorized users.
+
+        :return: ``false`` if assessment methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
+    def get_taken_items(self, assessment_taken_id):
+        """Gets the items questioned in a assessment.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: the list of assessment questions
+        :rtype: ``osid.assessment.ItemList``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.ItemList
+
+    def get_responses(self, assessment_taken_id):
+        """Gets the submitted responses.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: the submitted answers
+        :rtype: ``osid.assessment.ResponseList``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.ResponseList
+
+    def are_results_available(self, assessment_taken_id):
+        """Tests if the results are available for this assessment.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: ``true`` if results are available, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
+    def get_grade_entries(self, assessment_taken_id):
+        """Gets a list of grade entries for this assessment.
+
+        Each grade entry may indicate a grade or score input by multiple
+        graders.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: a list of grade entries
+        :rtype: ``osid.grading.GradeEntryList``
+        :raise: ``IllegalState`` -- ``are_results_available()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.grading.GradeEntryList
 
 
 ##
@@ -9305,18 +9237,14 @@ class Bank(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class BankList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BankList`` provides a means for accessing ``Bank`` elements sequentially either one at a time
-    or many at a time.
+    """Like all ``OsidLists,``  ``BankList`` provides a means for accessing ``Bank`` elements sequentially either one at a time or many at a time.
 
     Examples: while (bl.hasNext()) { Bank bank = bl.getNextBank(); }
-
 
     or
       while (bl.hasNext()) {
            Bank[] banks = bl.getNextBanks(bl.available());
       }
-
-
 
     """
 

@@ -13,7 +13,6 @@ class OsidSession:
     service and is generally responsible for the management and
     retrieval of ``OsidObjects``.
 
-
     ``OsidSession`` defines a set of common methods used throughout all
     OSID sessions. An OSID session may optionally support transactions
     through the transaction interface.

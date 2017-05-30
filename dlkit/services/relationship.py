@@ -52,9 +52,6 @@ from ..osid import searches as osid_searches
 class RelationshipProfile(osid_managers.OsidProfile):
     """The relationship profile describes the interoperability among relationship services."""
 
-    def __init__(self):
-        self._provider_manager = None
-
     def supports_relationship_lookup(self):
         """Tests if looking up relationships is supported.
 
@@ -1075,11 +1072,9 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
 
 class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-    aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``RelationshipLookupSession:`` a session to retrieve and examine
         relationships
@@ -1096,7 +1091,6 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
       * ``RelationshipSmartFamilySession:`` a session to manage dynamic
         relationship families
 
-
       * ``FamilyLookupSession:`` a session to retrieve families
       * ``FamilyQuerySession:`` a session to query families
       * ``FamilySearchSession:`` a session to search for families
@@ -1109,91 +1103,6 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         hierarchy
 
     """
-
-    def __init__(self, proxy=None):
-        self._runtime = None
-        self._provider_manager = None
-        self._provider_sessions = dict()
-        self._session_management = AUTOMATIC
-        self._family_view = DEFAULT
-        # This is to initialize self._proxy
-        osid.OsidSession.__init__(self, proxy)
-
-    # def _get_view(self, view):
-    #     """Gets the currently set view"""
-    #     if view in self._views:
-    #         return self._views[view]
-    #     else:
-    #         self._views[view] = DEFAULT
-    #         return DEFAULT
-
-    def _set_family_view(self, session):
-        """Sets the underlying family view to match current view"""
-        if self._family_view == COMPARATIVE:
-            try:
-                session.use_comparative_family_view()
-            except AttributeError:
-                pass
-        else:
-            try:
-                session.use_plenary_family_view()
-            except AttributeError:
-                pass
-
-    def _get_provider_session(self, session_name, proxy=None):
-        """Gets the session for the provider"""
-        if self._proxy is None:
-            self._proxy = proxy
-        if session_name in self._provider_sessions:
-            return self._provider_sessions[session_name]
-        else:
-            session = self._instantiate_session('get_' + session_name, self._proxy)
-            self._set_family_view(session)
-            if self._session_management != DISABLED:
-                self._provider_sessions[session_name] = session
-            return session
-
-    def _instantiate_session(self, method_name, proxy=None, *args, **kwargs):
-        """Instantiates a provider session"""
-        session_class = getattr(self._provider_manager, method_name)
-        if proxy is None:
-            return session_class(*args, **kwargs)
-        else:
-            return session_class(proxy=proxy, *args, **kwargs)
-
-    def initialize(self, runtime):
-        """OSID Manager initialize"""
-        from .primitives import Id
-        if self._runtime is not None:
-            raise IllegalState('Manager has already been initialized')
-        self._runtime = runtime
-        config = runtime.get_configuration()
-        parameter_id = Id('parameter:relationshipProviderImpl@dlkit_service')
-        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
-        if self._proxy is None:
-            # need to add version argument
-            self._provider_manager = runtime.get_manager('RELATIONSHIP', provider_impl)
-        else:
-            # need to add version argument
-            self._provider_manager = runtime.get_proxy_manager('RELATIONSHIP', provider_impl)
-
-    def close_sessions(self):
-        """Close all sessions, unless session management is set to MANDATORY"""
-        if self._session_management != MANDATORY:
-            self._provider_sessions = dict()
-
-    def use_automatic_session_management(self):
-        """Session state will be saved unless closed by consumers"""
-        self._session_management = AUTOMATIC
-
-    def use_mandatory_session_management(self):
-        """Session state will be saved and can not be closed by consumers"""
-        self._session_management = MANDATORY
-
-    def disable_session_management(self):
-        """Session state will never be saved"""
-        self._session_management = DISABLED
-        self.close_sessions()
 
     def get_relationship_batch_manager(self):
         """Gets the relationship batch manager.
@@ -2106,12 +2015,10 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
 
 class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-    aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a Proxy. The sessions
     included in this manager are:
-
 
       * ``RelationshipLookupSession:`` a session to retrieve and examine
         relationships
@@ -2127,7 +2034,6 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         relationship to family catalog mappings
       * ``RelationshipSmartFamilySession:`` a session to manage dynamic
         relationship families
-
 
       * ``FamilyLookupSession:`` a session to retrieve families
       * ``FamilyQuerySession:`` a session to query families
@@ -3060,105 +2966,6 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
     """
 
-    # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
-    def __init__(self, provider_manager, catalog, proxy, **kwargs):
-        self._provider_manager = provider_manager
-        self._catalog = catalog
-        osid.OsidObject.__init__(self, self._catalog) # This is to initialize self._object
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
-        self._catalog_id = catalog.get_id()
-        self._provider_sessions = kwargs
-        self._session_management = AUTOMATIC
-        self._family_view = DEFAULT
-        self._object_views = dict()
-
-    def _set_family_view(self, session):
-        """Sets the underlying family view to match current view"""
-        if self._family_view == FEDERATED:
-            try:
-                session.use_federated_family_view()
-            except AttributeError:
-                pass
-        else:
-            try:
-                session.use_isolated_family_view()
-            except AttributeError:
-                pass
-
-    def _set_object_view(self, session):
-        """Sets the underlying object views to match current view"""
-        for obj_name in self._object_views:
-            if self._object_views[obj_name] == PLENARY:
-                try:
-                    getattr(session, 'use_plenary_' + obj_name + '_view')()
-                except AttributeError:
-                    pass
-            else:
-                try:
-                    getattr(session, 'use_comparative_' + obj_name + '_view')()
-                except AttributeError:
-                    pass
-
-    def _get_provider_session(self, session_name):
-        """Returns the requested provider session."""
-        if session_name in self._provider_sessions:
-            return self._provider_sessions[session_name]
-        else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_family')
-            if self._proxy is None:
-                session = session_class(self._catalog.get_id())
-            else:
-                session = session_class(self._catalog.get_id(), self._proxy)
-            self._set_family_view(session)
-            self._set_object_view(session)
-            if self._session_management != DISABLED:
-                self._provider_sessions[session_name] = session
-            return session
-
-    def get_family_id(self):
-        """Gets the Id of this family."""
-        return self._catalog_id
-
-    def get_family(self):
-        """Strange little method to assure conformance for inherited Sessions."""
-        return self
-
-    def get_objective_hierarchy_id(self):
-        """WHAT am I doing here?"""
-        return self._catalog_id
-
-    def get_objective_hierarchy(self):
-        """WHAT am I doing here?"""
-        return self
-
-    def __getattr__(self, name):
-        if '_catalog' in self.__dict__:
-            try:
-                return self._catalog[name]
-            except AttributeError:
-                pass
-        raise AttributeError
-
-    def close_sessions(self):
-        """Close all sessions currently being managed by this Manager to save memory."""
-        if self._session_management != MANDATORY:
-            self._provider_sessions = dict()
-        raise IllegalState()
-
-    def use_automatic_session_management(self):
-        """Session state will be saved until closed by consumers."""
-        self._session_management = AUTOMATIC
-
-    def use_mandatory_session_management(self):
-        """Session state will always be saved and can not be closed by consumers."""
-        # Session state will be saved and can not be closed by consumers 
-        self._session_management = MANDATORY
-
-    def disable_session_management(self):
-        """Session state will never be saved."""
-        self._session_management = DISABLED
-        self.close_sessions()
-
     def get_family_record(self, family_record_type):
         """Gets the famly record corresponding to the given ``Family`` record ``Type``.
 
@@ -4054,19 +3861,15 @@ class Family(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class FamilyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either one at a
-    time or many at a time.
+    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either one at a time or many at a time.
 
     Examples: while (fl.hasNext()) { Family family = fl.getNextFamily();
     }
-
 
     or
       while (fl.hasNext()) {
            Family[] families = fl.getNextFamilies(fl.available());
       }
-
-
 
     """
 

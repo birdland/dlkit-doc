@@ -93,19 +93,15 @@ class RelationshipForm(osid_objects.OsidRelationshipForm):
 
 
 class RelationshipList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``Relationship`` provides a means for accessing ``Relationship`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``Relationship`` provides a means for accessing ``Relationship`` elements sequentially either one at a time or many at a time.
 
     Examples: while (rl.hasNext()) { Relationship relationship =
     rl.getNextRelationship(); }
-
 
     or
       while (rl.hasNext()) {
            Relationship[] relationships = rl.getNextRelationships(rl.available());
       }
-
-
 
     """
 
@@ -205,19 +201,15 @@ class FamilyForm(osid_objects.OsidCatalogForm):
 
 
 class FamilyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either one at a
-    time or many at a time.
+    """Like all ``OsidLists,``  ``FamilyList`` provides a means for accessing ``Family`` elements sequentially either one at a time or many at a time.
 
     Examples: while (fl.hasNext()) { Family family = fl.getNextFamily();
     }
-
 
     or
       while (fl.hasNext()) {
            Family[] families = fl.getNextFamilies(fl.available());
       }
-
-
 
     """
 
@@ -308,19 +300,15 @@ class FamilyNode(osid_objects.OsidNode):
 
 
 class FamilyNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``FamilyNodeList`` provides a means for accessing ``FamilyNode`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``FamilyNodeList`` provides a means for accessing ``FamilyNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (fnl.hasNext()) { FamilyNode node =
     fnl.getNextFamilyNode(); }
-
 
     or
       while (fnl.hasNext()) {
            FamilyNode[] nodes = fnl.getNextFamilyNodes(fnl.available());
       }
-
-
 
     """
 

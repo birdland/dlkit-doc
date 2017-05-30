@@ -7,9 +7,7 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
 
     A Grade represents a qualified ranking defined in some grade system.
 
-
     Two views are defined in this session:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -18,8 +16,6 @@ class GradeSystemLookupSession(osid_sessions.OsidSession):
         gradebook in the gradebook hierarchy
       * isolated gradebook view: lookups include only those grade
         systems defined in this gradebook
-
-
 
 
     Grades and grade systems may have an additional records indicated by
@@ -278,18 +274,14 @@ class GradeSystemQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``GradeSystemQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated gradebook view: searches include grade systems in
         gradebooks of which this gradebook is a ancestor in the
         gradebook hierarchy
       * isolated gradebook view: searches are restricted to grade
         systems in this gradebook
-
-
 
 
     Grade systems may have a query record indicated by their respective
@@ -409,7 +401,6 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``GradeSystem,`` a ``GradeSystemForm`` is requested using
     ``get_grade_system_form_for_create()`` specifying the desired record
@@ -421,7 +412,6 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
     unless the first operation was unsuccessful. Each
     ``GradeSystemForm`` corresponds to an attempted transaction.
 
-
     For updates, ``GradeSystemForms`` are requested to the
     ``GradeSystem``  ``Id`` that is to be updated using
     ``getGradeSystemFormForUpdate()``. Similarly, the
@@ -430,13 +420,11 @@ class GradeSystemAdminSession(osid_sessions.OsidSession):
     ``GradeSystemForm`` can only be used once for a successful update
     and cannot be reused.
 
-
     The delete operations delete ``GradeSystems`` To unmap a
     ``GradeSystem`` from the current ``Gradebook,`` the
     ``GradeSystemGradebookAssignmentSession`` should be used. These
     delete operations attempt to remove the ``GradeSystem`` itself thus
     removing it from all known ``Gradebook`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -1271,18 +1259,14 @@ class GradeEntryQuerySession(osid_sessions.OsidSession):
     grade entry record ``Type`` also specifies the record interface for
     the grade entry query.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated gradebook view: searches include grade entries in
         gradebooks of which this gradebook is a ancestor in the
         gradebook hierarchy
       * isolated gradebook view: searches are restricted to grade
         entries in this gradebook
-
-
 
 
     Grade entries may have a query record indicated by their respective
@@ -1402,7 +1386,6 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``GradeEntry,`` a ``GradeEntryForm`` is requested using
     ``get_grade_entry_form_for_create()`` specifying the desired record
@@ -1414,7 +1397,6 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``GradeEntryForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``GradeEntryForms`` are requested to the ``GradeEntry``
     ``Id`` that is to be updated using ``getGradeEntryFormForUpdate()``.
     Similarly, the ``GradeEntryForm`` has metadata about the data that
@@ -1422,13 +1404,11 @@ class GradeEntryAdminSession(osid_sessions.OsidSession):
     update. The ``GradeEntryForm`` can only be used once for a
     successful update and cannot be reused.
 
-
     The delete operations delete ``GradeEntries``. To unmap a
     ``GradeEntry`` from the current ``Gradebook,`` the
     ``GradeEntryGradebookAssignmentSession`` should be used. These
     delete operations attempt to remove the ``GradeEntry`` itself thus
     removing it from all known ``Gradebook`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -2002,17 +1982,13 @@ class GradebookColumnQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``GradebookColumnQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated gradebook view: searches include columns in gradebooks
         of which this gradebook is a ancestor in the gradebook hierarchy
       * isolated gradebook view: searches are restricted to columns in
         this gradebook
-
-
 
 
     Gradebook columns may have a query record indicated by their
@@ -2132,7 +2108,6 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``GradebookColumn,`` a ``GradebookColumnForm`` is requested using
     ``get_gradebook_column_form_for_create()`` specifying the desired
@@ -2144,7 +2119,6 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
     create operation unless the first operation was unsuccessful. Each
     ``GradebookColumnForm`` corresponds to an attempted transaction.
 
-
     For updates, ``GradebookColumnForms`` are requested to the
     ``GradebookColumn``  ``Id`` that is to be updated using
     ``getGradebookColumnFormForUpdate()``. Similarly, the
@@ -2153,13 +2127,11 @@ class GradebookColumnAdminSession(osid_sessions.OsidSession):
     The ``GradebookColumnForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``GradebookColumns`` To unmap a
     ``GradebookColumn`` from the current ``Gradebook,`` the
     ``GradebookColumnGradebookAssignmentSession`` should be used. These
     delete operations attempt to remove the ``GradebookColumnForm``
     itself thus removing it from all known ``Gradebook`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -2459,15 +2431,11 @@ class GradebookLookupSession(osid_sessions.OsidSession):
     The ``Gradebook`` represents a collection of grade systems, entries,
     and gradebook columns.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -2476,7 +2444,6 @@ class GradebookLookupSession(osid_sessions.OsidSession):
     examine the ``Gradebooks`` it can access, without breaking
     execution. However, an administrative application may require all
     ``Gradebook`` elements to be available.
-
 
     Gradebooks may have an additional records indicated by their
     respective record types. The record may not be accessed through a
@@ -2684,7 +2651,6 @@ class GradebookAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Gradebook,`` a ``GradebookForm`` is requested using
     ``get_gradebook_form_for_create()`` specifying the desired record
@@ -2696,7 +2662,6 @@ class GradebookAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``GradebookForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``GradebookForms`` are requested to the ``Gradebook``
     ``Id`` that is to be updated using ``getGradebookFormForUpdate()``.
     Similarly, the ``GradebookForm`` has metadata about the data that
@@ -2704,9 +2669,7 @@ class GradebookAdminSession(osid_sessions.OsidSession):
     update. The ``GradebookForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``Gradebooks``.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.

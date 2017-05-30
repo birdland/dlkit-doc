@@ -89,11 +89,14 @@ Locale is referenced in OsidSessions to convey the localization of the
 service.
 
 """
+
 from ..osid import managers as osid_managers
 from ..osid import sessions as osid_sessions
+from ..osid import objects as osid_objects
 
 
 class LocaleProfile(osid_managers.OsidProfile):
+    """The locale profile describes the interoperability of locale services."""
 
     def get_language_types_for_source(self, source_language_type, source_script_type):
         """Gets the list of target language types for a given source language type.
@@ -106,6 +109,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_language_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -114,6 +119,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported language types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -129,6 +137,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``language_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -137,6 +147,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported numeric format types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -148,6 +161,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of calendar types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -163,6 +179,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``calendar_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -171,6 +189,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of time types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -186,6 +207,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``time_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -194,6 +217,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of currency types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -209,6 +235,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``currency_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -217,6 +245,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of coordinate types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -232,6 +263,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``coordinater_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -244,6 +277,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_unit_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -252,6 +287,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported source unit types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -267,6 +305,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_currency_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -275,6 +315,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported source currency types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -290,6 +333,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_calendar_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -298,6 +343,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported source calendar types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -313,6 +361,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_time_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -321,6 +371,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported source time types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -336,6 +389,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``calendar_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -347,6 +402,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :return: the list of supported calendar types
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``time_type`` is ``null``
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -360,6 +417,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_coordinate_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -368,6 +427,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported source coordinate types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -383,6 +445,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_spatial_unit_record_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -391,6 +455,9 @@ class LocaleProfile(osid_managers.OsidProfile):
 
         :return: the list of supported source spatial unit record types
         :rtype: ``osid.type.TypeList``
+
+
+        *compliance: mandatory -- This method must be implemented.*
 
         """
         return # osid.type.TypeList
@@ -406,6 +473,8 @@ class LocaleProfile(osid_managers.OsidProfile):
         :rtype: ``osid.type.TypeList``
         :raise: ``NullArgument`` -- ``source_format_type`` is ``null``
 
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
@@ -415,16 +484,82 @@ class LocaleProfile(osid_managers.OsidProfile):
         :return: the list of supported source format types
         :rtype: ``osid.type.TypeList``
 
+
+        *compliance: mandatory -- This method must be implemented.*
+
         """
         return # osid.type.TypeList
 
     source_format_types = property(fget=get_source_format_types)
 
 
-
 class LocaleManager(osid_managers.OsidManager, osid_sessions.OsidSession, LocaleProfile):
+    """The locale manager provides access to locale sessions and provides interoperability tests for various aspects of this service.
+
+    The sessions included in this manager are:
+
+      * ``TranslationSession:`` a session translate strings
+      * ``TranslationAdminSession: a`` session to update the string
+        translations for a locale
+      * ``NumericFormattingSession:`` a session for formatting and
+        parsing numbers
+      * ``CalendarFormattingSession:`` a session for formatting and
+        parsing dates and times
+      * ``CurrencyFormattingSession`` : a session for formatting and
+        parsing currency amounts
+      * ``CoordinateFormattingSession:`` a session for formatting and
+        parsing coordinates
+      * ``UnitConversionSession:`` a session to convert measurement
+        units ``None``
+      * ``CurrencyConversionSession:`` a session to convert currency
+      * ``CalendarConversionSession:`` a session to convert dates across
+        calendars
+      * ``CoordinateConversionSession:`` a session to convert coordinate
+        systems
+      * ``SpatialUnitConversionSession:`` a session to convert spatial
+        units
+      * ``FormatConversionSession:`` a session to convert text formats
+      * ``CalendarInfoSession:`` a session for examining calendaring and
+        time systems
+
+    """
     pass
 
+
+
+class LocaleProxyManager(osid_managers.OsidProxyManager, LocaleProfile):
+    """The locale manager provides access to locale sessions and provides interoperability tests for various aspects of this service.
+
+    Methods in this manager support the passing of a ``Proxy`` for
+    passing information from server environments. The sessions included
+    in this manager are:
+
+      * ``TranslationSession:`` a session translate strings
+      * ``TranslationAdminSession: a`` session to update the string
+        translations for a locale
+      * ``NumericFormattingSession:`` a session for formatting and
+        parsing numbers
+      * ``CalendarFormattingSession:`` a session for formatting and
+        parsing dates and times
+      * ``CurrencyFormattingSession`` : a session for formatting and
+        parsing currency amounts
+      * ``CoordinateFormattingSession:`` a session for formatting and
+        parsing coordinates
+      * ``UnitConversionSession:`` a session to convert measurement
+        units ``None``
+      * ``CurrencyConversionSession:`` a session to convert currency
+      * ``CalendarConversionSession:`` a session to convert dates across
+        calendars
+      * ``CoordinateConversionSession:`` a session to convert coordinate
+        systems
+      * ``SpatialUnitConversionSession:`` a session to convert spatial
+        units
+      * ``FormatConversionSession:`` a session to convert text formats
+      * ``CalendarInfoSession:`` a session for examining calendaring and
+        time systems
+
+    """
+    pass
 
 
 

@@ -8,9 +8,7 @@ class AssetLookupSession(osid_sessions.OsidSession):
     An ``Asset`` represents an element of content stored in a
     Repository.
 
-
     This lookup session defines several views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -25,12 +23,9 @@ class AssetLookupSession(osid_sessions.OsidSession):
         repository through repository inheritence.
 
 
-
-
     The methods ``use_federated_repository_view()`` and
     ``use_isolated_repository_view()`` behave as a radio group and one
     should be selected before invoking any lookup methods.
-
 
     Assets may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
@@ -289,18 +284,14 @@ class AssetQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``AssetQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated repository view: searches include assets in
         repositories of which this repository is a ancestor in the
         repository hierarchy
       * isolated repository view: searches are restricted to assets in
         this repository
-
-
 
 
     Assets may have a query record indicated by their respective record
@@ -417,7 +408,6 @@ class AssetSearchSession(AssetQuerySession):
 
     The search query is constructed using the ``AssetQuery``.
 
-
     ``get_assets_by_query()`` is the basic search method and returns a
     list of ``Assets``. A more advanced search may be performed with
     ``getAssetsBySearch()``. It accepts an ``AssetSearch`` in addition
@@ -427,18 +417,14 @@ class AssetSearchSession(AssetQuerySession):
     can be used to access the resulting ``AssetList`` or be used to
     perform a search within the result set through ``AssetList``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated repository view: searches include assets in
         repositories of which this repository is a ancestor in the
         repository hierarchy
       * isolated repository view: searches are restricted to assets in
         this repository
-
-
 
 
     Assets may have a query record indicated by their respective record
@@ -521,7 +507,6 @@ class AssetAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``Asset,`` an ``AssetForm`` is requested using
     ``get_asset_form_for_create()`` specifying the desired record
@@ -533,7 +518,6 @@ class AssetAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``AssetForm`` corresponds
     to an attempted transaction.
 
-
     For updates, ``AssetForms`` are requested to the ``Asset``  ``Id``
     that is to be updated using ``getAssetFormForUpdate()``. Similarly,
     the ``AssetForm`` has metadata about the data that can be updated
@@ -541,17 +525,14 @@ class AssetAdminSession(osid_sessions.OsidSession):
     ``AssetForm`` can only be used once for a successful update and
     cannot be reused.
 
-
     The delete operations delete ``Assets``. To unmap an ``Asset`` from
     the current ``Repository,`` the ``AssetRepositoryAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Bid`` itself thus removing it from all known ``Repository``
     catalogs.
 
-
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
-
 
     The view of the administrative methods defined in this session is
     determined by the provider. For an instance of this session where no
@@ -564,12 +545,10 @@ class AssetAdminSession(osid_sessions.OsidSession):
     federated provider who does not wish to permit administrative
     operations for the federation unaware.
 
-
     Example create:
       if (!session.canCreateAssets()) {
           return "asset creation not permitted";
       }
-
 
       Type types[1];
       types[0] = assetPhotographType;
@@ -577,16 +556,13 @@ class AssetAdminSession(osid_sessions.OsidSession):
           return "creating an asset with a photograph type is not supported";
       }
 
-
       AssetForm form = session.getAssetFormForCreate();
       Metadata metadata = form.getDisplayNameMetadata();
       if (metadata.isReadOnly()) {
           return "cannot set display name";
       }
 
-
       form.setDisplayName("my photo");
-
 
       PhotographRecordForm photoForm = (PhotographRecordForn) form.getRecordForm(assetPhotogaphType);
       Metadata metadata = form.getApertureMetadata();
@@ -594,16 +570,12 @@ class AssetAdminSession(osid_sessions.OsidSession):
           return ("cannot set aperture");
       }
 
-
       photoForm.setAperture("5.6");
       if (!form.isValid()) {
           return form.getValidationMessage();
       }
 
-
       Asset newAsset = session.createAsset(form);
-
-
 
     """
 
@@ -1015,7 +987,6 @@ class AssetNotificationSession(osid_sessions.OsidSession):
     without the use of polling. Notifications are cancelled when this
     session is closed.
 
-
     The two views defined in this session correspond to the views in the
     ``AssetLookupSession``.
 
@@ -1268,9 +1239,7 @@ class AssetRepositorySession(osid_sessions.OsidSession):
     Repository may have its own authorizations governing who is allowed
     to look at it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -1432,7 +1401,6 @@ class AssetRepositoryAssignmentSession(osid_sessions.OsidSession):
     Each ``Repository`` may have its own authorizations governing who is
     allowed to operate on it.
 
-
     Moving or adding a reference of an ``Asset`` to another
     ``Repository`` is not a copy operation (eg: does not change its
     ``Id`` ).
@@ -1550,9 +1518,7 @@ class AssetCompositionSession(osid_sessions.OsidSession):
 
     A ``Composition`` represents a collection of ``Assets``.
 
-
     This lookup session defines several views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -1566,8 +1532,6 @@ class AssetCompositionSession(osid_sessions.OsidSession):
         operate, retrieve and pertain to all compositions and assets
         defined in this repository and any other compositions implicitly
         available in this repository through repository inheritence.
-
-
 
 
     The methods ``use_federated_asset_composition_view()`` and
@@ -1863,10 +1827,8 @@ class CompositionLookupSession(osid_sessions.OsidSession):
 
     The ``Composition`` represents a collection of ``Assets``.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete and ordered result set or is
@@ -1889,15 +1851,12 @@ class CompositionLookupSession(osid_sessions.OsidSession):
         all compositions.
 
 
-
-
     Generally, the comparative view should be used for most applications
     as it permits operation even if there is data that cannot be
     accessed. For example, a browsing application may only need to
     examine the ``Composition`` it can access, without breaking
     execution. However, an administrative application may require a
     complete set of ``Composition`` objects to be returned.
-
 
     Compositions may have an additional records indicated by their
     respective record types. The record may not be accessed through a
@@ -2171,10 +2130,8 @@ class CompositionQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``CompositionQuery``.
 
-
     This session defines views that offer differing behaviors when
     searching.
-
 
       * federated repository view: searches include compositions in
         repositories of which this repository is an ancestor in the
@@ -2185,8 +2142,6 @@ class CompositionQuerySession(osid_sessions.OsidSession):
         sequestered compositions.
       * unsequestered composition view: All composition methods return
         all compositions.
-
-
 
 
     Compositions may have a query record indicated by their respective
@@ -2324,7 +2279,6 @@ class CompositionSearchSession(CompositionQuerySession):
 
     The search query is constructed using the ``CompositionQuery``.
 
-
     ``get_compositions_by_query()`` is the basic search method and
     returns a list of ``Compositions``. A more advanced search may be
     performed with ``getCompositionsBySearch()``. It accepts an
@@ -2335,18 +2289,14 @@ class CompositionSearchSession(CompositionQuerySession):
     resulting ``Composition`` or be used to perform a search within the
     result set through ``CompositionSearch``.
 
-
     This session defines views that offer differing behaviors when
     searching.
-
 
       * federated repository view: searches include compositions in
         repositories of which this repository is an ancestor in the
         repository hierarchy
       * isolated repository view: searches are restricted to subjects in
         this repository
-
-
 
 
     Compositions may have a query record indicated by their respective
@@ -2430,7 +2380,6 @@ class CompositionAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Composition,`` a ``CompositionForm`` is requested using
     ``get_composition_form_for_create()`` specifying the desired record
@@ -2442,7 +2391,6 @@ class CompositionAdminSession(osid_sessions.OsidSession):
     unless the first operation was unsuccessful. Each
     ``CompositionForm`` corresponds to an attempted transaction.
 
-
     For updates, ``CompositionForms`` are requested to the
     ``Composition``  ``Id`` that is to be updated using
     ``getCompositionFormForUpdate()``. Similarly, the
@@ -2451,13 +2399,11 @@ class CompositionAdminSession(osid_sessions.OsidSession):
     ``CompositionForm`` can only be used once for a successful update
     and cannot be reused.
 
-
     The delete operations delete ``Compositions``. To unmap a
     ``Composition`` from the current ``Repository,`` the
     ``CompositionRepositoryAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Bid`` itself thus removing
     it from all known ``Repository`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -2756,9 +2702,7 @@ class CompositionRepositorySession(osid_sessions.OsidSession):
     Each ``Repository`` may have its own authorizations governing who is
     allowed to look at it.
 
-
     This lookup session defines several views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -2920,7 +2864,6 @@ class CompositionRepositoryAssignmentSession(osid_sessions.OsidSession):
     equivalent of deleting it. Each ``Repository`` may have its own
     authorizations governing who is allowed to operate on it.
 
-
     Moving or adding a reference of a ``Composition`` to another
     ``Repository`` is not a copy operation (eg: does not change its
     ``Id`` ).
@@ -3039,15 +2982,11 @@ class RepositoryLookupSession(osid_sessions.OsidSession):
     The ``Repository`` represents a collection of ``Assets`` and
     ``Compositions``.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -3056,7 +2995,6 @@ class RepositoryLookupSession(osid_sessions.OsidSession):
     examine the ``Repositories`` it can access, without breaking
     execution. However, an administrative application may require all
     ``Repository`` elements to be available.
-
 
     Repositories may have an additional records indicated by their
     respective record types. The record may not be accessed through a
@@ -3267,7 +3205,6 @@ class RepositoryQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``RepositoryQuery``.
 
-
     Repositories may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``RepositoryQuery``.
@@ -3331,7 +3268,6 @@ class RepositoryAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Repository,`` a ``RepositoryForm`` is requested using
     ``get_repository_form_for_create()`` specifying the desired record
@@ -3343,14 +3279,12 @@ class RepositoryAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``RepositoryForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``RepositoryForms`` are requested to the ``Repository``
     ``Id`` that is to be updated using ``getRepositoryFormForUpdate()``.
     Similarly, the ``RepositoryForm`` has metadata about the data that
     can be updated and it can perform validation before submitting the
     update. The ``RepositoryForm`` can only be used once for a
     successful update and cannot be reused.
-
 
     The delete operations delete ``Repositories``. This session includes
     an ``Id`` aliasing mechanism to assign an external ``Id`` to an
@@ -3576,17 +3510,14 @@ class RepositoryHierarchySession(osid_sessions.OsidSession):
     to this hierarchy but does not appear in the hierarchy traversal
     until added as a root node or a child of another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parents()`` or ``get_children()`` in lieu of a
     ``PermissionDenied`` error that may disrupt the traversal through
     authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: repository elements may be silently omitted or
         re-ordered

@@ -251,18 +251,14 @@ class GradeForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableForm)
 
 
 class GradeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradeList`` provides a means for accessing ``Grade`` elements sequentially either one at a
-    time or many at a time.
+    """Like all ``OsidLists,``  ``GradeList`` provides a means for accessing ``Grade`` elements sequentially either one at a time or many at a time.
 
     Examples: while (gl.hasNext()) { Grade grade = gl.getNextGrade(); }
-
 
     or
       while (gl.hasNext()) {
            Grade[] grades = gl.getNextGrades(gl.available());
       }
-
-
 
     """
 
@@ -596,19 +592,15 @@ class GradeSystemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateabl
 
 
 class GradeSystemList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradeSystemList`` provides a means for accessing ``GradeSystem`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradeSystemList`` provides a means for accessing ``GradeSystem`` elements sequentially either one at a time or many at a time.
 
     Examples: while (gsl.hasNext()) { GradeSystem system =
     gsl.getNextGradeSystem(); }
-
 
     or
       while (gsl.hasNext()) {
            GradeSystem[] systems = gsl.getNextGradeSystems(gsl.available());
       }
-
-
 
     """
 
@@ -1072,19 +1064,15 @@ class GradeEntryForm(osid_objects.OsidRelationshipForm):
 
 
 class GradeEntryList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradeEntryList`` provides a means for accessing ``GradeEntry`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradeEntryList`` provides a means for accessing ``GradeEntry`` elements sequentially either one at a time or many at a time.
 
     Examples: while (gel.hasNext()) { GradeEntry entry =
     gel.getNextGradeEntry(); }
-
 
     or
       while (gel.hasNext()) {
            GradeEntry[] entries = gel.getNextGradeEntries(gel.available());
       }
-
-
 
     """
 
@@ -1246,19 +1234,15 @@ class GradebookColumnForm(osid_objects.OsidObjectForm):
 
 
 class GradebookColumnList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookColumnList`` provides a means for accessing ``GradebookColumn`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookColumnList`` provides a means for accessing ``GradebookColumn`` elements sequentially either one at a time or many at a time.
 
     Examples: while (gcl.hasNext()) { GradebookColumn column =
     gcl.getNextGradebookColumn(); }
-
 
     or
       while (gcl.hasNext()) {
            GradebookColumn[] columns = gcl.getNextGradebookColumns(gcl.available());
       }
-
-
 
     """
 
@@ -1505,19 +1489,15 @@ class GradebookForm(osid_objects.OsidCatalogForm):
 
 
 class GradebookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookList`` provides a means for accessing ``Gradebook`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookList`` provides a means for accessing ``Gradebook`` elements sequentially either one at a time or many at a time.
 
     Examples: while (gl.hasNext()) { Gradebook gradebook =
     gl.getNextGradebook(); }
-
 
     or
       while (gl.hasNext()) {
            Gradebook[] gradebooks = gl.getNextGradebooks(gl.available());
       }
-
-
 
     """
 
@@ -1605,19 +1585,15 @@ class GradebookNode(osid_objects.OsidNode):
 
 
 class GradebookNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``GradebookNodeList`` provides a means for accessing ``GradebookNode`` elements sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``GradebookNodeList`` provides a means for accessing ``GradebookNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (gnl.hasNext()) { GradebookNode node =
     gnl.getNextGradebookNode(); }
-
 
     or
       while (gnl.hasNext()) {
            GradebookNode[] nodes = gnl.getNextGradebookNodes(gnl.available());
       }
-
-
 
     """
 

@@ -154,8 +154,7 @@ class FamilySearch(osid_searches.OsidSearch):
 
 
 class FamilySearchResults(osid_searches.OsidSearchResults):
-    """This interface provides a means to capture results of a search and is used as a vehicle to perform a search within a
-    previous result set."""
+    """This interface provides a means to capture results of a search and is used as a vehicle to perform a search within a previous result set."""
 
     def get_families(self):
         """Gets the family list resulting from a search.

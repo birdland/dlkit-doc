@@ -280,11 +280,9 @@ class GradingProfile(osid_managers.OsidProfile):
 
 
 class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, GradingProfile):
-    """The grading manager provides access to grading sessions and provides interoperability tests for various aspects of this
-    service.
+    """The grading manager provides access to grading sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``GradeSystemLookupSession:`` a session to look up grades and
         grade systems
@@ -301,7 +299,6 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
       * ``GradeSystemSmartGradebookSession:`` a session for managing
         smart gradebooks of grade systems
 
-
       * ``GradeEntryLookupSession:`` a session to look up grade entries
       * ``GradeEntryQuerySession:`` a session to query grade entries
         ``None``
@@ -310,7 +307,6 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         delete grade entries ``None``
       * ``GradeEntryNotificationSession: a`` session to receive messages
         pertaining to grade entry ```` changes
-
 
       * ``GradebookColumnLookupSession:`` a session to look up gradebook
         columns
@@ -328,7 +324,6 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
         managing gradebook column to gradebook mappings
       * ``GradebookColumnSmartGradebookSession:`` a session for managing
         smart gradebooks of gradebook columns
-
 
       * ``GradebookLookupSession:`` a session to lookup gradebooks
       * ``GradebookQuerySession:`` a session to query gradebooks
@@ -394,12 +389,10 @@ class GradingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Gradi
 
 
 class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
-    """The grading manager provides access to grading sessions and provides interoperability tests for various aspects of this
-    service.
+    """The grading manager provides access to grading sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager accept a ``Proxy`` for passing information
     from server environments.The sessions included in this manager are:
-
 
       * ``GradeSystemLookupSession:`` a session to look up grades and
         grade systems
@@ -416,7 +409,6 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
       * ``GradeSystemSmartGradebookSession:`` a session for managing
         smart gradebooks of grade systems
 
-
       * ``GradeEntryLookupSession:`` a session to look up grade entries
       * ``GradeEntryQuerySession:`` a session to query grade entries
         ``None``
@@ -425,7 +417,6 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         delete grade entries ``None``
       * ``GradeEntryNotificationSession: a`` session to receive messages
         pertaining to grade entry ```` changes
-
 
       * ``GradebookColumnLookupSession:`` a session to look up gradebook
         columns
@@ -445,7 +436,6 @@ class GradingProxyManager(osid_managers.OsidProxyManager, GradingProfile):
         managing gradebook column to gradebook mappings
       * ``GradebookColumnSmartGradebookSession:`` a session for managing
         smart gradebooks of gradebook columns
-
 
       * ``GradebookLookupSession:`` a session to lookup gradebooks
       * ``GradebookQuerySession:`` a session to query gradebooks

@@ -149,11 +149,9 @@ class RelationshipProfile(osid_managers.OsidProfile):
 
 
 class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-    aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``RelationshipLookupSession:`` a session to retrieve and examine
         relationships
@@ -169,7 +167,6 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
         relationship to family catalog mappings
       * ``RelationshipSmartFamilySession:`` a session to manage dynamic
         relationship families
-
 
       * ``FamilyLookupSession:`` a session to retrieve families
       * ``FamilyQuerySession:`` a session to query families
@@ -218,12 +215,10 @@ class RelationshipManager(osid_managers.OsidManager, osid_sessions.OsidSession, 
 
 
 class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfile):
-    """The relationship manager provides access to relationship sessions and provides interoperability tests for various
-    aspects of this service.
+    """The relationship manager provides access to relationship sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a Proxy. The sessions
     included in this manager are:
-
 
       * ``RelationshipLookupSession:`` a session to retrieve and examine
         relationships
@@ -239,7 +234,6 @@ class RelationshipProxyManager(osid_managers.OsidProxyManager, RelationshipProfi
         relationship to family catalog mappings
       * ``RelationshipSmartFamilySession:`` a session to manage dynamic
         relationship families
-
 
       * ``FamilyLookupSession:`` a session to retrieve families
       * ``FamilyQuerySession:`` a session to query families

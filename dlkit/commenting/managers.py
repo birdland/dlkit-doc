@@ -149,11 +149,9 @@ class CommentingProfile(osid_managers.OsidProfile):
 
 
 class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability tests for various aspects of
-    this service.
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``CommentLookupSession:`` a session to lookup comments
       * ``RatingLookupSession:`` a session to lookup comments
@@ -179,8 +177,6 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
         hierarchies of books
       * ``BookHierarchyDesignSession:`` a session to manage hierarchies
         of books
-
-
 
 
     The commenting manager also provides a profile for determing the
@@ -206,13 +202,11 @@ class CommentingManager(osid_managers.OsidManager, osid_sessions.OsidSession, Co
 
 
 class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
-    """The commenting manager provides access to commenting sessions and provides interoperability tests for various aspects of
-    this service.
+    """The commenting manager provides access to commenting sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager accept a ``Proxy`` for passing information
     from a server environment. The sessions included in this manager
     are:
-
 
       * ``CommentLookupSession:`` a session to lookup comments
       * ``RatingLookupSession:`` a session to lookup comments
@@ -238,8 +232,6 @@ class CommentingProxyManager(osid_managers.OsidProxyManager, CommentingProfile):
         hierarchies of books
       * ``BookHierarchyDesignSession:`` a session to manage hierarchies
         of books
-
-
 
 
     The commenting manager also provides a profile for determing the

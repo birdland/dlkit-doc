@@ -284,7 +284,6 @@ class OsidProxyManager(OsidProfile):
     ``OsidManager`` to maintain a higher degree of interoperability by
     avoiding this coupling.
 
-
     An OSID proxy manager is instantiated through the
     ``OsidRuntimeManager`` and represents an instance of a service. An
     OSID manager is responsible for defining clusters of
@@ -378,8 +377,7 @@ class OsidRuntimeProfile(OsidProfile):
 
 
 class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
-    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required for running OSID
-    implementations such as search paths and configurations."""
+    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required for running OSID implementations such as search paths and configurations."""
 
     def get_manager(self, osid, impl_class_name, version):
         """Finds, loads and instantiates providers of OSID managers.

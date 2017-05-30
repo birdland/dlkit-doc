@@ -397,9 +397,6 @@ class OsidPrimitive:
 class Identifiable:
     """A marker interface for objects uniquely identified with an OSID ``Id``."""
 
-    def __init__(self, osid_object): # I will never be called :(
-        self._osid_object = osid_object
-
     def get_id(self):
         """Gets the Id associated with this instance of this OSID object.
 
@@ -469,9 +466,6 @@ class Identifiable:
 class Extensible:
     """A marker interface for objects that contain ``OsidRecords``."""
 
-    def __init__(self, osid_object): # I will never be called :(
-        self._osid_object = osid_object
-
     def get_record_types(self):
         """Gets the record types available in this object.
 
@@ -514,9 +508,6 @@ class Extensible:
 
 class Browsable:
     """A marker interface for objects that offer property inspection."""
-
-    def __init__(self, osid_object): # I will never be called :(
-        self._osid_object = osid_object
 
     def get_properties(self):
         """Gets a list of properties.
@@ -621,7 +612,6 @@ class Subjugateable:
     A ``Subjugateable`` is created in the context of the administering
     ``OsidObject`` that may not be reassigned.
 
-
     A ``Subjugateable`` always has a fixed Id of it administering
     ``OsidObject``.
 
@@ -631,13 +621,10 @@ class Subjugateable:
 
 
 class Aggregateable:
-    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the definition is based on an included
-    set of other ``OsidObjects`` which are directly accessible and do not exist outside the context of the parent
-    object.
+    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the definition is based on an included set of other ``OsidObjects`` which are directly accessible and do not exist outside the context of the parent object.
 
     ``Aggregateables`` allow for an ``OsidObject`` to stand alone
     without knowledge of the originating service.
-
 
     An ``Asset`` is an example of an aggregate by including the
     ``AssetContents``. An Asset also contains a provider however in this
@@ -647,7 +634,6 @@ class Aggregateable:
     explicit mapping to the ``Asset`` managed through an ``OsidSession``
     but accessible directly within the ``Asset`` to enable its
     consumption outside the Repository OSID.
-
 
     This marker has little practicality other than to identify a service
     pattern that is neither a data attribute nor a separately accessible
@@ -659,8 +645,7 @@ class Aggregateable:
 
 
 class Containable:
-    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself
-    directly accessible without knowledge of the originating service."""
+    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself directly accessible without knowledge of the originating service."""
 
     def is_sequestered(self):
         """Tests if this ``Containable`` is sequestered in that it should not appear outside of its aggregated composition.
@@ -682,9 +667,6 @@ class Sourceable:
     services.
 
     """
-
-    def __init__(self, osid_object): # I will never be called :(
-        self._osid_object = osid_object
 
     def get_provider_id(self):
         """Gets the ``Id`` of the provider.
@@ -777,11 +759,9 @@ class Operable:
     active status is determined from the operational status and the
     enabling rules.
 
-
     The operational status indicates the Operable is functioning. This
     status is not set administratively but instead refelects suitable
     conditions for operation.
-
 
     Operables may be administratively turned on of off through the
     enabled and disabled administrative overrides. If there are no
@@ -791,14 +771,12 @@ class Operable:
     ``is_disabled()`` set to true for the ``Operable`` to be ``off``.
     ``is_enabled()`` and ``is_disabled()`` cannot both be ``tru`` e.
 
-
     If there are related ``OsidEnabler`` rules, the active status of at
     least one ``OsidEnabler`` results in a ``true`` value for
     ``isOperational()``. This active status can be overridden by setting
     ``is_disabled()`` to ``true``. If there are no active
     ``OsidEnabler`` rules, ``is_operational()`` is false resulting in an
     ``off``  ``Operable`` unless ``is_enabled()`` is ``true`` .
-
 
     For the active status to be completely determined by the
     ``OsidEnablers,`` both ``is_enabled()`` and ``is_disabled()`` should
@@ -880,9 +858,6 @@ class OsidProfile(osid_markers.Sourceable):
     definitions within its managers.
 
     """
-
-    def __init__(self):
-        self._provider_manager = None
 
     def get_id(self):
         """Gets an identifier for this service implementation.
@@ -1156,7 +1131,6 @@ class OsidProxyManager(OsidProfile):
     ``OsidManager`` to maintain a higher degree of interoperability by
     avoiding this coupling.
 
-
     An OSID proxy manager is instantiated through the
     ``OsidRuntimeManager`` and represents an instance of a service. An
     OSID manager is responsible for defining clusters of
@@ -1245,21 +1219,11 @@ class OsidSession:
     service and is generally responsible for the management and
     retrieval of ``OsidObjects``.
 
-
     ``OsidSession`` defines a set of common methods used throughout all
     OSID sessions. An OSID session may optionally support transactions
     through the transaction interface.
 
     """
-
-
-    COMPARATIVE = 0
-    PLENARY = 1
-    FEDERATED = 0
-    ISOLATED = 1
-
-    def __init__(self, proxy):
-        self._proxy = proxy
 
     def get_locale(self):
         """Gets the locale indicating the localization preferences in effect for this session.
@@ -1456,7 +1420,6 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     description of the object to a more user friendly display of various
     attributes.
 
-
     Creation of OSID Objects and the modification of their data is
     managed through the associated ``OsidSession`` which removes the
     dependency of updating data elements upon object retrieval.The
@@ -1465,11 +1428,9 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     is also used to create the appropriate ``OsidSession`` for object
     creation, updates and deletes.
 
-
     All ``OsidObjects`` are identified by an immutable ``Id``. An ``Id``
     is assigned to an object upon creation of the object and cannot be
     changed once assigned.
-
 
     An ``OsidObject`` may support one or more supplementary records
     which are expressed in the form of interfaces. Each record interface
@@ -1478,7 +1439,6 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     implied. In this case of interface inheritance, support of the
     parent record type may be implied through ``has_record_type()`` and
     not explicit in ``getRecordTypes()``.
-
 
     For example, if recordB extends recordA, typeB is a child of typeA.
     If a record implements typeB, than it also implements typeA. An
@@ -1489,7 +1449,6 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     typeB as they may not exist until explicitly requested. The
     mechanics of this polymorphism is defined by the language binder.
     One mechanism might be the use of casting.
-
 
     In addition to the record ``Types,`` OSID Objects also have a genus
     ``Type``. A genus ``Type`` indicates a classification or kind of the
@@ -1505,7 +1464,6 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     these genres should be treated in such a way that do not introduce
     interoperability problems.
 
-
     Like record Types, the genus Types may also exist in an implicit
     type hierarchy. An OSID object always has at least one genus. Genus
     types should not be confused with subject tagging, which is managed
@@ -1513,15 +1471,11 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
     may be modified. However, once an object's record is created with a
     record ``Type,`` it cannot be changed.
 
-
     Methods that return values are not permitted to return nulls. If a
     value is not set, it is indicated in the ``Metadata`` of the update
     form.
 
     """
-
-    def __init__(self, osid_object):
-        self._osid_object = osid_object
 
     def get_display_name(self):
         """Gets the preferred display name associated with this instance of this OSID object appropriate for display to the user.
@@ -1607,10 +1561,8 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
     example catalog is a ``Repository`` that relates to a collection of
     ``Assets``.
 
-
     ``OsidCatalogs`` allow for the retrieval of a provider identity and
     branding.
-
 
     Collections visible through an ``OsidCatalog`` may be the output of
     a dynamic query or some other rules-based evaluation. The facts
@@ -1620,7 +1572,6 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
     ``OsidQuery`` or environmental conditions supplied to the services
     via a ``Proxy`` .
 
-
     Often, the selection of an ``OsidCatalog`` in instantiating an
     ``OsidSession`` provides access to a set of ``OsidObjects`` .
     Because the view inside an ``OsidCatalog`` can also be produced
@@ -1628,7 +1579,6 @@ class OsidCatalog(OsidObject, osid_markers.Sourceable, osid_markers.Federateable
     alias) of the ``OsidCatalog`` may be used as an abstract means of
     requesting a predefined set of behaviors or data constraints from an
     OSID Provider.
-
 
     The flexibility of interpretation together with its central role in
     federation to build a rich and complex service from a set of
@@ -1650,7 +1600,6 @@ class OsidList:
     are defined in the sub-interface of ``OsidList`` where the
     appropriate return type is defined.
 
-
     Osid lists are a once pass through iteration of elements. The size
     of the object set and the means in which the element set is
     generated or stored is not known. Assumptions based on the length of
@@ -1659,7 +1608,6 @@ class OsidList:
     implementation may return a number of elements ranging from zero to
     infinity.
 
-
     Lists are returned by methods when multiple return values are
     possible. There is no guarantee that successive calls to the same
     method will return the same set of elements in a list. Unless an
@@ -1667,30 +1615,6 @@ class OsidList:
     elements is not known.
 
     """
-
-    def __init__(self, iter_object=None, count=None):
-        if iter_object is None:
-            iter_object = []
-        if count != None:
-            self._count = count
-        elif isinstance(iter_object, dict) or isinstance(iter_object, list):
-            self._count = len(iter_object)
-        self._iter_object = iter(iter_object)
-
-    def __iter__(self):
-        return self
-
-    def next(self):
-        try:
-            next_object = self._iter_object.next()
-        except: 
-            raise
-        if self._count != None:
-            self._count -= 1
-        return next_object
-
-    def len(self):
-        return self.available()
 
     def has_next(self):
         """Tests if there are more elements in this list.
@@ -1773,8 +1697,7 @@ class OsidRuntimeProfile(OsidProfile):
 
 
 class OsidRuntimeManager(OsidManager, OsidRuntimeProfile):
-    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required for running OSID
-    implementations such as search paths and configurations."""
+    """The ``OsidRuntimeManager`` represents and OSID platform and contains the information required for running OSID implementations such as search paths and configurations."""
 
     def get_manager(self, osid, impl_class_name, version):
         """Finds, loads and instantiates providers of OSID managers.

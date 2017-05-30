@@ -263,19 +263,15 @@ class CommentForm(osid_objects.OsidRelationshipForm):
 
 
 class CommentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``CommentList`` provides a means for accessing ``Comment`` elements sequentially either one at
-    a time or many at a time.
+    """Like all ``OsidLists,``  ``CommentList`` provides a means for accessing ``Comment`` elements sequentially either one at a time or many at a time.
 
     Examples: while (cl.hasNext()) { Comment comment =
     cl.getNextComment(); }
-
 
     or
       while (cl.hasNext()) {
            Comment[] comments = cl.getNextComments(cl.available());
       }
-
-
 
     """
 
@@ -373,18 +369,14 @@ class BookForm(osid_objects.OsidCatalogForm):
 
 
 class BookList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at a time
-    or many at a time.
+    """Like all ``OsidLists,``  ``BookList`` provides a means for accessing ``Book`` elements sequentially either one at a time or many at a time.
 
     Examples: while (bl.hasNext()) { Book book = bl.getNextBook(); }
-
 
     or
       while (bl.hasNext()) {
            Book[] books = bl.getNextBooks(bl.available());
       }
-
-
 
     """
 
@@ -475,19 +467,15 @@ class BookNode(osid_objects.OsidNode):
 
 
 class BookNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BookNodeList`` provides a means for accessing ``BookNode`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``BookNodeList`` provides a means for accessing ``BookNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (bnl.hasNext()) { BookNode node =
     bnl.getNextBookNode(); }
-
 
     or
       while (bnl.hasNext()) {
            BookNode[] nodes = bnl.getNextBookNodes(bnl.available());
       }
-
-
 
     """
 

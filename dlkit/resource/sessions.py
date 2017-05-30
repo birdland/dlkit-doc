@@ -8,9 +8,7 @@ class ResourceLookupSession(osid_sessions.OsidSession):
     A ``Resource`` is an arbitrary entity that may represent a person,
     place or thing used to identify an object used in various services.
 
-
     This lookup session defines several views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -25,12 +23,9 @@ class ResourceLookupSession(osid_sessions.OsidSession):
         through bin inheritence.
 
 
-
-
     The methods ``use_federated_bin_view()`` and
     ``use_isolated_bin_view()`` behave as a radio group and one should
     be selected before invoking any lookup methods.
-
 
     Resources may have an additional records indicated by their
     respective record types. The record may not be accessed through a
@@ -270,17 +265,13 @@ class ResourceQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``ResourceQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated bin view: searches include resources in bins of which
         this bin is a ancestor in the bin hierarchy
       * isolated bin view: searches are restricted to resources in this
         bin
-
-
 
 
     Resources may have a resource record indicated by their respective
@@ -400,7 +391,6 @@ class ResourceSearchSession(ResourceQuerySession):
 
     The search query is constructed using the ``ResourceQuery``.
 
-
     ``get_resources_by_query()`` is the basic search method and returns
     a list of ``Resources``. A more advanced search may be performed
     with ``getResourcesBySearch()``. It accepts an ``ResourceSearch`` in
@@ -410,17 +400,13 @@ class ResourceSearchSession(ResourceQuerySession):
     that can be used to access the resulting ``ResourceList`` or be used
     to perform a search within the result set through ``ResourceList``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated bin view: searches include resources in bins of which
         this bin is a ancestor in the bin hierarchy
       * isolated bin view: searches are restricted to resources in this
         bin
-
-
 
 
     Resources may have a resource query record indicated by their
@@ -504,7 +490,6 @@ class ResourceAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Resource,`` a ``ResourceForm`` is requested using
     ``get_resource_form_for_create()`` specifying desired record
@@ -516,7 +501,6 @@ class ResourceAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``ResourceForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``ResourceForms`` are requested to the ``Resource``
     ``Id`` that is to be updated using ``getResourceFormForUpdate()``.
     Similarly, the ``ResourceForm`` has metadata about the data that can
@@ -524,13 +508,11 @@ class ResourceAdminSession(osid_sessions.OsidSession):
     update. The ``ResourceForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``Resources``. To unmap a ``Resource``
     from the current ``Bin,`` the ``ResourceBinAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Resource`` itself thus removing it from all known ``Bin``
     catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -781,7 +763,6 @@ class ResourceNotificationSession(osid_sessions.OsidSession):
     without the use of polling. Notifications are cancelled when this
     session is closed.
 
-
     The two views defined in this session correspond to the views in the
     ``ResourceLookupSession``.
 
@@ -981,9 +962,7 @@ class ResourceBinSession(osid_sessions.OsidSession):
     A ``Resource`` may appear in multiple ``Bins``. Each ``Bin`` may
     have its own authorizations governing who is allowed to look at it.
 
-
     This lookup session defines several views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -1145,7 +1124,6 @@ class ResourceBinAssignmentSession(osid_sessions.OsidSession):
     Each ``Bin`` may have its own authorizations governing who is
     allowed to operate on it.
 
-
     Moving or adding a reference of a ``Resource`` to another ``Bin`` is
     not a copy operation (eg: does not change its ``Id`` ).
 
@@ -1263,9 +1241,7 @@ class ResourceAgentSession(osid_sessions.OsidSession):
     An ``Agent`` may map to only one ``Resource`` while a ``Resource``
     may map to multiple ``Agents``.
 
-
     This lookup session defines several views
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -1557,15 +1533,11 @@ class BinLookupSession(osid_sessions.OsidSession):
 
     The ``Bin`` represents a collection resources.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -1574,7 +1546,6 @@ class BinLookupSession(osid_sessions.OsidSession):
     examine the ``Bins`` it can access, without breaking execution.
     However, an administrative application may require all ``Bin``
     elements to be available.
-
 
     Bins may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
@@ -1779,7 +1750,6 @@ class BinQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``BinQuery``.
 
-
     Bins may have a bin query record indicated by their respective
     record types. The bin query record is accessed via the ``BinQuery``.
 
@@ -1844,7 +1814,6 @@ class BinAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Bin,`` a ``BinForm`` is requested using
     ``get_bin_form_for_create()`` specifying the desired record
@@ -1856,16 +1825,13 @@ class BinAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``BinForm`` corresponds
     to an attempted transaction.
 
-
     For updates, ``BinForms`` are requested to the ``Bin``  ``Id`` that
     is to be updated using ``getBinFormForUpdate()``. Similarly, the
     ``BinForm`` has metadata about the data that can be updated and it
     can perform validation before submitting the update. The ``BinForm``
     can only be used once for a successful update and cannot be reused.
 
-
     The delete operations delete ``Bins``.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -2087,17 +2053,14 @@ class BinHierarchySession(osid_sessions.OsidSession):
     but does not appear in the hierarchy traversal until added as a root
     node or a child of another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parent_bins()`` or ``get_child_bins()`` in lieu of
     a ``PermissionDenied`` error that may disrupt the traversal through
     authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: bin elements may be silently omitted or re-
         ordered

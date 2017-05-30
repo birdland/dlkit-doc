@@ -13,14 +13,11 @@ class AssessmentSession(osid_sessions.OsidSession):
     performed through instantiating this session with the
     ``AssessmentTaken`` ``Id``.
 
-
     ``Assessment Items`` are accessed via the ``Question`` interface. A
     ``Question``  ``Id`` is the same as the ``Item`` Id.
 
-
     This session manages the flow of control for the assessment taking
     process. It allows for two types of processes:
-
 
       * synchronous response: Each consecutive question is only
         available after the previous item was submitted or skipped.
@@ -28,12 +25,9 @@ class AssessmentSession(osid_sessions.OsidSession):
         of response submission.
 
 
-
-
     It may be the case that it is allowed to suspend and resume an
     assessment. ``can_suspend()`` indicates the availability of this
     feature. ``finished()`` indicates the assessment is complete.
-
 
     This session is used in the context of an ``AssessmentSection``. An
     assessment with no sections defined is assumed to have a single
@@ -894,6 +888,134 @@ class AssessmentSession(osid_sessions.OsidSession):
         pass
 
 
+class AssessmentResultsSession(osid_sessions.OsidSession):
+    """This session is used to access the tested assessment items and their associated responses.
+
+    Assessment results may also be available and is expressed as a
+    rubric through another assessment.
+
+    """
+
+    def get_bank_id(self):
+        """Gets the ``Bank``  ``Id`` associated with this session.
+
+        :return: the ``Bank Id`` associated with this session
+        :rtype: ``osid.id.Id``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.id.Id
+
+    bank_id = property(fget=get_bank_id)
+
+    def get_bank(self):
+        """Gets the ``Bank`` associated with this session.
+
+        :return: the ``Bank`` associated with this session
+        :rtype: ``osid.assessment.Bank``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.Bank
+
+    bank = property(fget=get_bank)
+
+    def can_access_assessment_results(self):
+        """Tests if this user can take this assessment.
+
+        A return of true does not guarantee successful authorization. A
+        return of false indicates that it is known all methods in this
+        session will result in a ``PermissionDenied``. This is intended
+        as a hint to an application that may opt not to offer assessment
+        operations to unauthorized users.
+
+        :return: ``false`` if assessment methods are not authorized, ``true`` otherwise
+        :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
+    def get_items(self, assessment_taken_id):
+        """Gets the items questioned in a assessment.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: the list of assessment questions
+        :rtype: ``osid.assessment.ItemList``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure occurred
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.ItemList
+
+    def get_responses(self, assessment_taken_id):
+        """Gets the submitted responses.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: the submitted answers
+        :rtype: ``osid.assessment.ResponseList``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.assessment.ResponseList
+
+    def are_results_available(self, assessment_taken_id):
+        """Tests if the results are available for this assessment.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: ``true`` if results are available, ``false`` otherwise
+        :rtype: ``boolean``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
+    def get_grade_entries(self, assessment_taken_id):
+        """Gets a list of grade entries for this assessment.
+
+        Each grade entry may indicate a grade or score input by multiple
+        graders.
+
+        :param assessment_taken_id: ``Id`` of the ``AssessmentTaken``
+        :type assessment_taken_id: ``osid.id.Id``
+        :return: a list of grade entries
+        :rtype: ``osid.grading.GradeEntryList``
+        :raise: ``IllegalState`` -- ``are_results_available()`` is ``false``
+        :raise: ``NotFound`` -- ``assessment_taken_id`` is not found
+        :raise: ``NullArgument`` -- ``assessment_taken_id`` is ``null``
+        :raise: ``OperationFailed`` -- unable to complete request
+        :raise: ``PermissionDenied`` -- authorization failure
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # osid.grading.GradeEntryList
+
+
 class ItemLookupSession(osid_sessions.OsidSession):
     """This session provides methods for retrieving ``Item`` objects."""
 
@@ -1213,17 +1335,13 @@ class ItemQuerySession(osid_sessions.OsidSession):
     assessment item record ``Type`` also specifies the query record for
     the assessment item query.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated assessment bank view: searches include assessment
         items in assessment banks of which this assessment bank is a
         ancestor in the assessment bank hierarchy
       * isolated bank
-
-
 
 
     Assessment items may have a query record indicated by their
@@ -1345,7 +1463,6 @@ class ItemSearchSession(ItemQuerySession):
     assessment item record ``Type`` also specifies the query record for
     the assessment item query.
 
-
     ``get_items_by_query()`` is the basic search method and returns a
     list of ``Items``. A more advanced search may be performed with
     ``getItemsBySearch()``. It accepts an ``ItemSearch`` in addition to
@@ -1355,18 +1472,14 @@ class ItemSearchSession(ItemQuerySession):
     resulting ``ItemList`` or be used to perform a search within the
     result set through ``ItemSearch``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated assessment bank view: searches include assessment
         items in assessment banks of which this assessment bank is a
         ancestor in the assessment bank hierarchy
       * isolated bank view: searches are restricted to assessment items
         in this assessment bank
-
-
 
 
     Assessment items may have a query record indicated by their
@@ -1450,7 +1563,6 @@ class ItemAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``Item,`` an ``ItemForm`` is requested using
     ``get_item_form_for_create()`` specifying the desired record
@@ -1462,7 +1574,6 @@ class ItemAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``ItemForm`` corresponds
     to an attempted transaction.
 
-
     For updates, ``ItemForms`` are requested to the ``ItemForm``  ``Id``
     that is to be updated using ``getItemFormForUpdate()``. Similarly,
     the ``ItemForm`` has metadata about the data that can be updated and
@@ -1470,12 +1581,10 @@ class ItemAdminSession(osid_sessions.OsidSession):
     ``ItemForm`` can only be used once for a successful update and
     cannot be reused.
 
-
     The delete operations delete ``ItemForm``. To unmap an ``ItemForm``
     from the current ``Bank,`` the ``ItemBankAssignmentSession`` should
     be used. These delete operations attempt to remove the ``Item``
     itself thus removing it from all known ``Bank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -2056,7 +2165,6 @@ class ItemNotificationSession(osid_sessions.OsidSession):
     state with this service without the use of polling. Notifications
     are cancelled when this session is closed.
 
-
     The two views defined in this session correspond to the views in the
     ``ItemLookupSession``.
 
@@ -2299,9 +2407,7 @@ class ItemBankSession(osid_sessions.OsidSession):
     An ``Item`` may appear in multiple ``Banks``. Each ``Bank`` may have
     its own authorizations governing who is allowed to look at it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -2462,7 +2568,6 @@ class ItemBankAssignmentSession(osid_sessions.OsidSession):
     reference to an ``Item`` is the equivalent of deleting it. Each
     ``Bank`` may have its own authorizations governing who is allowed to
     operate on it.
-
 
     Moving or adding a reference of an ``Item`` to another ``Bank`` is
     not a copy operation (eg: does not change its ``Id`` ).
@@ -2836,17 +2941,13 @@ class AssessmentQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``AssessmentQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated bank view: searches include assessments in banks of
         which this bank is a ancestor in the bank hierarchy
       * isolated bank view: searches are restricted to assessments in
         this bank
-
-
 
 
     Assessments may have a query record indicated by their respective
@@ -2967,7 +3068,6 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``Assessment,`` an ``AssessmentForm`` is requested using
     ``get_assessment_form_for_create()`` specifying the desired record
@@ -2979,7 +3079,6 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``AssessmentForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``AssessmentForms`` are requested to the ``Assessment``
     ``Id`` that is to be updated using ``getAssessmentFormForUpdate()``.
     Similarly, the ``AssessmentForm`` has metadata about the data that
@@ -2987,13 +3086,11 @@ class AssessmentAdminSession(osid_sessions.OsidSession):
     update. The ``AssessmentForm`` can only be used once for a
     successful update and cannot be reused.
 
-
     The delete operations delete ``Assessments``. To unmap an
     ``Assessment`` from the current ``Bank,`` the
     ``AssessmentBankAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Assessment`` itself thus removing
     it from all known ``Bank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -3242,9 +3339,7 @@ class AssessmentBankSession(osid_sessions.OsidSession):
     may have its own authorizations governing who is allowed to look at
     it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -3405,7 +3500,6 @@ class AssessmentBankAssignmentSession(osid_sessions.OsidSession):
     last reference to an ``Assessment`` is the equivalent of deleting
     it. Each ``Bank`` may have its own authorizations governing who is
     allowed to operate on it.
-
 
     Moving or adding a reference of an ``Assessment`` to another
     ``Bank`` is not a copy operation (eg: does not change its ``Id`` ).
@@ -3968,17 +4062,13 @@ class AssessmentOfferedQuerySession(osid_sessions.OsidSession):
     The search query is constructed using the
     ``AssessmentOfferedQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated bank view: searches include assessments offered in
         banks of which this bank is a ancestor in the bank hierarchy
       * isolated bank view: searches are restricted to assessments
         offered in this bank
-
-
 
 
     Asessments offered may have a query record indicated by their
@@ -4099,7 +4189,6 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``AssessmentOffered,`` an ``AssessmentOfferedForm`` is requested
     using ``get_assessment_offered_form_for_create()`` specifying the
@@ -4112,7 +4201,6 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
     operation was unsuccessful. Each ``AssessmentOfferedForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``AssessmentOfferedForms`` are requested to the
     ``AssessmentOffered``  ``Id`` that is to be updated using
     ``getAssessmentOfferedFormForUpdate()``. Similarly, the
@@ -4121,13 +4209,11 @@ class AssessmentOfferedAdminSession(osid_sessions.OsidSession):
     The ``AssessmentOfferedForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``AssessmentsOffered``. To unmap an
     ``AssessmentOffered`` from the current ``Bank,`` the
     ``AssessmentOfferedBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``AssessmentOffered`` itself
     thus removing it from all known ``Bank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -4379,9 +4465,7 @@ class AssessmentOfferedBankSession(osid_sessions.OsidSession):
     ``Bank`` may have its own authorizations governing who is allowed to
     look at it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -4542,7 +4626,6 @@ class AssessmentOfferedBankAssignmentSession(osid_sessions.OsidSession):
     the last reference to an ``AssessmentOffered`` is the equivalent of
     deleting it. Each ``Bank`` may have its own authorizations governing
     who is allowed to operate on it.
-
 
     Moving or adding a reference of an ``AssessmentOffered`` to another
     ``Bank`` is not a copy operation (eg: does not change its ``Id`` ).
@@ -5185,17 +5268,13 @@ class AssessmentTakenQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``AssessmentTakenQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated bank view: searches include assessments taken in banks
         of which this bank is an ancestor in the bank hierarchy
       * isolated bank view: searches are restricted to assessments taken
         in this bank
-
-
 
 
     Assessments taken may have a query record indicated by their
@@ -5315,7 +5394,6 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``AssessmentTaken,`` an ``AssessmentTakenForm`` is requested using
     ``get_assessment_taken_form_for_create()`` specifying the assessment
@@ -5328,7 +5406,6 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
     operation was unsuccessful. Each ``AssessmentTakenForm`` corresponds
     to an attempted transaction.
 
-
     For updates, ``AssessmentTakenForms`` are requested to the
     ``AssessmentTaken``  ``Id`` that is to be updated using
     ``getAssessmentTakenFormForUpdate()``. Similarly, the
@@ -5337,13 +5414,11 @@ class AssessmentTakenAdminSession(osid_sessions.OsidSession):
     The ``AssessmentTakenForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``AssessmentsTaken``. To unmap an
     ``AssessmentTakenForm`` from the current ``Bank,`` the
     ``AssessmentTakenFormBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``AssessmentTakenForm``
     itself thus removing it from all known ``Bank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -5595,9 +5670,7 @@ class AssessmentTakenBankSession(osid_sessions.OsidSession):
     ``Bank`` may have its own authorizations governing who is allowed to
     look at it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -5759,7 +5832,6 @@ class AssessmentTakenBankAssignmentSession(osid_sessions.OsidSession):
     deleting it. Each ``Bank`` may have its own authorizations governing
     who is allowed to operate on it.
 
-
     Moving or adding a reference of an ``AssessmentTaken`` to another
     ``Bank`` is not a copy operation (eg: does not change its ``Id`` ).
 
@@ -5898,15 +5970,11 @@ class BankLookupSession(osid_sessions.OsidSession):
     The ``Bank`` represents a collection of ``Items`` and
     ``Assessments``.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -5915,7 +5983,6 @@ class BankLookupSession(osid_sessions.OsidSession):
     examine the ``Banks`` it can access, without breaking execution.
     However, an administrative application may require all ``Bank``
     elements to be available.
-
 
     Banks may have an additional records indicated by their respective
     record types. The record may not be accessed through a cast of the
@@ -6120,7 +6187,6 @@ class BankQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``BankQuery``.
 
-
     Banks may have aquery record indicated by their respective record
     types. The query record is accessed via the ``BankQuery``.
 
@@ -6183,7 +6249,6 @@ class BankAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Bank,`` a ``BankForm`` is requested using
     ``get_bank_form_for_create()`` specifying the desired record
@@ -6195,7 +6260,6 @@ class BankAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``BankForm`` corresponds
     to an attempted transaction.
 
-
     For updates, ``BankForms`` are requested to the ``Bank``  ``Id``
     that is to be updated using ``getBankFormForUpdate()``. Similarly,
     the ``BankForm`` has metadata about the data that can be updated and
@@ -6203,9 +6267,7 @@ class BankAdminSession(osid_sessions.OsidSession):
     ``BankForm`` can only be used once for a successful update and
     cannot be reused.
 
-
     The delete operations delete ``Banks``.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -6429,17 +6491,14 @@ class BankHierarchySession(osid_sessions.OsidSession):
     but does not appear in the hierarchy traversal until added as a root
     node or a child of another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parent_banks()`` or ``get_child_banks()`` in lieu
     of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: bank elements may be silently omitted or re-
         ordered

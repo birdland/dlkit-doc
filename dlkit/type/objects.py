@@ -172,18 +172,14 @@ class TypeForm(osid_objects.OsidForm):
 
 
 class TypeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``TypeList`` provides a means for accessing ``Type`` elements sequentially either one at a time
-    or many at a time.
+    """Like all ``OsidLists,``  ``TypeList`` provides a means for accessing ``Type`` elements sequentially either one at a time or many at a time.
 
     Examples: while (tl.hasNext()) { Type type = tl.getNextType(); }
-
 
     or
       while (tl.hasNext()) {
            Type[] types = tl.getNextTypes(tl.available());
       }
-
-
 
     """
 

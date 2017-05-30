@@ -12,10 +12,8 @@ class OsidQuery(osid_markers.Suppliable):
     search as the provider may utilize implementation-specific data
     wiithin the object.
 
-
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
-
 
     Any match method inside an ``OsidQuery`` may be invoked multiple
     times. In the case of a match method, each invocation adds an
@@ -25,16 +23,12 @@ class OsidQuery(osid_markers.Suppliable):
 
 
 
-
-
-
     ``OsidObjects`` allow for the definition of an additonal records and
     the ``OsidQuery`` parallels this mechanism. An interface type of an
     ``OsidObject`` record must also define the corresponding
     ``OsidQuery`` record which is available through query interfaces.
     Multiple requests of these typed interfaces may return the same
     underlying object and thus it is only useful to request once.
-
 
     An ``OsidQuery`` may be used to query for set or unset values using
     the "match any" methods. A field that has not bee explicitly
@@ -148,7 +142,6 @@ class OsidIdentifiableQuery(OsidQuery):
     returned from the session must be used in the search as the provider
     may utilize implementation-specific data wiithin the object.
 
-
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
 
@@ -193,7 +186,6 @@ class OsidExtensibleQuery(OsidQuery, osid_markers.Extensible):
     search method. The same ``OsidExtensibleQuery`` returned from the
     session must be used in the search as the provider may utilize
     implementation-specific data wiithin the object.
-
 
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
@@ -248,7 +240,6 @@ class OsidBrowsableQuery(OsidQuery):
     search method. The same ``OsidBrowsableQuery`` returned from the
     session must be used in the search as the provider may utilize
     implementation-specific data wiithin the object.
-
 
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
@@ -776,19 +767,14 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
     search as the provider may utilize implementation-specific data
     wiithin the object.
 
-
     If multiple data elements are set in this interface, the results
     matching all the given data (eg: AND) are returned.
-
 
     Any match method inside an ``OsidObjectQuery`` may be invoked
     multiple times. In the case of a match method, each invocation adds
     an element to an ``OR`` expression. Any of these terms may also be
     negated through the ``match`` flag.
       OsidObjectQuery { OsidQuery.matchDisplayName AND (OsidQuery.matchDescription OR OsidObjectQuery.matchDescription)}
-
-
-
 
 
 
@@ -799,17 +785,14 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
     Multiple requests of these typed interfaces may return the same
     underlying object and thus it is only useful to request once.
 
-
     String searches are described using a string search ``Type`` that
     indicates the type of regular expression or wildcarding encoding.
     Compatibility with a strings search ``Type`` can be tested within
     this interface.
 
-
     As with all aspects of OSIDs, nulls cannot be used. Separate tests
     are available for querying for unset values except for required
     fields.
-
 
     An example to find all objects whose name starts with "Fred" or
     whose name starts with "Barney", but the word "dinosaur" does not
@@ -821,13 +804,10 @@ class OsidObjectQuery(OsidIdentifiableQuery, OsidExtensibleQuery, OsidBrowsableQ
       query.matchDisplayName("Barney*", wildcardStringMatchType, true);
       query.matchDescriptionMatch("dinosaur", wordStringMatchType, false);
 
-
       ColorQuery recordQuery;
       recordQuery = query.getObjectRecord(colorRecordType);
       recordQuery.matchColor("purple", false);
       ObjectList list = session.getObjectsByQuery(query);
-
-
 
     """
 

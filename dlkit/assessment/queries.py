@@ -2407,8 +2407,7 @@ class AssessmentTakenQuery(osid_queries.OsidObjectQuery):
 
 
 class BankQuery(osid_queries.OsidCatalogQuery):
-    """This is the query for searching banks Each method specifies an ``AND`` term while multiple invocations of the same
-    method produce a nested ``OR``."""
+    """This is the query for searching banks Each method specifies an ``AND`` term while multiple invocations of the same method produce a nested ``OR``."""
 
     def match_item_id(self, item_id, match):
         """Sets the item ``Id`` for this query.
