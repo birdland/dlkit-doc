@@ -9,22 +9,17 @@ class OsidSearch(osid_rules.OsidCondition):
     methods to govern the overall search of terms supplied in one or
     more ``OsidQuery`` interfaces.
 
-
     This interface is available from a search session.Example using the
     search interface to retrieve the first 25 results:
       OsidSearch os = session.getObjectSearch();
       os.limitResultSet(1, 25);
 
-
       OsidQuery query;
       query = session.getObjectQuery();
       query.addDescriptionMatch("*food*", wildcardStringMatchType, true);
 
-
       ObjectSearchResults results = session.getObjectsBySearch(query, os);
       ObjectList list = results.getObjectList();
-
-
 
     """
 

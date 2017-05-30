@@ -375,11 +375,9 @@ class LearningProfile(osid_managers.OsidProfile):
 
 
 class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, LearningProfile):
-    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects of
-    this service.
+    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``ObjectiveLookupSession:`` a session to look up objectives
       * ``ObjectiveLookupSession:`` a session to query objectives
@@ -405,7 +403,6 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
       * ``ObjectiveRequisiteAssignmentSession:`` a session to manage
         objective requisites
 
-
       * ``ActivityLookupSession:`` a session to look up activities
       * ``ActivityQuerySession:`` a session to query activities ``None``
       * ``ActivitySearchSession:`` a session to search activities
@@ -419,7 +416,6 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         managing activity and objective bank mappings
       * ``ActivitySmartObjectiveBankSession:`` a session for managing
         dynamic objective banks of activities
-
 
       * ``ProficiencyLookupSession:`` a session to retrieve
         proficiencies
@@ -440,7 +436,6 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
         of objectives
       * ``LearningPathSession:`` a session to examine learning paths of
         objectives
-
 
       * ``ObjectiveBankLookupSession:`` a session to lookup objective
         banks
@@ -477,12 +472,10 @@ class LearningManager(osid_managers.OsidManager, osid_sessions.OsidSession, Lear
 
 
 class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
-    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects of
-    this service.
+    """The learning manager provides access to learning sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy``. The
     sessions included in this manager are:
-
 
       * ``ObjectiveLookupSession:`` a session to look up objectives
       * ``ObjectiveLookupSession:`` a session to query objectives
@@ -508,7 +501,6 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
       * ``ObjectiveRequisiteAssignmentSession:`` a session to manage
         objective requisites
 
-
       * ``ActivityLookupSession:`` a session to look up activities
       * ``ActivityQuerySession:`` a session to query activities ``None``
       * ``ActivitySearchSession:`` a session to search activities
@@ -522,7 +514,6 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         managing activity and objective bank mappings
       * ``ActivitySmartObjectiveBankSession:`` a session for managing
         dynamic objective banks of activities
-
 
       * ``ProficiencyLookupSession:`` a session to retrieve
         proficiencies
@@ -543,7 +534,6 @@ class LearningProxyManager(osid_managers.OsidProxyManager, LearningProfile):
         of objectives
       * ``LearningPathSession:`` a session to examine learning paths of
         objectives
-
 
       * ``ObjectiveBankLookupSession:`` a session to lookup objective
         banks

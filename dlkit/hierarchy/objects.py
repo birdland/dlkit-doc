@@ -63,19 +63,15 @@ class HierarchyForm(osid_objects.OsidCatalogForm):
 
 
 class HierarchyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``HierarchyList`` provides a means for accessing ``Id`` elements sequentially either one at a
-    time or many at a time.
+    """Like all ``OsidLists,``  ``HierarchyList`` provides a means for accessing ``Id`` elements sequentially either one at a time or many at a time.
 
     Examples: while (hl.hasNext()) { Hierarchy hierarchy =
     hl.getNextHierarchy(); }
-
 
     or
       while (hl.hasNext()) {
            Hierarchy[] hierarchies = hl.getNextHierarchies(hl.available());
       }
-
-
 
     """
 
@@ -152,18 +148,14 @@ class Node(osid_objects.OsidNode):
 
 
 class NodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``NodeList`` provides a means for accessing ``Id`` elements sequentially either one at a time
-    or many at a time.
+    """Like all ``OsidLists,``  ``NodeList`` provides a means for accessing ``Id`` elements sequentially either one at a time or many at a time.
 
     Examples: while (nl.hasNext()) { Node node = nl.getNextNode(); }
-
 
     or
       while (nl.hasNext()) {
            Node[] nodes = nl.getNextNodes(nl.available());
       }
-
-
 
     """
 

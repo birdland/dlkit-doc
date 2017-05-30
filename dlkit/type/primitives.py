@@ -10,15 +10,11 @@ class Type(osid_markers.OsidPrimitive):
     an extended interface. Semantically, an ``Id`` identifies any OSID
     object while the ``Type`` identifies a specification.
 
-
     The components of the Type that make up its identification are:
-
 
       * identifier: a unique key or guid
       * namespace: the namespace of the identifier
       * authority: the isuer of the identifier
-
-
 
 
     Persisting a type reference means to persist the above

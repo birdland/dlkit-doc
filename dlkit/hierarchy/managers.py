@@ -88,7 +88,6 @@ class HierarchyManager(osid_managers.OsidManager, osid_sessions.OsidSession, Hie
 
     The sessions included in this manager are:
 
-
       * ``HierarchyTraversalSession:`` a basic session traversing a
         hierarchy
       * ``HierarchyDesignSession:`` a session to design a hierarchy
@@ -115,7 +114,6 @@ class HierarchyProxyManager(osid_managers.OsidProxyManager, HierarchyProfile):
 
     Methods in this manager accept a ``Proxy`` to pass information from
     server environments. The sessions included in this manager are:
-
 
       * ``HierarchyTraversalSession:`` a basic session traversing a
         hierarchy

@@ -7,9 +7,7 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
 
     A ``Relationship`` is mapped to two OSID ``Ids``.
 
-
     This lookup session defines several views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -21,8 +19,6 @@ class RelationshipLookupSession(osid_sessions.OsidSession):
         relationships currently in effect.
       * any effective relationship view: Relationship methods return
         both effective and ineffective relationships.
-
-
 
 
     Relationships may have an additional records indicated by their
@@ -554,7 +550,6 @@ class RelationshipQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``Relationship``.
 
-
     Relationships may have a query record indicated by their respective
     record types. The query record is accessed via the
     ``RelationshipQuery``.
@@ -672,7 +667,6 @@ class RelationshipAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Relationship,`` a ``RelationshipForm`` is requested using
     ``get_relationship_form_for_create()`` specifying the desired peers
@@ -684,7 +678,6 @@ class RelationshipAdminSession(osid_sessions.OsidSession):
     create operation unless the first operation was unsuccessful. Each
     ``RelationshipForm`` corresponds to an attempted transaction.
 
-
     For updates, ``RelationshipForms`` are requested to the
     ``Relationship``  ``Id`` that is to be updated using
     ``getRelationshipFormForUpdate()``. Similarly, the
@@ -693,13 +686,11 @@ class RelationshipAdminSession(osid_sessions.OsidSession):
     ``RelationshipForm`` can only be used once for a successful update
     and cannot be reused.
 
-
     The delete operations delete ``Relationships``. To unmap a
     ``Relationship`` from the current ``Family,`` the
     ``RelationshipFamilyAssignmentSession`` should be used. These delete
     operations attempt to remove the ``Relationship`` itself thus
     removing it from all known ``Family`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -950,15 +941,11 @@ class FamilyLookupSession(osid_sessions.OsidSession):
 
     The ``Family`` represents a collection of relationships.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -1170,7 +1157,6 @@ class FamilyAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Family,`` a ``FamilyForm`` is requested using
     ``get_family_form_for_create()`` specifying the desired record
@@ -1182,7 +1168,6 @@ class FamilyAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``FamilyForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``FamilyForms`` are requested to the ``Family``  ``Id``
     that is to be updated using ``getFamilyFormForUpdate()``. Similarly,
     the ``FamilyForm`` has metadata about the data that can be updated
@@ -1190,9 +1175,7 @@ class FamilyAdminSession(osid_sessions.OsidSession):
     ``FamilyForm`` can only be used once for a successful update and
     cannot be reused.
 
-
     The delete operations delete ``Families``.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -1417,17 +1400,14 @@ class FamilyHierarchySession(osid_sessions.OsidSession):
     hierarchy but does not appear in the hierarchy traversal until added
     as a root node or a child of another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parent_families()`` or ``get_child_families()`` in
     lieu of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: family elements may be silently omitted or re-
         ordered

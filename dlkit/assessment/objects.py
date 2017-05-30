@@ -56,19 +56,15 @@ class QuestionForm(osid_objects.OsidObjectForm):
 
 
 class QuestionList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``QuestionList`` provides a means for accessing ``Question`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``QuestionList`` provides a means for accessing ``Question`` elements sequentially either one at a time or many at a time.
 
     Examples: while (ql.hasNext()) { Question question =
     ql.getNextQuestion(); }
-
 
     or
       while (ql.hasNext()) {
            Question[] question = al.getNextQuestions(ql.available());
       }
-
-
 
     """
 
@@ -155,19 +151,15 @@ class AnswerForm(osid_objects.OsidObjectForm):
 
 
 class AnswerList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AnswerList`` provides a means for accessing ``Answer`` elements sequentially either one at a
-    time or many at a time.
+    """Like all ``OsidLists,``  ``AnswerList`` provides a means for accessing ``Answer`` elements sequentially either one at a time or many at a time.
 
     Examples: while (al.hasNext()) { Answer answer = al.getNextAnswer();
     }
-
 
     or
       while (al.hasNext()) {
            Answer[] answer = al.getNextAnswers(al.available());
       }
-
-
 
     """
 
@@ -207,7 +199,6 @@ class Item(osid_objects.OsidObject, osid_markers.Aggregateable):
 
     Like all OSID objects, a ``Item`` is identified by its ``Id`` and
     any persisted references should use the ``Id``.
-
 
     An ``Item`` is composed of a ``Question`` and an ``Answer``.
 
@@ -390,18 +381,14 @@ class ItemForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm):
 
 
 class ItemList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ItemList`` provides a means for accessing ``Item`` elements sequentially either one at a time
-    or many at a time.
+    """Like all ``OsidLists,``  ``ItemList`` provides a means for accessing ``Item`` elements sequentially either one at a time or many at a time.
 
     Examples: while (il.hasNext()) { Item item = il.getNextItem(); }
-
 
     or
       while (il.hasNext()) {
            Item[] items = il.getNextItems(il.available());
       }
-
-
 
     """
 
@@ -441,7 +428,6 @@ class Assessment(osid_objects.OsidObject):
 
     Like all OSID objects, an ``Assessment`` is identified by its ``Id``
     and any persisted references should use the ``Id``.
-
 
     An ``Assessment`` may have an accompanying rubric used for assessing
     performance. The rubric assessment is established canonically in
@@ -650,19 +636,15 @@ class AssessmentForm(osid_objects.OsidObjectForm):
 
 
 class AssessmentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentList`` provides a means for accessing ``Assessment`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentList`` provides a means for accessing ``Assessment`` elements sequentially either one at a time or many at a time.
 
     Examples: while (al.hasNext()) { Assessment assessment =
     al.getNextAssessment(); }
-
 
     or
       while (al.hasNext()) {
            Assessment[] assessments = al.hetNextAssessments(al.available());
       }
-
-
 
     """
 
@@ -1354,19 +1336,15 @@ class AssessmentOfferedForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjug
 
 
 class AssessmentOfferedList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentOfferedList`` provides a means for accessing ``AssessmentTaken`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentOfferedList`` provides a means for accessing ``AssessmentTaken`` elements sequentially either one at a time or many at a time.
 
     Examples: while (aol.hasNext()) { AssessmentOffered assessment =
     aol.getNextAssessmentOffered();
-
 
     or
       while (aol.hasNext()) {
            AssessmentOffered[] assessments = aol.hetNextAssessmentsOffered(aol.available());
       }
-
-
 
     """
 
@@ -1810,19 +1788,15 @@ class AssessmentTakenForm(osid_objects.OsidObjectForm):
 
 
 class AssessmentTakenList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentTakenList`` provides a means for accessing ``AssessmentTaken`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentTakenList`` provides a means for accessing ``AssessmentTaken`` elements sequentially either one at a time or many at a time.
 
     Examples: while (atl.hasNext()) { AssessmentTaken assessment =
     atl.getNextAssessmentTaken();
-
 
     or
       while (atl.hasNext()) {
            AssessmentTaken[] assessments = atl.hetNextAssessmentsTaken(atl.available());
       }
-
-
 
     """
 
@@ -1969,19 +1943,15 @@ class AssessmentSection(osid_objects.OsidObject):
 
 
 class AssessmentSectionList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssessmentSectionList`` provides a means for accessing ``AssessmentSection`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssessmentSectionList`` provides a means for accessing ``AssessmentSection`` elements sequentially either one at a time or many at a time.
 
     Examples: while (asl.hasNext()) { AssessmentSection section =
     asl.getNextAssessmentSection();
-
 
     or
       while (asl.hasNext()) {
            AssessmentSection[] sections = asl.hetNextAssessmentSections(asl.available());
       }
-
-
 
     """
 
@@ -2071,18 +2041,14 @@ class BankForm(osid_objects.OsidCatalogForm):
 
 
 class BankList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BankList`` provides a means for accessing ``Bank`` elements sequentially either one at a time
-    or many at a time.
+    """Like all ``OsidLists,``  ``BankList`` provides a means for accessing ``Bank`` elements sequentially either one at a time or many at a time.
 
     Examples: while (bl.hasNext()) { Bank bank = bl.getNextBank(); }
-
 
     or
       while (bl.hasNext()) {
            Bank[] banks = bl.getNextBanks(bl.available());
       }
-
-
 
     """
 
@@ -2170,19 +2136,15 @@ class BankNode(osid_objects.OsidNode):
 
 
 class BankNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``BankNodeList`` provides a means for accessing ``BankNode`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``BankNodeList`` provides a means for accessing ``BankNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (bnl.hasNext()) { BankNode node =
     bnl.getNextBankNode(); }
-
 
     or
       while (bnl.hasNext()) {
            BankNode[] nodes = bnl.getNextBankNodes(bnl.available());
       }
-
-
 
     """
 
@@ -2218,19 +2180,15 @@ class BankNodeList(osid_objects.OsidList):
 
 
 class ResponseList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ResponseList`` provides a means for accessing ``Response`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``ResponseList`` provides a means for accessing ``Response`` elements sequentially either one at a time or many at a time.
 
     Examples: while (rl.hasNext()) { Response response =
     rl.getNextResponse(); }
-
 
     or
       while (rl.hasNext()) {
            Response[] responses = rl.getNextResponses(rl.available());
       }
-
-
 
     """
 

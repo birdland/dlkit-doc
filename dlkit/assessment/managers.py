@@ -18,6 +18,18 @@ class AssessmentProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
+    def supports_assessment_results(self):
+        """Tests for the availability of an assessment rsults service.
+
+        :return: ``true`` if assessment results is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
     def supports_item_lookup(self):
         """Tests if an item lookup service is supported.
 
@@ -519,11 +531,9 @@ class AssessmentProfile(osid_managers.OsidProfile):
 
 
 class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, AssessmentProfile):
-    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of
-    this service.
+    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``MyAssessmentTakenSession:`` a session to get taken or in
         progress assessments for the current agent
@@ -531,7 +541,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         assessments taken
       * ``AssessmentResultsSession:`` a session to retrieve assessment
         results
-
 
       * ``ItemLookupSession:`` a session to look up ``Items``
       * ``ItemQuerySession`` : a session to query ``Items``
@@ -546,7 +555,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         bank mappings
       * ``ItemSmartBankSession:`` a session for managing dynamic banks
 
-
       * ``AssessmentLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentQuerySession:`` a session to query ``Assessments``
@@ -556,7 +564,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
       * ``AssessmentNotificationSession: a`` session to receive messages
         pertaining to ``Assessment`` changes
 
-
       * ``AssessmentBankSession:`` a session for looking up assessment
         and bank mappings
       * ``AssessmentBankAssignmentSession:`` a session for managing
@@ -565,7 +572,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         banks
       * ``AssessmentBasicAuthoringSession:`` a session for making simple
         mappings of assessment items to assessments
-
 
       * ``AssessmentOfferedLookupSession:`` a session to look up
         ``AssessmentsOffered``
@@ -584,7 +590,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
       * ``AssessmentOfferedSmartBankSession`` : a session to manage
         dynamic banks of assessments offered
 
-
       * ``AssessmentTakenLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentTakenQuerySession:`` a session to query
@@ -601,7 +606,6 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
         managing assessments taken and bank mappings
       * ``AssessmentTakenSmartBankSession:`` a session to manage dynamic
         banks of assessments taken
-
 
       * ``BankLookupSession:`` a session to lookup banks
       * ``BankQuerySession`` : a session to query banks
@@ -651,12 +655,10 @@ class AssessmentManager(osid_managers.OsidManager, osid_sessions.OsidSession, As
 
 
 class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
-    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of
-    this service.
+    """The assessment manager provides access to assessment sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` object.
     The sessions included in this manager are:
-
 
       * ``MyAssessmentTakenSession:`` a session to get taken or in
         progress assessments for the current agent
@@ -664,7 +666,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         assessments taken
       * ``AssessmentResultsSession:`` a session to retrieve assessment
         results
-
 
       * ``ItemLookupSession:`` a session to look up ``Items``
       * ``ItemQuerySession`` : a session to query ``Items``
@@ -679,7 +680,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         bank mappings
       * ``ItemSmartBankSession:`` a session for managing dynamic banks
 
-
       * ``AssessmentLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentQuerySession:`` a session to query ``Assessments``
@@ -689,7 +689,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
       * ``AssessmentNotificationSession: a`` session to receive messages
         pertaining to ``Assessment`` changes
 
-
       * ``AssessmentBankSession:`` a session for looking up assessment
         and bank mappings
       * ``AssessmentBankAssignmentSession:`` a session for managing
@@ -698,7 +697,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         banks
       * ``AssessmentBasicAuthoringSession:`` a session for making simple
         mappings of assessment items to assessments
-
 
       * ``AssessmentOfferedLookupSession:`` a session to look up
         ``Assessments``
@@ -717,7 +715,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
       * ``AssessmentOfferedSmartBankSession`` : a session to manage
         dynamic banks
 
-
       * ``AssessmentTakenLookupSession:`` a session to look up
         ``Assessments``
       * ``AssessmentTakenQuerySession:`` a session to query
@@ -734,7 +731,6 @@ class AssessmentProxyManager(osid_managers.OsidProxyManager, AssessmentProfile):
         managing assessments taken and bank mappings
       * ``AssessmentTakenSmartBankSession:`` a session to manage dynamic
         banks of assessments taken
-
 
       * ``BankLookupSession:`` a session to lookup banks
       * ``BankQuerySession`` : a session to query banks

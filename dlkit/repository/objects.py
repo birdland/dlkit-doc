@@ -17,14 +17,12 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     consumer to select among multiple formats, sizes or levels of
     fidelity.
 
-
     An example is a photograph of the Bay Bridge. The content may
     deliver a JPEG in multiple resolutions where the ``AssetContent``
     may also desribe size or compression factor for each one. The
     content may also include an uncompressed TIFF version. The ``Asset``
     ``Type`` may be "photograph" indicating that the photo itself is the
     asset managed in this repository.
-
 
     Since an Asset may have multiple ``AssetContent`` structures, the
     decision of how many things to stuff inside a single asset comes
@@ -36,7 +34,6 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     needs to be substituted for another. The Repository OSID manages
     this aspect outside the scope of the core ``Asset`` definition.
 
-
     ``Assets`` map to ``AssetSubjects``.  ``AssetSubjects`` are
     ``OsidObjects`` that capture a subject matter. In the above example,
     an ``AssetSubject`` may be defined for the Bay Bridge and include
@@ -47,13 +44,11 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     of the ``AssetSubject`` acts as a cover for the underlying
     ``Resource`` to assist repository-only consumers.
 
-
     The ``Asset`` definition includes some basic copyright and related
     licensing information to assist in finding free-to-use content, or
     to convey the distribution restrictions that may be placed on the
     asset. Generally, if no data is available it is to be assumed that
     all rights are reserved.
-
 
     A publisher is applicable if the content of this ``Asset`` has been
     published. Not all ``Assets`` in this ``Repository`` may have a
@@ -63,7 +58,6 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     acquired the asset and the source indicates the original provider or
     copyright owner. In the case of a published asset, the source is the
     publisher.
-
 
     ``Assets`` also define methods to facilitate searches over time and
     space as it relates to the subject matter. This may at times be
@@ -76,7 +70,6 @@ class Asset(osid_objects.OsidObject, osid_markers.Aggregateable, osid_markers.So
     in the view. In either case, a "photograph" type may unambiguously
     defined methods to describe the exact time the photograph was taken
     and the location of the photographer.
-
 
     The core Asset defines methods to perform general searches and
     construct bibliographic entries without knowledge of a particular
@@ -1044,18 +1037,14 @@ class AssetForm(osid_objects.OsidObjectForm, osid_objects.OsidAggregateableForm,
 
 
 class AssetList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssetList`` provides a means for accessing ``Asset`` elements sequentially either one at a
-    time or many at a time.
+    """Like all ``OsidLists,``  ``AssetList`` provides a means for accessing ``Asset`` elements sequentially either one at a time or many at a time.
 
     Examples: while (al.hasNext()) { Asset asset = al.getNextAsset(); }
-
 
     or
       while (al.hasNext()) {
            Asset[] assets = al.getNextAssets(al.available());
       }
-
-
 
     """
 
@@ -1096,7 +1085,6 @@ class AssetContent(osid_objects.OsidObject, osid_markers.Subjugateable):
     Although ``AssetContent`` is a separate ``OsidObject`` with its own
     ``Id`` to distuinguish it from other content inside an ``Asset,
     AssetContent`` can only be accessed through an ``Asset``.
-
 
     Once an ``Asset`` is selected, multiple contents should be
     negotiated using the size, fidelity, accessibility requirements or
@@ -1400,19 +1388,15 @@ class AssetContentForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateab
 
 
 class AssetContentList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``AssetContentList`` provides a means for accessing ``AssetContent`` elements sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``AssetContentList`` provides a means for accessing ``AssetContent`` elements sequentially either one at a time or many at a time.
 
     Examples: while (acl.hasNext()) { AssetContent content =
     acl.getNextAssetContent(); }
-
 
     or
       while (acl.hasNext()) {
            AssetContent[] contents = acl.getNextAssetContents(acl.available());
       }
-
-
 
     """
 
@@ -1535,19 +1519,15 @@ class CompositionForm(osid_objects.OsidObjectForm, osid_objects.OsidContainableF
 
 
 class CompositionList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``CompositionList`` provides a means for accessing ``Composition`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``CompositionList`` provides a means for accessing ``Composition`` elements sequentially either one at a time or many at a time.
 
     Examples: while (cl.hasNext()) { Composition composition =
     cl.getNextComposition(); }
-
 
     or
       while (cl.hasNext()) {
            Composition[] compositions = cl.getNextCompositions(cl.available());
       }
-
-
 
     """
 
@@ -1637,19 +1617,15 @@ class RepositoryForm(osid_objects.OsidCatalogForm):
 
 
 class RepositoryList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository`` elements sequentially either one at a time or many at a time.
 
     Examples: while (rl.hasNext()) { Repository repository =
     rl.getNextRepository(); }
-
 
     or
       while (rl.hasNext()) {
            Repository[] repositories = rl.getNextRepositories(rl.available());
       }
-
-
 
     """
 
@@ -1737,19 +1713,15 @@ class RepositoryNode(osid_objects.OsidNode):
 
 
 class RepositoryNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``RepositoryNodeList`` provides a means for accessing ``RepositoryNode`` elements sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``RepositoryNodeList`` provides a means for accessing ``RepositoryNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (rnl.hasNext()) { RepositoryNode node =
     rnl.getNextRepositoryNode(); }
-
 
     or
       while (rnl.hasNext()) {
            RepositoryNode[] nodes = rnl.getNextRepositoryNodes(rnl.available());
       }
-
-
 
     """
 

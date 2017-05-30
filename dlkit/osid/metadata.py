@@ -2,8 +2,7 @@
 
 
 class Metadata:
-    """The ``Metadata`` interface defines a set of methods describing a the syntax and rules for creating and updating a data
-    element inside an ``OsidForm``.
+    """The ``Metadata`` interface defines a set of methods describing a the syntax and rules for creating and updating a data element inside an ``OsidForm``.
 
     This interface provides a means to retrieve special restrictions
     placed upon data elements such as sizes and ranges that may vary

@@ -510,7 +510,6 @@ class CommentQuerySession(osid_sessions.OsidSession):
     The search query is constructed using the ``CommentQuery``. The book
     record ``Type`` also specifies the record for the book query.
 
-
     Comments may have a query record indicated by their respective
     record types. The query record is accessed via the ``CommentQuery``.
     The returns in this session may not be cast directly to these
@@ -629,7 +628,6 @@ class CommentAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Comment,`` a ``CommentForm`` is requested using
     ``get_comment_form_for_create()`` specifying the desired
@@ -642,7 +640,6 @@ class CommentAdminSession(osid_sessions.OsidSession):
     unsuccessful. Each ``CommentForm`` corresponds to an attempted
     transaction.
 
-
     For updates, ``CommentForms`` are requested to the ``Comment``
     ``Id`` that is to be updated using ``getCommentFormForUpdate()``.
     Similarly, the ``CommentForm`` has metadata about the data that can
@@ -650,13 +647,11 @@ class CommentAdminSession(osid_sessions.OsidSession):
     update. The ``CommentForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``Comments``. To unmap a ``Comment``
     from the current ``Book,`` the ``CommentBookAssignmentSession``
     should be used. These delete operations attempt to remove the
     ``Comment`` itself thus removing it from all known ``Book``
     catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -905,10 +900,8 @@ class BookLookupSession(osid_sessions.OsidSession):
 
     The ``Book`` represents a collection of comments.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -1114,7 +1107,6 @@ class BookAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Book,`` a ``BookForm`` is requested using
     ``get_book_form_for_create()`` specifying the desired record
@@ -1126,7 +1118,6 @@ class BookAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``BookForm`` corresponds
     to an attempted transaction.
 
-
     For updates, ``BookForms`` are requested to the ``Book``  ``Id``
     that is to be updated using ``getBookFormForUpdate()``. Similarly,
     the ``BookForm`` has metadata about the data that can be updated and
@@ -1134,9 +1125,7 @@ class BookAdminSession(osid_sessions.OsidSession):
     ``BookForm`` can only be used once for a successful update and
     cannot be reused.
 
-
     The delete operations delete ``Books``.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -1359,17 +1348,14 @@ class BookHierarchySession(osid_sessions.OsidSession):
     but does not appear in the hierarchy traversal until added as a root
     node or a child of another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parent_books()`` or ``get_child_books()`` in lieu
     of a ``PermissionDenied`` error that may disrupt the traversal
     through authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: book elements may be silently omitted or re-
         ordered

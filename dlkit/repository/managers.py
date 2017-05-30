@@ -377,11 +377,9 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
 
 class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for
-    various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``AssetLookupSession:`` a session to retrieve assets
       * ``AssetQuerySession:`` a session to query assets
@@ -408,7 +406,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
       * ``AssetCompositionDesignSession:`` a session to map assets to
         compositions
 
-
       * ``CompositionLookupSession: a`` session to retrieve compositions
       * ``CompositionQuerySession:`` a session to query compositions
       * ``CompositionSearchSession:`` a session to search for
@@ -423,7 +420,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         composition repository mappings
       * ``CompositionSmartRepositorySession:`` a session to manage
         dynamic repositories of compositions
-
 
       * ``RepositoryLookupSession: a`` session to retrieve repositories
       * ``RepositoryQuerySession:`` a session to query repositories
@@ -474,13 +470,11 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
 
 class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for
-    various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` for the
     purposes of passing information from a server environment. The
     sessions included in this manager are:
-
 
       * ``AssetLookupSession:`` a session to retrieve assets
       * ``AssetQuerySession:`` a session to query assets
@@ -507,7 +501,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
       * ``AssetCompositionDesignSession:`` a session to map assets to
         compositions
 
-
       * ``CompositionLookupSession: a`` session to retrieve compositions
       * ``CompositionQuerySession:`` a session to query compositions
       * ``CompositionSearchSession:`` a session to search for
@@ -522,7 +515,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         composition repository mappings
       * ``CompositionSmartRepositorySession:`` a session to manage
         dynamic repositories of compositions
-
 
       * ``RepositoryLookupSession: a`` session to retrieve repositories
       * ``RepositoryQuerySession:`` a session to query repositories

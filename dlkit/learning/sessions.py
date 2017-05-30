@@ -240,18 +240,14 @@ class ObjectiveQuerySession(osid_sessions.OsidSession):
     objective record ``Type`` also specifies the record for the
     objective query.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated objective bank view: searches include objectives in
         objective banks of which this objective bank is a ancestor in
         the objective bank hierarchy
       * isolated objective bank view: searches are restricted to
         objectives in this objective bank
-
-
 
 
     Objectives may have a query record indicated by their respective
@@ -372,7 +368,6 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``Objective,`` a ``ObjectiveForm`` is requested using
     ``get_objective_form_for_create()`` specifying the desired record
@@ -384,7 +379,6 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``ObjectiveForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``ObjectiveForms`` are requested to the ``Objective``
     ``Id`` that is to be updated using ``getObjectiveFormForUpdate()``.
     Similarly, the ``ObjectiveForm`` has metadata about the data that
@@ -392,13 +386,11 @@ class ObjectiveAdminSession(osid_sessions.OsidSession):
     update. The ``ObjectiveForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``Objectives``. To unmap an
     ``Objective`` from the current ``ObjectiveBank,`` the
     ``ObjectiveObjectiveBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Objective`` itself thus
     removing it from all known ``ObjectiveBank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -653,17 +645,14 @@ class ObjectiveHierarchySession(osid_sessions.OsidSession):
     the hierarchy traversal until added as a root node or a child of
     another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parent_objectives()`` or ``get_child_objectives()``
     in lieu of a ``PermissionDenied`` error that may disrupt the
     traversal through authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: objective elements may be silently omitted or
         re-ordered
@@ -1253,9 +1242,7 @@ class ObjectiveObjectiveBankSession(osid_sessions.OsidSession):
     ``ObjectiveBank`` may have its own authorizations governing who is
     allowed to look at it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -1417,7 +1404,6 @@ class ObjectiveObjectiveBankAssignmentSession(osid_sessions.OsidSession):
     it. Each ``ObjectiveBank`` may have its own authorizations governing
     who is allowed to operate on it.
 
-
     Moving or adding a reference of an ``Objective`` to another
     ``ObjectiveBank`` is not a copy operation (eg: does not change its
     ``Id`` ).
@@ -1557,10 +1543,8 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
     A requisite is a set of ``Objectives`` that should be achieved
     before another ``Objective`` is attempted.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -1574,8 +1558,6 @@ class ObjectiveRequisiteSession(osid_sessions.OsidSession):
         in this objective bank and any other objective banks implicitly
         available in this objective bank through objective bank
         inheritence.
-
-
 
 
     Objectives may have an additional records indicated by their
@@ -1806,7 +1788,6 @@ class ObjectiveRequisiteAssignmentSession(osid_sessions.OsidSession):
     Each ``ObjectiveBank`` may have its own authorizations governing who
     is allowed to operate on it.
 
-
     Moving or adding a reference of an ``Objective`` to another
     ``ObjectiveBank`` is not a copy operation (eg: does not change its
     ``Id`` ).
@@ -1937,10 +1918,8 @@ class ActivityLookupSession(osid_sessions.OsidSession):
     The ``Activity`` represents something to perform in order to achieve
     a learning objective.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
@@ -1954,8 +1933,6 @@ class ActivityLookupSession(osid_sessions.OsidSession):
         in this objective bank and any other objective banks implicitly
         available in this objective bank through objective bank
         inheritence.
-
-
 
 
     Activities may have an additional records indicated by their
@@ -2296,7 +2273,6 @@ class ActivityAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``Activity,`` an ``ActivityForm`` is requested using
     ``get_activity_form_for_create()`` specifying the desired objective
@@ -2308,7 +2284,6 @@ class ActivityAdminSession(osid_sessions.OsidSession):
     unless the first operation was unsuccessful. Each ``ActivityForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``ActivityForms`` are requested to the ``Activity``
     ``Id`` that is to be updated using ``getActivityFormForUpdate()``.
     Similarly, the ``ActivityForm`` has metadata about the data that can
@@ -2316,13 +2291,11 @@ class ActivityAdminSession(osid_sessions.OsidSession):
     update. The ``ActivityForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``Activities``. To unmap an
     ``Activity`` from the current ``ObjectiveBank,`` the
     ``ActivityObjectiveBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Activity`` itself thus
     removing it from all known ``ObjectiveBank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -2574,9 +2547,7 @@ class ActivityObjectiveBankSession(osid_sessions.OsidSession):
     ``ObjectiveBank`` may have its own authorizations governing who is
     allowed to look at it.
 
-
     This lookup session defines two views:
-
 
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete result set or is an error
@@ -2737,7 +2708,6 @@ class ActivityObjectiveBankAssignmentSession(osid_sessions.OsidSession):
     the last reference to a ``Activity`` is the equivalent of deleting
     it. Each ``ObjectiveBank`` may have its own authorizations governing
     who is allowed to operate on it.
-
 
     Moving or adding a reference of an ``Activity`` to another
     ``ObjectiveBank`` is not a copy operation (eg: does not change its
@@ -3413,18 +3383,14 @@ class ProficiencyQuerySession(osid_sessions.OsidSession):
 
     The search query is constructed using the ``ProficiencyQuery``.
 
-
     This session defines views that offer differing behaviors for
     searching.
-
 
       * federated objective bank view: searches include proficiencies in
         objective banks of which this objective bank is an ancestor in
         the obective bank hierarchy
       * isolated objective bank view: searches are restricted to
         proficiencies in this objective bank
-
-
 
 
     Proficiencies may have a query record indicated by their respective
@@ -3545,7 +3511,6 @@ class ProficiencyAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Proficiency,`` a ``ProficiencyForm`` is requested using
     ``get_proficiency_form_for_create()`` specifying the desired
@@ -3558,7 +3523,6 @@ class ProficiencyAdminSession(osid_sessions.OsidSession):
     unsuccessful. Each ``ProficiencyForm`` corresponds to an attempted
     transaction.
 
-
     For updates, ``ProficiencyForms`` are requested to the
     ``Proficiency``  ``Id`` that is to be updated using
     ``getProficiencyFormForUpdate()``. Similarly, the
@@ -3567,13 +3531,11 @@ class ProficiencyAdminSession(osid_sessions.OsidSession):
     ``ProficiencyForm`` can only be used once for a successful update
     and cannot be reused.
 
-
     The delete operations delete ``Proficiencies``. To unmap a
     ``Proficiency`` from the current ``ObjectiveBank,`` the
     ``ProficiencyObjectiveBankAssignmentSession`` should be used. These
     delete operations attempt to remove the ``Proficiency`` itself thus
     removing it from all known ``ObjectiveBank`` catalogs.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -3836,15 +3798,11 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
     The ``ObjectiveBank`` represents a collection of ``Objectives
     Activities`` , and ``Proficiencies``.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -3853,7 +3811,6 @@ class ObjectiveBankLookupSession(osid_sessions.OsidSession):
     examine the ``ObjectiveBanks`` it can access, without breaking
     execution. However, an administrative application may require all
     ``ObjectiveBank`` elements to be available.
-
 
     ``ObjectiveBanks`` may have an additional records indicated by their
     respective record types. The record may not be accessed through a
@@ -4066,7 +4023,6 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create an
     ``ObjectiveBank,`` an ``ObjectiveBankForm`` is requested using
     ``get_objective_bank_form_for_create()`` specifying the desired
@@ -4078,7 +4034,6 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
     create operation unless the first operation was unsuccessful. Each
     ``ObjectiveBankForm`` corresponds to an attempted transaction.
 
-
     For updates, ``ObjectiveBankForms`` are requested to the
     ``ObjectiveBank``  ``Id`` that is to be updated using
     ``getObjectiveBankFormForUpdate()``. Similarly, the
@@ -4087,11 +4042,9 @@ class ObjectiveBankAdminSession(osid_sessions.OsidSession):
     The ``ObjectiveBankForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``ObjectiveBanks``. It is safer to
     remove all mappings to the ``ObjectiveBank`` catalogs before
     deletion.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.
@@ -4317,17 +4270,14 @@ class ObjectiveBankHierarchySession(osid_sessions.OsidSession):
     but does not appear in the hierarchy traversal until added as a root
     node or a child of another node.
 
-
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
     returns of ``get_parent_objective_banks()`` or
     ``get_child_objective_banks()`` in lieu of a ``PermissionDenied``
     error that may disrupt the traversal through authorized pathways.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
-
 
       * comparative view: objective bank elements may be silently
         omitted or re-ordered

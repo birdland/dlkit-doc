@@ -106,6 +106,25 @@ Assessment Methods
 
 
 
+Assessment Results Methods
+--------------------------
+
+   .. autoattribute:: Bank.bank_id
+
+   .. autoattribute:: Bank.bank
+
+   .. automethod:: Bank.can_access_assessment_results
+
+   .. automethod:: Bank.get_items
+
+   .. automethod:: Bank.get_responses
+
+   .. automethod:: Bank.are_results_available
+
+   .. automethod:: Bank.get_grade_entries
+
+
+
 Item Lookup Methods
 -------------------
 

@@ -14,6 +14,8 @@ Assessment Profile
 
    .. automethod:: AssessmentProfile.supports_assessment
 
+   .. automethod:: AssessmentProfile.supports_assessment_results
+
    .. automethod:: AssessmentProfile.supports_item_lookup
 
    .. automethod:: AssessmentProfile.supports_item_query

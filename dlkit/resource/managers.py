@@ -263,11 +263,9 @@ class ResourceProfile(osid_managers.OsidProfile):
 
 
 class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, ResourceProfile):
-    """The resource manager provides access to resource lookup and creation sessions and provides interoperability tests for
-    various aspects of this service.
+    """The resource manager provides access to resource lookup and creation sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``ResourceLookupSession:`` a session to retrieve resources
       * ``ResourceQuerySession:`` a session to query resources
@@ -293,7 +291,6 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
       * ``ResourceAgentAssignmentSession:`` a session to manage
         ``Resource`` and ``Agent`` mappings
 
-
       * ``ResourceRelationshipLookupSession:`` a session to retrieve
         resource relationships
       * ``ResourceRelationshipQuerySession:`` a session to query for
@@ -310,7 +307,6 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
         manage resource relationship to bin mappings
       * ``ResourceRelationshipSmartBinSession:`` a session to manage
         smart resource relationship bins
-
 
       * ``BinLookupSession: a`` session to retrieve bins
       * ``BinQuerySession:`` a session to query bins
@@ -358,12 +354,10 @@ class ResourceManager(osid_managers.OsidManager, osid_sessions.OsidSession, Reso
 
 
 class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
-    """The resource manager provides access to resource lookup and creation session and provides interoperability tests for
-    various aspects of this service.
+    """The resource manager provides access to resource lookup and creation session and provides interoperability tests for various aspects of this service.
 
     Methods in this manager accept a ``Proxy``. The sessions included in
     this manager are:
-
 
       * ``ResourceLookupSession:`` a session to retrieve resources
       * ``ResourceQuerySession:`` a session to query resources
@@ -389,7 +383,6 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
       * ``ResourceAgentAssignmentSession:`` a session to manage
         ``Resource`` and ``Agent`` mappings
 
-
       * ``ResourceRelationshipLookupSession:`` a session to retrieve
         resource relationships
       * ``ResourceRelationshipQuerySession:`` a session to query for
@@ -406,7 +399,6 @@ class ResourceProxyManager(osid_managers.OsidProxyManager, ResourceProfile):
         manage resource relationship to bin mappings
       * ``ResourceRelationshipSmartBinSession:`` a session to manage
         smart resource relationship bins
-
 
       * ``BinLookupSession: a`` session to retrieve bins
       * ``BinQuerySession:`` a session to query bins

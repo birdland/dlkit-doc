@@ -233,7 +233,6 @@ class Subjugateable:
     A ``Subjugateable`` is created in the context of the administering
     ``OsidObject`` that may not be reassigned.
 
-
     A ``Subjugateable`` always has a fixed Id of it administering
     ``OsidObject``.
 
@@ -243,13 +242,10 @@ class Subjugateable:
 
 
 class Aggregateable:
-    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the definition is based on an included
-    set of other ``OsidObjects`` which are directly accessible and do not exist outside the context of the parent
-    object.
+    """``Aggregateable`` is used for an ``OsidObject`` to indicate that some or all of the definition is based on an included set of other ``OsidObjects`` which are directly accessible and do not exist outside the context of the parent object.
 
     ``Aggregateables`` allow for an ``OsidObject`` to stand alone
     without knowledge of the originating service.
-
 
     An ``Asset`` is an example of an aggregate by including the
     ``AssetContents``. An Asset also contains a provider however in this
@@ -259,7 +255,6 @@ class Aggregateable:
     explicit mapping to the ``Asset`` managed through an ``OsidSession``
     but accessible directly within the ``Asset`` to enable its
     consumption outside the Repository OSID.
-
 
     This marker has little practicality other than to identify a service
     pattern that is neither a data attribute nor a separately accessible
@@ -271,8 +266,7 @@ class Aggregateable:
 
 
 class Containable:
-    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself
-    directly accessible without knowledge of the originating service."""
+    """A ``Containable`` is a kind of aggregate where an ``OsidObject`` is defined as a recursive composition of itself directly accessible without knowledge of the originating service."""
 
     def is_sequestered(self):
         """Tests if this ``Containable`` is sequestered in that it should not appear outside of its aggregated composition.
@@ -386,11 +380,9 @@ class Operable:
     active status is determined from the operational status and the
     enabling rules.
 
-
     The operational status indicates the Operable is functioning. This
     status is not set administratively but instead refelects suitable
     conditions for operation.
-
 
     Operables may be administratively turned on of off through the
     enabled and disabled administrative overrides. If there are no
@@ -400,14 +392,12 @@ class Operable:
     ``is_disabled()`` set to true for the ``Operable`` to be ``off``.
     ``is_enabled()`` and ``is_disabled()`` cannot both be ``tru`` e.
 
-
     If there are related ``OsidEnabler`` rules, the active status of at
     least one ``OsidEnabler`` results in a ``true`` value for
     ``isOperational()``. This active status can be overridden by setting
     ``is_disabled()`` to ``true``. If there are no active
     ``OsidEnabler`` rules, ``is_operational()`` is false resulting in an
     ``off``  ``Operable`` unless ``is_enabled()`` is ``true`` .
-
 
     For the active status to be completely determined by the
     ``OsidEnablers,`` both ``is_enabled()`` and ``is_disabled()`` should

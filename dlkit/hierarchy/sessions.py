@@ -11,14 +11,12 @@ class HierarchyTraversalSession(osid_sessions.OsidSession):
     another OSID, ``get_nodes()`` can be used for retrievals that can be
     used for bulk lookups in other OSIDs.
 
-
     Any Id available in an associated OSID is known to this hierarchy. A
     lookup up a particular ``Id`` in this hierarchy for the purposes of
     establishing a starting point for traversal or determining
     relationships should use the ``Id`` returned from the corresponding
     OSID object, not an Id that has been stored, to avoid problems with
     ``Id`` translation or aliasing.
-
 
     A user may not be authorized to traverse the entire hierarchy. Parts
     of the hierarchy may be made invisible through omission from the
@@ -409,15 +407,11 @@ class HierarchyLookupSession(osid_sessions.OsidSession):
 
     The ``Hierarchy`` represents a structure of OSID ``Ids``.
 
-
     This session defines views that offer differing behaviors when
     retrieving multiple objects.
 
-
       * comparative view: elements may be silently omitted or re-ordered
       * plenary view: provides a complete set or is an error condition
-
-
 
 
     Generally, the comparative view should be used for most applications
@@ -638,7 +632,6 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
     form object. ``OsidForms`` are requested for each create or update
     and may not be reused.
 
-
     Create and update operations differ in their usage. To create a
     ``Hierarchy,`` a ``HierarchyForm`` is requested using
     ``get_hierarchy_form_for_create()`` specifying the desired record
@@ -650,7 +643,6 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
     the first operation was unsuccessful. Each ``HierarchyForm``
     corresponds to an attempted transaction.
 
-
     For updates, ``HierarchyForms`` are requested to the ``Hierarchy``
     ``Id`` that is to be updated using ``getHierarchyFormForUpdate()``.
     Similarly, the ``HierarchyForm`` has metadata about the data that
@@ -658,9 +650,7 @@ class HierarchyAdminSession(osid_sessions.OsidSession):
     update. The ``HierarchyForm`` can only be used once for a successful
     update and cannot be reused.
 
-
     The delete operations delete ``Hierarchies``.
-
 
     This session includes an ``Id`` aliasing mechanism to assign an
     external ``Id`` to an internally assigned Id.

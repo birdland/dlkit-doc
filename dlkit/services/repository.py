@@ -125,9 +125,6 @@ from ..osid import searches as osid_searches
 class RepositoryProfile(osid_managers.OsidProfile):
     """The repository profile describes interoperability among repository services."""
 
-    def __init__(self):
-        self._provider_manager = None
-
     def supports_asset_lookup(self):
         """Tests if asset lookup is supported.
 
@@ -1435,11 +1432,9 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
 
 class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for
-    various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
-
 
       * ``AssetLookupSession:`` a session to retrieve assets
       * ``AssetQuerySession:`` a session to query assets
@@ -1466,7 +1461,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
       * ``AssetCompositionDesignSession:`` a session to map assets to
         compositions
 
-
       * ``CompositionLookupSession: a`` session to retrieve compositions
       * ``CompositionQuerySession:`` a session to query compositions
       * ``CompositionSearchSession:`` a session to search for
@@ -1482,7 +1476,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
       * ``CompositionSmartRepositorySession:`` a session to manage
         dynamic repositories of compositions
 
-
       * ``RepositoryLookupSession: a`` session to retrieve repositories
       * ``RepositoryQuerySession:`` a session to query repositories
       * ``RepositorySearchSession:`` a session to search for
@@ -1497,91 +1490,6 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         repository hierarchies
 
     """
-
-    def __init__(self, proxy=None):
-        self._runtime = None
-        self._provider_manager = None
-        self._provider_sessions = dict()
-        self._session_management = AUTOMATIC
-        self._repository_view = DEFAULT
-        # This is to initialize self._proxy
-        osid.OsidSession.__init__(self, proxy)
-
-    # def _get_view(self, view):
-    #     """Gets the currently set view"""
-    #     if view in self._views:
-    #         return self._views[view]
-    #     else:
-    #         self._views[view] = DEFAULT
-    #         return DEFAULT
-
-    def _set_repository_view(self, session):
-        """Sets the underlying repository view to match current view"""
-        if self._repository_view == COMPARATIVE:
-            try:
-                session.use_comparative_repository_view()
-            except AttributeError:
-                pass
-        else:
-            try:
-                session.use_plenary_repository_view()
-            except AttributeError:
-                pass
-
-    def _get_provider_session(self, session_name, proxy=None):
-        """Gets the session for the provider"""
-        if self._proxy is None:
-            self._proxy = proxy
-        if session_name in self._provider_sessions:
-            return self._provider_sessions[session_name]
-        else:
-            session = self._instantiate_session('get_' + session_name, self._proxy)
-            self._set_repository_view(session)
-            if self._session_management != DISABLED:
-                self._provider_sessions[session_name] = session
-            return session
-
-    def _instantiate_session(self, method_name, proxy=None, *args, **kwargs):
-        """Instantiates a provider session"""
-        session_class = getattr(self._provider_manager, method_name)
-        if proxy is None:
-            return session_class(*args, **kwargs)
-        else:
-            return session_class(proxy=proxy, *args, **kwargs)
-
-    def initialize(self, runtime):
-        """OSID Manager initialize"""
-        from .primitives import Id
-        if self._runtime is not None:
-            raise IllegalState('Manager has already been initialized')
-        self._runtime = runtime
-        config = runtime.get_configuration()
-        parameter_id = Id('parameter:repositoryProviderImpl@dlkit_service')
-        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
-        if self._proxy is None:
-            # need to add version argument
-            self._provider_manager = runtime.get_manager('REPOSITORY', provider_impl)
-        else:
-            # need to add version argument
-            self._provider_manager = runtime.get_proxy_manager('REPOSITORY', provider_impl)
-
-    def close_sessions(self):
-        """Close all sessions, unless session management is set to MANDATORY"""
-        if self._session_management != MANDATORY:
-            self._provider_sessions = dict()
-
-    def use_automatic_session_management(self):
-        """Session state will be saved unless closed by consumers"""
-        self._session_management = AUTOMATIC
-
-    def use_mandatory_session_management(self):
-        """Session state will be saved and can not be closed by consumers"""
-        self._session_management = MANDATORY
-
-    def disable_session_management(self):
-        """Session state will never be saved"""
-        self._session_management = DISABLED
-        self.close_sessions()
 
     def get_repository_batch_manager(self):
         """Gets a ``RepositoryBatchManager``.
@@ -2553,13 +2461,11 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
 
 
 class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
-    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for
-    various aspects of this service.
+    """The repository manager provides access to asset lookup and creation session and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` for the
     purposes of passing information from a server environment. The
     sessions included in this manager are:
-
 
       * ``AssetLookupSession:`` a session to retrieve assets
       * ``AssetQuerySession:`` a session to query assets
@@ -2586,7 +2492,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
       * ``AssetCompositionDesignSession:`` a session to map assets to
         compositions
 
-
       * ``CompositionLookupSession: a`` session to retrieve compositions
       * ``CompositionQuerySession:`` a session to query compositions
       * ``CompositionSearchSession:`` a session to search for
@@ -2601,7 +2506,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
         composition repository mappings
       * ``CompositionSmartRepositorySession:`` a session to manage
         dynamic repositories of compositions
-
 
       * ``RepositoryLookupSession: a`` session to retrieve repositories
       * ``RepositoryQuerySession:`` a session to query repositories
@@ -3589,105 +3493,6 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
 class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A repository defines a collection of assets."""
-
-    # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
-    def __init__(self, provider_manager, catalog, proxy, **kwargs):
-        self._provider_manager = provider_manager
-        self._catalog = catalog
-        osid.OsidObject.__init__(self, self._catalog) # This is to initialize self._object
-        osid.OsidSession.__init__(self, proxy) # This is to initialize self._proxy
-        self._catalog_id = catalog.get_id()
-        self._provider_sessions = kwargs
-        self._session_management = AUTOMATIC
-        self._repository_view = DEFAULT
-        self._object_views = dict()
-
-    def _set_repository_view(self, session):
-        """Sets the underlying repository view to match current view"""
-        if self._repository_view == FEDERATED:
-            try:
-                session.use_federated_repository_view()
-            except AttributeError:
-                pass
-        else:
-            try:
-                session.use_isolated_repository_view()
-            except AttributeError:
-                pass
-
-    def _set_object_view(self, session):
-        """Sets the underlying object views to match current view"""
-        for obj_name in self._object_views:
-            if self._object_views[obj_name] == PLENARY:
-                try:
-                    getattr(session, 'use_plenary_' + obj_name + '_view')()
-                except AttributeError:
-                    pass
-            else:
-                try:
-                    getattr(session, 'use_comparative_' + obj_name + '_view')()
-                except AttributeError:
-                    pass
-
-    def _get_provider_session(self, session_name):
-        """Returns the requested provider session."""
-        if session_name in self._provider_sessions:
-            return self._provider_sessions[session_name]
-        else:
-            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_repository')
-            if self._proxy is None:
-                session = session_class(self._catalog.get_id())
-            else:
-                session = session_class(self._catalog.get_id(), self._proxy)
-            self._set_repository_view(session)
-            self._set_object_view(session)
-            if self._session_management != DISABLED:
-                self._provider_sessions[session_name] = session
-            return session
-
-    def get_repository_id(self):
-        """Gets the Id of this repository."""
-        return self._catalog_id
-
-    def get_repository(self):
-        """Strange little method to assure conformance for inherited Sessions."""
-        return self
-
-    def get_objective_hierarchy_id(self):
-        """WHAT am I doing here?"""
-        return self._catalog_id
-
-    def get_objective_hierarchy(self):
-        """WHAT am I doing here?"""
-        return self
-
-    def __getattr__(self, name):
-        if '_catalog' in self.__dict__:
-            try:
-                return self._catalog[name]
-            except AttributeError:
-                pass
-        raise AttributeError
-
-    def close_sessions(self):
-        """Close all sessions currently being managed by this Manager to save memory."""
-        if self._session_management != MANDATORY:
-            self._provider_sessions = dict()
-        raise IllegalState()
-
-    def use_automatic_session_management(self):
-        """Session state will be saved until closed by consumers."""
-        self._session_management = AUTOMATIC
-
-    def use_mandatory_session_management(self):
-        """Session state will always be saved and can not be closed by consumers."""
-        # Session state will be saved and can not be closed by consumers 
-        self._session_management = MANDATORY
-
-    def disable_session_management(self):
-        """Session state will never be saved."""
-        self._session_management = DISABLED
-        self.close_sessions()
 
     def get_repository_record(self, repository_record_type):
         """Gets the record corresponding to the given ``Repository`` record ``Type``.
@@ -6329,19 +6134,15 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
 
 
 class RepositoryList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``RepositoryList`` provides a means for accessing ``Repository`` elements sequentially either one at a time or many at a time.
 
     Examples: while (rl.hasNext()) { Repository repository =
     rl.getNextRepository(); }
-
 
     or
       while (rl.hasNext()) {
            Repository[] repositories = rl.getNextRepositories(rl.available());
       }
-
-
 
     """
 

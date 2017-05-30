@@ -302,19 +302,15 @@ class ObjectiveForm(osid_objects.OsidObjectForm, osid_objects.OsidFederateableFo
 
 
 class ObjectiveList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveList`` provides a means for accessing ``Objective`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveList`` provides a means for accessing ``Objective`` elements sequentially either one at a time or many at a time.
 
     Examples: while (ol.hasNext()) { Objective objective =
     ol.getNextObjective(); }
-
 
     or
       while (ol.hasNext()) {
            Objective[] objectives = ol.getNextObjectives(ol.available());
       }
-
-
 
     """
 
@@ -402,19 +398,15 @@ class ObjectiveNode(osid_objects.OsidNode):
 
 
 class ObjectiveNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveNodeList`` provides a means for accessing ``ObjectiveNode`` elements sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveNodeList`` provides a means for accessing ``ObjectiveNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (onl.hasNext()) { ObjectiveNode node =
     onl.getNextObjectiveNode(); }
-
 
     or
       while (onl.hasNext()) {
            ObjectiveNode[] nodes = onl.getNextObjectiveNodes(onl.available());
       }
-
-
 
     """
 
@@ -457,7 +449,6 @@ class Activity(osid_objects.OsidObject, osid_markers.Subjugateable):
     learning ``Assessment`` differs from the ``Objective``
     ``Assessment`` in that the latter used to test for proficiency in
     the ``Objective``.
-
 
     Generally, an ``Activity`` should focus on one of assets, courses,
     assessments, or some other specific activity related to the
@@ -791,19 +782,15 @@ class ActivityForm(osid_objects.OsidObjectForm, osid_objects.OsidSubjugateableFo
 
 
 class ActivityList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ActivityList`` provides a means for accessing ``Activity`` elements sequentially either one
-    at a time or many at a time.
+    """Like all ``OsidLists,``  ``ActivityList`` provides a means for accessing ``Activity`` elements sequentially either one at a time or many at a time.
 
     Examples: while (al.hasNext()) { Activity activity =
     al.getNextActivity(); }
-
 
     or
       while (al.hasNext()) {
            Activity[] activities = al.getNextActivities(al.available());
       }
-
-
 
     """
 
@@ -1083,19 +1070,15 @@ class ProficiencyForm(osid_objects.OsidRelationshipForm):
 
 
 class ProficiencyList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ProficiencyList`` provides a means for accessing ``Proficiency`` elements sequentially either
-    one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ProficiencyList`` provides a means for accessing ``Proficiency`` elements sequentially either one at a time or many at a time.
 
     Examples: while (pl.hasNext()) { Proficiency proficiency =
     pl.getNextProficiency(); }
-
 
     or
       while (pl.hasNext()) {
            Proficiency[] proficiencies = pl.getNextProficiencies(pl.available());
       }
-
-
 
     """
 
@@ -1188,19 +1171,15 @@ class ObjectiveBankForm(osid_objects.OsidCatalogForm):
 
 
 class ObjectiveBankList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveBankList`` provides a means for accessing ``ObjectiveBank`` elements sequentially
-    either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveBankList`` provides a means for accessing ``ObjectiveBank`` elements sequentially either one at a time or many at a time.
 
     Examples: while (obl.hasNext()) { ObjectiveBank objectiveBanks =
     obl.getNextObjectiveBank(); }
-
 
     or
       while (obl.hasNext()) {
            ObjectiveBank[] objectivBanks = obl.getNextObjectiveBanks(obl.available());
       }
-
-
 
     """
 
@@ -1288,19 +1267,15 @@ class ObjectiveBankNode(osid_objects.OsidNode):
 
 
 class ObjectiveBankNodeList(osid_objects.OsidList):
-    """Like all ``OsidLists,``  ``ObjectiveBankNodeList`` provides a means for accessing ``ObjectiveBankNode`` elements
-    sequentially either one at a time or many at a time.
+    """Like all ``OsidLists,``  ``ObjectiveBankNodeList`` provides a means for accessing ``ObjectiveBankNode`` elements sequentially either one at a time or many at a time.
 
     Examples: while (obnl.hasNext()) { ObjectiveBankNode node bank =
     obnl.getNextObjectiveBankNode(); }
-
 
     or
       while (obnl.hasNext()) {
            ObjectiveBankNode[] nodes = obnl.getNextObjectiveBankNodes(obnl.available());
       }
-
-
 
     """
 
