@@ -18,6 +18,18 @@ class AssessmentAuthoringProfile(osid_managers.OsidProfile):
         """
         return # boolean
 
+    def supports_assessment_part_query(self):
+        """Tests if querying assessment part is supported.
+
+        :return: ``true`` if assessment part query is supported, ``false`` otherwise
+        :rtype: ``boolean``
+
+
+        *compliance: mandatory -- This method must be implemented.*
+
+        """
+        return # boolean
+
     def supports_assessment_part_admin(self):
         """Tests if an assessment part administrative service is supported.
 
@@ -163,7 +175,7 @@ class AssessmentAuthoringProfile(osid_managers.OsidProfile):
     sequence_rule_enabler_search_record_types = property(fget=get_sequence_rule_enabler_search_record_types)
 
 
-class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSession, assessment.authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile):
+class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSession, AssessmentAuthoringProfile):
     """The assessment authoring manager provides access to assessment authoring sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
@@ -232,7 +244,7 @@ class AssessmentAuthoringManager(osid_managers.OsidManager, osid_sessions.OsidSe
 
 
 
-class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, assessment.authoring_UNKNOWN_MODULE.AssessmentAuthoringProfile):
+class AssessmentAuthoringProxyManager(osid_managers.OsidProxyManager, AssessmentAuthoringProfile):
     """The assessment authoring manager provides access to assessment authoring sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` object.

@@ -1,5 +1,5 @@
 Summary
 =======
 
-.. currentmodule:: dlkit.services.authentication.process
-.. automodule:: dlkit.services.authentication.process
+.. currentmodule:: dlkit.services.authentication_process
+.. automodule:: dlkit.services.authentication_process

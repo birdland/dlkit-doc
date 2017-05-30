@@ -6,6 +6,16 @@ from ..osid import sessions as osid_sessions
 class RepositoryProfile(osid_managers.OsidProfile):
     """The repository profile describes interoperability among repository services."""
 
+
+    def get_asset_content_lookup_session(self, *args, **kwargs):
+        """Pass through to provider """
+        return self._provider_manager.get_asset_content_lookup_session(*args, **kwargs)
+
+    asset_content_lookup_session = property(fget=get_asset_content_lookup_session)
+
+    def get_asset_content_lookup_session_for_repository(self, *args, **kwargs):
+        """Pass through to provider """
+        return self._provider_manager.get_asset_content_lookup_session_for_repository(args, kwargs)
     def supports_asset_lookup(self):
         """Tests if asset lookup is supported.
 

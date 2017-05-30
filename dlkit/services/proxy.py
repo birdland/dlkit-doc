@@ -49,6 +49,10 @@ from ..osid import records as osid_records
 class ProxyProfile(osid_managers.OsidProfile):
     """The ``ProxyProfile`` describes the interoperability among proxy services."""
 
+    def __init__(self):
+        self._provider_manager = None
+
+
     def supports_proxy(self):
         """Tests if a proxy session is supported.
 
@@ -98,7 +102,28 @@ class ProxyManager(osid_managers.OsidManager, osid_sessions.OsidSession, ProxyPr
       * ``ProxySession:`` a session to acquire proxy interfaces
 
     """
-    pass
+
+
+    def __init__(self):
+        import settings
+        import importlib
+        provider_module = importlib.import_module(settings.PROXY_PROVIDER_MANAGER_PATH, settings.ANCHOR_PATH)
+        provider_manager_class = getattr(provider_module, 'ProxyManager')
+        self._provider_manager = provider_manager_class()
+        self._provider_sessions = dict()
+
+    def _get_provider_session(self, session):
+        if session in self._provider_sessions:
+            return self._provider_sessions[session]
+        else:
+            try:
+                get_session = getattr(self._provider_manager, 'get_' + session)
+            except:
+                raise  # Unimplemented???
+            else:
+                self._provider_sessions[session] = get_session()
+            return self._provider_sessions[session]
+
 
 
 

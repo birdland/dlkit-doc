@@ -163,7 +163,7 @@ class LoggingProfile(osid_managers.OsidProfile):
         return # boolean
 
 
-class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, logging_UNKNOWN_MODULE.LoggingProfile):
+class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, LoggingProfile):
     """The logging manager provides access to logging sessions and provides interoperability tests for various aspects of this service.
 
     The sessions included in this manager are:
@@ -215,7 +215,7 @@ class LoggingManager(osid_managers.OsidManager, osid_sessions.OsidSession, loggi
     logging_batch_manager = property(fget=get_logging_batch_manager)
 
 
-class LoggingProxyManager(osid_managers.OsidProxyManager, logging_UNKNOWN_MODULE.LoggingProfile):
+class LoggingProxyManager(osid_managers.OsidProxyManager, LoggingProfile):
     """The logging manager provides access to logging sessions and provides interoperability tests for various aspects of this service.
 
     Methods in this manager support the passing of a ``Proxy`` for the

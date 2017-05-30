@@ -1,5 +1,5 @@
 Summary
 =======
 
-.. currentmodule:: dlkit.services.logging
-.. automodule:: dlkit.services.logging
+.. currentmodule:: dlkit.services.logging_
+.. automodule:: dlkit.services.logging_

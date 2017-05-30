@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.assessment.authoring.objects
-.. automodule:: dlkit.assessment.authoring.objects
+.. currentmodule:: dlkit.assessment_authoring.objects
+.. automodule:: dlkit.assessment_authoring.objects
 
 Objects
 =======

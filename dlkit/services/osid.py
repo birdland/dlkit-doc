@@ -397,6 +397,9 @@ class OsidPrimitive:
 class Identifiable:
     """A marker interface for objects uniquely identified with an OSID ``Id``."""
 
+    def __init__(self, osid_object):  # I will never be called :(
+        self._osid_object = osid_object
+
     def get_id(self):
         """Gets the Id associated with this instance of this OSID object.
 
@@ -466,6 +469,9 @@ class Identifiable:
 class Extensible:
     """A marker interface for objects that contain ``OsidRecords``."""
 
+    def __init__(self, osid_object):  # I will never be called :(
+        self._osid_object = osid_object
+
     def get_record_types(self):
         """Gets the record types available in this object.
 
@@ -508,6 +514,9 @@ class Extensible:
 
 class Browsable:
     """A marker interface for objects that offer property inspection."""
+
+    def __init__(self, osid_object):  # I will never be called :(
+        self._osid_object = osid_object
 
     def get_properties(self):
         """Gets a list of properties.
@@ -667,6 +676,9 @@ class Sourceable:
     services.
 
     """
+
+    def __init__(self, osid_object):  # I will never be called :(
+        self._osid_object = osid_object
 
     def get_provider_id(self):
         """Gets the ``Id`` of the provider.
@@ -858,6 +870,9 @@ class OsidProfile(osid_markers.Sourceable):
     definitions within its managers.
 
     """
+
+    def __init__(self):
+        self._provider_manager = None
 
     def get_id(self):
         """Gets an identifier for this service implementation.
@@ -1225,6 +1240,49 @@ class OsidSession:
 
     """
 
+
+    COMPARATIVE = 0
+    PLENARY = 1
+    FEDERATED = 0
+    ISOLATED = 1
+
+    def __init__(self, proxy):
+        self._proxy = proxy
+
+    def _get_agent_key(self, proxy=None):
+        """Gets an agent key for session management.
+
+        Side effect of setting a new proxy if one is sent along,
+        and initializing the provider session map if agent key has
+        not been seen before
+
+        """
+        if self._proxy is None:
+            self._proxy = proxy
+        if self._proxy is not None and self._proxy.has_effective_agent():
+            agent_key = self._proxy.get_effective_agent_id()
+        else:
+            agent_key = None
+        if agent_key not in self._provider_sessions:
+            self._provider_sessions[agent_key] = dict()
+        return agent_key
+
+    def _get_provider_sessions(self):
+        """Gets list of all known provider sessions."""
+        agent_key = self._get_agent_key()
+        sessions = []
+        for session_name in self._provider_sessions[agent_key]:
+            sessions.append(self._provider_sessions[agent_key][session_name])
+        return sessions
+
+    def set_proxy(self, proxy):
+        """Sets a new Proxy."""
+        self._proxy = proxy
+
+    def clear_proxy(self):
+        """Sets proxy to None."""
+        self._proxy = None
+
     def get_locale(self):
         """Gets the locale indicating the localization preferences in effect for this session.
 
@@ -1477,6 +1535,9 @@ class OsidObject(osid_markers.Identifiable, osid_markers.Extensible, osid_marker
 
     """
 
+    def __init__(self, osid_object):
+        self._osid_object = osid_object
+
     def get_display_name(self):
         """Gets the preferred display name associated with this instance of this OSID object appropriate for display to the user.
 
@@ -1615,6 +1676,29 @@ class OsidList:
     elements is not known.
 
     """
+
+    def __init__(self, iter_object=None, count=None):
+        if iter_object is None:
+            iter_object = []
+        if count is not None:
+            self._count = count
+        elif isinstance(iter_object, dict) or isinstance(iter_object, list):
+            self._count = len(iter_object)
+        self._iter_object = iter(iter_object)
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        next_object = next(self._iter_object)
+        if self._count is not None:
+            self._count -= 1
+        return next_object
+
+    __next__ = next
+
+    def len(self):
+        return self.available()
 
     def has_next(self):
         """Tests if there are more elements in this list.

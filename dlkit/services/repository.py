@@ -125,6 +125,10 @@ from ..osid import searches as osid_searches
 class RepositoryProfile(osid_managers.OsidProfile):
     """The repository profile describes interoperability among repository services."""
 
+    def __init__(self):
+        self._provider_manager = None
+
+
     def supports_asset_lookup(self):
         """Tests if asset lookup is supported.
 
@@ -1431,6 +1435,17 @@ class RepositoryProfile(osid_managers.OsidProfile):
 
 
 
+    def get_asset_content_lookup_session(self, *args, **kwargs):
+        """Pass through to provider """
+        return self._provider_manager.get_asset_content_lookup_session(*args, **kwargs)
+
+    asset_content_lookup_session = property(fget=get_asset_content_lookup_session)
+
+    def get_asset_content_lookup_session_for_repository(self, *args, **kwargs):
+        """Pass through to provider """
+        return self._provider_manager.get_asset_content_lookup_session_for_repository(args, kwargs)
+
+
 class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, RepositoryProfile):
     """The repository manager provides access to asset lookup and creation session and provides interoperability tests for various aspects of this service.
 
@@ -1490,6 +1505,119 @@ class RepositoryManager(osid_managers.OsidManager, osid_sessions.OsidSession, Re
         repository hierarchies
 
     """
+
+    def __init__(self, proxy=None):
+        self._runtime = None
+        self._provider_manager = None
+        self._provider_sessions = dict()
+        self._session_management = AUTOMATIC
+        self._repository_view = DEFAULT
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
+        self._sub_package_provider_managers = dict()
+
+    def _set_repository_view(self, session):
+        """Sets the underlying repository view to match current view"""
+        if self._repository_view == COMPARATIVE:
+            try:
+                session.use_comparative_repository_view()
+            except AttributeError:
+                pass
+        else:
+            try:
+                session.use_plenary_repository_view()
+            except AttributeError:
+                pass
+
+    def _get_provider_session(self, session_name, proxy=None):
+        """Gets the session for the provider"""
+        agent_key = self._get_agent_key(proxy)
+        if session_name in self._provider_sessions[agent_key]:
+            return self._provider_sessions[agent_key][session_name]
+        else:
+            session = self._instantiate_session('get_' + session_name, self._proxy)
+            self._set_repository_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[agent_key][session_name] = session
+            return session
+
+    def _get_sub_package_provider_manager(self, sub_package_name):
+        if sub_package_name in self._sub_package_provider_managers:
+            return self._sub_package_provider_managers[sub_package_name]
+        config = self._runtime.get_configuration()
+        parameter_id = Id('parameter:{0}ProviderImpl@dlkit_service'.format(sub_package_name))
+        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
+        if self._proxy is None:
+            # need to add version argument
+            sub_package = self._runtime.get_manager(sub_package_name.upper(), provider_impl)
+        else:
+            # need to add version argument
+            sub_package = self._runtime.get_proxy_manager(sub_package_name.upper(), provider_impl)
+        self._sub_package_provider_managers[sub_package_name] = sub_package
+        return sub_package
+
+    def _get_sub_package_provider_session(self, sub_package, session_name, proxy=None):
+        """Gets the session from a sub-package"""
+        agent_key = self._get_agent_key(proxy)
+        if session_name in self._provider_sessions[agent_key]:
+            return self._provider_sessions[agent_key][session_name]
+        else:
+            manager = self._get_sub_package_provider_manager(sub_package)
+            session = self._instantiate_session('get_' + session_name + '_for_bank',
+                                                proxy=self._proxy,
+                                                manager=manager)
+            self._set_bank_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[agent_key][session_name] = session
+            return session
+
+    def _instantiate_session(self, method_name, proxy=None, *args, **kwargs):
+        """Instantiates a provider session"""
+        session_class = getattr(self._provider_manager, method_name)
+        if proxy is None:
+            try:
+                return session_class(bank_id=self._catalog_id, *args, **kwargs)
+            except AttributeError:
+                return session_class(*args, **kwargs)
+        else:
+            try:
+                return session_class(bank_id=self._catalog_id, proxy=proxy, *args, **kwargs)
+            except AttributeError:
+                return session_class(proxy=proxy, *args, **kwargs)
+
+    def initialize(self, runtime):
+        """OSID Manager initialize"""
+        from .primitives import Id
+        if self._runtime is not None:
+            raise IllegalState('Manager has already been initialized')
+        self._runtime = runtime
+        config = runtime.get_configuration()
+        parameter_id = Id('parameter:repositoryProviderImpl@dlkit_service')
+        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
+        if self._proxy is None:
+            # need to add version argument
+            self._provider_manager = runtime.get_manager('REPOSITORY', provider_impl)
+        else:
+            # need to add version argument
+            self._provider_manager = runtime.get_proxy_manager('REPOSITORY', provider_impl)
+
+    def close_sessions(self):
+        """Close all sessions, unless session management is set to MANDATORY"""
+        if self._session_management != MANDATORY:
+            self._provider_sessions = dict()
+
+    def use_automatic_session_management(self):
+        """Session state will be saved unless closed by consumers"""
+        self._session_management = AUTOMATIC
+
+    def use_mandatory_session_management(self):
+        """Session state will be saved and can not be closed by consumers"""
+        self._session_management = MANDATORY
+
+    def disable_session_management(self):
+        """Session state will never be saved"""
+        self._session_management = DISABLED
+        self.close_sessions()
 
     def get_repository_batch_manager(self):
         """Gets a ``RepositoryBatchManager``.
@@ -3493,6 +3621,144 @@ class RepositoryProxyManager(osid_managers.OsidProxyManager, RepositoryProfile):
 
 class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A repository defines a collection of assets."""
+
+    # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
+    def __init__(self, provider_manager, catalog, runtime, proxy, **kwargs):
+        self._provider_manager = provider_manager
+        self._catalog = catalog
+        self._runtime = runtime
+        osid.OsidObject.__init__(self, self._catalog)  # This is to initialize self._object
+        osid.OsidSession.__init__(self, proxy)  # This is to initialize self._proxy
+        self._catalog_id = catalog.get_id()
+        self._provider_sessions = kwargs
+        self._session_management = AUTOMATIC
+        self._repository_view = DEFAULT
+        self._object_views = dict()
+        self._operable_views = dict()
+        self._containable_views = dict()
+
+    def _set_repository_view(self, session):
+        """Sets the underlying repository view to match current view"""
+        if self._repository_view == FEDERATED:
+            try:
+                session.use_federated_repository_view()
+            except AttributeError:
+                pass
+        else:
+            try:
+                session.use_isolated_repository_view()
+            except AttributeError:
+                pass
+
+    def _set_object_view(self, session):
+        """Sets the underlying object views to match current view"""
+        for obj_name in self._object_views:
+            if self._object_views[obj_name] == PLENARY:
+                try:
+                    getattr(session, 'use_plenary_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_comparative_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+    def _set_operable_view(self, session):
+        """Sets the underlying operable views to match current view"""
+        for obj_name in self._operable_views:
+            if self._operable_views[obj_name] == ACTIVE:
+                try:
+                    getattr(session, 'use_active_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_any_status_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+    def _set_containable_view(self, session):
+        """Sets the underlying containable views to match current view"""
+        for obj_name in self._containable_views:
+            if self._containable_views[obj_name] == SEQUESTERED:
+                try:
+                    getattr(session, 'use_sequestered_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_unsequestered_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+    def _get_provider_session(self, session_name):
+        """Returns the requested provider session.
+
+        Instantiates a new one if the named session is not already known.
+
+        """
+        agent_key = self._get_agent_key()
+        if session_name in self._provider_sessions[agent_key]:
+            return self._provider_sessions[agent_key][session_name]
+        else:
+            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_repository')
+            if self._proxy is None:
+                session = session_class(self._catalog.get_id())
+            else:
+                session = session_class(self._catalog.get_id(), self._proxy)
+            self._set_repository_view(session)
+            self._set_object_view(session)
+            self._set_operable_view(session)
+            self._set_containable_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[agent_key][session_name] = session
+            return session
+
+    def get_repository_id(self):
+        """Gets the Id of this repository."""
+        return self._catalog_id
+
+    def get_repository(self):
+        """Strange little method to assure conformance for inherited Sessions."""
+        return self
+
+    def get_objective_hierarchy_id(self):
+        """WHAT am I doing here?"""
+        return self._catalog_id
+
+    def get_objective_hierarchy(self):
+        """WHAT am I doing here?"""
+        return self
+
+    def __getattr__(self, name):
+        if '_catalog' in self.__dict__:
+            try:
+                return self._catalog[name]
+            except AttributeError:
+                pass
+        raise AttributeError
+
+    def close_sessions(self):
+        """Close all sessions currently being managed by this Manager to save memory."""
+        if self._session_management != MANDATORY:
+            self._provider_sessions = dict()
+        else:
+            raise IllegalState()
+
+    def use_automatic_session_management(self):
+        """Session state will be saved until closed by consumers."""
+        self._session_management = AUTOMATIC
+
+    def use_mandatory_session_management(self):
+        """Session state will always be saved and can not be closed by consumers."""
+        # Session state will be saved and can not be closed by consumers
+        self._session_management = MANDATORY
+
+    def disable_session_management(self):
+        """Session state will never be saved."""
+        self._session_management = DISABLED
+        self.close_sessions()
 
     def get_repository_record(self, repository_record_type):
         """Gets the record corresponding to the given ``Repository`` record ``Type``.
@@ -6131,6 +6397,67 @@ class Repository(osid_objects.OsidCatalog, osid_sessions.OsidSession):
         pass
 
 
+
+
+    def can_lookup_asset_contents(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.can_lookup_asset_contents
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').can_lookup_asset_contents(*args, **kwargs)
+
+    def get_asset_content(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_content
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_content(*args, **kwargs)
+
+    def get_asset_contents_by_ids(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_ids
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_ids(*args, **kwargs)
+
+    def get_asset_contents_by_genus_type(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_genus_type
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_genus_type(*args, **kwargs)
+
+    def get_asset_contents_by_parent_genus_type(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_parent_genus_type
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_parent_genus_type(*args, **kwargs)
+
+    def get_asset_contents_by_record_type(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_record_type
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_record_type(*args, **kwargs)
+
+    def get_asset_contents_for_asset(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_for_asset
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_for_asset(*args, **kwargs)
+
+    def get_asset_contents_by_genus_type_for_asset(self, *args, **kwargs):
+        """Pass through to provider AssetContentLookupSession.get_asset_contents_by_genus_type_for_asset
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_content_lookup_session').get_asset_contents_by_genus_type_for_asset(*args, **kwargs)
+
+    def get_asset_content_query(self, *args, **kwargs):
+        """Pass through to provider AssetQuerySession.get_asset_content_query
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_query_session').get_asset_content_query(*args, **kwargs)
+
+    def get_asset_contents_by_query(self, *args, **kwargs):
+        """Pass through to provider AssetQuerySession.get_asset_contents_by_query
+            Out-of-band, non-OSID convenience method
+        """
+        return self._get_provider_session('asset_query_session').get_asset_contents_by_query(*args, **kwargs)
 
 
 class RepositoryList(osid_objects.OsidList):

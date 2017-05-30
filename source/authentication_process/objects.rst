@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.authentication.process.objects
-.. automodule:: dlkit.authentication.process.objects
+.. currentmodule:: dlkit.authentication_process.objects
+.. automodule:: dlkit.authentication_process.objects
 
 Objects
 =======

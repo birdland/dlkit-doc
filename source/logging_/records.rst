@@ -1,6 +1,6 @@
 
-.. currentmodule:: dlkit.logging.records
-.. automodule:: dlkit.logging.records
+.. currentmodule:: dlkit.logging_.records
+.. automodule:: dlkit.logging_.records
 
 Records
 =======

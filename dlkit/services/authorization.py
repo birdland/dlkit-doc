@@ -116,6 +116,10 @@ from ..osid import searches as osid_searches
 class AuthorizationProfile(osid_managers.OsidProfile):
     """The ``AuthorizationProfile`` describes the interoperability among authorization services."""
 
+    def __init__(self):
+        self._provider_manager = None
+
+
     def supports_authorization(self):
         """Tests for the availability of an authorization service which is the basic service for checking authorizations.
 
@@ -859,6 +863,119 @@ class AuthorizationManager(osid_managers.OsidManager, osid_sessions.OsidSession,
         ``Vault`` hierarchy
 
     """
+
+    def __init__(self, proxy=None):
+        self._runtime = None
+        self._provider_manager = None
+        self._provider_sessions = dict()
+        self._session_management = AUTOMATIC
+        self._vault_view = DEFAULT
+        # This is to initialize self._proxy
+        osid.OsidSession.__init__(self, proxy)
+        self._sub_package_provider_managers = dict()
+
+    def _set_vault_view(self, session):
+        """Sets the underlying vault view to match current view"""
+        if self._vault_view == COMPARATIVE:
+            try:
+                session.use_comparative_vault_view()
+            except AttributeError:
+                pass
+        else:
+            try:
+                session.use_plenary_vault_view()
+            except AttributeError:
+                pass
+
+    def _get_provider_session(self, session_name, proxy=None):
+        """Gets the session for the provider"""
+        agent_key = self._get_agent_key(proxy)
+        if session_name in self._provider_sessions[agent_key]:
+            return self._provider_sessions[agent_key][session_name]
+        else:
+            session = self._instantiate_session('get_' + session_name, self._proxy)
+            self._set_vault_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[agent_key][session_name] = session
+            return session
+
+    def _get_sub_package_provider_manager(self, sub_package_name):
+        if sub_package_name in self._sub_package_provider_managers:
+            return self._sub_package_provider_managers[sub_package_name]
+        config = self._runtime.get_configuration()
+        parameter_id = Id('parameter:{0}ProviderImpl@dlkit_service'.format(sub_package_name))
+        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
+        if self._proxy is None:
+            # need to add version argument
+            sub_package = self._runtime.get_manager(sub_package_name.upper(), provider_impl)
+        else:
+            # need to add version argument
+            sub_package = self._runtime.get_proxy_manager(sub_package_name.upper(), provider_impl)
+        self._sub_package_provider_managers[sub_package_name] = sub_package
+        return sub_package
+
+    def _get_sub_package_provider_session(self, sub_package, session_name, proxy=None):
+        """Gets the session from a sub-package"""
+        agent_key = self._get_agent_key(proxy)
+        if session_name in self._provider_sessions[agent_key]:
+            return self._provider_sessions[agent_key][session_name]
+        else:
+            manager = self._get_sub_package_provider_manager(sub_package)
+            session = self._instantiate_session('get_' + session_name + '_for_bank',
+                                                proxy=self._proxy,
+                                                manager=manager)
+            self._set_bank_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[agent_key][session_name] = session
+            return session
+
+    def _instantiate_session(self, method_name, proxy=None, *args, **kwargs):
+        """Instantiates a provider session"""
+        session_class = getattr(self._provider_manager, method_name)
+        if proxy is None:
+            try:
+                return session_class(bank_id=self._catalog_id, *args, **kwargs)
+            except AttributeError:
+                return session_class(*args, **kwargs)
+        else:
+            try:
+                return session_class(bank_id=self._catalog_id, proxy=proxy, *args, **kwargs)
+            except AttributeError:
+                return session_class(proxy=proxy, *args, **kwargs)
+
+    def initialize(self, runtime):
+        """OSID Manager initialize"""
+        from .primitives import Id
+        if self._runtime is not None:
+            raise IllegalState('Manager has already been initialized')
+        self._runtime = runtime
+        config = runtime.get_configuration()
+        parameter_id = Id('parameter:authorizationProviderImpl@dlkit_service')
+        provider_impl = config.get_value_by_parameter(parameter_id).get_string_value()
+        if self._proxy is None:
+            # need to add version argument
+            self._provider_manager = runtime.get_manager('AUTHORIZATION', provider_impl)
+        else:
+            # need to add version argument
+            self._provider_manager = runtime.get_proxy_manager('AUTHORIZATION', provider_impl)
+
+    def close_sessions(self):
+        """Close all sessions, unless session management is set to MANDATORY"""
+        if self._session_management != MANDATORY:
+            self._provider_sessions = dict()
+
+    def use_automatic_session_management(self):
+        """Session state will be saved unless closed by consumers"""
+        self._session_management = AUTOMATIC
+
+    def use_mandatory_session_management(self):
+        """Session state will be saved and can not be closed by consumers"""
+        self._session_management = MANDATORY
+
+    def disable_session_management(self):
+        """Session state will never be saved"""
+        self._session_management = DISABLED
+        self.close_sessions()
 
     def get_authorization_batch_manager(self):
         """Gets an ``AuthorizationBatchManager``.
@@ -1911,6 +2028,144 @@ class AuthorizationProxyManager(osid_managers.OsidProxyManager, AuthorizationPro
 
 class Vault(osid_objects.OsidCatalog, osid_sessions.OsidSession):
     """A vault defines a collection of authorizations and functions."""
+
+    # WILL THIS EVER BE CALLED DIRECTLY - OUTSIDE OF A MANAGER?
+    def __init__(self, provider_manager, catalog, runtime, proxy, **kwargs):
+        self._provider_manager = provider_manager
+        self._catalog = catalog
+        self._runtime = runtime
+        osid.OsidObject.__init__(self, self._catalog)  # This is to initialize self._object
+        osid.OsidSession.__init__(self, proxy)  # This is to initialize self._proxy
+        self._catalog_id = catalog.get_id()
+        self._provider_sessions = kwargs
+        self._session_management = AUTOMATIC
+        self._vault_view = DEFAULT
+        self._object_views = dict()
+        self._operable_views = dict()
+        self._containable_views = dict()
+
+    def _set_vault_view(self, session):
+        """Sets the underlying vault view to match current view"""
+        if self._vault_view == FEDERATED:
+            try:
+                session.use_federated_vault_view()
+            except AttributeError:
+                pass
+        else:
+            try:
+                session.use_isolated_vault_view()
+            except AttributeError:
+                pass
+
+    def _set_object_view(self, session):
+        """Sets the underlying object views to match current view"""
+        for obj_name in self._object_views:
+            if self._object_views[obj_name] == PLENARY:
+                try:
+                    getattr(session, 'use_plenary_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_comparative_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+    def _set_operable_view(self, session):
+        """Sets the underlying operable views to match current view"""
+        for obj_name in self._operable_views:
+            if self._operable_views[obj_name] == ACTIVE:
+                try:
+                    getattr(session, 'use_active_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_any_status_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+    def _set_containable_view(self, session):
+        """Sets the underlying containable views to match current view"""
+        for obj_name in self._containable_views:
+            if self._containable_views[obj_name] == SEQUESTERED:
+                try:
+                    getattr(session, 'use_sequestered_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+            else:
+                try:
+                    getattr(session, 'use_unsequestered_' + obj_name + '_view')()
+                except AttributeError:
+                    pass
+
+    def _get_provider_session(self, session_name):
+        """Returns the requested provider session.
+
+        Instantiates a new one if the named session is not already known.
+
+        """
+        agent_key = self._get_agent_key()
+        if session_name in self._provider_sessions[agent_key]:
+            return self._provider_sessions[agent_key][session_name]
+        else:
+            session_class = getattr(self._provider_manager, 'get_' + session_name + '_for_vault')
+            if self._proxy is None:
+                session = session_class(self._catalog.get_id())
+            else:
+                session = session_class(self._catalog.get_id(), self._proxy)
+            self._set_vault_view(session)
+            self._set_object_view(session)
+            self._set_operable_view(session)
+            self._set_containable_view(session)
+            if self._session_management != DISABLED:
+                self._provider_sessions[agent_key][session_name] = session
+            return session
+
+    def get_vault_id(self):
+        """Gets the Id of this vault."""
+        return self._catalog_id
+
+    def get_vault(self):
+        """Strange little method to assure conformance for inherited Sessions."""
+        return self
+
+    def get_objective_hierarchy_id(self):
+        """WHAT am I doing here?"""
+        return self._catalog_id
+
+    def get_objective_hierarchy(self):
+        """WHAT am I doing here?"""
+        return self
+
+    def __getattr__(self, name):
+        if '_catalog' in self.__dict__:
+            try:
+                return self._catalog[name]
+            except AttributeError:
+                pass
+        raise AttributeError
+
+    def close_sessions(self):
+        """Close all sessions currently being managed by this Manager to save memory."""
+        if self._session_management != MANDATORY:
+            self._provider_sessions = dict()
+        else:
+            raise IllegalState()
+
+    def use_automatic_session_management(self):
+        """Session state will be saved until closed by consumers."""
+        self._session_management = AUTOMATIC
+
+    def use_mandatory_session_management(self):
+        """Session state will always be saved and can not be closed by consumers."""
+        # Session state will be saved and can not be closed by consumers
+        self._session_management = MANDATORY
+
+    def disable_session_management(self):
+        """Session state will never be saved."""
+        self._session_management = DISABLED
+        self.close_sessions()
 
     def get_vault_record(self, vault_record_type):
         """Gets the vault record corresponding to the given ``Vault`` record ``Type``.
