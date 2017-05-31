@@ -6,7 +6,6 @@ Assessment.Authoring
 
    summary
    service_managers
-   bank
    objects
    queries
    records
